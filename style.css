@@ -2,6 +2,10 @@
 
 html, body {
 text-align: center;
+margin:0; /* remove default margin */
+padding:0; /* remove default padding */
+width:100%; /* take full browser width */
+height:100%; /* take full browser height*/
 }
 p {text-align: left;}
 
@@ -11,14 +15,16 @@ body {
 	background: #FFFFFF;
 	background-image:url(background.png);
 	text-align: left;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size: 13px;
+	font-family: "Segoe UI", Helvetica, sans-serif;
+	font-size: 14px;
 	color: #000000;
 }
-*
+
+* 
 {
   margin: 0 auto 0 auto;
- text-align:left;}
+ text-align:left;
+}
 
 p {text-align: left;}
 
@@ -90,7 +96,6 @@ width:527px;
 	width:auto;
 }
 
-
 #menu ul li a:hover{
 color:#65A9ED;
 }
@@ -116,10 +121,43 @@ padding-left:15px;
 padding-right:15px;
 }
 
+.screen .main {
+	width: 100%; /* <--now this takes full browser dimension  */
+	height: 100%; /* <--now this takes full browser dimension  */
+}
+
 .clear {
     clear:both;
-  }
+}
 
+.collapsible {
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 18px;
+}
+
+.active, .collapsible:hover {
+	background-color: rgb(151, 151, 151);
+}
+
+.content {
+	padding: 0 18px;
+	display: none;
+	overflow: hidden;
+	background-color: #f1f1f1;
+}
+
+.links
+{
+	text-decoration: none;
+	color: rgb(30, 120, 180)
+}
 
 #content #text h1, #content #text h1 a, #content #text h1 a:visited
 {
