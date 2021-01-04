@@ -53,14 +53,35 @@
                               <li><a href="#">Glossary</a></li>  
                             </ul>
                         </div>
-                        <div id="text">
+                        <div id="text"> <!-- Exercise List begins here -->
                             <h1>Posture</h1>
                             <p>This workout is meant to be done twice daily to improve your posture</p>
                             <button type="button" class="collapsible">Exercise 1</button>
                             <div class="content">
-                            <p>10 Reps     2 Sets<img src="Posture_Exercise_1.gif" /></p>
+                              <div class="description">
+                                <div id="divBlock">10</div>
+                                <div id="divLabel">reps</div><br />
+                                <div id="divBlock">2</div>
+                                <div id="divLabel">sets</div>
+                              </div>
+                              <div><img class="examples" src="gifs/Posture_Ex1.gif" alt="Posture Exercise"></div>
                             </div>
-                                                    
+                            <script>
+                              var coll = document.getElementsByClassName("collapsible");
+                              var i;
+                              
+                              for (i = 0; i < coll.length; i++) {
+                                coll[i].addEventListener("click", function() {
+                                  this.classList.toggle("active");
+                                  var content = this.nextElementSibling;
+                                  if (content.style.display === "block") {
+                                    content.style.display = "none";
+                                  } else {
+                                    content.style.display = "block";
+                                  }
+                                });
+                              }
+                              </script>                                                    
                         </div>
                         </div>
                 </div>

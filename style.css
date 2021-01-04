@@ -126,6 +126,34 @@ padding-right:15px;
 	height: 100%; /* <--now this takes full browser dimension  */
 }
 
+img.examples
+{
+	padding: 2%;
+	width: 46%;
+	vertical-align: middle;
+}
+
+.description
+{
+	align-content: stretch;
+	text-align: center !important;
+	float:left;
+	padding: 2%;
+	width: 46%;
+
+}
+#divBlock 
+{
+	padding-top: 2%;
+	text-align:center; 
+	font-size:xx-large;
+}
+#divLabel 
+{
+	text-align:center;
+	font-size: small;
+}
+
 .clear {
     clear:both;
 }
@@ -147,10 +175,11 @@ padding-right:15px;
 }
 
 .content {
-	padding: 0 18px;
+	padding: 0px;
 	display: none;
 	overflow: hidden;
 	background-color: #f1f1f1;
+	vertical-align: middle;
 }
 
 .links
