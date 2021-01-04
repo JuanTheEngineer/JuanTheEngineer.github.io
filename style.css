@@ -154,6 +154,13 @@ img.examples
 	font-size: small;
 }
 
+#divNote
+{
+	padding: 10px;
+	text-align:left;
+	font-size: smaller;
+}
+
 .clear {
     clear:both;
 }
