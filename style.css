@@ -83,13 +83,13 @@ width:527px;
 }
 #menu ul li , #menu ul li a, #menu ul li a:visited{
 	display:block;
-	float:right;
+	float:left;
 	margin: 0px;
-	text-align:left;
+	text-align: center;
 	line-height:40px;
 	color:#FFFFFF;
-	padding-left:6px;
-	padding-right:2px;
+	padding-left:14px;
+	padding-right:16px;
 	font-size:14px;
 	font-weight:bold;
 	text-decoration:none;
