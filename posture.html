@@ -5,93 +5,64 @@
 <head>
 <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
 <meta name="viewport" content="width=device-width, initial-scale=0.7">
-<style>
-.collapsible {
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.active, .collapsible:hover {
-  background-color: #999;
-}
-
-.content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #ffffff;
-}
-</style>
 <link rel="stylesheet" type="text/css" href="style.css" />
 <title>Juan's Exercise Database</title>
 </head>
-
 <body>
-    <div id="page">
-    	        <div id="header">
-                	<img src="logo.png" alt="XHTML Template by Bryant Smith" />
+  <div id="page">
+    <div id="header">
+        <img src="logo.png" alt="XHTML Template by Bryant Smith" />
                     <!-- Include an <h1></h1> tag with your site's title here, or make a transparent PNG like the one I used -->
-                </div>
-    
-                </div>
-
-                <div id="content">
-                	<div id="container">
-                        <div id="main">
-                        <div id="menu">
-                            <ul>
-                              <li><a href="index.html">Home</a></li>
-                              <li><a href="start.html">Start</a></li>  
-                              <li><a href="#">Programs</a></li>  
-                              <li><a href="#">Glossary</a></li>  
-                            </ul>
-                        </div>
-                        <div id="text"> <!-- Exercise List begins here -->
-                            <h1>Posture</h1>
-                            <p>This workout is meant to be done twice daily to improve your posture</p>
-                            <button type="button" class="collapsible">Exercise 1</button>
-                            <div class="content">
-                              <div class="description">
-                                <div id="divBlock">10</div>
-                                <div id="divLabel">reps</div><br />
-                                <div id="divBlock">2</div>
-                                <div id="divLabel">sets</div>
-                              </div>
-                              <div><img class="examples" src="gifs/Posture_Ex1.gif" alt="Posture Exercise"></div>
-                              <div id="divNote">Note: Inhale forward, Exhale back. Keep chin to chest and butt on the ground.</div>
-                            </div>
-                            <script>
-                              var coll = document.getElementsByClassName("collapsible");
-                              var i;
-                              
-                              for (i = 0; i < coll.length; i++) {
-                                coll[i].addEventListener("click", function() {
-                                  this.classList.toggle("active");
-                                  var content = this.nextElementSibling;
-                                  if (content.style.display === "block") {
-                                    content.style.display = "none";
-                                  } else {
-                                    content.style.display = "block";
-                                  }
-                                });
-                              }
-                              </script>                                                    
-                        </div>
-                        </div>
-                </div>
-                <div class="clear"></div>
-                <div id="footer">
-                	<p><a href="http://www.bryantsmith.com/template">free xhtml template</a> by <a href="http://www.bryantsmith.com">web page designer</a></p>
-                </div>
-        
-     </div>
-        
+    </div>
+    <div id="content">
+      <div id="container">
+        <div id="main">
+          <div id="menu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="start.html">Start</a></li>  
+              <li><a href="programs.html">Programs</a></li>  
+              <li><a href="#">Glossary</a></li>  
+            </ul>
+          </div>
+          <div id="text"> <!-- Exercise List begins here -->
+            <h1>Posture</h1>
+            <p>This workout is meant to be done twice daily to improve your posture</p>
+            <button type="button" class="collapsible">Exercise 1</button>
+            <div class="content">
+              <div class="description">
+                <div id="divBlock">10</div>
+                <div id="divLabel">reps</div><br />
+                <div id="divBlock">2</div>
+                <div id="divLabel">sets</div>
+              </div>
+              <div><img class="examples" src="gifs/Posture_Ex1.gif" alt="Posture Exercise"></div>
+              <div id="divNote">Note: Inhale forward, Exhale back. Keep chin to chest and butt on the ground.</div>
+            </div>
+            <script>
+              var coll = document.getElementsByClassName("collapsible");
+              var i;
+              
+              for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                  this.classList.toggle("active");
+                  var content = this.nextElementSibling;
+                  if (content.style.display === "block") {
+                    content.style.display = "none";
+                  } else {
+                    content.style.display = "block";
+                  }
+                });
+              }
+            </script>                                                    
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div id="footer">
+        <p><a href="http://www.bryantsmith.com/template">free xhtml template</a> by <a href="http://www.bryantsmith.com">web page designer</a></p>
+      </div>
+    </div>    
+  </div> 
 </body>
 </html>

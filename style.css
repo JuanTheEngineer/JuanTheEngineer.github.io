@@ -26,6 +26,24 @@ body {
  text-align:left;
 }
 
+dd 
+{
+	padding-left: 24px;
+	padding-bottom: 12px;
+}
+
+dt 
+{
+	padding-left: 12px;
+	
+}
+
+h3
+{
+	
+}
+
+
 p {text-align: left;}
 
 #page
@@ -193,6 +211,15 @@ img.examples
 {
 	text-decoration: none;
 	color: rgb(30, 120, 180)
+}
+
+.indent
+{
+	text-indent: 12px;
+}
+.indent2
+{
+	text-indent: 24px;
 }
 
 #content #text h1, #content #text h1 a, #content #text h1 a:visited
