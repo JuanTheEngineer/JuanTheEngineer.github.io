@@ -1,6 +1,9 @@
 # Chatgpt I need to figure out how to key access key a secret
 chatgpt_api.py
 
+# Deprecated gif generator is still good for referencing but I don't want it on git
+youtube_to_gif.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

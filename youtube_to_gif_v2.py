@@ -11,7 +11,6 @@ import yt_dlp
 import ffmpeg
 from chatgpt_api import get_chatgpt_response
 
-
 _default_clients["ANDROID"]["context"]["client"]["clientVersion"] = "19.08.35"
 _default_clients["IOS"]["context"]["client"]["clientVersion"] = "19.08.35"
 _default_clients["ANDROID_EMBED"]["context"]["client"]["clientVersion"] = "19.08.35"
@@ -19,6 +18,7 @@ _default_clients["IOS_EMBED"]["context"]["client"]["clientVersion"] = "19.08.35"
 _default_clients["IOS_MUSIC"]["context"]["client"]["clientVersion"] = "6.41"
 _default_clients["ANDROID_MUSIC"] = _default_clients["ANDROID_CREATOR"]
 
+
 def get_throttling_function_name(js: str) -> str:
     """Extract the name of the function that computes the throttling parameter.
 
@@ -33,12 +33,12 @@ def get_throttling_function_name(js: str) -> str:
         r'\([a-z]\s*=\s*([a-zA-Z0-9$]+)(\[\d+\])?\([a-z]\)',
         r'\([a-z]\s*=\s*([a-zA-Z0-9$]+)(\[\d+\])\([a-z]\)',
     ]
-    #logger.debug('Finding throttling function name')
+    # logger.debug('Finding throttling function name')
     for pattern in function_patterns:
         regex = re.compile(pattern)
         function_match = regex.search(js)
         if function_match:
-            #logger.debug("finished regex search, matched: %s", pattern)
+            # logger.debug("finished regex search, matched: %s", pattern)
             if len(function_match.groups()) == 1:
                 return function_match.group(1)
             idx = function_match.group(2)
@@ -57,9 +57,11 @@ def get_throttling_function_name(js: str) -> str:
     raise RegexMatchError(
         caller="get_throttling_function_name", pattern="multiple"
     )
+
 
 cipher.get_throttling_function_name = get_throttling_function_name
 
+
 def get_throttling_function_name(js: str) -> str:
     """Extract the name of the function that computes the throttling parameter.
 
@@ -74,12 +76,12 @@ def get_throttling_function_name(js: str) -> str:
         r'\([a-z]\s*=\s*([a-zA-Z0-9$]+)(\[\d+\])?\([a-z]\)',
         r'\([a-z]\s*=\s*([a-zA-Z0-9$]+)(\[\d+\])\([a-z]\)',
     ]
-    #logger.debug('Finding throttling function name')
+    # logger.debug('Finding throttling function name')
     for pattern in function_patterns:
         regex = re.compile(pattern)
         function_match = regex.search(js)
         if function_match:
-            #logger.debug("finished regex search, matched: %s", pattern)
+            # logger.debug("finished regex search, matched: %s", pattern)
             if len(function_match.groups()) == 1:
                 return function_match.group(1)
             idx = function_match.group(2)
@@ -98,35 +100,47 @@ def get_throttling_function_name(js: str) -> str:
     raise RegexMatchError(
         caller="get_throttling_function_name", pattern="multiple"
     )
+
 
 cipher.get_throttling_function_name = get_throttling_function_name
 
 # Extended list of common aspect ratios
 ASPECT_RATIOS = {
-    '16:9': 16/9,   # Widescreen
-    '4:3': 4/3,     # Traditional TV
-    '1:1': 1/1,     # Square, common on Instagram
-    '21:9': 21/9,   # Ultra-widescreen
-    '9:16': 9/16,   # Portrait, common on mobile videos (Instagram stories, TikTok)
-    '3:2': 3/2,     # Photography, DSLR aspect ratio
-    '2.39:1': 2.39, # Cinematic widescreen
-    '5:4': 5/4 ,    # Near-square, used in older video formats
-    '3:4': 3/4,     # Near-square, used in older video formats'
+    '16:9': 16 / 9,  # Widescreen
+    '4:3': 4 / 3,  # Traditional TV
+    '1:1': 1 / 1,  # Square, common on Instagram
+    '21:9': 21 / 9,  # Ultra-widescreen
+    '9:16': 9 / 16,  # Portrait, common on mobile videos (Instagram stories, TikTok)
+    '3:2': 3 / 2,  # Photography, DSLR aspect ratio
+    '2.39:1': 2.39,  # Cinematic widescreen
+    '5:4': 5 / 4,  # Near-square, used in older video formats
+    '3:4': 3 / 4,  # Near-square, used in older video formats'
 }
 
 
-def download_video_with_ytdlp(youtube_url, output_folder):
+def download_video_with_ytdlp(video_url, output_folder):
     ydl_opts = {
         'format': 'bestvideo+bestaudio/best',
         'outtmpl': os.path.join(output_folder, '%(title)s.%(ext)s'),
-        'merge_output_format': 'mp4',  # Ensure video and audio are merged
+        'merge_output_format': 'mp4',
     }
+
+    # Check if it's a TikTok link or a YouTube link
+    if 'tiktok.com' in video_url:
+        print("Downloading from TikTok...")
+    elif 'youtube.com' in video_url or 'youtu.be' in video_url:
+        print("Downloading from YouTube...")
+    else:
+        raise ValueError("Unsupported URL. Please provide a valid YouTube or TikTok link.")
+
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        info_dict = ydl.extract_info(youtube_url, download=True)
+        info_dict = ydl.extract_info(video_url, download=True)
         video_file = ydl.prepare_filename(info_dict)
     return video_file
 
+
 def get_exercise_name(youtube_url):
+    return "SingleLegHipThrusts.gif"
     yt = YouTube(youtube_url)
     print('Title:', yt.title)
     print('Author:', yt.author)
@@ -134,8 +148,7 @@ def get_exercise_name(youtube_url):
     print('Number of views:', yt.views)
     print('Length of video:', yt.length, 'seconds')
     print('Description:', yt.description)
-    
-    
+
     # Define the prompt to send to ChatGPT
     prompt = "You are going  to help me name my gifs. They are gifs demonstrating an exercise. The format I want is: '[ExerciseName].gif." \
              "I want the name in PascalCAse. I will give you a video title and a description to make your judgement." \
@@ -150,10 +163,9 @@ def download_and_process_youtube_video(youtube_url, start_time, end_time, target
     gif_name = get_exercise_name(youtube_url)
     print("Gif name:", gif_name)
     print("Step zero done!")
-    
-    
+
     # Step 1: Download YouTube video
-    video_path = download_video_with_ytdlp(youtube_url=youtube_url, output_folder=output_folder)
+    video_path = download_video_with_ytdlp(video_url=youtube_url, output_folder=output_folder)
     print("Step one done!")
 
     def get_video_info_ffmpeg(video_path):
@@ -176,7 +188,7 @@ def download_and_process_youtube_video(youtube_url, start_time, end_time, target
 
     # Calculate the current aspect ratio of the video
     current_aspect_ratio = width / height
-    target_ratio = ASPECT_RATIOS.get(target_aspect_ratio, 16/9)  # Default to 16:9 if not found
+    target_ratio = ASPECT_RATIOS.get(target_aspect_ratio, 16 / 9)  # Default to 16:9 if not found
 
     # Calculate cropping to fit the target aspect ratio without stretching
     if current_aspect_ratio > target_ratio:
@@ -194,7 +206,7 @@ def download_and_process_youtube_video(youtube_url, start_time, end_time, target
         x2 = width
         y2 = y1 + new_height
 
-    print(f"Cropping to {x2-x1}x{y2-y1} to fit aspect ratio {target_ratio}")
+    print(f"Cropping to {x2 - x1}x{y2 - y1} to fit aspect ratio {target_ratio}")
 
     # Step 4: Crop and resize video
     clip = clip.crop(x1=x1, y1=y1, x2=x2, y2=y2)
@@ -214,13 +226,16 @@ def download_and_process_youtube_video(youtube_url, start_time, end_time, target
 
     print(f"Done! GIF saved to {gif_output_path + gif_name}")
 
+
 if __name__ == "__main__":
     # Command-line argument parsing
-    parser = argparse.ArgumentParser(description='Download a YouTube video, process it, and convert it to GIF with target aspect ratio.')
+    parser = argparse.ArgumentParser(
+        description='Download a YouTube video, process it, and convert it to GIF with target aspect ratio.')
     parser.add_argument('youtube_url', type=str, help='The URL of the YouTube video')
     parser.add_argument('start_time', type=float, help='Start time in seconds')
     parser.add_argument('end_time', type=float, help='End time in seconds')
-    parser.add_argument('target_aspect_ratio', type=str, choices=ASPECT_RATIOS.keys(), help='The target aspect ratio (e.g., 16:9, 4:3, 1:1, etc.)')
+    parser.add_argument('target_aspect_ratio', type=str, choices=ASPECT_RATIOS.keys(),
+                        help='The target aspect ratio (e.g., 16:9, 4:3, 1:1, etc.)')
     parser.add_argument('output_folder', type=str, help='Folder to save the output GIF')
 
     args = parser.parse_args()
@@ -229,4 +244,5 @@ if __name__ == "__main__":
         os.makedirs(args.output_folder)
 
     # Call the main function with parsed arguments
-    download_and_process_youtube_video(args.youtube_url, args.start_time, args.end_time, args.target_aspect_ratio, args.output_folder)
+    download_and_process_youtube_video(args.youtube_url, args.start_time, args.end_time, args.target_aspect_ratio,
+                                       args.output_folder)
