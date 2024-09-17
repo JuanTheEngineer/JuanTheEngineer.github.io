@@ -140,7 +140,7 @@ def download_video_with_ytdlp(video_url, output_folder):
 
 
 def get_exercise_name(youtube_url):
-    return "SingleLegHipThrusts.gif"
+    # return "SingleLegHipThrusts.gif"
     yt = YouTube(youtube_url)
     print('Title:', yt.title)
     print('Author:', yt.author)
@@ -214,12 +214,13 @@ def download_and_process_youtube_video(youtube_url, start_time, end_time, target
 
     # Step 5: Convert to GIF and save it
     gif_output_path = os.path.join(output_folder, gif_name)
-    clip.write_gif(gif_output_path, fps=15)
+    clip.write_gif(gif_output_path, fps=9)
     print("Step four done!")
     # Get the size of the GIF file in MB
     gif_size = os.path.getsize(gif_output_path) / (1024 * 1024)  # Convert bytes to MB
     print(f"GIF Size: {gif_size:.2f} MB")
     print("Cleaning up...")
+    clip.close()
 
     # Clean up: delete the original video file
     os.remove(video_path)
