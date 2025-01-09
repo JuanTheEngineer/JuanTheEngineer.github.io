@@ -1,0 +1,153 @@
+{
+  "programs": [
+    {
+      "id": "program1",
+      "title": "Agility Lower Body Program 1.1",
+      "requirements": "Dumbbells, Exercise Band, Swiss Ball, Trap Bar",
+      "exercises": [
+        {
+          "name": "Warm Up 1: Decline Pistols",
+          "gif": "gifs/DeclinePistols.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Two seconds down, one second up. Elevate your heel.",
+          "extraLabel": "reps"
+        },
+        {
+          "name": "Warm Up 2: Heel Taps",
+          "gif": "gifs/HeelTaps.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "",
+          "extraLabel": "reps"
+        },
+        {
+          "name": "Warm Up 3: TKEs",
+          "gif": "gifs/TKEs.gif",
+          "reps": "20",
+          "sets": "4",
+          "note": "Keep the sole of your foot from rolling inward.",
+          "extraLabel": "reps"
+        },
+        {
+          "name": "Exercise 1: DB Squat Jumps",
+          "gif": "gifs/DBSquatJumps.gif",
+          "reps": "4",
+          "sets": "6",
+          "note": "Weight: 10 lbs",
+          "extraLabel": "reps"
+        },
+        {
+          "name": "Exercise 2: Trap Bar Deadlift",
+          "gif": "gifs/TrapBarDeadlift.gif",
+          "reps": "8",
+          "sets": "4",
+          "note": "Rate of Perceived Exertion: 8/10",
+          "extraLabel": "reps"
+        },
+        {
+          "name": "Exercise 3: Swiss Ball Leg Curls",
+          "gif": "gifs/SwissBallLegCurls.gif",
+          "reps": "100 Total",
+          "sets": "Varies",
+          "note": "Focus on keeping your balance.",
+          "extraLabel": "reps"
+        },
+        {
+          "name": "Exercise 4: Side Planks",
+          "gif": "gifs/KneelingSidePlanks.gif",
+          "reps": "45",
+          "sets": "4",
+          "note": "Kneeling.",
+          "extraLabel": "secs"
+        },
+        {
+          "name": "Exercise 5: Hindu Squats",
+          "gif": "gifs/HinduSquats.gif",
+          "reps": "3",
+          "sets": "1",
+          "note": "No resting.",
+          "extraLabel": "min"
+        }
+      ]
+    },
+    {
+      "id": "program2",
+      "title": "Agility Lower Body Program 2.1",
+      "requirements": "Dumbbells, Exercise Band, Trap Bar",
+      "exercises": [
+        {
+          "name": "Warm Up 1: Decline Pistols",
+          "gif": "gifs/DeclinePistols.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Two seconds down, one second up. Elevate your heel.",
+          "extraLabel": "reps"
+        },
+        {
+          "name": "Warm Up 2: Heel Taps",
+          "gif": "gifs/HeelTaps.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Weight: 10 lbs",
+          "extraLabel": "reps"
+        },
+        {
+          "name": "Warm Up 3: TKEs",
+          "gif": "gifs/TKEs.gif",
+          "reps": "25",
+          "sets": "4",
+          "note": "Keep the sole of your foot from rolling inward.",
+          "extraLabel": "reps"
+        },
+        {
+          "name": "Exercise 1: DB Squat Jumps",
+          "gif": "gifs/DBSquatJumps.gif",
+          "reps": "3",
+          "sets": "5",
+          "note": "Weight: 10 lbs",
+          "extraLabel": "reps"
+        },
+        {
+          "name": "Exercise 2: Trap Bar Deadlift",
+          "gif": "gifs/TrapBarDeadlift.gif",
+          "reps": "3-5",
+          "sets": "5",
+          "note": "Work up to your 3 to 5 rep max.",
+          "extraLabel": "reps"
+        },
+        {
+          "name": "Exercise 3: Split Squats & Iso-Holds",
+          "gif": "gifs/SplitSquats.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Controlled on the way down. This is a super set.",
+          "extraLabel": "reps",
+          "subExercise": {
+            "gif": "gifs/SplitSquatIsoHold.jpg",
+            "reps": "30",
+            "sets": "4",
+            "note": "Super set as well.",
+            "extraLabel": "secs"
+          }
+        },
+        {
+          "name": "Exercise 4: GHR",
+          "gif": "gifs/GHR.gif",
+          "reps": "30 Total",
+          "sets": "Varies",
+          "note": "Substitute any hamstring workout if needed.",
+          "extraLabel": "reps"
+        },
+        {
+          "name": "Exercise 5: Rolling Side Planks",
+          "gif": "gifs/RollingSidePlanks.gif",
+          "reps": "10",
+          "sets": "5",
+          "note": "Rolling to each side is one rep.",
+          "extraLabel": "reps"
+        }
+      ]
+    }
+  ]
+}
