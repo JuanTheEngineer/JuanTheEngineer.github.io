@@ -90,7 +90,7 @@
 
               const divLabelReps = document.createElement('div');
               divLabelReps.id = 'divLabel';
-              divLabelReps.innerText = ex.extraLabel || 'reps';
+              divLabelReps.innerText = ex.repUnits || 'reps';
 
               // Break for spacing
               const br = document.createElement('br');
@@ -139,7 +139,7 @@
                 subReps.innerText = ex.subExercise.reps;
                 const subRepsLabel = document.createElement('div');
                 subRepsLabel.id = 'divLabel';
-                subRepsLabel.innerText = ex.subExercise.extraLabel || 'reps';
+                subRepsLabel.innerText = ex.subExercise.repUnits || 'reps';
 
                 const subBr = document.createElement('br');
 

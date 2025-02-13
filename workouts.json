@@ -11,7 +11,7 @@
           "reps": "10",
           "sets": "4",
           "note": "Two seconds down, one second up. Elevate your heel.",
-          "extraLabel": "reps"
+          "repUnits": "reps"
         },
         {
           "name": "Warm Up 2: Heel Taps",
@@ -19,7 +19,7 @@
           "reps": "10",
           "sets": "4",
           "note": "",
-          "extraLabel": "reps"
+          "repUnits": "reps"
         },
         {
           "name": "Warm Up 3: TKEs",
@@ -27,7 +27,7 @@
           "reps": "20",
           "sets": "4",
           "note": "Keep the sole of your foot from rolling inward.",
-          "extraLabel": "reps"
+          "repUnits": "reps"
         },
         {
           "name": "Exercise 1: DB Squat Jumps",
@@ -35,7 +35,7 @@
           "reps": "4",
           "sets": "6",
           "note": "Weight: 10 lbs",
-          "extraLabel": "reps"
+          "repUnits": "reps"
         },
         {
           "name": "Exercise 2: Trap Bar Deadlift",
@@ -43,7 +43,7 @@
           "reps": "8",
           "sets": "4",
           "note": "Rate of Perceived Exertion: 8/10",
-          "extraLabel": "reps"
+          "repUnits": "reps"
         },
         {
           "name": "Exercise 3: Swiss Ball Leg Curls",
@@ -51,7 +51,7 @@
           "reps": "100 Total",
           "sets": "Varies",
           "note": "Focus on keeping your balance.",
-          "extraLabel": "reps"
+          "repUnits": "reps"
         },
         {
           "name": "Exercise 4: Side Planks",
@@ -59,7 +59,7 @@
           "reps": "45",
           "sets": "4",
           "note": "Kneeling.",
-          "extraLabel": "secs"
+          "repUnits": "secs"
         },
         {
           "name": "Exercise 5: Hindu Squats",
@@ -67,7 +67,7 @@
           "reps": "3",
           "sets": "1",
           "note": "No resting.",
-          "extraLabel": "min"
+          "repUnits": "min"
         }
       ]
     },
@@ -82,7 +82,7 @@
           "reps": "10",
           "sets": "4",
           "note": "Two seconds down, one second up. Elevate your heel.",
-          "extraLabel": "reps"
+          "repUnits": "reps"
         },
         {
           "name": "Warm Up 2: Heel Taps",
@@ -90,7 +90,7 @@
           "reps": "10",
           "sets": "4",
           "note": "Weight: 10 lbs",
-          "extraLabel": "reps"
+          "repUnits": "reps"
         },
         {
           "name": "Warm Up 3: TKEs",
@@ -98,7 +98,7 @@
           "reps": "25",
           "sets": "4",
           "note": "Keep the sole of your foot from rolling inward.",
-          "extraLabel": "reps"
+          "repUnits": "reps"
         },
         {
           "name": "Exercise 1: DB Squat Jumps",
@@ -106,7 +106,7 @@
           "reps": "3",
           "sets": "5",
           "note": "Weight: 10 lbs",
-          "extraLabel": "reps"
+          "repUnits": "reps"
         },
         {
           "name": "Exercise 2: Trap Bar Deadlift",
@@ -114,7 +114,7 @@
           "reps": "3-5",
           "sets": "5",
           "note": "Work up to your 3 to 5 rep max.",
-          "extraLabel": "reps"
+          "repUnits": "reps"
         },
         {
           "name": "Exercise 3: Split Squats & Iso-Holds",
@@ -122,13 +122,13 @@
           "reps": "10",
           "sets": "4",
           "note": "Controlled on the way down. This is a super set.",
-          "extraLabel": "reps",
+          "repUnits": "reps",
           "subExercise": {
             "gif": "gifs/SplitSquatIsoHold.jpg",
             "reps": "30",
             "sets": "4",
             "note": "Super set as well.",
-            "extraLabel": "secs"
+            "repUnits": "secs"
           }
         },
         {
@@ -137,7 +137,7 @@
           "reps": "30 Total",
           "sets": "Varies",
           "note": "Substitute any hamstring workout if needed.",
-          "extraLabel": "reps"
+          "repUnits": "reps"
         },
         {
           "name": "Exercise 5: Rolling Side Planks",
@@ -145,7 +145,85 @@
           "reps": "10",
           "sets": "5",
           "note": "Rolling to each side is one rep.",
-          "extraLabel": "reps"
+          "repUnits": "reps"
+        }
+      ]
+    },
+    {
+      "id": "reload1",
+      "title": "Reload PT Program 1",
+      "requirements": "Dumbbells, Exercise Band",
+      "exercises": [
+        {
+          "name": "Warm Up 1: Decline Pistols",
+          "gif": "gifs/DeclinePistols.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Two seconds down, one second up. Elevate your heel.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 2: Heel Taps",
+          "gif": "gifs/HeelTaps.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Weight: 10 lbs",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 3: TKEs",
+          "gif": "gifs/TKEs.gif",
+          "reps": "25",
+          "sets": "4",
+          "note": "Keep the sole of your foot from rolling inward.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 1: DB Squat Jumps",
+          "gif": "gifs/DBSquatJumps.gif",
+          "reps": "3",
+          "sets": "5",
+          "note": "Weight: 10 lbs",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 2: Trap Bar Deadlift",
+          "gif": "gifs/TrapBarDeadlift.gif",
+          "reps": "3-5",
+          "sets": "5",
+          "note": "Work up to your 3 to 5 rep max.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 3: Split Squats & Iso-Holds",
+          "gif": "gifs/SplitSquats.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Controlled on the way down. This is a super set.",
+          "repUnits": "reps",
+          "subExercise": {
+            "gif": "gifs/SplitSquatIsoHold.jpg",
+            "reps": "30",
+            "sets": "4",
+            "note": "Super set as well.",
+            "repUnits": "secs"
+          }
+        },
+        {
+          "name": "Exercise 4: GHR",
+          "gif": "gifs/GHR.gif",
+          "reps": "30 Total",
+          "sets": "Varies",
+          "note": "Substitute any hamstring workout if needed.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 5: Rolling Side Planks",
+          "gif": "gifs/RollingSidePlanks.gif",
+          "reps": "10",
+          "sets": "5",
+          "note": "Rolling to each side is one rep.",
+          "repUnits": "reps"
         }
       ]
     }
