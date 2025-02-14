@@ -1,0 +1,71 @@
+{
+  "plans": [
+    {
+      "name": "Strength",
+      "description": "All programs for Strength by zone.",
+      "subPlans": [
+        {
+          "name": "Push/Pull/Legs 3-Day Rotation",
+          "description": "Strength workouts that push your muscles to their limits and aim to increase your lift capacity.",
+          "programs": [
+            "ppl_push_day_1-0",
+            "ppl_pull_day_1-0",
+            "ppl_leg_day_1-0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Agility",
+      "description": "All programs for Agility by zone.",
+      "subPlans": [
+        {
+          "name": "Upper Body",
+          "description": "Agility workouts for the upper body focused on quick movements and coordination.",
+          "programs": [
+            "agi_up_1-1",
+            "agi_up_1-2",
+            "agi_up_2-1"
+          ]
+        },
+        {
+          "name": "Lower Body",
+          "description": "Agility workouts for the lower body emphasizing power, balance, and speed.",
+          "programs": [
+            "agi_lo_1-1",
+            "agi_lo_1-2",
+            "agi_lo_2-1",
+            "agi_lo_2-2",
+            "agi_lo_3-1"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Running",
+      "description": "All programs for Runners.",
+      "subPlans": [
+        {
+          "name": "Asics’ Strength & Stretch Guide",
+          "description": "A guide combining strength and stretching specifically for runners.",
+          "programs": [
+            "asics_1-0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Other",
+      "description": "All programs for Special workouts.",
+      "subPlans": [
+        {
+          "name": "Special Workouts",
+          "description": "Workouts designed for specific goals and special training needs.",
+          "programs": [
+            "posture_1-0"
+          ]
+        }
+      ]
+    }
+  ]
+}
