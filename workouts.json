@@ -72,6 +72,84 @@
       ]
     },
     {
+      "id": "agility_lower_1-2",
+      "title": "Agility Lower Body Program 1.2",
+      "requirements": "Dumbbells, Exercise Band, Power Sled, Swiss Ball, Trap Bar",
+      "exercises": [
+        {
+          "name": "Warm Up 1: Box Pistols",
+          "gif": "gifs/BoxPistols.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Two seconds down, 1 second up. Elevate your heel.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 2: KB Passes",
+          "gif": "gifs/KBPasses.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 3: Low Box Drops",
+          "gif": "gifs/LowBoxDrops.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Keep the sole of your foot from rolling inward.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 1: DB Box Squat",
+          "gif": "gifs/DBBoxSquats.gif",
+          "reps": "15",
+          "sets": "5",
+          "note": "Weight: 10 lbs",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 2: DB RDL & Split Squats",
+          "gif": "gifs/DBRDLs.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Meant to be a Super Set.",
+          "repUnits": "reps",
+          "subExercise": {
+            "gif": "gifs/SplitSquats.gif",
+            "reps": "12",
+            "sets": "4",
+            "note": "Controlled on the way down. Meant to be a Super Set.",
+            "repUnits": "reps"
+          }
+        },
+        {
+          "name": "Exercise 3: 45° Back Raise",
+          "gif": "gifs/45DegreeBackRaises.gif",
+          "reps": "60 Total",
+          "sets": "Varies",
+          "note": "Go through full range of motion.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 4: GHR Iso-Hold",
+          "gif": "gifs/GHRIsoHold.gif",
+          "reps": "30",
+          "sets": "4",
+          "note": "Using a Weight.",
+          "repUnits": "secs"
+        },
+        {
+          "name": "Exercise 5: Heavy Sled Suicide",
+          "gif": "gifs/HeavySledSuicide.gif",
+          "reps": "30",
+          "sets": "2",
+          "note": "Add Weight to Sled.",
+          "repUnits": "yd"
+        }
+      ]
+    },
+    {
       "id": "agility_lower_2-1",
       "title": "Agility Lower Body Program 2.1",
       "requirements": "Dumbbells, Exercise Band, Trap Bar",
@@ -150,80 +228,83 @@
       ]
     },
     {
-      "id": "agility_lower_1-2",
-      "title": "Agility Lower Body Program 1.2",
-      "requirements": "Dumbbells, Exercise Band, Power Sled, Swiss Ball, Trap Bar",
+      "id": "agility_lower_2-2",
+      "title": "Agility Lower Body Program 2.2",
+      "requirements": "Box, Dumbbells, Squat Bar",
       "exercises": [
         {
-          "name": "Warm Up 1: Box Pistols",
+          "name": "Warm Up 1: Box Pistol Jumps",
           "gif": "gifs/BoxPistols.gif",
-          "reps": "10",
+          "reps": "5",
+          "repUnits": "reps",
           "sets": "4",
-          "note": "Two seconds down, 1 second up. Elevate your heel.",
-          "repUnits": "reps"
+          "note": "Start with low box if necessary."
         },
         {
           "name": "Warm Up 2: KB Passes",
           "gif": "gifs/KBPasses.gif",
           "reps": "10",
-          "sets": "4",
-          "note": "",
-          "repUnits": "reps"
-        },
-        {
-          "name": "Warm Up 3: Low Box Drops",
-          "gif": "gifs/LowBoxDrops.gif",
-          "reps": "10",
-          "sets": "4",
-          "note": "Keep the sole of your foot from rolling inward.",
-          "repUnits": "reps"
-        },
-        {
-          "name": "Exercise 1: DB Box Squat",
-          "gif": "gifs/DBBoxSquats.gif",
-          "reps": "15",
-          "sets": "5",
-          "note": "Weight: 10 lbs",
-          "repUnits": "reps"
-        },
-        {
-          "name": "Exercise 2: DB RDL & Split Squats",
-          "gif": "gifs/DBRDLs.gif",
-          "reps": "10",
-          "sets": "4",
-          "note": "Meant to be a Super Set.",
           "repUnits": "reps",
-          "subExercise": {
-            "gif": "gifs/SplitSquats.gif",
-            "reps": "12",
-            "sets": "4",
-            "note": "Controlled on the way down. Meant to be a Super Set.",
-            "repUnits": "reps"
-          }
-        },
-        {
-          "name": "Exercise 3: 45° Back Raise",
-          "gif": "gifs/45DegreeBackRaises.gif",
-          "reps": "60 Total",
-          "sets": "Varies",
-          "note": "Go through full range of motion.",
-          "repUnits": "reps"
-        },
-        {
-          "name": "Exercise 4: GHR Iso-Hold",
-          "gif": "gifs/GHRIsoHold.gif",
-          "reps": "30",
           "sets": "4",
-          "note": "Using a Weight.",
-          "repUnits": "secs"
+          "note": "One rep for each side."
         },
         {
-          "name": "Exercise 5: Heavy Sled Suicide",
-          "gif": "gifs/HeavySledSuicide.gif",
-          "reps": "30",
-          "sets": "2",
-          "note": "Add Weight to Sled.",
-          "repUnits": "yd"
+          "name": "Warm Up 3: Low Box Jump to Heiden",
+          "gif": "gifs/LowBoxJumptoHeiden.gif",
+          "reps": "5",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Land softly and compress your body on each rep."
+        },
+        {
+          "name": "Exercise 1: Front Squats",
+          "gif": "gifs/FrontSquats.gif",
+          "reps": "5",
+          "repUnits": "reps",
+          "sets": "5",
+          "note": "Rate of Perceived Exertion: 8/10"
+        },
+        {
+          "name": "Exercise 2: Step-ups",
+          "gif": "gifs/StepUps.gif",
+          "reps": "12",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Complete reps for each side."
+        },
+        {
+          "name": "Exercise 3: KB Swings, Box Depth Drops, Broad Jumps",
+          "compoundExercises": [
+            {
+              "reps": "4",
+              "repUnits": "reps",
+              "sets": "10",
+              "gif": "gifs/KBSwings.gif",
+              "note": "Squat on each rep and press your hips forward at extension. Meant to be a Super Set."
+            },
+            {
+              "reps": "2",
+              "repUnits": "reps",
+              "sets": "4",
+              "gif": "gifs/BoxDepthDrop.gif",
+              "note": "You may add a vertical drop at the end. Meant to be a Super Set."
+            },
+            {
+              "reps": "1",
+              "repUnits": "rep",
+              "sets": "4",
+              "gif": "gifs/BroadJumps.gif",
+              "note": "Jump as far as you can. Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "name": "Exercise 4: DB Side Bends",
+          "gif": "gifs/DBSideBends.gif",
+          "reps": "25",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Complete reps for each side."
         }
       ]
     },

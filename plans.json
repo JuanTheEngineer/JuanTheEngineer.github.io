@@ -23,20 +23,20 @@
           "name": "Upper Body",
           "description": "Agility workouts for the upper body focused on quick movements and coordination.",
           "programs": [
-            "agi_up_1-1",
-            "agi_up_1-2",
-            "agi_up_2-1"
+            "agility_upper_1-1",
+            "agility_upper_1-2",
+            "agility_upper_2-1"
           ]
         },
         {
           "name": "Lower Body",
           "description": "Agility workouts for the lower body emphasizing power, balance, and speed.",
           "programs": [
-            "agi_lo_1-1",
-            "agi_lo_1-2",
-            "agi_lo_2-1",
-            "agi_lo_2-2",
-            "agi_lo_3-1"
+            "agility_lower_1-1",
+            "agility_lower_1-2",
+            "agility_lower_2-1",
+            "agility_lower_2-2",
+            "agility_lower_3-1"
           ]
         }
       ]
