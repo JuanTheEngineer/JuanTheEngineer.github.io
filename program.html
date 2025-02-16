@@ -1,9 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=0.7">
   <link rel="stylesheet" type="text/css" href="style.css" />
   <title>Juan's Exercise Database</title>
+  <style>
+    /* Collapsible button styling */
+    .collapsible {
+      background-color: #f4f4f4;
+      color: #333;
+      cursor: pointer;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      justify-content: flex-start; /* left align content */
+      align-items: center;
+      transition: background 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+
+    /* Collapsible content styling */
+    .collapsible:hover {
+      background-color: #e0e0e0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Chevron styling */
+    .chevron {
+      transition: transform 0.3s ease;
+      margin-left: 8px;
+    }
+
+    /* Rotate chevron when active */
+    .collapsible.active .chevron {
+      transform: rotate(180deg);
+    }
+
+    /* Hide the tap hint when expanded */
+    .collapsible.active .tap-hint {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div id="page">
@@ -29,7 +72,7 @@
           <h1 id="program-title"></h1>
           <p id="program-requirements"></p>
 
-          <!-- We will dynamically insert the collapsible exercise buttons here -->
+          <!-- Dynamically inserted collapsible exercise buttons will appear here -->
           <div id="exercise-list"></div>
 
         </div> <!-- end #text -->
@@ -46,7 +89,7 @@
 <script>
   // 1. Grab the program ID from the URL, e.g., ?id=program1
   const urlParams = new URLSearchParams(window.location.search);
-  const programId = urlParams.get('id') || 'program1'; // fallback to program1 if none provided
+  const programId = urlParams.get('id') || 'agility_lower_1-1'; // fallback to program1 if none provided
 
   // 2. Fetch the workouts JSON
   fetch('workouts.json')
@@ -69,11 +112,32 @@
             // Build the exercise collapsibles
             const container = document.getElementById('exercise-list');
             program.exercises.forEach(ex => {
-              // Create the collapsible button
+              // Create the collapsible button with a chevron indicator
               const button = document.createElement('button');
               button.type = 'button';
               button.className = 'collapsible';
-              button.innerText = ex.name;
+
+              // Create a span for the chevron icon (use an HTML entity for reliability)
+              const chevron = document.createElement('span');
+              chevron.className = 'chevron';
+              // Using HTML entity for the downward triangle:
+              chevron.innerHTML = '&#9660;';
+
+              // Create a span for the workout title
+              const titleSpan = document.createElement('span');
+              titleSpan.textContent = ex.name;
+              titleSpan.style.marginLeft = '8px'; // spacing between chevron and title
+
+              // // Create a span for the tap hint
+              // const tapHint = document.createElement('span');
+              // tapHint.className = 'tap-hint';
+              // tapHint.textContent = 'Tap to expand';
+
+              // Append the chevron, title, and tap hint to the button
+              button.innerHTML = '';
+              button.appendChild(chevron);
+              button.appendChild(titleSpan);
+              // button.appendChild(tapHint);
 
               // Create the content div
               const contentDiv = document.createElement('div');

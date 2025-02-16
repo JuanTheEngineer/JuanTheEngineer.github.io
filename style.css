@@ -1,11 +1,9 @@
-/* A Free Design by Bryant Smith (bryantsmith.com) */
-
 html, body {
-text-align: center;
-margin:0; /* remove default margin */
-padding:0; /* remove default padding */
-width:100%; /* take full browser width */
-height:100%; /* take full browser height*/
+	text-align: center;
+	margin: 0; /* remove default margin */
+	padding: 0; /* remove default padding */
+	width: 100%; /* take full browser width */
+	height: 100%; /* take full browser height */
 }
 p {text-align: left;}
 
@@ -13,189 +11,206 @@ body {
 	margin: 0;
 	padding: 0;
 	background: #FFFFFF;
-	background-image:url(background.png);
+	background-image: url(background.png);
 	text-align: left;
 	font-family: "Segoe UI", Helvetica, sans-serif;
 	font-size: 14px;
 	color: #000000;
 }
 
-* 
-{
-  margin: 0 auto 0 auto;
- text-align:left;
+* {
+	margin: 0 auto 0 auto;
+	text-align: left;
 }
 
-dd 
-{
+dd {
 	padding-left: 24px;
 	padding-bottom: 12px;
 }
 
-dt 
-{
+dt {
 	padding-left: 12px;
 }
 
-h3
-{
-	
-}
+h3 {
 
+}
 
 p {text-align: left;}
 
-#page
-{
-  width:581px;
+#page {
+	width: 581px;
 }
 
-#header
-{
-width:581px;
-height:90px;
-background-image:url(header.png);
-clear:both;
+#header {
+	width: 581px;
+	height: 90px;
+	background-image: url(header.png);
+	clear: both;
 }
 
-#header img
-{
-display:block;
-margin:0 auto 0 auto;
-padding-top:24px;
+#header img {
+	display: block;
+	margin: 0 auto 0 auto;
+	padding-top: 24px;
 }
 
-
-#content
-{
-background-image:url(content_back_shadow.png);
-background-repeat:repeat-y;
-width:581px;
+#content {
+	background-image: url(content_back_shadow.png);
+	background-repeat: repeat-y;
+	width: 581px;
 }
 
-#content #container
-{
-float:left;
-background-image:url(gradient_rectangle_back.png);
-background-repeat:repeat-x;
-background-color:#4586F1;
-width:547px;
-margin-left:14px;
-clear:both;
+#content #container {
+	float: left;
+	background-image: url(gradient_rectangle_back.png);
+	background-repeat: repeat-x;
+	background-color: #4586F1;
+	width: 547px;
+	margin-left: 14px;
+	clear: both;
 }
 
-#menu
-{
-background-image:url(menu_background.png);
-height:54px;
-width:527px;
+#menu {
+	background-image: url(menu_background.png);
+	height: 54px;
+	width: 527px;
 }
 
 #menu ul {
 	padding: 0px;
 	list-style-type: none;
-	text-align:left;
-	height:40px;
-
+	text-align: left;
+	height: 40px;
 }
-#menu ul li , #menu ul li a, #menu ul li a:visited{
-	display:block;
-	float:left;
+
+#menu ul li, #menu ul li a, #menu ul li a:visited {
+	display: block;
+	float: left;
 	margin: 0px;
 	text-align: left;
-	line-height:40px;
-	color:#FFFFFF;
-	padding-left:10px;
-	padding-right:14px;
-	font-size:14px;
-	font-weight:bold;
-	text-decoration:none;
-	width:auto;
+	line-height: 40px;
+	color: #FFFFFF;
+	padding-left: 10px;
+	padding-right: 14px;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	width: auto;
 }
 
-#menu ul li a:hover{
-color:#65A9ED;
+#menu ul li a:hover {
+	color: #65A9ED;
 }
 
-#content #main
-{
-display:block;
-width:527px;
-clear:both
+#content #main {
+	display: block;
+	width: 527px;
+	clear: both;
 }
 
-#content #text
-{
-margin:0;
-padding:0;
-width:497px;
-display:block;
-background-color:#FFFFFF;
-float:left;
-min-height:400px;
-clear:both;
-padding-left:15px;
-padding-right:15px;
+#content #text {
+	margin: 0;
+	padding: 0;
+	width: 497px;
+	display: block;
+	background-color: #FFFFFF;
+	float: left;
+	min-height: 400px;
+	clear: both;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 .screen .main {
-	width: 100%; /* <--now this takes full browser dimension  */
-	height: 100%; /* <--now this takes full browser dimension  */
+	width: 100%; /* <-- now this takes full browser dimension */
+	height: 100%; /* <-- now this takes full browser dimension */
 }
 
-img.examples
-{
+img.examples {
 	padding: 2%;
 	width: 46%;
 	vertical-align: middle;
 }
 
-.description
-{
+.description {
 	align-content: stretch;
 	text-align: center !important;
-	float:left;
+	float: left;
 	padding: 2%;
 	width: 46%;
+}
 
-}
-#divBlock 
-{
+#divBlock {
 	padding-top: 2%;
-	text-align:center; 
-	font-size:xx-large;
+	text-align: center;
+	font-size: xx-large;
 }
-#divLabel 
-{
-	text-align:center;
+#divLabel {
+	text-align: center;
 	font-size: small;
 }
 
-#divNote
-{
+#divNote {
 	padding: 10px;
-	text-align:left;
+	text-align: left;
 	font-size: smaller;
 }
 
 .clear {
-    clear:both;
+	clear: both;
 }
 
+/* Updated collapsible button styling */
 .collapsible {
-	background-color: rgb(255, 255, 255);
-	color: rgb(0, 0, 0);
+	background-color: #f4f4f4;
+	color: #333;
 	cursor: pointer;
-	padding: 18px;
+	padding: 12px;
 	width: 100%;
 	border: none;
 	text-align: left;
 	outline: none;
 	font-size: 18px;
+	font-weight: bold;
+	display: flex;
+	justify-content: flex-start; /* left align content */
+	align-items: center;
+	transition: background 0.3s, box-shadow 0.3s;
+	position: relative;
 }
 
-.active, .collapsible:hover {
-	background-color: rgb(151, 151, 151);
+.collapsible:hover {
+	background-color: #e0e0e0;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Tooltip pseudo-element for clickability hint */
+.collapsible::after {
+	content: "Click to expand";
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 12px;
+	color: #666;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.collapsible:hover::after {
+	opacity: 1;
+}
+
+/* Chevron styling: placed to the left of the workout name */
+.chevron {
+	order: -1; /* moves the chevron to the beginning */
+	margin-right: 10px;
+	transition: transform 0.3s ease;
+}
+
+.collapsible.active .chevron {
+	transform: rotate(180deg);
 }
 
 .content {
@@ -206,61 +221,50 @@ img.examples
 	vertical-align: middle;
 }
 
-.links
-{
+.links {
 	text-decoration: none;
-	color: rgb(30, 120, 180)
+	color: rgb(30, 120, 180);
 }
 
-.indent
-{
+.indent {
 	text-indent: 12px;
 }
-.indent2
-{
+.indent2 {
 	text-indent: 24px;
 }
 
-#content #text h1, #content #text h1 a, #content #text h1 a:visited
-{
-margin:0;
-padding:0;
-color:#093175;
-font-size:24px;
-margin-bottom:7px;
-margin-top:7px;
+#content #text h1, #content #text h1 a, #content #text h1 a:visited {
+	margin: 0;
+	padding: 0;
+	color: #093175;
+	font-size: 24px;
+	margin-bottom: 7px;
+	margin-top: 7px;
 }
 
-#content #text p
-{
-margin-top:5px;
-margin-bottom:5px;
-padding:0;
+#content #text p {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0;
 }
 
-
-#footer
-{
-background-image:url(footer.png);
-background-repeat:no-repeat;
-width:581px;
-height:60px;
-font-size:11px;
-color:#C5DDFA;
-text-align:right;
+#footer {
+	background-image: url(footer.png);
+	background-repeat: no-repeat;
+	width: 581px;
+	height: 60px;
+	font-size: 11px;
+	color: #C5DDFA;
+	text-align: right;
 }
 
-#footer p
-{
-text-align:center;
-padding-top:20px;
+#footer p {
+	text-align: center;
+	padding-top: 20px;
 }
 
-#footer a, #footer a:visited
-{
-font-size:11px;
-color:#C5DDFA;
-text-decoration:none;
+#footer a, #footer a:visited {
+	font-size: 11px;
+	color: #C5DDFA;
+	text-decoration: none;
 }
-
-
