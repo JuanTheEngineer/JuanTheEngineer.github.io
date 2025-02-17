@@ -185,18 +185,18 @@ img.examples {
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Tooltip pseudo-element for clickability hint */
-.collapsible::after {
-	content: "Click to expand";
-	position: absolute;
-	right: 10px;
-	top: 50%;
-	transform: translateY(-50%);
-	font-size: 12px;
-	color: #666;
-	opacity: 0;
-	transition: opacity 0.3s;
-}
+/*!* Tooltip pseudo-element for clickability hint *!*/
+/*.collapsible::after {*/
+/*	content: "Click to expand";*/
+/*	position: absolute;*/
+/*	right: 10px;*/
+/*	top: 50%;*/
+/*	transform: translateY(-50%);*/
+/*	font-size: 12px;*/
+/*	color: #666;*/
+/*	opacity: 0;*/
+/*	transition: opacity 0.3s;*/
+/*}*/
 
 .collapsible:hover::after {
 	opacity: 1;
