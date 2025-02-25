@@ -1,0 +1,1153 @@
+{
+  "programs": [
+    {
+      "id": "agility_lower_1-1",
+      "title": "Agility Lower Body Program 1.1",
+      "requirements": "Dumbbells, Exercise Band, Swiss Ball, Trap Bar",
+      "exercises": [
+        {
+          "name": "Warm Up 1: Decline Pistols",
+          "gif": "gifs/DeclinePistols.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Two seconds down, one second up. Elevate your heel.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 2: Heel Taps",
+          "gif": "gifs/HeelTaps.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 3: TKEs",
+          "gif": "gifs/TKEs.gif",
+          "reps": "20",
+          "sets": "4",
+          "note": "Keep the sole of your foot from rolling inward.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 1: DB Squat Jumps",
+          "gif": "gifs/DBSquatJumps.gif",
+          "reps": "4",
+          "sets": "6",
+          "note": "Weight: 10 lbs",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 2: Trap Bar Deadlift",
+          "gif": "gifs/TrapBarDeadlift.gif",
+          "reps": "8",
+          "sets": "4",
+          "note": "Rate of Perceived Exertion: 8/10",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 3: Swiss Ball Leg Curls",
+          "gif": "gifs/SwissBallLegCurls.gif",
+          "reps": "100 Total",
+          "sets": "Varies",
+          "note": "Focus on keeping your balance.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 4: Side Planks",
+          "gif": "gifs/KneelingSidePlanks.gif",
+          "reps": "45",
+          "sets": "4",
+          "note": "Kneeling.",
+          "repUnits": "secs"
+        },
+        {
+          "name": "Exercise 5: Hindu Squats",
+          "gif": "gifs/HinduSquats.gif",
+          "reps": "3",
+          "sets": "1",
+          "note": "No resting.",
+          "repUnits": "min"
+        }
+      ]
+    },
+    {
+      "id": "agility_lower_1-2",
+      "title": "Agility Lower Body Program 1.2",
+      "requirements": "Dumbbells, Exercise Band, Power Sled, Swiss Ball, Trap Bar",
+      "exercises": [
+        {
+          "name": "Warm Up 1: Box Pistols",
+          "gif": "gifs/BoxPistols.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Two seconds down, 1 second up. Elevate your heel.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 2: KB Passes",
+          "gif": "gifs/KBPasses.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 3: Low Box Drops",
+          "gif": "gifs/LowBoxDrops.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Keep the sole of your foot from rolling inward.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 1: DB Box Squat",
+          "gif": "gifs/DBBoxSquats.gif",
+          "reps": "15",
+          "sets": "5",
+          "note": "Weight: 10 lbs",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 2: DB RDL & Split Squats",
+          "gif": "gifs/DBRDLs.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Meant to be a Super Set.",
+          "repUnits": "reps",
+          "subExercise": {
+            "gif": "gifs/SplitSquats.gif",
+            "reps": "12",
+            "sets": "4",
+            "note": "Controlled on the way down. Meant to be a Super Set.",
+            "repUnits": "reps"
+          }
+        },
+        {
+          "name": "Exercise 3: 45° Back Raise",
+          "gif": "gifs/45DegreeBackRaises.gif",
+          "reps": "60 Total",
+          "sets": "Varies",
+          "note": "Go through full range of motion.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 4: GHR Iso-Hold",
+          "gif": "gifs/GHRIsoHold.gif",
+          "reps": "30",
+          "sets": "4",
+          "note": "Using a Weight.",
+          "repUnits": "secs"
+        },
+        {
+          "name": "Exercise 5: Heavy Sled Suicide",
+          "gif": "gifs/HeavySledSuicide.gif",
+          "reps": "30",
+          "sets": "2",
+          "note": "Add Weight to Sled.",
+          "repUnits": "yd"
+        }
+      ]
+    },
+    {
+      "id": "agility_lower_2-1",
+      "title": "Agility Lower Body Program 2.1",
+      "requirements": "Dumbbells, Exercise Band, Trap Bar",
+      "exercises": [
+        {
+          "name": "Warm Up 1: Decline Pistols",
+          "gif": "gifs/DeclinePistols.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Two seconds down, one second up. Elevate your heel.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 2: Heel Taps",
+          "gif": "gifs/HeelTaps.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Weight: 10 lbs",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 3: TKEs",
+          "gif": "gifs/TKEs.gif",
+          "reps": "25",
+          "sets": "4",
+          "note": "Keep the sole of your foot from rolling inward.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 1: DB Squat Jumps",
+          "gif": "gifs/DBSquatJumps.gif",
+          "reps": "3",
+          "sets": "5",
+          "note": "Weight: 10 lbs",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 2: Trap Bar Deadlift",
+          "gif": "gifs/TrapBarDeadlift.gif",
+          "reps": "3-5",
+          "sets": "5",
+          "note": "Work up to your 3 to 5 rep maximum weight.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 3: Split Squats & Split Squat Iso-Holds",
+          "gif": "gifs/SplitSquats.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Controlled on the way down. Meant to be a Super Set.",
+          "repUnits": "reps",
+          "subExercise": {
+            "gif": "gifs/SplitSquatIsoHold.jpg",
+            "reps": "30",
+            "sets": "4",
+            "note": "Meant to be a Super Set.",
+            "repUnits": "secs"
+          }
+        },
+        {
+          "name": "Exercise 4: Glute Hamstring Raise",
+          "gif": "gifs/GHR.gif",
+          "reps": "30 Total",
+          "sets": "Varies",
+          "note": "Can be substituted with any hamstring workout if necessary.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 5: Rolling Side Planks",
+          "gif": "gifs/RollingSidePlanks.gif",
+          "reps": "10",
+          "sets": "5",
+          "note": "Rolling to each side is one rep.",
+          "repUnits": "reps"
+        }
+      ]
+    },
+    {
+      "id": "agility_lower_2-2",
+      "title": "Agility Lower Body Program 2.2",
+      "requirements": "Box, Dumbbells, Squat Bar",
+      "exercises": [
+        {
+          "name": "Warm Up 1: Box Pistol Jumps",
+          "gif": "gifs/BoxPistols.gif",
+          "reps": "5",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Start with low box if necessary."
+        },
+        {
+          "name": "Warm Up 2: KB Passes",
+          "gif": "gifs/KBPasses.gif",
+          "reps": "10",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "One rep for each side."
+        },
+        {
+          "name": "Warm Up 3: Low Box Jump to Heiden",
+          "gif": "gifs/LowBoxJumptoHeiden.gif",
+          "reps": "5",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Land softly and compress your body on each rep."
+        },
+        {
+          "name": "Exercise 1: Front Squats",
+          "gif": "gifs/FrontSquats.gif",
+          "reps": "5",
+          "repUnits": "reps",
+          "sets": "5",
+          "note": "Rate of Perceived Exertion: 8/10"
+        },
+        {
+          "name": "Exercise 2: Step-ups",
+          "gif": "gifs/StepUps.gif",
+          "reps": "12",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Complete reps for each side."
+        },
+        {
+          "name": "Exercise 3: KB Swings, Box Depth Drops, Broad Jumps",
+          "compoundExercises": [
+            {
+              "reps": "4",
+              "repUnits": "reps",
+              "sets": "10",
+              "gif": "gifs/KBSwings.gif",
+              "note": "Squat on each rep and press your hips forward at extension. Meant to be a Super Set."
+            },
+            {
+              "reps": "2",
+              "repUnits": "reps",
+              "sets": "4",
+              "gif": "gifs/BoxDepthDrop.gif",
+              "note": "You may add a vertical drop at the end. Meant to be a Super Set."
+            },
+            {
+              "reps": "1",
+              "repUnits": "rep",
+              "sets": "4",
+              "gif": "gifs/BroadJumps.gif",
+              "note": "Jump as far as you can. Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "name": "Exercise 4: DB Side Bends",
+          "gif": "gifs/DBSideBends.gif",
+          "reps": "25",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Complete reps for each side."
+        }
+      ]
+    },
+    {
+      "id": "agility_lower_3-1",
+      "title": "Agility Lower Body Program 3.1",
+      "requirements": "Dumbbells",
+      "exercises": [
+        {
+          "name": "Warm Up 1: Turkish Get-ups",
+          "gif": "gifs/TurkishGetups.gif",
+          "reps": "3",
+          "sets": "3",
+          "note": ".",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 2: OH KB Carry",
+          "gif": "gifs/OHKBCarry.gif",
+          "reps": "150",
+          "sets": "1",
+          "note": "",
+          "repUnits": "yd"
+        },
+        {
+          "name": "Warm Up 3: Over/Under Hurdles",
+          "gif": "gifs/OverUnderHurdles.gif",
+          "reps": "1",
+          "sets": "3",
+          "note": "Can be done with a Squat Bar.",
+          "repUnits": "rep"
+        },
+        {
+          "name": "Exercise 1: Front Squat Iso-hold & Box Jumps",
+          "gif": "gifs/FrontSquatIsoHolds.gif",
+          "reps": "6",
+          "sets": "6",
+          "note": "Rate of Perceived Exertion: 9/10. Meant to be a Super Set.",
+          "repUnits": "secs",
+          "subExercise": {
+            "gif": "gifs/BoxJumps.gif",
+            "reps": "6",
+            "sets": "3",
+            "note": "Box height should be 24-36 inches. Meant to be a Super Set.",
+            "repUnits": "reps"
+          }
+        },
+        {
+          "name": "Exercise 2: DB Split Squats",
+          "gif": "gifs/SplitSquats.gif",
+          "reps": "12",
+          "sets": "3",
+          "note": "Controlled on the way down.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 3: Weighted Chin-ups",
+          "gif": "gifs/Chinups.gif",
+          "reps": "4",
+          "sets": "5-6",
+          "note": "Do these with a weight.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 4: Hip Ext w/ Unilateral Eccentric & SL DB RDL",
+          "gif": "gifs/HipExt.gif",
+          "reps": "15",
+          "sets": "4",
+          "note": "Meant to be a Super Set.",
+          "repUnits": "reps",
+          "subExercise": {
+            "gif": "gifs/SLDBRDL.gif",
+            "reps": "15",
+            "sets": "4",
+            "note": "Meant to be a Super Set.",
+            "repUnits": "reps"
+          }
+        },
+        {
+          "name": "Exercise 5: Spread Eagle Sit-ups",
+          "gif": "gifs/SESitups.gif",
+          "reps": "50 Total",
+          "sets": "Varies",
+          "note": "Weight: 5-10 lbs.",
+          "repUnits": "reps"
+        }
+      ]
+    },
+    {
+      "id": "agility_upper_1-2",
+      "title": "Agility Upper Body Program 1.2",
+      "requirements": "Dumbbells, Pull-up Bar, Battle Ropes, Exercise Band",
+      "exercises": [
+        {
+          "name": "Warm Up 1: Floor Washers",
+          "gif": "gifs/agi_up_1w1.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Five in each direction on both arms.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 2: Cat/Camel",
+          "gif": "gifs/Cat_Camel.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 3: No Money Drill",
+          "gif": "gifs/NoMoneyDrill.png",
+          "reps": "10",
+          "sets": "4",
+          "note": "Keep your elbows close to your body.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 4: Javelin Stretch",
+          "gif": "gifs/JavelinStretch.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Using an exercise band.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 1: NG DB Military Press",
+          "gif": "gifs/NGDBMilitaryPress.gif",
+          "reps": "8",
+          "sets": "5",
+          "note": "Keep your palms facing each other.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 2: Chin-ups & Pull-overs",
+          "gif": "gifs/Chinups.gif",
+          "reps": "8-10",
+          "sets": "5",
+          "note": "Meant to be a Super Set.",
+          "repUnits": "reps",
+          "subExercise": {
+            "gif": "gifs/Pullovers.gif",
+            "reps": "10",
+            "sets": "5",
+            "note": "Meant to be a Super Set.",
+            "repUnits": "reps"
+          }
+        },
+        {
+          "name": "Exercise 3: Push-ups",
+          "gif": "gifs/Pushups.gif",
+          "reps": "15 → 1",
+          "sets": "Decrementing",
+          "note": "Start with 15 reps and decrease by 1 for each set.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 4: OH Sit-ups",
+          "gif": "gifs/OHSitups.gif",
+          "reps": "8",
+          "sets": "3",
+          "note": "Use a 45lbs plate.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 5: Battle Ropes",
+          "gif": "gifs/BattleRopes.gif",
+          "reps": "1",
+          "sets": "3",
+          "note": "Aim for 1 minute but push to failure on each set.Try a variety of styles in 15 second segements.",
+          "repUnits": "min"
+        }
+      ]
+    },
+    {
+      "id": "agility_upper_1-1",
+      "title": "Agility Upper Body Program 1.1",
+      "requirements": "Dumbbells, Pull-up Bar, Battle Ropes, Exercise Band",
+      "exercises": [
+        {
+          "name": "Warm Up 1: Floor Washers",
+          "gif": "gifs/agi_up_1w1.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Five in each direction on both arms.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 2: Cat/Camel",
+          "gif": "gifs/Cat_Camel.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 3: No Money Drill",
+          "gif": "gifs/NoMoneyDrill.png",
+          "reps": "10",
+          "sets": "4",
+          "note": "Keep your elbows close to your body.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 4: Javelin Stretch",
+          "gif": "gifs/JavelinStretch.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "Using an exercise band.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 1: NG DB Military Press",
+          "gif": "gifs/NGDBMilitaryPress.gif",
+          "reps": "8",
+          "sets": "3",
+          "note": "Keep your palms facing each other.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 2: Chin-ups & Pull-overs",
+          "gif": "gifs/Chinups.gif",
+          "reps": "6-8",
+          "sets": "3",
+          "note": "Meant to be a Super Set.",
+          "repUnits": "reps",
+          "subExercise": {
+            "gif": "gifs/Pullovers.gif",
+            "reps": "10",
+            "sets": "3",
+            "note": "Meant to be a Super Set.",
+            "repUnits": "reps"
+          }
+        },
+        {
+          "name": "Exercise 3: Push-ups",
+          "gif": "gifs/Pushups.gif",
+          "reps": "12 → 1",
+          "sets": "Decrementing",
+          "note": "Start with 12 reps and decrease by 1 for each set.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 4: OH Sit-ups",
+          "gif": "gifs/OHSitups.gif",
+          "reps": "8",
+          "sets": "3",
+          "note": "Use a 45lbs plate.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 5: Battle Ropes",
+          "gif": "gifs/BattleRopes.gif",
+          "reps": "1",
+          "sets": "3",
+          "note": "Aim for 1 minute but push to failure on each set.Try a variety of styles in 15 second segements.",
+          "repUnits": "min"
+        }
+      ]
+    },
+    {
+      "id": "agility_upper_2-1",
+      "title": "Agility Upper Body Program 2.1",
+      "requirements": "Dumbbells, Pull-up Bar, Battle Ropes, Exercise Band",
+      "exercises": [
+        {
+          "name": "Warm Up 1: Floor Washers w/ Reach",
+          "gif": "gifs/agi_up_1w1.gif",
+          "reps": "5",
+          "sets": "4",
+          "note": "Five in each direction on both arms. Reach your hand out between each rep.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 2: Yoga Push-up",
+          "gif": "gifs/YogaPushup.gif",
+          "reps": "10",
+          "sets": "4",
+          "note": "",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Warm Up 3: Downward Dog Toe Touch",
+          "gif": "gifs/DownwardDogToeTouches.gif",
+          "reps": "5",
+          "sets": "4",
+          "note": ".",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 1: Chin-ups",
+          "gif": "gifs/Chinups.gif",
+          "reps": "AMRAP",
+          "sets": "1",
+          "note": "Go for as many reps as possible.",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 2: NG DB Incline Bench & Feet Elevated Push-ups",
+          "gif": "gifs/NGDBInclineBench.gif",
+          "reps": "8",
+          "sets": "5",
+          "note": "Keep your palms facing each other. Meant to be a Super Set.",
+          "repUnits": "reps",
+          "subExercise": {
+            "gif": "gifs/FeetElevatedPushUps.gif",
+            "reps": "15-20",
+            "sets": "5",
+            "note": "Meant to be a Super Set.",
+            "repUnits": "reps"
+          }
+        },
+        {
+          "name": "Exercise 3: Kroc Rows Burnout",
+          "gif": "gifs/KrocRows1.gif",
+          "reps": "AMRAP",
+          "sets": "1",
+          "note": "Weight: 30-50 lbs",
+          "repUnits": "reps"
+        },
+        {
+          "name": "Exercise 4: Kroc Rows & Scarecrows",
+          "gif": "gifs/KrocRows2.gif",
+          "reps": "8",
+          "sets": "4",
+          "note": "Meant to be a Super Set.",
+          "repUnits": "reps",
+          "subExercise": {
+            "gif": "gifs/Scarecrows.gif",
+            "reps": "15",
+            "sets": "4",
+            "note": "Meant to be a Super Set.",
+            "repUnits": "reps"
+          }
+        },
+        {
+          "name": "Exercise 5: One Arm OH Carry",
+          "gif": "gifs/OneArmOHCarry.gif",
+          "reps": "50",
+          "sets": "3",
+          "note": "Choose a safe weight.",
+          "repUnits": "yd"
+        }
+      ]
+    },
+    {
+      "id": "asics_1-0",
+      "title": "The Runners’ Strength & Stretch Guide: Glutes and Hip Flexors",
+      "requirements": "Barbells or Dumbbells, Straps or Band, Knee Pad, Bench, Machines(Optional)",
+      "exercises": [
+        {
+          "name": "Strength 1: Curtsy Lunges",
+          "gif": "gifs/CurtsyLunges.gif",
+          "reps": "15",
+          "repUnits": "reps (each side)",
+          "sets": "3",
+          "note": "Details: Perform a lateral lunge while crossing one leg behind the other, akin to a curtsy. Use a strap or band to maintain balance and focus the load on the heel. Note: You only need to step behind your front foot. Crossing far outside your front foot is unnecessary and will lead to uneven hip posture."
+        },
+        {
+          "name": "Strength 2: Barbell Walking Lunges",
+          "gif": "gifs/BarbellWalkingLunges.gif",
+          "reps": "10",
+          "repUnits": "reps (each side)",
+          "sets": "3",
+          "note": "Details: Perform walking lunges with a barbell placed behind your neck. Ensure each knee lightly taps the ground to engage the glutes properly. Note: May swap barbell for dumbbells or body weight."
+        },
+        {
+          "name": "Strength 3: Barbell 90° Squat with Hip Thrust",
+          "gif": "gifs/90DegreeBarbellSquats.gif",
+          "reps": "10-15",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Detail: Squat to a 90-degree angle, then powerfully, but with control in one motion thrust your hips upward as you rise, tightly flexing your glutes. Note: Aim for 70% of your max repetition weight or above."
+        },
+        {
+          "name": "Strength 4: Single Leg Hip Thrust on Bench",
+          "gif": "gifs/SingleLegHipThrusts.gif",
+          "reps": "15",
+          "repUnits": "reps (each side)",
+          "sets": "3",
+          "note": "Details: Perform hip thrusts with one leg, using a bench for support. Keep the thrust controlled, and focus on squeezing the glutes at the top of the movement. Note: Use a bench."
+        },
+        {
+          "name": "Strength 5: Fire Hydrants",
+          "gif": "gifs/FireHydrant.gif",
+          "reps": "30",
+          "repUnits": "reps (each side)",
+          "sets": "3",
+          "note": "Details: From a tabletop position, lift one leg away from the body, keeping the knee bent. This exercise targets the gluteus medius and minimus for improved lateral stability."
+        },
+        {
+          "name": "Stretch 1: Kneeling Hip Flexor Stretch",
+          "gif": "gifs/KneelingHipFlexorStretch.gif",
+          "reps": "30",
+          "repUnits": "secs (each side)",
+          "sets": "3",
+          "note": "Details: From a tabletop position, lift one leg away from the body, keeping the knee bent. This exercise targets the gluteus medius and minimus for improved lateral stability. Note: Use foam pad or mat to protect knee."
+        }
+      ]
+    },
+    {
+      "id": "posture_1-0",
+      "title": "Posture",
+      "requirements": "This workout is meant to be done twice daily to improve your posture",
+      "exercises": [
+        {
+          "name": "Exercise 1",
+          "gif": "gifs/Posture_Ex1.gif",
+          "reps": "10",
+          "repUnits": "reps",
+          "sets": "2",
+          "note": "Note: Inhale forward, Exhale back. Keep chin to chest and butt on the ground."
+        }
+      ]
+    },
+    {
+      "id": "ppl_pull_day_1-0",
+      "title": "PPL 3-Day Rotation: Pull Day 1",
+      "requirements": "Cables, Dumbbells, Barbell, Exercise Band",
+      "exercises": [
+        {
+          "name": "Warm Up 1: No Money Drill",
+          "gif": "gifs/NoMoneyDrill.png",
+          "reps": "10",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Note: Keep your elbows close to your body."
+        },
+        {
+          "name": "Warm Up 2: Downward Dog Toe Touch",
+          "gif": "gifs/DownwardDogToeTouches.gif",
+          "reps": "5",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Note: ."
+        },
+        {
+          "name": "Exercise 1: Close Grip Pulldowns & Cable Rows",
+          "gif": "gifs/CloseGripPulldowns.gif",
+          "reps": "12",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Note: Meant to be a Super Set.",
+          "subExercise": {
+            "gif": "gifs/CableRows.gif",
+            "reps": "12",
+            "repUnits": "reps",
+            "sets": "4",
+            "note": "Note: Meant to be a Super Set."
+          }
+        },
+        {
+          "name": "Exercise 2: Wide Grip Pulldowns & Bent-over Rows",
+          "gif": "gifs/WideGripPulldowns.gif",
+          "reps": "12",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Note: Meant to be a Super Set.",
+          "subExercise": {
+            "gif": "gifs/BentoverRows.gif",
+            "reps": "12",
+            "repUnits": "reps",
+            "sets": "4",
+            "note": "Note: Can be done with Dumbbells. Meant to be a Super Set."
+          }
+        },
+        {
+          "name": "Exercise 3: Cable Lateral Pullovers & Zottman Curls",
+          "gif": "gifs/CableLateralPullovers.gif",
+          "reps": "12",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Note: Meant to be a Super Set.",
+          "subExercise": {
+            "gif": "gifs/ZottmanCurls.gif",
+            "reps": "12",
+            "repUnits": "reps",
+            "sets": "4",
+            "note": "Note: Meant to be a Super Set."
+          }
+        },
+        {
+          "name": "Exercise 4: Shrugs & Crush Grip Curls",
+          "gif": "gifs/Shrugs.gif",
+          "reps": "15",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Note: Meant to be a Super Set.",
+          "subExercise": {
+            "gif": "gifs/CrushGripCurls.gif",
+            "reps": "10",
+            "repUnits": "reps",
+            "sets": "4",
+            "note": "Note: For the last set, perform an Iso-hold for as long as possible. Meant to be a Super Set."
+          }
+        },
+        {
+          "name": "Exercise 5: DB Side Bends",
+          "gif": "gifs/DBSideBends.gif",
+          "reps": "100",
+          "repUnits": "reps",
+          "sets": "Varies",
+          "note": "Note: Complete reps for each side."
+        }
+      ]
+    },
+    {
+      "id": "ppl_push_day_1-0",
+      "title": "PPL 3-Day Rotation: Push Day 1",
+      "requirements": "Barbells, Bench, Dumbbells, Exercise Band",
+      "exercises": [
+        {
+          "name": "Warm Up 4: Javelin Stretch",
+          "gif": "gifs/JavelinStretch.gif",
+          "reps": "10",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Note: Using an exercise band."
+        },
+        {
+          "name": "Warm Up 2: Yoga Push-up",
+          "gif": "gifs/YogaPushup.gif",
+          "reps": "10",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": ""
+        },
+        {
+          "name": "Exercise 1: Chest Flies & Front Raises",
+          "gif": "gifs/ChestFlies.gif",
+          "reps": "12",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Note: Can be done with Cables or Dumbbells. Meant to be a Super Set.",
+          "subExercise": {
+            "gif": "gifs/FrontRaises.gif",
+            "reps": "12",
+            "repUnits": "reps",
+            "sets": "4",
+            "note": "Weight: 45 lbs. Note: Meant to be a Super Set."
+          }
+        },
+        {
+          "name": "Exercise 2: Flat Bench Press & DB Military Press",
+          "gif": "gifs/FlatBenchPress.gif",
+          "reps": "6-12",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Note: Can be done with Barbell or Dumbbells. Meant to be a Super Set.",
+          "subExercise": {
+            "gif": "gifs/NGDBMilitaryPress.gif",
+            "reps": "10-12",
+            "repUnits": "reps",
+            "sets": "4",
+            "note": "Note: Standing. Meant to be a Super Set."
+          }
+        },
+        {
+          "name": "Exercise 3: Skullcrushers & DB Side Lateral Raises",
+          "gif": "gifs/Skullcrushers.gif",
+          "reps": "10-12",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Note: Meant to be a Super Set.",
+          "subExercise": {
+            "gif": "gifs/DBSideLateralRaises.gif",
+            "reps": "10-12",
+            "repUnits": "reps",
+            "sets": "4",
+            "note": "Note: Meant to be a Super Set."
+          }
+        },
+        {
+          "name": "Exercise 4: Dips & Feet-Elevated PushUps",
+          "gif": "gifs/Dips.gif",
+          "reps": "10-15",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Note: Meant to be a Super Set.",
+          "subExercise": {
+            "gif": "gifs/FeetElevatedPushUps.gif",
+            "reps": "12-15",
+            "repUnits": "reps",
+            "sets": "4",
+            "note": "Note: Meant to be a Super Set."
+          }
+        },
+        {
+          "name": "Exercise 5: High Plank/Low Plank",
+          "gif": "gifs/HighLowPlanks.gif",
+          "reps": "10",
+          "repUnits": "reps",
+          "sets": "3",
+          "note": "Note: Do the reps once for each direction."
+        }
+      ]
+    },
+    {
+      "id": "ppl_leg_day_1-0",
+      "title": "PPL 3-Day Rotation: Leg Day 1",
+      "requirements": "Barbell, Dumbbells, KettleBells, Bench, Machines(Optional)",
+      "exercises": [
+        {
+          "name": "Warm Up 1: Decline Pistols",
+          "gif": "gifs/DeclinePistols.gif",
+          "reps": "10",
+          "repUnits": "reps",
+          "sets": "3",
+          "note": "Note: Two seconds down, one second up. Elevate your heel."
+        },
+        {
+          "name": "Warm Up 2: KB Passes",
+          "gif": "gifs/KBPasses.gif",
+          "reps": "10",
+          "repUnits": "reps",
+          "sets": "3",
+          "note": ""
+        },
+        {
+          "name": "Exercise 1: Barbell Squats & DB Jump Squats",
+          "gif": "gifs/BarbellSquat.gif",
+          "reps": "12, 10, 8, 6",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Note: Increase weight after each set. Meant to be a Super Set.",
+          "subExercise": {
+            "gif": "gifs/DBSquatJumps.gif",
+            "reps": "6",
+            "repUnits": "reps",
+            "sets": "4",
+            "note": "Weight: 10 lbs. Note: Meant to be a Super Set."
+          }
+        },
+        {
+          "name": "Exercise 2: Split Squats & DB RDL",
+          "gif": "gifs/SplitSquats.gif",
+          "reps": "12",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Note: Meant to be a Super Set.",
+          "subExercise": {
+            "gif": "gifs/DBRDLs.gif",
+            "reps": "12",
+            "repUnits": "reps",
+            "sets": "4",
+            "note": "Note: Controlled on the way down. Meant to be a Super Set."
+          }
+        },
+        {
+          "name": "Exercise 3: Elevated Heel Goblet Squats & Leg Curls",
+          "gif": "gifs/ElevatedHeelGobletSquat.gif",
+          "reps": "10",
+          "repUnits": "reps",
+          "sets": "4",
+          "note": "Note: Meant to be a Super Set.",
+          "subExercise": {
+            "gif": "gifs/LegCurls.gif",
+            "reps": "12",
+            "repUnits": "reps",
+            "sets": "4",
+            "note": "Note: Squeeze toes together. Meant to be a Super Set."
+          }
+        },
+        {
+          "name": "Exercise 4: Hip Abductions & Calf Raises",
+          "gif": "gifs/HipAbductions.gif",
+          "reps": "10",
+          "repUnits": "reps",
+          "sets": "3",
+          "note": "Note: Meant to be a Super Set.",
+          "subExercise": {
+            "gif": "gifs/CalfRaises.gif",
+            "reps": "15",
+            "repUnits": "reps",
+            "sets": "3",
+            "note": "Note: Meant to be a Super Set."
+          }
+        }
+      ]
+    },
+    {
+      "id": "reload_pt_strength_1-1",
+      "title": "Reload PT Strength 1.1",
+      "requirements": "Equipment: Dumbbells, Weight Plates (20lb, 35lb, 40lb, 75lb), Exercise Band",
+      "exercises": [
+        {
+          "name": "Split Squat Hold with Hands Overhead",
+          "gif": "",
+          "reps": "30",
+          "sets": "2",
+          "repUnits": "secs",
+          "note": "Keep pelvis level, stack torso over the back knee. Use 2x20lb weights."
+        },
+        {
+          "name": "Wall Lower Calf Holds & Lifts",
+          "gif": "",
+          "reps": "20 / 30",
+          "sets": "2",
+          "repUnits": "secs",
+          "note": "Perform 2 sets of 20s with 30lb, then 2 sets of 30s each side."
+        },
+        {
+          "name": "Copenhagen Plank at Upper Calf with Lifts",
+          "gif": "",
+          "reps": "8",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Perform at ankle with lifts."
+        },
+        {
+          "name": "Two Leg Pogo",
+          "gif": "",
+          "reps": "15",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Landing midfoot, bounce on both feet while not allowing the heel to touch the floor or the ankle to extend."
+        },
+        {
+          "name": "A Runs Gear 1-3",
+          "gif": "",
+          "reps": "4",
+          "sets": "rounds",
+          "note": "Perform running gear drills."
+        },
+        {
+          "name": "Goblet Squat (Tempo)",
+          "gif": "",
+          "reps": "5",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Use 75lb. Tempo: slow down, fast up."
+        },
+        {
+          "name": "Dumbbell Chest Press",
+          "gif": "",
+          "reps": "10",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Use 2x35lb. Tempo: slow down, fast up."
+        },
+        {
+          "name": "Dumbbell Bulgarian Split Squat (RFESS)",
+          "gif": "",
+          "reps": "6",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Use 2x40lb. Option to warm up with a lighter weight."
+        },
+        {
+          "name": "One Arm Dumbbell Rows",
+          "gif": "",
+          "reps": "8",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Use 25lb dumbbells."
+        }
+      ]
+    },
+    {
+      "id": "reload_pt_strength_1-2",
+      "title": "Reload PT Strength 1.2",
+      "requirements": "Equipment: Dumbbells, Trap Bar, Weight Plates (20lb, 30lb, 130lb), Exercise Band",
+      "exercises": [
+        {
+          "name": "Split Squat Hold, Hands Overhead",
+          "gif": "",
+          "reps": "30",
+          "sets": "2",
+          "repUnits": "secs",
+          "note": "Keep pelvis level, stack torso over the back knee. Use 2x20lb weights."
+        },
+        {
+          "name": "Wall Lower Calf Holds & Lifts",
+          "gif": "",
+          "reps": "20 / 30",
+          "sets": "2",
+          "repUnits": "secs",
+          "note": "Perform 2 sets of 20s with 30lb, then 2 sets of 30s each side."
+        },
+        {
+          "name": "Copenhagen Plank at Upper Calf with Lifts",
+          "gif": "",
+          "reps": "8",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Perform at ankle with lifts."
+        },
+        {
+          "name": "2L Pogo",
+          "gif": "",
+          "reps": "15",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Landing midfoot."
+        },
+        {
+          "name": "A Runs Gear 1-3",
+          "gif": "",
+          "reps": "4",
+          "sets": "rounds",
+          "note": "Perform running gear drills."
+        },
+        {
+          "name": "Landing from a Box",
+          "gif": "",
+          "reps": "5",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "From 12in box."
+        },
+        {
+          "name": "Trapbar Deadlift",
+          "gif": "",
+          "reps": "6",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Use 130lb (or available weight). Tempo: slow down, fast up."
+        },
+        {
+          "name": "DB Chest Press",
+          "gif": "",
+          "reps": "10",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Use 2x35lb. Use same concept as goblet squat. Tempo: slow down, fast up."
+        },
+        {
+          "name": "1L RDL w/ Band Above Knee",
+          "gif": "",
+          "reps": "30",
+          "sets": "2",
+          "repUnits": "secs",
+          "note": "Hand on railing, reach back leg outwards."
+        },
+        {
+          "name": "1A DB Row",
+          "gif": "",
+          "reps": "8",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Use 25lb dumbbells."
+        }
+      ]
+    }
+  ]
+}

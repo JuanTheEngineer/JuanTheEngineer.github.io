@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inertia Workout App</title>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+</head>
+<body>
+<ons-navigator id="navigator" page="home.html"></ons-navigator>
+
+<template id="home.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="center">Inertia Workouts</div>
+    </ons-toolbar>
+
+    <ons-tabbar>
+      <ons-tab label="Home" icon="md-home" page="index.html" active></ons-tab>
+      <ons-tab label="Start" icon="md-play-circle" page="start.html"></ons-tab>
+      <ons-tab label="Programs" icon="md-search" page="programs.html"></ons-tab>
+      <ons-tab label="Glossary" icon="md-book" page="glossary.html"></ons-tab>
+    </ons-tabbar>
+  </ons-page>
+</template>
+
+<template id="index.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="center">Welcome</div>
+    </ons-toolbar>
+    <ons-card>
+      <div class="title">No More Excuses!</div>
+      <div class="content">
+        Get started on your fitness journey with structured workouts and exercise guides.
+      </div>
+    </ons-card>
+  </ons-page>
+</template>
+
+<template id="start.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button>Home</ons-back-button>
+      </div>
+      <div class="center">Start a Workout</div>
+    </ons-toolbar>
+    <ons-list id="workout-list"></ons-list>
+  </ons-page>
+</template>
+
+<template id="programs.html">
+  <ons-page id="programs-page">
+    <ons-toolbar>
+      <div class="center">Programs</div>
+    </ons-toolbar>
+    <ons-list id="program-list"></ons-list>
+  </ons-page>
+</template>
+
+<template id="program.html">
+  <ons-page id="program-page">
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button>Programs</ons-back-button>
+      </div>
+      <div class="center" id="program-title">Program Details</div>
+    </ons-toolbar>
+    <ons-card>
+      <div class="title" id="program-name"></div>
+      <div class="content" id="program-requirements"></div>
+      <ons-list id="exercise-list"></ons-list>
+    </ons-card>
+  </ons-page>
+</template>
+
+<template id="glossary.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="center">Glossary</div>
+    </ons-toolbar>
+    <ons-list>
+      <ons-list-item expandable>
+        AMRAP<ons-icon icon="md-arrow-drop-down" slot="expandable-icon"></ons-icon>
+        <div class="expandable-content">As Many Reps As Possible</div>
+      </ons-list-item>
+      <ons-list-item expandable>
+        KB<ons-icon icon="md-arrow-drop-down" slot="expandable-icon"></ons-icon>
+        <div class="expandable-content">Kettle Bells</div>
+      </ons-list-item>
+    </ons-list>
+  </ons-page>
+</template>
+
+<script>
+  document.addEventListener('init', function(event) {
+    let page = event.target;
+
+    if (page.id === 'programs-page') {
+      fetch('workouts.json')
+              .then(response => response.json())
+              .then(data => {
+                const list = page.querySelector('#program-list');
+                list.innerHTML = '';
+                data.programs.forEach(program => {
+                  let listItem = document.createElement('ons-list-item');
+                  listItem.setAttribute('tappable', '');
+                  listItem.innerHTML = `<div class="center">${program.title}</div>`;
+                  listItem.onclick = () => document.querySelector('#navigator').pushPage('program.html', {data: {program: program}});
+                  list.appendChild(listItem);
+                });
+              });
+    }
+
+
+    if (page.id === 'program-page' && page.data && page.data.program) {
+
+      let program = page.data.program;
+      page.querySelector('#program-title').textContent = program.title;
+      page.querySelector('#program-name').textContent = program.title;
+      page.querySelector('#program-requirements').textContent = `Requirements: ${program.requirements}`;
+
+      const exerciseList = page.querySelector('#exercise-list');
+      exerciseList.innerHTML = '';
+      program.exercises.forEach(exercise => {
+        // Exercise GIF
+        const gifImg = document.createElement('img');
+        gifImg.className = 'examples';
+        gifImg.src = "../" + exercise.gif;
+        gifImg.alt = exercise.name;
+        console.log(exercise.gif)
+
+        let listItem = document.createElement('ons-list-item');
+        listItem.setAttribute('expandable', '');
+        listItem.setAttribute('modifier', 'inset')
+        listItem.innerHTML = `
+            <div class="center">${exercise.name}</div>
+            <div class="expandable-content">
+              <img src="${gifImg.src}" width="100%">
+              <p>Reps: ${exercise.reps} | Sets: ${exercise.sets}</p>
+              <p>${exercise.note || ''}</p>
+            </div>
+          `;
+        exerciseList.appendChild(listItem);
+      });
+    }
+  });
+</script>
+</body>
+</html>

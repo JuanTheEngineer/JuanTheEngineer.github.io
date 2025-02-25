@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.7">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>Juan's Exercise Database</title>
+  <style>
+    /* Collapsible button styling */
+    .collapsible {
+      background-color: #f4f4f4;
+      color: #333;
+      cursor: pointer;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      justify-content: flex-start; /* left align content */
+      align-items: center;
+      transition: background 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+
+    /* Collapsible content styling */
+    .collapsible:hover {
+      background-color: #e0e0e0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Chevron styling */
+    .chevron {
+      transition: transform 0.3s ease;
+      margin-left: 8px;
+    }
+
+    /* Rotate chevron when active */
+    .collapsible.active .chevron {
+      transform: rotate(180deg);
+    }
+
+    /* Hide the tap hint when expanded */
+    .collapsible.active .tap-hint {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<div id="page">
+  <div id="header">
+    <img src="logo.png" alt="Site Logo" />
+  </div>
+  <div id="content">
+    <div id="container">
+      <div id="main">
+        <!-- Navigation Menu -->
+        <div id="menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="start.html">Start</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="glossary.html">Glossary</a></li>
+          </ul>
+        </div>
+
+        <!-- Text/Exercise List Container -->
+        <div id="text">
+          <!-- Program Title here -->
+          <h1 id="program-title"></h1>
+          <p id="program-requirements"></p>
+
+          <!-- Dynamically inserted collapsible exercise buttons will appear here -->
+          <div id="exercise-list"></div>
+
+        </div> <!-- end #text -->
+      </div> <!-- end #main -->
+    </div> <!-- end #container -->
+    <div class="clear"></div>
+    <div id="footer">
+      <p><a href="https://github.com/JuanTheEngineer">Created by Juan the Engineer</a></p>
+    </div>
+  </div> <!-- end #content -->
+</div> <!-- end #page -->
+
+<!-- Script to load JSON and inject data -->
+<script>
+  // 1. Grab the program ID from the URL, e.g., ?id=program1
+  const urlParams = new URLSearchParams(window.location.search);
+  const programId = urlParams.get('id') || 'agility_lower_1-1'; // fallback to program1 if none provided
+
+  // 2. Fetch the workouts JSON
+  fetch('workouts.json')
+          .then(response => response.json())
+          .then(data => {
+            // data.programs is our array of programs
+            const program = data.programs.find(p => p.id === programId);
+
+            if (!program) {
+              // If no matching program, handle gracefully
+              document.getElementById('program-title').innerText = 'Program Not Found';
+              return;
+            }
+
+            // Insert Program Title & Requirements
+            document.getElementById('program-title').innerText = program.title;
+            document.getElementById('program-requirements').innerText =
+                    'Requirements: ' + program.requirements;
+
+            // Build the exercise collapsibles
+            const container = document.getElementById('exercise-list');
+            program.exercises.forEach(ex => {
+              // Create the collapsible button with a chevron indicator
+              const button = document.createElement('button');
+              button.type = 'button';
+              button.className = 'collapsible';
+
+              // Create a span for the chevron icon (use an HTML entity for reliability)
+              const chevron = document.createElement('span');
+              chevron.className = 'chevron';
+              // Using HTML entity for the downward triangle:
+              chevron.innerHTML = '&#9660;';
+
+              // Create a span for the workout title
+              const titleSpan = document.createElement('span');
+              titleSpan.textContent = ex.name;
+              titleSpan.style.marginLeft = '8px'; // spacing between chevron and title
+
+              // // Create a span for the tap hint
+              // const tapHint = document.createElement('span');
+              // tapHint.className = 'tap-hint';
+              // tapHint.textContent = 'Tap to expand';
+
+              // Append the chevron, title, and tap hint to the button
+              button.innerHTML = '';
+              button.appendChild(chevron);
+              button.appendChild(titleSpan);
+              // button.appendChild(tapHint);
+
+              // Create the content div
+              const contentDiv = document.createElement('div');
+              contentDiv.className = 'content';
+
+              // Add the description block
+              const descriptionDiv = document.createElement('div');
+              descriptionDiv.className = 'description';
+
+              // Reps block
+              const divBlockReps = document.createElement('div');
+              divBlockReps.id = 'divBlock';
+              divBlockReps.innerText = ex.reps;
+
+              const divLabelReps = document.createElement('div');
+              divLabelReps.id = 'divLabel';
+              divLabelReps.innerText = ex.repUnits || 'reps';
+
+              // Break for spacing
+              const br = document.createElement('br');
+
+              // Sets block
+              const divBlockSets = document.createElement('div');
+              divBlockSets.id = 'divBlock';
+              divBlockSets.innerText = ex.sets;
+
+              const divLabelSets = document.createElement('div');
+              divLabelSets.id = 'divLabel';
+              divLabelSets.innerText = 'sets';
+
+              // Append blocks to description
+              descriptionDiv.appendChild(divBlockReps);
+              descriptionDiv.appendChild(divLabelReps);
+              descriptionDiv.appendChild(br);
+              descriptionDiv.appendChild(divBlockSets);
+              descriptionDiv.appendChild(divLabelSets);
+
+              // Exercise GIF
+              const gifImg = document.createElement('img');
+              gifImg.className = 'examples';
+              gifImg.src = ex.gif;
+              gifImg.alt = ex.name;
+
+              // Note
+              const divNote = document.createElement('div');
+              divNote.id = 'divNote';
+              if (ex.note) {
+                divNote.innerText = 'Note: ' + ex.note;
+              }
+
+              // Append everything to contentDiv
+              contentDiv.appendChild(descriptionDiv);
+              contentDiv.appendChild(gifImg);
+              contentDiv.appendChild(divNote);
+
+              // If there's a sub-exercise (like the iso-hold), handle that
+              if (ex.subExercise) {
+                const subDesc = document.createElement('div');
+                subDesc.className = 'description';
+
+                const subReps = document.createElement('div');
+                subReps.id = 'divBlock';
+                subReps.innerText = ex.subExercise.reps;
+                const subRepsLabel = document.createElement('div');
+                subRepsLabel.id = 'divLabel';
+                subRepsLabel.innerText = ex.subExercise.repUnits || 'reps';
+
+                const subBr = document.createElement('br');
+
+                const subSets = document.createElement('div');
+                subSets.id = 'divBlock';
+                subSets.innerText = ex.subExercise.sets;
+                const subSetsLabel = document.createElement('div');
+                subSetsLabel.id = 'divLabel';
+                subSetsLabel.innerText = 'sets';
+
+                subDesc.appendChild(subReps);
+                subDesc.appendChild(subRepsLabel);
+                subDesc.appendChild(subBr);
+                subDesc.appendChild(subSets);
+                subDesc.appendChild(subSetsLabel);
+
+                const subGif = document.createElement('img');
+                subGif.className = 'examples';
+                subGif.src = ex.subExercise.gif;
+                subGif.alt = 'Sub Exercise';
+
+                const subNote = document.createElement('div');
+                subNote.id = 'divNote';
+                subNote.innerText = 'Note: ' + (ex.subExercise.note || '');
+
+                contentDiv.appendChild(subDesc);
+                contentDiv.appendChild(subGif);
+                contentDiv.appendChild(subNote);
+              }
+
+              // Finally, add button + content to the container
+              container.appendChild(button);
+              container.appendChild(contentDiv);
+            });
+
+            // After we build them, attach the collapsible functionality
+            initCollapsibles();
+          })
+          .catch(err => {
+            console.error('Error loading workouts.json:', err);
+          });
+
+  // Collapsible logic
+  function initCollapsibles() {
+    const coll = document.getElementsByClassName("collapsible");
+    for (let i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        const content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+  }
+</script>
+</body>
+</html>
