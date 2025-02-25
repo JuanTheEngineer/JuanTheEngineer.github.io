@@ -984,6 +984,170 @@
           }
         }
       ]
+    },
+    {
+      "id": "reload_pt_strength_1-1",
+      "title": "Reload PT Strength 1.1",
+      "requirements": "Equipment: Dumbbells, Weight Plates (20lb, 35lb, 40lb, 75lb), Exercise Band",
+      "exercises": [
+        {
+          "name": "Split Squat Hold with Hands Overhead",
+          "gif": "",
+          "reps": "30",
+          "sets": "2",
+          "repUnits": "secs",
+          "note": "Keep pelvis level, stack torso over the back knee. Use 2x20lb weights."
+        },
+        {
+          "name": "Wall Lower Calf Holds & Lifts",
+          "gif": "",
+          "reps": "20 / 30",
+          "sets": "2",
+          "repUnits": "secs",
+          "note": "Perform 2 sets of 20s with 30lb, then 2 sets of 30s each side."
+        },
+        {
+          "name": "Copenhagen Plank at Upper Calf with Lifts",
+          "gif": "",
+          "reps": "8",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Perform at ankle with lifts."
+        },
+        {
+          "name": "Two Leg Pogo",
+          "gif": "",
+          "reps": "15",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Landing midfoot, bounce on both feet while not allowing the heel to touch the floor or the ankle to extend."
+        },
+        {
+          "name": "A Runs Gear 1-3",
+          "gif": "",
+          "reps": "4",
+          "sets": "rounds",
+          "note": "Perform running gear drills."
+        },
+        {
+          "name": "Goblet Squat (Tempo)",
+          "gif": "",
+          "reps": "5",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Use 75lb. Tempo: slow down, fast up."
+        },
+        {
+          "name": "Dumbbell Chest Press",
+          "gif": "",
+          "reps": "10",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Use 2x35lb. Tempo: slow down, fast up."
+        },
+        {
+          "name": "Dumbbell Bulgarian Split Squat (RFESS)",
+          "gif": "",
+          "reps": "6",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Use 2x40lb. Option to warm up with a lighter weight."
+        },
+        {
+          "name": "One Arm Dumbbell Rows",
+          "gif": "",
+          "reps": "8",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Use 25lb dumbbells."
+        }
+      ]
+    },
+    {
+      "id": "reload_pt_strength_1-2",
+      "title": "Reload PT Strength 1.2",
+      "requirements": "Equipment: Dumbbells, Trap Bar, Weight Plates (20lb, 30lb, 130lb), Exercise Band",
+      "exercises": [
+        {
+          "name": "Split Squat Hold, Hands Overhead",
+          "gif": "",
+          "reps": "30",
+          "sets": "2",
+          "repUnits": "secs",
+          "note": "Keep pelvis level, stack torso over the back knee. Use 2x20lb weights."
+        },
+        {
+          "name": "Wall Lower Calf Holds & Lifts",
+          "gif": "",
+          "reps": "20 / 30",
+          "sets": "2",
+          "repUnits": "secs",
+          "note": "Perform 2 sets of 20s with 30lb, then 2 sets of 30s each side."
+        },
+        {
+          "name": "Copenhagen Plank at Upper Calf with Lifts",
+          "gif": "",
+          "reps": "8",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Perform at ankle with lifts."
+        },
+        {
+          "name": "2L Pogo",
+          "gif": "",
+          "reps": "15",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Landing midfoot."
+        },
+        {
+          "name": "A Runs Gear 1-3",
+          "gif": "",
+          "reps": "4",
+          "sets": "rounds",
+          "note": "Perform running gear drills."
+        },
+        {
+          "name": "Landing from a Box",
+          "gif": "",
+          "reps": "5",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "From 12in box."
+        },
+        {
+          "name": "Trapbar Deadlift",
+          "gif": "",
+          "reps": "6",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Use 130lb (or available weight). Tempo: slow down, fast up."
+        },
+        {
+          "name": "DB Chest Press",
+          "gif": "",
+          "reps": "10",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Use 2x35lb. Use same concept as goblet squat. Tempo: slow down, fast up."
+        },
+        {
+          "name": "1L RDL w/ Band Above Knee",
+          "gif": "",
+          "reps": "30",
+          "sets": "2",
+          "repUnits": "secs",
+          "note": "Hand on railing, reach back leg outwards."
+        },
+        {
+          "name": "1A DB Row",
+          "gif": "",
+          "reps": "8",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Use 25lb dumbbells."
+        }
+      ]
     }
   ]
 }
