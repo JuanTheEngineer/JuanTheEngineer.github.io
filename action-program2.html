@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workout Viewer</title>
+  <style>
+    /* Base styles */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .container {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 10px 12px;
+      border-bottom: 1px solid #ddd;
+      background-color: #eee;
+    }
+
+    .workout-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0;
+      color: #555;
+    }
+
+    .share-icon {
+      color: #777;
+      cursor: pointer;
+      margin-right: 12px;
+      opacity: 0.7;
+    }
+
+    .requirements {
+      font-size: 14px;
+      margin: 0 12px 16px;
+      padding: 8px;
+      background-color: #efefef;
+      border-radius: 4px;
+    }
+
+    /* Timeline styles */
+    .timeline-container {
+      padding: 12px 15px;
+      background-color: #f5f5f5;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 12px;
+    }
+
+    .timeline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      height: 30px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      height: 3px;
+      background-color: #ddd;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .dot {
+      width: 15px;
+      height: 15px;
+      background-color: #ddd;
+      border-radius: 50%;
+      position: relative;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      width: 22px;
+      height: 22px;
+      background-color: #666;
+    }
+
+    .dot.completed {
+      background-color: #aaa;
+      position: relative;
+    }
+
+    .dot.completed::after {
+      content: "✓";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 10px;
+    }
+
+    /* Exercise styles */
+    .exercise-item {
+      margin: 0 12px 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      background-color: white;
+    }
+
+    .exercise-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 12px 16px;
+      background-color: #eee;
+      cursor: pointer;
+    }
+
+    .exercise-title-container {
+      flex-grow: 1;
+    }
+
+    .exercise-title {
+      font-weight: 500;
+      margin: 0 0 4px 0;
+      font-size: 14px;
+    }
+
+    .exercise-summary {
+      font-size: 12px;
+      color: #666;
+      margin: 0;
+    }
+
+    .exercise-status {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #aaa;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      margin-left: 8px;
+      cursor: pointer;
+    }
+
+    .completed .exercise-status {
+      background-color: #aaa;
+      color: white;
+    }
+
+    .completed .exercise-status::after {
+      content: "✓";
+      font-size: 12px;
+    }
+
+    .exercise-content {
+      padding: 16px;
+      display: none;
+    }
+
+    .exercise-content.active {
+      display: block;
+    }
+
+
+
+    .exercise-gif {
+      width: 100%;
+      border-radius: 4px;
+      margin: 12px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .exercise-notes {
+      font-size: 14px;
+      color: #555;
+      margin-top: 12px;
+      line-height: 1.4;
+    }
+
+    .tooltip-icon {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background-color: #aaa;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 16px;
+      font-size: 12px;
+      margin-left: 4px;
+      cursor: help;
+      position: relative;
+    }
+
+    .tooltip-icon:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: normal;
+      white-space: nowrap;
+      font-size: 12px;
+      margin-bottom: 5px;
+      z-index: 10;
+    }
+
+    /* Chevron icons */
+    .chevron {
+      border: solid #777;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 3px;
+      margin-right: 8px;
+    }
+
+    .down {
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
+
+    .up {
+      transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="share-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="18" cy="5" r="3"></circle>
+        <circle cx="6" cy="12" r="3"></circle>
+        <circle cx="18" cy="19" r="3"></circle>
+        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+      </svg>
+    </div>
+    <h1 class="workout-title" id="program-title">Loading program...</h1>
+  </div>
+
+  <div class="timeline-container">
+    <div class="timeline" id="exercise-timeline">
+      <!-- Timeline dots will be generated dynamically -->
+    </div>
+  </div>
+
+  <div class="requirements" id="program-requirements">
+    Loading requirements...
+  </div>
+
+  <div id="exercise-list">
+    <!-- Exercise items will be generated dynamically -->
+  </div>
+</div>
+
+<script>
+  // 1. Grab the program ID from the URL, e.g., ?id=program1
+  const urlParams = new URLSearchParams(window.location.search);
+  const programId = urlParams.get('id') || 'agility_lower_1-1'; // fallback to default if none provided
+
+  // 2. Fetch the workouts JSON
+  fetch('workouts.json')
+          .then(response => response.json())
+          .then(data => {
+            // Find the selected program
+            const program = data.programs.find(p => p.id === programId);
+
+            if (!program) {
+              document.getElementById('program-title').innerText = 'Program Not Found';
+              return;
+            }
+
+            // Set program title and requirements
+            document.getElementById('program-title').innerText = program.title;
+            document.getElementById('program-requirements').innerText = 'Requirements: ' + program.requirements;
+
+            // Create the timeline
+            const timeline = document.getElementById('exercise-timeline');
+            const exerciseList = document.getElementById('exercise-list');
+
+            // Clear any existing content
+            timeline.innerHTML = '';
+            exerciseList.innerHTML = '';
+
+            // Create the dots and exercise items
+            program.exercises.forEach((exercise, index) => {
+              // Create timeline dot
+              const dot = document.createElement('div');
+              dot.className = 'dot';
+              dot.setAttribute('data-index', index);
+              dot.addEventListener('click', () => {
+                // Find corresponding exercise item and toggle it
+                const exerciseItem = document.querySelector(`.exercise-item[data-index="${index}"]`);
+                if (exerciseItem) {
+                  toggleExercise(exerciseItem);
+                }
+              });
+              timeline.appendChild(dot);
+
+              // Create exercise item
+              const exerciseItem = document.createElement('div');
+              exerciseItem.className = 'exercise-item';
+              exerciseItem.setAttribute('data-index', index);
+
+              // Exercise header
+              const header = document.createElement('div');
+              header.className = 'exercise-header';
+
+              const chevron = document.createElement('span');
+              chevron.className = 'chevron down';
+
+              const titleContainer = document.createElement('div');
+              titleContainer.className = 'exercise-title-container';
+
+              const title = document.createElement('h3');
+              title.className = 'exercise-title';
+              title.textContent = exercise.name;
+
+              const summary = document.createElement('p');
+              summary.className = 'exercise-summary';
+              summary.textContent = `${exercise.sets} sets × ${exercise.reps} ${exercise.repUnits || 'reps'}`;
+
+              const status = document.createElement('div');
+              status.className = 'exercise-status';
+
+              titleContainer.appendChild(title);
+              titleContainer.appendChild(summary);
+
+              header.appendChild(chevron);
+              header.appendChild(titleContainer);
+              header.appendChild(status);
+
+              header.addEventListener('click', () => toggleExercise(exerciseItem));
+
+              // Exercise content
+              const content = document.createElement('div');
+              content.className = 'exercise-content';
+
+              // Exercise GIF
+              const gif = document.createElement('img');
+              gif.className = 'exercise-gif';
+              gif.src = exercise.gif || '../gif/TrapBarDeadLift.gif'; // Fallback if no GIF provided
+              gif.alt = exercise.name;
+
+              // Exercise notes
+              const notes = document.createElement('p');
+              notes.className = 'exercise-notes';
+
+              // Check if the note contains "Rate of Perceived Exertion"
+              if (exercise.note && exercise.note.includes("Rate of Perceived Exertion")) {
+                const tooltip = document.createElement('span');
+                tooltip.className = 'tooltip-icon';
+                tooltip.textContent = '?';
+                tooltip.setAttribute('data-tooltip', 'Rate of Perceived Exertion (RPE) is a scale from 1-10 that measures how hard an exercise feels.');
+
+                notes.innerHTML = 'Note: ' + exercise.note;
+                notes.appendChild(tooltip);
+              } else {
+                notes.textContent = exercise.note ? 'Note: ' + exercise.note : '';
+              }
+
+              // Assemble the exercise item
+              content.appendChild(gif);
+              if (notes.textContent) content.appendChild(notes);
+
+              // Add subExercise if present
+              if (exercise.subExercise) {
+                const subHeader = document.createElement('h4');
+                subHeader.textContent = 'Followed by:';
+                subHeader.style.marginTop = '20px';
+
+                const subSummary = document.createElement('p');
+                subSummary.style.fontSize = '12px';
+                subSummary.style.color = '#666';
+                subSummary.style.margin = '10px 0 15px 0';
+                subSummary.textContent = `${exercise.subExercise.sets} sets × ${exercise.subExercise.reps} ${exercise.subExercise.repUnits || 'reps'}`;
+
+                const subGif = document.createElement('img');
+                subGif.className = 'exercise-gif';
+                subGif.src = exercise.subExercise.gif || '../gif/TrapBarDeadLift.gif';
+                subGif.alt = 'Sub Exercise';
+
+                const subNotes = document.createElement('p');
+                subNotes.className = 'exercise-notes';
+                subNotes.textContent = exercise.subExercise.note ? 'Note: ' + exercise.subExercise.note : '';
+
+                content.appendChild(subHeader);
+                content.appendChild(subSummary);
+                content.appendChild(subGif);
+                if (subNotes.textContent) content.appendChild(subNotes);
+              }
+
+              exerciseItem.appendChild(header);
+              exerciseItem.appendChild(content);
+              exerciseList.appendChild(exerciseItem);
+
+              // Add click event for the status toggle
+              const statusElement = exerciseItem.querySelector('.exercise-status');
+              statusElement.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent triggering the parent click event
+                toggleCompletion(exerciseItem);
+              });
+            });
+
+            // Set first exercise as active by default
+            if (program.exercises.length > 0) {
+              const firstExerciseItem = document.querySelector('.exercise-item');
+              toggleExercise(firstExerciseItem);
+            }
+          })
+          .catch(err => {
+            console.error('Error loading workouts.json:', err);
+            document.getElementById('program-title').innerText = 'Error Loading Program';
+          });
+
+  // Function to toggle the exercise content visibility
+  function toggleExercise(element) {
+    // First, close all other exercises
+    const allContents = document.querySelectorAll('.exercise-content.active');
+    const allChevrons = document.querySelectorAll('.chevron.up');
+    const allDots = document.querySelectorAll('.dot.active:not(.completed)');
+
+    allContents.forEach(content => {
+      if (content !== element.querySelector('.exercise-content')) {
+        content.classList.remove('active');
+      }
+    });
+
+    allChevrons.forEach(chevron => {
+      if (chevron !== element.querySelector('.chevron')) {
+        chevron.classList.remove('up');
+        chevron.classList.add('down');
+      }
+    });
+
+    allDots.forEach(dot => {
+      dot.classList.remove('active');
+    });
+
+    // Toggle this exercise
+    const content = element.querySelector('.exercise-content');
+    const chevron = element.querySelector('.chevron');
+    const index = element.getAttribute('data-index');
+    const dot = document.querySelector(`.dot[data-index="${index}"]`);
+
+    content.classList.toggle('active');
+
+    if (content.classList.contains('active')) {
+      chevron.classList.remove('down');
+      chevron.classList.add('up');
+
+      // Only add 'active' class to dot if exercise is not completed
+      if (dot && !dot.classList.contains('completed')) {
+        dot.classList.add('active');
+      }
+    } else {
+      chevron.classList.remove('up');
+      chevron.classList.add('down');
+
+      if (dot && !dot.classList.contains('completed')) {
+        dot.classList.remove('active');
+      }
+    }
+  }
+
+  // Function to toggle the completion status
+  function toggleCompletion(element) {
+    element.classList.toggle('completed');
+    const index = element.getAttribute('data-index');
+    const dot = document.querySelector(`.dot[data-index="${index}"]`);
+
+    if (element.classList.contains('completed')) {
+      if (dot) {
+        dot.classList.add('completed');
+        dot.classList.remove('active');
+      }
+
+      const statusElement = element.querySelector('.exercise-status');
+      if (statusElement) {
+        statusElement.innerHTML = '✓';
+      }
+    } else {
+      if (dot) {
+        dot.classList.remove('completed');
+        // Only add active class if the exercise content is visible
+        if (element.querySelector('.exercise-content.active')) {
+          dot.classList.add('active');
+        }
+      }
+
+      const statusElement = element.querySelector('.exercise-status');
+      if (statusElement) {
+        statusElement.innerHTML = '';
+      }
+    }
+  }
+</script>
+</body>
+</html>
