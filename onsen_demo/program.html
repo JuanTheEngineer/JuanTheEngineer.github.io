@@ -2,265 +2,1293 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.7">
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <title>Juan's Exercise Database</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juan's Workout Database - Program</title>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
   <style>
-    /* Collapsible button styling */
-    .collapsible {
-      background-color: #f4f4f4;
-      color: #333;
-      cursor: pointer;
-      padding: 12px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 18px;
+    /* Juan's Workout Database - Configurable Color Palette */
+    :root {
+      /* Primary Brand Colors */
+      --primary-blue: #4586F1;
+      --primary-dark-blue: #093175;
+      --primary-light-blue: #65A9ED;
+      --primary-very-light-blue: #C5DDFA;
+
+      /* Accent Colors */
+      --accent-white: #FFFFFF;
+      --accent-light-gray: #f4f4f4;
+      --accent-gray: #e0e0e0;
+      --accent-dark: #333333;
+
+      /* Semantic Colors */
+      --success-green: #28a745;
+      --warning-orange: #fd7e14;
+      --danger-red: #dc3545;
+
+      /* Text Colors */
+      --text-primary: var(--primary-dark-blue);
+      --text-secondary: var(--accent-dark);
+      --text-light: var(--accent-white);
+
+      /* Background Colors */
+      --bg-primary: var(--accent-white);
+      --bg-secondary: var(--accent-light-gray);
+      --bg-brand: var(--primary-blue);
+    }
+
+    /* Apply Juan's branding to Onsen UI components */
+    .toolbar {
+      background: var(--bg-brand) !important;
+      color: var(--text-light) !important;
+    }
+
+    .toolbar__center {
+      color: var(--text-light) !important;
       font-weight: bold;
-      display: flex;
-      justify-content: flex-start; /* left align content */
-      align-items: center;
-      transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    .back-button {
+      color: var(--text-light) !important;
+      opacity: 0.8;
+      font-size: 0.9em;
+      font-weight: 400;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .back-button:hover, .back-button:active {
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateX(-2px);
+    }
+
+    /* Timeline styles for program view */
+    .timeline::before {
+      content: "";
+      position: absolute;
+      height: 4px;
+      background: var(--accent-gray);
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 1;
+      border-radius: 2px;
+    }
+
+    /* Adaptive timeline layouts */
+    .timeline.single-exercise {
+      justify-content: center;
+    }
+
+    .timeline.single-exercise::before {
+      display: none; /* Hide connecting line for single exercise */
+    }
+
+    .timeline.two-exercises {
+      justify-content: center;
+      gap: 100px; /* Comfortable spacing between two dots */
+    }
+
+    .timeline.two-exercises::before {
+      left: 50%;
+      right: auto;
+      width: 100px;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    /* Special styling for two exercises */
+    .timeline.two-exercises .timeline-dot {
       position: relative;
     }
 
-    /* Collapsible content styling */
-    .collapsible:hover {
-      background-color: #e0e0e0;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    .timeline.two-exercises .timeline-dot::before {
+      content: attr(data-number);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 10px;
+      font-weight: bold;
+      color: var(--text-secondary);
     }
 
-    /* Chevron styling */
-    .chevron {
-      transition: transform 0.3s ease;
-      margin-left: 8px;
+    .timeline.two-exercises .timeline-dot.active::before {
+      color: var(--text-light);
     }
 
-    /* Rotate chevron when active */
-    .collapsible.active .chevron {
-      transform: rotate(180deg);
+    .timeline.two-exercises .timeline-dot.completed::before {
+      content: "";
     }
 
-    /* Hide the tap hint when expanded */
-    .collapsible.active .tap-hint {
+    .timeline.few-exercises {
+      justify-content: center;
+      max-width: 300px;
+      margin: 0 auto;
+      gap: 40px;
+    }
+
+    .timeline.few-exercises::before {
+      left: 10%;
+      right: 10%;
+    }
+
+    /* Special styling for single exercise */
+    .timeline.single-exercise .timeline-dot {
+      width: 24px;
+      height: 24px;
+      position: relative;
+    }
+
+    .timeline.single-exercise .timeline-dot::before {
+      content: "1";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 11px;
+      font-weight: bold;
+      color: var(--text-secondary);
+    }
+
+    .timeline.single-exercise .timeline-dot.active::before {
+      color: var(--text-light);
+    }
+
+    .timeline.single-exercise .timeline-dot.completed::before {
+      content: "";
+    }
+
+    /* Exercise count indicator for single exercise */
+    .exercise-count-indicator {
+      text-align: center;
+      font-size: 0.8em;
+      color: var(--text-secondary);
+      opacity: 0.8;
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+
+    .timeline-dot {
+      width: 18px;
+      height: 18px;
+      background: var(--bg-primary);
+      border: 2px solid var(--accent-gray);
+      border-radius: 50%;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .timeline-dot:hover {
+      transform: scale(1.1);
+      box-shadow: 0 2px 8px rgba(69, 134, 241, 0.3);
+    }
+
+    .timeline-dot.active {
+      width: 22px;
+      height: 22px;
+      background: var(--primary-blue);
+      border-color: var(--primary-blue);
+      transform: scale(1.1);
+      box-shadow: 0 0 0 3px rgba(69, 134, 241, 0.3);
+    }
+
+    .timeline-dot.completed {
+      background: var(--primary-dark-blue);
+      border-color: var(--primary-dark-blue);
+      width: 18px;
+      height: 18px;
+    }
+
+    .timeline-dot.completed::after {
+      content: "✔";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 9px;
+      color: var(--text-light);
+      font-weight: bold;
+    }
+
+    .timeline-dot.active.completed {
+      background: var(--primary-dark-blue);
+      border: 3px solid var(--primary-blue);
+      width: 22px;
+      height: 22px;
+      transform: scale(1.1);
+      box-shadow: 0 0 0 3px rgba(69, 134, 241, 0.3);
+    }
+
+    .timeline-dot.active.completed::after {
+      content: "✔";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 9px;
+      color: var(--text-light);
+      font-weight: bold;
+    }
+
+    /* Exercise item styles for program view */
+    .exercise-item {
+      margin-bottom: 12px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(69, 134, 241, 0.1);
+      background: var(--bg-primary);
+      border-left: 4px solid var(--primary-blue);
+    }
+
+    .exercise-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background: var(--bg-secondary);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .exercise-header:hover {
+      background: var(--accent-gray);
+    }
+
+    .exercise-title {
+      font-weight: 600;
+      margin: 0;
+      flex-grow: 1;
+      font-size: 1.1em;
+      color: var(--text-primary);
+    }
+
+    .exercise-status {
+      width: 28px;
+      height: 28px;
+      border: 2px solid var(--primary-blue);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+      min-width: 28px;
+      min-height: 28px;
+      background: var(--bg-primary);
+      position: relative;
+    }
+
+    .exercise-status:hover {
+      background: var(--primary-very-light-blue);
+      transform: scale(1.05);
+      box-shadow: 0 2px 8px rgba(69, 134, 241, 0.2);
+    }
+
+    .completed .exercise-status {
+      background: var(--primary-dark-blue);
+      border-color: var(--primary-dark-blue);
+      animation: completePulse 0.6s ease-out;
+    }
+
+    .completed .exercise-status::after {
+      content: "✔";
+      font-size: 14px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--text-light);
+      font-weight: bold;
+    }
+
+    @keyframes completePulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    /* Progress indicator for overall completion */
+    .progress-indicator {
+      margin: 0;
+      padding: 8px 15px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--accent-gray);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .progress-indicator-inner {
+      background: var(--bg-secondary);
+      height: 6px;
+      border-radius: 3px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary-light-blue), var(--primary-blue));
+      border-radius: 3px;
+      transition: width 0.8s ease-out;
+      position: relative;
+    }
+
+    .progress-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .exercise-content {
+      padding: 20px;
       display: none;
+    }
+
+    .exercise-content.active {
+      display: block;
+    }
+
+    .exercise-details {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      background: var(--bg-secondary);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .exercise-metrics {
+      text-align: center;
+      flex: 1;
+    }
+
+    .metric-value {
+      font-size: 2.2em;
+      font-weight: 600;
+      margin: 0;
+      color: var(--primary-blue);
+    }
+
+    .metric-label {
+      font-size: 0.9em;
+      color: var(--text-secondary);
+      margin: 5px 0 0 0;
+      font-weight: 500;
+    }
+
+    .exercise-gif {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      margin: 15px auto;
+      display: block;
+      box-shadow: 0 4px 12px rgba(69, 134, 241, 0.2);
+    }
+
+    .exercise-notes {
+      font-size: 0.95em;
+      color: var(--text-secondary);
+      margin-top: 15px;
+      line-height: 1.5;
+      padding: 12px;
+      background: var(--primary-very-light-blue);
+      border-radius: 6px;
+      border-left: 4px solid var(--primary-blue);
+    }
+
+    .chevron {
+      border: solid var(--text-secondary);
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 3px;
+      margin-right: 8px;
+      transition: transform 0.2s;
+    }
+
+    .chevron.down {
+      transform: rotate(45deg);
+    }
+
+    .chevron.up {
+      transform: rotate(-135deg);
+    }
+
+    .tooltip-icon {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      background: var(--primary-blue);
+      color: var(--text-light);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 18px;
+      font-size: 12px;
+      margin-left: 6px;
+      cursor: help;
+      position: relative;
+    }
+
+    .tooltip-icon:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary-dark-blue);
+      color: var(--text-light);
+      padding: 8px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      z-index: 10;
+      font-size: 11px;
+      width: max-content;
+      max-width: 200px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      .exercise-title {
+        font-size: 1em;
+      }
+
+      .metric-value {
+        font-size: 1.8em;
+      }
+
+      .exercise-details {
+        padding: 12px;
+      }
+    }
+
+    /* Flying celebration text animation */
+    .flying-celebration-text {
+      position: fixed;
+      left: 50%;
+      bottom: -100px;
+      transform: translateX(-50%);
+      font-size: 2.5em;
+      font-weight: bold;
+      color: var(--primary-blue);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      z-index: 9999;
+      pointer-events: none;
+      animation: flyUpAndOut 3s ease-out forwards;
+    }
+
+    @keyframes flyUpAndOut {
+      0% {
+        bottom: -100px;
+        opacity: 0;
+        transform: translateX(-50%) scale(0.5) rotate(-10deg);
+        animation-timing-function: ease-out;
+      }
+      25% {
+        bottom: 40%;
+        opacity: 1;
+        transform: translateX(-50%) scale(1.2) rotate(5deg);
+        animation-timing-function: ease-out;
+      }
+      35% {
+        bottom: 45%;
+        transform: translateX(-50%) scale(1) rotate(-2deg);
+        animation-timing-function: ease-in-out;
+      }
+      50% {
+        bottom: 50%;
+        transform: translateX(-50%) scale(1.1) rotate(2deg);
+        animation-timing-function: ease-in-out;
+      }
+      65% {
+        bottom: 55%;
+        opacity: 1;
+        transform: translateX(-50%) scale(1.05) rotate(0deg);
+        animation-timing-function: ease-in;
+      }
+      100% {
+        bottom: 120%;
+        opacity: 0;
+        transform: translateX(-50%) scale(0.8) rotate(5deg);
+        animation-timing-function: ease-in;
+      }
+    }
+
+    /* Blue flash overlay for completion */
+    .completion-flash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--primary-blue);
+      opacity: 0;
+      z-index: 9998;
+      pointer-events: none;
+      animation: blueFlash 0.6s ease-out forwards;
+    }
+
+    @keyframes blueFlash {
+      0% {
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.3;
+      }
+      100% {
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
-<div id="page">
-  <div id="header">
-    <img src="logo.png" alt="Site Logo" />
-  </div>
-  <div id="content">
-    <div id="container">
-      <div id="main">
-        <!-- Navigation Menu -->
-        <div id="menu">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="start.html">Start</a></li>
-            <li><a href="programs.html">Programs</a></li>
-            <li><a href="glossary.html">Glossary</a></li>
-          </ul>
-        </div>
+  <ons-page id="program-page">
+    <ons-toolbar>
+      <div class="left" style="display: flex; align-items: center; padding-left: 8px;">
+        <ons-button modifier="quiet" onclick="goBack()" style="
+          color: rgba(255,255,255,0.9);
+          font-size: 1.8em;
+          padding: 12px 16px;
+          transition: all 0.2s ease;
+          min-width: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        " onmouseover="this.style.color='rgba(255,255,255,1)'; this.style.background='rgba(255,255,255,0.1)'"
+           onmouseout="this.style.color='rgba(255,255,255,0.9)'; this.style.background='transparent'">
+          ‹
+        </ons-button>
+      </div>
+      <div class="center" id="program-title">Program Details</div>
+    </ons-toolbar>
 
-        <!-- Text/Exercise List Container -->
-        <div id="text">
-          <!-- Program Title here -->
-          <h1 id="program-title"></h1>
-          <p id="program-requirements"></p>
-
-          <!-- Dynamically inserted collapsible exercise buttons will appear here -->
-          <div id="exercise-list"></div>
-
-        </div> <!-- end #text -->
-      </div> <!-- end #main -->
-    </div> <!-- end #container -->
-    <div class="clear"></div>
-    <div id="footer">
-      <p><a href="https://github.com/JuanTheEngineer">Created by Juan the Engineer</a></p>
+    <!-- Progress Indicator -->
+    <div class="progress-indicator">
+      <div class="progress-indicator-inner">
+        <div id="progress-bar" class="progress-bar" style="width: 0%;"></div>
+      </div>
     </div>
-  </div> <!-- end #content -->
-</div> <!-- end #page -->
 
-<!-- Script to load JSON and inject data -->
-<script>
-  // 1. Grab the program ID from the URL, e.g., ?id=program1
-  const urlParams = new URLSearchParams(window.location.search);
-  const programId = urlParams.get('id') || 'agility_lower_1-1'; // fallback to program1 if none provided
+    <!-- Program Title and Requirements -->
+    <div style="padding: 15px;">
+      <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <div class="share-button" style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary-blue); color: var(--text-light); display: flex; justify-content: center; align-items: center; margin-right: 12px; cursor: pointer; box-shadow: 0 1px 4px rgba(69, 134, 241, 0.3);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+        </div>
+        <h1 id="program-name" style="font-size: 1.3em; font-weight: bold; color: var(--text-primary); margin: 0; flex-grow: 1;"></h1>
+      </div>
+      <div id="program-requirements" style="font-size: 0.9em; color: var(--text-secondary); padding: 12px; background: var(--bg-secondary); border-radius: 6px; border-left: 4px solid var(--primary-blue);"></div>
+    </div>
 
-  // 2. Fetch the workouts JSON
-  fetch('workouts.json')
+    <!-- Timeline Container -->
+    <div id="timeline-container" class="timeline-container" style="padding: 12px 15px; background: var(--bg-secondary); border-top: 1px solid var(--accent-gray); border-bottom: 1px solid var(--accent-gray); margin-bottom: 12px;">
+      <div id="timeline" class="timeline" style="display: flex; justify-content: space-between; align-items: center; position: relative; height: 35px;">
+        <!-- Timeline dots will be dynamically inserted here -->
+      </div>
+    </div>
+
+    <!-- Exercise List Container -->
+    <div id="exercise-list" style="padding: 0 15px;"></div>
+
+    <!-- Extra scroll space and footer -->
+    <div style="padding: 20px 15px 0; text-align: center; min-height: calc(100vh - 300px);">
+      <!-- Reset section -->
+      <div id="reset-section" style="margin-bottom: 60px; opacity: 0; transition: opacity 0.3s ease; display: none;">
+        <p id="reset-text" style="font-size: 0.7em; color: var(--text-secondary); opacity: 0.5; margin: 0 0 8px 0; font-weight: 300;">
+          press to reset progress
+        </p>
+
+        <div id="reset-button" style="
+          display: inline-block;
+          width: 28px;
+          height: 28px;
+          margin: 0;
+          cursor: pointer;
+          opacity: 0.7;
+          transition: all 0.2s ease;
+        ">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-secondary);">
+            <path d="M1 4v6h6"></path>
+            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fixed footer -->
+    <div style="text-align: center; padding: 20px 15px 30px;">
+      <p style="font-size: 0.75em; color: var(--text-secondary); opacity: 0.6; margin: 0; font-weight: 300;">
+        Created by Juan the Engineer
+      </p>
+    </div>
+
+  </ons-page>
+
+  <script>
+    // Track reset button visibility state
+    let hasProgress = false;
+    let isScrolledToBottom = false;
+
+    // Smart back button function
+    function goBack() {
+      // Get the source tab from URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const fromTab = urlParams.get('from');
+
+      // Check if we have browser history from the main app
+      const referrer = document.referrer;
+      const isFromMainApp = referrer.includes('index.html') || referrer.includes('start.html') || referrer.endsWith('onsen_demo/');
+
+      // Always use direct navigation for specific tabs to ensure proper state
+      if (fromTab === 'start') {
+        // Go back to separate start.html page
+        window.location.href = 'start.html';
+      } else if (fromTab === 'programs') {
+        // Set target tab and go to main app
+        sessionStorage.setItem('targetTab', 'programs');
+        window.location.href = 'index.html';
+      } else if (window.history.length > 1 && isFromMainApp) {
+        // Use browser back for other cases
+        window.history.back();
+      } else {
+        // Default fallback to main page
+        window.location.href = 'index.html';
+      }
+    }
+
+    document.addEventListener('init', function(event) {
+      if (event.target.id === 'program-page') {
+        // Get program ID from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const programId = urlParams.get('id');
+
+        if (!programId) {
+          document.getElementById('program-name').textContent = 'No Program Selected';
+          return;
+        }
+
+        // Store exercise completion state and current open exercise
+        let completedExercises = {};
+        let currentOpenExerciseIndex = -1;
+
+        // Load saved progress from localStorage
+        function loadSavedProgress() {
+          const savedProgress = localStorage.getItem(`workout_progress_${programId}`);
+          if (savedProgress) {
+            try {
+              completedExercises = JSON.parse(savedProgress);
+            } catch (e) {
+              console.error('Error loading saved progress:', e);
+              completedExercises = {};
+            }
+          }
+        }
+
+        // Save progress to localStorage
+        function saveProgress() {
+          localStorage.setItem(`workout_progress_${programId}`, JSON.stringify(completedExercises));
+        }
+
+        // Clear saved progress
+        function clearSavedProgress() {
+          localStorage.removeItem(`workout_progress_${programId}`);
+        }
+
+        // Fetch workouts.json and load the specific program
+        fetch('workouts.json')
           .then(response => response.json())
           .then(data => {
-            // data.programs is our array of programs
             const program = data.programs.find(p => p.id === programId);
 
             if (!program) {
-              // If no matching program, handle gracefully
-              document.getElementById('program-title').innerText = 'Program Not Found';
+              const programNameEl = document.getElementById('program-name');
+              if (programNameEl) {
+                programNameEl.textContent = 'Program Not Found';
+                console.error('Program not found for ID:', programId);
+              }
               return;
             }
 
-            // Insert Program Title & Requirements
-            document.getElementById('program-title').innerText = program.title;
-            document.getElementById('program-requirements').innerText =
-                    'Requirements: ' + program.requirements;
+            // Set program title and requirements
+            const programTitleEl = document.getElementById('program-title');
+            const programNameEl = document.getElementById('program-name');
+            const programRequirementsEl = document.getElementById('program-requirements');
 
-            // Build the exercise collapsibles
-            const container = document.getElementById('exercise-list');
-            program.exercises.forEach(ex => {
-              // Create the collapsible button with a chevron indicator
-              const button = document.createElement('button');
-              button.type = 'button';
-              button.className = 'collapsible';
+            if (programTitleEl) {
+              programTitleEl.textContent = program.title;
+            }
+            if (programNameEl) {
+              programNameEl.textContent = program.title;
+            }
+            if (programRequirementsEl) {
+              programRequirementsEl.textContent = `Requirements: ${program.requirements}`;
+            }
 
-              // Create a span for the chevron icon (use an HTML entity for reliability)
+            // Load saved progress
+            loadSavedProgress();
+
+            // Build the timeline dots with adaptive layout
+            const timelineContainer = document.getElementById('timeline');
+            const timelineContainerWrapper = document.getElementById('timeline-container');
+            const timelineParent = timelineContainer.parentElement;
+            timelineContainer.innerHTML = '';
+
+            const exerciseCount = program.exercises.length;
+
+            // Hide timeline completely for single exercise
+            if (exerciseCount === 1) {
+              timelineContainerWrapper.style.display = 'none';
+            } else {
+              timelineContainerWrapper.style.display = 'block';
+
+              // Apply adaptive timeline classes based on exercise count
+              timelineContainer.classList.remove('single-exercise', 'two-exercises', 'few-exercises');
+
+              if (exerciseCount === 2) {
+                timelineContainer.classList.add('two-exercises');
+              } else if (exerciseCount <= 4) {
+                timelineContainer.classList.add('few-exercises');
+              }
+
+              program.exercises.forEach((ex, index) => {
+                const dot = document.createElement('div');
+                dot.className = 'timeline-dot';
+                dot.setAttribute('data-index', index);
+
+                // Add number attribute for two-exercise layout
+                if (exerciseCount === 2) {
+                  dot.setAttribute('data-number', index + 1);
+                }
+
+                dot.onclick = function() {
+                  const exerciseElement = document.querySelector(`.exercise-item[data-index="${index}"]`);
+                  if (exerciseElement) {
+                    toggleExercise(exerciseElement);
+                  }
+                };
+                timelineContainer.appendChild(dot);
+              });
+
+              // Add exercise count indicator for two exercises
+              if (exerciseCount === 2) {
+                const countIndicator = document.createElement('div');
+                countIndicator.className = 'exercise-count-indicator';
+                countIndicator.textContent = '2 Exercises';
+                timelineParent.appendChild(countIndicator);
+              }
+            }
+
+            // Build the exercise items
+            const exerciseList = document.getElementById('exercise-list');
+            exerciseList.innerHTML = '';
+
+            program.exercises.forEach((exercise, index) => {
+              // Create exercise item container
+              const exerciseItem = document.createElement('div');
+              exerciseItem.className = 'exercise-item';
+              exerciseItem.setAttribute('data-index', index);
+
+              // Create exercise header
+              const exerciseHeader = document.createElement('div');
+              exerciseHeader.className = 'exercise-header';
+              exerciseHeader.onclick = function() { toggleExercise(this.parentNode); };
+
+              // Create chevron
               const chevron = document.createElement('span');
-              chevron.className = 'chevron';
-              // Using HTML entity for the downward triangle:
-              chevron.innerHTML = '&#9660;';
+              chevron.className = 'chevron down';
 
-              // Create a span for the workout title
-              const titleSpan = document.createElement('span');
-              titleSpan.textContent = ex.name;
-              titleSpan.style.marginLeft = '8px'; // spacing between chevron and title
+              // Create exercise title
+              const exerciseTitle = document.createElement('h3');
+              exerciseTitle.className = 'exercise-title';
+              exerciseTitle.textContent = exercise.name;
 
-              // // Create a span for the tap hint
-              // const tapHint = document.createElement('span');
-              // tapHint.className = 'tap-hint';
-              // tapHint.textContent = 'Tap to expand';
+              // Create exercise status (checkmark circle)
+              const exerciseStatus = document.createElement('div');
+              exerciseStatus.className = 'exercise-status';
+              exerciseStatus.onclick = function(e) {
+                e.stopPropagation();
+                toggleCompleted(this.parentNode.parentNode);
+              };
 
-              // Append the chevron, title, and tap hint to the button
-              button.innerHTML = '';
-              button.appendChild(chevron);
-              button.appendChild(titleSpan);
-              // button.appendChild(tapHint);
+              // Append elements to exercise header
+              exerciseHeader.appendChild(chevron);
+              exerciseHeader.appendChild(exerciseTitle);
+              exerciseHeader.appendChild(exerciseStatus);
 
-              // Create the content div
-              const contentDiv = document.createElement('div');
-              contentDiv.className = 'content';
+              // Create exercise content
+              const exerciseContent = document.createElement('div');
+              exerciseContent.className = 'exercise-content';
 
-              // Add the description block
-              const descriptionDiv = document.createElement('div');
-              descriptionDiv.className = 'description';
+              // Create exercise details
+              const exerciseDetails = document.createElement('div');
+              exerciseDetails.className = 'exercise-details';
 
-              // Reps block
-              const divBlockReps = document.createElement('div');
-              divBlockReps.id = 'divBlock';
-              divBlockReps.innerText = ex.reps;
+              // Create reps metric
+              const repsMetric = document.createElement('div');
+              repsMetric.className = 'exercise-metrics';
 
-              const divLabelReps = document.createElement('div');
-              divLabelReps.id = 'divLabel';
-              divLabelReps.innerText = ex.repUnits || 'reps';
+              const repsValue = document.createElement('p');
+              repsValue.className = 'metric-value';
+              repsValue.textContent = exercise.reps;
 
-              // Break for spacing
-              const br = document.createElement('br');
+              const repsLabel = document.createElement('p');
+              repsLabel.className = 'metric-label';
+              repsLabel.textContent = exercise.repUnits || 'reps';
 
-              // Sets block
-              const divBlockSets = document.createElement('div');
-              divBlockSets.id = 'divBlock';
-              divBlockSets.innerText = ex.sets;
+              repsMetric.appendChild(repsValue);
+              repsMetric.appendChild(repsLabel);
 
-              const divLabelSets = document.createElement('div');
-              divLabelSets.id = 'divLabel';
-              divLabelSets.innerText = 'sets';
+              // Create sets metric
+              const setsMetric = document.createElement('div');
+              setsMetric.className = 'exercise-metrics';
 
-              // Append blocks to description
-              descriptionDiv.appendChild(divBlockReps);
-              descriptionDiv.appendChild(divLabelReps);
-              descriptionDiv.appendChild(br);
-              descriptionDiv.appendChild(divBlockSets);
-              descriptionDiv.appendChild(divLabelSets);
+              const setsValue = document.createElement('p');
+              setsValue.className = 'metric-value';
+              setsValue.textContent = exercise.sets;
 
-              // Exercise GIF
-              const gifImg = document.createElement('img');
-              gifImg.className = 'examples';
-              gifImg.src = ex.gif;
-              gifImg.alt = ex.name;
+              const setsLabel = document.createElement('p');
+              setsLabel.className = 'metric-label';
+              setsLabel.textContent = 'sets';
 
-              // Note
-              const divNote = document.createElement('div');
-              divNote.id = 'divNote';
-              if (ex.note) {
-                divNote.innerText = 'Note: ' + ex.note;
+              setsMetric.appendChild(setsValue);
+              setsMetric.appendChild(setsLabel);
+
+              // Append metrics to details
+              exerciseDetails.appendChild(repsMetric);
+              exerciseDetails.appendChild(setsMetric);
+
+              // Create exercise GIF
+              const exerciseGif = document.createElement('img');
+              exerciseGif.className = 'exercise-gif';
+              exerciseGif.src = "../" + exercise.gif;
+              exerciseGif.alt = exercise.name;
+
+              // Create exercise notes
+              const exerciseNotes = document.createElement('div');
+              exerciseNotes.className = 'exercise-notes';
+
+              // Check if note contains "Rate of Perceived Exertion"
+              if (exercise.note && exercise.note.includes("Rate of Perceived Exertion")) {
+                const noteParts = exercise.note.split("Rate of Perceived Exertion:");
+                exerciseNotes.innerHTML = "Note: Rate of Perceived Exertion:" + noteParts[1] +
+                        '<span class="tooltip-icon" data-tooltip="Rate of Perceived Exertion (RPE) is a scale from 1-10 that measures how hard an exercise feels. 1 is very easy, 10 is maximum effort.">?</span>';
+              } else {
+                exerciseNotes.textContent = exercise.note ? 'Note: ' + exercise.note : '';
               }
 
-              // Append everything to contentDiv
-              contentDiv.appendChild(descriptionDiv);
-              contentDiv.appendChild(gifImg);
-              contentDiv.appendChild(divNote);
+              // Append all elements to exercise content
+              exerciseContent.appendChild(exerciseDetails);
+              exerciseContent.appendChild(exerciseGif);
+              if (exercise.note) {
+                exerciseContent.appendChild(exerciseNotes);
+              }
 
-              // If there's a sub-exercise (like the iso-hold), handle that
-              if (ex.subExercise) {
-                const subDesc = document.createElement('div');
-                subDesc.className = 'description';
+              // Handle subExercise if present
+              if (exercise.subExercise) {
+                // Create subexercise header
+                const subHeader = document.createElement('h4');
+                subHeader.className = 'exercise-title';
+                subHeader.style.margin = '20px 0 10px';
+                subHeader.style.fontSize = '1em';
+                subHeader.textContent = 'Part 2:';
 
-                const subReps = document.createElement('div');
-                subReps.id = 'divBlock';
-                subReps.innerText = ex.subExercise.reps;
-                const subRepsLabel = document.createElement('div');
-                subRepsLabel.id = 'divLabel';
-                subRepsLabel.innerText = ex.subExercise.repUnits || 'reps';
+                // Create subexercise details
+                const subDetails = document.createElement('div');
+                subDetails.className = 'exercise-details';
 
-                const subBr = document.createElement('br');
+                // Create reps metric for subexercise
+                const subRepsMetric = document.createElement('div');
+                subRepsMetric.className = 'exercise-metrics';
 
-                const subSets = document.createElement('div');
-                subSets.id = 'divBlock';
-                subSets.innerText = ex.subExercise.sets;
-                const subSetsLabel = document.createElement('div');
-                subSetsLabel.id = 'divLabel';
-                subSetsLabel.innerText = 'sets';
+                const subRepsValue = document.createElement('p');
+                subRepsValue.className = 'metric-value';
+                subRepsValue.textContent = exercise.subExercise.reps;
 
-                subDesc.appendChild(subReps);
-                subDesc.appendChild(subRepsLabel);
-                subDesc.appendChild(subBr);
-                subDesc.appendChild(subSets);
-                subDesc.appendChild(subSetsLabel);
+                const subRepsLabel = document.createElement('p');
+                subRepsLabel.className = 'metric-label';
+                subRepsLabel.textContent = exercise.subExercise.repUnits || 'reps';
 
+                subRepsMetric.appendChild(subRepsValue);
+                subRepsMetric.appendChild(subRepsLabel);
+
+                // Create sets metric for subexercise
+                const subSetsMetric = document.createElement('div');
+                subSetsMetric.className = 'exercise-metrics';
+
+                const subSetsValue = document.createElement('p');
+                subSetsValue.className = 'metric-value';
+                subSetsValue.textContent = exercise.subExercise.sets;
+
+                const subSetsLabel = document.createElement('p');
+                subSetsLabel.className = 'metric-label';
+                subSetsLabel.textContent = 'sets';
+
+                subSetsMetric.appendChild(subSetsValue);
+                subSetsMetric.appendChild(subSetsLabel);
+
+                // Append metrics to subdetails
+                subDetails.appendChild(subRepsMetric);
+                subDetails.appendChild(subSetsMetric);
+
+                // Create subexercise GIF
                 const subGif = document.createElement('img');
-                subGif.className = 'examples';
-                subGif.src = ex.subExercise.gif;
-                subGif.alt = 'Sub Exercise';
+                subGif.className = 'exercise-gif';
+                subGif.src = "../" + exercise.subExercise.gif;
+                subGif.alt = 'Part 2 Exercise';
 
-                const subNote = document.createElement('div');
-                subNote.id = 'divNote';
-                subNote.innerText = 'Note: ' + (ex.subExercise.note || '');
+                // Create subexercise notes
+                const subNotes = document.createElement('div');
+                subNotes.className = 'exercise-notes';
+                subNotes.textContent = exercise.subExercise.note ? 'Note: ' + exercise.subExercise.note : '';
 
-                contentDiv.appendChild(subDesc);
-                contentDiv.appendChild(subGif);
-                contentDiv.appendChild(subNote);
+                // Append subexercise elements to content
+                exerciseContent.appendChild(subHeader);
+                exerciseContent.appendChild(subDetails);
+                exerciseContent.appendChild(subGif);
+                if (exercise.subExercise.note) {
+                  exerciseContent.appendChild(subNotes);
+                }
               }
 
-              // Finally, add button + content to the container
-              container.appendChild(button);
-              container.appendChild(contentDiv);
+              // Append header and content to exercise item
+              exerciseItem.appendChild(exerciseHeader);
+              exerciseItem.appendChild(exerciseContent);
+
+              // Append exercise item to container
+              exerciseList.appendChild(exerciseItem);
+
+              // Apply saved completion state
+              if (completedExercises[index]) {
+                exerciseItem.classList.add('completed');
+              }
             });
 
-            // After we build them, attach the collapsible functionality
-            initCollapsibles();
-          })
-          .catch(err => {
-            console.error('Error loading workouts.json:', err);
-          });
+            // Apply saved timeline states
+            const dots = document.querySelectorAll('.timeline .timeline-dot');
+            Object.keys(completedExercises).forEach(index => {
+              if (completedExercises[index] && dots[index]) {
+                dots[index].classList.add('completed');
+              }
+            });
 
-  // Collapsible logic
-  function initCollapsibles() {
-    const coll = document.getElementsByClassName("collapsible");
-    for (let i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        const content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-      });
-    }
-  }
-</script>
+            // Initialize progress indicators
+            updateProgressIndicators();
+
+            // Initialize reset button visibility state
+            hasProgress = checkForProgress();
+            updateResetButtonVisibility();
+
+            // Setup share button functionality
+            const shareButton = document.querySelector('.share-button');
+            if (shareButton) {
+              shareButton.onclick = function() {
+                // Get current URL to share
+                const shareUrl = window.location.href;
+                const programTitle = program.title;
+
+                // Use Web Share API if available
+                if (navigator.share) {
+                  navigator.share({
+                    title: programTitle,
+                    url: shareUrl
+                  }).catch(error => console.error('Error sharing:', error));
+                } else {
+                  // Fallback - copy to clipboard
+                  navigator.clipboard.writeText(shareUrl)
+                    .then(() => {
+                      ons.notification.alert('Link copied to clipboard!');
+                    })
+                    .catch(err => {
+                      console.error('Could not copy text: ', err);
+                      ons.notification.alert('Could not copy link');
+                    });
+                }
+              };
+            }
+
+            // Toggle exercise expanded/collapsed state
+            function toggleExercise(element) {
+              // Close the currently open exercise if it's different
+              if (currentOpenExerciseIndex >= 0 && currentOpenExerciseIndex !== parseInt(element.getAttribute('data-index'))) {
+                const openExercise = document.querySelector(`.exercise-item[data-index="${currentOpenExerciseIndex}"]`);
+                if (openExercise) {
+                  const openContent = openExercise.querySelector('.exercise-content');
+                  const openChevron = openExercise.querySelector('.chevron');
+                  openContent.classList.remove('active');
+                  openChevron.classList.remove('up');
+                  openChevron.classList.add('down');
+                }
+
+                // Update timeline dots - remove active from old one
+                const dots = document.querySelectorAll('.timeline .timeline-dot');
+                if (dots[currentOpenExerciseIndex]) {
+                  dots[currentOpenExerciseIndex].classList.remove('active');
+                }
+              }
+
+              // Get the index of the current element
+              const index = parseInt(element.getAttribute('data-index'));
+              currentOpenExerciseIndex = index;
+
+              // Toggle the current element
+              const content = element.querySelector('.exercise-content');
+              const chevron = element.querySelector('.chevron');
+
+              content.classList.toggle('active');
+              chevron.classList.toggle('up');
+              chevron.classList.toggle('down');
+
+              // Update timeline dots
+              const dots = document.querySelectorAll('.timeline .timeline-dot');
+              if (content.classList.contains('active')) {
+                dots[index].classList.add('active');
+
+                // Auto-scroll so exercise header aligns with bottom of progress bar
+                setTimeout(() => {
+                  const progressIndicator = document.querySelector('.progress-indicator');
+                  const progressHeight = progressIndicator ? progressIndicator.offsetHeight : 0;
+                  const toolbarHeight = document.querySelector('.toolbar').offsetHeight;
+                  const targetScrollPosition = element.offsetTop - (toolbarHeight + progressHeight + 5);
+
+                  window.scrollTo({
+                    top: Math.max(0, targetScrollPosition),
+                    behavior: 'smooth'
+                  });
+                }, 100); // Small delay to ensure content expansion animation starts
+              } else {
+                dots[index].classList.remove('active');
+                currentOpenExerciseIndex = -1;
+              }
+
+              // Update reset button visibility
+              hasProgress = checkForProgress();
+              updateResetButtonVisibility();
+            }
+
+            // Toggle exercise completion state
+            function toggleCompleted(element) {
+              const index = parseInt(element.getAttribute('data-index'));
+              element.classList.toggle('completed');
+
+              // Update the completion state in our tracking object
+              completedExercises[index] = element.classList.contains('completed');
+
+              // Update timeline dot
+              const dots = document.querySelectorAll('.timeline .timeline-dot');
+              if (dots[index]) {
+                if (completedExercises[index]) {
+                  dots[index].classList.add('completed');
+                } else {
+                  dots[index].classList.remove('completed');
+                }
+              }
+
+              // Update progress indicators
+              updateProgressIndicators();
+
+              // Save progress to localStorage
+              saveProgress();
+
+              // Update reset button visibility
+              hasProgress = checkForProgress();
+              updateResetButtonVisibility();
+            }
+
+            // Update progress indicators
+            function updateProgressIndicators() {
+              const totalExercises = program.exercises.length;
+              // Count exercises that are visually marked as completed
+              const completedCount = document.querySelectorAll('.exercise-item.completed').length;
+              const progressPercentage = (completedCount / totalExercises) * 100;
+
+              // Update overall progress bar
+              const progressBar = document.getElementById('progress-bar');
+              progressBar.style.width = progressPercentage + '%';
+
+              // Celebration animation if 100% complete
+              if (progressPercentage === 100) {
+                setTimeout(() => {
+                  celebrateCompletion();
+                }, 500);
+              }
+            }
+
+            // Celebration animation for workout completion
+            function celebrateCompletion() {
+              // Array of motivational messages
+              const messages = ["Nice Work!", "Killer Moves!", "Awesome Job!"];
+
+              // Create blue flash overlay
+              const flashOverlay = document.createElement('div');
+              flashOverlay.className = 'completion-flash';
+              document.body.appendChild(flashOverlay);
+
+              // Create flying text element
+              const flyingText = document.createElement('div');
+              flyingText.textContent = messages[Math.floor(Math.random() * messages.length)];
+              flyingText.className = 'flying-celebration-text';
+
+              // Add flying text to body and trigger animation
+              document.body.appendChild(flyingText);
+
+              // Remove flash overlay after its animation completes
+              setTimeout(() => {
+                if (flashOverlay.parentNode) {
+                  flashOverlay.parentNode.removeChild(flashOverlay);
+                }
+              }, 600);
+
+              // Remove flying text after its animation completes
+              setTimeout(() => {
+                if (flyingText.parentNode) {
+                  flyingText.parentNode.removeChild(flyingText);
+                }
+              }, 3000);
+            }
+
+            // Reset workout progress function
+            function resetWorkoutProgress() {
+              // Clear completion state
+              completedExercises = {};
+
+              // Remove completed classes from all exercises
+              const allExercises = document.querySelectorAll('.exercise-item');
+              allExercises.forEach(exercise => {
+                exercise.classList.remove('completed');
+              });
+
+              // Remove completed classes from timeline dots
+              const dots = document.querySelectorAll('.timeline .timeline-dot');
+              dots.forEach(dot => {
+                dot.classList.remove('completed');
+              });
+
+              // Reset progress indicators
+              updateProgressIndicators();
+
+              // Clear saved progress
+              clearSavedProgress();
+
+              // Update reset button visibility
+              hasProgress = checkForProgress();
+              updateResetButtonVisibility();
+
+              // Show confirmation
+              ons.notification.alert('Workout progress has been reset!');
+            }
+
+            // Reset button visibility state is tracked globally
+
+            // Function to check if there's any progress to reset
+            function checkForProgress() {
+              // Check for visually completed exercises or any active exercise
+              const hasCompletedExercises = document.querySelectorAll('.exercise-item.completed').length > 0;
+              const hasActiveExercise = currentOpenExerciseIndex >= 0;
+              return hasCompletedExercises || hasActiveExercise;
+            }
+
+            // Function to update reset button visibility
+            function updateResetButtonVisibility() {
+              const resetSection = document.getElementById('reset-section');
+              const shouldShow = hasProgress; // Simplified: show when there's any progress
+
+              if (shouldShow && resetSection.style.display === 'none') {
+                resetSection.style.display = 'block';
+                setTimeout(() => {
+                  resetSection.style.opacity = '1';
+                }, 10);
+              } else if (!shouldShow && resetSection.style.display === 'block') {
+                resetSection.style.opacity = '0';
+                setTimeout(() => {
+                  if (!shouldShow) {
+                    resetSection.style.display = 'none';
+                  }
+                }, 300);
+              }
+            }
+
+            // Scroll event listener for bottom detection
+            let scrollTimeout;
+            window.addEventListener('scroll', function() {
+              clearTimeout(scrollTimeout);
+              scrollTimeout = setTimeout(() => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+
+                // Consider bottom half when scroll position is in the last 40% of the page
+                const scrollPercentage = (scrollTop + windowHeight) / documentHeight;
+                const wasScrolledToBottom = isScrolledToBottom;
+                isScrolledToBottom = scrollPercentage > 0.6;
+
+                if (wasScrolledToBottom !== isScrolledToBottom) {
+                  updateResetButtonVisibility();
+                }
+              }, 100);
+            });
+
+            // Setup reset button functionality
+            const resetButton = document.getElementById('reset-button');
+            if (resetButton) {
+              resetButton.onmouseover = function() {
+                this.style.opacity = '1';
+                this.style.transform = 'scale(1.1)';
+              };
+
+              resetButton.onmouseout = function() {
+                this.style.opacity = '0.7';
+                this.style.transform = 'scale(1)';
+              };
+
+              resetButton.onclick = function() {
+                ons.notification.confirm({
+                  message: 'Are you sure you want to reset all progress for this workout?',
+                  title: 'Reset Progress'
+                }).then(function(buttonIndex) {
+                  if (buttonIndex === 1) { // OK button
+                    resetWorkoutProgress();
+                  }
+                });
+              };
+            }
+          })
+          .catch(error => {
+            console.error('Error loading workouts.json:', error);
+            document.getElementById('program-name').textContent = 'Error Loading Program';
+          });
+      }
+    });
+  </script>
 </body>
 </html>

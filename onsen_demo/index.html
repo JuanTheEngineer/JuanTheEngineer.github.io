@@ -3,10 +3,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Inertia Workout App</title>
+  <title>Juan's Workout Database - Mobile</title>
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
+  <style>
+    /* Juan's Workout Database - Configurable Color Palette */
+    :root {
+      /* Primary Brand Colors */
+      --primary-blue: #4586F1;
+      --primary-dark-blue: #093175;
+      --primary-light-blue: #65A9ED;
+      --primary-very-light-blue: #C5DDFA;
+
+      /* Accent Colors */
+      --accent-white: #FFFFFF;
+      --accent-light-gray: #f4f4f4;
+      --accent-gray: #e0e0e0;
+      --accent-dark: #333333;
+
+      /* Semantic Colors */
+      --success-green: #28a745;
+      --warning-orange: #fd7e14;
+      --danger-red: #dc3545;
+
+      /* Text Colors */
+      --text-primary: var(--primary-dark-blue);
+      --text-secondary: var(--accent-dark);
+      --text-light: var(--accent-white);
+
+      /* Background Colors */
+      --bg-primary: var(--accent-white);
+      --bg-secondary: var(--accent-light-gray);
+      --bg-brand: var(--primary-blue);
+    }
+
+    /* Apply Juan's branding to Onsen UI components */
+    .toolbar {
+      background: var(--bg-brand) !important;
+      color: var(--text-light) !important;
+    }
+
+    .toolbar__center {
+      color: var(--text-light) !important;
+      font-weight: bold;
+    }
+
+    .tabbar {
+      background: var(--bg-primary) !important;
+      border-top: 2px solid var(--primary-blue) !important;
+    }
+
+    .tabbar__item {
+      color: var(--text-secondary) !important;
+    }
+
+    .tabbar__item--active {
+      color: var(--primary-blue) !important;
+      border-top: 2px solid var(--primary-blue) !important;
+    }
+
+
+    .card {
+      border-left: 4px solid var(--primary-blue) !important;
+      box-shadow: 0 2px 8px rgba(69, 134, 241, 0.1) !important;
+    }
+
+    .card__title {
+      color: var(--text-primary) !important;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .card__content {
+      color: var(--text-secondary) !important;
+      line-height: 1.5;
+    }
+
+    .list-item {
+      border-bottom: 1px solid var(--accent-gray) !important;
+    }
+
+    .list-item--tappable:active {
+      background: var(--accent-light-gray) !important;
+    }
+
+    .list-item__center {
+      color: var(--text-primary) !important;
+      font-weight: 500;
+    }
+
+    .back-button {
+      color: var(--text-light) !important;
+    }
+
+    /* Custom styles for Juan's brand */
+    .juan-hero {
+      background: linear-gradient(135deg, var(--primary-blue), var(--primary-light-blue));
+      color: var(--text-light);
+      padding: 20px;
+      text-align: center;
+      margin: 0;
+    }
+
+    .juan-hero h1 {
+      margin: 0 0 10px 0;
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+
+    .juan-hero p {
+      margin: 0;
+      opacity: 0.9;
+      font-size: 1.1em;
+    }
+
+    .feature-card {
+      margin: 10px;
+      border-radius: 8px;
+    }
+
+    .exercise-image {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 4px;
+      margin: 10px 0;
+    }
+
+    .exercise-details {
+      background: var(--bg-secondary);
+      padding: 10px;
+      border-radius: 4px;
+      margin: 5px 0;
+    }
+
+    .exercise-stats {
+      font-weight: bold;
+      color: var(--primary-blue);
+      margin: 5px 0;
+    }
+
+    /* Make each carousel item content scroll independently */
+    #start-carousel .ons-carousel-item__content {
+      display: block;
+      height: 100%;
+    }
+
+    .start-slide-scroll {
+      height: 100%;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 20px 16px;
+      box-sizing: border-box;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      .juan-hero h1 {
+        font-size: 1.5em;
+      }
+
+      .juan-hero p {
+        font-size: 1em;
+      }
+
+      .exercise-title {
+        font-size: 1em;
+      }
+
+      .metric-value {
+        font-size: 1.8em;
+      }
+
+      .exercise-details {
+        padding: 12px;
+      }
+    }
+  </style>
 </head>
 <body>
 <ons-navigator id="navigator" page="home.html"></ons-navigator>
@@ -14,10 +188,10 @@
 <template id="home.html">
   <ons-page>
     <ons-toolbar>
-      <div class="center">Inertia Workouts</div>
+      <div class="center">Juan's Workout Database</div>
     </ons-toolbar>
 
-    <ons-tabbar>
+    <ons-tabbar id="main-tabbar">
       <ons-tab label="Home" icon="md-home" page="index.html" active></ons-tab>
       <ons-tab label="Start" icon="md-play-circle" page="start.html"></ons-tab>
       <ons-tab label="Programs" icon="md-search" page="programs.html"></ons-tab>
@@ -28,27 +202,61 @@
 
 <template id="index.html">
   <ons-page>
-    <ons-toolbar>
-      <div class="center">Welcome</div>
-    </ons-toolbar>
-    <ons-card>
-      <div class="title">No More Excuses!</div>
+    <div class="juan-hero">
+      <h1>No More Excuses!</h1>
+      <p>Your mobile fitness companion</p>
+    </div>
+
+    <ons-card class="feature-card">
+      <div class="title">Database of Exercises by Juan</div>
       <div class="content">
-        Get started on your fitness journey with structured workouts and exercise guides.
+        This mobile app is focused on helping you jumpstart your lifting. No more roadblocks in finding a program.
+        The data on this app can help you spend less time choosing a workout and more time completing it.
+      </div>
+    </ons-card>
+
+    <ons-card class="feature-card">
+      <div class="title">Exercise Demonstrations</div>
+      <div class="content">
+        No more interruption when you forget how to perform an exercise. Each program comes with a
+        demonstration at the tips of your fingers. No more excuses!
+      </div>
+    </ons-card>
+
+    <ons-card class="feature-card">
+      <div class="title">Let's Get Started</div>
+      <div class="content">
+        Tap the Start tab to choose from many programs based on what you plan to work out.
+        Already know what you're doing? Check out Programs for an alphabetical list.
       </div>
     </ons-card>
   </ons-page>
 </template>
 
 <template id="start.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="left">
-        <ons-back-button>Home</ons-back-button>
+  <ons-page id="start-tab-page" style="height: 100vh; width: 100%; max-width: 100%; overflow-y: auto; overflow-x: hidden; box-sizing: border-box;">
+    <!-- Hero Section -->
+    <div style="position: sticky; top: 0; z-index: 20; background: linear-gradient(135deg, var(--primary-blue), var(--primary-light-blue)); color: var(--text-light); padding: 24px 20px; text-align: center; flex-shrink: 0; width: 100%; max-width: 100%; box-sizing: border-box; overflow-x: hidden;">
+      <h1 style="font-size: 1.6em; font-weight: 700; margin: 0 0 8px 0;">Find Your Perfect Workout</h1>
+      <p style="opacity: 0.9; font-size: 1em; margin: 0; line-height: 1.4;">Browse programs by training style and discover your next fitness challenge</p>
+    </div>
+
+    <!-- Category Navigation -->
+    <div style="position: sticky; top: 96px; z-index: 15; background: var(--bg-primary); padding: 0; border-bottom: 1px solid var(--accent-gray);">
+      <div id="start-category-tabs" style="display: flex; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;">
+        <!-- Tabs will be dynamically populated -->
       </div>
-      <div class="center">Start a Workout</div>
-    </ons-toolbar>
-    <ons-list id="workout-list"></ons-list>
+    </div>
+
+    <!-- Content Area (Simple Div Container) -->
+    <div id="start-content-area" style="padding: 20px 16px; width: 100%; max-width: 100%; box-sizing: border-box;">
+      <!-- Content will be injected here -->
+    </div>
+
+    <!-- Category Indicators -->
+    <div id="start-category-indicators" style="display: flex; justify-content: center; padding: 12px 0; gap: 8px; flex-shrink: 0; flex-wrap: wrap; max-width: 100%; overflow-x: auto;">
+      <!-- Dots will be dynamically populated -->
+    </div>
   </ons-page>
 </template>
 
@@ -61,36 +269,14 @@
   </ons-page>
 </template>
 
-<template id="program.html">
-  <ons-page id="program-page">
-    <ons-toolbar>
-      <div class="left">
-        <ons-back-button>Programs</ons-back-button>
-      </div>
-      <div class="center" id="program-title">Program Details</div>
-    </ons-toolbar>
-    <ons-card>
-      <div class="title" id="program-name"></div>
-      <div class="content" id="program-requirements"></div>
-      <ons-list id="exercise-list"></ons-list>
-    </ons-card>
-  </ons-page>
-</template>
 
 <template id="glossary.html">
-  <ons-page>
+  <ons-page id="glossary-page">
     <ons-toolbar>
       <div class="center">Glossary</div>
     </ons-toolbar>
-    <ons-list>
-      <ons-list-item expandable>
-        AMRAP<ons-icon icon="md-arrow-drop-down" slot="expandable-icon"></ons-icon>
-        <div class="expandable-content">As Many Reps As Possible</div>
-      </ons-list-item>
-      <ons-list-item expandable>
-        KB<ons-icon icon="md-arrow-drop-down" slot="expandable-icon"></ons-icon>
-        <div class="expandable-content">Kettle Bells</div>
-      </ons-list-item>
+    <ons-list id="glossary-list">
+      <!-- Glossary terms will be loaded dynamically -->
     </ons-list>
   </ons-page>
 </template>
@@ -109,45 +295,617 @@
                   let listItem = document.createElement('ons-list-item');
                   listItem.setAttribute('tappable', '');
                   listItem.innerHTML = `<div class="center">${program.title}</div>`;
-                  listItem.onclick = () => document.querySelector('#navigator').pushPage('program.html', {data: {program: program}});
+                  listItem.onclick = () => window.location.href = `program.html?id=${program.id}&from=programs`;
                   list.appendChild(listItem);
                 });
               });
     }
 
 
-    if (page.id === 'program-page' && page.data && page.data.program) {
+    if (page.id === 'start-tab-page') {
+      loadStartWorkoutPlans(page);
+    }
 
-      let program = page.data.program;
-      page.querySelector('#program-title').textContent = program.title;
-      page.querySelector('#program-name').textContent = program.title;
-      page.querySelector('#program-requirements').textContent = `Requirements: ${program.requirements}`;
+    if (page.id === 'glossary-page') {
+      fetch('glossary.json')
+              .then(response => response.json())
+              .then(data => {
+                const list = page.querySelector('#glossary-list');
+                list.innerHTML = '';
+                data.glossaryTerms.forEach(term => {
+                  let listItem = document.createElement('ons-list-item');
+                  listItem.setAttribute('expandable', '');
+                  listItem.innerHTML = `
+                    ${term.term}<ons-icon icon="md-arrow-drop-down" slot="expandable-icon"></ons-icon>
+                    <div class="expandable-content">${term.definition}</div>
+                  `;
+                  list.appendChild(listItem);
+                });
+              })
+              .catch(error => {
+                console.error('Error loading glossary:', error);
+                const list = page.querySelector('#glossary-list');
+                list.innerHTML = '<ons-list-item><div class="center">Error loading glossary terms</div></ons-list-item>';
+              });
+    }
 
-      const exerciseList = page.querySelector('#exercise-list');
-      exerciseList.innerHTML = '';
-      program.exercises.forEach(exercise => {
-        // Exercise GIF
-        const gifImg = document.createElement('img');
-        gifImg.className = 'examples';
-        gifImg.src = "../" + exercise.gif;
-        gifImg.alt = exercise.name;
-        console.log(exercise.gif)
 
-        let listItem = document.createElement('ons-list-item');
-        listItem.setAttribute('expandable', '');
-        listItem.setAttribute('modifier', 'inset')
-        listItem.innerHTML = `
-            <div class="center">${exercise.name}</div>
-            <div class="expandable-content">
-              <img src="${gifImg.src}" width="100%">
-              <p>Reps: ${exercise.reps} | Sets: ${exercise.sets}</p>
-              <p>${exercise.note || ''}</p>
+  });
+
+
+  // Start page functionality within main app
+  let startWorkoutsData = [];
+  let startCategoriesData = [];
+  let startCurrentCategoryIndex = 0;
+
+
+  function loadStartWorkoutPlans(page) {
+    console.log('🔍 Start Tab Diagnostic: Loading workout plans...');
+    runStartTabUITests(page, 'initial');
+
+    fetch('workouts.json')
+      .then(response => {
+        console.log('✅ Workouts.json response:', response.status);
+        return response.json();
+      })
+      .then(data => {
+        startWorkoutsData = data.programs;
+        console.log('✅ Loaded', startWorkoutsData.length, 'workout programs');
+        return fetch('plans.json');
+      })
+      .then(response => {
+        console.log('✅ Plans.json response:', response.status);
+        return response.json();
+      })
+      .then(planData => {
+        startCategoriesData = planData.plans;
+        console.log('✅ Loaded', startCategoriesData.length, 'categories:', startCategoriesData.map(c => c.name));
+
+        runStartTabUITests(page, 'after-data-load');
+
+        renderStartCategoryNavigation(page);
+        runStartTabUITests(page, 'after-navigation-render');
+
+        buildStartContent(page);
+        runStartTabUITests(page, 'after-content-build');
+
+        // Setup content synchronization
+        hookContentSync(page);
+        runStartTabUITests(page, 'after-sync-setup');
+
+        console.log('🎉 Start tab initialization complete!');
+      })
+      .catch(error => {
+        console.error('❌ Error loading workout data:', error);
+        const contentArea = page.querySelector('#start-content-area');
+        if (contentArea) {
+          contentArea.innerHTML = '<div style="text-align: center; padding: 40px 16px; color: #dc3545;"><p>Error loading workout plans. Please try again.</p></div>';
+        }
+        runStartTabUITests(page, 'error-state');
+      });
+  }
+
+  function runStartTabUITests(page, phase) {
+    console.log(`\n🧪 UI Tests - Phase: ${phase}`);
+    console.log('==========================================');
+
+    // Test 1: Page elements exist
+    const hero = page.querySelector('div[style*="linear-gradient"]');
+    const tabsContainer = page.querySelector('#start-category-tabs');
+    const contentArea = page.querySelector('#start-content-area');
+    const indicators = page.querySelector('#start-category-indicators');
+
+    console.log('📍 Element Check:');
+    console.log('  Hero section:', hero ? '✅ Found' : '❌ Missing');
+    console.log('  Tabs container:', tabsContainer ? '✅ Found' : '❌ Missing');
+    console.log('  Content area:', contentArea ? '✅ Found' : '❌ Missing');
+    console.log('  Indicators:', indicators ? '✅ Found' : '❌ Missing');
+
+    // Test 2: Data state
+    console.log('📊 Data State:');
+    console.log('  Categories loaded:', startCategoriesData ? startCategoriesData.length : 0);
+    console.log('  Programs loaded:', startWorkoutsData ? startWorkoutsData.length : 0);
+    console.log('  Current index:', startCurrentCategoryIndex);
+
+    // Test 3: Navigation elements
+    if (tabsContainer) {
+      const tabs = tabsContainer.querySelectorAll('button');
+      const dots = indicators ? indicators.querySelectorAll('div') : [];
+
+      console.log('🎯 Navigation Elements:');
+      console.log('  Tab buttons:', tabs.length);
+      console.log('  Indicator dots:', dots.length);
+
+      if (tabs.length > 0) {
+        console.log('  First tab text:', tabs[0].textContent);
+        console.log('  First tab active style:', tabs[0].style.color.includes('var(--primary-blue)') ? '✅ Active' : '❌ Inactive');
+      }
+    }
+
+    // Test 4: Content state
+    if (contentArea) {
+      const sections = contentArea.querySelectorAll('.start-category-section');
+      console.log('📋 Content State:');
+      console.log('  Content sections:', sections.length);
+      console.log('  Content area display:', getComputedStyle(contentArea).display);
+      console.log('  Content area height:', getComputedStyle(contentArea).height);
+
+      if (sections.length > 0) {
+        const visibleSections = Array.from(sections).filter(s => getComputedStyle(s).display !== 'none');
+        console.log('  Visible sections:', visibleSections.length);
+        if (visibleSections.length > 0) {
+          console.log('  First visible section has content:', visibleSections[0].children.length > 0 ? '✅ Yes' : '❌ No');
+        }
+      }
+    }
+
+    // Test 5: Visual state
+    console.log('👁️ Visual State:');
+    if (page) {
+      const pageStyle = getComputedStyle(page);
+      console.log('  Page display:', pageStyle.display);
+      console.log('  Page visibility:', pageStyle.visibility);
+      console.log('  Page background:', pageStyle.backgroundColor);
+    }
+
+    console.log('==========================================\n');
+  }
+
+  function renderStartCategoryNavigation(page) {
+    console.log('🎯 Rendering category navigation...');
+
+    const tabsContainer = page.querySelector('#start-category-tabs');
+    const indicatorsContainer = page.querySelector('#start-category-indicators');
+
+    if (!tabsContainer) {
+      console.error('❌ Tabs container not found!');
+      return;
+    }
+    if (!indicatorsContainer) {
+      console.error('❌ Indicators container not found!');
+      return;
+    }
+
+    console.log('📍 Containers found, clearing existing content...');
+    tabsContainer.innerHTML = '';
+    indicatorsContainer.innerHTML = '';
+
+    console.log('🔄 Creating navigation for', startCategoriesData.length, 'categories...');
+
+    startCategoriesData.forEach((category, index) => {
+      console.log(`  Creating navigation for category ${index}: ${category.name}`);
+
+      // Create tab
+      const tab = document.createElement('button');
+      tab.style.cssText = `
+        flex: 0 0 auto; padding: 15px 20px; text-align: center; background: none; border: none;
+        color: var(--text-secondary); font-weight: 500; font-size: 0.9em; cursor: pointer;
+        transition: all 0.2s ease; border-bottom: 3px solid transparent; white-space: nowrap;
+        ${index === 0 ? 'color: var(--primary-blue); border-bottom-color: var(--primary-blue);' : ''}
+      `;
+      tab.textContent = category.name;
+      tab.onclick = () => {
+        console.log('🖱️ Tab clicked:', category.name);
+        switchStartCategory(index, page);
+      };
+      tabsContainer.appendChild(tab);
+
+      // Create indicator dot
+      const dot = document.createElement('div');
+      dot.style.cssText = `
+        width: 8px; height: 8px; border-radius: 50%; transition: all 0.2s ease; cursor: pointer;
+        background: ${index === 0 ? 'var(--primary-blue)' : 'var(--accent-gray)'};
+        transform: ${index === 0 ? 'scale(1.2)' : 'scale(1)'};
+      `;
+      dot.onclick = () => {
+        console.log(`🔘 Dot clicked: ${category.name} (index: ${index})`);
+        switchStartCategory(index, page);
+      };
+      indicatorsContainer.appendChild(dot);
+    });
+
+    console.log('✅ Navigation rendered:', tabsContainer.children.length, 'tabs,', indicatorsContainer.children.length, 'dots');
+  }
+
+  function buildStartContent(page) {
+    console.log('📋 Building start content...');
+
+    const contentArea = page.querySelector('#start-content-area');
+    if (!contentArea) {
+      console.error('❌ Content area not found!');
+      return;
+    }
+
+    console.log('📍 Content area found, creating category sections...');
+
+    // Store category content sections for switching
+    window.startCategorySections = [];
+
+    startCategoriesData.forEach((category, categoryIndex) => {
+      console.log(`  Building content for category ${categoryIndex}: ${category.name}`);
+      if (categoryIndex >= 2) {
+        console.warn(`🚨 Building potentially problematic category ${categoryIndex}: ${category.name}`);
+      }
+
+      const categorySection = document.createElement('div');
+      categorySection.className = 'start-category-section';
+      categorySection.id = `start-category-${categoryIndex}`;
+      categorySection.style.cssText = `
+        display: ${categoryIndex === 0 ? 'block' : 'none'};
+        width: 100%;
+        min-height: 300px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        word-wrap: break-word;
+        max-width: 100%;
+      `;
+
+      // Category description card
+      if (category.description) {
+        const descriptionDiv = document.createElement('div');
+        descriptionDiv.style.cssText = `
+          background: var(--bg-secondary);
+          padding: 20px;
+          margin-bottom: 20px;
+          border-radius: 12px;
+          border-left: 4px solid var(--primary-blue);
+          width: 100%;
+          max-width: 100%;
+          box-sizing: border-box;
+          overflow-x: hidden;
+          word-wrap: break-word;
+        `;
+        descriptionDiv.innerHTML = `
+          <h3 style="margin: 0 0 8px 0; color: var(--text-primary); font-size: 1.1em; font-weight: 600; word-wrap: break-word; overflow-wrap: break-word; max-width: 100%;">
+            ${category.name}
+          </h3>
+          <p style="margin: 0; color: var(--text-secondary); line-height: 1.5; font-size: 0.9em; word-wrap: break-word; overflow-wrap: break-word; max-width: 100%; white-space: normal;">
+            ${category.description}
+          </p>
+        `;
+        categorySection.appendChild(descriptionDiv);
+      }
+
+      // Collect programs for this category
+      const categoryPrograms = [];
+      (category.subPlans || []).forEach(subPlan => {
+        (subPlan.programs || []).forEach(programId => {
+          const program = startWorkoutsData.find(p => p.id === programId);
+          if (program) {
+            categoryPrograms.push({
+              ...program,
+              subCategory: subPlan.name,
+              description: subPlan.description || ''
+            });
+          }
+        });
+      });
+
+      if (categoryPrograms.length === 0) {
+        categorySection.innerHTML += `
+          <div style="text-align: center; padding: 60px 16px; color: var(--text-secondary);">
+            <div style="font-size: 3em; margin-bottom: 16px; opacity: 0.3;">🔍</div>
+            <p style="font-size: 1.1em; margin: 0;">No programs available in ${category.name}</p>
+          </div>
+        `;
+      } else {
+        const programGrid = document.createElement('div');
+        programGrid.style.cssText = `
+          display: grid;
+          gap: 16px;
+          grid-template-columns: 1fr;
+          width: 100%;
+          max-width: 100%;
+          box-sizing: border-box;
+          overflow-x: hidden;
+        `;
+
+        categoryPrograms.forEach(program => {
+          const programCard = document.createElement('div');
+          programCard.style.cssText = `
+            background: var(--bg-primary);
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(69, 134, 241, 0.1);
+            border: 1px solid var(--accent-gray);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+          `;
+          programCard.onmouseover = () => {
+            programCard.style.transform = 'translateY(-2px)';
+            programCard.style.boxShadow = '0 4px 20px rgba(69, 134, 241, 0.15)';
+            programCard.style.borderColor = 'var(--primary-light-blue)';
+          };
+          programCard.onmouseout = () => {
+            programCard.style.transform = 'translateY(0)';
+            programCard.style.boxShadow = '0 2px 12px rgba(69, 134, 241, 0.1)';
+            programCard.style.borderColor = 'var(--accent-gray)';
+          };
+          programCard.onclick = () => {
+            window.location.href = `program.html?id=${program.id}&from=start`;
+          };
+
+          programCard.innerHTML = `
+            <div style="
+              background: linear-gradient(135deg, var(--bg-secondary), var(--accent-light-gray));
+              padding: 16px 20px;
+              border-bottom: 1px solid var(--accent-gray);
+            ">
+              <h3 style="font-size: 1.1em; font-weight: 600; margin: 0 0 4px 0; color: var(--text-primary); line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word; max-width: 100%;">
+                ${program.title}
+              </h3>
+              <p style="font-size: 0.75em; color: var(--text-secondary); margin: 0; opacity: 0.7; font-weight: 400; line-height: 1.4; word-wrap: break-word; overflow-wrap: break-word; max-width: 100%; white-space: normal;">
+                Requirements: ${program.requirements}
+              </p>
+            </div>
+            <div style="padding: 16px 20px;">
+              <span style="
+                display: inline-block;
+                background: var(--primary-very-light-blue);
+                color: var(--primary-blue);
+                padding: 4px 8px;
+                border-radius: 12px;
+                font-size: 0.75em;
+                font-weight: 500;
+                margin: 0 0 8px 0;
+              ">${program.subCategory}</span>
+              <p style="font-size: 0.9em; color: var(--text-secondary); line-height: 1.4; margin: 0; word-wrap: break-word; overflow-wrap: break-word; max-width: 100%; white-space: normal;">
+                ${program.description || 'A focused workout program designed to help you achieve your fitness goals.'}
+              </p>
             </div>
           `;
-        exerciseList.appendChild(listItem);
-      });
+
+          programGrid.appendChild(programCard);
+        });
+
+        categorySection.appendChild(programGrid);
+      }
+
+      contentArea.appendChild(categorySection);
+      window.startCategorySections.push(categorySection);
+      console.log(`  ✅ Added section for ${category.name}`);
+    });
+
+    startCurrentCategoryIndex = 0;
+    console.log('✅ Content built with', window.startCategorySections.length, 'sections');
+  }
+
+  function hookContentSync(page) {
+    console.log('🔗 Hooking up content synchronization...');
+
+    // Clicking a tab → switch content
+    const tabs = page.querySelectorAll('#start-category-tabs button');
+    console.log('🎯 Setting up tab click handlers for', tabs.length, 'tabs...');
+    tabs.forEach((tab, i) => {
+      tab.onclick = () => {
+        console.log('📱 Tab clicked, switching to index:', i);
+        switchStartCategory(i, page);
+      };
+    });
+
+    // Clicking a dot → switch content
+    const dots = page.querySelectorAll('#start-category-indicators div');
+    console.log('🔘 Setting up dot click handlers for', dots.length, 'dots...');
+    dots.forEach((dot, i) => {
+      dot.onclick = () => {
+        console.log('⚫ Dot clicked, switching to index:', i);
+        switchStartCategory(i, page);
+      };
+    });
+
+    console.log('✅ Content sync established');
+  }
+
+  function switchStartCategory(newIndex, page) {
+    console.log('🔄 Switching to category index:', newIndex);
+    if (newIndex >= 2) {
+      console.warn(`🚨 Switching to potentially problematic category ${newIndex}: ${startCategoriesData[newIndex]?.name}`);
     }
+
+    if (!window.startCategorySections) {
+      console.error('❌ Category sections not found');
+      return;
+    }
+
+    if (newIndex < 0 || newIndex >= window.startCategorySections.length) {
+      console.error('❌ Invalid category index:', newIndex);
+      return;
+    }
+
+    const oldIndex = startCurrentCategoryIndex;
+
+    // Hide all sections
+    window.startCategorySections.forEach((section, index) => {
+      if (section) {
+        section.style.display = index === newIndex ? 'block' : 'none';
+        console.log(`  ${index === newIndex ? '✅ Showing' : '🚫 Hiding'} section ${index}`);
+      }
+    });
+
+    // Update visual states
+    updateStartTabsAndDots(page, oldIndex, newIndex);
+    startCurrentCategoryIndex = newIndex;
+
+    console.log('✅ Switched to category:', startCategoriesData[newIndex]?.name);
+  }
+
+
+  function updateStartTabsAndDots(page, oldIndex, newIndex) {
+    const tabs = page.querySelectorAll('#start-category-tabs button');
+    const dots = page.querySelectorAll('#start-category-indicators div');
+
+    console.log(`🔄 Updating tabs and dots: ${oldIndex} → ${newIndex}`);
+    console.log(`   Tabs count: ${tabs.length}, Dots count: ${dots.length}, Categories: ${startCategoriesData.length}`);
+
+    if (tabs[oldIndex]) {
+      tabs[oldIndex].style.color = 'var(--text-secondary)';
+      tabs[oldIndex].style.borderBottomColor = 'transparent';
+    }
+    if (tabs[newIndex]) {
+      tabs[newIndex].style.color = 'var(--primary-blue)';
+      tabs[newIndex].style.borderBottomColor = 'var(--primary-blue)';
+      tabs[newIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+
+    if (dots[oldIndex]) {
+      dots[oldIndex].style.background = 'var(--accent-gray)';
+      dots[oldIndex].style.transform = 'scale(1)';
+    }
+    if (dots[newIndex]) {
+      dots[newIndex].style.background = 'var(--primary-blue)';
+      dots[newIndex].style.transform = 'scale(1.2)';
+    }
+  }
+
+
+  // Improved tab state management
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check for target tab from external navigation
+    const targetTab = sessionStorage.getItem('targetTab');
+    console.log('DOMContentLoaded - targetTab from sessionStorage:', targetTab);
+
+    if (targetTab) {
+      // Clear immediately to prevent loops
+      sessionStorage.removeItem('targetTab');
+
+      // Use multiple approaches to ensure the tab is set
+      ons.ready(function() {
+        console.log('Onsen UI ready, setting target tab:', targetTab);
+        setTimeout(() => {
+          setTargetTab(targetTab);
+        }, 50);
+      });
+
+      // Fallback with longer delay
+      setTimeout(() => {
+        console.log('Fallback: setting target tab:', targetTab);
+        setTargetTab(targetTab);
+      }, 500);
+
+      // Final verification after everything should be done
+      setTimeout(() => {
+        const tabbar = document.querySelector('#main-tabbar');
+        if (tabbar && typeof tabbar.getActiveTabIndex === 'function') {
+          const currentIndex = tabbar.getActiveTabIndex();
+          console.log('Final verification - current active tab index:', currentIndex);
+        }
+      }, 1000);
+    }
+
+    // Add tab event listeners after initialization
+    setTimeout(() => {
+      setupTabListeners();
+    }, 300);
   });
+
+
+  function setupTabListeners() {
+    const tabbar = document.querySelector('#main-tabbar');
+    if (!tabbar) return;
+
+    // Listen for tab changes to maintain state
+    tabbar.addEventListener('prechange', function(event) {
+      console.log('prechange event fired, from index:', event.tabIndex);
+      // Clear any pending sessionStorage to prevent conflicts
+      sessionStorage.removeItem('targetTab');
+    });
+
+    // Handle tab load events
+    tabbar.addEventListener('postchange', function(event) {
+      // Ensure proper state after tab change
+      const activeIndex = event.tabIndex || tabbar.getActiveTabIndex();
+      console.log('Tab changed to index:', activeIndex);
+    });
+  }
+
+  function loadProgramsContent() {
+    console.log('loadProgramsContent called');
+    const programsPage = document.querySelector('#programs-page');
+    if (!programsPage) {
+      console.warn('Programs page not found');
+      return;
+    }
+
+    console.log('Programs page found, fetching workouts.json');
+    fetch('workouts.json')
+      .then(response => response.json())
+      .then(data => {
+        console.log('Workouts data loaded, programs count:', data.programs.length);
+        const list = programsPage.querySelector('#program-list');
+        if (list) {
+          list.innerHTML = '';
+          data.programs.forEach(program => {
+            let listItem = document.createElement('ons-list-item');
+            listItem.setAttribute('tappable', '');
+            listItem.innerHTML = `<div class="center">${program.title}</div>`;
+            listItem.onclick = () => window.location.href = `program.html?id=${program.id}&from=programs`;
+            list.appendChild(listItem);
+          });
+          console.log('Programs list populated with', data.programs.length, 'items');
+        } else {
+          console.warn('Program list element not found');
+        }
+      })
+      .catch(error => {
+        console.error('Error loading programs:', error);
+      });
+  }
+
+  function setTargetTab(targetTab) {
+    const tabbar = document.querySelector('#main-tabbar');
+    if (!tabbar) {
+      console.warn('Tabbar not found, retrying in 100ms');
+      setTimeout(() => setTargetTab(targetTab), 100);
+      return;
+    }
+
+    let targetIndex = 0; // Default to Home
+
+    switch(targetTab) {
+      case 'start':
+        targetIndex = 1;
+        break;
+      case 'programs':
+        targetIndex = 2;
+        break;
+      case 'glossary':
+        targetIndex = 3;
+        break;
+      case 'home':
+      default:
+        targetIndex = 0;
+        break;
+    }
+
+    try {
+      // Check if method exists and call it
+      if (typeof tabbar.setActiveTab === 'function') {
+        tabbar.setActiveTab(targetIndex, {animation: 'none'});
+        console.log('Successfully set active tab to:', targetIndex);
+
+        // Manually trigger content loading for specific tabs
+        setTimeout(() => {
+          if (targetTab === 'programs') {
+            loadProgramsContent();
+          }
+        }, 100);
+      } else {
+        console.warn('setActiveTab method not available');
+        // Fallback: manually trigger click on tab
+        const tabs = tabbar.querySelectorAll('ons-tab');
+        if (tabs[targetIndex]) {
+          tabs[targetIndex].click();
+        }
+      }
+    } catch (error) {
+      console.error('Error setting active tab:', error);
+    }
+  }
 </script>
 </body>
 </html>
