@@ -183,25 +183,60 @@
   </style>
 </head>
 <body>
-<ons-navigator id="navigator" page="home.html"></ons-navigator>
+<ons-tabbar id="main-tabbar">
+  <ons-tab id="home-tab" label="Home" icon="md-home" page="home.html"></ons-tab>
+  <ons-tab id="start-tab" label="Start" icon="md-play-circle" page="start.html"></ons-tab>
+  <ons-tab id="programs-tab" label="Programs" icon="md-search" page="programs.html"></ons-tab>
+  <ons-tab id="glossary-tab" label="Glossary" icon="md-book" page="glossary.html"></ons-tab>
+</ons-tabbar>
+
+<!-- Script to handle back navigation and tab initialization -->
+<script>
+  (function() {
+    // Check for target tab before page renders
+    const targetTab = sessionStorage.getItem('targetTab');
+    if (targetTab) {
+      // Clear immediately to prevent conflicts
+      sessionStorage.removeItem('targetTab');
+      console.log('🎯 Processing back navigation to:', targetTab);
+
+      // Set active tab immediately to prevent flash
+      setTimeout(() => {
+        const tabbar = document.getElementById('main-tabbar');
+        if (tabbar) {
+          let targetIndex = 0;
+          switch(targetTab) {
+            case 'start': targetIndex = 1; break;
+            case 'programs': targetIndex = 2; break;
+            case 'glossary': targetIndex = 3; break;
+            case 'home':
+            default: targetIndex = 0; break;
+          }
+
+          console.log(`🎯 Setting active tab to ${targetTab} (index ${targetIndex})`);
+          try {
+            if (typeof tabbar.setActiveTab === 'function') {
+              tabbar.setActiveTab(targetIndex, {animation: 'none'});
+            }
+          } catch (error) {
+            console.error('Error setting active tab:', error);
+          }
+        }
+      }, 50);
+
+      // Store for content loading after initialization
+      sessionStorage.setItem('pendingContentLoad', targetTab);
+    } else {
+      console.log('📋 No targetTab, using default home tab');
+    }
+  })();
+</script>
 
 <template id="home.html">
-  <ons-page>
+  <ons-page id="home-page">
     <ons-toolbar>
       <div class="center">Juan's Workout Database</div>
     </ons-toolbar>
-
-    <ons-tabbar id="main-tabbar">
-      <ons-tab label="Home" icon="md-home" page="index.html" active></ons-tab>
-      <ons-tab label="Start" icon="md-play-circle" page="start.html"></ons-tab>
-      <ons-tab label="Programs" icon="md-search" page="programs.html"></ons-tab>
-      <ons-tab label="Glossary" icon="md-book" page="glossary.html"></ons-tab>
-    </ons-tabbar>
-  </ons-page>
-</template>
-
-<template id="index.html">
-  <ons-page>
     <div class="juan-hero">
       <h1>No More Excuses!</h1>
       <p>Your mobile fitness companion</p>
@@ -216,18 +251,10 @@
     </ons-card>
 
     <ons-card class="feature-card">
-      <div class="title">Exercise Demonstrations</div>
+      <div class="title">Quick Start</div>
       <div class="content">
-        No more interruption when you forget how to perform an exercise. Each program comes with a
-        demonstration at the tips of your fingers. No more excuses!
-      </div>
-    </ons-card>
-
-    <ons-card class="feature-card">
-      <div class="title">Let's Get Started</div>
-      <div class="content">
-        Tap the Start tab to choose from many programs based on what you plan to work out.
-        Already know what you're doing? Check out Programs for an alphabetical list.
+        Browse programs by body part in the <strong>Start</strong> tab, or view all programs in the
+        <strong>Programs</strong> tab. Check the <strong>Glossary</strong> for exercise definitions.
       </div>
     </ons-card>
   </ons-page>
@@ -244,17 +271,17 @@
     <!-- Category Navigation -->
     <div style="position: sticky; top: 96px; z-index: 15; background: var(--bg-primary); padding: 0; border-bottom: 1px solid var(--accent-gray);">
       <div id="start-category-tabs" style="display: flex; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;">
-        <!-- Tabs will be dynamically populated -->
+        <!-- Category tabs will be populated dynamically -->
       </div>
     </div>
 
-    <!-- Content Area (Simple Div Container) -->
-    <div id="start-content-area" style="padding: 20px 16px; width: 100%; max-width: 100%; box-sizing: border-box;">
-      <!-- Content will be injected here -->
+    <!-- Content Area -->
+    <div id="start-content-area" style="flex: 1; padding: 16px; background: var(--bg-primary); min-height: calc(100vh - 160px); overflow-x: hidden;">
+      <!-- Content will be populated dynamically -->
     </div>
 
-    <!-- Category Indicators -->
-    <div id="start-category-indicators" style="display: flex; justify-content: center; padding: 12px 0; gap: 8px; flex-shrink: 0; flex-wrap: wrap; max-width: 100%; overflow-x: auto;">
+    <!-- Indicator Dots -->
+    <div id="start-category-indicators" style="display: flex; justify-content: center; gap: 8px; padding: 12px 0; background: var(--bg-primary);">
       <!-- Dots will be dynamically populated -->
     </div>
   </ons-page>
@@ -383,6 +410,36 @@
         }
         runStartTabUITests(page, 'error-state');
       });
+  }
+
+  // Process pending content load after back navigation
+  function processPendingContentLoad() {
+    const pendingLoad = sessionStorage.getItem('pendingContentLoad');
+    if (!pendingLoad) {
+      console.log('📋 No pending content to load');
+      return;
+    }
+
+    console.log('🔄 Processing pending content load:', pendingLoad);
+    sessionStorage.removeItem('pendingContentLoad');
+
+    // Use document.init event to ensure pages are loaded
+    setTimeout(() => {
+      if (pendingLoad === 'start') {
+        const startPage = document.getElementById('start-tab-page');
+        if (startPage) {
+          console.log('✅ Loading Start tab content');
+          loadStartWorkoutPlans(startPage);
+        } else {
+          console.warn('❌ start-tab-page not found, will be loaded via init event');
+        }
+      } else if (pendingLoad === 'programs') {
+        console.log('✅ Programs content will be loaded via init event');
+        loadProgramsContent();
+      } else if (pendingLoad === 'glossary') {
+        console.log('✅ Glossary content will be loaded via init event');
+      }
+    }, 200);
   }
 
   function runStartTabUITests(page, phase) {
@@ -763,64 +820,51 @@
   }
 
 
-  // Improved tab state management
+  // Pure tabbar architecture initialization
   document.addEventListener('DOMContentLoaded', function() {
-    // Check for target tab from external navigation
-    const targetTab = sessionStorage.getItem('targetTab');
-    console.log('DOMContentLoaded - targetTab from sessionStorage:', targetTab);
+    console.log('DOMContentLoaded - initializing pure tabbar architecture');
 
-    if (targetTab) {
-      // Clear immediately to prevent loops
-      sessionStorage.removeItem('targetTab');
-
-      // Use multiple approaches to ensure the tab is set
-      ons.ready(function() {
-        console.log('Onsen UI ready, setting target tab:', targetTab);
-        setTimeout(() => {
-          setTargetTab(targetTab);
-        }, 50);
-      });
-
-      // Fallback with longer delay
-      setTimeout(() => {
-        console.log('Fallback: setting target tab:', targetTab);
-        setTargetTab(targetTab);
-      }, 500);
-
-      // Final verification after everything should be done
-      setTimeout(() => {
-        const tabbar = document.querySelector('#main-tabbar');
-        if (tabbar && typeof tabbar.getActiveTabIndex === 'function') {
-          const currentIndex = tabbar.getActiveTabIndex();
-          console.log('Final verification - current active tab index:', currentIndex);
-        }
-      }, 1000);
-    }
-
-    // Add tab event listeners after initialization
     setTimeout(() => {
-      setupTabListeners();
-    }, 300);
+      setupTabbar();
+      processPendingContentLoad();
+    }, 100);
   });
 
+  // Also ensure initialization after Onsen UI is ready
+  ons.ready(function() {
+    console.log('Onsen UI ready - setting up tabbar');
+    setTimeout(() => {
+      setupTabbar();
+      processPendingContentLoad();
+    }, 50);
+  });
 
-  function setupTabListeners() {
+  function setupTabbar() {
     const tabbar = document.querySelector('#main-tabbar');
-    if (!tabbar) return;
+    if (!tabbar) {
+      console.warn('Tabbar not found, retrying...');
+      setTimeout(setupTabbar, 100);
+      return;
+    }
 
-    // Listen for tab changes to maintain state
+    console.log('✅ Tabbar found, setting up listeners');
+
+    // Listen for tab changes
     tabbar.addEventListener('prechange', function(event) {
-      console.log('prechange event fired, from index:', event.tabIndex);
-      // Clear any pending sessionStorage to prevent conflicts
-      sessionStorage.removeItem('targetTab');
+      console.log('🔄 Tab prechange event:', event.tabIndex);
     });
 
-    // Handle tab load events
     tabbar.addEventListener('postchange', function(event) {
-      // Ensure proper state after tab change
       const activeIndex = event.tabIndex || tabbar.getActiveTabIndex();
-      console.log('Tab changed to index:', activeIndex);
+      console.log('✅ Tab changed to index:', activeIndex);
+
+      // Clear any stale navigation states
+      if (!window._isBackNavigation) {
+        sessionStorage.removeItem('targetTab');
+      }
     });
+
+    console.log('✅ Tabbar setup complete');
   }
 
   function loadProgramsContent() {
@@ -857,6 +901,8 @@
   }
 
   function setTargetTab(targetTab) {
+    console.log('🎯 setTargetTab called with:', targetTab);
+
     const tabbar = document.querySelector('#main-tabbar');
     if (!tabbar) {
       console.warn('Tabbar not found, retrying in 100ms');
@@ -865,45 +911,29 @@
     }
 
     let targetIndex = 0; // Default to Home
-
     switch(targetTab) {
-      case 'start':
-        targetIndex = 1;
-        break;
-      case 'programs':
-        targetIndex = 2;
-        break;
-      case 'glossary':
-        targetIndex = 3;
-        break;
+      case 'start': targetIndex = 1; break;
+      case 'programs': targetIndex = 2; break;
+      case 'glossary': targetIndex = 3; break;
       case 'home':
-      default:
-        targetIndex = 0;
-        break;
+      default: targetIndex = 0; break;
     }
 
+    console.log(`🎯 Switching to ${targetTab} (index ${targetIndex})`);
+
     try {
-      // Check if method exists and call it
       if (typeof tabbar.setActiveTab === 'function') {
         tabbar.setActiveTab(targetIndex, {animation: 'none'});
-        console.log('Successfully set active tab to:', targetIndex);
-
-        // Manually trigger content loading for specific tabs
-        setTimeout(() => {
-          if (targetTab === 'programs') {
-            loadProgramsContent();
-          }
-        }, 100);
+        console.log('✅ Successfully set active tab to:', targetIndex);
       } else {
-        console.warn('setActiveTab method not available');
-        // Fallback: manually trigger click on tab
+        console.warn('setActiveTab method not available, using fallback');
         const tabs = tabbar.querySelectorAll('ons-tab');
         if (tabs[targetIndex]) {
           tabs[targetIndex].click();
         }
       }
     } catch (error) {
-      console.error('Error setting active tab:', error);
+      console.error('❌ Error setting active tab:', error);
     }
   }
 </script>

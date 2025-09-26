@@ -668,15 +668,20 @@
 
       // Check if we have browser history from the main app
       const referrer = document.referrer;
-      const isFromMainApp = referrer.includes('index.html') || referrer.includes('start.html') || referrer.endsWith('onsen_demo/');
+      const isFromMainApp = referrer.includes('index.html') || referrer.endsWith('onsen_demo/');
 
       // Always use direct navigation for specific tabs to ensure proper state
       if (fromTab === 'start') {
-        // Go back to separate start.html page
-        window.location.href = 'start.html';
+        // Navigate back to index.html and set target tab to start
+        sessionStorage.setItem('targetTab', 'start');
+        window.location.href = 'index.html';
       } else if (fromTab === 'programs') {
         // Set target tab and go to main app
         sessionStorage.setItem('targetTab', 'programs');
+        window.location.href = 'index.html';
+      } else if (fromTab === 'glossary') {
+        // Set target tab and go to main app
+        sessionStorage.setItem('targetTab', 'glossary');
         window.location.href = 'index.html';
       } else if (window.history.length > 1 && isFromMainApp) {
         // Use browser back for other cases
