@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Juan's Exercise Database - Start</title>
+</head>
+<body>
+<div id="page">
+    <div id="header">
+        <img src="logo.png" alt="XHTML Template by Bryant Smith" />
+        <!-- You can include your site's title here -->
+    </div>
+
+    <div id="content">
+        <div id="container">
+            <div id="main">
+                <div id="menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="start.html">Start</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="glossary.html">Glossary</a></li>
+                    </ul>
+                </div>
+
+                <div id="text">
+                    <h1>Workout Class</h1>
+                    <p>
+                        A variety of work out plans to try and here is a description of a few. <a href="#strength" class="links">Strength</a> workouts will push your muscles to their
+                        limits and aim to increase your lift capacity for the next workout. The <a href="#agility" class="links">Agility</a> program is focused on pumping
+                        your ability to move. Fast-twitch training, vertical travel, and conditioning are all advantages in sport and are the nucleus of this type of training. The <a href="#other" class="links">Other</a> class is reserved for special workouts that focus on specific goals.
+                    </p>
+                    <!-- This container will be populated with dynamic plan sections -->
+                    <div id="plans"></div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div id="footer">
+            <p><a href="https://github.com/JuanTheEngineer">Created by Juan the Engineer</a></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Global variable to hold all programs from workouts.json
+    let workoutsData = [];
+
+    // First, fetch workouts.json which contains the full program details
+    fetch('workouts.json')
+        .then(response => response.json())
+        .then(data => {
+            workoutsData = data.programs;
+            // Now fetch plan.json which contains the grouping information and program IDs
+            return fetch('plans.json');
+        })
+        .then(response => response.json())
+        .then(planData => {
+            const plansContainer = document.getElementById('plans');
+
+            // Loop through each top-level plan (e.g., Strength, Agility, Running, Other)
+            planData.plans.forEach(plan => {
+                // Create a section for the plan and assign an id (for anchor links)
+                const planSection = document.createElement('section');
+                planSection.id = plan.name.toLowerCase(); // e.g., "strength"
+
+                // Create and append the plan heading (h2) and description (if provided)
+                const h2 = document.createElement('h2');
+                h2.textContent = plan.name;
+                planSection.appendChild(h2);
+
+                if (plan.description) {
+                    const pPlanDesc = document.createElement('p');
+                    pPlanDesc.textContent = plan.description;
+                    planSection.appendChild(pPlanDesc);
+                }
+
+                // Loop through each subPlan within the current plan
+                plan.subPlans.forEach(subPlan => {
+                    // Create subPlan heading (h3) and append its description if available
+                    const h3 = document.createElement('h3');
+                    h3.textContent = subPlan.name;
+                    planSection.appendChild(h3);
+
+                    if (subPlan.description) {
+                        const pSubDesc = document.createElement('p');
+                        pSubDesc.textContent = subPlan.description;
+                        planSection.appendChild(pSubDesc);
+                    }
+
+                    // Create a definition list to hold program links and details
+                    const dl = document.createElement('dl');
+
+                    // For each referenced program ID in the subPlan, look up its details in workoutsData
+                    subPlan.programs.forEach(programId => {
+                        const program = workoutsData.find(p => p.id === programId);
+                        if (program) {
+                            // Create a dt element containing a link to the program page
+                            const dt = document.createElement('dt');
+                            const a = document.createElement('a');
+                            a.href = "program.html?id=" + encodeURIComponent(program.id);
+                            a.className = "links";
+                            a.innerHTML = "<b>" + program.title + "</b>";
+                            dt.appendChild(a);
+                            dl.appendChild(dt);
+
+                            // Create a dd element to show the program's requirements
+                            const dd = document.createElement('dd');
+                            dd.textContent = "Requirements: " + program.requirements;
+                            dl.appendChild(dd);
+                        }
+                    });
+
+                    planSection.appendChild(dl);
+                });
+
+                // Append the complete plan section to the container
+                plansContainer.appendChild(planSection);
+            });
+        })
+        .catch(error => console.error('Error loading JSON data:', error));
+</script>
+</body>
+</html>

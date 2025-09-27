@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Back Button Deep Debug - White Screen Issue</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .critical-issue {
+      background: #f8d7da;
+      border: 2px solid #f5c6cb;
+      color: #721c24;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .debug-section {
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .code-block {
+      background: #f8f8f8;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 12px;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 0.9em;
+      overflow-x: auto;
+      margin: 10px 0;
+      white-space: pre-wrap;
+    }
+
+    .log-output {
+      background: #1e1e1e;
+      color: #ffffff;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 0.9em;
+      max-height: 400px;
+      overflow-y: auto;
+      margin: 15px 0;
+    }
+
+    button {
+      background: #dc3545;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 5px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background: #c82333;
+    }
+
+    .test-results {
+      background: #e7f3ff;
+      border: 1px solid #b6d7ff;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    .error-found {
+      background: #fff3cd;
+      border: 2px solid #ffeaa7;
+      color: #856404;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🐛 Back Button White Screen Debug</h1>
+  <p><strong>Issue:</strong> After clicking back button from program page, the app shows white screen with only tab bar visible.</p>
+
+  <div class="critical-issue">
+    <h2>🚨 Critical Analysis Required</h2>
+    <p>The back button navigation appears to work (tab is selected correctly) but the content area is blank/white.</p>
+    <p>This suggests:</p>
+    <ul>
+      <li>✅ Tab switching logic works</li>
+      <li>✅ SessionStorage and targetTab logic works</li>
+      <li>❌ Content loading/rendering is failing</li>
+      <li>❌ Template system may be broken</li>
+    </ul>
+  </div>
+
+  <div class="debug-section">
+    <h2>🔍 Debug Strategy</h2>
+    <p>Let's trace the complete flow step by step:</p>
+
+    <button onclick="traceBackButtonFlow()">Trace Complete Back Button Flow</button>
+    <button onclick="debugContentLoading()">Debug Content Loading</button>
+    <button onclick="debugTemplateSystem()">Debug Template System</button>
+    <button onclick="debugOnsenUIEvents()">Debug Onsen UI Events</button>
+
+    <div id="debug-output"></div>
+  </div>
+
+  <div class="debug-section">
+    <h2>📋 Manual Debugging Checklist</h2>
+    <p>Run these checks on the actual app:</p>
+
+    <div class="code-block">
+// 1. Open browser console on index.html
+// 2. Navigate to Start tab, click a program
+// 3. On program.html, run this in console:
+
+console.log('=== BEFORE BACK BUTTON CLICK ===');
+console.log('Current URL:', window.location.href);
+console.log('SessionStorage targetTab:', sessionStorage.getItem('targetTab'));
+console.log('Document referrer:', document.referrer);
+
+// 4. Click back button
+// 5. On index.html (after navigation), run this in console:
+
+console.log('=== AFTER BACK BUTTON CLICK ===');
+console.log('Current URL:', window.location.href);
+console.log('SessionStorage targetTab:', sessionStorage.getItem('targetTab'));
+console.log('Active tab:', document.querySelector('ons-tab[active]'));
+console.log('Page content:', document.querySelector('ons-page'));
+console.log('Tab content visible:', !!document.querySelector('ons-page[style*="display: block"]'));
+    </div>
+  </div>
+
+  <div class="debug-section">
+    <h2>🧪 Potential Root Causes</h2>
+
+    <h3>Theory 1: Template Loading Issue</h3>
+    <div class="code-block">
+// The templates might not be loading correctly
+// Check if templates exist and are properly structured:
+
+const templates = [
+  'index.html',      // Home tab template
+  'start.html',      // Start tab template
+  'programs.html',   // Programs tab template
+  'glossary.html'    // Glossary tab template
+];
+
+templates.forEach(templateId => {
+  const template = document.querySelector(`template#${templateId}`);
+  console.log(`Template ${templateId}:`, template ? '✅ Found' : '❌ Missing');
+});
+    </div>
+
+    <h3>Theory 2: Onsen UI Tab Page Loading</h3>
+    <div class="code-block">
+// The tab might be active but the page content isn't loaded
+// This could happen if the page attribute doesn't match a template
+
+const tabbar = document.getElementById('main-tabbar');
+if (tabbar) {
+  console.log('Active tab index:', tabbar.getActiveTabIndex());
+  const activeTab = document.querySelector('ons-tab[active]');
+  if (activeTab) {
+    console.log('Active tab page:', activeTab.getAttribute('page'));
+    console.log('Active tab content:', activeTab.innerHTML);
+  }
+}
+    </div>
+
+    <h3>Theory 3: CSS Display Issues</h3>
+    <div class="code-block">
+// The content might be loaded but hidden by CSS
+const pages = document.querySelectorAll('ons-page');
+pages.forEach((page, index) => {
+  const computed = window.getComputedStyle(page);
+  console.log(`Page ${index}:`, {
+    id: page.id,
+    display: computed.display,
+    visibility: computed.visibility,
+    opacity: computed.opacity,
+    zIndex: computed.zIndex
+  });
+});
+    </div>
+
+    <h3>Theory 4: JavaScript Errors Breaking Content Load</h3>
+    <div class="code-block">
+// Check if there are any JavaScript errors preventing content load
+window.addEventListener('error', function(e) {
+  console.error('JavaScript Error:', {
+    message: e.message,
+    filename: e.filename,
+    lineno: e.lineno,
+    colno: e.colno,
+    error: e.error
+  });
+});
+
+// Also check for unhandled promise rejections
+window.addEventListener('unhandledrejection', function(e) {
+  console.error('Unhandled Promise Rejection:', e.reason);
+});
+    </div>
+  </div>
+
+  <script>
+    let debugLog = [];
+
+    function log(message) {
+      const timestamp = new Date().toLocaleTimeString();
+      const logEntry = `[${timestamp}] ${message}`;
+      debugLog.push(logEntry);
+      console.log(logEntry);
+    }
+
+    function displayDebugLog() {
+      const output = document.getElementById('debug-output');
+      if (output) {
+        output.innerHTML = `
+          <div class="log-output">
+            ${debugLog.join('\n')}
+          </div>
+        `;
+      }
+    }
+
+    function traceBackButtonFlow() {
+      log('🔍 Starting Back Button Flow Trace');
+
+      // Simulate the complete back button flow
+      const scenarios = [
+        { from: 'start', programId: 'test1' },
+        { from: 'programs', programId: 'test2' },
+        { from: 'glossary', programId: 'test3' }
+      ];
+
+      scenarios.forEach(scenario => {
+        log(`\n--- Scenario: from=${scenario.from} ---`);
+
+        // Step 1: Simulate being on program.html
+        const programUrl = `program.html?id=${scenario.programId}&from=${scenario.from}`;
+        log(`1. On program page: ${programUrl}`);
+
+        // Step 2: Simulate goBack() function execution
+        const urlParams = new URLSearchParams(`?id=${scenario.programId}&from=${scenario.from}`);
+        const fromTab = urlParams.get('from');
+        log(`2. goBack() reads fromTab: ${fromTab}`);
+
+        // Step 3: Simulate sessionStorage setting
+        if (fromTab === 'start' || fromTab === 'programs' || fromTab === 'glossary') {
+          sessionStorage.setItem('targetTab', fromTab);
+          log(`3. sessionStorage.setItem('targetTab', '${fromTab}')`);
+        } else {
+          log(`3. No targetTab set (fromTab: ${fromTab})`);
+        }
+
+        // Step 4: Simulate navigation to index.html
+        log(`4. Navigate to index.html`);
+
+        // Step 5: Simulate index.html processing
+        const storedTargetTab = sessionStorage.getItem('targetTab');
+        log(`5. index.html reads targetTab: ${storedTargetTab}`);
+
+        if (storedTargetTab) {
+          let expectedActiveTab;
+          switch(storedTargetTab) {
+            case 'start': expectedActiveTab = 'start-tab'; break;
+            case 'programs': expectedActiveTab = 'programs-tab'; break;
+            case 'glossary': expectedActiveTab = 'glossary-tab'; break;
+            default: expectedActiveTab = 'home-tab';
+          }
+          log(`6. Should activate tab: ${expectedActiveTab}`);
+          sessionStorage.removeItem('targetTab');
+          log(`7. Clear sessionStorage targetTab`);
+        } else {
+          log(`6. Should activate home tab (no targetTab)`);
+        }
+
+        log(`8. Expected result: ${scenario.from} tab content should be visible`);
+      });
+
+      // Clear test data
+      sessionStorage.removeItem('targetTab');
+      displayDebugLog();
+    }
+
+    function debugContentLoading() {
+      log('\n🔍 Debugging Content Loading');
+
+      // Check if we're on the right page
+      log(`Current page: ${window.location.pathname}`);
+      log(`Is index.html: ${window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/')}`);
+
+      // Check for templates
+      const expectedTemplates = ['index.html', 'start.html', 'programs.html', 'glossary.html'];
+      expectedTemplates.forEach(templateId => {
+        const template = document.querySelector(`template#${templateId.replace('.html', '')}`);
+        log(`Template ${templateId}: ${template ? '✅ Found' : '❌ Missing'}`);
+        if (template) {
+          log(`  Template content length: ${template.innerHTML.length} chars`);
+        }
+      });
+
+      // Check for tab elements
+      const tabs = ['home-tab', 'start-tab', 'programs-tab', 'glossary-tab'];
+      tabs.forEach(tabId => {
+        const tab = document.getElementById(tabId);
+        log(`Tab ${tabId}: ${tab ? '✅ Found' : '❌ Missing'}`);
+        if (tab) {
+          log(`  Tab active: ${tab.hasAttribute('active')}`);
+          log(`  Tab page: ${tab.getAttribute('page')}`);
+        }
+      });
+
+      // Check for active content
+      const pages = document.querySelectorAll('ons-page');
+      log(`Total pages found: ${pages.length}`);
+      pages.forEach((page, index) => {
+        if (page.id) {
+          const computed = window.getComputedStyle(page);
+          log(`Page ${page.id}: display=${computed.display}, visibility=${computed.visibility}`);
+        }
+      });
+
+      displayDebugLog();
+    }
+
+    function debugTemplateSystem() {
+      log('\n🔍 Debugging Template System');
+
+      // Check if Onsen UI is loaded
+      log(`Onsen UI loaded: ${typeof ons !== 'undefined' ? '✅ Yes' : '❌ No'}`);
+
+      // Check tabbar
+      const tabbar = document.getElementById('main-tabbar');
+      log(`Main tabbar found: ${tabbar ? '✅ Yes' : '❌ No'}`);
+
+      if (tabbar) {
+        log(`Tabbar active index: ${tabbar.getActiveTabIndex()}`);
+
+        // Check each tab's template loading
+        const tabs = tabbar.querySelectorAll('ons-tab');
+        tabs.forEach((tab, index) => {
+          const page = tab.getAttribute('page');
+          const template = document.querySelector(`template#${page.replace('.html', '')}`);
+          log(`Tab ${index} (${page}): template ${template ? 'exists' : 'MISSING'}`);
+        });
+      }
+
+      // Test manual tab activation
+      log('\n🧪 Testing Manual Tab Activation:');
+      const testTargetTab = 'start';
+      const targetTabElement = document.getElementById(`${testTargetTab}-tab`);
+
+      if (targetTabElement) {
+        log(`Found target tab element: ${testTargetTab}-tab`);
+        // Don't actually activate to avoid breaking current state
+        log(`Would set active attribute and trigger content load`);
+      } else {
+        log(`❌ Target tab element not found: ${testTargetTab}-tab`);
+      }
+
+      displayDebugLog();
+    }
+
+    function debugOnsenUIEvents() {
+      log('\n🔍 Debugging Onsen UI Events');
+
+      const tabbar = document.getElementById('main-tabbar');
+      if (!tabbar) {
+        log('❌ No tabbar found');
+        displayDebugLog();
+        return;
+      }
+
+      // Add event listeners to trace what's happening
+      log('Adding event listeners to trace tab events...');
+
+      tabbar.addEventListener('prechange', function(event) {
+        log(`📡 prechange event: from index ${event.tabIndex}`);
+      });
+
+      tabbar.addEventListener('postchange', function(event) {
+        log(`📡 postchange event: to index ${event.tabIndex}`);
+
+        // Check what content is loaded after change
+        setTimeout(() => {
+          const activePages = document.querySelectorAll('ons-page[style*="block"]');
+          log(`Active pages after tab change: ${activePages.length}`);
+          activePages.forEach(page => {
+            log(`  Active page: ${page.id} (${page.innerHTML.length} chars)`);
+          });
+        }, 100);
+      });
+
+      // Check for init events
+      document.addEventListener('init', function(event) {
+        if (event.target.tagName === 'ONS-PAGE') {
+          log(`📡 Page init event: ${event.target.id}`);
+        }
+      });
+
+      log('Event listeners added. Try navigating between tabs to see events.');
+
+      displayDebugLog();
+    }
+
+    // Auto-start basic debugging
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        log('🚀 Auto-starting back button flow trace...');
+        traceBackButtonFlow();
+      }, 500);
+    });
+  </script>
+</body>
+</html>

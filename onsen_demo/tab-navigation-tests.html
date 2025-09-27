@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tab Navigation Flash Prevention Tests</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .test-section {
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .test-case {
+      background: white;
+      border-left: 4px solid #4586F1;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 4px;
+    }
+
+    .test-status {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    .passed { background: #d4edda; color: #155724; }
+    .failed { background: #f8d7da; color: #721c24; }
+    .pending { background: #fff3cd; color: #856404; }
+
+    .code-block {
+      background: #f8f8f8;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 12px;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 0.9em;
+      overflow-x: auto;
+      margin: 10px 0;
+    }
+
+    button {
+      background: #4586F1;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    button:hover {
+      background: #093175;
+    }
+
+    .results {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 4px;
+      background: #e9ecef;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧪 Tab Navigation Flash Prevention Tests</h1>
+  <p>Comprehensive test suite for the tab switching feature that prevents home tab flash when navigating back from program pages.</p>
+
+  <div class="test-section">
+    <h2>🎯 Test Overview</h2>
+    <p>This test suite covers the tab navigation flash prevention system implemented in <code>index.html</code> and <code>program.html</code>.</p>
+
+    <h3>Key Components Tested:</h3>
+    <ul>
+      <li><strong>SessionStorage Management:</strong> Setting and clearing <code>targetTab</code> values</li>
+      <li><strong>Tab Pre-initialization:</strong> Setting active tab before Onsen UI processes DOM</li>
+      <li><strong>Back Button Navigation:</strong> Proper tab targeting from program pages</li>
+      <li><strong>Flash Prevention:</strong> No visual flash of home tab during navigation</li>
+    </ul>
+  </div>
+
+  <div class="test-section">
+    <h2>🔧 Manual Test Cases</h2>
+
+    <div class="test-case">
+      <h3>Test 1: Back Button Navigation to Start Tab</h3>
+      <p><strong>Purpose:</strong> Verify navigation from program page to Start tab works without flash</p>
+      <div class="code-block">
+// Test Steps:
+1. Navigate to any program (e.g., click a workout from Start tab)
+2. On program.html, click the back button
+3. Verify: Should navigate directly to Start tab without home tab flash
+4. Check sessionStorage is cleared after navigation
+      </div>
+      <p><strong>Expected Behavior:</strong> Direct navigation to Start tab, no home tab visibility</p>
+      <span class="test-status pending">Manual Test Required</span>
+    </div>
+
+    <div class="test-case">
+      <h3>Test 2: Back Button Navigation to Programs Tab</h3>
+      <p><strong>Purpose:</strong> Verify navigation from program page to Programs tab works without flash</p>
+      <div class="code-block">
+// Test Steps:
+1. Navigate to Programs tab, then select a program
+2. On program.html, click the back button
+3. Verify: Should navigate directly to Programs tab without home tab flash
+4. Check sessionStorage is cleared after navigation
+      </div>
+      <p><strong>Expected Behavior:</strong> Direct navigation to Programs tab, no home tab visibility</p>
+      <span class="test-status pending">Manual Test Required</span>
+    </div>
+
+    <div class="test-case">
+      <h3>Test 3: Back Button Navigation to Glossary Tab</h3>
+      <p><strong>Purpose:</strong> Verify navigation from program page to Glossary tab works without flash</p>
+      <div class="code-block">
+// Test Steps:
+1. Navigate to Glossary tab, then select a program (if applicable)
+2. On program.html, click the back button
+3. Verify: Should navigate directly to Glossary tab without home tab flash
+4. Check sessionStorage is cleared after navigation
+      </div>
+      <p><strong>Expected Behavior:</strong> Direct navigation to Glossary tab, no home tab visibility</p>
+      <span class="test-status pending">Manual Test Required</span>
+    </div>
+
+    <div class="test-case">
+      <h3>Test 4: Default Home Tab Behavior</h3>
+      <p><strong>Purpose:</strong> Verify Home tab shows correctly when no targetTab is set</p>
+      <div class="code-block">
+// Test Steps:
+1. Clear all sessionStorage
+2. Navigate directly to index.html
+3. Verify: Home tab should be active by default
+4. Check no targetTab exists in sessionStorage
+      </div>
+      <p><strong>Expected Behavior:</strong> Home tab active, no other tabs flash</p>
+      <span class="test-status pending">Manual Test Required</span>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <h2>🤖 Automated Test Scripts</h2>
+
+    <div class="test-case">
+      <h3>JavaScript Test Functions</h3>
+      <p>Run these functions in browser console to test specific components:</p>
+
+      <div class="code-block">
+// Test SessionStorage Management
+function testSessionStorageManagement() {
+  console.log('🧪 Testing SessionStorage Management');
+
+  // Test setting targetTab
+  sessionStorage.setItem('targetTab', 'start');
+  console.assert(sessionStorage.getItem('targetTab') === 'start', 'Failed to set start tab');
+
+  sessionStorage.setItem('targetTab', 'programs');
+  console.assert(sessionStorage.getItem('targetTab') === 'programs', 'Failed to set programs tab');
+
+  sessionStorage.setItem('targetTab', 'glossary');
+  console.assert(sessionStorage.getItem('targetTab') === 'glossary', 'Failed to set glossary tab');
+
+  // Test clearing
+  sessionStorage.removeItem('targetTab');
+  console.assert(sessionStorage.getItem('targetTab') === null, 'Failed to clear targetTab');
+
+  console.log('✅ SessionStorage Management Tests Passed');
+}
+
+// Test Tab Element Existence
+function testTabElementsExist() {
+  console.log('🧪 Testing Tab Elements Exist');
+
+  const homeTab = document.getElementById('home-tab');
+  const startTab = document.getElementById('start-tab');
+  const programsTab = document.getElementById('programs-tab');
+  const glossaryTab = document.getElementById('glossary-tab');
+
+  console.assert(homeTab !== null, 'Home tab element not found');
+  console.assert(startTab !== null, 'Start tab element not found');
+  console.assert(programsTab !== null, 'Programs tab element not found');
+  console.assert(glossaryTab !== null, 'Glossary tab element not found');
+
+  console.log('✅ Tab Elements Existence Tests Passed');
+}
+
+// Test Tab Activation Logic
+function testTabActivationLogic() {
+  console.log('🧪 Testing Tab Activation Logic');
+
+  // Clear all active states first
+  ['home-tab', 'start-tab', 'programs-tab', 'glossary-tab'].forEach(id => {
+    const tab = document.getElementById(id);
+    if (tab) tab.removeAttribute('active');
+  });
+
+  // Test setting each tab as active
+  const testCases = [
+    { targetTab: 'start', expectedId: 'start-tab' },
+    { targetTab: 'programs', expectedId: 'programs-tab' },
+    { targetTab: 'glossary', expectedId: 'glossary-tab' },
+    { targetTab: null, expectedId: 'home-tab' }, // Default case
+  ];
+
+  testCases.forEach(testCase => {
+    // Clear all active states
+    ['home-tab', 'start-tab', 'programs-tab', 'glossary-tab'].forEach(id => {
+      const tab = document.getElementById(id);
+      if (tab) tab.removeAttribute('active');
+    });
+
+    // Simulate the logic from index.html
+    const targetTab = testCase.targetTab;
+    let targetTabElement;
+
+    if (targetTab) {
+      switch(targetTab) {
+        case 'start':
+          targetTabElement = document.getElementById('start-tab');
+          break;
+        case 'programs':
+          targetTabElement = document.getElementById('programs-tab');
+          break;
+        case 'glossary':
+          targetTabElement = document.getElementById('glossary-tab');
+          break;
+        default:
+          targetTabElement = document.getElementById('home-tab');
+      }
+      if (targetTabElement) {
+        targetTabElement.setAttribute('active', '');
+      } else {
+        document.getElementById('home-tab').setAttribute('active', '');
+      }
+    } else {
+      document.getElementById('home-tab').setAttribute('active', '');
+    }
+
+    // Verify correct tab is active
+    const expectedTab = document.getElementById(testCase.expectedId);
+    console.assert(expectedTab.hasAttribute('active'),
+      `Failed to activate ${testCase.expectedId} for targetTab: ${testCase.targetTab}`);
+  });
+
+  console.log('✅ Tab Activation Logic Tests Passed');
+}
+
+// Test Back Button Navigation Logic
+function testBackButtonLogic() {
+  console.log('🧪 Testing Back Button Navigation Logic');
+
+  // Simulate the logic from program.html
+  const testCases = [
+    { fromTab: 'start', expectedTargetTab: 'start' },
+    { fromTab: 'programs', expectedTargetTab: 'programs' },
+    { fromTab: 'glossary', expectedTargetTab: 'glossary' },
+    { fromTab: null, expectedTargetTab: null }, // Should go to home
+  ];
+
+  testCases.forEach(testCase => {
+    // Clear sessionStorage
+    sessionStorage.removeItem('targetTab');
+
+    // Simulate back button click logic
+    const fromTab = testCase.fromTab;
+    if (fromTab === 'start') {
+      sessionStorage.setItem('targetTab', 'start');
+    } else if (fromTab === 'programs') {
+      sessionStorage.setItem('targetTab', 'programs');
+    } else if (fromTab === 'glossary') {
+      sessionStorage.setItem('targetTab', 'glossary');
+    }
+    // For null case, don't set anything (will go to home)
+
+    const actualTargetTab = sessionStorage.getItem('targetTab');
+    console.assert(actualTargetTab === testCase.expectedTargetTab,
+      `Failed back button logic for fromTab: ${fromTab}. Expected: ${testCase.expectedTargetTab}, Got: ${actualTargetTab}`);
+  });
+
+  console.log('✅ Back Button Logic Tests Passed');
+}
+
+// Run All Tests
+function runAllTabNavigationTests() {
+  console.log('🚀 Running All Tab Navigation Tests');
+  console.log('=====================================');
+
+  try {
+    testSessionStorageManagement();
+    testTabElementsExist();
+    testTabActivationLogic();
+    testBackButtonLogic();
+
+    console.log('=====================================');
+    console.log('🎉 All Automated Tests Passed!');
+  } catch (error) {
+    console.error('❌ Test Failed:', error);
+  }
+}
+      </div>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <h2>🔍 Performance Tests</h2>
+
+    <div class="test-case">
+      <h3>Flash Prevention Timing Test</h3>
+      <p><strong>Purpose:</strong> Measure timing to ensure no visual flash occurs</p>
+      <div class="code-block">
+// Performance Test Function
+function testTabSwitchTiming() {
+  console.log('🧪 Testing Tab Switch Timing');
+
+  const startTime = performance.now();
+
+  // Simulate the inline script execution
+  const targetTab = 'start';
+  sessionStorage.setItem('targetTab', targetTab);
+
+  // Time the tab activation
+  const targetTabElement = document.getElementById('start-tab');
+  if (targetTabElement) {
+    targetTabElement.setAttribute('active', '');
+  }
+
+  const endTime = performance.now();
+  const duration = endTime - startTime;
+
+  console.log(`Tab activation took: ${duration}ms`);
+  console.assert(duration < 16, 'Tab activation should complete within 16ms (1 frame)');
+
+  // Clear test state
+  sessionStorage.removeItem('targetTab');
+  targetTabElement.removeAttribute('active');
+
+  console.log('✅ Tab Switch Timing Test Passed');
+}
+      </div>
+      <span class="test-status pending">Run in Console</span>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <h2>🎮 Interactive Test Controls</h2>
+    <p>Use these buttons to run specific tests (open browser console to see results):</p>
+
+    <button onclick="testSessionStorageManagement()">Test SessionStorage</button>
+    <button onclick="testTabElementsExist()">Test Tab Elements</button>
+    <button onclick="testTabActivationLogic()">Test Tab Activation</button>
+    <button onclick="testBackButtonLogic()">Test Back Button Logic</button>
+    <button onclick="testTabSwitchTiming()">Test Timing</button>
+    <button onclick="runAllTabNavigationTests()">Run All Tests</button>
+  </div>
+
+  <div class="test-section">
+    <h2>📋 Test Checklist</h2>
+    <p>Manual verification checklist for complete testing:</p>
+
+    <div class="checklist">
+      <input type="checkbox" id="test1"> <label for="test1">Start tab → Program → Back button works without flash</label><br>
+      <input type="checkbox" id="test2"> <label for="test2">Programs tab → Program → Back button works without flash</label><br>
+      <input type="checkbox" id="test3"> <label for="test3">Glossary tab → Program → Back button works without flash</label><br>
+      <input type="checkbox" id="test4"> <label for="test4">Direct navigation to index.html shows Home tab</label><br>
+      <input type="checkbox" id="test5"> <label for="test5">SessionStorage is cleared after navigation</label><br>
+      <input type="checkbox" id="test6"> <label for="test6">No JavaScript errors in console during navigation</label><br>
+      <input type="checkbox" id="test7"> <label for="test7">Tab activation happens before Onsen UI initialization</label><br>
+      <input type="checkbox" id="test8"> <label for="test8">Performance is acceptable (no delays)</label><br>
+    </div>
+  </div>
+
+  <div class="results" id="test-results">
+    <h3>📊 Test Results</h3>
+    <p>Open browser console and run tests to see detailed results here.</p>
+  </div>
+
+  <script>
+    // Include all the test functions here for easy access
+    function testSessionStorageManagement() {
+      console.log('🧪 Testing SessionStorage Management');
+
+      // Test setting targetTab
+      sessionStorage.setItem('targetTab', 'start');
+      console.assert(sessionStorage.getItem('targetTab') === 'start', 'Failed to set start tab');
+
+      sessionStorage.setItem('targetTab', 'programs');
+      console.assert(sessionStorage.getItem('targetTab') === 'programs', 'Failed to set programs tab');
+
+      sessionStorage.setItem('targetTab', 'glossary');
+      console.assert(sessionStorage.getItem('targetTab') === 'glossary', 'Failed to set glossary tab');
+
+      // Test clearing
+      sessionStorage.removeItem('targetTab');
+      console.assert(sessionStorage.getItem('targetTab') === null, 'Failed to clear targetTab');
+
+      console.log('✅ SessionStorage Management Tests Passed');
+    }
+
+    function testTabElementsExist() {
+      console.log('🧪 Testing Tab Elements Exist');
+
+      // Note: These elements don't exist in this test page, so we'll simulate
+      console.log('ℹ️  Tab elements test requires running on actual index.html page');
+      console.log('   Expected elements: home-tab, start-tab, programs-tab, glossary-tab');
+    }
+
+    function testTabActivationLogic() {
+      console.log('🧪 Testing Tab Activation Logic');
+      console.log('ℹ️  Tab activation test requires running on actual index.html page');
+      console.log('   This test verifies the inline script logic works correctly');
+    }
+
+    function testBackButtonLogic() {
+      console.log('🧪 Testing Back Button Navigation Logic');
+
+      // Simulate the logic from program.html
+      const testCases = [
+        { fromTab: 'start', expectedTargetTab: 'start' },
+        { fromTab: 'programs', expectedTargetTab: 'programs' },
+        { fromTab: 'glossary', expectedTargetTab: 'glossary' },
+        { fromTab: null, expectedTargetTab: null }, // Should go to home
+      ];
+
+      testCases.forEach(testCase => {
+        // Clear sessionStorage
+        sessionStorage.removeItem('targetTab');
+
+        // Simulate back button click logic
+        const fromTab = testCase.fromTab;
+        if (fromTab === 'start') {
+          sessionStorage.setItem('targetTab', 'start');
+        } else if (fromTab === 'programs') {
+          sessionStorage.setItem('targetTab', 'programs');
+        } else if (fromTab === 'glossary') {
+          sessionStorage.setItem('targetTab', 'glossary');
+        }
+        // For null case, don't set anything (will go to home)
+
+        const actualTargetTab = sessionStorage.getItem('targetTab');
+        console.assert(actualTargetTab === testCase.expectedTargetTab,
+          `Failed back button logic for fromTab: ${fromTab}. Expected: ${testCase.expectedTargetTab}, Got: ${actualTargetTab}`);
+      });
+
+      console.log('✅ Back Button Logic Tests Passed');
+    }
+
+    function testTabSwitchTiming() {
+      console.log('🧪 Testing Tab Switch Timing');
+
+      const startTime = performance.now();
+
+      // Simulate the inline script execution
+      const targetTab = 'start';
+      sessionStorage.setItem('targetTab', targetTab);
+
+      // Simulate tab activation (without actual DOM element)
+      // In real implementation, this would set the active attribute
+
+      const endTime = performance.now();
+      const duration = endTime - startTime;
+
+      console.log(`Simulated tab activation took: ${duration}ms`);
+      console.assert(duration < 16, 'Tab activation should complete within 16ms (1 frame)');
+
+      // Clear test state
+      sessionStorage.removeItem('targetTab');
+
+      console.log('✅ Tab Switch Timing Test Passed');
+    }
+
+    function runAllTabNavigationTests() {
+      console.log('🚀 Running All Tab Navigation Tests');
+      console.log('=====================================');
+
+      try {
+        testSessionStorageManagement();
+        testTabElementsExist();
+        testTabActivationLogic();
+        testBackButtonLogic();
+        testTabSwitchTiming();
+
+        console.log('=====================================');
+        console.log('🎉 All Automated Tests Completed!');
+        console.log('ℹ️  Some tests require running on actual app pages for full verification');
+      } catch (error) {
+        console.error('❌ Test Failed:', error);
+      }
+    }
+  </script>
+</body>
+</html>

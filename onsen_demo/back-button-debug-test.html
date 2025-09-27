@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Back Button Deep Debug Test</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .test-section {
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .critical-issue {
+      background: #f8d7da;
+      border: 2px solid #f5c6cb;
+      color: #721c24;
+    }
+
+    .code-block {
+      background: #f8f8f8;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 12px;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 0.9em;
+      overflow-x: auto;
+      margin: 10px 0;
+    }
+
+    .issue-found {
+      background: #fff3cd;
+      border: 2px solid #ffeaa7;
+      color: #856404;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    button {
+      background: #dc3545;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 5px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #c82333;
+    }
+
+    .test-results {
+      background: #d1ecf1;
+      border: 1px solid #bee5eb;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    .bug-report {
+      background: #ffffff;
+      border: 3px solid #dc3545;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🐛 Back Button Deep Debug Analysis</h1>
+  <p>This is a comprehensive debugging session to find what's failing with the back button navigation.</p>
+
+  <div class="test-section critical-issue">
+    <h2>🚨 Critical Analysis Required</h2>
+    <p>User reported: Back button is failing. Let's find out exactly what's breaking.</p>
+  </div>
+
+  <div class="test-section">
+    <h2>🔍 Step 1: Navigation Flow Analysis</h2>
+    <p>Let's trace the complete navigation flow:</p>
+
+    <div class="code-block">
+Navigation Flow:
+1. User clicks program from Start tab → program.html?id=X&from=start
+2. User clicks program from Programs tab → program.html?id=X&from=programs
+3. User clicks back button → goBack() function executes
+4. goBack() reads URL params and decides navigation
+5. Sets sessionStorage.setItem('targetTab', 'start'|'programs')
+6. Redirects to index.html
+7. index.html inline script reads targetTab and sets active tab
+    </div>
+
+    <button onclick="analyzeNavigationFlow()">Analyze Navigation Flow</button>
+    <div id="navigation-analysis"></div>
+  </div>
+
+  <div class="test-section">
+    <h2>🔧 Step 2: URL Parameter Testing</h2>
+    <p>Test if URL parameters are being passed correctly:</p>
+
+    <button onclick="testURLParameters()">Test URL Parameters</button>
+    <div id="url-test-results"></div>
+  </div>
+
+  <div class="test-section">
+    <h2>🔧 Step 3: SessionStorage Testing</h2>
+    <p>Test if sessionStorage is working correctly:</p>
+
+    <button onclick="testSessionStorage()">Test SessionStorage</button>
+    <div id="session-storage-results"></div>
+  </div>
+
+  <div class="test-section">
+    <h2>🔧 Step 4: Tab Activation Testing</h2>
+    <p>Test if tab activation is working:</p>
+
+    <button onclick="testTabActivation()">Test Tab Activation Logic</button>
+    <div id="tab-activation-results"></div>
+  </div>
+
+  <div class="test-section">
+    <h2>🔧 Step 5: goBack() Function Analysis</h2>
+    <p>Deep dive into the goBack function:</p>
+
+    <button onclick="analyzeGoBackFunction()">Analyze goBack() Function</button>
+    <div id="goback-analysis"></div>
+  </div>
+
+  <div class="test-section">
+    <h2>🔧 Step 6: Live Simulation Test</h2>
+    <p>Simulate the exact back button behavior:</p>
+
+    <button onclick="simulateBackButtonBehavior()">Simulate Back Button Click</button>
+    <div id="simulation-results"></div>
+  </div>
+
+  <div class="bug-report" id="bug-report" style="display: none;">
+    <h2>🐛 BUG REPORT</h2>
+    <p id="bug-description"></p>
+    <div id="bug-details"></div>
+  </div>
+
+  <script>
+    let issues = [];
+    let testResults = {};
+
+    function analyzeNavigationFlow() {
+      const results = document.getElementById('navigation-analysis');
+      results.innerHTML = '<h3>🔍 Navigation Flow Analysis Results:</h3>';
+
+      // Test 1: Check if we can simulate the navigation URLs
+      const testUrls = [
+        'program.html?id=test123&from=start',
+        'program.html?id=test456&from=programs',
+        'program.html?id=test789&from=glossary'
+      ];
+
+      testUrls.forEach(url => {
+        const urlObj = new URL(url, window.location.origin);
+        const params = new URLSearchParams(urlObj.search);
+        const id = params.get('id');
+        const from = params.get('from');
+
+        results.innerHTML += `
+          <div class="test-results">
+            <strong>URL:</strong> ${url}<br>
+            <strong>ID:</strong> ${id}<br>
+            <strong>From:</strong> ${from}<br>
+            <strong>Status:</strong> ${id && from ? '✅ Valid' : '❌ Invalid'}
+          </div>
+        `;
+
+        if (!id || !from) {
+          issues.push(`Invalid URL structure: ${url}`);
+        }
+      });
+
+      testResults.navigationFlow = issues.length === 0;
+    }
+
+    function testURLParameters() {
+      const results = document.getElementById('url-test-results');
+      results.innerHTML = '<h3>🔍 URL Parameter Test Results:</h3>';
+
+      // Simulate being on program.html with different parameters
+      const testCases = [
+        { url: '?id=program1&from=start', expected: { id: 'program1', from: 'start' } },
+        { url: '?id=program2&from=programs', expected: { id: 'program2', from: 'programs' } },
+        { url: '?id=program3&from=glossary', expected: { id: 'program3', from: 'glossary' } },
+        { url: '?id=program4', expected: { id: 'program4', from: null } }, // Missing 'from'
+        { url: '?from=start', expected: { id: null, from: 'start' } }, // Missing 'id'
+        { url: '', expected: { id: null, from: null } } // No parameters
+      ];
+
+      testCases.forEach((testCase, index) => {
+        const params = new URLSearchParams(testCase.url);
+        const id = params.get('id');
+        const from = params.get('from');
+
+        const passed = id === testCase.expected.id && from === testCase.expected.from;
+
+        results.innerHTML += `
+          <div class="test-results">
+            <strong>Test ${index + 1}:</strong> ${testCase.url || 'empty'}<br>
+            <strong>Expected:</strong> id=${testCase.expected.id}, from=${testCase.expected.from}<br>
+            <strong>Actual:</strong> id=${id}, from=${from}<br>
+            <strong>Status:</strong> ${passed ? '✅ Passed' : '❌ Failed'}
+          </div>
+        `;
+
+        if (!passed) {
+          issues.push(`URL parameter parsing failed for: ${testCase.url}`);
+        }
+      });
+
+      testResults.urlParameters = issues.filter(i => i.includes('URL parameter')).length === 0;
+    }
+
+    function testSessionStorage() {
+      const results = document.getElementById('session-storage-results');
+      results.innerHTML = '<h3>🔍 SessionStorage Test Results:</h3>';
+
+      const testValues = ['start', 'programs', 'glossary', null, undefined, ''];
+
+      testValues.forEach((value, index) => {
+        try {
+          // Clear first
+          sessionStorage.removeItem('targetTab');
+
+          if (value !== null && value !== undefined) {
+            sessionStorage.setItem('targetTab', value);
+          }
+
+          const retrieved = sessionStorage.getItem('targetTab');
+          const expected = (value === null || value === undefined || value === '') ? null : value;
+          const passed = retrieved === expected;
+
+          results.innerHTML += `
+            <div class="test-results">
+              <strong>Test ${index + 1}:</strong> Set '${value}' (${typeof value})<br>
+              <strong>Expected:</strong> ${expected}<br>
+              <strong>Retrieved:</strong> ${retrieved}<br>
+              <strong>Status:</strong> ${passed ? '✅ Passed' : '❌ Failed'}
+            </div>
+          `;
+
+          if (!passed) {
+            issues.push(`SessionStorage failed for value: ${value}`);
+          }
+
+        } catch (error) {
+          results.innerHTML += `
+            <div class="test-results">
+              <strong>Test ${index + 1}:</strong> Set '${value}'<br>
+              <strong>Error:</strong> ${error.message}<br>
+              <strong>Status:</strong> ❌ Exception
+            </div>
+          `;
+          issues.push(`SessionStorage exception for value ${value}: ${error.message}`);
+        }
+      });
+
+      // Clear after test
+      sessionStorage.removeItem('targetTab');
+      testResults.sessionStorage = issues.filter(i => i.includes('SessionStorage')).length === 0;
+    }
+
+    function testTabActivation() {
+      const results = document.getElementById('tab-activation-results');
+      results.innerHTML = '<h3>🔍 Tab Activation Logic Test Results:</h3>';
+
+      // Simulate the tab activation logic from index.html
+      const tabActivationLogic = function(targetTab) {
+        let targetTabElement;
+
+        if (targetTab) {
+          switch(targetTab) {
+            case 'start':
+              return 'start-tab';
+            case 'programs':
+              return 'programs-tab';
+            case 'glossary':
+              return 'glossary-tab';
+            default:
+              return 'home-tab';
+          }
+        } else {
+          return 'home-tab';
+        }
+      };
+
+      const testCases = [
+        { input: 'start', expected: 'start-tab' },
+        { input: 'programs', expected: 'programs-tab' },
+        { input: 'glossary', expected: 'glossary-tab' },
+        { input: null, expected: 'home-tab' },
+        { input: undefined, expected: 'home-tab' },
+        { input: '', expected: 'home-tab' },
+        { input: 'invalid', expected: 'home-tab' }
+      ];
+
+      testCases.forEach((testCase, index) => {
+        const result = tabActivationLogic(testCase.input);
+        const passed = result === testCase.expected;
+
+        results.innerHTML += `
+          <div class="test-results">
+            <strong>Test ${index + 1}:</strong> Input '${testCase.input}' (${typeof testCase.input})<br>
+            <strong>Expected:</strong> ${testCase.expected}<br>
+            <strong>Actual:</strong> ${result}<br>
+            <strong>Status:</strong> ${passed ? '✅ Passed' : '❌ Failed'}
+          </div>
+        `;
+
+        if (!passed) {
+          issues.push(`Tab activation logic failed for: ${testCase.input}`);
+        }
+      });
+
+      testResults.tabActivation = issues.filter(i => i.includes('Tab activation')).length === 0;
+    }
+
+    function analyzeGoBackFunction() {
+      const results = document.getElementById('goback-analysis');
+      results.innerHTML = '<h3>🔍 goBack() Function Analysis:</h3>';
+
+      // Recreate the exact goBack function logic
+      const goBackLogic = function(mockUrlParams, mockReferrer, mockHistoryLength) {
+        const fromTab = mockUrlParams.get('from');
+        const referrer = mockReferrer;
+        const isFromMainApp = referrer.includes('index.html') || referrer.endsWith('onsen_demo/');
+
+        let action = '';
+        let targetTab = null;
+
+        if (fromTab === 'start') {
+          action = 'Navigate to index.html with targetTab=start';
+          targetTab = 'start';
+        } else if (fromTab === 'programs') {
+          action = 'Navigate to index.html with targetTab=programs';
+          targetTab = 'programs';
+        } else if (mockHistoryLength > 1 && isFromMainApp) {
+          action = 'Use window.history.back()';
+        } else {
+          action = 'Default fallback to index.html';
+        }
+
+        return { action, targetTab, fromTab, isFromMainApp };
+      };
+
+      const testScenarios = [
+        {
+          name: 'From Start Tab',
+          params: new URLSearchParams('?id=program1&from=start'),
+          referrer: 'http://localhost/onsen_demo/index.html',
+          historyLength: 2
+        },
+        {
+          name: 'From Programs Tab',
+          params: new URLSearchParams('?id=program2&from=programs'),
+          referrer: 'http://localhost/onsen_demo/index.html',
+          historyLength: 2
+        },
+        {
+          name: 'From Glossary Tab',
+          params: new URLSearchParams('?id=program3&from=glossary'),
+          referrer: 'http://localhost/onsen_demo/index.html',
+          historyLength: 2
+        },
+        {
+          name: 'No From Parameter',
+          params: new URLSearchParams('?id=program4'),
+          referrer: 'http://localhost/onsen_demo/index.html',
+          historyLength: 2
+        },
+        {
+          name: 'External Referrer',
+          params: new URLSearchParams('?id=program5&from=start'),
+          referrer: 'http://google.com',
+          historyLength: 1
+        }
+      ];
+
+      testScenarios.forEach((scenario, index) => {
+        const result = goBackLogic(scenario.params, scenario.referrer, scenario.historyLength);
+
+        results.innerHTML += `
+          <div class="test-results">
+            <strong>${scenario.name}:</strong><br>
+            <strong>From Tab:</strong> ${result.fromTab || 'null'}<br>
+            <strong>Is From Main App:</strong> ${result.isFromMainApp}<br>
+            <strong>Action:</strong> ${result.action}<br>
+            <strong>Target Tab:</strong> ${result.targetTab || 'none'}<br>
+            <strong>Status:</strong> ✅ Logic executed
+          </div>
+        `;
+      });
+
+      // Check for potential issues
+      const potentialIssues = [
+        'Missing fromTab parameter handling',
+        'Referrer check might fail',
+        'History length assumption',
+        'Missing glossary case handling'
+      ];
+
+      // FOUND ISSUE: Glossary case is missing!
+      results.innerHTML += `
+        <div class="issue-found">
+          <h4>🚨 CRITICAL ISSUE FOUND!</h4>
+          <p><strong>Missing Case:</strong> The goBack() function doesn't handle fromTab === 'glossary'!</p>
+          <div class="code-block">
+// Current logic only handles 'start' and 'programs'
+if (fromTab === 'start') {
+  // Handle start case
+} else if (fromTab === 'programs') {
+  // Handle programs case
+} else if (window.history.length > 1 && isFromMainApp) {
+  // Fallback to history.back()
+}
+
+// MISSING: No specific case for fromTab === 'glossary'!
+          </div>
+        </div>
+      `;
+
+      issues.push('CRITICAL: goBack() function missing glossary case handling');
+      testResults.goBackFunction = false;
+    }
+
+    function simulateBackButtonBehavior() {
+      const results = document.getElementById('simulation-results');
+      results.innerHTML = '<h3>🔍 Back Button Simulation Results:</h3>';
+
+      // Test the complete back button flow
+      const simulateCompleteFlow = function(programUrl) {
+        const steps = [];
+
+        // Step 1: Parse URL
+        const url = new URL(programUrl, window.location.origin);
+        const params = new URLSearchParams(url.search);
+        const fromTab = params.get('from');
+        const programId = params.get('id');
+
+        steps.push(`1. Parsed URL: from=${fromTab}, id=${programId}`);
+
+        // Step 2: Execute goBack logic
+        let targetTab = null;
+        let navigationAction = '';
+
+        if (fromTab === 'start') {
+          sessionStorage.setItem('targetTab', 'start');
+          targetTab = 'start';
+          navigationAction = 'index.html';
+          steps.push('2. Set sessionStorage targetTab=start, navigate to index.html');
+        } else if (fromTab === 'programs') {
+          sessionStorage.setItem('targetTab', 'programs');
+          targetTab = 'programs';
+          navigationAction = 'index.html';
+          steps.push('2. Set sessionStorage targetTab=programs, navigate to index.html');
+        } else if (fromTab === 'glossary') {
+          // This is the bug! No case for glossary
+          steps.push('2. ❌ NO CASE FOR GLOSSARY - falls through to history.back()');
+          navigationAction = 'history.back()';
+        } else {
+          steps.push('2. No fromTab, fallback to index.html');
+          navigationAction = 'index.html';
+        }
+
+        // Step 3: Check sessionStorage
+        const storedTargetTab = sessionStorage.getItem('targetTab');
+        steps.push(`3. SessionStorage targetTab: ${storedTargetTab}`);
+
+        // Step 4: Simulate index.html processing
+        if (navigationAction === 'index.html' && storedTargetTab) {
+          const expectedActiveTab = storedTargetTab === 'start' ? 'start-tab' :
+                                   storedTargetTab === 'programs' ? 'programs-tab' :
+                                   storedTargetTab === 'glossary' ? 'glossary-tab' : 'home-tab';
+          steps.push(`4. index.html would activate: ${expectedActiveTab}`);
+          steps.push('5. sessionStorage.removeItem("targetTab") would execute');
+        } else {
+          steps.push('4. No index.html processing (using history.back)');
+        }
+
+        return { steps, success: navigationAction === 'index.html' && storedTargetTab };
+      };
+
+      const testUrls = [
+        'program.html?id=test1&from=start',
+        'program.html?id=test2&from=programs',
+        'program.html?id=test3&from=glossary',  // This will fail!
+        'program.html?id=test4'  // No from parameter
+      ];
+
+      testUrls.forEach((testUrl, index) => {
+        // Clear sessionStorage before each test
+        sessionStorage.removeItem('targetTab');
+
+        const simulation = simulateCompleteFlow(testUrl);
+
+        results.innerHTML += `
+          <div class="test-results">
+            <h4>Test ${index + 1}: ${testUrl}</h4>
+            ${simulation.steps.map(step => `<div>${step}</div>`).join('')}
+            <strong>Overall Success:</strong> ${simulation.success ? '✅ Would work' : '❌ Would fail'}
+          </div>
+        `;
+      });
+
+      // Clear test data
+      sessionStorage.removeItem('targetTab');
+    }
+
+    // Show bug report if issues found
+    function showBugReport() {
+      if (issues.length > 0) {
+        const bugReport = document.getElementById('bug-report');
+        const bugDescription = document.getElementById('bug-description');
+        const bugDetails = document.getElementById('bug-details');
+
+        bugDescription.innerHTML = `Found ${issues.length} critical issues with the back button navigation:`;
+        bugDetails.innerHTML = `
+          <h3>🐛 Issues Found:</h3>
+          <ol>
+            ${issues.map(issue => `<li>${issue}</li>`).join('')}
+          </ol>
+
+          <h3>🔧 Recommended Fix:</h3>
+          <div class="code-block">
+// In program.html goBack() function, add missing glossary case:
+function goBack() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const fromTab = urlParams.get('from');
+
+  const referrer = document.referrer;
+  const isFromMainApp = referrer.includes('index.html') || referrer.endsWith('onsen_demo/');
+
+  if (fromTab === 'start') {
+    sessionStorage.setItem('targetTab', 'start');
+    window.location.href = 'index.html';
+  } else if (fromTab === 'programs') {
+    sessionStorage.setItem('targetTab', 'programs');
+    window.location.href = 'index.html';
+  } else if (fromTab === 'glossary') {  // ← ADD THIS MISSING CASE!
+    sessionStorage.setItem('targetTab', 'glossary');
+    window.location.href = 'index.html';
+  } else if (window.history.length > 1 && isFromMainApp) {
+    window.history.back();
+  } else {
+    window.location.href = 'index.html';
+  }
+}
+          </div>
+        `;
+
+        bugReport.style.display = 'block';
+      }
+    }
+
+    // Auto-run all tests when page loads
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        analyzeNavigationFlow();
+        setTimeout(() => testURLParameters(), 100);
+        setTimeout(() => testSessionStorage(), 200);
+        setTimeout(() => testTabActivation(), 300);
+        setTimeout(() => analyzeGoBackFunction(), 400);
+        setTimeout(() => simulateBackButtonBehavior(), 500);
+        setTimeout(() => showBugReport(), 600);
+      }, 100);
+    });
+  </script>
+</body>
+</html>

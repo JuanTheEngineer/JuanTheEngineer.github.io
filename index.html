@@ -1,64 +1,1854 @@
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">-->
 <!DOCTYPE html>
-<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
 <html>
 <head>
-<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
-<meta name="viewport" content="width=device-width, initial-scale=0.7">
-<link rel="stylesheet" type="text/css" href="style.css" />
-<link rel="icon" href="icon.png">
-<title>Juan's Exercise Database</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juan's Workout Database - Mobile</title>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
+  <style>
+    /* Juan's Workout Database - Configurable Color Palette */
+    :root {
+      /* Primary Brand Colors */
+      --primary-blue: #4586F1;
+      --primary-dark-blue: #093175;
+      --primary-light-blue: #65A9ED;
+      --primary-very-light-blue: #C5DDFA;
+
+      /* Accent Colors */
+      --accent-white: #FFFFFF;
+      --accent-light-gray: #f4f4f4;
+      --accent-gray: #e0e0e0;
+      --accent-dark: #333333;
+
+      /* Semantic Colors */
+      --success-green: #28a745;
+      --warning-orange: #fd7e14;
+      --danger-red: #dc3545;
+
+      /* Text Colors */
+      --text-primary: var(--primary-dark-blue);
+      --text-secondary: var(--accent-dark);
+      --text-light: var(--accent-white);
+
+      /* Background Colors */
+      --bg-primary: var(--accent-white);
+      --bg-secondary: var(--accent-light-gray);
+      --bg-brand: var(--primary-blue);
+    }
+
+    /* Apply Juan's branding to Onsen UI components */
+    .toolbar {
+      background: #2E6BC7 !important;
+      color: var(--text-light) !important;
+    }
+
+    .toolbar__center {
+      color: var(--text-light) !important;
+      font-weight: bold;
+    }
+
+    .toolbar__left .back-button {
+      color: var(--text-light) !important;
+    }
+
+    .tabbar {
+      background: var(--bg-primary) !important;
+      border-top: 2px solid var(--primary-blue) !important;
+    }
+
+    .tabbar__item {
+      color: var(--text-secondary) !important;
+    }
+
+    .tabbar__item--active {
+      color: var(--primary-blue) !important;
+      border-top: 2px solid var(--primary-blue) !important;
+    }
+
+    .card {
+      border-left: 4px solid var(--primary-blue) !important;
+      box-shadow: 0 2px 8px rgba(69, 134, 241, 0.1) !important;
+    }
+
+    .card__title {
+      color: var(--text-primary) !important;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .card__content {
+      color: var(--text-secondary) !important;
+      line-height: 1.5;
+    }
+
+    .list-item {
+      border-bottom: 1px solid var(--accent-gray) !important;
+    }
+
+    .list-item--tappable:active {
+      background: var(--accent-light-gray) !important;
+    }
+
+    .list-item__center {
+      color: var(--text-primary) !important;
+      font-weight: 500;
+    }
+
+    /* Custom styles for Juan's brand */
+    .juan-hero {
+      background: linear-gradient(135deg, var(--primary-blue), var(--primary-light-blue));
+      color: var(--text-light);
+      padding: 20px;
+      text-align: center;
+      margin: 0;
+    }
+
+    .juan-hero h1 {
+      margin: 0 0 10px 0;
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+
+    .juan-hero p {
+      margin: 0;
+      opacity: 0.9;
+      font-size: 1.1em;
+    }
+
+    .feature-card {
+      margin: 10px;
+      border-radius: 8px;
+    }
+
+    .exercise-image {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 4px;
+      margin: 10px 0;
+    }
+
+    .exercise-details {
+      background: var(--bg-secondary);
+      padding: 10px;
+      border-radius: 4px;
+      margin: 5px 0;
+    }
+
+    .exercise-stats {
+      font-weight: bold;
+      color: var(--primary-blue);
+      margin: 5px 0;
+    }
+
+    /* Start page styles */
+    .start-category-tabs {
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .start-category-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .start-category-tab {
+      flex: 0 0 auto;
+      padding: 15px 20px;
+      text-align: center;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-weight: 500;
+      font-size: 0.9em;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+    }
+
+    .start-category-tab--active {
+      color: var(--primary-blue);
+      border-bottom-color: var(--primary-blue);
+    }
+
+    .start-category-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 0;
+    }
+
+    .start-category-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      background: var(--accent-gray);
+    }
+
+    .start-category-dot--active {
+      background: var(--primary-blue);
+      transform: scale(1.2);
+    }
+
+    .program-card {
+      background: var(--bg-primary);
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(69, 134, 241, 0.1);
+      border: 1px solid var(--accent-gray);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .program-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(69, 134, 241, 0.15);
+      border-color: var(--primary-light-blue);
+    }
+
+    .program-card__header {
+      background: linear-gradient(135deg, var(--bg-secondary), var(--accent-light-gray));
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--accent-gray);
+    }
+
+    .program-card__title {
+      font-size: 1.1em;
+      font-weight: 600;
+      margin: 0 0 4px 0;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .program-card__requirements {
+      font-size: 0.75em;
+      color: var(--text-secondary);
+      margin: 0;
+      opacity: 0.7;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    .program-card__body {
+      padding: 16px 20px;
+    }
+
+    .program-card__category {
+      display: inline-block;
+      background: var(--primary-very-light-blue);
+      color: var(--primary-blue);
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.75em;
+      font-weight: 500;
+      margin: 0 0 8px 0;
+    }
+
+    .program-card__description {
+      font-size: 0.9em;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    /* Advanced Program Detail Styles - Preserved from original program.html */
+
+    /* Timeline styles for program view */
+    .timeline::before {
+      content: "";
+      position: absolute;
+      height: 4px;
+      background: var(--accent-gray);
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 1;
+      border-radius: 2px;
+    }
+
+    /* Adaptive timeline layouts */
+    .timeline.single-exercise {
+      justify-content: center;
+    }
+
+    .timeline.single-exercise::before {
+      display: none; /* Hide connecting line for single exercise */
+    }
+
+    .timeline.two-exercises {
+      justify-content: center;
+      gap: 100px; /* Comfortable spacing between two dots */
+    }
+
+    .timeline.two-exercises::before {
+      left: 50%;
+      right: auto;
+      width: 100px;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    /* Special styling for two exercises */
+    .timeline.two-exercises .timeline-dot {
+      position: relative;
+    }
+
+    .timeline.two-exercises .timeline-dot::before {
+      content: attr(data-number);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 10px;
+      font-weight: bold;
+      color: var(--text-secondary);
+    }
+
+    .timeline.two-exercises .timeline-dot.active::before {
+      color: var(--text-light);
+    }
+
+    .timeline.two-exercises .timeline-dot.completed::before {
+      content: "";
+    }
+
+    .timeline.few-exercises {
+      justify-content: center;
+      max-width: 300px;
+      margin: 0 auto;
+      gap: 40px;
+    }
+
+    .timeline.few-exercises::before {
+      left: 10%;
+      right: 10%;
+    }
+
+    /* Special styling for single exercise */
+    .timeline.single-exercise .timeline-dot {
+      width: 24px;
+      height: 24px;
+      position: relative;
+    }
+
+    .timeline.single-exercise .timeline-dot::before {
+      content: "1";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 11px;
+      font-weight: bold;
+      color: var(--text-secondary);
+    }
+
+    .timeline.single-exercise .timeline-dot.active::before {
+      color: var(--text-light);
+    }
+
+    .timeline.single-exercise .timeline-dot.completed::before {
+      content: "";
+    }
+
+    /* Exercise count indicator for single exercise */
+    .exercise-count-indicator {
+      text-align: center;
+      font-size: 0.8em;
+      color: var(--text-secondary);
+      opacity: 0.8;
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    .timeline-dot {
+      width: 18px;
+      height: 18px;
+      background: var(--bg-primary);
+      border: 2px solid var(--accent-gray);
+      border-radius: 50%;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .timeline-dot:hover {
+      transform: scale(1.1);
+      box-shadow: 0 2px 8px rgba(69, 134, 241, 0.3);
+    }
+
+    .timeline-dot.active {
+      width: 22px;
+      height: 22px;
+      background: var(--primary-blue);
+      border-color: var(--primary-blue);
+      transform: scale(1.1);
+      box-shadow: 0 0 0 3px rgba(69, 134, 241, 0.3);
+    }
+
+    .timeline-dot.completed {
+      background: var(--primary-dark-blue);
+      border-color: var(--primary-dark-blue);
+      width: 18px;
+      height: 18px;
+    }
+
+    .timeline-dot.completed::after {
+      content: "✔";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 9px;
+      color: var(--text-light);
+      font-weight: bold;
+    }
+
+    .timeline-dot.active.completed {
+      background: var(--primary-dark-blue);
+      border: 3px solid var(--primary-blue);
+      width: 22px;
+      height: 22px;
+      transform: scale(1.1);
+      box-shadow: 0 0 0 3px rgba(69, 134, 241, 0.3);
+    }
+
+    .timeline-dot.active.completed::after {
+      content: "✔";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 9px;
+      color: var(--text-light);
+      font-weight: bold;
+    }
+
+    /* Exercise item styles for program view */
+    .exercise-item {
+      margin-bottom: 12px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(69, 134, 241, 0.1);
+      background: var(--bg-primary);
+      border-left: 4px solid var(--primary-blue);
+    }
+
+    .exercise-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background: var(--bg-secondary);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .exercise-header:hover {
+      background: var(--accent-gray);
+    }
+
+    .exercise-title {
+      font-weight: 600;
+      margin: 0;
+      flex-grow: 1;
+      font-size: 1.1em;
+      color: var(--text-primary);
+    }
+
+    .exercise-status {
+      width: 28px;
+      height: 28px;
+      border: 2px solid var(--primary-blue);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+      min-width: 28px;
+      min-height: 28px;
+      background: var(--bg-primary);
+      position: relative;
+    }
+
+    .exercise-status:hover {
+      background: var(--primary-very-light-blue);
+      transform: scale(1.05);
+      box-shadow: 0 2px 8px rgba(69, 134, 241, 0.2);
+    }
+
+    .completed .exercise-status {
+      background: var(--primary-dark-blue);
+      border-color: var(--primary-dark-blue);
+      animation: completePulse 0.6s ease-out;
+    }
+
+    .completed .exercise-status::after {
+      content: "✔";
+      font-size: 14px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--text-light);
+      font-weight: bold;
+    }
+
+    @keyframes completePulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    /* Progress indicator for overall completion */
+    .progress-indicator {
+      margin: 0;
+      padding: 8px 15px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--accent-gray);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .progress-indicator-inner {
+      background: var(--bg-secondary);
+      height: 6px;
+      border-radius: 3px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary-light-blue), var(--primary-blue));
+      border-radius: 3px;
+      transition: width 0.8s ease-out;
+      position: relative;
+    }
+
+    .progress-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .exercise-content {
+      padding: 20px;
+      display: none;
+    }
+
+    .exercise-content.active {
+      display: block;
+    }
+
+    .exercise-details {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      background: var(--bg-secondary);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .exercise-metrics {
+      text-align: center;
+      flex: 1;
+    }
+
+    .metric-value {
+      font-size: 2.2em;
+      font-weight: 600;
+      margin: 0;
+      color: var(--primary-blue);
+    }
+
+    .metric-label {
+      font-size: 0.9em;
+      color: var(--text-secondary);
+      margin: 5px 0 0 0;
+      font-weight: 500;
+    }
+
+    .exercise-gif {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      margin: 15px auto;
+      display: block;
+      box-shadow: 0 4px 12px rgba(69, 134, 241, 0.2);
+    }
+
+    .exercise-notes {
+      font-size: 0.95em;
+      color: var(--text-secondary);
+      margin-top: 15px;
+      line-height: 1.5;
+      padding: 12px;
+      background: var(--primary-very-light-blue);
+      border-radius: 6px;
+      border-left: 4px solid var(--primary-blue);
+    }
+
+    .chevron {
+      border: solid var(--text-secondary);
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 3px;
+      margin-right: 8px;
+      transition: transform 0.2s;
+    }
+
+    .chevron.down {
+      transform: rotate(45deg);
+    }
+
+    .chevron.up {
+      transform: rotate(-135deg);
+    }
+
+    .tooltip-icon {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      background: var(--primary-blue);
+      color: var(--text-light);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 18px;
+      font-size: 12px;
+      margin-left: 6px;
+      cursor: help;
+      position: relative;
+    }
+
+    .tooltip-icon:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary-dark-blue);
+      color: var(--text-light);
+      padding: 8px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      z-index: 10;
+      font-size: 11px;
+      width: max-content;
+      max-width: 200px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Flying celebration text animation */
+    .flying-celebration-text {
+      position: fixed;
+      left: 50%;
+      bottom: -100px;
+      transform: translateX(-50%);
+      font-size: 2.5em;
+      font-weight: bold;
+      color: var(--primary-blue);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      z-index: 9999;
+      pointer-events: none;
+      animation: flyUpAndOut 3s ease-out forwards;
+    }
+
+    @keyframes flyUpAndOut {
+      0% {
+        bottom: -100px;
+        opacity: 0;
+        transform: translateX(-50%) scale(0.5) rotate(-10deg);
+        animation-timing-function: ease-out;
+      }
+      25% {
+        bottom: 40%;
+        opacity: 1;
+        transform: translateX(-50%) scale(1.2) rotate(5deg);
+        animation-timing-function: ease-out;
+      }
+      35% {
+        bottom: 45%;
+        transform: translateX(-50%) scale(1) rotate(-2deg);
+        animation-timing-function: ease-in-out;
+      }
+      50% {
+        bottom: 50%;
+        transform: translateX(-50%) scale(1.1) rotate(2deg);
+        animation-timing-function: ease-in-out;
+      }
+      65% {
+        bottom: 55%;
+        opacity: 1;
+        transform: translateX(-50%) scale(1.05) rotate(0deg);
+        animation-timing-function: ease-in;
+      }
+      100% {
+        bottom: 120%;
+        opacity: 0;
+        transform: translateX(-50%) scale(0.8) rotate(5deg);
+        animation-timing-function: ease-in;
+      }
+    }
+
+    /* Blue flash overlay for completion */
+    .completion-flash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--primary-blue);
+      opacity: 0;
+      z-index: 9998;
+      pointer-events: none;
+      animation: blueFlash 0.6s ease-out forwards;
+    }
+
+    @keyframes blueFlash {
+      0% {
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.3;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      .juan-hero h1 {
+        font-size: 1.5em;
+      }
+
+      .juan-hero p {
+        font-size: 1em;
+      }
+
+      .exercise-title {
+        font-size: 1em;
+      }
+
+      .metric-value {
+        font-size: 1.8em;
+      }
+
+      .exercise-details {
+        padding: 12px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="screen">
-    <div id="page">
-    	        <div id="header">
-                	<img src="logo.png" alt="XHTML Template by Bryant Smith" />
-                    <!-- Include an <h1></h1> tag with your site's title here, or make a transparent PNG like the one I used -->
-                </div>
 
-                </div>
+<!-- PROPER ONSEN UI NAVIGATOR ARCHITECTURE -->
+<ons-navigator id="app-navigator" page="main-tabbar.html">
+</ons-navigator>
 
-                <div id="content">
-                	<div id="container">
-                        <div id="main">
-                          <div id="menu">
-                              <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="start.html">Start</a></li>
-                                <li><a href="programs.html">Programs</a></li>
-                                <li><a href="glossary.html">Glossary</a></li>
-                              </ul>
-                          </div>
-                          <div id="text">
-                            <h1>No More Excuses!</h1>
-                              <p>This site is focused on helping you jumpstart your lifting. No more roadblocks in finding a program.
-                                  The data on this site can help you spend less time choosing a workout and more time completing it.
-                                  No more interruption when you forget how to perform an exercise. Each program comes with a
-                                  demonstration at the tips of your fingers. No more excuses!
-                              </p>
+<!-- MAIN TABBAR TEMPLATE -->
+<template id="main-tabbar.html">
+  <ons-page id="main-tabbar-page">
+    <ons-tabbar swipeable position="auto" id="main-tabbar">
+      <ons-tab page="home.html" label="Home" icon="md-home" active></ons-tab>
+      <ons-tab page="start.html" label="Start" icon="md-play-circle"></ons-tab>
+      <ons-tab page="programs.html" label="Programs" icon="md-search"></ons-tab>
+      <ons-tab page="glossary.html" label="Glossary" icon="md-book"></ons-tab>
+    </ons-tabbar>
 
-                              <h1>Database of Exercises by Juan</h1>
-                              <p>You will find a variety of programs to choose from, all labeled accordingly so you can focus on
-                                  what you want. Each program is carefully placed on this site down to the detail of repetions and
-                                  recommended weights.
-                              </p>
-                              <h1>Let's Get Started</h1>
-                              <p>To begin, go to the Start button and it will take you to the page where you can choose between many
-                                programs for today based on what you plan to work out. Already know what you are doing? Then, you
-                                can go to Programs where there is a list all programs alphabetically. What are you waiting for?
-                              </p>
+    <script>
+      // Handle tab change to update toolbar title
+      ons.getScriptPage().addEventListener('postchange', function(event) {
+        if (event.target.matches('#main-tabbar')) {
+          console.log('Tab changed to:', event.tabItem.getAttribute('label'));
+        }
+      });
+    </script>
+  </ons-page>
+</template>
 
+<!-- HOME PAGE TEMPLATE -->
+<template id="home.html">
+  <ons-page id="home-page">
+    <ons-toolbar>
+      <div class="center">Juan's Workout Database</div>
+    </ons-toolbar>
 
-                          </div>
-
-                        </div>
-                </div>
-                <div class="clear"></div>
-                <div id="footer">
-                	<p><a href="https://github.com/JuanTheEngineer">Created by Juan the Engineer</a></p>
-                </div>
+    <div class="juan-hero">
+      <h1>No More Excuses!</h1>
+      <p>Your mobile fitness companion</p>
     </div>
-  </div>
+
+    <ons-card class="feature-card">
+      <div class="card__title">Database of Exercises by Juan</div>
+      <div class="card__content">
+        You will find a variety of programs to choose from, all labeled accordingly so you can focus on
+        what you want. Each program is carefully crafted down to the detail of repetitions and sets.
+        No more interruption when you forget how to perform an exercise - each program comes with
+        demonstrations at the tips of your fingers.
+      </div>
+    </ons-card>
+
+    <ons-card class="feature-card">
+      <div class="card__title">Let's Get Started</div>
+      <div class="card__content">
+        To begin, tap the <strong>Start</strong> tab where you can choose between many programs based on
+        what you plan to work out. Already know what you're doing? Then go to <strong>Programs</strong>
+        for an alphabetical list. Check the <strong>Glossary</strong> for exercise definitions.
+      </div>
+    </ons-card>
+
+    <div style="text-align: center; padding: 8px; margin-top: 20px;">
+      <p style="font-size: 0.8em; color: var(--text-secondary); opacity: 0.6; margin: 0;">
+        Prefer the classic experience? <span onclick="window.location.href='v0/'" style="color: var(--primary-blue); cursor: pointer; text-decoration: underline;">Switch to classic view</span>
+      </p>
+    </div>
+  </ons-page>
+</template>
+
+<!-- START PAGE TEMPLATE -->
+<template id="start.html">
+  <ons-page id="start-page">
+    <ons-toolbar>
+      <div class="center">Find Your Perfect Workout</div>
+    </ons-toolbar>
+
+    <!-- Hero Section -->
+    <div class="juan-hero">
+      <h1 style="font-size: 1.6em; font-weight: 700; margin: 0 0 8px 0;">Find Your Perfect Workout</h1>
+      <p style="opacity: 0.9; font-size: 1em; margin: 0; line-height: 1.4;">Browse programs by training style and discover your next fitness challenge</p>
+    </div>
+
+    <!-- Category Navigation -->
+    <div style="position: sticky; top: 0; z-index: 15; background: var(--bg-primary); padding: 0; border-bottom: 1px solid var(--accent-gray);">
+      <div class="start-category-tabs" id="start-category-tabs">
+        <!-- Tabs will be populated dynamically -->
+      </div>
+    </div>
+
+    <!-- Content Area -->
+    <div style="padding: 16px; background: var(--bg-primary);" id="start-content-area">
+      <!-- Content will be populated dynamically -->
+    </div>
+
+    <!-- Category Indicators -->
+    <div class="start-category-indicators" id="start-category-indicators">
+      <!-- Dots will be populated dynamically -->
+    </div>
+
+    <script>
+      ons.getScriptPage().onInit = function() {
+        console.log('🚀 Start page initialized');
+        loadStartWorkoutPlans(this);
+      };
+    </script>
+  </ons-page>
+</template>
+
+<!-- PROGRAMS PAGE TEMPLATE -->
+<template id="programs.html">
+  <ons-page id="programs-page">
+    <ons-toolbar>
+      <div class="center">Programs</div>
+    </ons-toolbar>
+
+    <ons-list id="programs-list"></ons-list>
+
+    <script>
+      ons.getScriptPage().onInit = function() {
+        console.log('🚀 Programs page initialized');
+        loadProgramsList(this);
+      };
+    </script>
+  </ons-page>
+</template>
+
+<!-- GLOSSARY PAGE TEMPLATE -->
+<template id="glossary.html">
+  <ons-page id="glossary-page">
+    <ons-toolbar>
+      <div class="center">Glossary</div>
+    </ons-toolbar>
+
+    <ons-list id="glossary-list">
+      <!-- Glossary terms will be loaded dynamically -->
+    </ons-list>
+
+    <script>
+      ons.getScriptPage().onInit = function() {
+        console.log('🚀 Glossary page initialized');
+        loadGlossaryTerms(this);
+      };
+    </script>
+  </ons-page>
+</template>
+
+<!-- INDIVIDUAL PROGRAM PAGE TEMPLATE -->
+<template id="program-detail.html">
+  <ons-page id="program-detail-page">
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button>Back</ons-back-button>
+      </div>
+      <div class="center" id="program-title">Program Details</div>
+    </ons-toolbar>
+
+    <!-- Progress Indicator -->
+    <div class="progress-indicator">
+      <div class="progress-indicator-inner">
+        <div id="progress-bar" class="progress-bar" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Program Title and Requirements -->
+    <div style="padding: 15px;">
+      <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <div class="share-button" style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary-blue); color: var(--text-light); display: flex; justify-content: center; align-items: center; margin-right: 12px; cursor: pointer; box-shadow: 0 1px 4px rgba(69, 134, 241, 0.3);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+        </div>
+        <h1 id="program-name" style="font-size: 1.3em; font-weight: bold; color: var(--text-primary); margin: 0; flex-grow: 1;"></h1>
+      </div>
+      <div id="program-requirements" style="font-size: 0.9em; color: var(--text-secondary); padding: 12px; background: var(--bg-secondary); border-radius: 6px; border-left: 4px solid var(--primary-blue);"></div>
+    </div>
+
+    <!-- Timeline Container -->
+    <div id="timeline-container" class="timeline-container" style="padding: 12px 15px; background: var(--bg-secondary); border-top: 1px solid var(--accent-gray); border-bottom: 1px solid var(--accent-gray); margin-bottom: 12px;">
+      <div id="timeline" class="timeline" style="display: flex; justify-content: space-between; align-items: center; position: relative; height: 35px;">
+        <!-- Timeline dots will be dynamically inserted here -->
+      </div>
+    </div>
+
+    <!-- Exercise List Container -->
+    <div id="exercise-list" style="padding: 0 15px;"></div>
+
+    <!-- Extra scroll space and footer -->
+    <div style="padding: 20px 15px 0; text-align: center; min-height: calc(100vh - 300px);">
+      <!-- Reset section -->
+      <div id="reset-section" style="margin-bottom: 60px; opacity: 0; transition: opacity 0.3s ease; display: none;">
+        <p id="reset-text" style="font-size: 0.7em; color: var(--text-secondary); opacity: 0.5; margin: 0 0 8px 0; font-weight: 300;">
+          press to reset progress
+        </p>
+
+        <div id="reset-button" style="
+          display: inline-block;
+          width: 28px;
+          height: 28px;
+          margin: 0;
+          cursor: pointer;
+          opacity: 0.7;
+          transition: all 0.2s ease;
+        ">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-secondary);">
+            <path d="M1 4v6h6"></path>
+            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fixed footer -->
+    <div style="text-align: center; padding: 20px 15px 30px;">
+      <p style="font-size: 0.75em; color: var(--text-secondary); opacity: 0.6; margin: 0; font-weight: 300;">
+        Created by Juan the Engineer
+      </p>
+    </div>
+
+    <script>
+      ons.getScriptPage().onInit = function() {
+        console.log('🚀 Program detail page initialized');
+        const data = this.data;
+        if (data && data.program) {
+          loadAdvancedProgramDetail(this, data.program, data.fromTab);
+        } else {
+          console.error('No program data provided');
+        }
+      };
+    </script>
+  </ons-page>
+</template>
+
+<script>
+  // Global application namespace
+  window.WorkoutApp = {
+    navigator: null,
+    workoutsData: [],
+    categoriesData: [],
+    glossaryData: []
+  };
+
+  // Initialize application when Onsen UI is ready
+  ons.ready(function() {
+    console.log('🚀 Onsen UI ready, initializing app');
+    WorkoutApp.navigator = document.getElementById('app-navigator');
+
+    // Load initial data
+    loadAppData();
+  });
+
+  // Load application data
+  function loadAppData() {
+    console.log('📊 Loading application data...');
+
+    Promise.all([
+      fetch('workouts.json').then(r => r.json()),
+      fetch('plans.json').then(r => r.json()),
+      fetch('glossary.json').then(r => r.json()).catch(() => ({ glossaryTerms: [] }))
+    ])
+    .then(([workouts, plans, glossary]) => {
+      WorkoutApp.workoutsData = workouts.programs || [];
+      WorkoutApp.categoriesData = plans.plans || [];
+      WorkoutApp.glossaryData = glossary.glossaryTerms || [];
+
+      console.log('✅ App data loaded:', {
+        programs: WorkoutApp.workoutsData.length,
+        categories: WorkoutApp.categoriesData.length,
+        glossaryTerms: WorkoutApp.glossaryData.length
+      });
+    })
+    .catch(error => {
+      console.error('❌ Error loading app data:', error);
+    });
+  }
+
+  // START PAGE FUNCTIONS
+  let startCurrentCategoryIndex = 0;
+  let startCategorySections = [];
+
+  function loadStartWorkoutPlans(page) {
+    console.log('🔍 Loading Start tab content...');
+
+    if (WorkoutApp.workoutsData.length === 0 || WorkoutApp.categoriesData.length === 0) {
+      console.log('⏳ Data not ready, waiting...');
+      setTimeout(() => loadStartWorkoutPlans(page), 100);
+      return;
+    }
+
+    renderStartCategoryNavigation(page);
+    buildStartContent(page);
+    setupStartNavigation(page);
+  }
+
+  function renderStartCategoryNavigation(page) {
+    const tabsContainer = page.querySelector('#start-category-tabs');
+    const indicatorsContainer = page.querySelector('#start-category-indicators');
+
+    if (!tabsContainer || !indicatorsContainer) return;
+
+    tabsContainer.innerHTML = '';
+    indicatorsContainer.innerHTML = '';
+
+    WorkoutApp.categoriesData.forEach((category, index) => {
+      // Create tab
+      const tab = document.createElement('button');
+      tab.className = 'start-category-tab';
+      if (index === 0) tab.classList.add('start-category-tab--active');
+      tab.textContent = category.name;
+      tab.onclick = () => switchStartCategory(index, page);
+      tabsContainer.appendChild(tab);
+
+      // Create indicator dot
+      const dot = document.createElement('div');
+      dot.className = 'start-category-dot';
+      if (index === 0) dot.classList.add('start-category-dot--active');
+      dot.onclick = () => switchStartCategory(index, page);
+      indicatorsContainer.appendChild(dot);
+    });
+  }
+
+  function buildStartContent(page) {
+    const contentArea = page.querySelector('#start-content-area');
+    if (!contentArea) return;
+
+    contentArea.innerHTML = '';
+    startCategorySections = [];
+
+    WorkoutApp.categoriesData.forEach((category, categoryIndex) => {
+      const categorySection = document.createElement('div');
+      categorySection.style.display = categoryIndex === 0 ? 'block' : 'none';
+      categorySection.id = `start-category-${categoryIndex}`;
+
+      // Category description
+      if (category.description) {
+        const descriptionCard = document.createElement('ons-card');
+        descriptionCard.innerHTML = `
+          <div class="card__title">${category.name}</div>
+          <div class="card__content">${category.description}</div>
+        `;
+        categorySection.appendChild(descriptionCard);
+      }
+
+      // Collect programs for this category
+      const categoryPrograms = [];
+      (category.subPlans || []).forEach(subPlan => {
+        (subPlan.programs || []).forEach(programId => {
+          const program = WorkoutApp.workoutsData.find(p => p.id === programId);
+          if (program) {
+            categoryPrograms.push({
+              ...program,
+              subCategory: subPlan.name,
+              categoryDescription: subPlan.description || ''
+            });
+          }
+        });
+      });
+
+      // Create program cards
+      if (categoryPrograms.length === 0) {
+        categorySection.innerHTML += `
+          <div style="text-align: center; padding: 60px 16px; color: var(--text-secondary);">
+            <div style="font-size: 3em; margin-bottom: 16px; opacity: 0.3;">🔍</div>
+            <p style="font-size: 1.1em; margin: 0;">No programs available in ${category.name}</p>
+          </div>
+        `;
+      } else {
+        categoryPrograms.forEach(program => {
+          const programCard = createProgramCard(program);
+          programCard.onclick = () => openProgramDetail(program, 'start');
+          categorySection.appendChild(programCard);
+        });
+      }
+
+      contentArea.appendChild(categorySection);
+      startCategorySections.push(categorySection);
+    });
+
+    startCurrentCategoryIndex = 0;
+  }
+
+  function createProgramCard(program) {
+    const card = document.createElement('div');
+    card.className = 'program-card';
+    card.innerHTML = `
+      <div class="program-card__header">
+        <h3 class="program-card__title">${program.title}</h3>
+        <p class="program-card__requirements">Requirements: ${program.requirements}</p>
+      </div>
+      <div class="program-card__body">
+        <span class="program-card__category">${program.subCategory || 'General'}</span>
+        <p class="program-card__description">
+          ${program.categoryDescription || 'A focused workout program designed to help you achieve your fitness goals.'}
+        </p>
+      </div>
+    `;
+    return card;
+  }
+
+  function switchStartCategory(newIndex, page) {
+    if (newIndex === startCurrentCategoryIndex) return;
+
+    const oldIndex = startCurrentCategoryIndex;
+
+    // Update sections visibility
+    startCategorySections.forEach((section, index) => {
+      if (section) {
+        section.style.display = index === newIndex ? 'block' : 'none';
+      }
+    });
+
+    // Update navigation state
+    updateStartNavigation(page, oldIndex, newIndex);
+    startCurrentCategoryIndex = newIndex;
+  }
+
+  function updateStartNavigation(page, oldIndex, newIndex) {
+    const tabs = page.querySelectorAll('.start-category-tab');
+    const dots = page.querySelectorAll('.start-category-dot');
+
+    if (tabs[oldIndex]) tabs[oldIndex].classList.remove('start-category-tab--active');
+    if (tabs[newIndex]) tabs[newIndex].classList.add('start-category-tab--active');
+
+    if (dots[oldIndex]) dots[oldIndex].classList.remove('start-category-dot--active');
+    if (dots[newIndex]) dots[newIndex].classList.add('start-category-dot--active');
+  }
+
+  function setupStartNavigation(page) {
+    // Navigation is already set up in renderStartCategoryNavigation
+    console.log('✅ Start navigation setup complete');
+  }
+
+  // PROGRAMS PAGE FUNCTIONS
+  function loadProgramsList(page) {
+    console.log('🔍 Loading Programs list...');
+
+    if (WorkoutApp.workoutsData.length === 0) {
+      setTimeout(() => loadProgramsList(page), 100);
+      return;
+    }
+
+    const list = page.querySelector('#programs-list');
+    if (!list) return;
+
+    list.innerHTML = '';
+    WorkoutApp.workoutsData.forEach(program => {
+      const listItem = document.createElement('ons-list-item');
+      listItem.setAttribute('tappable', '');
+      listItem.innerHTML = `
+        <div class="center">
+          <span class="list-item__title">${program.title}</span>
+        </div>
+      `;
+      listItem.onclick = () => openProgramDetail(program, 'programs');
+      list.appendChild(listItem);
+    });
+  }
+
+  // GLOSSARY PAGE FUNCTIONS
+  function loadGlossaryTerms(page) {
+    console.log('🔍 Loading Glossary terms...');
+
+    if (WorkoutApp.glossaryData.length === 0) {
+      setTimeout(() => loadGlossaryTerms(page), 100);
+      return;
+    }
+
+    const list = page.querySelector('#glossary-list');
+    if (!list) return;
+
+    list.innerHTML = '';
+    WorkoutApp.glossaryData.forEach(term => {
+      const listItem = document.createElement('ons-list-item');
+      listItem.setAttribute('expandable', '');
+      listItem.innerHTML = `
+        <div class="center">${term.term}</div>
+        <div class="expandable-content">${term.definition}</div>
+      `;
+      list.appendChild(listItem);
+    });
+  }
+
+  // PROGRAM DETAIL FUNCTIONS
+  function openProgramDetail(program, fromTab) {
+    console.log('🔍 Opening program detail:', program.title, 'from:', fromTab);
+
+    WorkoutApp.navigator.pushPage('program-detail.html', {
+      data: {
+        program: program,
+        fromTab: fromTab
+      }
+    });
+  }
+
+  // ADVANCED PROGRAM DETAIL FUNCTION - Preserves all original program.html features
+  function loadAdvancedProgramDetail(page, program, fromTab) {
+    console.log('📋 Loading advanced program detail for:', program.title);
+
+    const programId = program.id;
+
+    // Track exercise completion state and current open exercise
+    let completedExercises = {};
+    let currentOpenExerciseIndex = -1;
+    let hasProgress = false;
+    let isScrolledToBottom = false;
+
+    // Load saved progress from localStorage
+    function loadSavedProgress() {
+      const savedProgress = localStorage.getItem(`workout_progress_${programId}`);
+      if (savedProgress) {
+        try {
+          completedExercises = JSON.parse(savedProgress);
+        } catch (e) {
+          console.error('Error loading saved progress:', e);
+          completedExercises = {};
+        }
+      }
+    }
+
+    // Save progress to localStorage
+    function saveProgress() {
+      localStorage.setItem(`workout_progress_${programId}`, JSON.stringify(completedExercises));
+    }
+
+    // Clear saved progress
+    function clearSavedProgress() {
+      localStorage.removeItem(`workout_progress_${programId}`);
+    }
+
+    // Set program title and requirements
+    const programTitleEl = page.querySelector('#program-title');
+    const programNameEl = page.querySelector('#program-name');
+    const programRequirementsEl = page.querySelector('#program-requirements');
+
+    if (programTitleEl) {
+      programTitleEl.textContent = program.title;
+    }
+    if (programNameEl) {
+      programNameEl.textContent = program.title;
+    }
+    if (programRequirementsEl) {
+      programRequirementsEl.textContent = `Requirements: ${program.requirements}`;
+    }
+
+    // Load saved progress
+    loadSavedProgress();
+
+    // Build the timeline dots with adaptive layout
+    const timelineContainer = page.querySelector('#timeline');
+    const timelineContainerWrapper = page.querySelector('#timeline-container');
+    const timelineParent = timelineContainer.parentElement;
+    timelineContainer.innerHTML = '';
+
+    const exerciseCount = program.exercises.length;
+
+    // Hide timeline completely for single exercise
+    if (exerciseCount === 1) {
+      timelineContainerWrapper.style.display = 'none';
+    } else {
+      timelineContainerWrapper.style.display = 'block';
+
+      // Apply adaptive timeline classes based on exercise count
+      timelineContainer.classList.remove('single-exercise', 'two-exercises', 'few-exercises');
+
+      if (exerciseCount === 2) {
+        timelineContainer.classList.add('two-exercises');
+      } else if (exerciseCount <= 4) {
+        timelineContainer.classList.add('few-exercises');
+      }
+
+      program.exercises.forEach((ex, index) => {
+        const dot = document.createElement('div');
+        dot.className = 'timeline-dot';
+        dot.setAttribute('data-index', index);
+
+        // Add number attribute for two-exercise layout
+        if (exerciseCount === 2) {
+          dot.setAttribute('data-number', index + 1);
+        }
+
+        dot.onclick = function() {
+          const exerciseElement = page.querySelector(`.exercise-item[data-index="${index}"]`);
+          if (exerciseElement) {
+            toggleExercise(exerciseElement);
+          }
+        };
+        timelineContainer.appendChild(dot);
+      });
+
+      // Add exercise count indicator for two exercises
+      if (exerciseCount === 2) {
+        const countIndicator = document.createElement('div');
+        countIndicator.className = 'exercise-count-indicator';
+        countIndicator.textContent = '2 Exercises';
+        timelineParent.appendChild(countIndicator);
+      }
+    }
+
+    // Build the exercise items
+    const exerciseList = page.querySelector('#exercise-list');
+    exerciseList.innerHTML = '';
+
+    program.exercises.forEach((exercise, index) => {
+      // Create exercise item container
+      const exerciseItem = document.createElement('div');
+      exerciseItem.className = 'exercise-item';
+      exerciseItem.setAttribute('data-index', index);
+
+      // Create exercise header
+      const exerciseHeader = document.createElement('div');
+      exerciseHeader.className = 'exercise-header';
+      exerciseHeader.onclick = function() { toggleExercise(this.parentNode); };
+
+      // Create chevron
+      const chevron = document.createElement('span');
+      chevron.className = 'chevron down';
+
+      // Create exercise title
+      const exerciseTitle = document.createElement('h3');
+      exerciseTitle.className = 'exercise-title';
+      exerciseTitle.textContent = exercise.name;
+
+      // Create exercise status (checkmark circle)
+      const exerciseStatus = document.createElement('div');
+      exerciseStatus.className = 'exercise-status';
+      exerciseStatus.onclick = function(e) {
+        e.stopPropagation();
+        toggleCompleted(this.parentNode.parentNode);
+      };
+
+      // Append elements to exercise header
+      exerciseHeader.appendChild(chevron);
+      exerciseHeader.appendChild(exerciseTitle);
+      exerciseHeader.appendChild(exerciseStatus);
+
+      // Create exercise content
+      const exerciseContent = document.createElement('div');
+      exerciseContent.className = 'exercise-content';
+
+      // Create exercise details
+      const exerciseDetails = document.createElement('div');
+      exerciseDetails.className = 'exercise-details';
+
+      // Create reps metric
+      const repsMetric = document.createElement('div');
+      repsMetric.className = 'exercise-metrics';
+
+      const repsValue = document.createElement('p');
+      repsValue.className = 'metric-value';
+      repsValue.textContent = exercise.reps;
+
+      const repsLabel = document.createElement('p');
+      repsLabel.className = 'metric-label';
+      repsLabel.textContent = exercise.repUnits || 'reps';
+
+      repsMetric.appendChild(repsValue);
+      repsMetric.appendChild(repsLabel);
+
+      // Create sets metric
+      const setsMetric = document.createElement('div');
+      setsMetric.className = 'exercise-metrics';
+
+      const setsValue = document.createElement('p');
+      setsValue.className = 'metric-value';
+      setsValue.textContent = exercise.sets;
+
+      const setsLabel = document.createElement('p');
+      setsLabel.className = 'metric-label';
+      setsLabel.textContent = 'sets';
+
+      setsMetric.appendChild(setsValue);
+      setsMetric.appendChild(setsLabel);
+
+      // Append metrics to details
+      exerciseDetails.appendChild(repsMetric);
+      exerciseDetails.appendChild(setsMetric);
+
+      // Create exercise GIF
+      const exerciseGif = document.createElement('img');
+      exerciseGif.className = 'exercise-gif';
+      exerciseGif.src = exercise.gif;
+      exerciseGif.alt = exercise.name;
+
+      // Create exercise notes
+      const exerciseNotes = document.createElement('div');
+      exerciseNotes.className = 'exercise-notes';
+
+      // Check if note contains "Rate of Perceived Exertion"
+      if (exercise.note && exercise.note.includes("Rate of Perceived Exertion")) {
+        const noteParts = exercise.note.split("Rate of Perceived Exertion:");
+        exerciseNotes.innerHTML = "Note: Rate of Perceived Exertion:" + noteParts[1] +
+                '<span class="tooltip-icon" data-tooltip="Rate of Perceived Exertion (RPE) is a scale from 1-10 that measures how hard an exercise feels. 1 is very easy, 10 is maximum effort.">?</span>';
+      } else {
+        exerciseNotes.textContent = exercise.note ? 'Note: ' + exercise.note : '';
+      }
+
+      // Append all elements to exercise content
+      exerciseContent.appendChild(exerciseDetails);
+      exerciseContent.appendChild(exerciseGif);
+      if (exercise.note) {
+        exerciseContent.appendChild(exerciseNotes);
+      }
+
+      // Handle subExercise if present
+      if (exercise.subExercise) {
+        // Create subexercise header
+        const subHeader = document.createElement('h4');
+        subHeader.className = 'exercise-title';
+        subHeader.style.margin = '20px 0 10px';
+        subHeader.style.fontSize = '1em';
+        subHeader.textContent = 'Part 2:';
+
+        // Create subexercise details
+        const subDetails = document.createElement('div');
+        subDetails.className = 'exercise-details';
+
+        // Create reps metric for subexercise
+        const subRepsMetric = document.createElement('div');
+        subRepsMetric.className = 'exercise-metrics';
+
+        const subRepsValue = document.createElement('p');
+        subRepsValue.className = 'metric-value';
+        subRepsValue.textContent = exercise.subExercise.reps;
+
+        const subRepsLabel = document.createElement('p');
+        subRepsLabel.className = 'metric-label';
+        subRepsLabel.textContent = exercise.subExercise.repUnits || 'reps';
+
+        subRepsMetric.appendChild(subRepsValue);
+        subRepsMetric.appendChild(subRepsLabel);
+
+        // Create sets metric for subexercise
+        const subSetsMetric = document.createElement('div');
+        subSetsMetric.className = 'exercise-metrics';
+
+        const subSetsValue = document.createElement('p');
+        subSetsValue.className = 'metric-value';
+        subSetsValue.textContent = exercise.subExercise.sets;
+
+        const subSetsLabel = document.createElement('p');
+        subSetsLabel.className = 'metric-label';
+        subSetsLabel.textContent = 'sets';
+
+        subSetsMetric.appendChild(subSetsValue);
+        subSetsMetric.appendChild(subSetsLabel);
+
+        // Append metrics to subdetails
+        subDetails.appendChild(subRepsMetric);
+        subDetails.appendChild(subSetsMetric);
+
+        // Create subexercise GIF
+        const subGif = document.createElement('img');
+        subGif.className = 'exercise-gif';
+        subGif.src = exercise.subExercise.gif;
+        subGif.alt = 'Part 2 Exercise';
+
+        // Create subexercise notes
+        const subNotes = document.createElement('div');
+        subNotes.className = 'exercise-notes';
+        subNotes.textContent = exercise.subExercise.note ? 'Note: ' + exercise.subExercise.note : '';
+
+        // Append subexercise elements to content
+        exerciseContent.appendChild(subHeader);
+        exerciseContent.appendChild(subDetails);
+        exerciseContent.appendChild(subGif);
+        if (exercise.subExercise.note) {
+          exerciseContent.appendChild(subNotes);
+        }
+      }
+
+      // Append header and content to exercise item
+      exerciseItem.appendChild(exerciseHeader);
+      exerciseItem.appendChild(exerciseContent);
+
+      // Append exercise item to container
+      exerciseList.appendChild(exerciseItem);
+
+      // Apply saved completion state
+      if (completedExercises[index]) {
+        exerciseItem.classList.add('completed');
+      }
+    });
+
+    // Apply saved timeline states
+    const dots = page.querySelectorAll('.timeline .timeline-dot');
+    Object.keys(completedExercises).forEach(index => {
+      if (completedExercises[index] && dots[index]) {
+        dots[index].classList.add('completed');
+      }
+    });
+
+    // Initialize progress indicators
+    updateProgressIndicators();
+
+    // Initialize reset button visibility state
+    hasProgress = checkForProgress();
+    updateResetButtonVisibility();
+
+    // Setup share button functionality
+    const shareButton = page.querySelector('.share-button');
+    if (shareButton) {
+      shareButton.onclick = function() {
+        // Create shareable URL with program data
+        const shareData = {
+          title: program.title,
+          text: `Check out this workout: ${program.title}`,
+          url: window.location.href
+        };
+
+        // Use Web Share API if available
+        if (navigator.share) {
+          navigator.share(shareData).catch(error => console.error('Error sharing:', error));
+        } else {
+          // Fallback - copy to clipboard
+          const shareText = `${shareData.title} - ${shareData.url}`;
+          navigator.clipboard.writeText(shareText)
+            .then(() => {
+              ons.notification.alert('Program link copied to clipboard!');
+            })
+            .catch(err => {
+              console.error('Could not copy text: ', err);
+              ons.notification.alert('Could not copy link');
+            });
+        }
+      };
+    }
+
+    // Toggle exercise expanded/collapsed state
+    function toggleExercise(element) {
+      // Close the currently open exercise if it's different
+      if (currentOpenExerciseIndex >= 0 && currentOpenExerciseIndex !== parseInt(element.getAttribute('data-index'))) {
+        const openExercise = page.querySelector(`.exercise-item[data-index="${currentOpenExerciseIndex}"]`);
+        if (openExercise) {
+          const openContent = openExercise.querySelector('.exercise-content');
+          const openChevron = openExercise.querySelector('.chevron');
+          openContent.classList.remove('active');
+          openChevron.classList.remove('up');
+          openChevron.classList.add('down');
+        }
+
+        // Update timeline dots - remove active from old one
+        const dots = page.querySelectorAll('.timeline .timeline-dot');
+        if (dots[currentOpenExerciseIndex]) {
+          dots[currentOpenExerciseIndex].classList.remove('active');
+        }
+      }
+
+      // Get the index of the current element
+      const index = parseInt(element.getAttribute('data-index'));
+      currentOpenExerciseIndex = index;
+
+      // Toggle the current element
+      const content = element.querySelector('.exercise-content');
+      const chevron = element.querySelector('.chevron');
+
+      content.classList.toggle('active');
+      chevron.classList.toggle('up');
+      chevron.classList.toggle('down');
+
+      // Update timeline dots
+      const dots = page.querySelectorAll('.timeline .timeline-dot');
+      if (content.classList.contains('active')) {
+        dots[index].classList.add('active');
+
+        // Auto-scroll so exercise header aligns with bottom of progress bar
+        setTimeout(() => {
+          const progressIndicator = page.querySelector('.progress-indicator');
+          const progressHeight = progressIndicator ? progressIndicator.offsetHeight : 0;
+          const toolbarHeight = page.querySelector('.toolbar').offsetHeight;
+          const targetScrollPosition = element.offsetTop - (toolbarHeight + progressHeight + 5);
+
+          window.scrollTo({
+            top: Math.max(0, targetScrollPosition),
+            behavior: 'smooth'
+          });
+        }, 100); // Small delay to ensure content expansion animation starts
+      } else {
+        dots[index].classList.remove('active');
+        currentOpenExerciseIndex = -1;
+      }
+
+      // Update reset button visibility
+      hasProgress = checkForProgress();
+      updateResetButtonVisibility();
+    }
+
+    // Toggle exercise completion state
+    function toggleCompleted(element) {
+      const index = parseInt(element.getAttribute('data-index'));
+      element.classList.toggle('completed');
+
+      // Update the completion state in our tracking object
+      completedExercises[index] = element.classList.contains('completed');
+
+      // Update timeline dot
+      const dots = page.querySelectorAll('.timeline .timeline-dot');
+      if (dots[index]) {
+        if (completedExercises[index]) {
+          dots[index].classList.add('completed');
+        } else {
+          dots[index].classList.remove('completed');
+        }
+      }
+
+      // Update progress indicators
+      updateProgressIndicators();
+
+      // Save progress to localStorage
+      saveProgress();
+
+      // Update reset button visibility
+      hasProgress = checkForProgress();
+      updateResetButtonVisibility();
+    }
+
+    // Update progress indicators
+    function updateProgressIndicators() {
+      const totalExercises = program.exercises.length;
+      // Count exercises that are visually marked as completed
+      const completedCount = page.querySelectorAll('.exercise-item.completed').length;
+      const progressPercentage = (completedCount / totalExercises) * 100;
+
+      // Update overall progress bar
+      const progressBar = page.querySelector('#progress-bar');
+      progressBar.style.width = progressPercentage + '%';
+
+      // Celebration animation if 100% complete
+      if (progressPercentage === 100) {
+        setTimeout(() => {
+          celebrateCompletion();
+        }, 500);
+      }
+    }
+
+    // Celebration animation for workout completion
+    function celebrateCompletion() {
+      // Array of motivational messages
+      const messages = ["Nice Work!", "Killer Moves!", "Awesome Job!"];
+
+      // Create blue flash overlay
+      const flashOverlay = document.createElement('div');
+      flashOverlay.className = 'completion-flash';
+      document.body.appendChild(flashOverlay);
+
+      // Create flying text element
+      const flyingText = document.createElement('div');
+      flyingText.textContent = messages[Math.floor(Math.random() * messages.length)];
+      flyingText.className = 'flying-celebration-text';
+
+      // Add flying text to body and trigger animation
+      document.body.appendChild(flyingText);
+
+      // Remove flash overlay after its animation completes
+      setTimeout(() => {
+        if (flashOverlay.parentNode) {
+          flashOverlay.parentNode.removeChild(flashOverlay);
+        }
+      }, 600);
+
+      // Remove flying text after its animation completes
+      setTimeout(() => {
+        if (flyingText.parentNode) {
+          flyingText.parentNode.removeChild(flyingText);
+        }
+      }, 3000);
+    }
+
+    // Reset workout progress function
+    function resetWorkoutProgress() {
+      // Clear completion state
+      completedExercises = {};
+
+      // Remove completed classes from all exercises
+      const allExercises = page.querySelectorAll('.exercise-item');
+      allExercises.forEach(exercise => {
+        exercise.classList.remove('completed');
+      });
+
+      // Remove completed classes from timeline dots
+      const dots = page.querySelectorAll('.timeline .timeline-dot');
+      dots.forEach(dot => {
+        dot.classList.remove('completed');
+      });
+
+      // Reset progress indicators
+      updateProgressIndicators();
+
+      // Clear saved progress
+      clearSavedProgress();
+
+      // Update reset button visibility
+      hasProgress = checkForProgress();
+      updateResetButtonVisibility();
+
+      // Show confirmation
+      ons.notification.alert('Workout progress has been reset!');
+    }
+
+    // Function to check if there's any progress to reset
+    function checkForProgress() {
+      // Check for visually completed exercises or any active exercise
+      const hasCompletedExercises = page.querySelectorAll('.exercise-item.completed').length > 0;
+      const hasActiveExercise = currentOpenExerciseIndex >= 0;
+      return hasCompletedExercises || hasActiveExercise;
+    }
+
+    // Function to update reset button visibility
+    function updateResetButtonVisibility() {
+      const resetSection = page.querySelector('#reset-section');
+      const shouldShow = hasProgress; // Simplified: show when there's any progress
+
+      if (shouldShow && resetSection.style.display === 'none') {
+        resetSection.style.display = 'block';
+        setTimeout(() => {
+          resetSection.style.opacity = '1';
+        }, 10);
+      } else if (!shouldShow && resetSection.style.display === 'block') {
+        resetSection.style.opacity = '0';
+        setTimeout(() => {
+          if (!shouldShow) {
+            resetSection.style.display = 'none';
+          }
+        }, 300);
+      }
+    }
+
+    // Scroll event listener for bottom detection
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+
+        // Consider bottom half when scroll position is in the last 40% of the page
+        const scrollPercentage = (scrollTop + windowHeight) / documentHeight;
+        const wasScrolledToBottom = isScrolledToBottom;
+        isScrolledToBottom = scrollPercentage > 0.6;
+
+        if (wasScrolledToBottom !== isScrolledToBottom) {
+          updateResetButtonVisibility();
+        }
+      }, 100);
+    });
+
+    // Setup reset button functionality
+    const resetButton = page.querySelector('#reset-button');
+    if (resetButton) {
+      resetButton.onmouseover = function() {
+        this.style.opacity = '1';
+        this.style.transform = 'scale(1.1)';
+      };
+
+      resetButton.onmouseout = function() {
+        this.style.opacity = '0.7';
+        this.style.transform = 'scale(1)';
+      };
+
+      resetButton.onclick = function() {
+        ons.notification.confirm({
+          message: 'Are you sure you want to reset all progress for this workout?',
+          title: 'Reset Progress'
+        }).then(function(buttonIndex) {
+          if (buttonIndex === 1) { // OK button
+            resetWorkoutProgress();
+          }
+        });
+      };
+    }
+
+    console.log('✅ Advanced program detail loaded with all features');
+  }
+
+  // Handle back navigation from program detail
+  document.addEventListener('postpop', function(event) {
+    if (event.enterPage && event.enterPage.id === 'main-tabbar-page') {
+      console.log('🔙 Returned to main tabbar from program detail');
+      // Tabbar will automatically restore the correct tab state
+    }
+  });
+</script>
+
 </body>
 </html>

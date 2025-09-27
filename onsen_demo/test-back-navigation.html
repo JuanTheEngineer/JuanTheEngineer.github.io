@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test Back Navigation Fix</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .success {
+      background: #d4edda;
+      border: 2px solid #c3e6cb;
+      color: #155724;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .test-button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 10px;
+      font-weight: bold;
+      display: block;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .test-button:hover {
+      background: #0056b3;
+    }
+
+    .code-block {
+      background: #f8f8f8;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 12px;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 0.9em;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧪 Test Back Navigation Fix</h1>
+
+  <div class="success">
+    <h2>🎯 Fix Applied: Deferred Content Loading</h2>
+    <p><strong>Problem:</strong> Inline script tried to load content before functions/elements existed</p>
+    <p><strong>Solution:</strong> Store pending content load in sessionStorage, process it after everything loads</p>
+  </div>
+
+  <h2>🔧 New Flow</h2>
+  <div class="code-block">
+1. Back button clicked → sessionStorage.setItem('targetTab', 'start')
+2. Navigate to index.html
+3. Inline script runs:
+   - Sets start-tab as active (prevents flash)
+   - Sets sessionStorage.setItem('pendingContentLoad', 'start')
+4. Document loads completely
+5. ons.ready() or DOMContentLoaded fires
+6. processPendingContentLoad() runs:
+   - Reads pendingContentLoad
+   - Calls loadStartWorkoutPlans(startPage)
+   - Content appears!
+  </div>
+
+  <h2>🧪 Manual Test Steps</h2>
+  <ol>
+    <li>Open <code>index.html</code> in your browser</li>
+    <li>Go to Start tab</li>
+    <li>Click any workout program</li>
+    <li>On program page, click the back button (top-left)</li>
+    <li><strong>Expected:</strong> Return to Start tab with full content</li>
+    <li><strong>Should NOT see:</strong> White screen</li>
+  </ol>
+
+  <h2>🔍 Debug Console Messages</h2>
+  <p>Watch the browser console for these messages when testing:</p>
+  <div class="code-block">
+✅ Expected messages:
+📋 Stored pendingContentLoad: start
+🔄 Processing pending content load: start
+✅ Loading Start tab content
+🔍 Start Tab Diagnostic: Loading workout plans...
+✅ Workouts.json response: 200
+✅ Plans.json response: 200
+
+❌ Error messages to watch for:
+❌ start-tab-page not found for pending load
+💥 JS ERROR: [any errors]
+❌ Error loading workout data
+  </div>
+
+  <h2>🎯 Simulate Back Navigation</h2>
+  <p>You can also test the fix by running this in the browser console on index.html:</p>
+  <div class="code-block">
+// Simulate the back button navigation
+sessionStorage.setItem('targetTab', 'start');
+window.location.reload();
+  </div>
+
+  <button class="test-button" onclick="simulateBackNav()">
+    🧪 Simulate Start Tab Back Navigation
+  </button>
+
+  <script>
+    function simulateBackNav() {
+      if (confirm('This will simulate back navigation to Start tab. Continue?')) {
+        sessionStorage.setItem('targetTab', 'start');
+        window.location.href = 'index.html';
+      }
+    }
+  </script>
+</body>
+</html>
