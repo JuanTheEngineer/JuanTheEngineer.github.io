@@ -1,0 +1,1295 @@
+{
+  "DeclinePistols.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=aYZnBGYloG4",
+    "confidence": 0.85,
+    "needsReview": true,
+    "matchReason": "The exercise in the GIF appears to be a variation of a pistol squat, which aligns with the video title 'Unlock🔓 Your 1st Pistol Squat'. The video duration of 52 seconds is appropriate for a demonstration. Squat University is known for fitness content.",
+    "concerns": [
+      "The exercise name 'Decline Pistols' is not an exact match to 'Pistol Squat', but it is a variation."
+    ],
+    "videoTitle": "Unlock🔓 Your 1st Pistol Squat",
+    "videoChannel": "Squat University",
+    "videoDuration": 52,
+    "videoViews": 3112528,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=or1frhkjBDc",
+      "https://www.youtube.com/watch?v=sBKIoPQsw1U"
+    ]
+  },
+  "HeelTaps.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=w2Um9ULrcBI",
+      "https://www.youtube.com/watch?v=3MNj7LrRX3U",
+      "https://www.youtube.com/watch?v=V87VgAcB6CY"
+    ]
+  },
+  "TKEs.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=7xG3MeoLjC0",
+    "confidence": 0.9,
+    "needsReview": false,
+    "matchReason": "The exercise name 'TKEs' matches with 'Terminal Knee Extension' in the video title. The video title suggests a demonstration of the exercise. The video duration is slightly longer than typical but could include additional information or tips.",
+    "concerns": [
+      "Video duration slightly exceeds typical demo length, but may include extra details."
+    ],
+    "videoTitle": "How to perform the banded Terminal Knee Extension (TKE) exercise | Knee Pain",
+    "videoChannel": "Tim Trevail",
+    "videoDuration": 87,
+    "videoViews": 45786,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=CNEXyR1fPZo",
+      "https://www.youtube.com/watch?v=W7n9dUiEbLM"
+    ]
+  },
+  "DBSquatJumps.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=XOTO2qWRy9U",
+    "confidence": 0.9,
+    "needsReview": false,
+    "matchReason": "The exercise name 'DB Squat Jumps' matches the video title 'Dumbbell Jump Squat'. The video title suggests it's a demonstration of this exercise. The video duration of 65 seconds is appropriate for an exercise demo. Bodybuilding.com is a reputable channel for fitness content.",
+    "concerns": [],
+    "videoTitle": "Dumbbell Jump Squat | Exercise Guide",
+    "videoChannel": "Bodybuilding.com",
+    "videoDuration": 65,
+    "videoViews": 594576,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=OTyb4YUDYYY",
+      "https://www.youtube.com/watch?v=iE7v4vgLeHg"
+    ]
+  },
+  "TrapBarDeadlift.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=A-2h-Yqxrb8",
+    "confidence": 0.95,
+    "needsReview": false,
+    "matchReason": "The exercise shown in the GIF frame appears to be a Trap Bar Deadlift, which matches the exercise name. The video title suggests a focus on HEX BAR workouts, which aligns with the Trap Bar Deadlift. The video duration of 12 seconds is appropriate for a quick exercise demonstration. The channel name suggests a focus on fitness content.",
+    "concerns": [],
+    "videoTitle": "Body Steel The Rise of HEX BAR 5 WORKOUT VIDEO #bodysteelfitness #gymequipmentsupplier #ytshort",
+    "videoChannel": "BODY STEEL FITNESS",
+    "videoDuration": 12,
+    "videoViews": 21690,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=v-SrIcAp3vM",
+      "https://www.youtube.com/watch?v=a7sQPZsmxvA"
+    ]
+  },
+  "SwissBallLegCurls.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=XkESHgkTdFw",
+    "confidence": 0.95,
+    "needsReview": false,
+    "matchReason": "The exercise name 'Swiss Ball Leg Curls' matches closely with the video title 'Swiss Ball Hamstring Curl'. The video title suggests a demonstration of the exercise. The duration of 38 seconds is appropriate for an exercise demo. Nuffield Health is a reputable channel for fitness content.",
+    "concerns": [],
+    "videoTitle": "Swiss Ball Hamstring Curl | Nuffield Health",
+    "videoChannel": "Nuffield Health",
+    "videoDuration": 38,
+    "videoViews": 432002,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=USf54AlNk1g"
+    ]
+  },
+  "KneelingSidePlanks.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=sKMD_pbNm7w",
+    "confidence": 0.95,
+    "needsReview": false,
+    "matchReason": "The exercise name 'Side Planks' matches the video title which includes 'side plank'. The video duration of 29 seconds is appropriate for an exercise demonstration. The channel appears to focus on fitness content.",
+    "concerns": [],
+    "videoTitle": "How not to side plank and how to do the side plank! #plank #abs #abworkout",
+    "videoChannel": "brockashby",
+    "videoDuration": 29,
+    "videoViews": 1338181,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=NXr4Fw8q60o",
+      "https://www.youtube.com/watch?v=BFOyHDlY2UE"
+    ]
+  },
+  "HinduSquats.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=71HQpGSGDKQ",
+    "confidence": 0.95,
+    "needsReview": false,
+    "matchReason": "The exercise name 'Hindu Squats' matches the video title 'The Unreal Power of Hindu Squats.' The video duration of 38 seconds is appropriate for a demonstration. The channel 'Strength Side' is known for fitness content.",
+    "concerns": [],
+    "videoTitle": "The Unreal Power of Hindu Squats.",
+    "videoChannel": "Strength Side",
+    "videoDuration": 38,
+    "videoViews": 430609,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=DXvIzLtN-qY",
+      "https://www.youtube.com/watch?v=E1GJi0iiUk4"
+    ]
+  },
+  "BoxPistols.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=IfESGr170DY",
+      "https://www.youtube.com/watch?v=krEKdEKTCkQ",
+      "https://www.youtube.com/watch?v=K24V4r9Z710"
+    ]
+  },
+  "KBPasses.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=cztsuNzkbG8",
+    "confidence": 0.85,
+    "needsReview": true,
+    "matchReason": "The exercise name 'KB Passes' is likely related to kettlebell exercises, which matches the theme of the video title 'Her Kettlebell ABS WORKOUT!😳'. The video duration of 60 seconds is appropriate for a quick exercise demonstration. Squat University is known for fitness content.",
+    "concerns": [
+      "The video title focuses on abs, so ensure the exercise targets this area."
+    ],
+    "videoTitle": "Her Kettlebell ABS WORKOUT!😳",
+    "videoChannel": "Squat University",
+    "videoDuration": 60,
+    "videoViews": 10501203,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=ec75RHE3Gwk",
+      "https://www.youtube.com/watch?v=Dvt2KtkzLuo"
+    ]
+  },
+  "LowBoxDrops.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=HSLcfruScKU",
+      "https://www.youtube.com/watch?v=I_cwsX_95nw",
+      "https://www.youtube.com/watch?v=iCuglFclkUM"
+    ]
+  },
+  "DBBoxSquats.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=o8R9B1t-Kv0",
+    "confidence": 0.95,
+    "needsReview": false,
+    "matchReason": "The exercise name 'DB Box Squat' matches the video title 'DB Box Squat'. The video duration of 28 seconds is appropriate for an exercise demonstration. The channel name 'Ruth Maleski' does not raise immediate concerns about fitness content.",
+    "concerns": [],
+    "videoTitle": "DB Box Squat",
+    "videoChannel": "Ruth Maleski",
+    "videoDuration": 28,
+    "videoViews": 62543,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=2aIgi73HIw8",
+      "https://www.youtube.com/watch?v=rMEPHwNhQfo"
+    ]
+  },
+  "DBRDLs.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=uODWo4YqbT8",
+      "https://www.youtube.com/watch?v=mJilHWIBWO8",
+      "https://www.youtube.com/watch?v=CBOhr6H7BEY"
+    ]
+  },
+  "SplitSquats.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=uODWo4YqbT8",
+    "confidence": 0.85,
+    "needsReview": true,
+    "matchReason": "The exercise in the GIF appears to be a Bulgarian Split Squat, which matches the video title. The video duration is appropriate for an exercise demo.",
+    "concerns": [
+      "The exercise name includes 'DB RDL' which is not mentioned in the video title."
+    ],
+    "videoTitle": "How to Bulgarian Split Squat | 3 Simple Steps",
+    "videoChannel": "Davis Diley",
+    "videoDuration": 55,
+    "videoViews": 6055109,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=mJilHWIBWO8",
+      "https://www.youtube.com/watch?v=CBOhr6H7BEY"
+    ]
+  },
+  "45DegreeBackRaises.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=S1_eZIIZlIc",
+    "confidence": 0.85,
+    "needsReview": true,
+    "matchReason": "The exercise in the GIF appears to be a back raise, which aligns with the 'Hyperextensions' mentioned in the video title. The focus on glutes is consistent with the exercise type. The video duration is appropriate for a short demonstration.",
+    "concerns": [
+      "The channel's reputation for fitness content is not verified."
+    ],
+    "videoTitle": "Hyperextensions for GLUTE focus 🍑 Save this post for your next glute day #shorts",
+    "videoChannel": "LisaFiitt Workouts",
+    "videoDuration": 30,
+    "videoViews": 1255789,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=9XN23dIEqLE",
+      "https://www.youtube.com/watch?v=EBui4Bt5N7o"
+    ]
+  },
+  "GHRIsoHold.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=rYhIx6oNRqM",
+    "confidence": 0.95,
+    "needsReview": false,
+    "matchReason": "The exercise name 'GHR Iso-Hold' matches the video title 'GHR [IsoHold]', suggesting it's a demonstration of the exercise. The video duration of 19 seconds is appropriate for an exercise demo. The channel name 'SuperTrening' implies a focus on training content.",
+    "concerns": [],
+    "videoTitle": "GHR [IsoHold]",
+    "videoChannel": "SuperTrening",
+    "videoDuration": 19,
+    "videoViews": 704,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=CoCh6Ebh3Qk",
+      "https://www.youtube.com/watch?v=_WCwpLO3ZMc"
+    ]
+  },
+  "HeavySledSuicide.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=pM-JH-dvmAg",
+    "confidence": 0.85,
+    "needsReview": true,
+    "matchReason": "The exercise involves a sled, which matches the video title mentioning 'Heavy Ass Sled Drags'. The duration of 63 seconds is appropriate for a demonstration. The channel is known for fitness content.",
+    "concerns": [
+      "Exercise name 'Heavy Sled Suicide' does not exactly match 'HASD's' but is similar enough to suggest a match."
+    ],
+    "videoTitle": "DeFrancosGym.com: HASD's (Heavy Ass Sled Drags)",
+    "videoChannel": "joedefranco",
+    "videoDuration": 63,
+    "videoViews": 61679,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=v-wlUeCldXs",
+      "https://www.youtube.com/watch?v=BIlSvaS2YsY"
+    ]
+  },
+  "SplitSquatIsoHold.jpg": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=uE_NeT2D0lo",
+      "https://www.youtube.com/watch?v=zzUZOMiE-mg",
+      "https://www.youtube.com/watch?v=9-E7YW2WAlM"
+    ]
+  },
+  "GHR.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=blX1If7ScxY",
+    "confidence": 0.95,
+    "needsReview": false,
+    "matchReason": "The exercise name 'Glute Hamstring Raise' matches the video title 'How to use the GLUTE HAM RAISE'. The video title suggests a demonstration of the exercise. The video duration of 11 seconds is appropriate for a quick exercise demo. The channel name 'TylerPath' is not specified as reputable, but there are no red flags.",
+    "concerns": [],
+    "videoTitle": "How to use the GLUTE HAM RAISE",
+    "videoChannel": "TylerPath",
+    "videoDuration": 11,
+    "videoViews": 325998,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=BhUpWmlKcJ8",
+      "https://www.youtube.com/watch?v=S1_eZIIZlIc"
+    ]
+  },
+  "RollingSidePlanks.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=sKMD_pbNm7w",
+    "confidence": 0.5,
+    "needsReview": true,
+    "matchReason": "The GIF frame shows a standard plank position, not a rolling side plank. The video title suggests a focus on side planks, but not specifically rolling side planks.",
+    "concerns": [
+      "Exercise name mismatch",
+      "Video title does not specify 'rolling' side planks"
+    ],
+    "videoTitle": "How not to side plank and how to do the side plank! #plank #abs #abworkout",
+    "videoChannel": "brockashby",
+    "videoDuration": 29,
+    "videoViews": 1338181,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=kISuoI7QCYk",
+      "https://www.youtube.com/watch?v=BFOyHDlY2UE"
+    ]
+  },
+  "LowBoxJumptoHeiden.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=N-jzh4g0gcc",
+    "confidence": 0.85,
+    "needsReview": true,
+    "matchReason": "The exercise name 'Low Box Jump to Heiden' is similar to the video title 'Lateral plyometric box jumps', suggesting a related exercise. The video duration of 25 seconds is appropriate for a demonstration. The channel name 'Abethephysio' implies a focus on physical fitness or therapy.",
+    "concerns": [
+      "Channel reputation is not verified."
+    ],
+    "videoTitle": "Lateral plyometric box jumps",
+    "videoChannel": "Abethephysio",
+    "videoDuration": 25,
+    "videoViews": 1249,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=VezYQD9_l2g",
+      "https://www.youtube.com/watch?v=LqEZv0eELNg"
+    ]
+  },
+  "FrontSquats.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=uYumuL_G_V0",
+    "confidence": 0.95,
+    "needsReview": false,
+    "matchReason": "The exercise name 'Front Squats' matches the video title 'The Front Squat'. The video duration of 66 seconds is appropriate for a demonstration, and CrossFit is a reputable channel for fitness content.",
+    "concerns": [],
+    "videoTitle": "The Front Squat",
+    "videoChannel": "CrossFit",
+    "videoDuration": 66,
+    "videoViews": 1850586,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=_qv0m3tPd3s",
+      "https://www.youtube.com/watch?v=rKjh8K-ZxLc"
+    ]
+  },
+  "StepUps.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=8q9LVgN2RD4",
+    "confidence": 0.95,
+    "needsReview": false,
+    "matchReason": "The exercise name 'Step-ups' matches the action in the GIF. The video title suggests a demonstration of step-ups focusing on quads and glutes, which aligns with the exercise. The video duration of 5 seconds is appropriate for a quick demonstration. The channel name implies a focus on fitness content.",
+    "concerns": [],
+    "videoTitle": "Step up form for QUADS vs GLUTES 🔥 #shorts",
+    "videoChannel": "LISAFIITT",
+    "videoDuration": 5,
+    "videoViews": 2429427,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=PzDbmqL6qo8",
+      "https://www.youtube.com/watch?v=wfhXnLILqdk"
+    ]
+  },
+  "KBSwings.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=bXgFx93CGow",
+    "confidence": 0.3,
+    "needsReview": true,
+    "matchReason": "The exercise in the GIF is a kettlebell swing, which does not match the video title focusing on box jumps.",
+    "concerns": [
+      "Exercise name mismatch",
+      "Video title suggests a focus on box jumps, not kettlebell swings",
+      "Channel focus on golf performance may not align with general fitness exercises"
+    ],
+    "videoTitle": "DON’T do THIS when doing box jumps!",
+    "videoChannel": "Sam Vickers Golf Performance",
+    "videoDuration": 20,
+    "videoViews": 443830,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=aSYap2yhW8s",
+      "https://www.youtube.com/watch?v=kP5PoazFK8c"
+    ]
+  },
+  "BoxDepthDrop.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=yDC2RCiKb5U",
+      "https://www.youtube.com/watch?v=aSYap2yhW8s",
+      "https://www.youtube.com/watch?v=bXgFx93CGow"
+    ]
+  },
+  "BroadJumps.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=yDC2RCiKb5U",
+      "https://www.youtube.com/watch?v=aSYap2yhW8s",
+      "https://www.youtube.com/watch?v=bXgFx93CGow"
+    ]
+  },
+  "DBSideBends.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=VwLXMuL_30Q",
+      "https://www.youtube.com/watch?v=dL9ZzqtQI5c",
+      "https://www.youtube.com/watch?v=kqr_IjiUuyY"
+    ]
+  },
+  "TurkishGetups.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=g5dwOlGGfmU",
+    "confidence": 0.95,
+    "needsReview": false,
+    "matchReason": "The exercise name 'Turkish Get-ups' matches the video title 'Master The Art of This Functional Kettlebell Exercise: The Turkish Getup'. The video title suggests a demonstration of the exercise. The video duration of 72 seconds is slightly above the typical range but still reasonable for a detailed demonstration. The channel name suggests a personal brand, which could be reputable for fitness content.",
+    "concerns": [],
+    "videoTitle": "Master The Art of This Functional Kettlebell Exercise: The Turkish Getup",
+    "videoChannel": "Pat Damiano ",
+    "videoDuration": 72,
+    "videoViews": 200537,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=XVEMTDlNLyU",
+      "https://www.youtube.com/watch?v=-Zsx2JTfGsU"
+    ]
+  },
+  "OHKBCarry.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=mPcwZ0BdvHg",
+      "https://www.youtube.com/watch?v=-Zsx2JTfGsU",
+      "https://www.youtube.com/watch?v=H_Yt-81WM2w"
+    ]
+  },
+  "OverUnderHurdles.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=haxN7h8k56k",
+    "confidence": 0.95,
+    "needsReview": false,
+    "matchReason": "The exercise name 'Over/Under Hurdles' matches closely with the video title 'Hurdle Over Unders', suggesting it's a demonstration of the exercise. The video duration of 35 seconds is appropriate for an exercise demo. Trackwired is known for fitness content.",
+    "concerns": [],
+    "videoTitle": "Hurdle Over Unders",
+    "videoChannel": "Trackwired",
+    "videoDuration": 35,
+    "videoViews": 5231,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=tbPB2pIf1FU",
+      "https://www.youtube.com/watch?v=TYHxvW_O0Io"
+    ]
+  },
+  "FrontSquatIsoHolds.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=BNUZU9TV1Eo",
+    "confidence": 0.5,
+    "needsReview": true,
+    "matchReason": "The exercise name 'Front Squat Iso-hold & Box Jumps' does not directly match the video title 'Deep tier squat oscillation jumps w/ front med ball hold'. The video title suggests a different exercise involving oscillation jumps and a med ball, which is not mentioned in the exercise name.",
+    "concerns": [
+      "Mismatch in exercise description",
+      "Video title suggests different equipment (med ball)",
+      "Unclear if video demonstrates box jumps"
+    ],
+    "videoTitle": "Deep tier squat oscillation jumps w/ front med ball hold",
+    "videoChannel": "George Progress Physio",
+    "videoDuration": 27,
+    "videoViews": 6958,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=CFB3JHkdyt8",
+      "https://www.youtube.com/watch?v=-b2h0cegrNI"
+    ]
+  },
+  "BoxJumps.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=BNUZU9TV1Eo",
+    "confidence": 0.5,
+    "needsReview": true,
+    "matchReason": "The exercise name 'Front Squat Iso-hold & Box Jumps' does not clearly match the video title 'Deep tier squat oscillation jumps w/ front med ball hold'. The GIF shows box jumps, but there's no indication of a front squat iso-hold.",
+    "concerns": [
+      "Mismatch between exercise name and video title",
+      "No clear indication of 'front squat iso-hold' in the GIF"
+    ],
+    "videoTitle": "Deep tier squat oscillation jumps w/ front med ball hold",
+    "videoChannel": "George Progress Physio",
+    "videoDuration": 27,
+    "videoViews": 6958,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=CFB3JHkdyt8",
+      "https://www.youtube.com/watch?v=-b2h0cegrNI"
+    ]
+  },
+  "Chinups.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=1C272Ws8WwU",
+    "confidence": 0.95,
+    "needsReview": false,
+    "matchReason": "The exercise name 'Weighted Chin-ups' matches the video title 'Weighted Chin-up'. The video title suggests it is a demonstration of this exercise. The duration of 15 seconds is appropriate for a quick exercise demo. BioFit Performance is likely a reputable channel for fitness content.",
+    "concerns": [],
+    "videoTitle": "Weighted Chin-up",
+    "videoChannel": "BioFit Performance",
+    "videoDuration": 15,
+    "videoViews": 21848,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=oD2ohgW30fQ",
+      "https://www.youtube.com/watch?v=jIvbJzs1V4I"
+    ]
+  },
+  "HipExt.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=8q9LVgN2RD4",
+    "confidence": 0.7,
+    "needsReview": true,
+    "matchReason": "Title match only (no GIF frame): Step up form for QUADS vs GLUTES 🔥 #shorts",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=v5JFb2AsSVs",
+      "https://www.youtube.com/watch?v=E1mG5L9rpFc"
+    ]
+  },
+  "SLDBRDL.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=v5JFb2AsSVs",
+    "confidence": 0.7,
+    "needsReview": true,
+    "matchReason": "Title match only (no GIF frame): Single Leg Deadlifts Are CRAZY HARD!",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=Lu1utKnijTA",
+      "https://www.youtube.com/watch?v=WwTJM8VxpvE"
+    ]
+  },
+  "SESitups.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=G8UPVpv2cQc",
+    "confidence": 0.7,
+    "needsReview": true,
+    "matchReason": "Title match only (no GIF frame): Spread Eagle Back Exercise : Simple, Functional Exercises",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=IiLt3JYP75I"
+    ]
+  },
+  "FloorWashers.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=MMgT6E8meac",
+    "confidence": 0.7,
+    "needsReview": true,
+    "matchReason": "The exercise in the GIF appears to be a floor-based movement, possibly resembling a plank or push-up variation, which does not directly match the name 'Floor Washers'. The video title 'Chair Workout to Lose Belly Fat' suggests exercises involving a chair, which does not align with the floor-based exercise shown.",
+    "concerns": [
+      "Mismatch between exercise name and GIF",
+      "Video title suggests chair use, not floor exercise"
+    ],
+    "videoTitle": "Chair Workout to Lose Belly Fat",
+    "videoChannel": "Workout Guru",
+    "videoDuration": 24,
+    "videoViews": 1345351,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=HaSFRSnRsXk",
+      "https://www.youtube.com/watch?v=_PP-hcgM-rk"
+    ]
+  },
+  "Cat_Camel.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=2of247Kt0tU",
+    "confidence": 0.9,
+    "needsReview": false,
+    "matchReason": "The exercise name 'Cat/Camel' is similar to 'Cat-Cow Pose' in the video title. The video duration is appropriate for a demonstration, and the channel name suggests a focus on fitness content.",
+    "concerns": [],
+    "videoTitle": "CAT-COW POSE (Marjaryasana-Bitilasana)🐮 😺",
+    "videoChannel": "Muscle & Motion",
+    "videoDuration": 9,
+    "videoViews": 12809636,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=JJkjIKlimW8",
+      "https://www.youtube.com/watch?v=1cs3SKwQZpM"
+    ]
+  },
+  "NoMoneyDrill.png": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=RfZlK7N2uBc",
+      "https://www.youtube.com/watch?v=AmxbPZroRK0",
+      "https://www.youtube.com/watch?v=-hraEWDf170"
+    ]
+  },
+  "JavelinStretch.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=s2_ISPAkzew",
+      "https://www.youtube.com/watch?v=V7pWvW2kSNc",
+      "https://www.youtube.com/watch?v=86F2grEKDzU"
+    ]
+  },
+  "NGDBMilitaryPress.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=osEKVtXBLlU",
+      "https://www.youtube.com/watch?v=OLePvpxQEGk",
+      "https://www.youtube.com/watch?v=6v4nrRVySj0"
+    ]
+  },
+  "Pullovers.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=MA1eVI7Am7s",
+      "https://www.youtube.com/watch?v=uW4bC8xad7A",
+      "https://www.youtube.com/watch?v=QechLgf6fms"
+    ]
+  },
+  "Pushups.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=WDIpL0pjun0",
+    "confidence": 0.95,
+    "needsReview": false,
+    "matchReason": "The exercise name 'Push-ups' matches the video title, which suggests a demonstration of proper form and technique for push-ups. The video duration is appropriate for an exercise demo, and the channel is reputable for fitness content.",
+    "concerns": [],
+    "videoTitle": "How to do a Push-Up | Proper Form & Technique | NASM",
+    "videoChannel": "National Academy of Sports Medicine (NASM)",
+    "videoDuration": 14,
+    "videoViews": 860958,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=yQEx9OC2C3E"
+    ]
+  },
+  "OHSitups.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=nKQyGwQJDm4",
+    "confidence": 0.7,
+    "needsReview": true,
+    "matchReason": "The exercise in the GIF is an 'OH Sit-up,' which involves holding a weight overhead. The video title suggests a comparison between sit-ups and crunches, not specifically demonstrating 'OH Sit-ups.'",
+    "concerns": [
+      "Exercise name mismatch",
+      "Video title suggests a comparison, not a specific demonstration",
+      "Channel reputation unknown"
+    ],
+    "videoTitle": "Sit Up vs Crunch Which is Better #sixpack",
+    "videoChannel": "Lean4ever_",
+    "videoDuration": 19,
+    "videoViews": 2040946,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=jDwoBqPH0jk",
+      "https://www.youtube.com/watch?v=hgjSJN3SXC4"
+    ]
+  },
+  "BattleRopes.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=X5g7P_M8Wo4",
+    "confidence": 0.95,
+    "needsReview": false,
+    "matchReason": "The exercise name 'Battle Ropes' matches the activity shown in the GIF. The video title suggests it is a demonstration of this exercise. The video duration of 21 seconds is appropriate for a quick exercise demo. The channel name sounds like it could be related to fitness content.",
+    "concerns": [],
+    "videoTitle": "the do's and dont's of the battle ropes!",
+    "videoChannel": "Chelsea Cooke",
+    "videoDuration": 21,
+    "videoViews": 662365,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=zw0OMi00X5g",
+      "https://www.youtube.com/watch?v=ZEAqK0lXnb0"
+    ]
+  },
+  "YogaPushup.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=UIcct-7b6oE",
+      "https://www.youtube.com/watch?v=Mdoz2uCxNLk",
+      "https://www.youtube.com/watch?v=eP6habJpue8"
+    ]
+  },
+  "DownwardDogToeTouches.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=ZepZd60Q0aY"
+    ]
+  },
+  "NGDBInclineBench.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=5orOHJL2qS4",
+    "confidence": 0.85,
+    "needsReview": true,
+    "matchReason": "The exercise name 'NG DB Incline Bench' matches the video title 'Dumbbell Incline Chest Press'. The video title suggests a demonstration of the exercise. The video duration of 19 seconds is appropriate for an exercise demo.",
+    "concerns": [
+      "The exercise name includes 'Feet Elevated Push-ups', which is not mentioned in the video title."
+    ],
+    "videoTitle": "How to do a Dumbbell Incline Chest Press!",
+    "videoChannel": "Elite Performance",
+    "videoDuration": 19,
+    "videoViews": 2277905,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=dcV-ATSeryA",
+      "https://www.youtube.com/watch?v=V3BNe4vJX60"
+    ]
+  },
+  "FeetElevatedPushUps.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=_TgzORKssAs",
+    "confidence": 0.85,
+    "needsReview": true,
+    "matchReason": "The exercise name includes 'Feet Elevated Push-ups,' which matches the exercise shown in the GIF. The video title suggests a focus on bench angle and muscles worked, which aligns with the exercise. The video duration is appropriate for a demonstration. The channel appears to be fitness-related.",
+    "concerns": [
+      "The video title does not explicitly mention 'NG DB Incline Bench,' which is part of the exercise name."
+    ],
+    "videoTitle": "Bench Angle & Muscles Worked (KNOW THE DIFFERENCE!)",
+    "videoChannel": "Andrew Kwong (DeltaBolic)",
+    "videoDuration": 15,
+    "videoViews": 4106651,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=Cj96ZZlmJRU",
+      "https://www.youtube.com/watch?v=nu5908Dn78Q"
+    ]
+  },
+  "KrocRows1.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=eC0KqOYsOZY",
+    "confidence": 0.3,
+    "needsReview": true,
+    "matchReason": "The exercise name 'Kroc Rows Burnout' does not match the video title 'Are Deadlifts Beneficial? #gymtips'. The video title suggests a focus on deadlifts, not Kroc rows.",
+    "concerns": [
+      "Exercise name mismatch",
+      "Video title does not suggest a demonstration of Kroc rows",
+      "Unclear if the channel is reputable for this specific exercise"
+    ],
+    "videoTitle": "Are Deadlifts Beneficial? #gymtips",
+    "videoChannel": "JayCutlerTV",
+    "videoDuration": 44,
+    "videoViews": 1469642,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=1mGXae-LCiM",
+      "https://www.youtube.com/watch?v=8AJc_8y_r8Y"
+    ]
+  },
+  "KrocRows2.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=sGwDvbqUSpk"
+    ]
+  },
+  "Scarecrows.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=sGwDvbqUSpk"
+    ]
+  },
+  "OneArmOHCarry.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=mPcwZ0BdvHg",
+      "https://www.youtube.com/watch?v=X72HhVGAko4",
+      "https://www.youtube.com/watch?v=xCkeisugHlY"
+    ]
+  },
+  "CurtsyLunges.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=quIDO9QkuBQ",
+    "confidence": 0.9,
+    "needsReview": false,
+    "matchReason": "The exercise name 'Curtsy Lunges' matches the video title, which suggests a demonstration of this exercise. The video duration is appropriate for a demo, and FitnessBlender is a reputable channel for fitness content.",
+    "concerns": [],
+    "videoTitle": "Time for a highly-requested form review: the Curtsy Lunge! #lunges",
+    "videoChannel": "FitnessBlender",
+    "videoDuration": 60,
+    "videoViews": 59878,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=cVYnf2CFO9M",
+      "https://www.youtube.com/watch?v=WAW-2ehQ1GM"
+    ]
+  },
+  "BarbellWalkingLunges.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=hm3zBA8_Iak",
+    "confidence": 0.95,
+    "needsReview": false,
+    "matchReason": "The exercise name 'Barbell Walking Lunges' matches the video title and description. The video title suggests it is a demonstration of this exercise. The video duration of 31 seconds is appropriate for an exercise demo. The channel 'Live Lean TV Daily Exercises' is known for fitness content.",
+    "concerns": [],
+    "videoTitle": "How To Do A BARBELL WALKING LUNGE | Exercise Demonstration Video and Guide",
+    "videoChannel": "Live Lean TV Daily Exercises",
+    "videoDuration": 31,
+    "videoViews": 3458,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=1cS-6KsJW9g",
+      "https://www.youtube.com/watch?v=QQEcLAcVtHw"
+    ]
+  },
+  "90DegreeBarbellSquats.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=_i6qpcI1Nw4",
+    "confidence": 0.5,
+    "needsReview": true,
+    "matchReason": "The exercise in the GIF appears to be a squat, but the video title focuses on hip thrusts, which are different exercises. The exercise name and video title do not match.",
+    "concerns": [
+      "Mismatch between exercise name and video title",
+      "Video title suggests focus on hip thrusts, not squats"
+    ],
+    "videoTitle": "Hip Thrust Tips:",
+    "videoChannel": "ArielYu_Fit",
+    "videoDuration": 20,
+    "videoViews": 3410436,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=4_BZ2G9SFLQ",
+      "https://www.youtube.com/watch?v=7Iu_poBeYEo"
+    ]
+  },
+  "SingleLegHipThrusts.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=hKXqCXSXylA",
+    "confidence": 0.95,
+    "needsReview": false,
+    "matchReason": "The exercise name 'Single Leg Hip Thrust on Bench' closely matches the video title 'DB Weighted Single Leg (SL) Hip Thrust'. The video duration of 6 seconds is appropriate for a quick demonstration. The channel name 'Onward ATL' suggests a focus on fitness content.",
+    "concerns": [],
+    "videoTitle": "DB Weighted Single Leg (SL) Hip Thrust",
+    "videoChannel": "Onward ATL",
+    "videoDuration": 6,
+    "videoViews": 163130,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=3suM3LwVlVM",
+      "https://www.youtube.com/watch?v=ymg2AMDAwrY"
+    ]
+  },
+  "FireHydrant.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=BLx5wSzafxg",
+    "confidence": 0.95,
+    "needsReview": false,
+    "matchReason": "The exercise shown in the GIF frame matches the description of 'Fire Hydrants' and the video title suggests it is a demonstration of this exercise with resistance bands. The video duration is appropriate for a short exercise demo.",
+    "concerns": [],
+    "videoTitle": "How To Do a Fire Hydrant Exercise with Resistance Bands",
+    "videoChannel": "Quoia Active",
+    "videoDuration": 9,
+    "videoViews": 389556,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=IRkRgk2Gc1E",
+      "https://www.youtube.com/watch?v=Y0G0DqWsSuM"
+    ]
+  },
+  "KneelingHipFlexorStretch.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=2PNT-FFKLgY",
+    "confidence": 0.95,
+    "needsReview": false,
+    "matchReason": "The exercise in the GIF frame matches the description of a 'Kneeling Hip Flexor Stretch'. The video title suggests it is a demonstration of a hip flexor stretch, which aligns with the exercise name. The video duration of 31 seconds is appropriate for an exercise demonstration. The channel appears to be focused on fitness content.",
+    "concerns": [],
+    "videoTitle": "⭐️True Hip Flexor Stretch (Simple Fix For Lasting Results) #shorts",
+    "videoChannel": "FIN Treatment & Training",
+    "videoDuration": 31,
+    "videoViews": 612375,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=ktgtEWGhFd8",
+      "https://www.youtube.com/watch?v=DXuStgWuJV8"
+    ]
+  },
+  "Posture_Ex1.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=H1F-UfC8Mb8",
+      "https://www.youtube.com/watch?v=pvIjsG5Svck",
+      "https://www.youtube.com/watch?v=HaSFRSnRsXk"
+    ]
+  },
+  "CloseGripPulldowns.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=LyZH4UGdDTc",
+    "confidence": 0.7,
+    "needsReview": true,
+    "matchReason": "The exercise in the GIF appears to be a close grip pulldown, but the video title suggests it focuses on incorrect cable row techniques. The video duration is appropriate for a quick demonstration, but the title implies critique rather than demonstration.",
+    "concerns": [
+      "Mismatch between exercise name and video title",
+      "Video title suggests critique, not demonstration"
+    ],
+    "videoTitle": "🛑 STOP Doing Cable Rows LIKE THIS!",
+    "videoChannel": "Andrew Kwong (DeltaBolic)",
+    "videoDuration": 8,
+    "videoViews": 19616851,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=qD1WZ5pSuvk",
+      "https://www.youtube.com/watch?v=e3S820r53uk"
+    ]
+  },
+  "CableRows.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=e3S820r53uk",
+    "confidence": 0.7,
+    "needsReview": true,
+    "matchReason": "The exercise in the GIF appears to be a cable row, which matches part of the exercise name provided but not the video title. The video title suggests a focus on lat pulldowns, not cable rows.",
+    "concerns": [
+      "The video title emphasizes lat pulldowns, not cable rows.",
+      "The exercise name includes 'Close Grip Pulldowns & Cable Rows,' but the video title only mentions pulldowns.",
+      "The channel's reputation for fitness content is not specified."
+    ],
+    "videoTitle": "Lat Pulldowns: Know the Handles ⚠️ #pulldown",
+    "videoChannel": "Hazzytrainer",
+    "videoDuration": 17,
+    "videoViews": 2388751,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=qD1WZ5pSuvk",
+      "https://www.youtube.com/watch?v=LyZH4UGdDTc"
+    ]
+  },
+  "WideGripPulldowns.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=bNmvKpJSWKM",
+    "confidence": 0.85,
+    "needsReview": true,
+    "matchReason": "The GIF frame shows a lat pulldown exercise, which matches the video title 'The PERFECT Lat Pulldown'. The exercise name includes 'Wide Grip Pulldowns', which is consistent with the lat pulldown shown. The video duration of 13 seconds is appropriate for a quick exercise demonstration.",
+    "concerns": [
+      "The exercise name also includes 'Bent-over Rows', which is not shown in the GIF frame."
+    ],
+    "videoTitle": "✅ The PERFECT Lat Pulldown (DO THIS!)",
+    "videoChannel": "Andrew Kwong (DeltaBolic)",
+    "videoDuration": 13,
+    "videoViews": 9264919,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=9n1OGTqCyeI",
+      "https://www.youtube.com/watch?v=z-lxcsIN4T4"
+    ]
+  },
+  "BentoverRows.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=phVtqawIgbk",
+      "https://www.youtube.com/watch?v=9n1OGTqCyeI",
+      "https://www.youtube.com/watch?v=z-lxcsIN4T4"
+    ]
+  },
+  "CableLateralPullovers.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=wdMMFyDEpVI",
+      "https://www.youtube.com/watch?v=n8KIHmsSU9s",
+      "https://www.youtube.com/watch?v=DQnVsbeaNQo"
+    ]
+  },
+  "ZottmanCurls.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=wdMMFyDEpVI",
+      "https://www.youtube.com/watch?v=n8KIHmsSU9s",
+      "https://www.youtube.com/watch?v=DQnVsbeaNQo"
+    ]
+  },
+  "Shrugs.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=V6BtY3Lt0Ys",
+      "https://www.youtube.com/watch?v=WKBJ3pc0_IM",
+      "https://www.youtube.com/watch?v=6K_N9AGhItQ"
+    ]
+  },
+  "CrushGripCurls.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=V6BtY3Lt0Ys",
+      "https://www.youtube.com/watch?v=WKBJ3pc0_IM",
+      "https://www.youtube.com/watch?v=6K_N9AGhItQ"
+    ]
+  },
+  "ChestFlies.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=rk8YayRoTRQ",
+    "confidence": 0.7,
+    "needsReview": true,
+    "matchReason": "The exercise name 'Chest Flies & Front Raises' does not exactly match the video title 'FIX THESE Dumbbell Chest Fly Mistakes!' which suggests a focus on correcting form rather than demonstrating both exercises.",
+    "concerns": [
+      "The video title suggests a focus on chest flies only, not front raises.",
+      "The video duration of 11 seconds is quite short for a comprehensive demonstration or correction of multiple exercises."
+    ],
+    "videoTitle": "FIX THESE Dumbbell Chest Fly Mistakes!",
+    "videoChannel": "Andrew Kwong (DeltaBolic)",
+    "videoDuration": 11,
+    "videoViews": 4647403,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=JHkLdEwSESQ",
+      "https://www.youtube.com/watch?v=zb-MSO-Cv2Y"
+    ]
+  },
+  "FrontRaises.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=rk8YayRoTRQ",
+      "https://www.youtube.com/watch?v=JHkLdEwSESQ",
+      "https://www.youtube.com/watch?v=zb-MSO-Cv2Y"
+    ]
+  },
+  "FlatBenchPress.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=1V3vpcaxRYQ",
+      "https://www.youtube.com/watch?v=WbCEvFA0NJs",
+      "https://www.youtube.com/watch?v=o7TvO377OqA"
+    ]
+  },
+  "Skullcrushers.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=iuYB_fLp26Q",
+    "confidence": 0.85,
+    "needsReview": true,
+    "matchReason": "The video title suggests a demonstration of dumbbell skullcrushers, which matches the exercise shown in the GIF frame. The duration is appropriate for a quick exercise demo.",
+    "concerns": [
+      "The video does not mention DB Side Lateral Raises, which could indicate incomplete coverage of the exercise name provided."
+    ],
+    "videoTitle": "5 Steps to Perfect Dumbbell Skullcrushers ⚠️ #triceps",
+    "videoChannel": "Hazzytrainer",
+    "videoDuration": 13,
+    "videoViews": 1332843,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=G-piLwLu0d4",
+      "https://www.youtube.com/watch?v=kDqklk1ZESo"
+    ]
+  },
+  "DBSideLateralRaises.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=G-piLwLu0d4",
+      "https://www.youtube.com/watch?v=JIhbYYA1Q90",
+      "https://www.youtube.com/watch?v=kDqklk1ZESo"
+    ]
+  },
+  "Dips.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=3ZCDVRbhOMM",
+      "https://www.youtube.com/watch?v=dcV-ATSeryA",
+      "https://www.youtube.com/watch?v=XYjTEvlPAfU"
+    ]
+  },
+  "HighLowPlanks.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=kJp-8Me6_84",
+    "confidence": 0.9,
+    "needsReview": false,
+    "matchReason": "The exercise name 'High Plank/Low Plank' matches with the video title 'High to Low Plank Exercise'. The video duration of 51 seconds is appropriate for an exercise demo. The channel name 'Live Being Fit' suggests a focus on fitness content.",
+    "concerns": [],
+    "videoTitle": "High to Low Plank Exercise",
+    "videoChannel": "Live Being Fit",
+    "videoDuration": 51,
+    "videoViews": 180425,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=v25dawSzRTM",
+      "https://www.youtube.com/watch?v=pvIjsG5Svck"
+    ]
+  },
+  "BarbellSquat.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=0pTBkUPuMkk",
+    "confidence": 0.85,
+    "needsReview": true,
+    "matchReason": "The exercise name 'Barbell Squats' partially matches 'Barbell Jump Squat' in the video title. The video title suggests a demonstration of a barbell squat variation, which aligns with the GIF frame showing a barbell squat. The video duration is appropriate for an exercise demo.",
+    "concerns": [
+      "The exercise name includes 'DB Jump Squats' which is not mentioned in the video title."
+    ],
+    "videoTitle": "Barbell Jump Squat - How To",
+    "videoChannel": "Bobby Maximus",
+    "videoDuration": 34,
+    "videoViews": 149864,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=dW3zj79xfrc",
+      "https://www.youtube.com/watch?v=XOTO2qWRy9U"
+    ]
+  },
+  "ElevatedHeelGobletSquat.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=lRYBbchqxtI",
+    "confidence": 0.7,
+    "needsReview": true,
+    "matchReason": "The exercise name 'Elevated Heel Goblet Squats & Leg Curls' includes both squats and leg curls, while the video title only mentions 'Goblet Squat'.",
+    "concerns": [
+      "The video title does not mention leg curls.",
+      "The video duration is appropriate, but the title suggests a focus only on goblet squats.",
+      "Channel reputation is unknown."
+    ],
+    "videoTitle": "📌HOW TO DO A GOBLET SQUAT",
+    "videoChannel": "SquatCouple",
+    "videoDuration": 22,
+    "videoViews": 3566830,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=UPeQpDPRWOg",
+      "https://www.youtube.com/watch?v=aed0XSePG6Y"
+    ]
+  },
+  "LegCurls.gif": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=aed0XSePG6Y",
+    "confidence": 0.1,
+    "needsReview": true,
+    "matchReason": "The exercise in the GIF frame appears to be a leg curl, not an elevated heel goblet squat. The video title suggests a comparison between sumo squats and goblet squats, which does not match the exercise shown.",
+    "concerns": [
+      "Exercise mismatch",
+      "Video title mismatch"
+    ],
+    "videoTitle": "Sumo Squats VS Goblet Squats - know the difference 🍑",
+    "videoChannel": "Tashana Charles",
+    "videoDuration": 10,
+    "videoViews": 1601981,
+    "alternatives": [
+      "https://www.youtube.com/watch?v=lRYBbchqxtI",
+      "https://www.youtube.com/watch?v=UPeQpDPRWOg"
+    ]
+  },
+  "HipAbductions.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=sNqa1ad2qIQ",
+      "https://www.youtube.com/watch?v=FPlHiEykiy8",
+      "https://www.youtube.com/watch?v=iOh08wn1s_Y"
+    ]
+  },
+  "CalfRaises.gif": {
+    "youtubeUrl": null,
+    "confidence": 0,
+    "needsReview": true,
+    "matchReason": "No confident matches found",
+    "alternatives": [
+      "https://www.youtube.com/watch?v=sNqa1ad2qIQ",
+      "https://www.youtube.com/watch?v=uFWuVSxsT0Y",
+      "https://www.youtube.com/watch?v=iOh08wn1s_Y"
+    ]
+  },
+  "90DegreeBarbellSquats": {
+    "primary": {
+      "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779215296/exercises/90DegreeBarbellSquats.mp4",
+      "source": {
+        "type": "youtube",
+        "url": "https://www.youtube.com/shorts/m-xvBOf6Oig",
+        "startTime": 0,
+        "endTime": 14,
+        "uploadedAt": "2026-05-19T18:36:04.996Z",
+        "notes": "Original GIF was 84MB"
+      },
+      "fileSize": "1.63 MB",
+      "duration": 14
+    },
+    "alternatives": [
+      {
+        "type": "youtube",
+        "url": "PASTE_ALTERNATIVE_URL_HERE",
+        "startTime": 0,
+        "endTime": 0,
+        "notes": "Alternative option - describe why this is good",
+        "addedAt": "2026-05-19T18:36:14.056Z"
+      },
+      {
+        "type": "youtube",
+        "url": "PASTE_ALTERNATIVE_URL_HERE",
+        "startTime": 0,
+        "endTime": 0,
+        "notes": "Alternative option - describe why this is good",
+        "addedAt": "2026-05-19T18:28:27.145Z"
+      }
+    ],
+    "metadata": {
+      "lastUpdated": "2026-05-19T18:36:14.056Z"
+    }
+  },
+  "BarbellWalkingLunges": {
+    "primary": {
+      "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779215303/exercises/BarbellWalkingLunges.mp4",
+      "source": {
+        "type": "youtube",
+        "url": "https://www.youtube.com/shorts/La8YR6wCsEE",
+        "startTime": 0,
+        "endTime": 0,
+        "uploadedAt": "2026-05-19T18:36:12.298Z",
+        "notes": "Full video - Original GIF was 59MB"
+      },
+      "fileSize": "2.58 MB",
+      "duration": null
+    },
+    "alternatives": [],
+    "metadata": {
+      "lastUpdated": "2026-05-19T18:36:14.056Z"
+    }
+  },
+  "CurtsyLunges": {
+    "primary": {
+      "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229128/exercises/CurtsyLunges.mp4",
+      "source": {
+        "type": "youtube",
+        "url": "https://www.youtube.com/shorts/WAW-2ehQ1GM",
+        "startTime": 0,
+        "endTime": 0,
+        "uploadedAt": "2026-05-19T22:18:49.161Z",
+        "notes": "good form demonstration vs bad form"
+      },
+      "fileSize": "0.42 MB",
+      "duration": null
+    },
+    "alternatives": [],
+    "metadata": {
+      "lastUpdated": "2026-05-19T22:18:58.632Z"
+    }
+  },
+  "FireHydrant": {
+    "primary": {
+      "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229133/exercises/FireHydrant.mp4",
+      "source": {
+        "type": "youtube",
+        "url": "https://www.youtube.com/shorts/9Rrz2R2Y6AQ",
+        "startTime": 0,
+        "endTime": 0,
+        "uploadedAt": "2026-05-19T22:18:54.310Z",
+        "notes": "good form demonstration vs bad form"
+      },
+      "fileSize": "1.48 MB",
+      "duration": null
+    },
+    "alternatives": [],
+    "metadata": {
+      "lastUpdated": "2026-05-19T22:18:58.632Z"
+    }
+  },
+  "SingleLegHipThrusts": {
+    "primary": {
+      "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229138/exercises/SingleLegHipThrusts.mp4",
+      "source": {
+        "type": "youtube",
+        "url": "https://www.youtube.com/shorts/hKXqCXSXylA",
+        "startTime": 0,
+        "endTime": 0,
+        "uploadedAt": "2026-05-19T22:18:58.628Z",
+        "notes": "simple demo"
+      },
+      "fileSize": "0.2 MB",
+      "duration": null
+    },
+    "alternatives": [
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/shorts/lskHiO7CfJM",
+        "startTime": 0,
+        "endTime": 0,
+        "notes": "upgrade",
+        "addedAt": "2026-05-19T22:18:58.632Z"
+      }
+    ],
+    "metadata": {
+      "lastUpdated": "2026-05-19T22:18:58.632Z"
+    }
+  },
+  "BoxDepthDrop": {
+    "primary": {
+      "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229227/exercises/BoxDepthDrop.mp4",
+      "source": {
+        "type": "youtube",
+        "url": "https://www.youtube.com/shorts/P-_jpcu3WH4",
+        "startTime": 0,
+        "endTime": 0,
+        "uploadedAt": "2026-05-19T22:20:27.987Z",
+        "notes": "good demonstration and loops"
+      },
+      "fileSize": "1.24 MB",
+      "duration": null
+    },
+    "alternatives": [],
+    "metadata": {
+      "lastUpdated": "2026-05-19T22:20:32.765Z"
+    }
+  },
+  "KneelingHipFlexorStretch": {
+    "primary": {
+      "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229231/exercises/KneelingHipFlexorStretch.mp4",
+      "source": {
+        "type": "youtube",
+        "url": "https://www.youtube.com/shorts/ktgtEWGhFd8",
+        "startTime": 0,
+        "endTime": 0,
+        "uploadedAt": "2026-05-19T22:20:32.763Z",
+        "notes": "good explanation vs bad form"
+      },
+      "fileSize": "1.24 MB",
+      "duration": null
+    },
+    "alternatives": [
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/shorts/bfJabpwvP-g",
+        "startTime": 0,
+        "endTime": 0,
+        "notes": "quicker explanation",
+        "addedAt": "2026-05-19T22:20:32.765Z"
+      }
+    ],
+    "metadata": {
+      "lastUpdated": "2026-05-19T22:20:32.765Z"
+    }
+  }
+}

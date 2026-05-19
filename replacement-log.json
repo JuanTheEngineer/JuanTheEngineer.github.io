@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-05-19T22:20:32.764Z",
+  "results": [
+    {
+      "exerciseName": "BoxDepthDrop",
+      "success": true,
+      "url": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229227/exercises/BoxDepthDrop.mp4",
+      "sizeMB": 1.24,
+      "source": {
+        "youtubeUrl": "https://www.youtube.com/shorts/P-_jpcu3WH4",
+        "startTime": 0,
+        "endTime": 0,
+        "uploadedAt": "2026-05-19T22:20:27.987Z",
+        "notes": "good demonstration and loops"
+      },
+      "alternatives": []
+    },
+    {
+      "exerciseName": "KneelingHipFlexorStretch",
+      "success": true,
+      "url": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229231/exercises/KneelingHipFlexorStretch.mp4",
+      "sizeMB": 1.24,
+      "source": {
+        "youtubeUrl": "https://www.youtube.com/shorts/ktgtEWGhFd8",
+        "startTime": 0,
+        "endTime": 0,
+        "uploadedAt": "2026-05-19T22:20:32.763Z",
+        "notes": "good explanation vs bad form"
+      },
+      "alternatives": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/shorts/bfJabpwvP-g",
+          "startTime": 0,
+          "endTime": 0,
+          "notes": "quicker explanation"
+        }
+      ]
+    }
+  ]
+}

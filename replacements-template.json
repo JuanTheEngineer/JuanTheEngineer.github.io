@@ -1,0 +1,66 @@
+[
+  {
+    "exerciseName": "90DegreeBarbellSquats",
+    "youtubeUrl": "https://www.youtube.com/shorts/m-xvBOf6Oig",
+    "startTime": 0,
+    "endTime": 14,
+    "notes": "Original GIF was 84MB",
+    "alternatives": [
+      {
+        "type": "youtube",
+        "url": "PASTE_ALTERNATIVE_URL_HERE",
+        "startTime": 0,
+        "endTime": 0,
+        "notes": "Alternative option - describe why this is good"
+      }
+    ]
+  },
+  {
+    "exerciseName": "BarbellWalkingLunges",
+    "youtubeUrl": "https://www.youtube.com/shorts/La8YR6wCsEE",
+    "startTime": 0,
+    "endTime": 0,
+    "notes": "Full video - Original GIF was 59MB",
+    "alternatives": []
+  },
+  {
+    "exerciseName": "BoxDepthDrop",
+    "youtubeUrl": "PASTE_YOUTUBE_URL_HERE",
+    "startTime": 0,
+    "endTime": 10,
+    "notes": "Original GIF was 12MB",
+    "alternatives": []
+  },
+  {
+    "exerciseName": "CurtsyLunges",
+    "youtubeUrl": "PASTE_YOUTUBE_URL_HERE",
+    "startTime": 0,
+    "endTime": 10,
+    "notes": "Original GIF was 33MB",
+    "alternatives": []
+  },
+  {
+    "exerciseName": "FireHydrant",
+    "youtubeUrl": "PASTE_YOUTUBE_URL_HERE",
+    "startTime": 0,
+    "endTime": 10,
+    "notes": "Original GIF was 65MB",
+    "alternatives": []
+  },
+  {
+    "exerciseName": "KneelingHipFlexorStretch",
+    "youtubeUrl": "PASTE_YOUTUBE_URL_HERE",
+    "startTime": 0,
+    "endTime": 10,
+    "notes": "Original GIF was 59MB",
+    "alternatives": []
+  },
+  {
+    "exerciseName": "SingleLegHipThrusts",
+    "youtubeUrl": "PASTE_YOUTUBE_URL_HERE",
+    "startTime": 0,
+    "endTime": 10,
+    "notes": "Original GIF was 38MB",
+    "alternatives": []
+  }
+]
