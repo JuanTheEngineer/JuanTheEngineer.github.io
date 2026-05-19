@@ -1,0 +1,19 @@
+# Requirements for AI Video Sourcing Tool
+# Install with: pip install -r scripts/requirements-video-sourcing.txt
+
+# YouTube API
+google-api-python-client==2.108.0
+google-auth-httplib2==0.2.0
+google-auth-oauthlib==1.2.0
+
+# OpenAI API (GPT-4 Vision)
+openai==1.6.1
+
+# Video processing
+yt-dlp==2023.12.30
+
+# Image processing
+Pillow==10.1.0
+
+# Utilities
+requests==2.31.0
