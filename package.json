@@ -1,0 +1,26 @@
+{
+  "name": "juantheengineer-workout-app",
+  "version": "1.0.0",
+  "description": "Workout application with Cloudinary CDN integration",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "upload-to-cloudinary": "node scripts/upload-to-cloudinary.js"
+  },
+  "keywords": [
+    "workout",
+    "fitness",
+    "cloudinary"
+  ],
+  "author": "Juan Rodriguez",
+  "license": "MIT",
+  "devDependencies": {
+    "vitest": "^1.0.0",
+    "@vitest/coverage-v8": "^1.0.0"
+  },
+  "dependencies": {
+    "cloudinary": "^1.41.0"
+  }
+}
