@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://juantheengineer.github.io/schemas/workouts.json",
+  "title": "Workouts",
+  "description": "Root schema for workouts.json - collection of workout programs",
+  "type": "object",
+  "required": ["programs"],
+  "properties": {
+    "programs": {
+      "type": "array",
+      "description": "Array of workout programs",
+      "items": {
+        "$ref": "program.json"
+      }
+    },
+    "version": {
+      "type": "string",
+      "description": "Schema version for future migrations",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "examples": ["1.0.0", "2.0.0"]
+    }
+  },
+  "additionalProperties": false
+}

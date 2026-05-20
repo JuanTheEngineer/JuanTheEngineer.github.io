@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://juantheengineer.github.io/schemas/exercise.json",
+  "title": "Exercise",
+  "description": "A single exercise within a workout program",
+  "type": "object",
+  "required": ["gif", "reps", "sets", "repUnits"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Display name of the exercise",
+      "examples": ["Exercise 1: DB Squat Jumps", "Warm Up 2: Heel Taps"]
+    },
+    "gif": {
+      "type": "string",
+      "pattern": "^gifs/[A-Za-z0-9_/-]+\\.(gif|jpg|png|webp)$",
+      "description": "Local path to exercise media file",
+      "examples": ["gifs/FireHydrant.gif", "gifs/NoMoneyDrill.png"]
+    },
+    "cloudinaryUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "CDN URL for the exercise media"
+    },
+    "mediaType": {
+      "type": "string",
+      "enum": ["gif", "video", "image"],
+      "description": "Type of media"
+    },
+    "reps": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Number of repetitions (flexible format)",
+      "examples": ["10", "10-12", "AMRAP", "100 Total"]
+    },
+    "sets": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Number of sets (flexible format)",
+      "examples": ["4", "Varies", "Decrementing"]
+    },
+    "note": {
+      "type": "string",
+      "description": "Additional instructions or form tips"
+    },
+    "repUnits": {
+      "type": "string",
+      "enum": ["reps", "secs", "min", "yd", "rep", "reps (each side)"],
+      "description": "Unit of measurement for repetitions"
+    },
+    "subExercise": {
+      "$ref": "#",
+      "description": "Nested sub-exercise (for supersets)"
+    },
+    "compoundExercises": {
+      "type": "array",
+      "description": "Array of exercises for complex compound sets",
+      "items": {"$ref": "#"}
+    }
+  },
+  "additionalProperties": false
+}
