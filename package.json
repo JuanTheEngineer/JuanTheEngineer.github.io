@@ -7,7 +7,10 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "upload": "node scripts/upload-to-cloudinary.js"
+    "upload": "node scripts/upload-to-cloudinary.js",
+    "replace": "node scripts/replace-with-youtube.js",
+    "validate": "node scripts/validate-workouts.js",
+    "precommit": "npm run validate"
   },
   "keywords": [
     "workout",
@@ -17,10 +20,13 @@
   "author": "Juan Rodriguez",
   "license": "MIT",
   "devDependencies": {
-    "vitest": "^1.0.0",
-    "@vitest/coverage-v8": "^1.0.0"
+    "@vitest/coverage-v8": "^1.0.0",
+    "vitest": "^1.0.0"
   },
   "dependencies": {
-    "cloudinary": "^1.41.0"
+    "ajv": "^8.12.0",
+    "ajv-formats": "^3.0.1",
+    "cloudinary": "^1.41.0",
+    "dotenv": "^17.4.2"
   }
 }
