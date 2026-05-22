@@ -11,7 +11,8 @@
           "reps": "10",
           "sets": "4",
           "note": "Two seconds down, one second up. Elevate your heel.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208391/exercises/DeclinePistols.gif"
         },
         {
           "name": "Warm Up 2: Heel Taps",
@@ -19,7 +20,8 @@
           "reps": "10",
           "sets": "4",
           "note": "",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208442/exercises/HeelTaps.gif"
         },
         {
           "name": "Warm Up 3: TKEs",
@@ -27,7 +29,8 @@
           "reps": "20",
           "sets": "4",
           "note": "Keep the sole of your foot from rolling inward.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208526/exercises/TKEs.gif"
         },
         {
           "name": "Exercise 1: DB Squat Jumps",
@@ -35,7 +38,8 @@
           "reps": "4",
           "sets": "6",
           "note": "Weight: 10 lbs",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208389/exercises/DBSquatJumps.gif"
         },
         {
           "name": "Exercise 2: Trap Bar Deadlift",
@@ -43,7 +47,8 @@
           "reps": "8",
           "sets": "4",
           "note": "Rate of Perceived Exertion: 8/10",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208528/exercises/TrapBarDeadlift.gif"
         },
         {
           "name": "Exercise 3: Swiss Ball Leg Curls",
@@ -51,7 +56,8 @@
           "reps": "100 Total",
           "sets": "Varies",
           "note": "Focus on keeping your balance.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208526/exercises/SwissBallLegCurls.gif"
         },
         {
           "name": "Exercise 4: Side Planks",
@@ -59,7 +65,8 @@
           "reps": "45",
           "sets": "4",
           "note": "Kneeling.",
-          "repUnits": "secs"
+          "repUnits": "secs",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208476/exercises/KneelingSidePlanks.gif"
         },
         {
           "name": "Exercise 5: Hindu Squats",
@@ -67,7 +74,8 @@
           "reps": "3",
           "sets": "1",
           "note": "No resting.",
-          "repUnits": "min"
+          "repUnits": "min",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208444/exercises/HinduSquats.gif"
         }
       ]
     },
@@ -82,7 +90,8 @@
           "reps": "10",
           "sets": "4",
           "note": "Two seconds down, 1 second up. Elevate your heel.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208348/exercises/BoxPistols.gif"
         },
         {
           "name": "Warm Up 2: KB Passes",
@@ -90,7 +99,8 @@
           "reps": "10",
           "sets": "4",
           "note": "",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208451/exercises/KBPasses.gif"
         },
         {
           "name": "Warm Up 3: Low Box Drops",
@@ -98,7 +108,8 @@
           "reps": "10",
           "sets": "4",
           "note": "Keep the sole of your foot from rolling inward.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208483/exercises/LowBoxDrops.gif"
         },
         {
           "name": "Exercise 1: DB Box Squat",
@@ -106,7 +117,8 @@
           "reps": "15",
           "sets": "5",
           "note": "Weight: 10 lbs",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208382/exercises/DBBoxSquats.gif"
         },
         {
           "name": "Exercise 2: DB RDL & Split Squats",
@@ -120,8 +132,10 @@
             "reps": "12",
             "sets": "4",
             "note": "Controlled on the way down. Meant to be a Super Set.",
-            "repUnits": "reps"
-          }
+            "repUnits": "reps",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208523/exercises/SplitSquats.gif"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208384/exercises/DBRDLs.gif"
         },
         {
           "name": "Exercise 3: 45° Back Raise",
@@ -129,7 +143,8 @@
           "reps": "60 Total",
           "sets": "Varies",
           "note": "Go through full range of motion.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208272/exercises/45DegreeBackRaises.gif"
         },
         {
           "name": "Exercise 4: GHR Iso-Hold",
@@ -137,7 +152,8 @@
           "reps": "30",
           "sets": "4",
           "note": "Using a Weight.",
-          "repUnits": "secs"
+          "repUnits": "secs",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208439/exercises/GHRIsoHold.gif"
         },
         {
           "name": "Exercise 5: Heavy Sled Suicide",
@@ -145,7 +161,8 @@
           "reps": "30",
           "sets": "2",
           "note": "Add Weight to Sled.",
-          "repUnits": "yd"
+          "repUnits": "yd",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208441/exercises/HeavySledSuicide.gif"
         }
       ]
     },
@@ -160,7 +177,8 @@
           "reps": "10",
           "sets": "4",
           "note": "Two seconds down, one second up. Elevate your heel.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208391/exercises/DeclinePistols.gif"
         },
         {
           "name": "Warm Up 2: Heel Taps",
@@ -168,7 +186,8 @@
           "reps": "10",
           "sets": "4",
           "note": "Weight: 10 lbs",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208442/exercises/HeelTaps.gif"
         },
         {
           "name": "Warm Up 3: TKEs",
@@ -176,7 +195,8 @@
           "reps": "25",
           "sets": "4",
           "note": "Keep the sole of your foot from rolling inward.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208526/exercises/TKEs.gif"
         },
         {
           "name": "Exercise 1: DB Squat Jumps",
@@ -184,7 +204,8 @@
           "reps": "3",
           "sets": "5",
           "note": "Weight: 10 lbs",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208389/exercises/DBSquatJumps.gif"
         },
         {
           "name": "Exercise 2: Trap Bar Deadlift",
@@ -192,7 +213,8 @@
           "reps": "3-5",
           "sets": "5",
           "note": "Work up to your 3 to 5 rep maximum weight.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208528/exercises/TrapBarDeadlift.gif"
         },
         {
           "name": "Exercise 3: Split Squats & Split Squat Iso-Holds",
@@ -206,8 +228,10 @@
             "reps": "30",
             "sets": "4",
             "note": "Meant to be a Super Set.",
-            "repUnits": "secs"
-          }
+            "repUnits": "secs",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208996/exercises/SplitSquatIsoHold.jpg"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208523/exercises/SplitSquats.gif"
         },
         {
           "name": "Exercise 4: Glute Hamstring Raise",
@@ -215,7 +239,8 @@
           "reps": "30 Total",
           "sets": "Varies",
           "note": "Can be substituted with any hamstring workout if necessary.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208437/exercises/GHR.gif"
         },
         {
           "name": "Exercise 5: Rolling Side Planks",
@@ -223,7 +248,8 @@
           "reps": "10",
           "sets": "5",
           "note": "Rolling to each side is one rep.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208501/exercises/RollingSidePlanks.gif"
         }
       ]
     },
@@ -238,7 +264,8 @@
           "reps": "5",
           "repUnits": "reps",
           "sets": "4",
-          "note": "Start with low box if necessary."
+          "note": "Start with low box if necessary.",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208348/exercises/BoxPistols.gif"
         },
         {
           "name": "Warm Up 2: KB Passes",
@@ -246,7 +273,8 @@
           "reps": "10",
           "repUnits": "reps",
           "sets": "4",
-          "note": "One rep for each side."
+          "note": "One rep for each side.",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208451/exercises/KBPasses.gif"
         },
         {
           "name": "Warm Up 3: Low Box Jump to Heiden",
@@ -254,7 +282,8 @@
           "reps": "5",
           "repUnits": "reps",
           "sets": "4",
-          "note": "Land softly and compress your body on each rep."
+          "note": "Land softly and compress your body on each rep.",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208485/exercises/LowBoxJumptoHeiden.gif"
         },
         {
           "name": "Exercise 1: Front Squats",
@@ -262,7 +291,8 @@
           "reps": "5",
           "repUnits": "reps",
           "sets": "5",
-          "note": "Rate of Perceived Exertion: 8/10"
+          "note": "Rate of Perceived Exertion: 8/10",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208433/exercises/FrontSquats.gif"
         },
         {
           "name": "Exercise 2: Step-ups",
@@ -270,7 +300,8 @@
           "reps": "12",
           "repUnits": "reps",
           "sets": "4",
-          "note": "Complete reps for each side."
+          "note": "Complete reps for each side.",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208524/exercises/StepUps.gif"
         },
         {
           "name": "Exercise 3: KB Swings, Box Depth Drops, Broad Jumps",
@@ -304,7 +335,8 @@
           "reps": "25",
           "repUnits": "reps",
           "sets": "4",
-          "note": "Complete reps for each side."
+          "note": "Complete reps for each side.",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208385/exercises/DBSideBends.gif"
         }
       ]
     },
@@ -319,7 +351,8 @@
           "reps": "3",
           "sets": "3",
           "note": ".",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208530/exercises/TurkishGetups.gif"
         },
         {
           "name": "Warm Up 2: OH KB Carry",
@@ -327,7 +360,8 @@
           "reps": "150",
           "sets": "1",
           "note": "",
-          "repUnits": "yd"
+          "repUnits": "yd",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208489/exercises/OHKBCarry.gif"
         },
         {
           "name": "Warm Up 3: Over/Under Hurdles",
@@ -335,7 +369,8 @@
           "reps": "1",
           "sets": "3",
           "note": "Can be done with a Squat Bar.",
-          "repUnits": "rep"
+          "repUnits": "rep",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208494/exercises/OverUnderHurdles.gif"
         },
         {
           "name": "Exercise 1: Front Squat Iso-hold & Box Jumps",
@@ -349,8 +384,10 @@
             "reps": "6",
             "sets": "3",
             "note": "Box height should be 24-36 inches. Meant to be a Super Set.",
-            "repUnits": "reps"
-          }
+            "repUnits": "reps",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208343/exercises/BoxJumps.gif"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208432/exercises/FrontSquatIsoHolds.gif"
         },
         {
           "name": "Exercise 2: DB Split Squats",
@@ -358,7 +395,8 @@
           "reps": "12",
           "sets": "3",
           "note": "Controlled on the way down.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208523/exercises/SplitSquats.gif"
         },
         {
           "name": "Exercise 3: Weighted Chin-ups",
@@ -366,7 +404,8 @@
           "reps": "4",
           "sets": "5-6",
           "note": "Do these with a weight.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208362/exercises/Chinups.gif"
         },
         {
           "name": "Exercise 4: Hip Ext w/ Unilateral Eccentric & SL DB RDL",
@@ -404,7 +443,8 @@
           "reps": "10",
           "sets": "4",
           "note": "Five in each direction on both arms.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208426/exercises/FloorWashers.gif"
         },
         {
           "name": "Warm Up 2: Cat/Camel",
@@ -412,7 +452,8 @@
           "reps": "10",
           "sets": "4",
           "note": "",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208359/exercises/Cat_Camel.gif"
         },
         {
           "name": "Warm Up 3: No Money Drill",
@@ -420,7 +461,8 @@
           "reps": "10",
           "sets": "4",
           "note": "Keep your elbows close to your body.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208969/exercises/NoMoneyDrill.png"
         },
         {
           "name": "Warm Up 4: Javelin Stretch",
@@ -428,7 +470,8 @@
           "reps": "10",
           "sets": "4",
           "note": "Using an exercise band.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208449/exercises/JavelinStretch.gif"
         },
         {
           "name": "Exercise 1: NG DB Military Press",
@@ -436,7 +479,8 @@
           "reps": "8",
           "sets": "5",
           "note": "Keep your palms facing each other.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208488/exercises/NGDBMilitaryPress.gif"
         },
         {
           "name": "Exercise 2: Chin-ups & Pull-overs",
@@ -450,8 +494,10 @@
             "reps": "10",
             "sets": "5",
             "note": "Meant to be a Super Set.",
-            "repUnits": "reps"
-          }
+            "repUnits": "reps",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208498/exercises/Pullovers.gif"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208362/exercises/Chinups.gif"
         },
         {
           "name": "Exercise 3: Push-ups",
@@ -459,7 +505,8 @@
           "reps": "15 → 1",
           "sets": "Decrementing",
           "note": "Start with 15 reps and decrease by 1 for each set.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208499/exercises/Pushups.gif"
         },
         {
           "name": "Exercise 4: OH Sit-ups",
@@ -467,7 +514,8 @@
           "reps": "8",
           "sets": "3",
           "note": "Use a 45lbs plate.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208489/exercises/OHSitups.gif"
         },
         {
           "name": "Exercise 5: Battle Ropes",
@@ -475,7 +523,8 @@
           "reps": "1",
           "sets": "3",
           "note": "Aim for 1 minute but push to failure on each set.Try a variety of styles in 15 second segements.",
-          "repUnits": "min"
+          "repUnits": "min",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208333/exercises/BattleRopes.gif"
         }
       ]
     },
@@ -490,7 +539,8 @@
           "reps": "10",
           "sets": "4",
           "note": "Five in each direction on both arms.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208426/exercises/FloorWashers.gif"
         },
         {
           "name": "Warm Up 2: Cat/Camel",
@@ -498,7 +548,8 @@
           "reps": "10",
           "sets": "4",
           "note": "",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208359/exercises/Cat_Camel.gif"
         },
         {
           "name": "Warm Up 3: No Money Drill",
@@ -506,7 +557,8 @@
           "reps": "10",
           "sets": "4",
           "note": "Keep your elbows close to your body.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208969/exercises/NoMoneyDrill.png"
         },
         {
           "name": "Warm Up 4: Javelin Stretch",
@@ -514,7 +566,8 @@
           "reps": "10",
           "sets": "4",
           "note": "Using an exercise band.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208449/exercises/JavelinStretch.gif"
         },
         {
           "name": "Exercise 1: NG DB Military Press",
@@ -522,7 +575,8 @@
           "reps": "8",
           "sets": "3",
           "note": "Keep your palms facing each other.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208488/exercises/NGDBMilitaryPress.gif"
         },
         {
           "name": "Exercise 2: Chin-ups & Pull-overs",
@@ -536,8 +590,10 @@
             "reps": "10",
             "sets": "3",
             "note": "Meant to be a Super Set.",
-            "repUnits": "reps"
-          }
+            "repUnits": "reps",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208498/exercises/Pullovers.gif"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208362/exercises/Chinups.gif"
         },
         {
           "name": "Exercise 3: Push-ups",
@@ -545,7 +601,8 @@
           "reps": "12 → 1",
           "sets": "Decrementing",
           "note": "Start with 12 reps and decrease by 1 for each set.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208499/exercises/Pushups.gif"
         },
         {
           "name": "Exercise 4: OH Sit-ups",
@@ -553,7 +610,8 @@
           "reps": "8",
           "sets": "3",
           "note": "Use a 45lbs plate.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208489/exercises/OHSitups.gif"
         },
         {
           "name": "Exercise 5: Battle Ropes",
@@ -561,7 +619,8 @@
           "reps": "1",
           "sets": "3",
           "note": "Aim for 1 minute but push to failure on each set.Try a variety of styles in 15 second segements.",
-          "repUnits": "min"
+          "repUnits": "min",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208333/exercises/BattleRopes.gif"
         }
       ]
     },
@@ -576,7 +635,8 @@
           "reps": "5",
           "sets": "4",
           "note": "Five in each direction on both arms. Reach your hand out between each rep.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208426/exercises/FloorWashers.gif"
         },
         {
           "name": "Warm Up 2: Yoga Push-up",
@@ -584,7 +644,8 @@
           "reps": "10",
           "sets": "4",
           "note": "",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208533/exercises/YogaPushup.gif"
         },
         {
           "name": "Warm Up 3: Downward Dog Toe Touch",
@@ -592,7 +653,8 @@
           "reps": "5",
           "sets": "4",
           "note": "",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208395/exercises/DownwardDogToeTouches.gif"
         },
         {
           "name": "Exercise 1: Chin-ups",
@@ -600,7 +662,8 @@
           "reps": "AMRAP",
           "sets": "1",
           "note": "Go for as many reps as possible.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208362/exercises/Chinups.gif"
         },
         {
           "name": "Exercise 2: NG DB Incline Bench & Feet Elevated Push-ups",
@@ -614,8 +677,10 @@
             "reps": "15-20",
             "sets": "5",
             "note": "Meant to be a Super Set.",
-            "repUnits": "reps"
-          }
+            "repUnits": "reps",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208398/exercises/FeetElevatedPushUps.gif"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208487/exercises/NGDBInclineBench.gif"
         },
         {
           "name": "Exercise 3: Kroc Rows Burnout",
@@ -623,7 +688,8 @@
           "reps": "AMRAP",
           "sets": "1",
           "note": "Weight: 30-50 lbs",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208477/exercises/KrocRows1.gif"
         },
         {
           "name": "Exercise 4: Kroc Rows & Scarecrows",
@@ -637,8 +703,10 @@
             "reps": "15",
             "sets": "4",
             "note": "Meant to be a Super Set.",
-            "repUnits": "reps"
-          }
+            "repUnits": "reps",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208502/exercises/Scarecrows.gif"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208478/exercises/KrocRows2.gif"
         },
         {
           "name": "Exercise 5: One Arm OH Carry",
@@ -646,7 +714,8 @@
           "reps": "50",
           "sets": "3",
           "note": "Choose a safe weight.",
-          "repUnits": "yd"
+          "repUnits": "yd",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208491/exercises/OneArmOHCarry.gif"
         }
       ]
     },
@@ -716,7 +785,8 @@
           "reps": "10",
           "repUnits": "reps",
           "sets": "2",
-          "note": "Note: Inhale forward, Exhale back. Keep chin to chest and butt on the ground."
+          "note": "Note: Inhale forward, Exhale back. Keep chin to chest and butt on the ground.",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208496/exercises/Posture_Ex1.gif"
         }
       ]
     },
@@ -731,7 +801,8 @@
           "reps": "10",
           "repUnits": "reps",
           "sets": "4",
-          "note": "Note: Keep your elbows close to your body."
+          "note": "Note: Keep your elbows close to your body.",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208969/exercises/NoMoneyDrill.png"
         },
         {
           "name": "Warm Up 2: Downward Dog Toe Touch",
@@ -739,7 +810,8 @@
           "reps": "5",
           "repUnits": "reps",
           "sets": "4",
-          "note": "Note: ."
+          "note": "Note: .",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208395/exercises/DownwardDogToeTouches.gif"
         },
         {
           "name": "Exercise 1: Close Grip Pulldowns & Cable Rows",
@@ -753,8 +825,10 @@
             "reps": "12",
             "repUnits": "reps",
             "sets": "4",
-            "note": "Note: Meant to be a Super Set."
-          }
+            "note": "Note: Meant to be a Super Set.",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208354/exercises/CableRows.gif"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208365/exercises/CloseGripPulldowns.gif"
         },
         {
           "name": "Exercise 2: Wide Grip Pulldowns & Bent-over Rows",
@@ -768,8 +842,10 @@
             "reps": "12",
             "repUnits": "reps",
             "sets": "4",
-            "note": "Note: Can be done with Dumbbells. Meant to be a Super Set."
-          }
+            "note": "Note: Can be done with Dumbbells. Meant to be a Super Set.",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208336/exercises/BentoverRows.gif"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208532/exercises/WideGripPulldowns.gif"
         },
         {
           "name": "Exercise 3: Cable Lateral Pullovers & Zottman Curls",
@@ -783,8 +859,10 @@
             "reps": "12",
             "repUnits": "reps",
             "sets": "4",
-            "note": "Note: Meant to be a Super Set."
-          }
+            "note": "Note: Meant to be a Super Set.",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208534/exercises/ZottmanCurls.gif"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208352/exercises/CableLateralPullovers.gif"
         },
         {
           "name": "Exercise 4: Shrugs & Crush Grip Curls",
@@ -798,8 +876,10 @@
             "reps": "10",
             "repUnits": "reps",
             "sets": "4",
-            "note": "Note: For the last set, perform an Iso-hold for as long as possible. Meant to be a Super Set."
-          }
+            "note": "Note: For the last set, perform an Iso-hold for as long as possible. Meant to be a Super Set.",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208368/exercises/CrushGripCurls.gif"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208505/exercises/Shrugs.gif"
         },
         {
           "name": "Exercise 5: DB Side Bends",
@@ -807,7 +887,8 @@
           "reps": "100",
           "repUnits": "reps",
           "sets": "Varies",
-          "note": "Note: Complete reps for each side."
+          "note": "Note: Complete reps for each side.",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208385/exercises/DBSideBends.gif"
         }
       ]
     },
@@ -822,7 +903,8 @@
           "reps": "10",
           "repUnits": "reps",
           "sets": "4",
-          "note": "Note: Using an exercise band."
+          "note": "Note: Using an exercise band.",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208449/exercises/JavelinStretch.gif"
         },
         {
           "name": "Warm Up 2: Yoga Push-up",
@@ -830,7 +912,8 @@
           "reps": "10",
           "repUnits": "reps",
           "sets": "4",
-          "note": ""
+          "note": "",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208533/exercises/YogaPushup.gif"
         },
         {
           "name": "Exercise 1: Chest Flies & Front Raises",
@@ -844,8 +927,10 @@
             "reps": "12",
             "repUnits": "reps",
             "sets": "4",
-            "note": "Weight: 45 lbs. Note: Meant to be a Super Set."
-          }
+            "note": "Weight: 45 lbs. Note: Meant to be a Super Set.",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208430/exercises/FrontRaises.gif"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208360/exercises/ChestFlies.gif"
         },
         {
           "name": "Exercise 2: Flat Bench Press & DB Military Press",
@@ -859,8 +944,10 @@
             "reps": "10-12",
             "repUnits": "reps",
             "sets": "4",
-            "note": "Note: Standing. Meant to be a Super Set."
-          }
+            "note": "Note: Standing. Meant to be a Super Set.",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208488/exercises/NGDBMilitaryPress.gif"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208424/exercises/FlatBenchPress.gif"
         },
         {
           "name": "Exercise 3: Skullcrushers & DB Side Lateral Raises",
@@ -874,8 +961,10 @@
             "reps": "10-12",
             "repUnits": "reps",
             "sets": "4",
-            "note": "Note: Meant to be a Super Set."
-          }
+            "note": "Note: Meant to be a Super Set.",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208387/exercises/DBSideLateralRaises.gif"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208521/exercises/Skullcrushers.gif"
         },
         {
           "name": "Exercise 4: Dips & Feet-Elevated PushUps",
@@ -889,8 +978,10 @@
             "reps": "12-15",
             "repUnits": "reps",
             "sets": "4",
-            "note": "Note: Meant to be a Super Set."
-          }
+            "note": "Note: Meant to be a Super Set.",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208398/exercises/FeetElevatedPushUps.gif"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208392/exercises/Dips.gif"
         },
         {
           "name": "Exercise 5: High Plank/Low Plank",
@@ -898,7 +989,8 @@
           "reps": "10",
           "repUnits": "reps",
           "sets": "3",
-          "note": "Note: Do the reps once for each direction."
+          "note": "Note: Do the reps once for each direction.",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208443/exercises/HighLowPlanks.gif"
         }
       ]
     },
@@ -913,7 +1005,8 @@
           "reps": "10",
           "repUnits": "reps",
           "sets": "3",
-          "note": "Note: Two seconds down, one second up. Elevate your heel."
+          "note": "Note: Two seconds down, one second up. Elevate your heel.",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208391/exercises/DeclinePistols.gif"
         },
         {
           "name": "Warm Up 2: KB Passes",
@@ -921,7 +1014,8 @@
           "reps": "10",
           "repUnits": "reps",
           "sets": "3",
-          "note": ""
+          "note": "",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208451/exercises/KBPasses.gif"
         },
         {
           "name": "Exercise 1: Barbell Squats & DB Jump Squats",
@@ -935,8 +1029,10 @@
             "reps": "6",
             "repUnits": "reps",
             "sets": "4",
-            "note": "Weight: 10 lbs. Note: Meant to be a Super Set."
-          }
+            "note": "Weight: 10 lbs. Note: Meant to be a Super Set.",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208389/exercises/DBSquatJumps.gif"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208306/exercises/BarbellSquat.gif"
         },
         {
           "name": "Exercise 2: Split Squats & DB RDL",
@@ -950,8 +1046,10 @@
             "reps": "12",
             "repUnits": "reps",
             "sets": "4",
-            "note": "Note: Controlled on the way down. Meant to be a Super Set."
-          }
+            "note": "Note: Controlled on the way down. Meant to be a Super Set.",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208384/exercises/DBRDLs.gif"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208523/exercises/SplitSquats.gif"
         },
         {
           "name": "Exercise 3: Elevated Heel Goblet Squats & Leg Curls",
@@ -965,8 +1063,10 @@
             "reps": "12",
             "repUnits": "reps",
             "sets": "4",
-            "note": "Note: Squeeze toes together. Meant to be a Super Set."
-          }
+            "note": "Note: Squeeze toes together. Meant to be a Super Set.",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208481/exercises/LegCurls.gif"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208397/exercises/ElevatedHeelGobletSquat.gif"
         },
         {
           "name": "Exercise 4: Hip Abductions & Calf Raises",
@@ -980,8 +1080,10 @@
             "reps": "15",
             "repUnits": "reps",
             "sets": "3",
-            "note": "Note: Meant to be a Super Set."
-          }
+            "note": "Note: Meant to be a Super Set.",
+            "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208356/exercises/CalfRaises.gif"
+          },
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208448/exercises/HipAbductions.gif"
         }
       ]
     },

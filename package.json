@@ -10,7 +10,8 @@
     "upload": "node scripts/upload-to-cloudinary.js",
     "replace": "node scripts/replace-with-youtube.js",
     "validate": "node scripts/validate-workouts.js",
-    "precommit": "npm run validate"
+    "precommit": "npm run validate",
+    "add-cloudinary-urls": "node scripts/add-cloudinary-urls.js"
   },
   "keywords": [
     "workout",
