@@ -400,7 +400,7 @@
       "exercises": [
         {
           "name": "Warm Up 1: Floor Washers",
-          "gif": "gifs/agi_up_1w1.gif",
+          "gif": "gifs/FloorWashers.gif",
           "reps": "10",
           "sets": "4",
           "note": "Five in each direction on both arms.",
@@ -486,7 +486,7 @@
       "exercises": [
         {
           "name": "Warm Up 1: Floor Washers",
-          "gif": "gifs/agi_up_1w1.gif",
+          "gif": "gifs/FloorWashers.gif",
           "reps": "10",
           "sets": "4",
           "note": "Five in each direction on both arms.",
@@ -572,7 +572,7 @@
       "exercises": [
         {
           "name": "Warm Up 1: Floor Washers w/ Reach",
-          "gif": "gifs/agi_up_1w1.gif",
+          "gif": "gifs/FloorWashers.gif",
           "reps": "5",
           "sets": "4",
           "note": "Five in each direction on both arms. Reach your hand out between each rep.",
@@ -1027,6 +1027,7 @@
           "gif": "",
           "reps": "4",
           "sets": "rounds",
+          "repUnits": "reps",
           "note": "Perform running gear drills."
         },
         {
@@ -1105,6 +1106,7 @@
           "gif": "",
           "reps": "4",
           "sets": "rounds",
+          "repUnits": "reps",
           "note": "Perform running gear drills."
         },
         {
