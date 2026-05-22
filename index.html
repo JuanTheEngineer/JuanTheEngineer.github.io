@@ -1447,7 +1447,7 @@
       // Create exercise GIF
       const exerciseGif = document.createElement('img');
       exerciseGif.className = 'exercise-gif';
-      exerciseGif.src = exercise.gif;
+      exerciseGif.src = exercise.cloudinaryUrl || exercise.gif;
       exerciseGif.alt = exercise.name;
 
       // Create exercise notes
@@ -1520,7 +1520,7 @@
         // Create subexercise GIF
         const subGif = document.createElement('img');
         subGif.className = 'exercise-gif';
-        subGif.src = exercise.subExercise.gif;
+        subGif.src = exercise.subExercise.cloudinaryUrl || exercise.subExercise.gif;
         subGif.alt = 'Part 2 Exercise';
 
         // Create subexercise notes
