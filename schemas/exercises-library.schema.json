@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Exercises Library",
+  "description": "Canonical library of all exercises with media sources",
+  "type": "object",
+  "required": ["version", "exercises"],
+  "properties": {
+    "version": { "type": "string" },
+    "lastUpdated": { "type": "string", "format": "date-time" },
+    "exercises": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/exercise" }
+    }
+  },
+  "definitions": {
+    "exercise": {
+      "type": "object",
+      "required": ["id", "name", "sources"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "name": { "type": "string", "minLength": 1 },
+        "aliases": { "type": "array", "items": { "type": "string" } },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/mediaSource" }
+        },
+        "recommendations": {
+          "type": "object",
+          "properties": {
+            "reps": { "type": "string" },
+            "sets": { "type": "string" },
+            "repUnits": { "type": "string" },
+            "note": { "type": "string" }
+          }
+        },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "equipment": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "mediaSource": {
+      "type": "object",
+      "required": ["type", "url"],
+      "properties": {
+        "type": { "type": "string", "enum": ["cloudinary", "youtube", "tiktok", "vimeo", "url", "local"] },
+        "mediaType": { "type": "string", "enum": ["image", "video"] },
+        "format": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "startTime": { "type": "number", "minimum": 0, "default": 0 },
+        "endTime": { "type": "number", "minimum": 0, "default": 0 },
+        "isPrimary": { "type": "boolean", "default": false },
+        "notes": { "type": "string" },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string" },
+            "channel": { "type": "string" },
+            "duration": { "type": "number" },
+            "views": { "type": "number" },
+            "confidence": { "type": "number" }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
