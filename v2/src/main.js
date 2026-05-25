@@ -1,70 +1,63 @@
 // Action App V2 - Entry point
 import './styles/main.css';
-import { renderMedia } from './components/MediaPlayer.js';
+import { route, setNotFound, startRouter } from './utils/router.js';
+import { renderHomePage } from './pages/HomePage.js';
 
 const app = document.getElementById('app');
 
-// Sample sources to demo all media types
-const demoSources = [
-  {
-    label: 'Cloudinary GIF',
-    source: {
-      type: 'cloudinary',
-      mediaType: 'video',
-      format: 'gif',
-      url: 'https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208391/exercises/DeclinePistols.gif'
-    }
-  },
-  {
-    label: 'Cloudinary MP4 (autoplay, loop, muted)',
-    source: {
-      type: 'cloudinary',
-      mediaType: 'video',
-      format: 'mp4',
-      url: 'https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229133/exercises/FireHydrant.mp4'
-    }
-  },
-  {
-    label: 'YouTube (click-to-play)',
-    source: {
-      type: 'youtube',
-      mediaType: 'video',
-      format: 'youtube',
-      url: 'https://www.youtube.com/watch?v=IRkRgk2Gc1E',
-      notes: 'Fire Hydrant demonstration'
-    }
-  },
-  {
-    label: 'YouTube Shorts (click-to-play)',
-    source: {
-      type: 'youtube',
-      mediaType: 'video',
-      format: 'youtube',
-      url: 'https://www.youtube.com/shorts/9Rrz2R2Y6AQ'
-    }
-  }
-];
+// Loading state helper
+function renderLoading() {
+  app.innerHTML = `
+    <div class="flex-1 flex items-center justify-center min-h-screen">
+      <div class="w-8 h-8 border-2 border-brand-500 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+  `;
+}
 
-app.innerHTML = `
-  <header class="px-6 pt-12 pb-4">
-    <h1 class="text-3xl font-bold tracking-tight">MediaPlayer Demo</h1>
-    <p class="text-slate-400 mt-1 text-sm">Testing all source types</p>
-  </header>
+// Stub pages until they're built
+function renderStub(title, message) {
+  return (params) => {
+    app.innerHTML = `
+      <div class="flex-1 flex flex-col">
+        <header class="px-6 pt-12 pb-4 flex items-center gap-3">
+          <button onclick="window.history.back()" class="btn-ghost -ml-2 px-3" aria-label="Back">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <h1 class="text-2xl font-bold">${title}</h1>
+        </header>
+        <main class="flex-1 px-6 pb-24">
+          <div class="card p-6 animate-slide-up">
+            <p class="text-slate-400">${message}</p>
+            ${params && Object.keys(params).length ? `
+              <pre class="text-xs text-slate-500 mt-3 font-mono">${JSON.stringify(params, null, 2)}</pre>
+            ` : ''}
+          </div>
+        </main>
+      </div>
+    `;
+  };
+}
 
-  <main class="flex-1 px-6 pb-24 space-y-6">
-    ${demoSources.map((demo, i) => `
-      <section class="space-y-2 animate-slide-up" style="animation-delay: ${i * 50}ms">
-        <h2 class="text-sm font-medium text-slate-300">${demo.label}</h2>
-        <div data-media-slot="${i}"></div>
-      </section>
-    `).join('')}
-  </main>
-`;
+// Register routes
+route('/', () => renderHomePage(app));
+route('/programs', renderStub('Programs', 'Program list coming next.'));
+route('/program/:id', renderStub('Program', 'Program detail page coming next.'));
+route('/exercises', renderStub('Exercise Library', 'Exercise library coming next.'));
+route('/exercise/:id', renderStub('Exercise', 'Single exercise page coming next.'));
 
-// Render each demo source
-demoSources.forEach((demo, i) => {
-  const slot = app.querySelector(`[data-media-slot="${i}"]`);
-  if (slot) renderMedia(slot, demo.source);
+setNotFound((path) => {
+  app.innerHTML = `
+    <div class="flex-1 flex flex-col items-center justify-center min-h-screen px-6 text-center">
+      <p class="text-6xl mb-4">🤔</p>
+      <h1 class="text-2xl font-bold mb-2">Page not found</h1>
+      <p class="text-slate-400 mb-6 text-sm">${path}</p>
+      <a href="#/" class="btn-primary">Back home</a>
+    </div>
+  `;
 });
 
-console.log('🚀 Action App V2 — MediaPlayer demo loaded');
+// Boot
+startRouter();
+console.log('🚀 Action App V2 ready');
