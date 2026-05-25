@@ -8,7 +8,8 @@
 
 const cache = {
   workouts: null,
-  exercises: null
+  exercises: null,
+  plans: null
 };
 
 /**
@@ -38,6 +39,20 @@ export async function loadExercises() {
   if (!res.ok) throw new Error(`Failed to load exercises.json: ${res.status}`);
   const data = await res.json();
   cache.exercises = data;
+  return data;
+}
+
+/**
+ * Load plans.json (program categorization).
+ */
+export async function loadPlans() {
+  if (cache.plans) return cache.plans;
+
+  const url = resolveDataUrl('plans.json');
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Failed to load plans.json: ${res.status}`);
+  const data = await res.json();
+  cache.plans = data;
   return data;
 }
 

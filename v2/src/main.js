@@ -2,6 +2,7 @@
 import './styles/main.css';
 import { route, setNotFound, startRouter } from './utils/router.js';
 import { renderHomePage } from './pages/HomePage.js';
+import { renderProgramListPage } from './pages/ProgramListPage.js';
 
 const app = document.getElementById('app');
 
@@ -42,7 +43,7 @@ function renderStub(title, message) {
 
 // Register routes
 route('/', () => renderHomePage(app));
-route('/programs', renderStub('Programs', 'Program list coming next.'));
+route('/programs', () => renderProgramListPage(app));
 route('/program/:id', renderStub('Program', 'Program detail page coming next.'));
 route('/exercises', renderStub('Exercise Library', 'Exercise library coming next.'));
 route('/exercise/:id', renderStub('Exercise', 'Single exercise page coming next.'));

@@ -11,7 +11,7 @@ const publicDir = join(v2Root, 'public');
 
 if (!existsSync(publicDir)) mkdirSync(publicDir, { recursive: true });
 
-const files = ['workouts.json', 'exercises.json'];
+const files = ['workouts.json', 'exercises.json', 'plans.json'];
 for (const file of files) {
   const src = join(projectRoot, file);
   const dest = join(publicDir, file);
