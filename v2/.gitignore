@@ -3,3 +3,7 @@ dist
 .DS_Store
 *.local
 .vite
+
+# Auto-copied data files (source of truth lives in project root)
+public/workouts.json
+public/exercises.json

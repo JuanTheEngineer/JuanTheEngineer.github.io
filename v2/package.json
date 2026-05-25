@@ -4,6 +4,8 @@
   "description": "Action App V2 - Modern mobile-first workout webapp",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/copy-data.js",
+    "prebuild": "node scripts/copy-data.js",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
