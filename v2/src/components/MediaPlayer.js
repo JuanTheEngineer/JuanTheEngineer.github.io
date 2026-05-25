@@ -1,0 +1,127 @@
+// MediaPlayer: smooth multi-source media renderer
+// Handles cloudinary (gif/mp4), youtube (click-to-play), local files
+import {
+  getYouTubeThumbnail,
+  getYouTubeEmbedUrl,
+  transformCloudinaryUrl,
+  getRenderStrategy
+} from '../utils/media-utils.js';
+
+/**
+ * Render a single media source into the given container.
+ * Caller controls when/how to swap sources.
+ *
+ * @param {HTMLElement} container - The element to render into
+ * @param {Object} source - Source object from exercises.json
+ * @param {Object} options - { autoplay, className }
+ */
+export function renderMedia(container, source, options = {}) {
+  if (!source) {
+    container.innerHTML = `<div class="aspect-video bg-slate-800 rounded-2xl flex items-center justify-center text-slate-500 text-sm">No media</div>`;
+    return;
+  }
+
+  const strategy = getRenderStrategy(source);
+  const className = options.className || 'w-full aspect-video object-cover rounded-2xl bg-slate-800';
+
+  // Fade in once loaded
+  container.classList.add('animate-fade-in');
+
+  switch (strategy) {
+    case 'image':
+      renderImage(container, source, className);
+      break;
+    case 'video':
+      renderVideo(container, source, className, options.autoplay);
+      break;
+    case 'embed':
+      renderEmbed(container, source, className);
+      break;
+    default:
+      container.innerHTML = `<div class="${className} flex items-center justify-center text-slate-500 text-sm">Unsupported media type</div>`;
+  }
+}
+
+function renderImage(container, source, className) {
+  const url = source.type === 'cloudinary'
+    ? transformCloudinaryUrl(source.url, 'w_800,q_auto,f_auto')
+    : source.url;
+
+  container.innerHTML = `
+    <img
+      src="${url}"
+      alt="Exercise demonstration"
+      class="${className}"
+      loading="lazy"
+      decoding="async"
+    />
+  `;
+}
+
+function renderVideo(container, source, className, autoplay = true) {
+  const url = source.type === 'cloudinary'
+    ? transformCloudinaryUrl(source.url, 'w_800,q_auto,f_auto')
+    : source.url;
+
+  const startAttr = source.startTime ? `#t=${source.startTime}` : '';
+
+  container.innerHTML = `
+    <video
+      src="${url}${startAttr}"
+      class="${className}"
+      ${autoplay ? 'autoplay' : ''}
+      loop
+      muted
+      playsinline
+      preload="metadata"
+    ></video>
+  `;
+}
+
+function renderEmbed(container, source, className) {
+  // Click-to-play pattern: show thumbnail, load iframe only on tap
+  const thumb = source.type === 'youtube'
+    ? getYouTubeThumbnail(source.url, 'hqdefault')
+    : null;
+
+  const playButton = `
+    <button
+      class="group relative ${className} flex items-center justify-center overflow-hidden touch-manipulation"
+      data-action="play-embed"
+      aria-label="Play video"
+    >
+      ${thumb ? `<img src="${thumb}" alt="Video thumbnail" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />` : ''}
+      <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+      <div class="relative z-10 w-16 h-16 rounded-full bg-brand-500 group-active:scale-95 transition-transform flex items-center justify-center shadow-2xl">
+        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </div>
+      <span class="absolute bottom-3 right-3 text-xs text-white/80 bg-black/60 px-2 py-1 rounded-full">
+        ${source.type === 'youtube' ? 'YouTube' : source.type}
+      </span>
+    </button>
+  `;
+
+  container.innerHTML = playButton;
+
+  // Wire up click-to-play
+  const button = container.querySelector('[data-action="play-embed"]');
+  if (button) {
+    button.addEventListener('click', () => {
+      const embedUrl = source.type === 'youtube'
+        ? getYouTubeEmbedUrl(source.url, { startTime: source.startTime, endTime: source.endTime })
+        : source.url;
+
+      container.innerHTML = `
+        <iframe
+          src="${embedUrl}"
+          class="${className}"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      `;
+    }, { once: true });
+  }
+}
