@@ -11,7 +11,9 @@
     "replace": "node scripts/replace-with-youtube.js",
     "validate": "node scripts/validate-workouts.js",
     "precommit": "npm run validate",
-    "add-cloudinary-urls": "node scripts/add-cloudinary-urls.js"
+    "add-cloudinary-urls": "node scripts/add-cloudinary-urls.js",
+    "update-workouts": "node scripts/update-workouts-with-videos.js",
+    "build-exercises": "node scripts/build-exercises-library.js"
   },
   "keywords": [
     "workout",

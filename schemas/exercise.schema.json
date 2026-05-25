@@ -21,7 +21,51 @@
         "cloudinaryUrl": {
           "type": "string",
           "format": "uri",
-          "description": "CDN URL for the exercise media"
+          "description": "CDN URL for the exercise media (LEGACY - use source instead)"
+        },
+        "startTime": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Start time in seconds for video playback (LEGACY - use source instead)"
+        },
+        "endTime": {
+          "type": "number",
+          "minimum": 0,
+          "description": "End time in seconds for video playback (LEGACY - use source instead)"
+        },
+        "source": {
+          "type": "object",
+          "description": "Primary media source for this exercise",
+          "required": ["type", "url"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["cloudinary", "youtube", "url", "gif"],
+              "description": "Type of media source"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL to the media"
+            },
+            "startTime": {
+              "type": "number",
+              "minimum": 0,
+              "default": 0,
+              "description": "Start time in seconds (0 = beginning)"
+            },
+            "endTime": {
+              "type": "number",
+              "minimum": 0,
+              "default": 0,
+              "description": "End time in seconds (0 = end of video)"
+            },
+            "notes": {
+              "type": "string",
+              "description": "Notes about this source"
+            }
+          },
+          "additionalProperties": false
         },
         "mediaType": {
           "type": "string",
@@ -47,6 +91,41 @@
           "enum": ["reps", "secs", "min", "yd", "rep", "reps (each side)", "secs (each side)"],
           "description": "Unit of measurement for repetitions"
         },
+        "alternatives": {
+          "type": "array",
+          "description": "Alternative video sources for this exercise",
+          "items": {
+            "type": "object",
+            "required": ["type", "url"],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["youtube", "cloudinary", "url"],
+                "description": "Type of alternative media source"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "URL to the alternative media"
+              },
+              "startTime": {
+                "type": "number",
+                "minimum": 0,
+                "description": "Start time in seconds (for video sources)"
+              },
+              "endTime": {
+                "type": "number",
+                "minimum": 0,
+                "description": "End time in seconds (for video sources)"
+              },
+              "notes": {
+                "type": "string",
+                "description": "Notes about this alternative"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
         "subExercise": {
           "type": "object",
           "required": ["gif", "reps", "sets", "repUnits"],
@@ -62,6 +141,16 @@
             "cloudinaryUrl": {
               "type": "string",
               "format": "uri"
+            },
+            "startTime": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Start time in seconds for video playback"
+            },
+            "endTime": {
+              "type": "number",
+              "minimum": 0,
+              "description": "End time in seconds for video playback"
             },
             "reps": {
               "type": "string",
@@ -111,6 +200,16 @@
               "cloudinaryUrl": {
                 "type": "string",
                 "format": "uri"
+              },
+              "startTime": {
+                "type": "number",
+                "minimum": 0,
+                "description": "Start time in seconds for video playback"
+              },
+              "endTime": {
+                "type": "number",
+                "minimum": 0,
+                "description": "End time in seconds for video playback"
               },
               "reps": {
                 "type": "string",
