@@ -12,7 +12,19 @@
           "sets": "4",
           "note": "Two seconds down, one second up. Elevate your heel.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208391/exercises/DeclinePistols.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208391/exercises/DeclinePistols.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=or1frhkjBDc",
+              "notes": "Unlock🔓 Your 1st Pistol Squat"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=sBKIoPQsw1U",
+              "notes": "Unlock🔓 Your 1st Pistol Squat"
+            }
+          ]
         },
         {
           "name": "Warm Up 2: Heel Taps",
@@ -21,7 +33,24 @@
           "sets": "4",
           "note": "",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208442/exercises/HeelTaps.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208442/exercises/HeelTaps.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=w2Um9ULrcBI",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=3MNj7LrRX3U",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=V87VgAcB6CY",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Warm Up 3: TKEs",
@@ -30,7 +59,19 @@
           "sets": "4",
           "note": "Keep the sole of your foot from rolling inward.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208526/exercises/TKEs.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208526/exercises/TKEs.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=CNEXyR1fPZo",
+              "notes": "How to perform the banded Terminal Knee Extension (TKE) exercise | Knee Pain"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=W7n9dUiEbLM",
+              "notes": "How to perform the banded Terminal Knee Extension (TKE) exercise | Knee Pain"
+            }
+          ]
         },
         {
           "name": "Exercise 1: DB Squat Jumps",
@@ -39,7 +80,19 @@
           "sets": "6",
           "note": "Weight: 10 lbs",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208389/exercises/DBSquatJumps.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208389/exercises/DBSquatJumps.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=OTyb4YUDYYY",
+              "notes": "Dumbbell Jump Squat | Exercise Guide"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=iE7v4vgLeHg",
+              "notes": "Dumbbell Jump Squat | Exercise Guide"
+            }
+          ]
         },
         {
           "name": "Exercise 2: Trap Bar Deadlift",
@@ -48,7 +101,19 @@
           "sets": "4",
           "note": "Rate of Perceived Exertion: 8/10",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208528/exercises/TrapBarDeadlift.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208528/exercises/TrapBarDeadlift.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=v-SrIcAp3vM",
+              "notes": "Body Steel The Rise of HEX BAR 5 WORKOUT VIDEO #bodysteelfitness #gymequipmentsupplier #ytshort"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=a7sQPZsmxvA",
+              "notes": "Body Steel The Rise of HEX BAR 5 WORKOUT VIDEO #bodysteelfitness #gymequipmentsupplier #ytshort"
+            }
+          ]
         },
         {
           "name": "Exercise 3: Swiss Ball Leg Curls",
@@ -57,7 +122,14 @@
           "sets": "Varies",
           "note": "Focus on keeping your balance.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208526/exercises/SwissBallLegCurls.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208526/exercises/SwissBallLegCurls.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=USf54AlNk1g",
+              "notes": "Swiss Ball Hamstring Curl | Nuffield Health"
+            }
+          ]
         },
         {
           "name": "Exercise 4: Side Planks",
@@ -66,7 +138,19 @@
           "sets": "4",
           "note": "Kneeling.",
           "repUnits": "secs",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208476/exercises/KneelingSidePlanks.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208476/exercises/KneelingSidePlanks.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=NXr4Fw8q60o",
+              "notes": "How not to side plank and how to do the side plank! #plank #abs #abworkout"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=BFOyHDlY2UE",
+              "notes": "How not to side plank and how to do the side plank! #plank #abs #abworkout"
+            }
+          ]
         },
         {
           "name": "Exercise 5: Hindu Squats",
@@ -75,7 +159,19 @@
           "sets": "1",
           "note": "No resting.",
           "repUnits": "min",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208444/exercises/HinduSquats.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208444/exercises/HinduSquats.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=DXvIzLtN-qY",
+              "notes": "The Unreal Power of Hindu Squats."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=E1GJi0iiUk4",
+              "notes": "The Unreal Power of Hindu Squats."
+            }
+          ]
         }
       ]
     },
@@ -91,7 +187,24 @@
           "sets": "4",
           "note": "Two seconds down, 1 second up. Elevate your heel.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208348/exercises/BoxPistols.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208348/exercises/BoxPistols.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=IfESGr170DY",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=krEKdEKTCkQ",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=K24V4r9Z710",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Warm Up 2: KB Passes",
@@ -100,7 +213,19 @@
           "sets": "4",
           "note": "",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208451/exercises/KBPasses.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208451/exercises/KBPasses.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=ec75RHE3Gwk",
+              "notes": "Her Kettlebell ABS WORKOUT!😳"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=Dvt2KtkzLuo",
+              "notes": "Her Kettlebell ABS WORKOUT!😳"
+            }
+          ]
         },
         {
           "name": "Warm Up 3: Low Box Drops",
@@ -109,7 +234,24 @@
           "sets": "4",
           "note": "Keep the sole of your foot from rolling inward.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208483/exercises/LowBoxDrops.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208483/exercises/LowBoxDrops.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=HSLcfruScKU",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=I_cwsX_95nw",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=iCuglFclkUM",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Exercise 1: DB Box Squat",
@@ -118,7 +260,19 @@
           "sets": "5",
           "note": "Weight: 10 lbs",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208382/exercises/DBBoxSquats.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208382/exercises/DBBoxSquats.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=2aIgi73HIw8",
+              "notes": "DB Box Squat"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=rMEPHwNhQfo",
+              "notes": "DB Box Squat"
+            }
+          ]
         },
         {
           "name": "Exercise 2: DB RDL & Split Squats",
@@ -135,7 +289,24 @@
             "repUnits": "reps",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208523/exercises/SplitSquats.gif"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208384/exercises/DBRDLs.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208384/exercises/DBRDLs.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=uODWo4YqbT8",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=mJilHWIBWO8",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=CBOhr6H7BEY",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Exercise 3: 45° Back Raise",
@@ -144,7 +315,19 @@
           "sets": "Varies",
           "note": "Go through full range of motion.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208272/exercises/45DegreeBackRaises.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208272/exercises/45DegreeBackRaises.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=9XN23dIEqLE",
+              "notes": "Hyperextensions for GLUTE focus 🍑 Save this post for your next glute day #shorts"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=EBui4Bt5N7o",
+              "notes": "Hyperextensions for GLUTE focus 🍑 Save this post for your next glute day #shorts"
+            }
+          ]
         },
         {
           "name": "Exercise 4: GHR Iso-Hold",
@@ -153,7 +336,19 @@
           "sets": "4",
           "note": "Using a Weight.",
           "repUnits": "secs",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208439/exercises/GHRIsoHold.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208439/exercises/GHRIsoHold.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=CoCh6Ebh3Qk",
+              "notes": "GHR [IsoHold]"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=_WCwpLO3ZMc",
+              "notes": "GHR [IsoHold]"
+            }
+          ]
         },
         {
           "name": "Exercise 5: Heavy Sled Suicide",
@@ -162,7 +357,19 @@
           "sets": "2",
           "note": "Add Weight to Sled.",
           "repUnits": "yd",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208441/exercises/HeavySledSuicide.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208441/exercises/HeavySledSuicide.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=v-wlUeCldXs",
+              "notes": "DeFrancosGym.com: HASD's (Heavy Ass Sled Drags)"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=BIlSvaS2YsY",
+              "notes": "DeFrancosGym.com: HASD's (Heavy Ass Sled Drags)"
+            }
+          ]
         }
       ]
     },
@@ -178,7 +385,19 @@
           "sets": "4",
           "note": "Two seconds down, one second up. Elevate your heel.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208391/exercises/DeclinePistols.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208391/exercises/DeclinePistols.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=or1frhkjBDc",
+              "notes": "Unlock🔓 Your 1st Pistol Squat"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=sBKIoPQsw1U",
+              "notes": "Unlock🔓 Your 1st Pistol Squat"
+            }
+          ]
         },
         {
           "name": "Warm Up 2: Heel Taps",
@@ -187,7 +406,24 @@
           "sets": "4",
           "note": "Weight: 10 lbs",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208442/exercises/HeelTaps.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208442/exercises/HeelTaps.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=w2Um9ULrcBI",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=3MNj7LrRX3U",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=V87VgAcB6CY",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Warm Up 3: TKEs",
@@ -196,7 +432,19 @@
           "sets": "4",
           "note": "Keep the sole of your foot from rolling inward.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208526/exercises/TKEs.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208526/exercises/TKEs.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=CNEXyR1fPZo",
+              "notes": "How to perform the banded Terminal Knee Extension (TKE) exercise | Knee Pain"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=W7n9dUiEbLM",
+              "notes": "How to perform the banded Terminal Knee Extension (TKE) exercise | Knee Pain"
+            }
+          ]
         },
         {
           "name": "Exercise 1: DB Squat Jumps",
@@ -205,7 +453,19 @@
           "sets": "5",
           "note": "Weight: 10 lbs",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208389/exercises/DBSquatJumps.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208389/exercises/DBSquatJumps.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=OTyb4YUDYYY",
+              "notes": "Dumbbell Jump Squat | Exercise Guide"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=iE7v4vgLeHg",
+              "notes": "Dumbbell Jump Squat | Exercise Guide"
+            }
+          ]
         },
         {
           "name": "Exercise 2: Trap Bar Deadlift",
@@ -214,7 +474,19 @@
           "sets": "5",
           "note": "Work up to your 3 to 5 rep maximum weight.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208528/exercises/TrapBarDeadlift.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208528/exercises/TrapBarDeadlift.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=v-SrIcAp3vM",
+              "notes": "Body Steel The Rise of HEX BAR 5 WORKOUT VIDEO #bodysteelfitness #gymequipmentsupplier #ytshort"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=a7sQPZsmxvA",
+              "notes": "Body Steel The Rise of HEX BAR 5 WORKOUT VIDEO #bodysteelfitness #gymequipmentsupplier #ytshort"
+            }
+          ]
         },
         {
           "name": "Exercise 3: Split Squats & Split Squat Iso-Holds",
@@ -231,7 +503,19 @@
             "repUnits": "secs",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208996/exercises/SplitSquatIsoHold.jpg"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208523/exercises/SplitSquats.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208523/exercises/SplitSquats.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=mJilHWIBWO8",
+              "notes": "How to Bulgarian Split Squat | 3 Simple Steps"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=CBOhr6H7BEY",
+              "notes": "How to Bulgarian Split Squat | 3 Simple Steps"
+            }
+          ]
         },
         {
           "name": "Exercise 4: Glute Hamstring Raise",
@@ -240,7 +524,19 @@
           "sets": "Varies",
           "note": "Can be substituted with any hamstring workout if necessary.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208437/exercises/GHR.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208437/exercises/GHR.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=BhUpWmlKcJ8",
+              "notes": "How to use the GLUTE HAM RAISE"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=S1_eZIIZlIc",
+              "notes": "How to use the GLUTE HAM RAISE"
+            }
+          ]
         },
         {
           "name": "Exercise 5: Rolling Side Planks",
@@ -249,7 +545,19 @@
           "sets": "5",
           "note": "Rolling to each side is one rep.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208501/exercises/RollingSidePlanks.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208501/exercises/RollingSidePlanks.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=kISuoI7QCYk",
+              "notes": "How not to side plank and how to do the side plank! #plank #abs #abworkout"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=BFOyHDlY2UE",
+              "notes": "How not to side plank and how to do the side plank! #plank #abs #abworkout"
+            }
+          ]
         }
       ]
     },
@@ -265,7 +573,24 @@
           "repUnits": "reps",
           "sets": "4",
           "note": "Start with low box if necessary.",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208348/exercises/BoxPistols.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208348/exercises/BoxPistols.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=IfESGr170DY",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=krEKdEKTCkQ",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=K24V4r9Z710",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Warm Up 2: KB Passes",
@@ -274,7 +599,19 @@
           "repUnits": "reps",
           "sets": "4",
           "note": "One rep for each side.",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208451/exercises/KBPasses.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208451/exercises/KBPasses.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=ec75RHE3Gwk",
+              "notes": "Her Kettlebell ABS WORKOUT!😳"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=Dvt2KtkzLuo",
+              "notes": "Her Kettlebell ABS WORKOUT!😳"
+            }
+          ]
         },
         {
           "name": "Warm Up 3: Low Box Jump to Heiden",
@@ -283,7 +620,19 @@
           "repUnits": "reps",
           "sets": "4",
           "note": "Land softly and compress your body on each rep.",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208485/exercises/LowBoxJumptoHeiden.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208485/exercises/LowBoxJumptoHeiden.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=VezYQD9_l2g",
+              "notes": "Lateral plyometric box jumps"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=LqEZv0eELNg",
+              "notes": "Lateral plyometric box jumps"
+            }
+          ]
         },
         {
           "name": "Exercise 1: Front Squats",
@@ -292,7 +641,19 @@
           "repUnits": "reps",
           "sets": "5",
           "note": "Rate of Perceived Exertion: 8/10",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208433/exercises/FrontSquats.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208433/exercises/FrontSquats.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=_qv0m3tPd3s",
+              "notes": "The Front Squat"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=rKjh8K-ZxLc",
+              "notes": "The Front Squat"
+            }
+          ]
         },
         {
           "name": "Exercise 2: Step-ups",
@@ -301,7 +662,19 @@
           "repUnits": "reps",
           "sets": "4",
           "note": "Complete reps for each side.",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208524/exercises/StepUps.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208524/exercises/StepUps.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=PzDbmqL6qo8",
+              "notes": "Step up form for QUADS vs GLUTES 🔥 #shorts"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=wfhXnLILqdk",
+              "notes": "Step up form for QUADS vs GLUTES 🔥 #shorts"
+            }
+          ]
         },
         {
           "name": "Exercise 3: KB Swings, Box Depth Drops, Broad Jumps",
@@ -336,7 +709,24 @@
           "repUnits": "reps",
           "sets": "4",
           "note": "Complete reps for each side.",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208385/exercises/DBSideBends.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208385/exercises/DBSideBends.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=VwLXMuL_30Q",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=dL9ZzqtQI5c",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=kqr_IjiUuyY",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         }
       ]
     },
@@ -352,7 +742,19 @@
           "sets": "3",
           "note": ".",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208530/exercises/TurkishGetups.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208530/exercises/TurkishGetups.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=XVEMTDlNLyU",
+              "notes": "Master The Art of This Functional Kettlebell Exercise: The Turkish Getup"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=-Zsx2JTfGsU",
+              "notes": "Master The Art of This Functional Kettlebell Exercise: The Turkish Getup"
+            }
+          ]
         },
         {
           "name": "Warm Up 2: OH KB Carry",
@@ -361,7 +763,24 @@
           "sets": "1",
           "note": "",
           "repUnits": "yd",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208489/exercises/OHKBCarry.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208489/exercises/OHKBCarry.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=mPcwZ0BdvHg",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=-Zsx2JTfGsU",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=H_Yt-81WM2w",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Warm Up 3: Over/Under Hurdles",
@@ -370,7 +789,19 @@
           "sets": "3",
           "note": "Can be done with a Squat Bar.",
           "repUnits": "rep",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208494/exercises/OverUnderHurdles.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208494/exercises/OverUnderHurdles.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=tbPB2pIf1FU",
+              "notes": "Hurdle Over Unders"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=TYHxvW_O0Io",
+              "notes": "Hurdle Over Unders"
+            }
+          ]
         },
         {
           "name": "Exercise 1: Front Squat Iso-hold & Box Jumps",
@@ -387,7 +818,19 @@
             "repUnits": "reps",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208343/exercises/BoxJumps.gif"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208432/exercises/FrontSquatIsoHolds.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208432/exercises/FrontSquatIsoHolds.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=CFB3JHkdyt8",
+              "notes": "Deep tier squat oscillation jumps w/ front med ball hold"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=-b2h0cegrNI",
+              "notes": "Deep tier squat oscillation jumps w/ front med ball hold"
+            }
+          ]
         },
         {
           "name": "Exercise 2: DB Split Squats",
@@ -396,7 +839,19 @@
           "sets": "3",
           "note": "Controlled on the way down.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208523/exercises/SplitSquats.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208523/exercises/SplitSquats.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=mJilHWIBWO8",
+              "notes": "How to Bulgarian Split Squat | 3 Simple Steps"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=CBOhr6H7BEY",
+              "notes": "How to Bulgarian Split Squat | 3 Simple Steps"
+            }
+          ]
         },
         {
           "name": "Exercise 3: Weighted Chin-ups",
@@ -405,7 +860,19 @@
           "sets": "5-6",
           "note": "Do these with a weight.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208362/exercises/Chinups.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208362/exercises/Chinups.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=oD2ohgW30fQ",
+              "notes": "Weighted Chin-up"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=jIvbJzs1V4I",
+              "notes": "Weighted Chin-up"
+            }
+          ]
         },
         {
           "name": "Exercise 4: Hip Ext w/ Unilateral Eccentric & SL DB RDL",
@@ -420,7 +887,19 @@
             "sets": "4",
             "note": "Meant to be a Super Set.",
             "repUnits": "reps"
-          }
+          },
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=v5JFb2AsSVs",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=E1mG5L9rpFc",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Exercise 5: Spread Eagle Sit-ups",
@@ -428,7 +907,14 @@
           "reps": "50 Total",
           "sets": "Varies",
           "note": "Weight: 5-10 lbs.",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=IiLt3JYP75I",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         }
       ]
     },
@@ -444,7 +930,19 @@
           "sets": "4",
           "note": "Five in each direction on both arms.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208426/exercises/FloorWashers.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208426/exercises/FloorWashers.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=HaSFRSnRsXk",
+              "notes": "Chair Workout to Lose Belly Fat"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=_PP-hcgM-rk",
+              "notes": "Chair Workout to Lose Belly Fat"
+            }
+          ]
         },
         {
           "name": "Warm Up 2: Cat/Camel",
@@ -453,7 +951,19 @@
           "sets": "4",
           "note": "",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208359/exercises/Cat_Camel.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208359/exercises/Cat_Camel.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=JJkjIKlimW8",
+              "notes": "CAT-COW POSE (Marjaryasana-Bitilasana)🐮 😺"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=1cs3SKwQZpM",
+              "notes": "CAT-COW POSE (Marjaryasana-Bitilasana)🐮 😺"
+            }
+          ]
         },
         {
           "name": "Warm Up 3: No Money Drill",
@@ -471,7 +981,24 @@
           "sets": "4",
           "note": "Using an exercise band.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208449/exercises/JavelinStretch.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208449/exercises/JavelinStretch.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=s2_ISPAkzew",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=V7pWvW2kSNc",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=86F2grEKDzU",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Exercise 1: NG DB Military Press",
@@ -480,7 +1007,24 @@
           "sets": "5",
           "note": "Keep your palms facing each other.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208488/exercises/NGDBMilitaryPress.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208488/exercises/NGDBMilitaryPress.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=osEKVtXBLlU",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=OLePvpxQEGk",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=6v4nrRVySj0",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Exercise 2: Chin-ups & Pull-overs",
@@ -497,7 +1041,19 @@
             "repUnits": "reps",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208498/exercises/Pullovers.gif"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208362/exercises/Chinups.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208362/exercises/Chinups.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=oD2ohgW30fQ",
+              "notes": "Weighted Chin-up"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=jIvbJzs1V4I",
+              "notes": "Weighted Chin-up"
+            }
+          ]
         },
         {
           "name": "Exercise 3: Push-ups",
@@ -506,7 +1062,14 @@
           "sets": "Decrementing",
           "note": "Start with 15 reps and decrease by 1 for each set.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208499/exercises/Pushups.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208499/exercises/Pushups.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=yQEx9OC2C3E",
+              "notes": "How to do a Push-Up | Proper Form & Technique | NASM"
+            }
+          ]
         },
         {
           "name": "Exercise 4: OH Sit-ups",
@@ -515,7 +1078,19 @@
           "sets": "3",
           "note": "Use a 45lbs plate.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208489/exercises/OHSitups.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208489/exercises/OHSitups.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=jDwoBqPH0jk",
+              "notes": "Sit Up vs Crunch Which is Better #sixpack"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=hgjSJN3SXC4",
+              "notes": "Sit Up vs Crunch Which is Better #sixpack"
+            }
+          ]
         },
         {
           "name": "Exercise 5: Battle Ropes",
@@ -524,7 +1099,19 @@
           "sets": "3",
           "note": "Aim for 1 minute but push to failure on each set.Try a variety of styles in 15 second segements.",
           "repUnits": "min",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208333/exercises/BattleRopes.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208333/exercises/BattleRopes.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=zw0OMi00X5g",
+              "notes": "the do's and dont's of the battle ropes!"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=ZEAqK0lXnb0",
+              "notes": "the do's and dont's of the battle ropes!"
+            }
+          ]
         }
       ]
     },
@@ -540,7 +1127,19 @@
           "sets": "4",
           "note": "Five in each direction on both arms.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208426/exercises/FloorWashers.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208426/exercises/FloorWashers.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=HaSFRSnRsXk",
+              "notes": "Chair Workout to Lose Belly Fat"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=_PP-hcgM-rk",
+              "notes": "Chair Workout to Lose Belly Fat"
+            }
+          ]
         },
         {
           "name": "Warm Up 2: Cat/Camel",
@@ -549,7 +1148,19 @@
           "sets": "4",
           "note": "",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208359/exercises/Cat_Camel.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208359/exercises/Cat_Camel.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=JJkjIKlimW8",
+              "notes": "CAT-COW POSE (Marjaryasana-Bitilasana)🐮 😺"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=1cs3SKwQZpM",
+              "notes": "CAT-COW POSE (Marjaryasana-Bitilasana)🐮 😺"
+            }
+          ]
         },
         {
           "name": "Warm Up 3: No Money Drill",
@@ -567,7 +1178,24 @@
           "sets": "4",
           "note": "Using an exercise band.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208449/exercises/JavelinStretch.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208449/exercises/JavelinStretch.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=s2_ISPAkzew",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=V7pWvW2kSNc",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=86F2grEKDzU",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Exercise 1: NG DB Military Press",
@@ -576,7 +1204,24 @@
           "sets": "3",
           "note": "Keep your palms facing each other.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208488/exercises/NGDBMilitaryPress.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208488/exercises/NGDBMilitaryPress.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=osEKVtXBLlU",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=OLePvpxQEGk",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=6v4nrRVySj0",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Exercise 2: Chin-ups & Pull-overs",
@@ -593,7 +1238,19 @@
             "repUnits": "reps",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208498/exercises/Pullovers.gif"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208362/exercises/Chinups.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208362/exercises/Chinups.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=oD2ohgW30fQ",
+              "notes": "Weighted Chin-up"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=jIvbJzs1V4I",
+              "notes": "Weighted Chin-up"
+            }
+          ]
         },
         {
           "name": "Exercise 3: Push-ups",
@@ -602,7 +1259,14 @@
           "sets": "Decrementing",
           "note": "Start with 12 reps and decrease by 1 for each set.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208499/exercises/Pushups.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208499/exercises/Pushups.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=yQEx9OC2C3E",
+              "notes": "How to do a Push-Up | Proper Form & Technique | NASM"
+            }
+          ]
         },
         {
           "name": "Exercise 4: OH Sit-ups",
@@ -611,7 +1275,19 @@
           "sets": "3",
           "note": "Use a 45lbs plate.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208489/exercises/OHSitups.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208489/exercises/OHSitups.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=jDwoBqPH0jk",
+              "notes": "Sit Up vs Crunch Which is Better #sixpack"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=hgjSJN3SXC4",
+              "notes": "Sit Up vs Crunch Which is Better #sixpack"
+            }
+          ]
         },
         {
           "name": "Exercise 5: Battle Ropes",
@@ -620,7 +1296,19 @@
           "sets": "3",
           "note": "Aim for 1 minute but push to failure on each set.Try a variety of styles in 15 second segements.",
           "repUnits": "min",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208333/exercises/BattleRopes.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208333/exercises/BattleRopes.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=zw0OMi00X5g",
+              "notes": "the do's and dont's of the battle ropes!"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=ZEAqK0lXnb0",
+              "notes": "the do's and dont's of the battle ropes!"
+            }
+          ]
         }
       ]
     },
@@ -636,7 +1324,19 @@
           "sets": "4",
           "note": "Five in each direction on both arms. Reach your hand out between each rep.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208426/exercises/FloorWashers.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208426/exercises/FloorWashers.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=HaSFRSnRsXk",
+              "notes": "Chair Workout to Lose Belly Fat"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=_PP-hcgM-rk",
+              "notes": "Chair Workout to Lose Belly Fat"
+            }
+          ]
         },
         {
           "name": "Warm Up 2: Yoga Push-up",
@@ -645,7 +1345,24 @@
           "sets": "4",
           "note": "",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208533/exercises/YogaPushup.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208533/exercises/YogaPushup.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=UIcct-7b6oE",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=Mdoz2uCxNLk",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=eP6habJpue8",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Warm Up 3: Downward Dog Toe Touch",
@@ -654,7 +1371,14 @@
           "sets": "4",
           "note": "",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208395/exercises/DownwardDogToeTouches.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208395/exercises/DownwardDogToeTouches.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=ZepZd60Q0aY",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Exercise 1: Chin-ups",
@@ -663,7 +1387,19 @@
           "sets": "1",
           "note": "Go for as many reps as possible.",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208362/exercises/Chinups.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208362/exercises/Chinups.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=oD2ohgW30fQ",
+              "notes": "Weighted Chin-up"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=jIvbJzs1V4I",
+              "notes": "Weighted Chin-up"
+            }
+          ]
         },
         {
           "name": "Exercise 2: NG DB Incline Bench & Feet Elevated Push-ups",
@@ -680,7 +1416,19 @@
             "repUnits": "reps",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208398/exercises/FeetElevatedPushUps.gif"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208487/exercises/NGDBInclineBench.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208487/exercises/NGDBInclineBench.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=dcV-ATSeryA",
+              "notes": "How to do a Dumbbell Incline Chest Press!"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=V3BNe4vJX60",
+              "notes": "How to do a Dumbbell Incline Chest Press!"
+            }
+          ]
         },
         {
           "name": "Exercise 3: Kroc Rows Burnout",
@@ -689,7 +1437,19 @@
           "sets": "1",
           "note": "Weight: 30-50 lbs",
           "repUnits": "reps",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208477/exercises/KrocRows1.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208477/exercises/KrocRows1.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=1mGXae-LCiM",
+              "notes": "Are Deadlifts Beneficial? #gymtips"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=8AJc_8y_r8Y",
+              "notes": "Are Deadlifts Beneficial? #gymtips"
+            }
+          ]
         },
         {
           "name": "Exercise 4: Kroc Rows & Scarecrows",
@@ -706,7 +1466,14 @@
             "repUnits": "reps",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208502/exercises/Scarecrows.gif"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208478/exercises/KrocRows2.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208478/exercises/KrocRows2.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=sGwDvbqUSpk",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Exercise 5: One Arm OH Carry",
@@ -715,7 +1482,24 @@
           "sets": "3",
           "note": "Choose a safe weight.",
           "repUnits": "yd",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208491/exercises/OneArmOHCarry.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208491/exercises/OneArmOHCarry.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=mPcwZ0BdvHg",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=X72HhVGAko4",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=xCkeisugHlY",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         }
       ]
     },
@@ -730,7 +1514,31 @@
           "reps": "15",
           "repUnits": "reps (each side)",
           "sets": "3",
-          "note": "Details: Perform a lateral lunge while crossing one leg behind the other, akin to a curtsy. Use a strap or band to maintain balance and focus the load on the heel. Note: You only need to step behind your front foot. Crossing far outside your front foot is unnecessary and will lead to uneven hip posture."
+          "note": "Details: Perform a lateral lunge while crossing one leg behind the other, akin to a curtsy. Use a strap or band to maintain balance and focus the load on the heel. Note: You only need to step behind your front foot. Crossing far outside your front foot is unnecessary and will lead to uneven hip posture.",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229128/exercises/CurtsyLunges.mp4",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=cVYnf2CFO9M",
+              "startTime": 0,
+              "endTime": 0,
+              "notes": "Time for a highly-requested form review: the Curtsy Lunge! #lunges"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=WAW-2ehQ1GM",
+              "startTime": 0,
+              "endTime": 0,
+              "notes": "Time for a highly-requested form review: the Curtsy Lunge! #lunges"
+            }
+          ],
+          "source": {
+            "type": "cloudinary",
+            "url": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229128/exercises/CurtsyLunges.mp4",
+            "startTime": 0,
+            "endTime": 0,
+            "notes": "good form demonstration vs bad form"
+          }
         },
         {
           "name": "Strength 2: Barbell Walking Lunges",
@@ -738,7 +1546,31 @@
           "reps": "10",
           "repUnits": "reps (each side)",
           "sets": "3",
-          "note": "Details: Perform walking lunges with a barbell placed behind your neck. Ensure each knee lightly taps the ground to engage the glutes properly. Note: May swap barbell for dumbbells or body weight."
+          "note": "Details: Perform walking lunges with a barbell placed behind your neck. Ensure each knee lightly taps the ground to engage the glutes properly. Note: May swap barbell for dumbbells or body weight.",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779430268/exercises/BarbellWalkingLunges.mp4",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=1cS-6KsJW9g",
+              "startTime": 0,
+              "endTime": 0,
+              "notes": "How To Do A BARBELL WALKING LUNGE | Exercise Demonstration Video and Guide"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=QQEcLAcVtHw",
+              "startTime": 0,
+              "endTime": 0,
+              "notes": "How To Do A BARBELL WALKING LUNGE | Exercise Demonstration Video and Guide"
+            }
+          ],
+          "source": {
+            "type": "cloudinary",
+            "url": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779430268/exercises/BarbellWalkingLunges.mp4",
+            "startTime": 0,
+            "endTime": 0,
+            "notes": "good form demonstration"
+          }
         },
         {
           "name": "Strength 3: Barbell 90° Squat with Hip Thrust",
@@ -746,7 +1578,15 @@
           "reps": "10-15",
           "repUnits": "reps",
           "sets": "4",
-          "note": "Detail: Squat to a 90-degree angle, then powerfully, but with control in one motion thrust your hips upward as you rise, tightly flexing your glutes. Note: Aim for 70% of your max repetition weight or above."
+          "note": "Detail: Squat to a 90-degree angle, then powerfully, but with control in one motion thrust your hips upward as you rise, tightly flexing your glutes. Note: Aim for 70% of your max repetition weight or above.",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779430263/exercises/90DegreeBarbellSquats.mp4",
+          "source": {
+            "type": "cloudinary",
+            "url": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779430263/exercises/90DegreeBarbellSquats.mp4",
+            "startTime": 0,
+            "endTime": 0,
+            "notes": "good form demonstration"
+          }
         },
         {
           "name": "Strength 4: Single Leg Hip Thrust on Bench",
@@ -754,7 +1594,31 @@
           "reps": "15",
           "repUnits": "reps (each side)",
           "sets": "3",
-          "note": "Details: Perform hip thrusts with one leg, using a bench for support. Keep the thrust controlled, and focus on squeezing the glutes at the top of the movement. Note: Use a bench."
+          "note": "Details: Perform hip thrusts with one leg, using a bench for support. Keep the thrust controlled, and focus on squeezing the glutes at the top of the movement. Note: Use a bench.",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229138/exercises/SingleLegHipThrusts.mp4",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=3suM3LwVlVM",
+              "startTime": 0,
+              "endTime": 0,
+              "notes": "DB Weighted Single Leg (SL) Hip Thrust"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=ymg2AMDAwrY",
+              "startTime": 0,
+              "endTime": 0,
+              "notes": "DB Weighted Single Leg (SL) Hip Thrust"
+            }
+          ],
+          "source": {
+            "type": "cloudinary",
+            "url": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229138/exercises/SingleLegHipThrusts.mp4",
+            "startTime": 0,
+            "endTime": 0,
+            "notes": "simple demo"
+          }
         },
         {
           "name": "Strength 5: Fire Hydrants",
@@ -762,7 +1626,31 @@
           "reps": "30",
           "repUnits": "reps (each side)",
           "sets": "3",
-          "note": "Details: From a tabletop position, lift one leg away from the body, keeping the knee bent. This exercise targets the gluteus medius and minimus for improved lateral stability."
+          "note": "Details: From a tabletop position, lift one leg away from the body, keeping the knee bent. This exercise targets the gluteus medius and minimus for improved lateral stability.",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229133/exercises/FireHydrant.mp4",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=IRkRgk2Gc1E",
+              "startTime": 0,
+              "endTime": 0,
+              "notes": "How To Do a Fire Hydrant Exercise with Resistance Bands"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=Y0G0DqWsSuM",
+              "startTime": 0,
+              "endTime": 0,
+              "notes": "How To Do a Fire Hydrant Exercise with Resistance Bands"
+            }
+          ],
+          "source": {
+            "type": "cloudinary",
+            "url": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229133/exercises/FireHydrant.mp4",
+            "startTime": 0,
+            "endTime": 0,
+            "notes": "good form demonstration vs bad form"
+          }
         },
         {
           "name": "Stretch 1: Kneeling Hip Flexor Stretch",
@@ -770,7 +1658,31 @@
           "reps": "30",
           "repUnits": "secs (each side)",
           "sets": "3",
-          "note": "Details: From a tabletop position, lift one leg away from the body, keeping the knee bent. This exercise targets the gluteus medius and minimus for improved lateral stability. Note: Use foam pad or mat to protect knee."
+          "note": "Details: From a tabletop position, lift one leg away from the body, keeping the knee bent. This exercise targets the gluteus medius and minimus for improved lateral stability. Note: Use foam pad or mat to protect knee.",
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229231/exercises/KneelingHipFlexorStretch.mp4",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=ktgtEWGhFd8",
+              "startTime": 0,
+              "endTime": 0,
+              "notes": "⭐️True Hip Flexor Stretch (Simple Fix For Lasting Results) #shorts"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=DXuStgWuJV8",
+              "startTime": 0,
+              "endTime": 0,
+              "notes": "⭐️True Hip Flexor Stretch (Simple Fix For Lasting Results) #shorts"
+            }
+          ],
+          "source": {
+            "type": "cloudinary",
+            "url": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229231/exercises/KneelingHipFlexorStretch.mp4",
+            "startTime": 0,
+            "endTime": 0,
+            "notes": "good explanation vs bad form"
+          }
         }
       ]
     },
@@ -786,7 +1698,24 @@
           "repUnits": "reps",
           "sets": "2",
           "note": "Note: Inhale forward, Exhale back. Keep chin to chest and butt on the ground.",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208496/exercises/Posture_Ex1.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208496/exercises/Posture_Ex1.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=H1F-UfC8Mb8",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=pvIjsG5Svck",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=HaSFRSnRsXk",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         }
       ]
     },
@@ -811,7 +1740,14 @@
           "repUnits": "reps",
           "sets": "4",
           "note": "Note: .",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208395/exercises/DownwardDogToeTouches.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208395/exercises/DownwardDogToeTouches.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=ZepZd60Q0aY",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Exercise 1: Close Grip Pulldowns & Cable Rows",
@@ -828,7 +1764,19 @@
             "note": "Note: Meant to be a Super Set.",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208354/exercises/CableRows.gif"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208365/exercises/CloseGripPulldowns.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208365/exercises/CloseGripPulldowns.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=qD1WZ5pSuvk",
+              "notes": "🛑 STOP Doing Cable Rows LIKE THIS!"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=e3S820r53uk",
+              "notes": "🛑 STOP Doing Cable Rows LIKE THIS!"
+            }
+          ]
         },
         {
           "name": "Exercise 2: Wide Grip Pulldowns & Bent-over Rows",
@@ -845,7 +1793,19 @@
             "note": "Note: Can be done with Dumbbells. Meant to be a Super Set.",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208336/exercises/BentoverRows.gif"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208532/exercises/WideGripPulldowns.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208532/exercises/WideGripPulldowns.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=9n1OGTqCyeI",
+              "notes": "✅ The PERFECT Lat Pulldown (DO THIS!)"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=z-lxcsIN4T4",
+              "notes": "✅ The PERFECT Lat Pulldown (DO THIS!)"
+            }
+          ]
         },
         {
           "name": "Exercise 3: Cable Lateral Pullovers & Zottman Curls",
@@ -862,7 +1822,24 @@
             "note": "Note: Meant to be a Super Set.",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208534/exercises/ZottmanCurls.gif"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208352/exercises/CableLateralPullovers.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208352/exercises/CableLateralPullovers.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=wdMMFyDEpVI",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=n8KIHmsSU9s",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=DQnVsbeaNQo",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Exercise 4: Shrugs & Crush Grip Curls",
@@ -879,7 +1856,24 @@
             "note": "Note: For the last set, perform an Iso-hold for as long as possible. Meant to be a Super Set.",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208368/exercises/CrushGripCurls.gif"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208505/exercises/Shrugs.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208505/exercises/Shrugs.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=V6BtY3Lt0Ys",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=WKBJ3pc0_IM",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=6K_N9AGhItQ",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Exercise 5: DB Side Bends",
@@ -888,7 +1882,24 @@
           "repUnits": "reps",
           "sets": "Varies",
           "note": "Note: Complete reps for each side.",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208385/exercises/DBSideBends.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208385/exercises/DBSideBends.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=VwLXMuL_30Q",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=dL9ZzqtQI5c",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=kqr_IjiUuyY",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         }
       ]
     },
@@ -904,7 +1915,24 @@
           "repUnits": "reps",
           "sets": "4",
           "note": "Note: Using an exercise band.",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208449/exercises/JavelinStretch.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208449/exercises/JavelinStretch.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=s2_ISPAkzew",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=V7pWvW2kSNc",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=86F2grEKDzU",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Warm Up 2: Yoga Push-up",
@@ -913,7 +1941,24 @@
           "repUnits": "reps",
           "sets": "4",
           "note": "",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208533/exercises/YogaPushup.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208533/exercises/YogaPushup.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=UIcct-7b6oE",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=Mdoz2uCxNLk",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=eP6habJpue8",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Exercise 1: Chest Flies & Front Raises",
@@ -930,7 +1975,19 @@
             "note": "Weight: 45 lbs. Note: Meant to be a Super Set.",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208430/exercises/FrontRaises.gif"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208360/exercises/ChestFlies.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208360/exercises/ChestFlies.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=JHkLdEwSESQ",
+              "notes": "FIX THESE Dumbbell Chest Fly Mistakes!"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=zb-MSO-Cv2Y",
+              "notes": "FIX THESE Dumbbell Chest Fly Mistakes!"
+            }
+          ]
         },
         {
           "name": "Exercise 2: Flat Bench Press & DB Military Press",
@@ -947,7 +2004,24 @@
             "note": "Note: Standing. Meant to be a Super Set.",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208488/exercises/NGDBMilitaryPress.gif"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208424/exercises/FlatBenchPress.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208424/exercises/FlatBenchPress.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=1V3vpcaxRYQ",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=WbCEvFA0NJs",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=o7TvO377OqA",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Exercise 3: Skullcrushers & DB Side Lateral Raises",
@@ -964,7 +2038,19 @@
             "note": "Note: Meant to be a Super Set.",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208387/exercises/DBSideLateralRaises.gif"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208521/exercises/Skullcrushers.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208521/exercises/Skullcrushers.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=G-piLwLu0d4",
+              "notes": "5 Steps to Perfect Dumbbell Skullcrushers ⚠️ #triceps"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=kDqklk1ZESo",
+              "notes": "5 Steps to Perfect Dumbbell Skullcrushers ⚠️ #triceps"
+            }
+          ]
         },
         {
           "name": "Exercise 4: Dips & Feet-Elevated PushUps",
@@ -981,7 +2067,24 @@
             "note": "Note: Meant to be a Super Set.",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208398/exercises/FeetElevatedPushUps.gif"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208392/exercises/Dips.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208392/exercises/Dips.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=3ZCDVRbhOMM",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=dcV-ATSeryA",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=XYjTEvlPAfU",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         },
         {
           "name": "Exercise 5: High Plank/Low Plank",
@@ -990,7 +2093,19 @@
           "repUnits": "reps",
           "sets": "3",
           "note": "Note: Do the reps once for each direction.",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208443/exercises/HighLowPlanks.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208443/exercises/HighLowPlanks.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=v25dawSzRTM",
+              "notes": "High to Low Plank Exercise"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=pvIjsG5Svck",
+              "notes": "High to Low Plank Exercise"
+            }
+          ]
         }
       ]
     },
@@ -1006,7 +2121,19 @@
           "repUnits": "reps",
           "sets": "3",
           "note": "Note: Two seconds down, one second up. Elevate your heel.",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208391/exercises/DeclinePistols.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208391/exercises/DeclinePistols.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=or1frhkjBDc",
+              "notes": "Unlock🔓 Your 1st Pistol Squat"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=sBKIoPQsw1U",
+              "notes": "Unlock🔓 Your 1st Pistol Squat"
+            }
+          ]
         },
         {
           "name": "Warm Up 2: KB Passes",
@@ -1015,7 +2142,19 @@
           "repUnits": "reps",
           "sets": "3",
           "note": "",
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208451/exercises/KBPasses.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208451/exercises/KBPasses.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=ec75RHE3Gwk",
+              "notes": "Her Kettlebell ABS WORKOUT!😳"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=Dvt2KtkzLuo",
+              "notes": "Her Kettlebell ABS WORKOUT!😳"
+            }
+          ]
         },
         {
           "name": "Exercise 1: Barbell Squats & DB Jump Squats",
@@ -1032,7 +2171,19 @@
             "note": "Weight: 10 lbs. Note: Meant to be a Super Set.",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208389/exercises/DBSquatJumps.gif"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208306/exercises/BarbellSquat.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208306/exercises/BarbellSquat.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=dW3zj79xfrc",
+              "notes": "Barbell Jump Squat - How To"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=XOTO2qWRy9U",
+              "notes": "Barbell Jump Squat - How To"
+            }
+          ]
         },
         {
           "name": "Exercise 2: Split Squats & DB RDL",
@@ -1049,7 +2200,19 @@
             "note": "Note: Controlled on the way down. Meant to be a Super Set.",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208384/exercises/DBRDLs.gif"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208523/exercises/SplitSquats.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208523/exercises/SplitSquats.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=mJilHWIBWO8",
+              "notes": "How to Bulgarian Split Squat | 3 Simple Steps"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=CBOhr6H7BEY",
+              "notes": "How to Bulgarian Split Squat | 3 Simple Steps"
+            }
+          ]
         },
         {
           "name": "Exercise 3: Elevated Heel Goblet Squats & Leg Curls",
@@ -1066,7 +2229,19 @@
             "note": "Note: Squeeze toes together. Meant to be a Super Set.",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208481/exercises/LegCurls.gif"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208397/exercises/ElevatedHeelGobletSquat.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208397/exercises/ElevatedHeelGobletSquat.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=UPeQpDPRWOg",
+              "notes": "📌HOW TO DO A GOBLET SQUAT"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=aed0XSePG6Y",
+              "notes": "📌HOW TO DO A GOBLET SQUAT"
+            }
+          ]
         },
         {
           "name": "Exercise 4: Hip Abductions & Calf Raises",
@@ -1083,7 +2258,24 @@
             "note": "Note: Meant to be a Super Set.",
             "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208356/exercises/CalfRaises.gif"
           },
-          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208448/exercises/HipAbductions.gif"
+          "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208448/exercises/HipAbductions.gif",
+          "alternatives": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=sNqa1ad2qIQ",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=FPlHiEykiy8",
+              "notes": "AI-suggested alternative"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=iOh08wn1s_Y",
+              "notes": "AI-suggested alternative"
+            }
+          ]
         }
       ]
     },
