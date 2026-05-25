@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-05-24T09:28:25.459Z",
+  "lastUpdated": "2026-05-25T07:28:54.872Z",
   "exercises": [
     {
       "id": "45degreebackraises",
       "name": "45° Back Raise",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -73,7 +73,7 @@
     {
       "id": "90degreebarbellsquats",
       "name": "Barbell 90° Squat with Hip Thrust",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -141,7 +141,7 @@
     {
       "id": "barbellsquat",
       "name": "Barbell Squats & DB Jump Squats",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -209,7 +209,7 @@
     {
       "id": "barbellwalkinglunges",
       "name": "Barbell Walking Lunges",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -277,7 +277,7 @@
     {
       "id": "battleropes",
       "name": "Battle Ropes",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -348,7 +348,7 @@
       "aliases": [
         "Box Pistol Jumps"
       ],
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -409,7 +409,7 @@
     {
       "id": "cablelateralpullovers",
       "name": "Cable Lateral Pullovers & Zottman Curls",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -470,7 +470,7 @@
     {
       "id": "zottmancurls",
       "name": "Cable Lateral Pullovers & Zottman Curls",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -531,7 +531,7 @@
     {
       "id": "cat-camel",
       "name": "Cat/Camel",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -598,7 +598,7 @@
     {
       "id": "chestflies",
       "name": "Chest Flies & Front Raises",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -666,7 +666,7 @@
     {
       "id": "frontraises",
       "name": "Chest Flies & Front Raises",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -727,7 +727,7 @@
     {
       "id": "pullovers",
       "name": "Chin-ups & Pull-overs",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -788,7 +788,7 @@
     {
       "id": "closegrippulldowns",
       "name": "Close Grip Pulldowns & Cable Rows",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -856,7 +856,7 @@
     {
       "id": "cablerows",
       "name": "Close Grip Pulldowns & Cable Rows",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -924,7 +924,7 @@
     {
       "id": "curtsylunges",
       "name": "Curtsy Lunges",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -992,7 +992,7 @@
     {
       "id": "dbboxsquats",
       "name": "DB Box Squat",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -1060,7 +1060,7 @@
     {
       "id": "dbrdls",
       "name": "DB RDL & Split Squats",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -1126,7 +1126,7 @@
         "DB Split Squats",
         "Split Squats & DB RDL"
       ],
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -1194,7 +1194,7 @@
     {
       "id": "dbsidebends",
       "name": "DB Side Bends",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -1255,7 +1255,7 @@
     {
       "id": "dbsquatjumps",
       "name": "DB Squat Jumps",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -1323,7 +1323,7 @@
     {
       "id": "declinepistols",
       "name": "Decline Pistols",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -1391,7 +1391,7 @@
     {
       "id": "dips",
       "name": "Dips & Feet-Elevated PushUps",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -1452,7 +1452,7 @@
     {
       "id": "downwarddogtoetouches",
       "name": "Downward Dog Toe Touch",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -1492,7 +1492,7 @@
     {
       "id": "elevatedheelgobletsquat",
       "name": "Elevated Heel Goblet Squats & Leg Curls",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -1560,7 +1560,7 @@
     {
       "id": "legcurls",
       "name": "Elevated Heel Goblet Squats & Leg Curls",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -1628,7 +1628,7 @@
     {
       "id": "posture-ex1",
       "name": "Exercise 1",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -1689,7 +1689,7 @@
     {
       "id": "firehydrant",
       "name": "Fire Hydrants",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -1757,7 +1757,7 @@
     {
       "id": "flatbenchpress",
       "name": "Flat Bench Press & DB Military Press",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -1821,7 +1821,7 @@
       "aliases": [
         "Floor Washers w/ Reach"
       ],
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -1889,7 +1889,7 @@
     {
       "id": "frontsquatisoholds",
       "name": "Front Squat Iso-hold & Box Jumps",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -1957,7 +1957,7 @@
     {
       "id": "boxjumps",
       "name": "Front Squat Iso-hold & Box Jumps",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -2025,7 +2025,7 @@
     {
       "id": "frontsquats",
       "name": "Front Squats",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -2093,7 +2093,7 @@
     {
       "id": "ghrisohold",
       "name": "GHR Iso-Hold",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -2161,7 +2161,7 @@
     {
       "id": "ghr",
       "name": "Glute Hamstring Raise",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -2229,7 +2229,7 @@
     {
       "id": "heavysledsuicide",
       "name": "Heavy Sled Suicide",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -2297,7 +2297,7 @@
     {
       "id": "heeltaps",
       "name": "Heel Taps",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -2357,7 +2357,7 @@
     {
       "id": "highlowplanks",
       "name": "High Plank/Low Plank",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -2425,7 +2425,7 @@
     {
       "id": "hindusquats",
       "name": "Hindu Squats",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -2493,7 +2493,7 @@
     {
       "id": "hipabductions",
       "name": "Hip Abductions & Calf Raises",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -2554,7 +2554,7 @@
     {
       "id": "calfraises",
       "name": "Hip Abductions & Calf Raises",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -2615,7 +2615,7 @@
     {
       "id": "hipext",
       "name": "Hip Ext w/ Unilateral Eccentric & SL DB RDL",
-      "sources": [
+      "demos": [
         {
           "type": "local",
           "mediaType": "video",
@@ -2668,7 +2668,7 @@
     {
       "id": "sldbrdl",
       "name": "Hip Ext w/ Unilateral Eccentric & SL DB RDL",
-      "sources": [
+      "demos": [
         {
           "type": "local",
           "mediaType": "video",
@@ -2721,7 +2721,7 @@
     {
       "id": "javelinstretch",
       "name": "Javelin Stretch",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -2782,7 +2782,7 @@
     {
       "id": "kbpasses",
       "name": "KB Passes",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -2849,7 +2849,7 @@
     {
       "id": "kbswings",
       "name": "KB Swings, Box Depth Drops, Broad Jumps",
-      "sources": [
+      "demos": [
         {
           "type": "local",
           "mediaType": "video",
@@ -2907,7 +2907,7 @@
     {
       "id": "boxdepthdrop",
       "name": "KB Swings, Box Depth Drops, Broad Jumps",
-      "sources": [
+      "demos": [
         {
           "type": "local",
           "mediaType": "video",
@@ -2958,7 +2958,7 @@
     {
       "id": "broadjumps",
       "name": "KB Swings, Box Depth Drops, Broad Jumps",
-      "sources": [
+      "demos": [
         {
           "type": "local",
           "mediaType": "video",
@@ -3009,7 +3009,7 @@
     {
       "id": "kneelinghipflexorstretch",
       "name": "Kneeling Hip Flexor Stretch",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -3077,7 +3077,7 @@
     {
       "id": "krocrows2",
       "name": "Kroc Rows & Scarecrows",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -3118,7 +3118,7 @@
     {
       "id": "scarecrows",
       "name": "Kroc Rows & Scarecrows",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -3159,7 +3159,7 @@
     {
       "id": "krocrows1",
       "name": "Kroc Rows Burnout",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -3227,7 +3227,7 @@
     {
       "id": "lowboxdrops",
       "name": "Low Box Drops",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -3288,7 +3288,7 @@
     {
       "id": "lowboxjumptoheiden",
       "name": "Low Box Jump to Heiden",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -3356,7 +3356,7 @@
     {
       "id": "ngdbinclinebench",
       "name": "NG DB Incline Bench & Feet Elevated Push-ups",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -3424,7 +3424,7 @@
     {
       "id": "feetelevatedpushups",
       "name": "NG DB Incline Bench & Feet Elevated Push-ups",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -3492,7 +3492,7 @@
     {
       "id": "ngdbmilitarypress",
       "name": "NG DB Military Press",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -3553,7 +3553,7 @@
     {
       "id": "nomoneydrill",
       "name": "No Money Drill",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "image",
@@ -3614,7 +3614,7 @@
     {
       "id": "ohkbcarry",
       "name": "OH KB Carry",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -3674,7 +3674,7 @@
     {
       "id": "ohsitups",
       "name": "OH Sit-ups",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -3742,7 +3742,7 @@
     {
       "id": "onearmohcarry",
       "name": "One Arm OH Carry",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -3803,7 +3803,7 @@
     {
       "id": "overunderhurdles",
       "name": "Over/Under Hurdles",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -3871,7 +3871,7 @@
     {
       "id": "pushups",
       "name": "Push-ups",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -3929,7 +3929,7 @@
     {
       "id": "rollingsideplanks",
       "name": "Rolling Side Planks",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -3997,7 +3997,7 @@
     {
       "id": "shrugs",
       "name": "Shrugs & Crush Grip Curls",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -4058,7 +4058,7 @@
     {
       "id": "crushgripcurls",
       "name": "Shrugs & Crush Grip Curls",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -4119,7 +4119,7 @@
     {
       "id": "kneelingsideplanks",
       "name": "Side Planks",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -4187,7 +4187,7 @@
     {
       "id": "singleleghipthrusts",
       "name": "Single Leg Hip Thrust on Bench",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -4255,7 +4255,7 @@
     {
       "id": "skullcrushers",
       "name": "Skullcrushers & DB Side Lateral Raises",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -4323,7 +4323,7 @@
     {
       "id": "dbsidelateralraises",
       "name": "Skullcrushers & DB Side Lateral Raises",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -4384,7 +4384,7 @@
     {
       "id": "splitsquatisohold",
       "name": "Split Squats & Split Squat Iso-Holds",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "image",
@@ -4445,7 +4445,7 @@
     {
       "id": "sesitups",
       "name": "Spread Eagle Sit-ups",
-      "sources": [
+      "demos": [
         {
           "type": "local",
           "mediaType": "video",
@@ -4488,7 +4488,7 @@
     {
       "id": "stepups",
       "name": "Step-ups",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -4556,7 +4556,7 @@
     {
       "id": "swissballlegcurls",
       "name": "Swiss Ball Leg Curls",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -4614,7 +4614,7 @@
     {
       "id": "tkes",
       "name": "TKEs",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -4682,7 +4682,7 @@
     {
       "id": "trapbardeadlift",
       "name": "Trap Bar Deadlift",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -4750,7 +4750,7 @@
     {
       "id": "turkishgetups",
       "name": "Turkish Get-ups",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -4822,7 +4822,7 @@
         "Chin-ups & Pull-overs",
         "Chin-ups"
       ],
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -4890,7 +4890,7 @@
     {
       "id": "widegrippulldowns",
       "name": "Wide Grip Pulldowns & Bent-over Rows",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -4958,7 +4958,7 @@
     {
       "id": "bentoverrows",
       "name": "Wide Grip Pulldowns & Bent-over Rows",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",
@@ -5019,7 +5019,7 @@
     {
       "id": "yogapushup",
       "name": "Yoga Push-up",
-      "sources": [
+      "demos": [
         {
           "type": "cloudinary",
           "mediaType": "video",

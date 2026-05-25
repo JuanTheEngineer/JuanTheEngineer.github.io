@@ -163,7 +163,7 @@ function processExercise(exercise, parentName) {
       id,
       name: displayName,
       aliases: new Set(),
-      sources: [],
+      demos: [],
       sourceUrls: new Set(), // Track unique URLs
       recommendations: {
         reps: exercise.reps,
@@ -189,11 +189,11 @@ function processExercise(exercise, parentName) {
   if (primaryUrl && !entry.sourceUrls.has(primaryUrl)) {
     entry.sourceUrls.add(primaryUrl);
     const source = buildSource(primaryUrl, {
-      isPrimary: entry.sources.filter(s => s.isPrimary).length === 0,
+      isPrimary: entry.demos.filter(s => s.isPrimary).length === 0,
       startTime: exercise.startTime || 0,
       endTime: exercise.endTime || 0
     });
-    if (source) entry.sources.push(source);
+    if (source) entry.demos.push(source);
   }
   
   // Add local gif as fallback if cloudinaryUrl was used
@@ -202,7 +202,7 @@ function processExercise(exercise, parentName) {
     const source = buildSource(exercise.gif, {
       notes: 'Local fallback'
     });
-    if (source) entry.sources.push(source);
+    if (source) entry.demos.push(source);
   }
   
   // Add alternatives
@@ -217,7 +217,7 @@ function processExercise(exercise, parentName) {
         });
         // Override type if explicitly set
         if (alt.type) source.type = alt.type;
-        if (source) entry.sources.push(source);
+        if (source) entry.demos.push(source);
       }
     });
   }
@@ -240,7 +240,7 @@ function processExercise(exercise, parentName) {
           confidence: videoSource.confidence
         }
       });
-      if (source) entry.sources.push(source);
+      if (source) entry.demos.push(source);
     }
     
     // Add old-format alternatives (string URLs) with metadata enrichment
@@ -254,7 +254,7 @@ function processExercise(exercise, parentName) {
             startTime: typeof alt === 'object' ? (alt.startTime || 0) : 0,
             endTime: typeof alt === 'object' ? (alt.endTime || 0) : 0
           });
-          if (source) entry.sources.push(source);
+          if (source) entry.demos.push(source);
         }
       });
     }
@@ -272,7 +272,7 @@ const exercises = Array.from(exerciseMap.values()).map(entry => {
     result.aliases = Array.from(entry.aliases);
   }
   
-  result.sources = entry.sources;
+  result.demos = entry.demos;
   
   // Only include recommendations if any field is set
   const recs = entry.recommendations;
@@ -302,10 +302,10 @@ fs.writeFileSync(
 );
 
 // Statistics
-const totalSources = exercises.reduce((sum, ex) => sum + ex.sources.length, 0);
+const totalSources = exercises.reduce((sum, ex) => sum + ex.demos.length, 0);
 const sourceTypes = {};
 exercises.forEach(ex => {
-  ex.sources.forEach(s => {
+  ex.demos.forEach(s => {
     sourceTypes[s.type] = (sourceTypes[s.type] || 0) + 1;
   });
 });
