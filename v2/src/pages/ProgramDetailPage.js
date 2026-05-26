@@ -4,7 +4,7 @@ import { navigate } from '../utils/router.js';
 import { createExerciseCard } from '../components/ExerciseCard.js';
 import { createGroupCard } from '../components/GroupCard.js';
 import { celebrate } from '../components/Celebration.js';
-import { getProgress, toggleProgress, resetProgress } from '../utils/storage.js';
+import { getProgress, toggleProgress, resetProgress, recordProgramVisit } from '../utils/storage.js';
 
 export async function renderProgramDetailPage(container, programId) {
   container.innerHTML = renderShell(`
@@ -20,6 +20,7 @@ export async function renderProgramDetailPage(container, programId) {
       renderNotFound(container, programId);
       return;
     }
+    recordProgramVisit(program.id);
     renderContent(container, program);
   } catch (err) {
     renderError(container, err);
