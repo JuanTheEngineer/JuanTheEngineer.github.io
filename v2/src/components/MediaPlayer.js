@@ -31,10 +31,10 @@ export function renderMedia(container, source, options = {}) {
 
   switch (strategy) {
     case 'image':
-      renderImage(container, source, className);
+      renderImage(container, source, className, options.onError);
       break;
     case 'video':
-      renderVideo(container, source, className, options.autoplay);
+      renderVideo(container, source, className, options.autoplay, options.onError);
       break;
     case 'embed':
       renderEmbed(container, source, className);
@@ -44,7 +44,7 @@ export function renderMedia(container, source, options = {}) {
   }
 }
 
-function renderImage(container, source, className) {
+function renderImage(container, source, className, onError) {
   const url = source.type === 'cloudinary'
     ? transformCloudinaryUrl(source.url, 'w_800,q_auto,f_auto')
     : source.url;
@@ -58,9 +58,13 @@ function renderImage(container, source, className) {
       decoding="async"
     />
   `;
+  if (onError) {
+    const img = container.querySelector('img');
+    img?.addEventListener('error', () => onError(), { once: true });
+  }
 }
 
-function renderVideo(container, source, className, autoplay = true) {
+function renderVideo(container, source, className, autoplay = true, onError) {
   const url = source.type === 'cloudinary'
     ? transformCloudinaryUrl(source.url, 'w_800,q_auto,f_auto')
     : source.url;
@@ -78,6 +82,10 @@ function renderVideo(container, source, className, autoplay = true) {
       preload="metadata"
     ></video>
   `;
+  if (onError) {
+    const video = container.querySelector('video');
+    video?.addEventListener('error', () => onError(), { once: true });
+  }
 }
 
 function renderEmbed(container, source, className) {
