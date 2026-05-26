@@ -51,13 +51,28 @@ export function renderDemoCarousel(container, demos, options = {}) {
 
   // Render media into each slide once it scrolls near (defer YouTube embeds)
   const renderedSlides = new Set();
+  const playingEmbedSlides = new Set(); // Track slides that have a playing iframe
   const renderSlide = (idx) => {
     if (renderedSlides.has(idx)) return;
     const slide = track.children[idx];
     if (!slide) return;
     const demo = items[idx];
-    renderMedia(slide, demo, { onError: () => removeSlide(idx) });
+    renderMedia(slide, demo, {
+      onError: () => removeSlide(idx),
+      onEmbedPlay: () => playingEmbedSlides.add(idx)
+    });
     renderedSlides.add(idx);
+  };
+
+  // When a slide is no longer active, reset any playing iframe back to thumbnail
+  // so it stops capturing touch events and lets the user keep swiping.
+  const resetEmbedSlide = (idx) => {
+    if (!playingEmbedSlides.has(idx)) return;
+    const slide = track.children[idx];
+    if (!slide) return;
+    playingEmbedSlides.delete(idx);
+    renderedSlides.delete(idx);
+    renderSlide(idx);
   };
 
   // Defensive: if a media source fails to load, remove it from the carousel
@@ -77,15 +92,18 @@ export function renderDemoCarousel(container, demos, options = {}) {
 
   const updateDots = () => {
     if (!dotsContainer) return;
+    // Uniform 4px circles. Active = full brand color, inactive = dim slate.
+    // Touch target is larger via padding so they're still tappable.
     dotsContainer.innerHTML = items.map((_, i) => `
       <button
         data-dot-index="${i}"
         aria-label="Go to demo ${i + 1}"
-        class="rounded-full transition-all touch-manipulation
-          ${i === activeIndex
-            ? 'w-2 h-2 bg-brand-400'
-            : 'w-1.5 h-1.5 bg-slate-600 hover:bg-slate-500'}"
-      ></button>
+        class="p-1.5 -m-1.5 group touch-manipulation"
+      >
+        <span class="block w-1 h-1 rounded-full transition-colors
+          ${i === activeIndex ? 'bg-brand-400' : 'bg-slate-600 group-hover:bg-slate-500'}"
+        ></span>
+      </button>
     `).join('');
     dotsContainer.querySelectorAll('[data-dot-index]').forEach(el => {
       el.addEventListener('click', () => goTo(Number(el.dataset.dotIndex)));
@@ -113,10 +131,14 @@ export function renderDemoCarousel(container, demos, options = {}) {
       const slideWidth = track.children[0]?.offsetWidth || 1;
       const newIndex = Math.round(track.scrollLeft / slideWidth);
       if (newIndex !== activeIndex && newIndex >= 0 && newIndex < items.length) {
+        const previousIndex = activeIndex;
         activeIndex = newIndex;
+        // Reset any playing iframe on the slide we just left so the user
+        // can keep swiping (iframes swallow touch events).
+        resetEmbedSlide(previousIndex);
         updateDots();
         updateCaption();
-        // Render the active slide (and its neighbors) lazily
+        // Render the active slide and its neighbors lazily
         renderSlide(activeIndex);
         if (activeIndex + 1 < items.length) renderSlide(activeIndex + 1);
         if (activeIndex - 1 >= 0) renderSlide(activeIndex - 1);

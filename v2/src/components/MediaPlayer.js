@@ -37,7 +37,7 @@ export function renderMedia(container, source, options = {}) {
       renderVideo(container, source, className, options.autoplay, options.onError);
       break;
     case 'embed':
-      renderEmbed(container, source, className);
+      renderEmbed(container, source, className, options.onEmbedPlay);
       break;
     default:
       container.innerHTML = `<div class="${className} flex items-center justify-center text-slate-500 text-sm">Unsupported media type</div>`;
@@ -88,7 +88,7 @@ function renderVideo(container, source, className, autoplay = true, onError) {
   }
 }
 
-function renderEmbed(container, source, className) {
+function renderEmbed(container, source, className, onEmbedPlay) {
   // Embeds (iframes) must have an explicit aspect ratio.
   // Default to portrait 9:16 for "shorts" URLs, otherwise 16:9.
   const isShorts = (source.url || '').includes('/shorts/');
@@ -129,9 +129,8 @@ function renderEmbed(container, source, className) {
         ? getYouTubeEmbedUrl(source.url, { startTime: source.startTime, endTime: source.endTime })
         : source.url;
 
-      const wrapper = container.querySelector(`.${aspectClass.split(' ')[0]}`)?.parentElement || container;
       container.innerHTML = `
-        <div class="${wrappedClassName}">
+        <div class="${wrappedClassName} relative">
           <iframe
             src="${embedUrl}"
             class="absolute inset-0 w-full h-full border-0"
@@ -141,6 +140,7 @@ function renderEmbed(container, source, className) {
           ></iframe>
         </div>
       `;
+      onEmbedPlay?.();
     }, { once: true });
   }
 }
