@@ -1,40 +1,7 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-05-25T21:14:18.691Z",
+  "lastUpdated": "2026-05-25T07:28:54.872Z",
   "exercises": [
-    {
-      "id": "1a-db-row",
-      "name": "1A DB Row",
-      "demos": [],
-      "recommendations": {
-        "reps": "8",
-        "sets": "2",
-        "repUnits": "reps",
-        "note": "Use 25lb dumbbells."
-      }
-    },
-    {
-      "id": "1l-rdl-w-band-above-knee",
-      "name": "1L RDL w/ Band Above Knee",
-      "demos": [],
-      "recommendations": {
-        "reps": "30",
-        "sets": "2",
-        "repUnits": "secs",
-        "note": "Hand on railing, reach back leg outwards."
-      }
-    },
-    {
-      "id": "2l-pogo",
-      "name": "2L Pogo",
-      "demos": [],
-      "recommendations": {
-        "reps": "15",
-        "sets": "2",
-        "repUnits": "reps",
-        "note": "Landing midfoot."
-      }
-    },
     {
       "id": "45degreebackraises",
       "name": "45° Back Raise",
@@ -101,17 +68,6 @@
         "sets": "Varies",
         "repUnits": "reps",
         "note": "Go through full range of motion."
-      }
-    },
-    {
-      "id": "a-runs-gear-1-3",
-      "name": "A Runs Gear 1-3",
-      "demos": [],
-      "recommendations": {
-        "reps": "4",
-        "sets": "rounds",
-        "repUnits": "reps",
-        "note": "Perform running gear drills."
       }
     },
     {
@@ -966,17 +922,6 @@
       }
     },
     {
-      "id": "copenhagen-plank-at-upper-calf-with-lifts",
-      "name": "Copenhagen Plank at Upper Calf with Lifts",
-      "demos": [],
-      "recommendations": {
-        "reps": "8",
-        "sets": "2",
-        "repUnits": "reps",
-        "note": "Perform at ankle with lifts."
-      }
-    },
-    {
       "id": "curtsylunges",
       "name": "Curtsy Lunges",
       "demos": [
@@ -1110,17 +1055,6 @@
         "sets": "5",
         "repUnits": "reps",
         "note": "Weight: 10 lbs"
-      }
-    },
-    {
-      "id": "db-chest-press",
-      "name": "DB Chest Press",
-      "demos": [],
-      "recommendations": {
-        "reps": "10",
-        "sets": "3",
-        "repUnits": "reps",
-        "note": "Use 2x35lb. Use same concept as goblet squat. Tempo: slow down, fast up."
       }
     },
     {
@@ -1553,28 +1487,6 @@
         "reps": "5",
         "sets": "4",
         "repUnits": "reps"
-      }
-    },
-    {
-      "id": "dumbbell-bulgarian-split-squat-rfess",
-      "name": "Dumbbell Bulgarian Split Squat (RFESS)",
-      "demos": [],
-      "recommendations": {
-        "reps": "6",
-        "sets": "2",
-        "repUnits": "reps",
-        "note": "Use 2x40lb. Option to warm up with a lighter weight."
-      }
-    },
-    {
-      "id": "dumbbell-chest-press",
-      "name": "Dumbbell Chest Press",
-      "demos": [],
-      "recommendations": {
-        "reps": "10",
-        "sets": "3",
-        "repUnits": "reps",
-        "note": "Use 2x35lb. Tempo: slow down, fast up."
       }
     },
     {
@@ -2312,17 +2224,6 @@
         "sets": "Varies",
         "repUnits": "reps",
         "note": "Can be substituted with any hamstring workout if necessary."
-      }
-    },
-    {
-      "id": "goblet-squat-tempo",
-      "name": "Goblet Squat (Tempo)",
-      "demos": [],
-      "recommendations": {
-        "reps": "5",
-        "sets": "3",
-        "repUnits": "reps",
-        "note": "Use 75lb. Tempo: slow down, fast up."
       }
     },
     {
@@ -3324,17 +3225,6 @@
       }
     },
     {
-      "id": "landing-from-a-box",
-      "name": "Landing from a Box",
-      "demos": [],
-      "recommendations": {
-        "reps": "5",
-        "sets": "3",
-        "repUnits": "reps",
-        "note": "From 12in box."
-      }
-    },
-    {
       "id": "lowboxdrops",
       "name": "Low Box Drops",
       "demos": [
@@ -3847,17 +3737,6 @@
         "sets": "3",
         "repUnits": "reps",
         "note": "Use a 45lbs plate."
-      }
-    },
-    {
-      "id": "one-arm-dumbbell-rows",
-      "name": "One Arm Dumbbell Rows",
-      "demos": [],
-      "recommendations": {
-        "reps": "8",
-        "sets": "2",
-        "repUnits": "reps",
-        "note": "Use 25lb dumbbells."
       }
     },
     {
@@ -4503,28 +4382,6 @@
       }
     },
     {
-      "id": "split-squat-hold-with-hands-overhead",
-      "name": "Split Squat Hold with Hands Overhead",
-      "demos": [],
-      "recommendations": {
-        "reps": "30",
-        "sets": "2",
-        "repUnits": "secs",
-        "note": "Keep pelvis level, stack torso over the back knee. Use 2x20lb weights."
-      }
-    },
-    {
-      "id": "split-squat-hold-hands-overhead",
-      "name": "Split Squat Hold, Hands Overhead",
-      "demos": [],
-      "recommendations": {
-        "reps": "30",
-        "sets": "2",
-        "repUnits": "secs",
-        "note": "Keep pelvis level, stack torso over the back knee. Use 2x20lb weights."
-      }
-    },
-    {
       "id": "splitsquatisohold",
       "name": "Split Squats & Split Squat Iso-Holds",
       "demos": [
@@ -4891,17 +4748,6 @@
       }
     },
     {
-      "id": "trapbar-deadlift",
-      "name": "Trapbar Deadlift",
-      "demos": [],
-      "recommendations": {
-        "reps": "6",
-        "sets": "3",
-        "repUnits": "reps",
-        "note": "Use 130lb (or available weight). Tempo: slow down, fast up."
-      }
-    },
-    {
       "id": "turkishgetups",
       "name": "Turkish Get-ups",
       "demos": [
@@ -4967,28 +4813,6 @@
         "sets": "3",
         "repUnits": "reps",
         "note": "."
-      }
-    },
-    {
-      "id": "two-leg-pogo",
-      "name": "Two Leg Pogo",
-      "demos": [],
-      "recommendations": {
-        "reps": "15",
-        "sets": "2",
-        "repUnits": "reps",
-        "note": "Landing midfoot, bounce on both feet while not allowing the heel to touch the floor or the ankle to extend."
-      }
-    },
-    {
-      "id": "wall-lower-calf-holds-lifts",
-      "name": "Wall Lower Calf Holds & Lifts",
-      "demos": [],
-      "recommendations": {
-        "reps": "20 / 30",
-        "sets": "2",
-        "repUnits": "secs",
-        "note": "Perform 2 sets of 20s with 30lb, then 2 sets of 30s each side."
       }
     },
     {
