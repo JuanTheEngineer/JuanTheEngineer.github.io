@@ -1,7 +1,6 @@
 // GroupCard: renders a superset / compound / circuit group of exercises
 // All members are equal first-class exercises, displayed together with a label
-import { renderMedia } from './MediaPlayer.js';
-import { pickPrimarySource } from '../utils/media-utils.js';
+import { renderDemoCarousel } from './DemoCarousel.js';
 
 const KIND_LABELS = {
   superset: 'Super Set',
@@ -84,8 +83,8 @@ export function createGroupCard(item, state) {
   if (state.isExpanded) {
     item.exercises.forEach((member, i) => {
       const slot = card.querySelector(`[data-member-media="${i}"]`);
-      const demo = member.exercise?.demos ? pickPrimarySource(member.exercise.demos) : null;
-      if (slot && demo) renderMedia(slot, demo);
+      const demos = member.exercise?.demos || [];
+      if (slot && demos.length > 0) renderDemoCarousel(slot, demos);
     });
   }
 

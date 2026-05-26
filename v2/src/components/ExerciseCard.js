@@ -1,7 +1,6 @@
 // ExerciseCard: expandable row for a single resolved item
 // Now reads from a resolved item shape (with merged overrides + canonical exercise)
-import { renderMedia } from './MediaPlayer.js';
-import { pickPrimarySource } from '../utils/media-utils.js';
+import { renderDemoCarousel } from './DemoCarousel.js';
 
 /**
  * Build an exercise card element for a single resolved item.
@@ -14,7 +13,7 @@ export function createExerciseCard(item, state) {
   card.className = `card overflow-hidden transition-all ${state.isCompleted ? 'opacity-60' : ''}`;
   card.dataset.itemIndex = String(state.index);
 
-  const primaryDemo = item.exercise?.demos ? pickPrimarySource(item.exercise.demos) : null;
+  const demos = item.exercise?.demos || [];
 
   card.innerHTML = `
     <div class="flex items-stretch">
@@ -71,9 +70,9 @@ export function createExerciseCard(item, state) {
     </div>
   `;
 
-  if (state.isExpanded && primaryDemo) {
+  if (state.isExpanded && demos.length > 0) {
     const slot = card.querySelector('[data-media-slot]');
-    if (slot) renderMedia(slot, primaryDemo);
+    if (slot) renderDemoCarousel(slot, demos);
   }
 
   card.querySelector('[data-action="toggle"]')?.addEventListener('click', () => {

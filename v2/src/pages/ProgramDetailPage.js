@@ -48,11 +48,7 @@ function renderContent(container, program) {
       </p>
     </header>
 
-    <nav class="px-6 mb-4">
-      <div data-region="timeline" class="flex items-center gap-1.5"></div>
-    </nav>
-
-    <main class="flex-1 px-6 pb-32">
+    <main class="flex-1 px-6 pb-32 pt-4">
       <ul data-region="items" class="space-y-2.5"></ul>
 
       <div data-region="actions" class="mt-8 space-y-3 hidden">
@@ -73,31 +69,7 @@ function renderContent(container, program) {
   wireBack(container);
 
   const list = container.querySelector('[data-region="items"]');
-  const timeline = container.querySelector('[data-region="timeline"]');
   const actions = container.querySelector('[data-region="actions"]');
-
-  const renderTimeline = () => {
-    timeline.innerHTML = program.resolvedItems.map((_, i) => {
-      const isCompleted = completed.has(i);
-      const isActive = i === expandedIndex;
-      return `
-        <button
-          data-timeline-index="${i}"
-          aria-label="Go to item ${i + 1}"
-          class="flex-1 h-2 rounded-full transition-all touch-manipulation
-            ${isCompleted ? 'bg-brand-500' : isActive ? 'bg-brand-400' : 'bg-slate-700'}
-            ${isActive ? 'ring-2 ring-brand-400/50' : ''}"
-        ></button>
-      `;
-    }).join('');
-    timeline.querySelectorAll('[data-timeline-index]').forEach(el => {
-      el.addEventListener('click', () => {
-        expandedIndex = Number(el.dataset.timelineIndex);
-        renderAll();
-        scrollToItem(expandedIndex);
-      });
-    });
-  };
 
   const renderList = () => {
     list.innerHTML = '';
@@ -140,7 +112,6 @@ function renderContent(container, program) {
   };
 
   const renderAll = () => {
-    renderTimeline();
     renderList();
     updateProgressBar();
   };
