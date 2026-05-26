@@ -3,6 +3,7 @@ import { getResolvedProgram } from '../utils/data.js';
 import { navigate } from '../utils/router.js';
 import { createExerciseCard } from '../components/ExerciseCard.js';
 import { createGroupCard } from '../components/GroupCard.js';
+import { celebrate } from '../components/Celebration.js';
 import { getProgress, toggleProgress, resetProgress } from '../utils/storage.js';
 
 export async function renderProgramDetailPage(container, programId) {
@@ -111,10 +112,15 @@ function renderContent(container, program) {
           renderAll();
         },
         onComplete: (idx) => {
+          const wasComplete = completed.size === total;
           const next = toggleProgress(program.id, idx);
           completed.clear();
           next.forEach(v => completed.add(v));
           renderAll();
+          // Celebrate when crossing the finish line (and not on un-complete)
+          if (!wasComplete && completed.size === total) {
+            setTimeout(celebrate, 250);
+          }
         }
       };
       const card = item.kind === 'single'
