@@ -22,7 +22,9 @@ export function renderMedia(container, source, options = {}) {
   }
 
   const strategy = getRenderStrategy(source);
-  const className = options.className || 'w-full aspect-video object-cover rounded-2xl bg-slate-800';
+  // Show full media without cropping. max-h prevents tall portrait videos
+  // from overflowing the viewport on mobile.
+  const className = options.className || 'w-full max-h-[60vh] object-contain rounded-2xl bg-slate-800';
 
   // Fade in once loaded
   container.classList.add('animate-fade-in');
@@ -79,31 +81,37 @@ function renderVideo(container, source, className, autoplay = true) {
 }
 
 function renderEmbed(container, source, className) {
+  // Embeds (iframes) must have an explicit aspect ratio.
+  // Default to portrait 9:16 for "shorts" URLs, otherwise 16:9.
+  const isShorts = (source.url || '').includes('/shorts/');
+  const aspectClass = isShorts ? 'aspect-[9/16] max-h-[70vh] mx-auto' : 'aspect-video';
+  const wrappedClassName = `${aspectClass} w-full rounded-2xl overflow-hidden bg-slate-900`;
+
   // Click-to-play pattern: show thumbnail, load iframe only on tap
   const thumb = source.type === 'youtube'
     ? getYouTubeThumbnail(source.url, 'hqdefault')
     : null;
 
-  const playButton = `
-    <button
-      class="group relative ${className} flex items-center justify-center overflow-hidden touch-manipulation"
-      data-action="play-embed"
-      aria-label="Play video"
-    >
-      ${thumb ? `<img src="${thumb}" alt="Video thumbnail" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />` : ''}
-      <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
-      <div class="relative z-10 w-16 h-16 rounded-full bg-brand-500 group-active:scale-95 transition-transform flex items-center justify-center shadow-2xl">
-        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M8 5v14l11-7z" />
-        </svg>
-      </div>
-      <span class="absolute bottom-3 right-3 text-xs text-white/80 bg-black/60 px-2 py-1 rounded-full">
-        ${source.type === 'youtube' ? 'YouTube' : source.type}
-      </span>
-    </button>
+  container.innerHTML = `
+    <div class="${wrappedClassName} relative">
+      <button
+        class="group absolute inset-0 flex items-center justify-center overflow-hidden touch-manipulation"
+        data-action="play-embed"
+        aria-label="Play video"
+      >
+        ${thumb ? `<img src="${thumb}" alt="Video thumbnail" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />` : ''}
+        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+        <div class="relative z-10 w-16 h-16 rounded-full bg-brand-500 group-active:scale-95 transition-transform flex items-center justify-center shadow-2xl">
+          <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </div>
+        <span class="absolute bottom-3 right-3 text-xs text-white/80 bg-black/60 px-2 py-1 rounded-full z-10">
+          ${source.type === 'youtube' ? 'YouTube' : source.type}
+        </span>
+      </button>
+    </div>
   `;
-
-  container.innerHTML = playButton;
 
   // Wire up click-to-play
   const button = container.querySelector('[data-action="play-embed"]');
@@ -113,14 +121,17 @@ function renderEmbed(container, source, className) {
         ? getYouTubeEmbedUrl(source.url, { startTime: source.startTime, endTime: source.endTime })
         : source.url;
 
+      const wrapper = container.querySelector(`.${aspectClass.split(' ')[0]}`)?.parentElement || container;
       container.innerHTML = `
-        <iframe
-          src="${embedUrl}"
-          class="${className}"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+        <div class="${wrappedClassName}">
+          <iframe
+            src="${embedUrl}"
+            class="absolute inset-0 w-full h-full border-0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
       `;
     }, { once: true });
   }
