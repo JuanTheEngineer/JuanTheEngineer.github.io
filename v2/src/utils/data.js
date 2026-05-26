@@ -1,82 +1,97 @@
-// Data loader for workouts.json and exercises.json
-// Files are served from the repo root, so we fetch with an absolute path.
-// In dev (Vite), we use a proxy via the public/ folder symlink approach,
-// but for simplicity we copy files at build time via a script later.
-
-// For now: fetch from ../workouts.json (parent of v2/)
-// Production: files will be copied into v2/public/ by build script
+// Data loader for workouts.json, exercises.json, plans.json
+// Resolves exerciseId references in programs to full exercise data.
 
 const cache = {
   workouts: null,
   exercises: null,
-  plans: null
+  plans: null,
+  exerciseMap: null
 };
 
-/**
- * Load workouts.json (programs with exercises).
- * Caches result after first load.
- */
 export async function loadWorkouts() {
   if (cache.workouts) return cache.workouts;
-
-  const url = resolveDataUrl('workouts.json');
-  const res = await fetch(url);
+  const res = await fetch('./workouts.json');
   if (!res.ok) throw new Error(`Failed to load workouts.json: ${res.status}`);
-  const data = await res.json();
-  cache.workouts = data;
-  return data;
+  cache.workouts = await res.json();
+  return cache.workouts;
 }
 
-/**
- * Load exercises.json (canonical exercise library).
- * Caches result after first load.
- */
 export async function loadExercises() {
   if (cache.exercises) return cache.exercises;
-
-  const url = resolveDataUrl('exercises.json');
-  const res = await fetch(url);
+  const res = await fetch('./exercises.json');
   if (!res.ok) throw new Error(`Failed to load exercises.json: ${res.status}`);
-  const data = await res.json();
-  cache.exercises = data;
-  return data;
+  cache.exercises = await res.json();
+  // Build id -> exercise map for fast lookup
+  cache.exerciseMap = new Map(cache.exercises.exercises.map(e => [e.id, e]));
+  return cache.exercises;
 }
 
-/**
- * Load plans.json (program categorization).
- */
 export async function loadPlans() {
   if (cache.plans) return cache.plans;
-
-  const url = resolveDataUrl('plans.json');
-  const res = await fetch(url);
+  const res = await fetch('./plans.json');
   if (!res.ok) throw new Error(`Failed to load plans.json: ${res.status}`);
-  const data = await res.json();
-  cache.plans = data;
-  return data;
+  cache.plans = await res.json();
+  return cache.plans;
 }
 
-/**
- * Find a program by id from workouts.json
- */
 export async function getProgram(id) {
   const workouts = await loadWorkouts();
   return workouts.programs.find(p => p.id === id) || null;
 }
 
-/**
- * Find an exercise by id from exercises.json
- */
 export async function getExercise(id) {
-  const lib = await loadExercises();
-  return lib.exercises.find(e => e.id === id) || null;
+  await loadExercises();
+  return cache.exerciseMap?.get(id) || null;
 }
 
 /**
- * Resolve URL for data files.
- * In dev, files live one level up. In production, they're served from /public/.
+ * Resolve a program's items: merge each exerciseId reference with the
+ * canonical exercise from exercises.json, applying program-level overrides.
+ *
+ * @returns {Array} Resolved items (single or group), each ready for rendering.
  */
-function resolveDataUrl(filename) {
-  // Try public path first (works in both dev and prod with Vite)
-  return `./${filename}`;
+export async function getResolvedProgram(id) {
+  const [program] = await Promise.all([getProgram(id), loadExercises()]);
+  if (!program) return null;
+
+  const resolveSingle = (item) => {
+    const exercise = cache.exerciseMap.get(item.exerciseId) || null;
+    return {
+      kind: 'single',
+      exerciseId: item.exerciseId,
+      exercise, // full canonical data (or null if unresolved)
+      reps: item.reps ?? exercise?.recommendations?.reps,
+      sets: item.sets ?? exercise?.recommendations?.sets,
+      repUnits: item.repUnits ?? exercise?.recommendations?.repUnits,
+      note: item.note ?? exercise?.recommendations?.note,
+      displayName: item.displayName || exercise?.name || item.exerciseId,
+      tags: item.tags || []
+    };
+  };
+
+  const resolveGroup = (item) => ({
+    kind: item.kind,
+    displayName: item.displayName,
+    note: item.note,
+    tags: item.tags || [],
+    exercises: item.exercises.map(member => {
+      const exercise = cache.exerciseMap.get(member.exerciseId) || null;
+      return {
+        exerciseId: member.exerciseId,
+        exercise,
+        reps: member.reps ?? exercise?.recommendations?.reps,
+        sets: member.sets ?? exercise?.recommendations?.sets,
+        repUnits: member.repUnits ?? exercise?.recommendations?.repUnits,
+        note: member.note ?? exercise?.recommendations?.note,
+        displayName: exercise?.name || member.exerciseId
+      };
+    })
+  });
+
+  const resolvedItems = (program.items || []).map(item => {
+    if (item.kind) return resolveGroup(item);   // group: superset/compound/circuit
+    return resolveSingle(item);                  // single
+  });
+
+  return { ...program, resolvedItems };
 }
