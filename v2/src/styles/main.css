@@ -17,6 +17,14 @@
     /* Better text rendering */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Inter looks best with these OpenType features on */
+    font-feature-settings: 'cv11', 'ss01', 'ss03';
+    letter-spacing: -0.005em;
+  }
+
+  /* Display headings get tighter tracking — looks more confident */
+  h1, h2, h3 {
+    letter-spacing: -0.02em;
   }
 
   /* Smooth scrolling but respect user preferences */
@@ -51,6 +59,28 @@
   .card {
     @apply bg-slate-900/80 backdrop-blur-sm border border-slate-800
            rounded-2xl overflow-hidden;
+  }
+
+  /* Type scale — keep page typography consistent */
+  .h-display {
+    @apply text-[2rem] sm:text-4xl font-extrabold tracking-tight leading-[1.1];
+  }
+  .h-page {
+    @apply text-[1.625rem] font-bold tracking-tight leading-tight;
+  }
+  .h-section {
+    @apply text-lg font-semibold tracking-tight leading-snug;
+  }
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.12em] text-brand-400;
+  }
+  .label-meta {
+    @apply text-[10px] font-semibold uppercase tracking-[0.1em] text-slate-500;
+  }
+  /* Use for any digit-heavy element (stats, counters, durations) */
+  .num {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum', 'cv11';
   }
 
   /* Hide scrollbars on horizontal scroll containers (carousel) */

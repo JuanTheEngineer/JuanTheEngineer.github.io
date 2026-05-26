@@ -36,13 +36,13 @@ function renderContent(container, program) {
       <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden">
         <div data-region="progress-bar" class="h-full bg-gradient-to-r from-brand-500 to-brand-400 transition-all duration-500" style="width: ${(completed.size / total) * 100}%"></div>
       </div>
-      <p class="text-[11px] text-slate-500 mt-1.5 font-medium">
+      <p class="text-[11px] text-slate-500 mt-1.5 font-medium num">
         <span data-region="completed-count">${completed.size}</span> of ${total} complete
       </p>
     </div>
 
     <header class="px-6 pt-4 pb-3">
-      <h1 class="text-2xl font-bold leading-tight">${escapeHtml(program.title)}</h1>
+      <h1 class="h-page">${escapeHtml(program.title)}</h1>
       ${program.requirements ? `
         <p class="text-sm text-slate-400 mt-1.5">${escapeHtml(program.requirements)}</p>
       ` : ''}

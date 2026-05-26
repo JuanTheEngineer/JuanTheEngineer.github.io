@@ -37,15 +37,15 @@ export function createGroupCard(item, state) {
       >
         <div class="flex-1 min-w-0">
           <div class="flex items-center gap-1.5 mb-1.5">
-            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-brand-500/20 text-brand-300">${kindLabel}</span>
+            <span class="text-[10px] font-bold uppercase tracking-[0.1em] px-2 py-0.5 rounded-md bg-brand-500/20 text-brand-300">${kindLabel}</span>
             ${(item.tags || []).map(t => `
-              <span class="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-md bg-slate-800 text-slate-400">${escapeHtml(t)}</span>
+              <span class="text-[10px] font-semibold uppercase tracking-[0.1em] px-2 py-0.5 rounded-md bg-slate-800 text-slate-400">${escapeHtml(t)}</span>
             `).join('')}
           </div>
-          <h3 class="font-semibold leading-tight ${state.isCompleted ? 'line-through text-slate-500' : 'text-slate-100'}">
+          <h3 class="font-semibold tracking-tight leading-tight ${state.isCompleted ? 'line-through text-slate-500' : 'text-slate-100'}">
             ${escapeHtml(item.displayName || `${kindLabel}: ${memberCount} exercises`)}
           </h3>
-          <p class="text-sm text-slate-400 mt-1">${memberCount} exercises</p>
+          <p class="text-sm text-slate-400 mt-1 num">${memberCount} exercises</p>
         </div>
         <svg class="w-4 h-4 text-slate-500 flex-shrink-0 transition-transform ${state.isExpanded ? 'rotate-180' : ''}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
@@ -103,18 +103,18 @@ function memberBlock(member, idx) {
   return `
     <div class="bg-slate-800/40 rounded-xl p-3 space-y-3">
       <div class="flex items-center gap-2">
-        <span class="w-6 h-6 rounded-full bg-slate-700 text-slate-300 text-xs font-bold flex items-center justify-center flex-shrink-0">${idx + 1}</span>
-        <h4 class="font-medium text-slate-100 text-sm flex-1 leading-tight">${escapeHtml(member.displayName)}</h4>
+        <span class="w-6 h-6 rounded-full bg-slate-700 text-slate-300 text-xs font-bold flex items-center justify-center flex-shrink-0 num">${idx + 1}</span>
+        <h4 class="font-medium text-slate-100 text-sm flex-1 leading-tight tracking-tight">${escapeHtml(member.displayName)}</h4>
       </div>
       <div data-member-media="${idx}"></div>
       <div class="flex gap-2">
         <div class="flex-1 bg-slate-900/60 rounded-lg p-2 text-center">
-          <p class="text-lg font-bold text-brand-400 leading-none">${escapeHtml(member.reps || '—')}</p>
-          <p class="text-[10px] text-slate-500 mt-1 uppercase tracking-wide">${escapeHtml(member.repUnits || 'reps')}</p>
+          <p class="text-lg font-extrabold text-brand-400 leading-none num tracking-tight">${escapeHtml(member.reps || '—')}</p>
+          <p class="label-meta mt-1">${escapeHtml(member.repUnits || 'reps')}</p>
         </div>
         <div class="flex-1 bg-slate-900/60 rounded-lg p-2 text-center">
-          <p class="text-lg font-bold text-brand-400 leading-none">${escapeHtml(member.sets || '—')}</p>
-          <p class="text-[10px] text-slate-500 mt-1 uppercase tracking-wide">sets</p>
+          <p class="text-lg font-extrabold text-brand-400 leading-none num tracking-tight">${escapeHtml(member.sets || '—')}</p>
+          <p class="label-meta mt-1">sets</p>
         </div>
       </div>
       ${member.note ? `

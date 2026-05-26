@@ -5,9 +5,9 @@ export function renderHomePage(container) {
   container.innerHTML = `
     <div class="flex-1 flex flex-col">
       <header class="px-6 pt-16 pb-8">
-        <p class="text-brand-400 text-sm font-medium tracking-wide uppercase">Action App</p>
-        <h1 class="text-4xl font-bold tracking-tight mt-2">No more excuses</h1>
-        <p class="text-slate-400 mt-3 leading-relaxed">
+        <p class="eyebrow">Action App</p>
+        <h1 class="h-display mt-2">No more excuses</h1>
+        <p class="text-[15px] text-slate-400 mt-3 leading-relaxed max-w-md">
           Your mobile fitness companion.
           Pick a program, follow along, get it done.
         </p>
@@ -25,7 +25,7 @@ export function renderHomePage(container) {
               </svg>
             </div>
             <div class="flex-1">
-              <h2 class="font-semibold">Browse programs</h2>
+              <h2 class="font-semibold tracking-tight">Browse programs</h2>
               <p class="text-sm text-slate-400 mt-0.5">Curated workout plans</p>
             </div>
             <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -46,7 +46,7 @@ export function renderHomePage(container) {
               </svg>
             </div>
             <div class="flex-1">
-              <h2 class="font-semibold">Exercise library</h2>
+              <h2 class="font-semibold tracking-tight">Exercise library</h2>
               <p class="text-sm text-slate-400 mt-0.5">All exercises with demos</p>
             </div>
             <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">

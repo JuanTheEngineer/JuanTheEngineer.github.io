@@ -23,10 +23,10 @@ export function createExerciseCard(item, state) {
       >
         <div class="flex-1 min-w-0">
           ${tagBadges(item.tags)}
-          <h3 class="font-semibold leading-tight ${state.isCompleted ? 'line-through text-slate-500' : 'text-slate-100'}">
+          <h3 class="font-semibold tracking-tight leading-tight ${state.isCompleted ? 'line-through text-slate-500' : 'text-slate-100'}">
             ${escapeHtml(item.displayName)}
           </h3>
-          <p class="text-sm text-slate-400 mt-1">
+          <p class="text-sm text-slate-400 mt-1 num">
             ${formatStats(item)}
           </p>
         </div>
@@ -53,12 +53,12 @@ export function createExerciseCard(item, state) {
         <div data-media-slot></div>
         <div class="grid grid-cols-2 gap-3">
           <div class="bg-slate-800/50 rounded-xl p-3 text-center">
-            <p class="text-3xl font-bold text-brand-400 leading-none">${escapeHtml(item.reps || '—')}</p>
-            <p class="text-xs text-slate-400 mt-1.5 font-medium uppercase tracking-wide">${escapeHtml(item.repUnits || 'reps')}</p>
+            <p class="text-3xl font-extrabold text-brand-400 leading-none num tracking-tight">${escapeHtml(item.reps || '—')}</p>
+            <p class="label-meta mt-1.5">${escapeHtml(item.repUnits || 'reps')}</p>
           </div>
           <div class="bg-slate-800/50 rounded-xl p-3 text-center">
-            <p class="text-3xl font-bold text-brand-400 leading-none">${escapeHtml(item.sets || '—')}</p>
-            <p class="text-xs text-slate-400 mt-1.5 font-medium uppercase tracking-wide">sets</p>
+            <p class="text-3xl font-extrabold text-brand-400 leading-none num tracking-tight">${escapeHtml(item.sets || '—')}</p>
+            <p class="label-meta mt-1.5">sets</p>
           </div>
         </div>
         ${item.note ? `
@@ -98,7 +98,7 @@ function tagBadges(tags = []) {
   return `
     <div class="flex gap-1.5 mb-1.5">
       ${tags.map(t => `
-        <span class="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-md bg-slate-800 text-slate-400">${escapeHtml(t)}</span>
+        <span class="text-[10px] font-semibold uppercase tracking-[0.1em] px-2 py-0.5 rounded-md bg-slate-800 text-slate-400">${escapeHtml(t)}</span>
       `).join('')}
     </div>
   `;

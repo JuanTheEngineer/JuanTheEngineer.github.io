@@ -11,7 +11,7 @@ export async function renderProgramListPage(container) {
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
         </svg>
       </button>
-      <h1 class="text-2xl font-bold">Programs</h1>
+      <h1 class="h-page">Programs</h1>
     </header>
     <main class="flex-1 px-6 pb-24 flex items-center justify-center">
       <div class="w-8 h-8 border-2 border-brand-500 border-t-transparent rounded-full animate-spin"></div>
@@ -56,15 +56,15 @@ function renderContent(container, programs, plans) {
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
         </svg>
       </button>
-      <h1 class="text-2xl font-bold">Programs</h1>
+      <h1 class="h-page">Programs</h1>
     </header>
 
     <main class="flex-1 px-6 pb-24 space-y-8">
       ${sections.map((section, sIdx) => `
         <section class="space-y-3 animate-slide-up" style="animation-delay: ${sIdx * 30}ms">
           <div>
-            <p class="text-xs font-medium text-brand-400 uppercase tracking-wide">${section.category}</p>
-            <h2 class="text-lg font-semibold mt-1">${section.title}</h2>
+            <p class="eyebrow">${section.category}</p>
+            <h2 class="h-section mt-1">${section.title}</h2>
             ${section.description ? `<p class="text-sm text-slate-400 mt-1 leading-relaxed">${section.description}</p>` : ''}
           </div>
           <ul class="space-y-2">
@@ -95,9 +95,9 @@ function programCard(program) {
       >
         <div class="flex items-center gap-3">
           <div class="flex-1 min-w-0">
-            <h3 class="font-semibold truncate">${program.title}</h3>
+            <h3 class="font-semibold tracking-tight truncate">${program.title}</h3>
             <div class="flex items-center gap-2 mt-1 text-xs text-slate-400">
-              <span>${itemCount} item${itemCount !== 1 ? 's' : ''}</span>
+              <span class="num">${itemCount} item${itemCount !== 1 ? 's' : ''}</span>
               ${program.requirements ? `
                 <span class="text-slate-600">•</span>
                 <span class="truncate">${program.requirements}</span>
