@@ -29,26 +29,26 @@ export async function renderProgramDetailPage(container, programId) {
 function renderContent(container, program) {
   const completed = getProgress(program.id);
   const total = program.resolvedItems.length;
-  let expandedIndex = 0; // auto-open first item by default
+  let expandedIndex = -1; // Don't auto-open anything; let user decide
 
   container.innerHTML = renderShell(`
-    <div class="px-6 pt-2">
-      <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden mb-4">
+    <div class="sticky top-[3.75rem] z-10 px-6 pt-2 pb-3 bg-slate-950/85 backdrop-blur-md border-b border-slate-900">
+      <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden">
         <div data-region="progress-bar" class="h-full bg-gradient-to-r from-brand-500 to-brand-400 transition-all duration-500" style="width: ${(completed.size / total) * 100}%"></div>
       </div>
+      <p class="text-[11px] text-slate-500 mt-1.5 font-medium">
+        <span data-region="completed-count">${completed.size}</span> of ${total} complete
+      </p>
     </div>
 
-    <header class="px-6 pb-3">
+    <header class="px-6 pt-4 pb-3">
       <h1 class="text-2xl font-bold leading-tight">${escapeHtml(program.title)}</h1>
       ${program.requirements ? `
         <p class="text-sm text-slate-400 mt-1.5">${escapeHtml(program.requirements)}</p>
       ` : ''}
-      <p class="text-xs text-slate-500 mt-2 font-medium">
-        <span data-region="completed-count">${completed.size}</span> of ${total} complete
-      </p>
     </header>
 
-    <main class="flex-1 px-6 pb-32 pt-4">
+    <main class="flex-1 px-6 pb-32 pt-2">
       <ul data-region="items" class="space-y-2.5"></ul>
 
       <div data-region="actions" class="mt-8 space-y-3 hidden">
@@ -82,12 +82,26 @@ function renderContent(container, program) {
         onToggle: (idx) => {
           expandedIndex = (expandedIndex === idx) ? -1 : idx;
           renderAll();
+          // Smooth-scroll the newly opened card into view (below the sticky header)
+          if (expandedIndex === idx) {
+            requestAnimationFrame(() => {
+              const card = list.querySelector(`[data-item-index="${idx}"]`);
+              if (card) {
+                const offset = window.scrollY + card.getBoundingClientRect().top - 130;
+                window.scrollTo({ top: Math.max(0, offset), behavior: 'smooth' });
+              }
+            });
+          }
         },
         onComplete: (idx) => {
           const wasComplete = completed.size === total;
           const next = toggleProgress(program.id, idx);
           completed.clear();
           next.forEach(v => completed.add(v));
+          // Auto-collapse on completion (smoother UX). User can re-open if needed.
+          if (next.has(idx) && expandedIndex === idx) {
+            expandedIndex = -1;
+          }
           renderAll();
           // Celebrate when crossing the finish line (and not on un-complete)
           if (!wasComplete && completed.size === total) {
@@ -117,18 +131,6 @@ function renderContent(container, program) {
   };
 
   renderAll();
-
-  // Auto-scroll on expand
-  const scrollToItem = (idx) => {
-    requestAnimationFrame(() => {
-      const card = list.querySelector(`[data-item-index="${idx}"]`);
-      if (card) {
-        const rect = card.getBoundingClientRect();
-        const offset = window.scrollY + rect.top - 100;
-        window.scrollTo({ top: offset, behavior: 'smooth' });
-      }
-    });
-  };
 
   // Reset button
   container.querySelector('[data-action="reset"]')?.addEventListener('click', () => {
