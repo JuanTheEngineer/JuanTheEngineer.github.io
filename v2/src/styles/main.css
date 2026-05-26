@@ -53,6 +53,10 @@
            rounded-2xl overflow-hidden;
   }
 
+  /* Hide scrollbars on horizontal scroll containers (carousel) */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+
   /* Completion celebration */
   .celebration-flash {
     position: fixed;
