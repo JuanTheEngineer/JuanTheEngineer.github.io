@@ -86,7 +86,7 @@ function renderContent(container, programs, plans) {
 }
 
 function programCard(program) {
-  const exerciseCount = program.exercises?.length || 0;
+  const itemCount = program.items?.length || program.exercises?.length || 0;
   return `
     <li>
       <button
@@ -97,7 +97,7 @@ function programCard(program) {
           <div class="flex-1 min-w-0">
             <h3 class="font-semibold truncate">${program.title}</h3>
             <div class="flex items-center gap-2 mt-1 text-xs text-slate-400">
-              <span>${exerciseCount} exercise${exerciseCount !== 1 ? 's' : ''}</span>
+              <span>${itemCount} item${itemCount !== 1 ? 's' : ''}</span>
               ${program.requirements ? `
                 <span class="text-slate-600">•</span>
                 <span class="truncate">${program.requirements}</span>
