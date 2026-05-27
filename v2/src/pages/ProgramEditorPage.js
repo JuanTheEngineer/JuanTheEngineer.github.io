@@ -63,7 +63,26 @@ export function renderProgramEditorPage(container) {
           <h2 class="eyebrow">Add Exercise</h2>
           <div data-region="picker"></div>
         </section>
+
+        <!-- Export -->
+        <section data-region="export-section" class="hidden space-y-3 pt-4 border-t border-slate-800">
+          <h2 class="eyebrow">Export</h2>
+          <button data-action="export" class="btn-primary w-full text-sm">Export Program JSON</button>
+        </section>
       </main>
+
+      <!-- Export modal -->
+      <div data-region="export-modal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-end sm:items-center justify-center">
+        <div class="bg-slate-900 border border-slate-700 rounded-t-2xl sm:rounded-2xl w-full sm:max-w-lg max-h-[85vh] overflow-y-auto p-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <h2 class="h-section">Export</h2>
+            <button data-action="close-export" class="p-2 rounded-lg hover:bg-white/5 text-slate-400 hover:text-white transition-colors" aria-label="Close">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+          <div data-region="export-content" class="space-y-4"></div>
+        </div>
+      </div>
     </div>
   `;
 
@@ -71,6 +90,7 @@ export function renderProgramEditorPage(container) {
   wireMetaForm(container);
   wirePicker(container);
   renderTimeline(container);
+  wireExport(container);
 }
 
 function wireBack(container) {
@@ -81,10 +101,13 @@ function wireMetaForm(container) {
   const titleInput = container.querySelector('[data-field="title"]');
   const reqsInput = container.querySelector('[data-field="requirements"]');
   const idPreview = container.querySelector('[data-region="id-preview"]');
+  const exportSection = container.querySelector('[data-region="export-section"]');
   titleInput?.addEventListener('input', () => {
     state.meta.title = titleInput.value;
     state.meta.id = deriveId(titleInput.value);
     idPreview.textContent = state.meta.id ? `id: ${state.meta.id}` : '';
+    // Show export button when title + items exist
+    exportSection?.classList.toggle('hidden', !state.meta.title.trim() || state.items.length === 0);
   });
   reqsInput?.addEventListener('input', () => { state.meta.requirements = reqsInput.value; });
 }
@@ -110,10 +133,12 @@ function renderTimeline(container) {
   const list = container.querySelector('[data-region="timeline"]');
   const empty = container.querySelector('[data-region="empty-timeline"]');
   const count = container.querySelector('[data-region="item-count"]');
+  const exportSection = container.querySelector('[data-region="export-section"]');
   if (!list) return;
   count.textContent = `${state.items.length} item${state.items.length !== 1 ? 's' : ''}`;
-  if (state.items.length === 0) { list.classList.add('hidden'); empty.classList.remove('hidden'); return; }
+  if (state.items.length === 0) { list.classList.add('hidden'); empty.classList.remove('hidden'); exportSection?.classList.add('hidden'); return; }
   list.classList.remove('hidden'); empty.classList.add('hidden');
+  exportSection?.classList.toggle('hidden', !state.meta.title.trim());
   list.innerHTML = state.items.map((item, i) => timelineCard(item, i)).join('');
   wireTimelineActions(container);
 }
@@ -238,4 +263,81 @@ function swap(a, b) {
 function esc(s) {
   if (s == null) return '';
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+}
+
+// --- Export ---
+
+function wireExport(container) {
+  const modal = container.querySelector('[data-region="export-modal"]');
+  container.querySelector('[data-action="export"]')?.addEventListener('click', () => {
+    showExportModal(container);
+  });
+  container.querySelector('[data-action="close-export"]')?.addEventListener('click', () => {
+    modal?.classList.add('hidden');
+  });
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) modal.classList.add('hidden');
+  });
+}
+
+function showExportModal(container) {
+  const modal = container.querySelector('[data-region="export-modal"]');
+  const content = container.querySelector('[data-region="export-content"]');
+  if (!modal || !content) return;
+
+  const programJson = buildProgramExport();
+  const sections = [];
+
+  // New exercises (if any)
+  if (state.newExercises.length > 0) {
+    sections.push({ label: 'New Exercises (append to exercises.json → exercises[])', json: state.newExercises });
+  }
+
+  // Program
+  sections.push({ label: 'Program (append to workouts.json → programs[])', json: programJson });
+
+  content.innerHTML = sections.map((s, idx) => `
+    <div class="space-y-2">
+      <div class="flex items-center justify-between">
+        <p class="text-xs text-slate-400 font-medium">${s.label}</p>
+        <button data-action="copy-json" data-section="${idx}" class="text-xs text-brand-400 hover:text-brand-300 transition-colors">Copy</button>
+      </div>
+      <pre class="bg-slate-950 border border-slate-800 rounded-xl p-4 text-xs text-slate-300 overflow-x-auto max-h-[300px] overflow-y-auto font-mono leading-relaxed"><code>${esc(JSON.stringify(s.json, null, 2))}</code></pre>
+    </div>
+  `).join('');
+
+  // Wire copy buttons
+  content.querySelectorAll('[data-action="copy-json"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = +btn.dataset.section;
+      const text = JSON.stringify(sections[idx].json, null, 2);
+      navigator.clipboard?.writeText(text).then(() => {
+        btn.textContent = '✓ Copied';
+        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+      }).catch(() => { prompt('Copy:', text); });
+    });
+  });
+
+  modal.classList.remove('hidden');
+}
+
+function buildProgramExport() {
+  const prog = { id: state.meta.id, title: state.meta.title };
+  if (state.meta.requirements) prog.requirements = state.meta.requirements;
+  if (state.meta.description) prog.description = state.meta.description;
+  if (state.meta.difficulty) prog.difficulty = state.meta.difficulty;
+  if (state.meta.duration) prog.duration = Number(state.meta.duration);
+
+  prog.items = state.items.map(item => {
+    const out = { exerciseId: item.exerciseId };
+    if (item.reps) out.reps = item.reps;
+    if (item.sets) out.sets = item.sets;
+    if (item.repUnits && item.repUnits !== 'reps') out.repUnits = item.repUnits;
+    if (item.note) out.note = item.note;
+    if (item.displayName) out.displayName = item.displayName;
+    if (item.tags.length) out.tags = item.tags;
+    return out;
+  });
+
+  return prog;
 }
