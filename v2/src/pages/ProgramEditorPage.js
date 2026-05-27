@@ -123,46 +123,76 @@ function wirePicker(container) {
   });
 }
 
+let expandedIndex = -1;
+
 function renderTimeline(container) {
   const list = container.querySelector('[data-region="timeline"]');
   const empty = container.querySelector('[data-region="empty-timeline"]');
   const count = container.querySelector('[data-region="item-count"]');
-
   if (!list) return;
-
   count.textContent = `${state.items.length} item${state.items.length !== 1 ? 's' : ''}`;
+  if (state.items.length === 0) { list.classList.add('hidden'); empty.classList.remove('hidden'); return; }
+  list.classList.remove('hidden'); empty.classList.add('hidden');
+  list.innerHTML = state.items.map((item, i) => timelineItem(item, i)).join('');
+  wireTimelineActions(container);
+}
 
-  if (state.items.length === 0) {
-    list.classList.add('hidden');
-    empty.classList.remove('hidden');
-    return;
-  }
+function timelineItem(item, i) {
+  const open = i === expandedIndex;
+  return `<li class="card overflow-hidden" data-item-index="${i}">
+  <div class="flex items-center gap-3 px-4 py-3">
+    <span class="w-6 h-6 rounded-full bg-slate-700 text-slate-300 text-xs font-bold flex items-center justify-center flex-shrink-0 num">${i + 1}</span>
+    <button data-action="toggle-edit" data-index="${i}" class="flex-1 min-w-0 text-left touch-manipulation">
+      <p class="text-sm font-medium text-slate-100 truncate">${escapeHtml(item.displayName || item.exerciseName)}</p>
+      <p class="text-xs text-slate-400 num">${item.reps || '—'} ${item.repUnits || 'reps'} · ${item.sets || '—'} sets${item.tags.length ? ' · ' + item.tags.join(', ') : ''}</p>
+    </button>
+    <div class="flex items-center gap-0.5">
+      <button data-action="move-up" data-index="${i}" class="p-1 rounded hover:bg-white/5 text-slate-500 hover:text-slate-300 ${i === 0 ? 'opacity-30 pointer-events-none' : ''}" aria-label="Move up"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg></button>
+      <button data-action="move-down" data-index="${i}" class="p-1 rounded hover:bg-white/5 text-slate-500 hover:text-slate-300 ${i === state.items.length - 1 ? 'opacity-30 pointer-events-none' : ''}" aria-label="Move down"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+      <button data-action="remove" data-index="${i}" class="p-1 rounded hover:bg-red-500/10 text-slate-500 hover:text-red-400" aria-label="Remove"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
+    </div>
+  </div>
+  ${open ? itemEditForm(item, i) : ''}
+</li>`;
+}
 
-  list.classList.remove('hidden');
-  empty.classList.add('hidden');
+function itemEditForm(item, i) {
+  const units = ['reps','secs','min','yd','rep','reps (each side)','secs (each side)'];
+  const tags = ['warmup','cooldown','stretch','main','accessory','finisher'];
+  return `<div class="px-4 pb-4 pt-1 space-y-3 border-t border-slate-800 bg-slate-900/40">
+  <div class="grid grid-cols-3 gap-2">
+    <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Reps</label><input data-edit="reps" data-index="${i}" value="${escapeHtml(item.reps)}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500"/></div>
+    <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Sets</label><input data-edit="sets" data-index="${i}" value="${escapeHtml(item.sets)}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500"/></div>
+    <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Units</label><select data-edit="repUnits" data-index="${i}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500">${units.map(u=>`<option value="${u}"${item.repUnits===u?' selected':''}>${u}</option>`).join('')}</select></div>
+  </div>
+  <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Display Name</label><input data-edit="displayName" data-index="${i}" value="${escapeHtml(item.displayName)}" placeholder="${escapeHtml(item.exerciseName)}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/></div>
+  <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Note</label><input data-edit="note" data-index="${i}" value="${escapeHtml(item.note)}" placeholder="Form cues, weight, etc." class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/></div>
+  <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Tags</label><div class="flex flex-wrap gap-2">${tags.map(t=>`<label class="flex items-center gap-1.5 text-xs cursor-pointer"><input type="checkbox" data-tag="${t}" data-index="${i}"${item.tags.includes(t)?' checked':''} class="w-3.5 h-3.5 rounded border-slate-600 bg-slate-800 text-brand-500"/><span class="text-slate-300">${t}</span></label>`).join('')}</div></div>
+</div>`;
+}
 
-  list.innerHTML = state.items.map((item, i) => `
-    <li class="card px-4 py-3 flex items-center gap-3 animate-slide-up" data-item-index="${i}">
-      <span class="w-6 h-6 rounded-full bg-slate-700 text-slate-300 text-xs font-bold flex items-center justify-center flex-shrink-0 num">${i + 1}</span>
-      <div class="flex-1 min-w-0">
-        <p class="text-sm font-medium text-slate-100 truncate">${escapeHtml(item.displayName || item.exerciseName)}</p>
-        <p class="text-xs text-slate-400 num">${item.reps || '—'} ${item.repUnits || 'reps'} · ${item.sets || '—'} sets</p>
-      </div>
-      <button data-action="remove" data-index="${i}" class="p-1.5 rounded-lg hover:bg-red-500/10 text-slate-500 hover:text-red-400 transition-colors touch-manipulation" aria-label="Remove">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
-    </li>
-  `).join('');
-
-  // Wire remove buttons
+function wireTimelineActions(container) {
+  const list = container.querySelector('[data-region="timeline"]');
+  if (!list) return;
+  list.querySelectorAll('[data-action="toggle-edit"]').forEach(btn => {
+    btn.addEventListener('click', () => { expandedIndex = expandedIndex === +btn.dataset.index ? -1 : +btn.dataset.index; renderTimeline(container); });
+  });
+  list.querySelectorAll('[data-action="move-up"]').forEach(btn => {
+    btn.addEventListener('click', () => { const i = +btn.dataset.index; if (i > 0) { [state.items[i-1],state.items[i]]=[state.items[i],state.items[i-1]]; if(expandedIndex===i)expandedIndex=i-1;else if(expandedIndex===i-1)expandedIndex=i; renderTimeline(container); } });
+  });
+  list.querySelectorAll('[data-action="move-down"]').forEach(btn => {
+    btn.addEventListener('click', () => { const i = +btn.dataset.index; if (i < state.items.length-1) { [state.items[i],state.items[i+1]]=[state.items[i+1],state.items[i]]; if(expandedIndex===i)expandedIndex=i+1;else if(expandedIndex===i+1)expandedIndex=i; renderTimeline(container); } });
+  });
   list.querySelectorAll('[data-action="remove"]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const idx = Number(btn.dataset.index);
-      state.items.splice(idx, 1);
-      renderTimeline(container);
-    });
+    btn.addEventListener('click', () => { const i = +btn.dataset.index; state.items.splice(i,1); if(expandedIndex===i)expandedIndex=-1;else if(expandedIndex>i)expandedIndex--; renderTimeline(container); });
+  });
+  list.querySelectorAll('[data-edit]').forEach(el => {
+    const handler = () => { state.items[+el.dataset.index][el.dataset.edit] = el.value; };
+    el.addEventListener('input', handler);
+    el.addEventListener('change', handler);
+  });
+  list.querySelectorAll('[data-tag]').forEach(cb => {
+    cb.addEventListener('change', () => { const tags = state.items[+cb.dataset.index].tags; if(cb.checked&&!tags.includes(cb.dataset.tag))tags.push(cb.dataset.tag);else state.items[+cb.dataset.index].tags=tags.filter(t=>t!==cb.dataset.tag); });
   });
 }
 
