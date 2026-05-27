@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-05-25T21:14:18.691Z",
+  "lastUpdated": "2026-05-27T04:49:33.892Z",
   "exercises": [
     {
       "id": "1a-db-row",
@@ -184,7 +184,7 @@
     },
     {
       "id": "barbellsquat",
-      "name": "Barbell Squats & DB Jump Squats",
+      "name": "Barbell Squat",
       "demos": [
         {
           "type": "cloudinary",
@@ -248,7 +248,10 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Note: Increase weight after each set. Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Barbell Squats & DB Jump Squats"
+      ]
     },
     {
       "id": "barbellwalkinglunges",
@@ -452,7 +455,7 @@
     },
     {
       "id": "cablelateralpullovers",
-      "name": "Cable Lateral Pullovers & Zottman Curls",
+      "name": "Cable Lateral Pullover",
       "demos": [
         {
           "type": "cloudinary",
@@ -509,11 +512,14 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Cable Lateral Pullovers & Zottman Curls"
+      ]
     },
     {
       "id": "zottmancurls",
-      "name": "Cable Lateral Pullovers & Zottman Curls",
+      "name": "Zottman Curl",
       "demos": [
         {
           "type": "cloudinary",
@@ -570,7 +576,10 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Cable Lateral Pullovers & Zottman Curls"
+      ]
     },
     {
       "id": "cat-camel",
@@ -641,7 +650,7 @@
     },
     {
       "id": "chestflies",
-      "name": "Chest Flies & Front Raises",
+      "name": "Chest Fly",
       "demos": [
         {
           "type": "cloudinary",
@@ -705,11 +714,14 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Note: Can be done with Cables or Dumbbells. Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Chest Flies & Front Raises"
+      ]
     },
     {
       "id": "frontraises",
-      "name": "Chest Flies & Front Raises",
+      "name": "Front Raise",
       "demos": [
         {
           "type": "cloudinary",
@@ -766,11 +778,14 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Weight: 45 lbs. Note: Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Chest Flies & Front Raises"
+      ]
     },
     {
       "id": "pullovers",
-      "name": "Chin-ups & Pull-overs",
+      "name": "Pull-over",
       "demos": [
         {
           "type": "cloudinary",
@@ -827,11 +842,14 @@
         "sets": "5",
         "repUnits": "reps",
         "note": "Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Chin-ups & Pull-overs"
+      ]
     },
     {
       "id": "closegrippulldowns",
-      "name": "Close Grip Pulldowns & Cable Rows",
+      "name": "Close Grip Pulldown",
       "demos": [
         {
           "type": "cloudinary",
@@ -895,11 +913,14 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Close Grip Pulldowns & Cable Rows"
+      ]
     },
     {
       "id": "cablerows",
-      "name": "Close Grip Pulldowns & Cable Rows",
+      "name": "Cable Row",
       "demos": [
         {
           "type": "cloudinary",
@@ -963,7 +984,10 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Close Grip Pulldowns & Cable Rows"
+      ]
     },
     {
       "id": "copenhagen-plank-at-upper-calf-with-lifts",
@@ -1125,7 +1149,7 @@
     },
     {
       "id": "dbrdls",
-      "name": "DB RDL & Split Squats",
+      "name": "DB Romanian Deadlift",
       "demos": [
         {
           "type": "cloudinary",
@@ -1182,15 +1206,19 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "DB RDL & Split Squats"
+      ]
     },
     {
       "id": "splitsquats",
-      "name": "DB RDL & Split Squats",
+      "name": "Split Squat",
       "aliases": [
         "Split Squats & Split Squat Iso-Holds",
         "DB Split Squats",
-        "Split Squats & DB RDL"
+        "Split Squats & DB RDL",
+        "DB RDL & Split Squats"
       ],
       "demos": [
         {
@@ -1456,7 +1484,7 @@
     },
     {
       "id": "dips",
-      "name": "Dips & Feet-Elevated PushUps",
+      "name": "Dip",
       "demos": [
         {
           "type": "cloudinary",
@@ -1513,7 +1541,10 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Dips & Feet-Elevated PushUps"
+      ]
     },
     {
       "id": "downwarddogtoetouches",
@@ -1579,7 +1610,7 @@
     },
     {
       "id": "elevatedheelgobletsquat",
-      "name": "Elevated Heel Goblet Squats & Leg Curls",
+      "name": "Elevated Heel Goblet Squat",
       "demos": [
         {
           "type": "cloudinary",
@@ -1643,11 +1674,14 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Elevated Heel Goblet Squats & Leg Curls"
+      ]
     },
     {
       "id": "legcurls",
-      "name": "Elevated Heel Goblet Squats & Leg Curls",
+      "name": "Leg Curl",
       "demos": [
         {
           "type": "cloudinary",
@@ -1711,11 +1745,14 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Note: Squeeze toes together. Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Elevated Heel Goblet Squats & Leg Curls"
+      ]
     },
     {
       "id": "posture-ex1",
-      "name": "Exercise 1",
+      "name": "Posture Drill",
       "demos": [
         {
           "type": "cloudinary",
@@ -1772,7 +1809,10 @@
         "sets": "2",
         "repUnits": "reps",
         "note": "Note: Inhale forward, Exhale back. Keep chin to chest and butt on the ground."
-      }
+      },
+      "aliases": [
+        "Exercise 1"
+      ]
     },
     {
       "id": "firehydrant",
@@ -1844,7 +1884,7 @@
     },
     {
       "id": "flatbenchpress",
-      "name": "Flat Bench Press & DB Military Press",
+      "name": "Flat Bench Press",
       "demos": [
         {
           "type": "cloudinary",
@@ -1901,7 +1941,10 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Note: Can be done with Barbell or Dumbbells. Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Flat Bench Press & DB Military Press"
+      ]
     },
     {
       "id": "floorwashers",
@@ -1976,7 +2019,7 @@
     },
     {
       "id": "frontsquatisoholds",
-      "name": "Front Squat Iso-hold & Box Jumps",
+      "name": "Front Squat Iso-Hold",
       "demos": [
         {
           "type": "cloudinary",
@@ -2040,11 +2083,14 @@
         "sets": "6",
         "repUnits": "secs",
         "note": "Rate of Perceived Exertion: 9/10. Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Front Squat Iso-hold & Box Jumps"
+      ]
     },
     {
       "id": "boxjumps",
-      "name": "Front Squat Iso-hold & Box Jumps",
+      "name": "Box Jump",
       "demos": [
         {
           "type": "cloudinary",
@@ -2108,7 +2154,10 @@
         "sets": "3",
         "repUnits": "reps",
         "note": "Box height should be 24-36 inches. Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Front Squat Iso-hold & Box Jumps"
+      ]
     },
     {
       "id": "frontsquats",
@@ -2591,7 +2640,7 @@
     },
     {
       "id": "hipabductions",
-      "name": "Hip Abductions & Calf Raises",
+      "name": "Hip Abduction",
       "demos": [
         {
           "type": "cloudinary",
@@ -2648,11 +2697,14 @@
         "sets": "3",
         "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Hip Abductions & Calf Raises"
+      ]
     },
     {
       "id": "calfraises",
-      "name": "Hip Abductions & Calf Raises",
+      "name": "Calf Raise",
       "demos": [
         {
           "type": "cloudinary",
@@ -2709,11 +2761,14 @@
         "sets": "3",
         "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Hip Abductions & Calf Raises"
+      ]
     },
     {
       "id": "hipext",
-      "name": "Hip Ext w/ Unilateral Eccentric & SL DB RDL",
+      "name": "Hip Extension w/ Unilateral Eccentric",
       "demos": [
         {
           "type": "local",
@@ -2762,11 +2817,14 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Hip Ext w/ Unilateral Eccentric & SL DB RDL"
+      ]
     },
     {
       "id": "sldbrdl",
-      "name": "Hip Ext w/ Unilateral Eccentric & SL DB RDL",
+      "name": "Single-Leg DB Romanian Deadlift",
       "demos": [
         {
           "type": "local",
@@ -2815,7 +2873,10 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Hip Ext w/ Unilateral Eccentric & SL DB RDL"
+      ]
     },
     {
       "id": "javelinstretch",
@@ -2947,7 +3008,7 @@
     },
     {
       "id": "kbswings",
-      "name": "KB Swings, Box Depth Drops, Broad Jumps",
+      "name": "KB Swing",
       "demos": [
         {
           "type": "local",
@@ -3001,11 +3062,14 @@
         "sets": "10",
         "repUnits": "reps",
         "note": "Squat on each rep and press your hips forward at extension. Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "KB Swings, Box Depth Drops, Broad Jumps"
+      ]
     },
     {
       "id": "boxdepthdrop",
-      "name": "KB Swings, Box Depth Drops, Broad Jumps",
+      "name": "Box Depth Drop",
       "demos": [
         {
           "type": "local",
@@ -3052,11 +3116,14 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "You may add a vertical drop at the end. Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "KB Swings, Box Depth Drops, Broad Jumps"
+      ]
     },
     {
       "id": "broadjumps",
-      "name": "KB Swings, Box Depth Drops, Broad Jumps",
+      "name": "Broad Jump",
       "demos": [
         {
           "type": "local",
@@ -3103,7 +3170,10 @@
         "sets": "4",
         "repUnits": "rep",
         "note": "Jump as far as you can. Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "KB Swings, Box Depth Drops, Broad Jumps"
+      ]
     },
     {
       "id": "kneelinghipflexorstretch",
@@ -3175,7 +3245,7 @@
     },
     {
       "id": "krocrows2",
-      "name": "Kroc Rows & Scarecrows",
+      "name": "Kroc Row",
       "demos": [
         {
           "type": "cloudinary",
@@ -3212,11 +3282,14 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Kroc Rows & Scarecrows"
+      ]
     },
     {
       "id": "scarecrows",
-      "name": "Kroc Rows & Scarecrows",
+      "name": "Scarecrow",
       "demos": [
         {
           "type": "cloudinary",
@@ -3253,7 +3326,10 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Kroc Rows & Scarecrows"
+      ]
     },
     {
       "id": "krocrows1",
@@ -3465,7 +3541,7 @@
     },
     {
       "id": "ngdbinclinebench",
-      "name": "NG DB Incline Bench & Feet Elevated Push-ups",
+      "name": "Neutral-Grip DB Incline Bench Press",
       "demos": [
         {
           "type": "cloudinary",
@@ -3529,11 +3605,14 @@
         "sets": "5",
         "repUnits": "reps",
         "note": "Keep your palms facing each other. Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "NG DB Incline Bench & Feet Elevated Push-ups"
+      ]
     },
     {
       "id": "feetelevatedpushups",
-      "name": "NG DB Incline Bench & Feet Elevated Push-ups",
+      "name": "Feet-Elevated Push-up",
       "demos": [
         {
           "type": "cloudinary",
@@ -3597,7 +3676,10 @@
         "sets": "5",
         "repUnits": "reps",
         "note": "Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "NG DB Incline Bench & Feet Elevated Push-ups"
+      ]
     },
     {
       "id": "ngdbmilitarypress",
@@ -4117,7 +4199,7 @@
     },
     {
       "id": "shrugs",
-      "name": "Shrugs & Crush Grip Curls",
+      "name": "Shrug",
       "demos": [
         {
           "type": "cloudinary",
@@ -4174,11 +4256,14 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Shrugs & Crush Grip Curls"
+      ]
     },
     {
       "id": "crushgripcurls",
-      "name": "Shrugs & Crush Grip Curls",
+      "name": "Crush Grip Curl",
       "demos": [
         {
           "type": "cloudinary",
@@ -4235,7 +4320,10 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Note: For the last set, perform an Iso-hold for as long as possible. Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Shrugs & Crush Grip Curls"
+      ]
     },
     {
       "id": "kneelingsideplanks",
@@ -4375,7 +4463,7 @@
     },
     {
       "id": "skullcrushers",
-      "name": "Skullcrushers & DB Side Lateral Raises",
+      "name": "Skullcrusher",
       "demos": [
         {
           "type": "cloudinary",
@@ -4439,11 +4527,14 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Skullcrushers & DB Side Lateral Raises"
+      ]
     },
     {
       "id": "dbsidelateralraises",
-      "name": "Skullcrushers & DB Side Lateral Raises",
+      "name": "DB Side Lateral Raise",
       "demos": [
         {
           "type": "cloudinary",
@@ -4500,7 +4591,10 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Skullcrushers & DB Side Lateral Raises"
+      ]
     },
     {
       "id": "split-squat-hold-with-hands-overhead",
@@ -4526,7 +4620,7 @@
     },
     {
       "id": "splitsquatisohold",
-      "name": "Split Squats & Split Squat Iso-Holds",
+      "name": "Split Squat Iso-Hold",
       "demos": [
         {
           "type": "cloudinary",
@@ -4583,7 +4677,10 @@
         "sets": "4",
         "repUnits": "secs",
         "note": "Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Split Squats & Split Squat Iso-Holds"
+      ]
     },
     {
       "id": "sesitups",
@@ -5065,7 +5162,7 @@
     },
     {
       "id": "widegrippulldowns",
-      "name": "Wide Grip Pulldowns & Bent-over Rows",
+      "name": "Wide Grip Pulldown",
       "demos": [
         {
           "type": "cloudinary",
@@ -5129,11 +5226,14 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Wide Grip Pulldowns & Bent-over Rows"
+      ]
     },
     {
       "id": "bentoverrows",
-      "name": "Wide Grip Pulldowns & Bent-over Rows",
+      "name": "Bent-over Row",
       "demos": [
         {
           "type": "cloudinary",
@@ -5190,7 +5290,10 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Note: Can be done with Dumbbells. Meant to be a Super Set."
-      }
+      },
+      "aliases": [
+        "Wide Grip Pulldowns & Bent-over Rows"
+      ]
     },
     {
       "id": "yogapushup",
