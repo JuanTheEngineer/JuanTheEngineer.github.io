@@ -20,8 +20,29 @@ export function renderHomePage(container) {
 
         <section class="space-y-3">
           <button
+            data-action="create"
+            class="w-full card p-5 text-left active:scale-[0.98] transition-transform animate-slide-up"
+          >
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/15 flex items-center justify-center">
+                <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h2 class="font-semibold tracking-tight">Create</h2>
+                <p class="text-sm text-slate-400 mt-0.5">New program or exercise</p>
+              </div>
+              <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </button>
+
+          <button
             data-action="programs"
             class="w-full card p-5 text-left active:scale-[0.98] transition-transform animate-slide-up"
+            style="animation-delay: 50ms"
           >
             <div class="flex items-center gap-4">
               <div class="w-12 h-12 rounded-xl bg-brand-500/15 flex items-center justify-center">
@@ -42,7 +63,7 @@ export function renderHomePage(container) {
           <button
             data-action="exercises"
             class="w-full card p-5 text-left active:scale-[0.98] transition-transform animate-slide-up"
-            style="animation-delay: 50ms"
+            style="animation-delay: 100ms"
           >
             <div class="flex items-center gap-4">
               <div class="w-12 h-12 rounded-xl bg-brand-500/15 flex items-center justify-center">
@@ -64,6 +85,8 @@ export function renderHomePage(container) {
     </div>
   `;
 
+  container.querySelector('[data-action="create"]')
+    ?.addEventListener('click', () => navigate('/studio'));
   container.querySelector('[data-action="programs"]')
     ?.addEventListener('click', () => navigate('/programs'));
   container.querySelector('[data-action="exercises"]')
