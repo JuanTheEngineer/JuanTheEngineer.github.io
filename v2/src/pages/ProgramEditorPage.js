@@ -1,6 +1,7 @@
 // ProgramEditorPage: metadata form + exercise picker + timeline with inline editing
 import { navigate } from '../utils/router.js';
-import { renderExercisePicker } from '../components/ExercisePicker.js';
+import { renderExercisePicker, addToIndex } from '../components/ExercisePicker.js';
+import { renderDemoManager } from '../components/DemoManager.js';
 
 // Editor state (module-level singleton for this session)
 let state = createFreshState();
@@ -83,6 +84,42 @@ export function renderProgramEditorPage(container) {
           <div data-region="export-content" class="space-y-4"></div>
         </div>
       </div>
+
+      <!-- Exercise creation slide-over -->
+      <div data-region="exercise-slideover" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-end sm:items-center justify-center">
+        <div class="bg-slate-900 border border-slate-700 rounded-t-2xl sm:rounded-2xl w-full sm:max-w-lg max-h-[90vh] overflow-y-auto p-6 space-y-5">
+          <div class="flex items-center justify-between">
+            <h2 class="h-section">New Exercise</h2>
+            <button data-action="close-exercise" class="p-2 rounded-lg hover:bg-white/5 text-slate-400 hover:text-white transition-colors" aria-label="Close">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+          <div class="space-y-3">
+            <div>
+              <label class="text-xs text-slate-400 mb-1 block">Exercise Name *</label>
+              <input data-exfield="name" type="text" placeholder="e.g. Backward Treadmill Walk" class="w-full bg-slate-800/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30"/>
+              <p data-region="ex-id-preview" class="text-[11px] text-slate-500 mt-1 font-mono"></p>
+            </div>
+            <div class="grid grid-cols-3 gap-2">
+              <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Reps</label>
+                <input data-exfield="reps" type="text" placeholder="10" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500"/></div>
+              <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Sets</label>
+                <input data-exfield="sets" type="text" placeholder="3" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500"/></div>
+              <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Units</label>
+                <select data-exfield="repUnits" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500">
+                  <option value="reps">reps</option><option value="secs">secs</option><option value="min">min</option><option value="yd">yd</option><option value="rep">rep</option><option value="reps (each side)">reps (each side)</option><option value="secs (each side)">secs (each side)</option>
+                </select></div>
+            </div>
+            <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Note</label>
+              <input data-exfield="note" type="text" placeholder="Form cues, weight, etc." class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/></div>
+          </div>
+          <div data-region="demo-manager"></div>
+          <div class="flex gap-3 pt-2">
+            <button data-action="cancel-exercise" class="btn-ghost flex-1 text-sm">Cancel</button>
+            <button data-action="save-exercise" class="btn-primary flex-1 text-sm">Save Exercise</button>
+          </div>
+        </div>
+      </div>
     </div>
   `;
 
@@ -123,7 +160,7 @@ function wirePicker(container) {
       });
       renderTimeline(container);
     },
-    onCreateNew: () => { alert('Exercise creation coming in a future update.'); }
+    onCreateNew: () => { openExerciseSlideOver(container); }
   });
 }
 
@@ -263,6 +300,78 @@ function swap(a, b) {
 function esc(s) {
   if (s == null) return '';
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+}
+
+// --- Exercise creation slide-over ---
+
+let newExDemos = [];
+
+function openExerciseSlideOver(container) {
+  const panel = container.querySelector('[data-region="exercise-slideover"]');
+  if (!panel) return;
+
+  // Reset fields
+  newExDemos = [];
+  panel.querySelector('[data-exfield="name"]').value = '';
+  panel.querySelector('[data-exfield="reps"]').value = '';
+  panel.querySelector('[data-exfield="sets"]').value = '';
+  panel.querySelector('[data-exfield="repUnits"]').value = 'reps';
+  panel.querySelector('[data-exfield="note"]').value = '';
+  panel.querySelector('[data-region="ex-id-preview"]').textContent = '';
+
+  // Render demo manager
+  const demoSlot = panel.querySelector('[data-region="demo-manager"]');
+  renderDemoManager(demoSlot, newExDemos);
+
+  // Wire name → id preview
+  const nameInput = panel.querySelector('[data-exfield="name"]');
+  const idPreview = panel.querySelector('[data-region="ex-id-preview"]');
+  nameInput.addEventListener('input', () => {
+    const id = nameInput.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '');
+    idPreview.textContent = id ? `id: ${id}` : '';
+  });
+
+  // Wire save
+  panel.querySelector('[data-action="save-exercise"]')?.addEventListener('click', () => {
+    const name = nameInput.value.trim();
+    if (!name) { nameInput.focus(); return; }
+    const id = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '');
+    const reps = panel.querySelector('[data-exfield="reps"]').value;
+    const sets = panel.querySelector('[data-exfield="sets"]').value;
+    const repUnits = panel.querySelector('[data-exfield="repUnits"]').value;
+    const note = panel.querySelector('[data-exfield="note"]').value;
+
+    const newExercise = {
+      id, name,
+      demos: newExDemos.filter(d => d.url), // only keep demos with URLs
+      recommendations: {}
+    };
+    if (reps) newExercise.recommendations.reps = reps;
+    if (sets) newExercise.recommendations.sets = sets;
+    if (repUnits && repUnits !== 'reps') newExercise.recommendations.repUnits = repUnits;
+    if (note) newExercise.recommendations.note = note;
+
+    // Add to state + search index
+    state.newExercises.push(newExercise);
+    addToIndex(newExercise);
+
+    // Auto-add to timeline
+    state.items.push({
+      type: 'single', exerciseId: id, exerciseName: name,
+      reps: reps || '', sets: sets || '', repUnits: repUnits || 'reps',
+      note: '', displayName: '', tags: []
+    });
+
+    panel.classList.add('hidden');
+    renderTimeline(container);
+  }, { once: true });
+
+  // Wire cancel / close
+  const close = () => panel.classList.add('hidden');
+  panel.querySelector('[data-action="cancel-exercise"]')?.addEventListener('click', close, { once: true });
+  panel.querySelector('[data-action="close-exercise"]')?.addEventListener('click', close, { once: true });
+
+  panel.classList.remove('hidden');
 }
 
 // --- Export ---
