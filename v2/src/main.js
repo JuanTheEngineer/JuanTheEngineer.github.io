@@ -6,6 +6,7 @@ import { renderProgramListPage } from './pages/ProgramListPage.js';
 import { renderProgramDetailPage } from './pages/ProgramDetailPage.js';
 import { renderStudioPage } from './pages/StudioPage.js';
 import { renderProgramEditorPage } from './pages/ProgramEditorPage.js';
+import { renderExerciseEditorPage } from './pages/ExerciseEditorPage.js';
 
 const app = document.getElementById('app');
 
@@ -50,7 +51,7 @@ route('/programs', () => renderProgramListPage(app));
 route('/program/:id', ({ id }) => renderProgramDetailPage(app, id));
 route('/studio', () => renderStudioPage(app));
 route('/studio/program', () => renderProgramEditorPage(app));
-route('/studio/exercise', renderStub('Exercise Editor', 'Exercise editor coming next.'));
+route('/studio/exercise', () => renderExerciseEditorPage(app));
 route('/exercises', renderStub('Exercise Library', 'Exercise library coming next.'));
 route('/exercise/:id', renderStub('Exercise', 'Single exercise page coming next.'));
 
