@@ -2,6 +2,7 @@
 import { navigate } from '../utils/router.js';
 import { renderExercisePicker, addToIndex } from '../components/ExercisePicker.js';
 import { renderDemoManager } from '../components/DemoManager.js';
+import { loadWorkouts } from '../utils/data.js';
 import Sortable from 'sortablejs';
 
 // Editor state (module-level singleton for this session)
@@ -49,6 +50,9 @@ export function renderProgramEditorPage(container) {
               <input data-field="requirements" type="text" placeholder="e.g. Dumbbells, Bench"
                 class="w-full bg-slate-800/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30" />
             </div>
+            <button data-action="clone" class="text-xs text-slate-400 hover:text-brand-400 transition-colors">
+              or start from an existing program →
+            </button>
           </div>
         </section>
         <section class="space-y-3">
@@ -135,6 +139,8 @@ export function renderProgramEditorPage(container) {
   wirePicker(container);
   renderTimeline(container);
   wireExport(container);
+  wireClone(container);
+  wireUnsavedGuard();
 }
 
 function wireBack(container) {
@@ -398,6 +404,63 @@ function wireTimelineActions(container) {
 function esc(s) {
   if (s == null) return '';
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+}
+
+// --- Clone from existing ---
+
+async function wireClone(container) {
+  container.querySelector('[data-action="clone"]')?.addEventListener('click', async () => {
+    if (state.items.length > 0 && !confirm('This will replace your current timeline. Continue?')) return;
+    const { programs } = await loadWorkouts();
+    const name = prompt('Type part of a program name to clone from:\n\n' + programs.map(p => `• ${p.title}`).join('\n'));
+    if (!name) return;
+    const match = programs.find(p => p.title.toLowerCase().includes(name.toLowerCase()));
+    if (!match) { alert('No program found matching "' + name + '"'); return; }
+
+    // Deep clone into state
+    state.meta.title = '';
+    state.meta.id = '';
+    state.meta.requirements = match.requirements || '';
+    state.items = (match.items || []).map(item => {
+      if (item.kind) {
+        return { type: 'group', kind: item.kind, displayName: item.displayName || '', note: item.note || '', tags: item.tags || [],
+          members: item.exercises.map(m => ({ type: 'single', exerciseId: m.exerciseId, exerciseName: m.exerciseId, reps: m.reps || '', sets: m.sets || '', repUnits: m.repUnits || 'reps', note: m.note || '', displayName: '', tags: [] }))
+        };
+      }
+      return { type: 'single', exerciseId: item.exerciseId, exerciseName: item.displayName || item.exerciseId, reps: item.reps || '', sets: item.sets || '', repUnits: item.repUnits || 'reps', note: item.note || '', displayName: item.displayName || '', tags: item.tags || [] };
+    });
+    expandedIndex = -1;
+
+    // Update UI
+    container.querySelector('[data-field="title"]').value = '';
+    container.querySelector('[data-field="requirements"]').value = state.meta.requirements;
+    container.querySelector('[data-region="id-preview"]').textContent = '';
+    renderTimeline(container);
+    alert(`Cloned "${match.title}" — set a new title to continue.`);
+  });
+}
+
+// --- Unsaved changes guard ---
+
+let guardActive = false;
+
+function wireUnsavedGuard() {
+  if (guardActive) return;
+  guardActive = true;
+  const handler = (e) => {
+    if (state.items.length > 0 || state.meta.title) {
+      e.preventDefault();
+      e.returnValue = '';
+    }
+  };
+  window.addEventListener('beforeunload', handler);
+  // Clean up when navigating away within the app
+  const cleanup = () => {
+    window.removeEventListener('beforeunload', handler);
+    window.removeEventListener('hashchange', cleanup);
+    guardActive = false;
+  };
+  window.addEventListener('hashchange', cleanup);
 }
 
 // --- Exercise creation slide-over ---
