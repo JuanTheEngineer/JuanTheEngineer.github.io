@@ -72,7 +72,10 @@ export function renderProgramEditorPage(container) {
         <!-- Export -->
         <section data-region="export-section" class="hidden space-y-3 pt-4 border-t border-slate-800">
           <h2 class="eyebrow">Export</h2>
-          <button data-action="export" class="btn-primary w-full text-sm">Export Program JSON</button>
+          <div class="flex gap-3">
+            <button data-action="preview" class="btn-ghost flex-1 text-sm border border-slate-700">Preview</button>
+            <button data-action="export" class="btn-primary flex-1 text-sm">Export JSON</button>
+          </div>
         </section>
       </main>
 
@@ -482,6 +485,70 @@ function wireExport(container) {
   modal?.addEventListener('click', (e) => {
     if (e.target === modal) modal.classList.add('hidden');
   });
+
+  // Preview button
+  container.querySelector('[data-action="preview"]')?.addEventListener('click', () => {
+    showPreview(container);
+  });
+}
+
+function showPreview(container) {
+  const prog = buildProgramExport();
+  // Build a simple read-only preview
+  const items = prog.items || [];
+  const previewHtml = `
+    <div class="fixed inset-0 z-50 bg-slate-950 overflow-y-auto">
+      <header class="px-6 pt-12 pb-2 flex items-center gap-3 sticky top-0 bg-slate-950/85 backdrop-blur-md z-20 border-b border-slate-900">
+        <button data-action="close-preview" class="btn-ghost -ml-2 px-3" aria-label="Close preview">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <span class="text-sm font-medium text-slate-400">Preview</span>
+      </header>
+      <div class="px-6 pt-4 pb-3">
+        <h1 class="h-page">${esc(prog.title || 'Untitled')}</h1>
+        ${prog.requirements ? `<p class="text-sm text-slate-400 mt-1.5">${esc(prog.requirements)}</p>` : ''}
+      </div>
+      <div class="px-6 pb-24 pt-2">
+        <ul class="space-y-2.5">
+          ${items.map((item, i) => previewItem(item, i)).join('')}
+        </ul>
+      </div>
+    </div>
+  `;
+
+  const overlay = document.createElement('div');
+  overlay.innerHTML = previewHtml;
+  container.appendChild(overlay.firstElementChild);
+
+  container.querySelector('[data-action="close-preview"]')?.addEventListener('click', () => {
+    container.querySelector('.fixed.inset-0.z-50.bg-slate-950')?.remove();
+  });
+}
+
+function previewItem(item, i) {
+  if (item.kind) {
+    const kindLabel = { superset: 'Super Set', compound: 'Compound', circuit: 'Circuit' }[item.kind] || item.kind;
+    return `<li class="card p-4 space-y-2">
+      <div class="flex items-center gap-1.5 mb-1">
+        <span class="text-[10px] font-bold uppercase tracking-[0.1em] px-1.5 py-0.5 rounded bg-brand-500/20 text-brand-300">${kindLabel}</span>
+      </div>
+      <p class="text-sm font-semibold text-slate-100">${esc(item.displayName || `${item.exercises.length} exercises`)}</p>
+      <div class="space-y-1.5 pl-3 border-l-2 border-slate-700">
+        ${item.exercises.map((m, mi) => `
+          <div class="text-xs text-slate-300">${mi + 1}. ${esc(m.exerciseId)} — ${m.reps || '—'} ${m.repUnits || 'reps'} · ${m.sets || '—'} sets</div>
+        `).join('')}
+      </div>
+    </li>`;
+  }
+  const tags = item.tags?.length ? item.tags.map(t => `<span class="text-[10px] font-semibold uppercase tracking-[0.1em] px-2 py-0.5 rounded-md bg-slate-800 text-slate-400">${t}</span>`).join('') : '';
+  return `<li class="card px-4 py-3">
+    ${tags ? `<div class="flex gap-1.5 mb-1">${tags}</div>` : ''}
+    <p class="text-sm font-semibold text-slate-100">${esc(item.displayName || item.exerciseId)}</p>
+    <p class="text-xs text-slate-400 num mt-0.5">${item.reps || '—'} ${item.repUnits || 'reps'} · ${item.sets || '—'} sets</p>
+    ${item.note ? `<p class="text-xs text-slate-500 mt-1">${esc(item.note)}</p>` : ''}
+  </li>`;
 }
 
 function showExportModal(container) {
