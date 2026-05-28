@@ -2,6 +2,7 @@
 import { navigate } from '../utils/router.js';
 import { renderExercisePicker, addToIndex } from '../components/ExercisePicker.js';
 import { renderDemoManager } from '../components/DemoManager.js';
+import Sortable from 'sortablejs';
 
 // Editor state (module-level singleton for this session)
 let state = createFreshState();
@@ -53,7 +54,10 @@ export function renderProgramEditorPage(container) {
         <section class="space-y-3">
           <div class="flex items-center justify-between">
             <h2 class="eyebrow">Exercises</h2>
-            <span data-region="item-count" class="text-[11px] text-slate-500 num">0 items</span>
+            <div class="flex items-center gap-3">
+              <button data-action="group-selected" class="hidden text-[11px] text-brand-400 hover:text-brand-300 font-medium transition-colors">Group as…</button>
+              <span data-region="item-count" class="text-[11px] text-slate-500 num">0 items</span>
+            </div>
           </div>
           <ul data-region="timeline" class="space-y-2"></ul>
           <div data-region="empty-timeline" class="card p-6 text-center">
@@ -171,11 +175,15 @@ function renderTimeline(container) {
   const empty = container.querySelector('[data-region="empty-timeline"]');
   const count = container.querySelector('[data-region="item-count"]');
   const exportSection = container.querySelector('[data-region="export-section"]');
+  const groupBtn = container.querySelector('[data-action="group-selected"]');
   if (!list) return;
   count.textContent = `${state.items.length} item${state.items.length !== 1 ? 's' : ''}`;
-  if (state.items.length === 0) { list.classList.add('hidden'); empty.classList.remove('hidden'); exportSection?.classList.add('hidden'); return; }
+  if (state.items.length === 0) { list.classList.add('hidden'); empty.classList.remove('hidden'); exportSection?.classList.add('hidden'); groupBtn?.classList.add('hidden'); return; }
   list.classList.remove('hidden'); empty.classList.add('hidden');
   exportSection?.classList.toggle('hidden', !state.meta.title.trim());
+  // Show group button when 2+ singles exist
+  const singleCount = state.items.filter(i => i.type === 'single').length;
+  groupBtn?.classList.toggle('hidden', singleCount < 2);
   list.innerHTML = state.items.map((item, i) => timelineCard(item, i)).join('');
   wireTimelineActions(container);
 }
@@ -183,35 +191,55 @@ function renderTimeline(container) {
 function timelineCard(item, i) {
   const open = i === expandedIndex;
   const tagStr = item.tags.length ? ' · ' + item.tags.join(', ') : '';
+  const isGroup = item.type === 'group';
+
+  if (isGroup) return groupCard(item, i);
+
   return `<li class="card overflow-hidden" data-item-index="${i}">
-  <div class="flex items-center gap-3 px-4 py-3">
-    <span class="w-6 h-6 rounded-full bg-slate-700 text-slate-300 text-xs font-bold flex items-center justify-center flex-shrink-0 num">${i + 1}</span>
+  <div class="flex items-center gap-2 px-4 py-3">
+    <span class="drag-handle cursor-grab active:cursor-grabbing p-1 text-slate-600 hover:text-slate-400 touch-manipulation">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></svg>
+    </span>
     <button data-action="toggle-edit" data-index="${i}" class="flex-1 min-w-0 text-left touch-manipulation">
       <p class="text-sm font-medium text-slate-100 truncate">${esc(item.displayName || item.exerciseName)}</p>
       <p class="text-xs text-slate-400 num">${item.reps || '—'} ${item.repUnits || 'reps'} · ${item.sets || '—'} sets${tagStr}</p>
     </button>
-    <div class="flex items-center gap-0.5 flex-shrink-0">
-      ${moveBtn('up', i, i === 0)}
-      ${moveBtn('down', i, i === state.items.length - 1)}
-      <button data-action="remove" data-index="${i}" class="p-1.5 rounded-lg hover:bg-red-500/10 text-slate-500 hover:text-red-400 transition-colors" aria-label="Remove">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
-    </div>
+    <button data-action="remove" data-index="${i}" class="p-1.5 rounded-lg hover:bg-red-500/10 text-slate-500 hover:text-red-400 transition-colors flex-shrink-0" aria-label="Remove">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
   </div>
   ${open ? editForm(item, i) : ''}
 </li>`;
 }
 
-function moveBtn(dir, i, disabled) {
-  const path = dir === 'up' ? 'M5 15l7-7 7 7' : 'M19 9l-7 7-7-7';
-  return `<button data-action="move-${dir}" data-index="${i}" class="p-1.5 rounded-lg hover:bg-white/5 text-slate-500 hover:text-slate-300 transition-colors ${disabled ? 'opacity-30 pointer-events-none' : ''}" aria-label="Move ${dir}">
-    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="${path}"/></svg>
-  </button>`;
+function groupCard(item, i) {
+  const open = i === expandedIndex;
+  const kindLabel = { superset: 'Super Set', compound: 'Compound', circuit: 'Circuit' }[item.kind] || item.kind;
+  return `<li class="card overflow-hidden border-brand-500/30" data-item-index="${i}">
+  <div class="flex items-center gap-2 px-4 py-3">
+    <span class="drag-handle cursor-grab active:cursor-grabbing p-1 text-slate-600 hover:text-slate-400 touch-manipulation">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></svg>
+    </span>
+    <button data-action="toggle-edit" data-index="${i}" class="flex-1 min-w-0 text-left touch-manipulation">
+      <div class="flex items-center gap-1.5 mb-0.5">
+        <span class="text-[10px] font-bold uppercase tracking-[0.1em] px-1.5 py-0.5 rounded bg-brand-500/20 text-brand-300">${kindLabel}</span>
+      </div>
+      <p class="text-sm font-medium text-slate-100 truncate">${esc(item.displayName || `${item.members.length} exercises`)}</p>
+    </button>
+    <button data-action="ungroup" data-index="${i}" class="p-1.5 rounded-lg hover:bg-white/5 text-slate-500 hover:text-slate-300 transition-colors flex-shrink-0" aria-label="Ungroup" title="Ungroup">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17H7A2 2 0 017 13h2m6 4h2a2 2 0 002-2v0a2 2 0 00-2-2h-2m-6-4h6"/></svg>
+    </button>
+    <button data-action="remove" data-index="${i}" class="p-1.5 rounded-lg hover:bg-red-500/10 text-slate-500 hover:text-red-400 transition-colors flex-shrink-0" aria-label="Remove">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  ${open ? groupEditForm(item, i) : ''}
+</li>`;
 }
 
 function editForm(item, i) {
   const UNITS = ['reps','secs','min','yd','rep','reps (each side)','secs (each side)'];
-  const TAGS = ['warmup','cooldown','stretch','main','accessory','finisher'];
+  const TAGS = ['warmup','stretch'];
   return `<div class="px-4 pb-4 pt-2 space-y-3 border-t border-slate-800 bg-slate-900/40 animate-fade-in">
   <div class="grid grid-cols-3 gap-2">
     <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Reps</label>
@@ -228,38 +256,63 @@ function editForm(item, i) {
   <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Note</label>
     <input data-edit="note" data-index="${i}" value="${esc(item.note)}" placeholder="Form cues, weight, etc." class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/></div>
   <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Tags</label>
-    <div class="flex flex-wrap gap-2">${TAGS.map(t => `
-      <label class="flex items-center gap-1.5 text-xs cursor-pointer select-none">
-        <input type="checkbox" data-tag="${t}" data-index="${i}"${item.tags.includes(t) ? ' checked' : ''} class="w-3.5 h-3.5 rounded border-slate-600 bg-slate-800 text-brand-500 focus:ring-brand-500/30"/>
-        <span class="text-slate-300">${t}</span>
-      </label>`).join('')}
+    <div class="flex gap-2">${TAGS.map(t => `
+      <button type="button" data-pill="${t}" data-index="${i}" class="px-3 py-1.5 rounded-full text-xs font-medium transition-all ${item.tags.includes(t) ? 'bg-brand-500 text-white' : 'bg-slate-800 text-slate-400 hover:bg-slate-700'}">${t}</button>`).join('')}
     </div></div>
 </div>`;
 }
 
+function groupEditForm(item, i) {
+  const KINDS = ['superset', 'compound', 'circuit'];
+  return `<div class="px-4 pb-4 pt-2 space-y-3 border-t border-slate-800 bg-slate-900/40 animate-fade-in">
+  <div class="grid grid-cols-2 gap-2">
+    <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Group Type</label>
+      <select data-group-edit="kind" data-index="${i}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500">
+        ${KINDS.map(k => `<option value="${k}"${item.kind === k ? ' selected' : ''}>${k}</option>`).join('')}
+      </select></div>
+    <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Display Name</label>
+      <input data-group-edit="displayName" data-index="${i}" value="${esc(item.displayName || '')}" placeholder="e.g. Posterior Chain Pair" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/></div>
+  </div>
+  <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Note</label>
+    <input data-group-edit="note" data-index="${i}" value="${esc(item.note || '')}" placeholder="Shared note for the group" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/></div>
+  <div class="space-y-1.5">
+    <p class="text-[10px] text-slate-500 uppercase font-semibold">Members</p>
+    ${item.members.map((m, mi) => `
+      <div class="bg-slate-800/40 rounded-lg px-3 py-2 text-xs text-slate-300">${mi + 1}. ${esc(m.exerciseName)} — ${m.reps || '—'} ${m.repUnits || 'reps'} · ${m.sets || '—'} sets</div>
+    `).join('')}
+  </div>
+</div>`;
+}
+
+let sortableInstance = null;
+
 function wireTimelineActions(container) {
   const list = container.querySelector('[data-region="timeline"]');
   if (!list) return;
+
+  // Drag-and-drop via SortableJS
+  if (sortableInstance) sortableInstance.destroy();
+  sortableInstance = Sortable.create(list, {
+    handle: '.drag-handle',
+    animation: 200,
+    ghostClass: 'opacity-30',
+    onEnd: (evt) => {
+      const { oldIndex, newIndex } = evt;
+      if (oldIndex === newIndex) return;
+      const [moved] = state.items.splice(oldIndex, 1);
+      state.items.splice(newIndex, 0, moved);
+      if (expandedIndex === oldIndex) expandedIndex = newIndex;
+      else if (oldIndex < expandedIndex && newIndex >= expandedIndex) expandedIndex--;
+      else if (oldIndex > expandedIndex && newIndex <= expandedIndex) expandedIndex++;
+      renderTimeline(container);
+    }
+  });
 
   // Toggle expand
   list.querySelectorAll('[data-action="toggle-edit"]').forEach(btn => {
     btn.addEventListener('click', () => {
       expandedIndex = expandedIndex === +btn.dataset.index ? -1 : +btn.dataset.index;
       renderTimeline(container);
-    });
-  });
-
-  // Move up/down
-  list.querySelectorAll('[data-action="move-up"]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const i = +btn.dataset.index;
-      if (i > 0) { swap(i, i - 1); renderTimeline(container); }
-    });
-  });
-  list.querySelectorAll('[data-action="move-down"]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const i = +btn.dataset.index;
-      if (i < state.items.length - 1) { swap(i, i + 1); renderTimeline(container); }
     });
   });
 
@@ -274,27 +327,69 @@ function wireTimelineActions(container) {
     });
   });
 
-  // Inline field edits (reps, sets, repUnits, displayName, note)
+  // Ungroup
+  list.querySelectorAll('[data-action="ungroup"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const i = +btn.dataset.index;
+      const group = state.items[i];
+      if (group.type !== 'group') return;
+      // Replace group with its members as singles
+      const singles = group.members.map(m => ({ ...m, type: 'single' }));
+      state.items.splice(i, 1, ...singles);
+      expandedIndex = -1;
+      renderTimeline(container);
+    });
+  });
+
+  // Inline field edits
   list.querySelectorAll('[data-edit]').forEach(el => {
     const update = () => { state.items[+el.dataset.index][el.dataset.edit] = el.value; };
     el.addEventListener('input', update);
     el.addEventListener('change', update);
   });
 
-  // Tag checkboxes
-  list.querySelectorAll('[data-tag]').forEach(cb => {
-    cb.addEventListener('change', () => {
-      const item = state.items[+cb.dataset.index];
-      if (cb.checked && !item.tags.includes(cb.dataset.tag)) item.tags.push(cb.dataset.tag);
-      else item.tags = item.tags.filter(t => t !== cb.dataset.tag);
+  // Group edits (kind, displayName, note)
+  list.querySelectorAll('[data-group-edit]').forEach(el => {
+    const update = () => { state.items[+el.dataset.index][el.dataset.groupEdit] = el.value; };
+    el.addEventListener('input', update);
+    el.addEventListener('change', update);
+  });
+
+  // Pill tag toggles
+  list.querySelectorAll('[data-pill]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = state.items[+btn.dataset.index];
+      const tag = btn.dataset.pill;
+      if (item.tags.includes(tag)) {
+        item.tags = item.tags.filter(t => t !== tag);
+      } else {
+        item.tags.push(tag);
+      }
+      renderTimeline(container);
     });
   });
-}
 
-function swap(a, b) {
-  [state.items[a], state.items[b]] = [state.items[b], state.items[a]];
-  if (expandedIndex === a) expandedIndex = b;
-  else if (expandedIndex === b) expandedIndex = a;
+  // Group button (shows a prompt for kind selection)
+  container.querySelector('[data-action="group-selected"]')?.addEventListener('click', () => {
+    // Group the last 2 ungrouped singles (simple approach)
+    const singles = state.items.reduce((acc, item, i) => {
+      if (item.type === 'single') acc.push(i);
+      return acc;
+    }, []);
+    if (singles.length < 2) return;
+    const kind = prompt('Group type? (superset, compound, circuit)', 'superset');
+    if (!kind || !['superset', 'compound', 'circuit'].includes(kind)) return;
+    // Take last 2 singles and group them
+    const lastTwo = singles.slice(-2);
+    const members = lastTwo.map(i => state.items[i]);
+    const group = { type: 'group', kind, displayName: '', note: '', tags: [], members };
+    // Remove from items (reverse order to preserve indices)
+    for (let j = lastTwo.length - 1; j >= 0; j--) state.items.splice(lastTwo[j], 1);
+    // Insert group at the position of the first removed item
+    state.items.splice(lastTwo[0], 0, group);
+    expandedIndex = -1;
+    renderTimeline(container);
+  });
 }
 
 function esc(s) {
@@ -438,6 +533,20 @@ function buildProgramExport() {
   if (state.meta.duration) prog.duration = Number(state.meta.duration);
 
   prog.items = state.items.map(item => {
+    if (item.type === 'group') {
+      const group = { kind: item.kind, exercises: item.members.map(m => {
+        const out = { exerciseId: m.exerciseId };
+        if (m.reps) out.reps = m.reps;
+        if (m.sets) out.sets = m.sets;
+        if (m.repUnits && m.repUnits !== 'reps') out.repUnits = m.repUnits;
+        if (m.note) out.note = m.note;
+        return out;
+      })};
+      if (item.displayName) group.displayName = item.displayName;
+      if (item.note) group.note = item.note;
+      if (item.tags?.length) group.tags = item.tags;
+      return group;
+    }
     const out = { exerciseId: item.exerciseId };
     if (item.reps) out.reps = item.reps;
     if (item.sets) out.sets = item.sets;
