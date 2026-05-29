@@ -1,0 +1,392 @@
+{
+  "noDemos": [
+    {
+      "id": "1a-db-row",
+      "name": "1A DB Row"
+    },
+    {
+      "id": "1l-rdl-w-band-above-knee",
+      "name": "1L RDL w/ Band Above Knee"
+    },
+    {
+      "id": "2l-pogo",
+      "name": "2L Pogo"
+    },
+    {
+      "id": "a-runs-gear-1-3",
+      "name": "A Runs Gear 1-3"
+    },
+    {
+      "id": "copenhagen-plank-at-upper-calf-with-lifts",
+      "name": "Copenhagen Plank at Upper Calf with Lifts"
+    },
+    {
+      "id": "db-chest-press",
+      "name": "DB Chest Press"
+    },
+    {
+      "id": "dumbbell-bulgarian-split-squat-rfess",
+      "name": "Dumbbell Bulgarian Split Squat (RFESS)"
+    },
+    {
+      "id": "dumbbell-chest-press",
+      "name": "Dumbbell Chest Press"
+    },
+    {
+      "id": "goblet-squat-tempo",
+      "name": "Goblet Squat (Tempo)"
+    },
+    {
+      "id": "landing-from-a-box",
+      "name": "Landing from a Box"
+    },
+    {
+      "id": "one-arm-dumbbell-rows",
+      "name": "One Arm Dumbbell Rows"
+    },
+    {
+      "id": "split-squat-hold-with-hands-overhead",
+      "name": "Split Squat Hold with Hands Overhead"
+    },
+    {
+      "id": "split-squat-hold-hands-overhead",
+      "name": "Split Squat Hold, Hands Overhead"
+    },
+    {
+      "id": "trapbar-deadlift",
+      "name": "Trapbar Deadlift"
+    },
+    {
+      "id": "two-leg-pogo",
+      "name": "Two Leg Pogo"
+    },
+    {
+      "id": "wall-lower-calf-holds-lifts",
+      "name": "Wall Lower Calf Holds & Lifts"
+    }
+  ],
+  "duplicateYouTube": [
+    {
+      "url": "https://www.youtube.com/watch?v=S1_eZIIZlIc",
+      "exercises": [
+        "45degreebackraises",
+        "ghr"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=XOTO2qWRy9U",
+      "exercises": [
+        "barbellsquat",
+        "dbsquatjumps"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=wdMMFyDEpVI",
+      "exercises": [
+        "cablelateralpullovers",
+        "zottmancurls"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=n8KIHmsSU9s",
+      "exercises": [
+        "cablelateralpullovers",
+        "zottmancurls"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=DQnVsbeaNQo",
+      "exercises": [
+        "cablelateralpullovers",
+        "zottmancurls"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=JHkLdEwSESQ",
+      "exercises": [
+        "chestflies",
+        "frontraises"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=zb-MSO-Cv2Y",
+      "exercises": [
+        "chestflies",
+        "frontraises"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=rk8YayRoTRQ",
+      "exercises": [
+        "chestflies",
+        "frontraises"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=qD1WZ5pSuvk",
+      "exercises": [
+        "closegrippulldowns",
+        "cablerows"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=e3S820r53uk",
+      "exercises": [
+        "closegrippulldowns",
+        "cablerows"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=LyZH4UGdDTc",
+      "exercises": [
+        "closegrippulldowns",
+        "cablerows"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=uODWo4YqbT8",
+      "exercises": [
+        "dbrdls",
+        "splitsquats"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=mJilHWIBWO8",
+      "exercises": [
+        "dbrdls",
+        "splitsquats"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=CBOhr6H7BEY",
+      "exercises": [
+        "dbrdls",
+        "splitsquats"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=dcV-ATSeryA",
+      "exercises": [
+        "dips",
+        "ngdbinclinebench"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=UPeQpDPRWOg",
+      "exercises": [
+        "elevatedheelgobletsquat",
+        "legcurls"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=aed0XSePG6Y",
+      "exercises": [
+        "elevatedheelgobletsquat",
+        "legcurls"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=lRYBbchqxtI",
+      "exercises": [
+        "elevatedheelgobletsquat",
+        "legcurls"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=pvIjsG5Svck",
+      "exercises": [
+        "posture-ex1",
+        "highlowplanks"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=HaSFRSnRsXk",
+      "exercises": [
+        "posture-ex1",
+        "floorwashers"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=CFB3JHkdyt8",
+      "exercises": [
+        "frontsquatisoholds",
+        "boxjumps"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=-b2h0cegrNI",
+      "exercises": [
+        "frontsquatisoholds",
+        "boxjumps"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=BNUZU9TV1Eo",
+      "exercises": [
+        "frontsquatisoholds",
+        "boxjumps"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=sNqa1ad2qIQ",
+      "exercises": [
+        "hipabductions",
+        "calfraises"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=iOh08wn1s_Y",
+      "exercises": [
+        "hipabductions",
+        "calfraises"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=v5JFb2AsSVs",
+      "exercises": [
+        "hipext",
+        "sldbrdl"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=8q9LVgN2RD4",
+      "exercises": [
+        "hipext",
+        "stepups"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=bXgFx93CGow",
+      "exercises": [
+        "kbswings",
+        "boxdepthdrop",
+        "broadjumps"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=aSYap2yhW8s",
+      "exercises": [
+        "kbswings",
+        "boxdepthdrop",
+        "broadjumps"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=yDC2RCiKb5U",
+      "exercises": [
+        "boxdepthdrop",
+        "broadjumps"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=sGwDvbqUSpk",
+      "exercises": [
+        "krocrows2",
+        "scarecrows"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=mPcwZ0BdvHg",
+      "exercises": [
+        "ohkbcarry",
+        "onearmohcarry"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=-Zsx2JTfGsU",
+      "exercises": [
+        "ohkbcarry",
+        "turkishgetups"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=BFOyHDlY2UE",
+      "exercises": [
+        "rollingsideplanks",
+        "kneelingsideplanks"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=sKMD_pbNm7w",
+      "exercises": [
+        "rollingsideplanks",
+        "kneelingsideplanks"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=V6BtY3Lt0Ys",
+      "exercises": [
+        "shrugs",
+        "crushgripcurls"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=WKBJ3pc0_IM",
+      "exercises": [
+        "shrugs",
+        "crushgripcurls"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=6K_N9AGhItQ",
+      "exercises": [
+        "shrugs",
+        "crushgripcurls"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=G-piLwLu0d4",
+      "exercises": [
+        "skullcrushers",
+        "dbsidelateralraises"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=kDqklk1ZESo",
+      "exercises": [
+        "skullcrushers",
+        "dbsidelateralraises"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=9n1OGTqCyeI",
+      "exercises": [
+        "widegrippulldowns",
+        "bentoverrows"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=z-lxcsIN4T4",
+      "exercises": [
+        "widegrippulldowns",
+        "bentoverrows"
+      ]
+    }
+  ],
+  "brokenReferences": [],
+  "orphanExercises": [],
+  "suspiciousNames": [
+    {
+      "id": "split-squat-hold-hands-overhead",
+      "name": "Split Squat Hold, Hands Overhead",
+      "reason": "possibly paired (no alias)"
+    },
+    {
+      "id": "wall-lower-calf-holds-lifts",
+      "name": "Wall Lower Calf Holds & Lifts",
+      "reason": "possibly paired (no alias)"
+    }
+  ],
+  "stats": {
+    "totalExercises": 96,
+    "totalPrograms": 15,
+    "exercisesWithDemos": 80,
+    "exercisesWithoutDemos": 16,
+    "totalDemos": 385,
+    "uniqueYouTubeUrls": 187,
+    "duplicateYouTubeUrls": 42,
+    "brokenReferences": 0,
+    "orphanExercises": 0,
+    "suspiciousNames": 2
+  }
+}
