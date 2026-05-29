@@ -87,7 +87,12 @@ export function renderExercisePicker(container, options = {}) {
   let debounceTimer = null;
 
   const renderResults = (results, query) => {
-    if (results.length === 0 && query.trim()) {
+    if (!query || !query.trim()) {
+      resultsList.classList.add('hidden');
+      emptyState.classList.add('hidden');
+      return;
+    }
+    if (results.length === 0) {
       resultsList.classList.add('hidden');
       emptyState.classList.remove('hidden');
       return;
@@ -129,8 +134,8 @@ export function renderExercisePicker(container, options = {}) {
     debounceTimer = setTimeout(doSearch, 150);
   });
 
-  // Initial render (show first 10)
-  doSearch();
+  // Initial render (empty — wait for user to type)
+  renderResults([], '');
 
   // Create new button
   container.querySelector('[data-action="create-new"]')

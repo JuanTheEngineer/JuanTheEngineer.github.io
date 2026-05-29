@@ -2,7 +2,7 @@
 import { navigate } from '../utils/router.js';
 import { renderExercisePicker, addToIndex } from '../components/ExercisePicker.js';
 import { renderDemoManager } from '../components/DemoManager.js';
-import { loadWorkouts } from '../utils/data.js';
+import { loadWorkouts, loadExercises } from '../utils/data.js';
 import Sortable from 'sortablejs';
 
 // Editor state (module-level singleton for this session)
@@ -50,8 +50,17 @@ export function renderProgramEditorPage(container) {
               <input data-field="requirements" type="text" placeholder="e.g. Dumbbells, Bench"
                 class="w-full bg-slate-800/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30" />
             </div>
-            <button data-action="clone" class="text-xs text-slate-400 hover:text-brand-400 transition-colors">
-              or start from an existing program →
+            <button data-action="clone" class="w-full card p-3 text-left active:scale-[0.98] transition-transform mt-2">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-slate-300">Clone existing program</p>
+                  <p class="text-[11px] text-slate-500">Use a program as a starting point</p>
+                </div>
+                <svg class="w-4 h-4 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </div>
             </button>
           </div>
         </section>
@@ -250,6 +259,7 @@ function editForm(item, i) {
   const UNITS = ['reps','secs','min','yd','rep','reps (each side)','secs (each side)'];
   const TAGS = ['warmup','stretch'];
   return `<div class="px-4 pb-4 pt-2 space-y-3 border-t border-slate-800 bg-slate-900/40 animate-fade-in">
+  <div data-demo-preview="${i}"></div>
   <div class="grid grid-cols-3 gap-2">
     <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Reps</label>
       <input data-edit="reps" data-index="${i}" value="${esc(item.reps)}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500"/></div>
@@ -378,6 +388,15 @@ function wireTimelineActions(container) {
     });
   });
 
+  // Demo preview for expanded item
+  const previewSlot = list.querySelector(`[data-demo-preview="${expandedIndex}"]`);
+  if (previewSlot && expandedIndex >= 0) {
+    const item = state.items[expandedIndex];
+    if (item && item.exerciseId) {
+      renderDemoPreview(previewSlot, item.exerciseId);
+    }
+  }
+
   // Group button (shows a prompt for kind selection)
   container.querySelector('[data-action="group-selected"]')?.addEventListener('click', () => {
     // Group the last 2 ungrouped singles (simple approach)
@@ -404,6 +423,47 @@ function wireTimelineActions(container) {
 function esc(s) {
   if (s == null) return '';
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+}
+
+// --- Demo preview in timeline ---
+
+async function renderDemoPreview(slot, exerciseId) {
+  const { exercises } = await loadExercises();
+  const ex = exercises.find(e => e.id === exerciseId);
+  // Also check newExercises
+  const newEx = state.newExercises.find(e => e.id === exerciseId);
+  const demos = ex?.demos || newEx?.demos || [];
+
+  if (demos.length === 0) {
+    slot.innerHTML = `<p class="text-[11px] text-slate-600 italic">No demos available</p>`;
+    return;
+  }
+
+  // Find primary or first demo
+  const primary = demos.find(d => d.isPrimary) || demos[0];
+  const isYouTube = primary.type === 'youtube';
+  const isCloudinary = primary.type === 'cloudinary';
+
+  if (isYouTube) {
+    const match = (primary.url || '').match(/(?:v=|\/shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+    if (match) {
+      slot.innerHTML = `<img src="https://img.youtube.com/vi/${match[1]}/hqdefault.jpg" alt="Demo" class="w-full h-32 object-cover rounded-xl bg-slate-800"/>`;
+      return;
+    }
+  }
+
+  if (isCloudinary) {
+    const isVideo = /\.(mp4|webm|mov)(\?|$)/i.test(primary.url);
+    if (isVideo) {
+      slot.innerHTML = `<video src="${esc(primary.url)}" class="w-full h-32 object-cover rounded-xl bg-slate-800" autoplay loop muted playsinline></video>`;
+    } else {
+      slot.innerHTML = `<img src="${esc(primary.url)}" alt="Demo" class="w-full h-32 object-cover rounded-xl bg-slate-800" loading="lazy"/>`;
+    }
+    return;
+  }
+
+  // Fallback: just show URL text
+  slot.innerHTML = `<p class="text-[11px] text-slate-500 truncate font-mono">${esc(primary.url)}</p>`;
 }
 
 // --- Clone from existing ---
