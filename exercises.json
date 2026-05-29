@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-05-27T04:49:33.892Z",
+  "lastUpdated": "2026-05-29T05:21:11.729Z",
   "exercises": [
     {
       "id": "1a-db-row",
@@ -77,23 +77,6 @@
           "endTime": 0,
           "isPrimary": false,
           "notes": "Hyperextensions for GLUTE focus 🍑 Save this post for your next glute day #shorts"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=S1_eZIIZlIc",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "Hyperextensions for GLUTE focus 🍑 Save this post for your next glute day #shorts",
-          "metadata": {
-            "title": "Hyperextensions for GLUTE focus 🍑 Save this post for your next glute day #shorts",
-            "channel": "LisaFiitt Workouts",
-            "duration": 30,
-            "views": 1255789,
-            "confidence": 0.85
-          }
         }
       ],
       "recommendations": {
@@ -539,36 +522,6 @@
           "endTime": 0,
           "isPrimary": false,
           "notes": "Local fallback"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=wdMMFyDEpVI",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=n8KIHmsSU9s",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=DQnVsbeaNQo",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
         }
       ],
       "recommendations": {
@@ -741,36 +694,6 @@
           "endTime": 0,
           "isPrimary": false,
           "notes": "Local fallback"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=rk8YayRoTRQ",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=JHkLdEwSESQ",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=zb-MSO-Cv2Y",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
         }
       ],
       "recommendations": {
@@ -940,43 +863,6 @@
           "endTime": 0,
           "isPrimary": false,
           "notes": "Local fallback"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=e3S820r53uk",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "Lat Pulldowns: Know the Handles ⚠️ #pulldown",
-          "metadata": {
-            "title": "Lat Pulldowns: Know the Handles ⚠️ #pulldown",
-            "channel": "Hazzytrainer",
-            "duration": 17,
-            "views": 2388751,
-            "confidence": 0.7
-          }
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=qD1WZ5pSuvk",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=LyZH4UGdDTc",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
         }
       ],
       "recommendations": {
@@ -1174,16 +1060,6 @@
           "type": "youtube",
           "mediaType": "video",
           "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=uODWo4YqbT8",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI-suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
           "url": "https://www.youtube.com/watch?v=mJilHWIBWO8",
           "startTime": 0,
           "endTime": 0,
@@ -1256,26 +1132,6 @@
             "views": 6055109,
             "confidence": 0.85
           }
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=mJilHWIBWO8",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=CBOhr6H7BEY",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
         }
       ],
       "recommendations": {
@@ -1388,23 +1244,6 @@
           "endTime": 0,
           "isPrimary": false,
           "notes": "Dumbbell Jump Squat | Exercise Guide"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=XOTO2qWRy9U",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "Dumbbell Jump Squat | Exercise Guide",
-          "metadata": {
-            "title": "Dumbbell Jump Squat | Exercise Guide",
-            "channel": "Bodybuilding.com",
-            "duration": 65,
-            "views": 594576,
-            "confidence": 0.9
-          }
         }
       ],
       "recommendations": {
@@ -1510,16 +1349,6 @@
           "mediaType": "video",
           "format": "youtube",
           "url": "https://www.youtube.com/watch?v=3ZCDVRbhOMM",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI-suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=dcV-ATSeryA",
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
@@ -1701,43 +1530,6 @@
           "endTime": 0,
           "isPrimary": false,
           "notes": "Local fallback"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=aed0XSePG6Y",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "Sumo Squats VS Goblet Squats - know the difference 🍑",
-          "metadata": {
-            "title": "Sumo Squats VS Goblet Squats - know the difference 🍑",
-            "channel": "Tashana Charles",
-            "duration": 10,
-            "views": 1601981,
-            "confidence": 0.1
-          }
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=lRYBbchqxtI",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=UPeQpDPRWOg",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
         }
       ],
       "recommendations": {
@@ -1778,16 +1570,6 @@
           "mediaType": "video",
           "format": "youtube",
           "url": "https://www.youtube.com/watch?v=H1F-UfC8Mb8",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI-suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=pvIjsG5Svck",
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
@@ -1976,16 +1758,6 @@
           "type": "youtube",
           "mediaType": "video",
           "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=HaSFRSnRsXk",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "Chair Workout to Lose Belly Fat"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
           "url": "https://www.youtube.com/watch?v=_PP-hcgM-rk",
           "startTime": 0,
           "endTime": 0,
@@ -2110,43 +1882,6 @@
           "endTime": 0,
           "isPrimary": false,
           "notes": "Local fallback"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=BNUZU9TV1Eo",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "Deep tier squat oscillation jumps w/ front med ball hold",
-          "metadata": {
-            "title": "Deep tier squat oscillation jumps w/ front med ball hold",
-            "channel": "George Progress Physio",
-            "duration": 27,
-            "views": 6958,
-            "confidence": 0.5
-          }
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=CFB3JHkdyt8",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=-b2h0cegrNI",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
         }
       ],
       "recommendations": {
@@ -2729,27 +2464,7 @@
           "type": "youtube",
           "mediaType": "video",
           "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=sNqa1ad2qIQ",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
           "url": "https://www.youtube.com/watch?v=uFWuVSxsT0Y",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=iOh08wn1s_Y",
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
@@ -2798,18 +2513,6 @@
           "endTime": 0,
           "isPrimary": false,
           "notes": "AI-suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=8q9LVgN2RD4",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "metadata": {
-            "confidence": 0.7
-          }
         }
       ],
       "recommendations": {
@@ -2834,18 +2537,6 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": true
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=v5JFb2AsSVs",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "metadata": {
-            "confidence": 0.7
-          }
         },
         {
           "type": "youtube",
@@ -3089,26 +2780,6 @@
           "endTime": 0,
           "isPrimary": false,
           "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=aSYap2yhW8s",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=bXgFx93CGow",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
         }
       ],
       "recommendations": {
@@ -3133,36 +2804,6 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": true
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=yDC2RCiKb5U",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=aSYap2yhW8s",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=bXgFx93CGow",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
         }
       ],
       "recommendations": {
@@ -3309,16 +2950,6 @@
           "endTime": 0,
           "isPrimary": false,
           "notes": "Local fallback"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=sGwDvbqUSpk",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
         }
       ],
       "recommendations": {
@@ -3840,16 +3471,6 @@
           "type": "youtube",
           "mediaType": "video",
           "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=-Zsx2JTfGsU",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI-suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
           "url": "https://www.youtube.com/watch?v=H_Yt-81WM2w",
           "startTime": 0,
           "endTime": 0,
@@ -3964,16 +3585,6 @@
           "endTime": 0,
           "isPrimary": false,
           "notes": "Local fallback"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=mPcwZ0BdvHg",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI-suggested alternative"
         },
         {
           "type": "youtube",
@@ -4283,36 +3894,6 @@
           "endTime": 0,
           "isPrimary": false,
           "notes": "Local fallback"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=V6BtY3Lt0Ys",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=WKBJ3pc0_IM",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=6K_N9AGhItQ",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
         }
       ],
       "recommendations": {
@@ -4357,33 +3938,6 @@
           "endTime": 0,
           "isPrimary": false,
           "notes": "How not to side plank and how to do the side plank! #plank #abs #abworkout"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=BFOyHDlY2UE",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "How not to side plank and how to do the side plank! #plank #abs #abworkout"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=sKMD_pbNm7w",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "How not to side plank and how to do the side plank! #plank #abs #abworkout",
-          "metadata": {
-            "title": "How not to side plank and how to do the side plank! #plank #abs #abworkout",
-            "channel": "brockashby",
-            "duration": 29,
-            "views": 1338181,
-            "confidence": 0.95
-          }
         }
       ],
       "recommendations": {
@@ -4559,27 +4113,7 @@
           "type": "youtube",
           "mediaType": "video",
           "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=G-piLwLu0d4",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
           "url": "https://www.youtube.com/watch?v=JIhbYYA1Q90",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=kDqklk1ZESo",
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
@@ -5259,26 +4793,6 @@
           "mediaType": "video",
           "format": "youtube",
           "url": "https://www.youtube.com/watch?v=phVtqawIgbk",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=9n1OGTqCyeI",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=z-lxcsIN4T4",
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
