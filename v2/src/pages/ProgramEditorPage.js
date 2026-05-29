@@ -58,7 +58,19 @@ export function renderProgramEditorPage(container) {
                 </div>
                 <div class="flex-1 min-w-0">
                   <p class="text-sm font-medium text-slate-300">Clone existing program</p>
-                  <p class="text-[11px] text-slate-500">Use a program as a starting point</p>
+                  <p class="text-[11px] text-slate-500">Copy as a new program</p>
+                </div>
+                <svg class="w-4 h-4 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </div>
+            </button>
+            <button data-action="edit-program" class="w-full card p-3 text-left active:scale-[0.98] transition-transform mt-2">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-slate-300">Edit existing program</p>
+                  <p class="text-[11px] text-slate-500">Modify and re-export</p>
                 </div>
                 <svg class="w-4 h-4 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </div>
@@ -447,33 +459,55 @@ async function renderDemoPreview(slot, exerciseId) {
 async function wireClone(container) {
   container.querySelector('[data-action="clone"]')?.addEventListener('click', async () => {
     if (state.items.length > 0 && !confirm('This will replace your current timeline. Continue?')) return;
-    const { programs } = await loadWorkouts();
-    const name = prompt('Type part of a program name to clone from:\n\n' + programs.map(p => `• ${p.title}`).join('\n'));
-    if (!name) return;
-    const match = programs.find(p => p.title.toLowerCase().includes(name.toLowerCase()));
-    if (!match) { alert('No program found matching "' + name + '"'); return; }
-
-    // Deep clone into state
-    state.meta.title = '';
-    state.meta.id = '';
-    state.meta.requirements = match.requirements || '';
-    state.items = (match.items || []).map(item => {
-      if (item.kind) {
-        return { type: 'group', kind: item.kind, displayName: item.displayName || '', note: item.note || '', tags: item.tags || [],
-          members: item.exercises.map(m => ({ type: 'single', exerciseId: m.exerciseId, exerciseName: m.exerciseId, reps: m.reps || '', sets: m.sets || '', repUnits: m.repUnits || 'reps', note: m.note || '', displayName: '', tags: [] }))
-        };
-      }
-      return { type: 'single', exerciseId: item.exerciseId, exerciseName: item.displayName || item.exerciseId, reps: item.reps || '', sets: item.sets || '', repUnits: item.repUnits || 'reps', note: item.note || '', displayName: item.displayName || '', tags: item.tags || [] };
-    });
-    expandedIndex = -1;
-
-    // Update UI
-    container.querySelector('[data-field="title"]').value = '';
-    container.querySelector('[data-field="requirements"]').value = state.meta.requirements;
-    container.querySelector('[data-region="id-preview"]').textContent = '';
-    renderTimeline(container);
+    const match = await pickProgram();
+    if (!match) return;
+    loadProgramIntoState(container, match, false);
     alert(`Cloned "${match.title}" — set a new title to continue.`);
   });
+
+  container.querySelector('[data-action="edit-program"]')?.addEventListener('click', async () => {
+    if (state.items.length > 0 && !confirm('This will replace your current timeline. Continue?')) return;
+    const match = await pickProgram();
+    if (!match) return;
+    loadProgramIntoState(container, match, true);
+  });
+}
+
+async function pickProgram() {
+  const { programs } = await loadWorkouts();
+  const name = prompt('Type part of a program name:\n\n' + programs.map(p => `• ${p.title}`).join('\n'));
+  if (!name) return null;
+  const match = programs.find(p => p.title.toLowerCase().includes(name.toLowerCase()));
+  if (!match) { alert('No program found matching "' + name + '"'); return null; }
+  return match;
+}
+
+function loadProgramIntoState(container, match, keepId) {
+  state.meta.title = keepId ? match.title : '';
+  state.meta.id = keepId ? match.id : '';
+  state.meta.requirements = match.requirements || '';
+  state.items = (match.items || []).map(item => {
+    if (item.kind) {
+      return { type: 'group', kind: item.kind, displayName: item.displayName || '', note: item.note || '', tags: item.tags || [],
+        members: item.exercises.map(m => ({ type: 'single', exerciseId: m.exerciseId, exerciseName: m.exerciseId, reps: m.reps || '', sets: m.sets || '', repUnits: m.repUnits || 'reps', note: m.note || '', displayName: '', tags: [] }))
+      };
+    }
+    return { type: 'single', exerciseId: item.exerciseId, exerciseName: item.displayName || item.exerciseId, reps: item.reps || '', sets: item.sets || '', repUnits: item.repUnits || 'reps', note: item.note || '', displayName: item.displayName || '', tags: item.tags || [] };
+  });
+  expandedIndex = -1;
+
+  // Update UI
+  const titleInput = container.querySelector('[data-field="title"]');
+  titleInput.value = state.meta.title;
+  titleInput.dispatchEvent(new Event('input'));
+  container.querySelector('[data-field="requirements"]').value = state.meta.requirements;
+
+  // Update header
+  if (keepId) {
+    container.querySelector('header span').textContent = `Edit: ${match.title}`;
+  }
+
+  renderTimeline(container);
 }
 
 // --- Unsaved changes guard ---

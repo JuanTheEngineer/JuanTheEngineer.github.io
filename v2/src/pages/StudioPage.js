@@ -14,8 +14,8 @@ export function renderStudioPage(container) {
       </header>
 
       <main class="flex-1 px-6 pb-24 pt-8">
-        <h1 class="h-page mb-2">What are you creating?</h1>
-        <p class="text-sm text-slate-400 mb-8">Pick one to get started.</p>
+        <h1 class="h-page mb-2">Studio</h1>
+        <p class="text-sm text-slate-400 mb-8">Create new or edit existing.</p>
 
         <div class="space-y-3">
           <button
@@ -29,8 +29,8 @@ export function renderStudioPage(container) {
                 </svg>
               </div>
               <div class="flex-1">
-                <h2 class="font-semibold tracking-tight">New Program</h2>
-                <p class="text-sm text-slate-400 mt-0.5">Build a workout from exercises</p>
+                <h2 class="font-semibold tracking-tight">Programs</h2>
+                <p class="text-sm text-slate-400 mt-0.5">Create new or edit existing programs</p>
               </div>
               <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
@@ -50,8 +50,8 @@ export function renderStudioPage(container) {
                 </svg>
               </div>
               <div class="flex-1">
-                <h2 class="font-semibold tracking-tight">New Exercise</h2>
-                <p class="text-sm text-slate-400 mt-0.5">Add to the exercise library</p>
+                <h2 class="font-semibold tracking-tight">Exercises</h2>
+                <p class="text-sm text-slate-400 mt-0.5">Create new or edit existing exercises</p>
               </div>
               <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
