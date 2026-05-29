@@ -2,6 +2,7 @@
 import { navigate } from '../utils/router.js';
 import { renderExercisePicker, addToIndex } from '../components/ExercisePicker.js';
 import { renderDemoManager } from '../components/DemoManager.js';
+import { renderDemoCarousel } from '../components/DemoCarousel.js';
 import { loadWorkouts, loadExercises } from '../utils/data.js';
 import Sortable from 'sortablejs';
 
@@ -430,7 +431,6 @@ function esc(s) {
 async function renderDemoPreview(slot, exerciseId) {
   const { exercises } = await loadExercises();
   const ex = exercises.find(e => e.id === exerciseId);
-  // Also check newExercises
   const newEx = state.newExercises.find(e => e.id === exerciseId);
   const demos = ex?.demos || newEx?.demos || [];
 
@@ -439,31 +439,7 @@ async function renderDemoPreview(slot, exerciseId) {
     return;
   }
 
-  // Find primary or first demo
-  const primary = demos.find(d => d.isPrimary) || demos[0];
-  const isYouTube = primary.type === 'youtube';
-  const isCloudinary = primary.type === 'cloudinary';
-
-  if (isYouTube) {
-    const match = (primary.url || '').match(/(?:v=|\/shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
-    if (match) {
-      slot.innerHTML = `<img src="https://img.youtube.com/vi/${match[1]}/hqdefault.jpg" alt="Demo" class="w-full h-32 object-cover rounded-xl bg-slate-800"/>`;
-      return;
-    }
-  }
-
-  if (isCloudinary) {
-    const isVideo = /\.(mp4|webm|mov)(\?|$)/i.test(primary.url);
-    if (isVideo) {
-      slot.innerHTML = `<video src="${esc(primary.url)}" class="w-full h-32 object-cover rounded-xl bg-slate-800" autoplay loop muted playsinline></video>`;
-    } else {
-      slot.innerHTML = `<img src="${esc(primary.url)}" alt="Demo" class="w-full h-32 object-cover rounded-xl bg-slate-800" loading="lazy"/>`;
-    }
-    return;
-  }
-
-  // Fallback: just show URL text
-  slot.innerHTML = `<p class="text-[11px] text-slate-500 truncate font-mono">${esc(primary.url)}</p>`;
+  renderDemoCarousel(slot, demos);
 }
 
 // --- Clone from existing ---
