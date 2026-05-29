@@ -1,9 +1,16 @@
-// ExerciseEditorPage: standalone exercise creation (from Studio chooser)
+// ExerciseEditorPage: create new OR edit existing exercises
 import { navigate } from '../utils/router.js';
 import { renderDemoManager } from '../components/DemoManager.js';
+import { searchExercises } from '../components/ExercisePicker.js';
+
+let demos = [];
+let editingExisting = false;
+let originalId = '';
 
 export function renderExerciseEditorPage(container) {
-  let demos = [];
+  demos = [];
+  editingExisting = false;
+  originalId = '';
 
   container.innerHTML = `
     <div class="flex-1 flex flex-col">
@@ -13,11 +20,29 @@ export function renderExerciseEditorPage(container) {
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
           </svg>
         </button>
-        <span class="text-sm font-medium text-slate-400">New Exercise</span>
+        <span data-region="header-title" class="text-sm font-medium text-slate-400">New Exercise</span>
       </header>
       <main class="flex-1 px-6 pb-32 pt-6 space-y-6">
+
+        <!-- Search existing to edit -->
         <section class="space-y-3">
-          <h2 class="eyebrow">Exercise Details</h2>
+          <h2 class="eyebrow">Find exercise to edit</h2>
+          <div class="relative">
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+            </svg>
+            <input data-input="edit-search" type="text" placeholder="Search to edit an existing exercise..."
+              class="w-full bg-slate-800/60 border border-slate-700 rounded-xl pl-10 pr-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30"/>
+          </div>
+          <ul data-region="edit-results" class="space-y-1 max-h-[200px] overflow-y-auto hidden"></ul>
+          <div class="text-center">
+            <p class="text-[11px] text-slate-600">or create a new one below</p>
+          </div>
+        </section>
+
+        <!-- Exercise form -->
+        <section class="space-y-3">
+          <h2 class="eyebrow" data-region="form-label">Exercise Details</h2>
           <div>
             <label class="text-xs text-slate-400 mb-1 block">Name *</label>
             <input data-field="name" type="text" placeholder="e.g. Backward Treadmill Walk"
@@ -59,33 +84,104 @@ export function renderExerciseEditorPage(container) {
     </div>
   `;
 
-  // Wire back
-  container.querySelector('[data-action="back"]')?.addEventListener('click', () => navigate('/studio'));
+  wireBack(container);
+  wireEditSearch(container);
+  wireForm(container);
+  wireExport(container);
+}
 
-  // Wire name → id preview + show export
+function wireBack(container) {
+  container.querySelector('[data-action="back"]')?.addEventListener('click', () => navigate('/studio'));
+}
+
+function wireEditSearch(container) {
+  const input = container.querySelector('[data-input="edit-search"]');
+  const resultsList = container.querySelector('[data-region="edit-results"]');
+  let debounce = null;
+
+  input?.addEventListener('input', () => {
+    clearTimeout(debounce);
+    debounce = setTimeout(async () => {
+      const query = input.value.trim();
+      if (!query) { resultsList.classList.add('hidden'); return; }
+      const results = await searchExercises(query, 8);
+      if (results.length === 0) { resultsList.classList.add('hidden'); return; }
+      resultsList.classList.remove('hidden');
+      resultsList.innerHTML = results.map(r => `
+        <li><button data-load-exercise="${r.id}" class="w-full text-left px-3 py-2.5 rounded-lg hover:bg-slate-800/60 active:bg-slate-800 transition-colors flex items-center gap-3 touch-manipulation">
+          <span class="text-sm font-medium text-slate-100 truncate">${esc(r.name)}</span>
+          ${r.hasDemos ? '<span class="text-[10px] text-slate-500 bg-slate-800 px-1.5 py-0.5 rounded">demo</span>' : ''}
+        </button></li>
+      `).join('');
+      resultsList.querySelectorAll('[data-load-exercise]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const entry = results.find(r => r.id === btn.dataset.loadExercise);
+          if (entry) loadExerciseIntoForm(container, entry.exercise);
+          resultsList.classList.add('hidden');
+          input.value = '';
+        });
+      });
+    }, 150);
+  });
+}
+
+function loadExerciseIntoForm(container, exercise) {
+  editingExisting = true;
+  originalId = exercise.id;
+  demos = JSON.parse(JSON.stringify(exercise.demos || [])); // deep clone
+
+  // Update header
+  container.querySelector('[data-region="header-title"]').textContent = `Edit: ${exercise.name}`;
+  container.querySelector('[data-region="form-label"]').textContent = 'Editing Exercise';
+
+  // Fill form fields
+  const nameInput = container.querySelector('[data-field="name"]');
+  nameInput.value = exercise.name;
+  nameInput.dispatchEvent(new Event('input'));
+
+  const rec = exercise.recommendations || {};
+  container.querySelector('[data-field="reps"]').value = rec.reps || '';
+  container.querySelector('[data-field="sets"]').value = rec.sets || '';
+  container.querySelector('[data-field="repUnits"]').value = rec.repUnits || 'reps';
+  container.querySelector('[data-field="note"]').value = rec.note || '';
+
+  // Re-render demo manager with loaded demos
+  renderDemoManager(container.querySelector('[data-region="demos"]'), demos);
+
+  // Show export
+  container.querySelector('[data-region="export-section"]')?.classList.remove('hidden');
+}
+
+function wireForm(container) {
   const nameInput = container.querySelector('[data-field="name"]');
   const idPreview = container.querySelector('[data-region="id-preview"]');
   const exportSection = container.querySelector('[data-region="export-section"]');
+
   nameInput?.addEventListener('input', () => {
-    const id = nameInput.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '');
-    idPreview.textContent = id ? `id: ${id}` : '';
+    if (!editingExisting) {
+      const id = nameInput.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '');
+      idPreview.textContent = id ? `id: ${id}` : '';
+    } else {
+      idPreview.textContent = `id: ${originalId} (existing)`;
+    }
     exportSection?.classList.toggle('hidden', !nameInput.value.trim());
   });
 
-  // Render demo manager
+  // Render demo manager (empty for new)
   renderDemoManager(container.querySelector('[data-region="demos"]'), demos);
+}
 
-  // Export
+function wireExport(container) {
   const modal = container.querySelector('[data-region="export-modal"]');
+
   container.querySelector('[data-action="export"]')?.addEventListener('click', () => {
+    const nameInput = container.querySelector('[data-field="name"]');
     const name = nameInput.value.trim();
     if (!name) { nameInput.focus(); return; }
-    const exercise = {
-      id: name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, ''),
-      name,
-      demos: demos.filter(d => d.url),
-      recommendations: {}
-    };
+
+    const id = editingExisting ? originalId : name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '');
+    const exercise = { id, name, demos: demos.filter(d => d.url), recommendations: {} };
+
     const reps = container.querySelector('[data-field="reps"]').value;
     const sets = container.querySelector('[data-field="sets"]').value;
     const repUnits = container.querySelector('[data-field="repUnits"]').value;
@@ -97,19 +193,27 @@ export function renderExerciseEditorPage(container) {
 
     const content = container.querySelector('[data-region="export-content"]');
     const json = JSON.stringify(exercise, null, 2);
+    const label = editingExisting
+      ? `Replace entry with id "${originalId}" in exercises.json`
+      : 'Append to exercises.json → exercises[]';
+
     content.innerHTML = `
       <div class="space-y-2">
         <div class="flex items-center justify-between">
-          <p class="text-xs text-slate-400">Append to exercises.json → exercises[]</p>
+          <p class="text-xs text-slate-400">${label}</p>
           <button data-action="copy" class="text-xs text-brand-400 hover:text-brand-300">Copy</button>
         </div>
         <pre class="bg-slate-950 border border-slate-800 rounded-xl p-4 text-xs text-slate-300 overflow-x-auto max-h-[300px] overflow-y-auto font-mono leading-relaxed"><code>${esc(json)}</code></pre>
       </div>`;
     content.querySelector('[data-action="copy"]')?.addEventListener('click', (e) => {
-      navigator.clipboard?.writeText(json).then(() => { e.target.textContent = '✓ Copied'; setTimeout(() => { e.target.textContent = 'Copy'; }, 2000); });
+      navigator.clipboard?.writeText(json).then(() => {
+        e.target.textContent = '✓ Copied';
+        setTimeout(() => { e.target.textContent = 'Copy'; }, 2000);
+      });
     });
     modal.classList.remove('hidden');
   });
+
   container.querySelector('[data-action="close-export"]')?.addEventListener('click', () => modal?.classList.add('hidden'));
   modal?.addEventListener('click', (e) => { if (e.target === modal) modal.classList.add('hidden'); });
 }
