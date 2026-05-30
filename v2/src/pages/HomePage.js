@@ -85,15 +85,12 @@ export function renderHomePage(container) {
     </div>
   `;
 
-  container.querySelector('[data-action="create"]')
-    ?.addEventListener('click', () => navigate('/studio'));
-  container.querySelector('[data-action="programs"]')
-    ?.addEventListener('click', () => navigate('/programs'));
-  container.querySelector('[data-action="exercises"]')
-    ?.addEventListener('click', () => navigate('/exercises'));
+  container.querySelector('[data-action="create"]')?.addEventListener('click', () => navigate('/studio'));
+  container.querySelector('[data-action="programs"]')?.addEventListener('click', () => navigate('/programs'));
+  container.querySelector('[data-action="exercises"]')?.addEventListener('click', () => navigate('/exercises'));
 
   // Render recent programs in the background — fail quietly if data doesn't load
-  renderRecent(container).catch(err => console.warn('[recent] skipped', err));
+  renderRecent(container).catch((err) => console.warn('[recent] skipped', err));
 }
 
 async function renderRecent(container) {
@@ -104,12 +101,12 @@ async function renderRecent(container) {
   if (!slot) return;
 
   const { programs } = await loadWorkouts();
-  const byId = new Map(programs.map(p => [p.id, p]));
+  const byId = new Map(programs.map((p) => [p.id, p]));
 
   // Resolve to programs we still know about, take top 3
   const resolved = recents
-    .map(r => ({ ...r, program: byId.get(r.id) }))
-    .filter(r => r.program)
+    .map((r) => ({ ...r, program: byId.get(r.id) }))
+    .filter((r) => r.program)
     .slice(0, 3);
 
   if (resolved.length === 0) return;
@@ -118,31 +115,28 @@ async function renderRecent(container) {
   slot.innerHTML = `
     <div class="flex items-baseline justify-between">
       <h2 class="eyebrow">Pick up where you left off</h2>
-      ${resolved.length === 3 && recents.length > 3
-        ? '<button data-action="all-recent" class="text-xs text-slate-400 hover:text-brand-400 transition-colors">All</button>'
-        : ''}
+      ${
+        resolved.length === 3 && recents.length > 3
+          ? '<button data-action="all-recent" class="text-xs text-slate-400 hover:text-brand-400 transition-colors">All</button>'
+          : ''
+      }
     </div>
     <ul class="space-y-2">
-      ${resolved.map(r => recentCard(r.program)).join('')}
+      ${resolved.map((r) => recentCard(r.program)).join('')}
     </ul>
   `;
 
-  slot.querySelectorAll('[data-program-id]').forEach(el => {
+  slot.querySelectorAll('[data-program-id]').forEach((el) => {
     el.addEventListener('click', () => navigate(`/program/${el.dataset.programId}`));
   });
-  slot.querySelector('[data-action="all-recent"]')
-    ?.addEventListener('click', () => navigate('/programs'));
+  slot.querySelector('[data-action="all-recent"]')?.addEventListener('click', () => navigate('/programs'));
 }
 
 function recentCard(program) {
   const total = program.items?.length || program.exercises?.length || 0;
   const done = getProgress(program.id).size;
   const pct = total > 0 ? Math.round((done / total) * 100) : 0;
-  const progressLabel = done === 0
-    ? 'Not started'
-    : done >= total
-      ? 'Complete'
-      : `${done} of ${total} done`;
+  const progressLabel = done === 0 ? 'Not started' : done >= total ? 'Complete' : `${done} of ${total} done`;
 
   return `
     <li>
@@ -171,7 +165,15 @@ function recentCard(program) {
 
 function escapeHtml(s) {
   if (s == null) return '';
-  return String(s).replace(/[&<>"']/g, c => ({
-    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-  })[c]);
+  return String(s).replace(
+    /[&<>"']/g,
+    (c) =>
+      ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      })[c]
+  );
 }

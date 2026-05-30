@@ -32,7 +32,8 @@ function renderContent(container, program) {
   const total = program.resolvedItems.length;
   let expandedIndex = -1; // Don't auto-open anything; let user decide
 
-  container.innerHTML = renderShell(`
+  container.innerHTML = renderShell(
+    `
     <div class="sticky top-[3.75rem] z-10 px-6 pt-2 pb-3 bg-slate-950/85 backdrop-blur-md border-b border-slate-900">
       <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden">
         <div data-region="progress-bar" class="h-full bg-gradient-to-r from-brand-500 to-brand-400 transition-all duration-500" style="width: ${(completed.size / total) * 100}%"></div>
@@ -44,9 +45,13 @@ function renderContent(container, program) {
 
     <header class="px-6 pt-4 pb-3">
       <h1 class="h-page">${escapeHtml(program.title)}</h1>
-      ${program.requirements ? `
+      ${
+        program.requirements
+          ? `
         <p class="text-sm text-slate-400 mt-1.5">${escapeHtml(program.requirements)}</p>
-      ` : ''}
+      `
+          : ''
+      }
     </header>
 
     <main class="flex-1 px-6 pb-32 pt-2">
@@ -65,7 +70,9 @@ function renderContent(container, program) {
         <span>Share program</span>
       </button>
     </main>
-  `, program.title);
+  `,
+    program.title
+  );
 
   wireBack(container);
 
@@ -81,7 +88,7 @@ function renderContent(container, program) {
         isExpanded: i === expandedIndex,
         isCompleted: completed.has(i),
         onToggle: (idx) => {
-          expandedIndex = (expandedIndex === idx) ? -1 : idx;
+          expandedIndex = expandedIndex === idx ? -1 : idx;
           renderAll();
           // Smooth-scroll the newly opened card into view (below the sticky header)
           if (expandedIndex === idx) {
@@ -98,7 +105,7 @@ function renderContent(container, program) {
           const wasComplete = completed.size === total;
           const next = toggleProgress(program.id, idx);
           completed.clear();
-          next.forEach(v => completed.add(v));
+          next.forEach((v) => completed.add(v));
           // Auto-collapse on completion (smoother UX). User can re-open if needed.
           if (next.has(idx) && expandedIndex === idx) {
             expandedIndex = -1;
@@ -110,9 +117,7 @@ function renderContent(container, program) {
           }
         }
       };
-      const card = item.kind === 'single'
-        ? createExerciseCard(item, cardState)
-        : createGroupCard(item, cardState);
+      const card = item.kind === 'single' ? createExerciseCard(item, cardState) : createGroupCard(item, cardState);
       li.appendChild(card);
       list.appendChild(li);
     });
@@ -148,7 +153,10 @@ function renderContent(container, program) {
     if (navigator.share) {
       navigator.share({ title: program.title, text: `Check out: ${program.title}`, url }).catch(() => {});
     } else {
-      navigator.clipboard?.writeText(url).then(() => alert('Link copied!')).catch(() => prompt('Copy:', url));
+      navigator.clipboard
+        ?.writeText(url)
+        .then(() => alert('Link copied!'))
+        .catch(() => prompt('Copy:', url));
     }
   });
 }
@@ -170,8 +178,7 @@ function renderShell(content, title = 'Program') {
 }
 
 function wireBack(container) {
-  container.querySelector('[data-action="back"]')
-    ?.addEventListener('click', () => navigate('/programs'));
+  container.querySelector('[data-action="back"]')?.addEventListener('click', () => navigate('/programs'));
 }
 
 function renderNotFound(container, id) {
@@ -200,7 +207,15 @@ function renderError(container, err) {
 
 function escapeHtml(s) {
   if (s == null) return '';
-  return String(s).replace(/[&<>"']/g, c => ({
-    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-  })[c]);
+  return String(s).replace(
+    /[&<>"']/g,
+    (c) =>
+      ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      })[c]
+  );
 }

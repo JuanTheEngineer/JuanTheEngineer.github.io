@@ -78,5 +78,5 @@ export function getRenderStrategy(source) {
  */
 export function pickPrimarySource(sources) {
   if (!sources || sources.length === 0) return null;
-  return sources.find(s => s.isPrimary) || sources[0];
+  return sources.find((s) => s.isPrimary) || sources[0];
 }

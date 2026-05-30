@@ -45,9 +45,7 @@ export function renderMedia(container, source, options = {}) {
 }
 
 function renderImage(container, source, className, onError) {
-  const url = source.type === 'cloudinary'
-    ? transformCloudinaryUrl(source.url, 'w_800,q_auto,f_auto')
-    : source.url;
+  const url = source.type === 'cloudinary' ? transformCloudinaryUrl(source.url, 'w_800,q_auto,f_auto') : source.url;
 
   container.innerHTML = `
     <img
@@ -65,9 +63,7 @@ function renderImage(container, source, className, onError) {
 }
 
 function renderVideo(container, source, className, autoplay = true, onError) {
-  const url = source.type === 'cloudinary'
-    ? transformCloudinaryUrl(source.url, 'w_800,q_auto,f_auto')
-    : source.url;
+  const url = source.type === 'cloudinary' ? transformCloudinaryUrl(source.url, 'w_800,q_auto,f_auto') : source.url;
 
   const startAttr = source.startTime ? `#t=${source.startTime}` : '';
 
@@ -96,9 +92,7 @@ function renderEmbed(container, source, className, onEmbedPlay) {
   const wrappedClassName = `${aspectClass} w-full rounded-2xl overflow-hidden bg-slate-900`;
 
   // Click-to-play pattern: show thumbnail, load iframe only on tap
-  const thumb = source.type === 'youtube'
-    ? getYouTubeThumbnail(source.url, 'hqdefault')
-    : null;
+  const thumb = source.type === 'youtube' ? getYouTubeThumbnail(source.url, 'hqdefault') : null;
 
   container.innerHTML = `
     <div class="${wrappedClassName} relative">
@@ -124,12 +118,15 @@ function renderEmbed(container, source, className, onEmbedPlay) {
   // Wire up click-to-play
   const button = container.querySelector('[data-action="play-embed"]');
   if (button) {
-    button.addEventListener('click', () => {
-      const embedUrl = source.type === 'youtube'
-        ? getYouTubeEmbedUrl(source.url, { startTime: source.startTime, endTime: source.endTime })
-        : source.url;
+    button.addEventListener(
+      'click',
+      () => {
+        const embedUrl =
+          source.type === 'youtube'
+            ? getYouTubeEmbedUrl(source.url, { startTime: source.startTime, endTime: source.endTime })
+            : source.url;
 
-      container.innerHTML = `
+        container.innerHTML = `
         <div class="${wrappedClassName} relative">
           <iframe
             src="${embedUrl}"
@@ -140,7 +137,9 @@ function renderEmbed(container, source, className, onEmbedPlay) {
           ></iframe>
         </div>
       `;
-      onEmbedPlay?.();
-    }, { once: true });
+        onEmbedPlay?.();
+      },
+      { once: true }
+    );
   }
 }

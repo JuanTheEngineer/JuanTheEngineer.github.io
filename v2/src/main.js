@@ -35,9 +35,13 @@ function renderStub(title, message) {
         <main class="flex-1 px-6 pb-24">
           <div class="card p-6 animate-slide-up">
             <p class="text-slate-400">${message}</p>
-            ${params && Object.keys(params).length ? `
+            ${
+              params && Object.keys(params).length
+                ? `
               <pre class="text-xs text-slate-500 mt-3 font-mono">${JSON.stringify(params, null, 2)}</pre>
-            ` : ''}
+            `
+                : ''
+            }
           </div>
         </main>
       </div>

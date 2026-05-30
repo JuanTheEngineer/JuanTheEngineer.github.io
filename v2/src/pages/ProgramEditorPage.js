@@ -19,7 +19,10 @@ function createFreshState() {
 }
 
 function deriveId(title) {
-  return title.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/_+$/g, '');
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '_')
+    .replace(/_+$/g, '');
 }
 
 export function renderProgramEditorPage(container) {
@@ -181,7 +184,9 @@ function wireMetaForm(container) {
     // Show export button when title + items exist
     exportSection?.classList.toggle('hidden', !state.meta.title.trim() || state.items.length === 0);
   });
-  reqsInput?.addEventListener('input', () => { state.meta.requirements = reqsInput.value; });
+  reqsInput?.addEventListener('input', () => {
+    state.meta.requirements = reqsInput.value;
+  });
 }
 
 function wirePicker(container) {
@@ -189,13 +194,21 @@ function wirePicker(container) {
   renderExercisePicker(pickerSlot, {
     onSelect: (exercise) => {
       state.items.push({
-        type: 'single', exerciseId: exercise.id, exerciseName: exercise.name,
-        reps: exercise.recommendations?.reps || '', sets: exercise.recommendations?.sets || '',
-        repUnits: exercise.recommendations?.repUnits || 'reps', note: '', displayName: '', tags: []
+        type: 'single',
+        exerciseId: exercise.id,
+        exerciseName: exercise.name,
+        reps: exercise.recommendations?.reps || '',
+        sets: exercise.recommendations?.sets || '',
+        repUnits: exercise.recommendations?.repUnits || 'reps',
+        note: '',
+        displayName: '',
+        tags: []
       });
       renderTimeline(container);
     },
-    onCreateNew: () => { openExerciseSlideOver(container); }
+    onCreateNew: () => {
+      openExerciseSlideOver(container);
+    }
   });
 }
 
@@ -209,11 +222,18 @@ function renderTimeline(container) {
   const groupBtn = container.querySelector('[data-action="group-selected"]');
   if (!list) return;
   count.textContent = `${state.items.length} item${state.items.length !== 1 ? 's' : ''}`;
-  if (state.items.length === 0) { list.classList.add('hidden'); empty.classList.remove('hidden'); exportSection?.classList.add('hidden'); groupBtn?.classList.add('hidden'); return; }
-  list.classList.remove('hidden'); empty.classList.add('hidden');
+  if (state.items.length === 0) {
+    list.classList.add('hidden');
+    empty.classList.remove('hidden');
+    exportSection?.classList.add('hidden');
+    groupBtn?.classList.add('hidden');
+    return;
+  }
+  list.classList.remove('hidden');
+  empty.classList.add('hidden');
   exportSection?.classList.toggle('hidden', !state.meta.title.trim());
   // Show group button when 2+ singles exist
-  const singleCount = state.items.filter(i => i.type === 'single').length;
+  const singleCount = state.items.filter((i) => i.type === 'single').length;
   groupBtn?.classList.toggle('hidden', singleCount < 2);
   list.innerHTML = state.items.map((item, i) => timelineCard(item, i)).join('');
   wireTimelineActions(container);
@@ -269,8 +289,8 @@ function groupCard(item, i) {
 }
 
 function editForm(item, i) {
-  const UNITS = ['reps','secs','min','yd','rep','reps (each side)','secs (each side)'];
-  const TAGS = ['warmup','stretch'];
+  const UNITS = ['reps', 'secs', 'min', 'yd', 'rep', 'reps (each side)', 'secs (each side)'];
+  const TAGS = ['warmup', 'stretch'];
   return `<div class="px-4 pb-4 pt-2 space-y-3 border-t border-slate-800 bg-slate-900/40 animate-fade-in">
   <div data-demo-preview="${i}"></div>
   <div class="grid grid-cols-3 gap-2">
@@ -280,7 +300,7 @@ function editForm(item, i) {
       <input data-edit="sets" data-index="${i}" value="${esc(item.sets)}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500"/></div>
     <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Units</label>
       <select data-edit="repUnits" data-index="${i}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500">
-        ${UNITS.map(u => `<option value="${u}"${item.repUnits === u ? ' selected' : ''}>${u}</option>`).join('')}
+        ${UNITS.map((u) => `<option value="${u}"${item.repUnits === u ? ' selected' : ''}>${u}</option>`).join('')}
       </select></div>
   </div>
   <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Display Name</label>
@@ -288,8 +308,10 @@ function editForm(item, i) {
   <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Note</label>
     <input data-edit="note" data-index="${i}" value="${esc(item.note)}" placeholder="Form cues, weight, etc." class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/></div>
   <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Tags</label>
-    <div class="flex gap-2">${TAGS.map(t => `
-      <button type="button" data-pill="${t}" data-index="${i}" class="px-3 py-1.5 rounded-full text-xs font-medium transition-all ${item.tags.includes(t) ? 'bg-brand-500 text-white' : 'bg-slate-800 text-slate-400 hover:bg-slate-700'}">${t}</button>`).join('')}
+    <div class="flex gap-2">${TAGS.map(
+      (t) => `
+      <button type="button" data-pill="${t}" data-index="${i}" class="px-3 py-1.5 rounded-full text-xs font-medium transition-all ${item.tags.includes(t) ? 'bg-brand-500 text-white' : 'bg-slate-800 text-slate-400 hover:bg-slate-700'}">${t}</button>`
+    ).join('')}
     </div></div>
 </div>`;
 }
@@ -300,7 +322,7 @@ function groupEditForm(item, i) {
   <div class="grid grid-cols-2 gap-2">
     <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Group Type</label>
       <select data-group-edit="kind" data-index="${i}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500">
-        ${KINDS.map(k => `<option value="${k}"${item.kind === k ? ' selected' : ''}>${k}</option>`).join('')}
+        ${KINDS.map((k) => `<option value="${k}"${item.kind === k ? ' selected' : ''}>${k}</option>`).join('')}
       </select></div>
     <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Display Name</label>
       <input data-group-edit="displayName" data-index="${i}" value="${esc(item.displayName || '')}" placeholder="e.g. Posterior Chain Pair" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/></div>
@@ -309,9 +331,13 @@ function groupEditForm(item, i) {
     <input data-group-edit="note" data-index="${i}" value="${esc(item.note || '')}" placeholder="Shared note for the group" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/></div>
   <div class="space-y-1.5">
     <p class="text-[10px] text-slate-500 uppercase font-semibold">Members</p>
-    ${item.members.map((m, mi) => `
+    ${item.members
+      .map(
+        (m, mi) => `
       <div class="bg-slate-800/40 rounded-lg px-3 py-2 text-xs text-slate-300">${mi + 1}. ${esc(m.exerciseName)} — ${m.reps || '—'} ${m.repUnits || 'reps'} · ${m.sets || '—'} sets</div>
-    `).join('')}
+    `
+      )
+      .join('')}
   </div>
 </div>`;
 }
@@ -341,7 +367,7 @@ function wireTimelineActions(container) {
   });
 
   // Toggle expand
-  list.querySelectorAll('[data-action="toggle-edit"]').forEach(btn => {
+  list.querySelectorAll('[data-action="toggle-edit"]').forEach((btn) => {
     btn.addEventListener('click', () => {
       expandedIndex = expandedIndex === +btn.dataset.index ? -1 : +btn.dataset.index;
       renderTimeline(container);
@@ -349,7 +375,7 @@ function wireTimelineActions(container) {
   });
 
   // Remove
-  list.querySelectorAll('[data-action="remove"]').forEach(btn => {
+  list.querySelectorAll('[data-action="remove"]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const i = +btn.dataset.index;
       state.items.splice(i, 1);
@@ -360,13 +386,13 @@ function wireTimelineActions(container) {
   });
 
   // Ungroup
-  list.querySelectorAll('[data-action="ungroup"]').forEach(btn => {
+  list.querySelectorAll('[data-action="ungroup"]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const i = +btn.dataset.index;
       const group = state.items[i];
       if (group.type !== 'group') return;
       // Replace group with its members as singles
-      const singles = group.members.map(m => ({ ...m, type: 'single' }));
+      const singles = group.members.map((m) => ({ ...m, type: 'single' }));
       state.items.splice(i, 1, ...singles);
       expandedIndex = -1;
       renderTimeline(container);
@@ -374,26 +400,30 @@ function wireTimelineActions(container) {
   });
 
   // Inline field edits
-  list.querySelectorAll('[data-edit]').forEach(el => {
-    const update = () => { state.items[+el.dataset.index][el.dataset.edit] = el.value; };
+  list.querySelectorAll('[data-edit]').forEach((el) => {
+    const update = () => {
+      state.items[+el.dataset.index][el.dataset.edit] = el.value;
+    };
     el.addEventListener('input', update);
     el.addEventListener('change', update);
   });
 
   // Group edits (kind, displayName, note)
-  list.querySelectorAll('[data-group-edit]').forEach(el => {
-    const update = () => { state.items[+el.dataset.index][el.dataset.groupEdit] = el.value; };
+  list.querySelectorAll('[data-group-edit]').forEach((el) => {
+    const update = () => {
+      state.items[+el.dataset.index][el.dataset.groupEdit] = el.value;
+    };
     el.addEventListener('input', update);
     el.addEventListener('change', update);
   });
 
   // Pill tag toggles
-  list.querySelectorAll('[data-pill]').forEach(btn => {
+  list.querySelectorAll('[data-pill]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const item = state.items[+btn.dataset.index];
       const tag = btn.dataset.pill;
       if (item.tags.includes(tag)) {
-        item.tags = item.tags.filter(t => t !== tag);
+        item.tags = item.tags.filter((t) => t !== tag);
       } else {
         item.tags.push(tag);
       }
@@ -422,7 +452,7 @@ function wireTimelineActions(container) {
     if (!kind || !['superset', 'compound', 'circuit'].includes(kind)) return;
     // Take last 2 singles and group them
     const lastTwo = singles.slice(-2);
-    const members = lastTwo.map(i => state.items[i]);
+    const members = lastTwo.map((i) => state.items[i]);
     const group = { type: 'group', kind, displayName: '', note: '', tags: [], members };
     // Remove from items (reverse order to preserve indices)
     for (let j = lastTwo.length - 1; j >= 0; j--) state.items.splice(lastTwo[j], 1);
@@ -435,15 +465,18 @@ function wireTimelineActions(container) {
 
 function esc(s) {
   if (s == null) return '';
-  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+  return String(s).replace(
+    /[&<>"']/g,
+    (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]
+  );
 }
 
 // --- Demo preview in timeline ---
 
 async function renderDemoPreview(slot, exerciseId) {
   const { exercises } = await loadExercises();
-  const ex = exercises.find(e => e.id === exerciseId);
-  const newEx = state.newExercises.find(e => e.id === exerciseId);
+  const ex = exercises.find((e) => e.id === exerciseId);
+  const newEx = state.newExercises.find((e) => e.id === exerciseId);
   const demos = ex?.demos || newEx?.demos || [];
 
   if (demos.length === 0) {
@@ -475,10 +508,13 @@ async function wireClone(container) {
 
 async function pickProgram() {
   const { programs } = await loadWorkouts();
-  const name = prompt('Type part of a program name:\n\n' + programs.map(p => `• ${p.title}`).join('\n'));
+  const name = prompt('Type part of a program name:\n\n' + programs.map((p) => `• ${p.title}`).join('\n'));
   if (!name) return null;
-  const match = programs.find(p => p.title.toLowerCase().includes(name.toLowerCase()));
-  if (!match) { alert('No program found matching "' + name + '"'); return null; }
+  const match = programs.find((p) => p.title.toLowerCase().includes(name.toLowerCase()));
+  if (!match) {
+    alert('No program found matching "' + name + '"');
+    return null;
+  }
   return match;
 }
 
@@ -486,13 +522,38 @@ function loadProgramIntoState(container, match, keepId) {
   state.meta.title = keepId ? match.title : '';
   state.meta.id = keepId ? match.id : '';
   state.meta.requirements = match.requirements || '';
-  state.items = (match.items || []).map(item => {
+  state.items = (match.items || []).map((item) => {
     if (item.kind) {
-      return { type: 'group', kind: item.kind, displayName: item.displayName || '', note: item.note || '', tags: item.tags || [],
-        members: item.exercises.map(m => ({ type: 'single', exerciseId: m.exerciseId, exerciseName: m.exerciseId, reps: m.reps || '', sets: m.sets || '', repUnits: m.repUnits || 'reps', note: m.note || '', displayName: '', tags: [] }))
+      return {
+        type: 'group',
+        kind: item.kind,
+        displayName: item.displayName || '',
+        note: item.note || '',
+        tags: item.tags || [],
+        members: item.exercises.map((m) => ({
+          type: 'single',
+          exerciseId: m.exerciseId,
+          exerciseName: m.exerciseId,
+          reps: m.reps || '',
+          sets: m.sets || '',
+          repUnits: m.repUnits || 'reps',
+          note: m.note || '',
+          displayName: '',
+          tags: []
+        }))
       };
     }
-    return { type: 'single', exerciseId: item.exerciseId, exerciseName: item.displayName || item.exerciseId, reps: item.reps || '', sets: item.sets || '', repUnits: item.repUnits || 'reps', note: item.note || '', displayName: item.displayName || '', tags: item.tags || [] };
+    return {
+      type: 'single',
+      exerciseId: item.exerciseId,
+      exerciseName: item.displayName || item.exerciseId,
+      reps: item.reps || '',
+      sets: item.sets || '',
+      repUnits: item.repUnits || 'reps',
+      note: item.note || '',
+      displayName: item.displayName || '',
+      tags: item.tags || []
+    };
   });
   expandedIndex = -1;
 
@@ -558,44 +619,64 @@ function openExerciseSlideOver(container) {
   const nameInput = panel.querySelector('[data-exfield="name"]');
   const idPreview = panel.querySelector('[data-region="ex-id-preview"]');
   nameInput.addEventListener('input', () => {
-    const id = nameInput.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '');
+    const id = nameInput.value
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/-+$/g, '');
     idPreview.textContent = id ? `id: ${id}` : '';
   });
 
   // Wire save
-  panel.querySelector('[data-action="save-exercise"]')?.addEventListener('click', () => {
-    const name = nameInput.value.trim();
-    if (!name) { nameInput.focus(); return; }
-    const id = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '');
-    const reps = panel.querySelector('[data-exfield="reps"]').value;
-    const sets = panel.querySelector('[data-exfield="sets"]').value;
-    const repUnits = panel.querySelector('[data-exfield="repUnits"]').value;
-    const note = panel.querySelector('[data-exfield="note"]').value;
+  panel.querySelector('[data-action="save-exercise"]')?.addEventListener(
+    'click',
+    () => {
+      const name = nameInput.value.trim();
+      if (!name) {
+        nameInput.focus();
+        return;
+      }
+      const id = name
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/-+$/g, '');
+      const reps = panel.querySelector('[data-exfield="reps"]').value;
+      const sets = panel.querySelector('[data-exfield="sets"]').value;
+      const repUnits = panel.querySelector('[data-exfield="repUnits"]').value;
+      const note = panel.querySelector('[data-exfield="note"]').value;
 
-    const newExercise = {
-      id, name,
-      demos: newExDemos.filter(d => d.url), // only keep demos with URLs
-      recommendations: {}
-    };
-    if (reps) newExercise.recommendations.reps = reps;
-    if (sets) newExercise.recommendations.sets = sets;
-    if (repUnits && repUnits !== 'reps') newExercise.recommendations.repUnits = repUnits;
-    if (note) newExercise.recommendations.note = note;
+      const newExercise = {
+        id,
+        name,
+        demos: newExDemos.filter((d) => d.url), // only keep demos with URLs
+        recommendations: {}
+      };
+      if (reps) newExercise.recommendations.reps = reps;
+      if (sets) newExercise.recommendations.sets = sets;
+      if (repUnits && repUnits !== 'reps') newExercise.recommendations.repUnits = repUnits;
+      if (note) newExercise.recommendations.note = note;
 
-    // Add to state + search index
-    state.newExercises.push(newExercise);
-    addToIndex(newExercise);
+      // Add to state + search index
+      state.newExercises.push(newExercise);
+      addToIndex(newExercise);
 
-    // Auto-add to timeline
-    state.items.push({
-      type: 'single', exerciseId: id, exerciseName: name,
-      reps: reps || '', sets: sets || '', repUnits: repUnits || 'reps',
-      note: '', displayName: '', tags: []
-    });
+      // Auto-add to timeline
+      state.items.push({
+        type: 'single',
+        exerciseId: id,
+        exerciseName: name,
+        reps: reps || '',
+        sets: sets || '',
+        repUnits: repUnits || 'reps',
+        note: '',
+        displayName: '',
+        tags: []
+      });
 
-    panel.classList.add('hidden');
-    renderTimeline(container);
-  }, { once: true });
+      panel.classList.add('hidden');
+      renderTimeline(container);
+    },
+    { once: true }
+  );
 
   // Wire cancel / close
   const close = () => panel.classList.add('hidden');
@@ -669,13 +750,24 @@ function previewItem(item, i) {
       </div>
       <p class="text-sm font-semibold text-slate-100">${esc(item.displayName || `${item.exercises.length} exercises`)}</p>
       <div class="space-y-1.5 pl-3 border-l-2 border-slate-700">
-        ${item.exercises.map((m, mi) => `
+        ${item.exercises
+          .map(
+            (m, mi) => `
           <div class="text-xs text-slate-300">${mi + 1}. ${esc(m.exerciseId)} — ${m.reps || '—'} ${m.repUnits || 'reps'} · ${m.sets || '—'} sets</div>
-        `).join('')}
+        `
+          )
+          .join('')}
       </div>
     </li>`;
   }
-  const tags = item.tags?.length ? item.tags.map(t => `<span class="text-[10px] font-semibold uppercase tracking-[0.1em] px-2 py-0.5 rounded-md bg-slate-800 text-slate-400">${t}</span>`).join('') : '';
+  const tags = item.tags?.length
+    ? item.tags
+        .map(
+          (t) =>
+            `<span class="text-[10px] font-semibold uppercase tracking-[0.1em] px-2 py-0.5 rounded-md bg-slate-800 text-slate-400">${t}</span>`
+        )
+        .join('')
+    : '';
   return `<li class="card px-4 py-3">
     ${tags ? `<div class="flex gap-1.5 mb-1">${tags}</div>` : ''}
     <p class="text-sm font-semibold text-slate-100">${esc(item.displayName || item.exerciseId)}</p>
@@ -700,7 +792,9 @@ function showExportModal(container) {
   // Program
   sections.push({ label: 'Program (append to workouts.json → programs[])', json: programJson });
 
-  content.innerHTML = sections.map((s, idx) => `
+  content.innerHTML = sections
+    .map(
+      (s, idx) => `
     <div class="space-y-2">
       <div class="flex items-center justify-between">
         <p class="text-xs text-slate-400 font-medium">${s.label}</p>
@@ -708,17 +802,26 @@ function showExportModal(container) {
       </div>
       <pre class="bg-slate-950 border border-slate-800 rounded-xl p-4 text-xs text-slate-300 overflow-x-auto max-h-[300px] overflow-y-auto font-mono leading-relaxed"><code>${esc(JSON.stringify(s.json, null, 2))}</code></pre>
     </div>
-  `).join('');
+  `
+    )
+    .join('');
 
   // Wire copy buttons
-  content.querySelectorAll('[data-action="copy-json"]').forEach(btn => {
+  content.querySelectorAll('[data-action="copy-json"]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const idx = +btn.dataset.section;
       const text = JSON.stringify(sections[idx].json, null, 2);
-      navigator.clipboard?.writeText(text).then(() => {
-        btn.textContent = '✓ Copied';
-        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
-      }).catch(() => { prompt('Copy:', text); });
+      navigator.clipboard
+        ?.writeText(text)
+        .then(() => {
+          btn.textContent = '✓ Copied';
+          setTimeout(() => {
+            btn.textContent = 'Copy';
+          }, 2000);
+        })
+        .catch(() => {
+          prompt('Copy:', text);
+        });
     });
   });
 
@@ -732,16 +835,19 @@ function buildProgramExport() {
   if (state.meta.difficulty) prog.difficulty = state.meta.difficulty;
   if (state.meta.duration) prog.duration = Number(state.meta.duration);
 
-  prog.items = state.items.map(item => {
+  prog.items = state.items.map((item) => {
     if (item.type === 'group') {
-      const group = { kind: item.kind, exercises: item.members.map(m => {
-        const out = { exerciseId: m.exerciseId };
-        if (m.reps) out.reps = m.reps;
-        if (m.sets) out.sets = m.sets;
-        if (m.repUnits && m.repUnits !== 'reps') out.repUnits = m.repUnits;
-        if (m.note) out.note = m.note;
-        return out;
-      })};
+      const group = {
+        kind: item.kind,
+        exercises: item.members.map((m) => {
+          const out = { exerciseId: m.exerciseId };
+          if (m.reps) out.reps = m.reps;
+          if (m.sets) out.sets = m.sets;
+          if (m.repUnits && m.repUnits !== 'reps') out.repUnits = m.repUnits;
+          if (m.note) out.note = m.note;
+          return out;
+        })
+      };
       if (item.displayName) group.displayName = item.displayName;
       if (item.note) group.note = item.note;
       if (item.tags?.length) group.tags = item.tags;

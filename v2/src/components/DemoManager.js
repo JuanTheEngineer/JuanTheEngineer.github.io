@@ -38,7 +38,7 @@ export function renderDemoManager(container, demos) {
   }
 
   function demoCard(demo, i) {
-    const typeConfig = DEMO_TYPES.find(t => t.value === demo.type) || DEMO_TYPES[0];
+    const typeConfig = DEMO_TYPES.find((t) => t.value === demo.type) || DEMO_TYPES[0];
     const hasTime = typeConfig.fields.includes('startTime');
     const thumb = demo.type === 'youtube' ? getYouTubeThumbnail(demo.url) : null;
 
@@ -47,7 +47,7 @@ export function renderDemoManager(container, demos) {
         <div class="flex items-center gap-2">
           <span class="text-[10px] text-slate-500 font-bold num">#${i + 1}</span>
           <select data-demo-field="type" data-index="${i}" class="flex-1 bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-1.5 text-xs text-slate-100 focus:outline-none focus:border-brand-500">
-            ${DEMO_TYPES.map(t => `<option value="${t.value}"${demo.type === t.value ? ' selected' : ''}>${t.label}</option>`).join('')}
+            ${DEMO_TYPES.map((t) => `<option value="${t.value}"${demo.type === t.value ? ' selected' : ''}>${t.label}</option>`).join('')}
           </select>
           <label class="flex items-center gap-1 text-[10px] text-slate-400 cursor-pointer select-none">
             <input type="radio" name="primary-demo" data-index="${i}" ${demo.isPrimary ? 'checked' : ''} class="w-3 h-3 text-brand-500"/>
@@ -61,14 +61,18 @@ export function renderDemoManager(container, demos) {
           <input data-demo-field="url" data-index="${i}" value="${esc(demo.url || '')}" placeholder="https://..." class="w-full bg-slate-900/60 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500 font-mono"/>
         </div>
         ${thumb ? `<img src="${thumb}" alt="Thumbnail" class="w-full h-20 object-cover rounded-lg bg-slate-900"/>` : ''}
-        ${hasTime ? `
+        ${
+          hasTime
+            ? `
           <div class="grid grid-cols-2 gap-2">
             <div><label class="text-[10px] text-slate-500 block mb-0.5">Start (sec)</label>
               <input data-demo-field="startTime" data-index="${i}" type="number" min="0" value="${demo.startTime || 0}" class="w-full bg-slate-900/60 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-100 focus:outline-none focus:border-brand-500 num"/></div>
             <div><label class="text-[10px] text-slate-500 block mb-0.5">End (sec)</label>
               <input data-demo-field="endTime" data-index="${i}" type="number" min="0" value="${demo.endTime || 0}" class="w-full bg-slate-900/60 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-100 focus:outline-none focus:border-brand-500 num"/></div>
           </div>
-        ` : ''}
+        `
+            : ''
+        }
         <div>
           <input data-demo-field="notes" data-index="${i}" value="${esc(demo.notes || '')}" placeholder="Notes (optional)" class="w-full bg-slate-900/60 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/>
         </div>
@@ -79,12 +83,21 @@ export function renderDemoManager(container, demos) {
   function wireActions() {
     // Add demo
     container.querySelector('[data-action="add-demo"]')?.addEventListener('click', () => {
-      demos.push({ type: 'youtube', mediaType: 'video', format: 'youtube', url: '', startTime: 0, endTime: 0, isPrimary: demos.length === 0, notes: '' });
+      demos.push({
+        type: 'youtube',
+        mediaType: 'video',
+        format: 'youtube',
+        url: '',
+        startTime: 0,
+        endTime: 0,
+        isPrimary: demos.length === 0,
+        notes: ''
+      });
       render();
     });
 
     // Remove demo
-    container.querySelectorAll('[data-action="remove-demo"]').forEach(btn => {
+    container.querySelectorAll('[data-action="remove-demo"]').forEach((btn) => {
       btn.addEventListener('click', () => {
         const i = +btn.dataset.index;
         const wasPrimary = demos[i].isPrimary;
@@ -95,26 +108,33 @@ export function renderDemoManager(container, demos) {
     });
 
     // Primary radio
-    container.querySelectorAll('input[name="primary-demo"]').forEach(radio => {
+    container.querySelectorAll('input[name="primary-demo"]').forEach((radio) => {
       radio.addEventListener('change', () => {
         const i = +radio.dataset.index;
-        demos.forEach((d, idx) => { d.isPrimary = idx === i; });
+        demos.forEach((d, idx) => {
+          d.isPrimary = idx === i;
+        });
       });
     });
 
     // Type dropdown (re-renders to show/hide fields)
-    container.querySelectorAll('[data-demo-field="type"]').forEach(sel => {
+    container.querySelectorAll('[data-demo-field="type"]').forEach((sel) => {
       sel.addEventListener('change', () => {
         const i = +sel.dataset.index;
         demos[i].type = sel.value;
-        demos[i].format = sel.value === 'youtube' ? 'youtube' : sel.value === 'cloudinary' ? detectCloudinaryFormat(demos[i].url) : sel.value;
+        demos[i].format =
+          sel.value === 'youtube'
+            ? 'youtube'
+            : sel.value === 'cloudinary'
+              ? detectCloudinaryFormat(demos[i].url)
+              : sel.value;
         demos[i].mediaType = 'video';
         render();
       });
     });
 
     // Field inputs (url, startTime, endTime, notes)
-    container.querySelectorAll('[data-demo-field]').forEach(el => {
+    container.querySelectorAll('[data-demo-field]').forEach((el) => {
       if (el.tagName === 'SELECT') return; // handled above
       const update = () => {
         const i = +el.dataset.index;
@@ -148,5 +168,8 @@ function detectCloudinaryFormat(url) {
 
 function esc(s) {
   if (s == null) return '';
-  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+  return String(s).replace(
+    /[&<>"']/g,
+    (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]
+  );
 }

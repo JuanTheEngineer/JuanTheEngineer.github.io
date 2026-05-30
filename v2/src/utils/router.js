@@ -14,10 +14,12 @@ let beforeNavigateHandler = null;
 export function route(pattern, handler) {
   const keys = [];
   const regex = new RegExp(
-    '^' + pattern.replace(/:([^/]+)/g, (_, key) => {
-      keys.push(key);
-      return '([^/]+)';
-    }) + '$'
+    '^' +
+      pattern.replace(/:([^/]+)/g, (_, key) => {
+        keys.push(key);
+        return '([^/]+)';
+      }) +
+      '$'
   );
   routes.push({ pattern, regex, keys, handler });
 }
@@ -42,14 +44,16 @@ export function navigate(path) {
  * Resolve current hash and call matching handler
  */
 export function resolve() {
-  const path = (window.location.hash.slice(1) || '/');
+  const path = window.location.hash.slice(1) || '/';
   if (beforeNavigateHandler) beforeNavigateHandler(path);
 
   for (const r of routes) {
     const match = path.match(r.regex);
     if (match) {
       const params = {};
-      r.keys.forEach((key, i) => { params[key] = decodeURIComponent(match[i + 1]); });
+      r.keys.forEach((key, i) => {
+        params[key] = decodeURIComponent(match[i + 1]);
+      });
       r.handler(params);
       return;
     }

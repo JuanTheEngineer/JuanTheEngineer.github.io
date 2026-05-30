@@ -38,9 +38,13 @@ export function createGroupCard(item, state) {
         <div class="flex-1 min-w-0">
           <div class="flex items-center gap-1.5 mb-1.5">
             <span class="text-[10px] font-bold uppercase tracking-[0.1em] px-2 py-0.5 rounded-md bg-brand-500/20 text-brand-300">${kindLabel}</span>
-            ${(item.tags || []).map(t => `
+            ${(item.tags || [])
+              .map(
+                (t) => `
               <span class="text-[10px] font-semibold uppercase tracking-[0.1em] px-2 py-0.5 rounded-md bg-slate-800 text-slate-400">${escapeHtml(t)}</span>
-            `).join('')}
+            `
+              )
+              .join('')}
           </div>
           <h3 class="font-semibold tracking-tight leading-tight ${state.isCompleted ? 'line-through text-slate-500' : 'text-slate-100'}">
             ${escapeHtml(item.displayName || `${kindLabel}: ${memberCount} exercises`)}
@@ -57,22 +61,30 @@ export function createGroupCard(item, state) {
         class="flex-shrink-0 self-stretch px-4 flex items-center justify-center touch-manipulation active:bg-white/5 transition-colors"
       >
         <span class="w-7 h-7 rounded-full border-2 ${state.isCompleted ? 'bg-brand-500 border-brand-500' : 'border-slate-600'} flex items-center justify-center transition-colors">
-          ${state.isCompleted ? `
+          ${
+            state.isCompleted
+              ? `
             <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
             </svg>
-          ` : ''}
+          `
+              : ''
+          }
         </span>
       </button>
     </div>
     <div data-region="content" class="${state.isExpanded ? '' : 'hidden'}">
       <div class="px-4 pb-4 space-y-3">
         ${kindDesc ? `<p class="text-xs text-slate-500 italic">${kindDesc}</p>` : ''}
-        ${item.note ? `
+        ${
+          item.note
+            ? `
           <div class="bg-brand-500/10 border-l-2 border-brand-500 px-3 py-2.5 rounded-r-lg">
             <p class="text-sm text-slate-300 leading-relaxed">${escapeHtml(item.note)}</p>
           </div>
-        ` : ''}
+        `
+            : ''
+        }
         <div class="space-y-2">
           ${item.exercises.map((member, i) => memberBlock(member, i)).join('')}
         </div>
@@ -117,16 +129,28 @@ function memberBlock(member, idx) {
           <p class="label-meta mt-1">sets</p>
         </div>
       </div>
-      ${member.note ? `
+      ${
+        member.note
+          ? `
         <p class="text-xs text-slate-400 leading-relaxed px-1">${escapeHtml(member.note)}</p>
-      ` : ''}
+      `
+          : ''
+      }
     </div>
   `;
 }
 
 function escapeHtml(s) {
   if (s == null) return '';
-  return String(s).replace(/[&<>"']/g, c => ({
-    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-  })[c]);
+  return String(s).replace(
+    /[&<>"']/g,
+    (c) =>
+      ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      })[c]
+  );
 }

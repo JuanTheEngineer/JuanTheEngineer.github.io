@@ -103,19 +103,29 @@ function wireEditSearch(container) {
     clearTimeout(debounce);
     debounce = setTimeout(async () => {
       const query = input.value.trim();
-      if (!query) { resultsList.classList.add('hidden'); return; }
+      if (!query) {
+        resultsList.classList.add('hidden');
+        return;
+      }
       const results = await searchExercises(query, 8);
-      if (results.length === 0) { resultsList.classList.add('hidden'); return; }
+      if (results.length === 0) {
+        resultsList.classList.add('hidden');
+        return;
+      }
       resultsList.classList.remove('hidden');
-      resultsList.innerHTML = results.map(r => `
+      resultsList.innerHTML = results
+        .map(
+          (r) => `
         <li><button data-load-exercise="${r.id}" class="w-full text-left px-3 py-2.5 rounded-lg hover:bg-slate-800/60 active:bg-slate-800 transition-colors flex items-center gap-3 touch-manipulation">
           <span class="text-sm font-medium text-slate-100 truncate">${esc(r.name)}</span>
           ${r.hasDemos ? '<span class="text-[10px] text-slate-500 bg-slate-800 px-1.5 py-0.5 rounded">demo</span>' : ''}
         </button></li>
-      `).join('');
-      resultsList.querySelectorAll('[data-load-exercise]').forEach(btn => {
+      `
+        )
+        .join('');
+      resultsList.querySelectorAll('[data-load-exercise]').forEach((btn) => {
         btn.addEventListener('click', () => {
-          const entry = results.find(r => r.id === btn.dataset.loadExercise);
+          const entry = results.find((r) => r.id === btn.dataset.loadExercise);
           if (entry) loadExerciseIntoForm(container, entry.exercise);
           resultsList.classList.add('hidden');
           input.value = '';
@@ -159,7 +169,10 @@ function wireForm(container) {
 
   nameInput?.addEventListener('input', () => {
     if (!editingExisting) {
-      const id = nameInput.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '');
+      const id = nameInput.value
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/-+$/g, '');
       idPreview.textContent = id ? `id: ${id}` : '';
     } else {
       idPreview.textContent = `id: ${originalId} (existing)`;
@@ -177,10 +190,18 @@ function wireExport(container) {
   container.querySelector('[data-action="export"]')?.addEventListener('click', () => {
     const nameInput = container.querySelector('[data-field="name"]');
     const name = nameInput.value.trim();
-    if (!name) { nameInput.focus(); return; }
+    if (!name) {
+      nameInput.focus();
+      return;
+    }
 
-    const id = editingExisting ? originalId : name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '');
-    const exercise = { id, name, demos: demos.filter(d => d.url), recommendations: {} };
+    const id = editingExisting
+      ? originalId
+      : name
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/-+$/g, '');
+    const exercise = { id, name, demos: demos.filter((d) => d.url), recommendations: {} };
 
     const reps = container.querySelector('[data-field="reps"]').value;
     const sets = container.querySelector('[data-field="sets"]').value;
@@ -208,17 +229,26 @@ function wireExport(container) {
     content.querySelector('[data-action="copy"]')?.addEventListener('click', (e) => {
       navigator.clipboard?.writeText(json).then(() => {
         e.target.textContent = '✓ Copied';
-        setTimeout(() => { e.target.textContent = 'Copy'; }, 2000);
+        setTimeout(() => {
+          e.target.textContent = 'Copy';
+        }, 2000);
       });
     });
     modal.classList.remove('hidden');
   });
 
-  container.querySelector('[data-action="close-export"]')?.addEventListener('click', () => modal?.classList.add('hidden'));
-  modal?.addEventListener('click', (e) => { if (e.target === modal) modal.classList.add('hidden'); });
+  container
+    .querySelector('[data-action="close-export"]')
+    ?.addEventListener('click', () => modal?.classList.add('hidden'));
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) modal.classList.add('hidden');
+  });
 }
 
 function esc(s) {
   if (s == null) return '';
-  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+  return String(s).replace(
+    /[&<>"']/g,
+    (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]
+  );
 }

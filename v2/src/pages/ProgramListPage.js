@@ -18,8 +18,7 @@ export async function renderProgramListPage(container) {
     </main>
   `;
 
-  container.querySelector('[data-action="back"]')
-    ?.addEventListener('click', () => navigate('/'));
+  container.querySelector('[data-action="back"]')?.addEventListener('click', () => navigate('/'));
 
   try {
     const [workouts, plans] = await Promise.all([loadWorkouts(), loadPlans()]);
@@ -30,15 +29,13 @@ export async function renderProgramListPage(container) {
 }
 
 function renderContent(container, programs, plans) {
-  const programsById = new Map(programs.map(p => [p.id, p]));
+  const programsById = new Map(programs.map((p) => [p.id, p]));
 
   // Build sections from plans.json so programs appear in curated order
   const sections = [];
   for (const plan of plans) {
-    for (const subPlan of (plan.subPlans || [])) {
-      const items = (subPlan.programs || [])
-        .map(id => programsById.get(id))
-        .filter(Boolean);
+    for (const subPlan of plan.subPlans || []) {
+      const items = (subPlan.programs || []).map((id) => programsById.get(id)).filter(Boolean);
       if (items.length === 0) continue;
       sections.push({
         category: plan.name,
@@ -60,7 +57,9 @@ function renderContent(container, programs, plans) {
     </header>
 
     <main class="flex-1 px-6 pb-24 space-y-8">
-      ${sections.map((section, sIdx) => `
+      ${sections
+        .map(
+          (section, sIdx) => `
         <section class="space-y-3 animate-slide-up" style="animation-delay: ${sIdx * 30}ms">
           <div>
             <p class="eyebrow">${section.category}</p>
@@ -68,17 +67,18 @@ function renderContent(container, programs, plans) {
             ${section.description ? `<p class="text-sm text-slate-400 mt-1 leading-relaxed">${section.description}</p>` : ''}
           </div>
           <ul class="space-y-2">
-            ${section.programs.map(p => programCard(p)).join('')}
+            ${section.programs.map((p) => programCard(p)).join('')}
           </ul>
         </section>
-      `).join('')}
+      `
+        )
+        .join('')}
     </main>
   `;
 
-  container.querySelector('[data-action="back"]')
-    ?.addEventListener('click', () => navigate('/'));
+  container.querySelector('[data-action="back"]')?.addEventListener('click', () => navigate('/'));
 
-  container.querySelectorAll('[data-program-id]').forEach(el => {
+  container.querySelectorAll('[data-program-id]').forEach((el) => {
     el.addEventListener('click', () => {
       navigate(`/program/${el.dataset.programId}`);
     });
@@ -98,10 +98,14 @@ function programCard(program) {
             <h3 class="font-semibold tracking-tight truncate">${program.title}</h3>
             <div class="flex items-center gap-2 mt-1 text-xs text-slate-400">
               <span class="num">${itemCount} item${itemCount !== 1 ? 's' : ''}</span>
-              ${program.requirements ? `
+              ${
+                program.requirements
+                  ? `
                 <span class="text-slate-600">•</span>
                 <span class="truncate">${program.requirements}</span>
-              ` : ''}
+              `
+                  : ''
+              }
             </div>
           </div>
           <svg class="w-5 h-5 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">

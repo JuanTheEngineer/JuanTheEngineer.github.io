@@ -73,7 +73,7 @@ export function getRecentPrograms() {
 export function recordProgramVisit(programId) {
   if (!programId) return;
   try {
-    const list = getRecentPrograms().filter(r => r.id !== programId);
+    const list = getRecentPrograms().filter((r) => r.id !== programId);
     list.unshift({ id: programId, visitedAt: Date.now() });
     localStorage.setItem(RECENT_KEY, JSON.stringify(list.slice(0, RECENT_LIMIT)));
   } catch {

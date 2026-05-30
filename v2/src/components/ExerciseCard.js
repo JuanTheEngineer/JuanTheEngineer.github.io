@@ -40,11 +40,15 @@ export function createExerciseCard(item, state) {
         class="flex-shrink-0 self-stretch px-4 flex items-center justify-center touch-manipulation active:bg-white/5 transition-colors"
       >
         <span class="w-7 h-7 rounded-full border-2 ${state.isCompleted ? 'bg-brand-500 border-brand-500' : 'border-slate-600'} flex items-center justify-center transition-colors">
-          ${state.isCompleted ? `
+          ${
+            state.isCompleted
+              ? `
             <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
             </svg>
-          ` : ''}
+          `
+              : ''
+          }
         </span>
       </button>
     </div>
@@ -61,11 +65,15 @@ export function createExerciseCard(item, state) {
             <p class="label-meta mt-1.5">sets</p>
           </div>
         </div>
-        ${item.note ? `
+        ${
+          item.note
+            ? `
           <div class="bg-brand-500/10 border-l-2 border-brand-500 px-3 py-2.5 rounded-r-lg">
             <p class="text-sm text-slate-300 leading-relaxed">${escapeHtml(item.note)}</p>
           </div>
-        ` : ''}
+        `
+            : ''
+        }
       </div>
     </div>
   `;
@@ -97,16 +105,28 @@ function tagBadges(tags = []) {
   if (!tags.length) return '';
   return `
     <div class="flex gap-1.5 mb-1.5">
-      ${tags.map(t => `
+      ${tags
+        .map(
+          (t) => `
         <span class="text-[10px] font-semibold uppercase tracking-[0.1em] px-2 py-0.5 rounded-md bg-slate-800 text-slate-400">${escapeHtml(t)}</span>
-      `).join('')}
+      `
+        )
+        .join('')}
     </div>
   `;
 }
 
 function escapeHtml(s) {
   if (s == null) return '';
-  return String(s).replace(/[&<>"']/g, c => ({
-    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-  })[c]);
+  return String(s).replace(
+    /[&<>"']/g,
+    (c) =>
+      ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      })[c]
+  );
 }

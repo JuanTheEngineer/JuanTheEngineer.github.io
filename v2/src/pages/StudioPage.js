@@ -63,10 +63,9 @@ export function renderStudioPage(container) {
     </div>
   `;
 
-  container.querySelector('[data-action="back"]')
-    ?.addEventListener('click', () => navigate('/'));
-  container.querySelector('[data-action="new-program"]')
-    ?.addEventListener('click', () => navigate('/studio/program'));
-  container.querySelector('[data-action="new-exercise"]')
+  container.querySelector('[data-action="back"]')?.addEventListener('click', () => navigate('/'));
+  container.querySelector('[data-action="new-program"]')?.addEventListener('click', () => navigate('/studio/program'));
+  container
+    .querySelector('[data-action="new-exercise"]')
     ?.addEventListener('click', () => navigate('/studio/exercise'));
 }

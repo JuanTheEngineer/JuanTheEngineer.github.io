@@ -23,7 +23,9 @@
   }
 
   /* Display headings get tighter tracking — looks more confident */
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     letter-spacing: -0.02em;
   }
 
@@ -35,7 +37,8 @@
   }
 
   /* Larger tap targets on small devices */
-  button, a {
+  button,
+  a {
     @apply min-h-[44px];
   }
 }
@@ -84,8 +87,13 @@
   }
 
   /* Hide scrollbars on horizontal scroll containers (carousel) */
-  .no-scrollbar::-webkit-scrollbar { display: none; }
-  .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
 
   /* Completion celebration */
   .celebration-flash {
@@ -115,15 +123,36 @@
   }
 
   @keyframes celebFlash {
-    0% { opacity: 0; }
-    20% { opacity: 0.25; }
-    100% { opacity: 0; }
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 0.25;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 
   @keyframes celebFly {
-    0%   { bottom: -100px; opacity: 0; transform: translateX(-50%) scale(0.5) rotate(-8deg); }
-    25%  { bottom: 40%;    opacity: 1; transform: translateX(-50%) scale(1.15) rotate(4deg); }
-    50%  { bottom: 50%;                transform: translateX(-50%) scale(1) rotate(-2deg); }
-    100% { bottom: 120%;   opacity: 0; transform: translateX(-50%) scale(0.85) rotate(4deg); }
+    0% {
+      bottom: -100px;
+      opacity: 0;
+      transform: translateX(-50%) scale(0.5) rotate(-8deg);
+    }
+    25% {
+      bottom: 40%;
+      opacity: 1;
+      transform: translateX(-50%) scale(1.15) rotate(4deg);
+    }
+    50% {
+      bottom: 50%;
+      transform: translateX(-50%) scale(1) rotate(-2deg);
+    }
+    100% {
+      bottom: 120%;
+      opacity: 0;
+      transform: translateX(-50%) scale(0.85) rotate(4deg);
+    }
   }
 }

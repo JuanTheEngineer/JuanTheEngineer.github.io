@@ -27,10 +27,14 @@ export function renderDemoCarousel(container, demos, options = {}) {
         class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar -mx-4 px-4 gap-3 pb-1"
         style="scroll-snap-stop: always;"
       ></div>
-      ${items.length > 1 ? `
+      ${
+        items.length > 1
+          ? `
         <div class="flex items-center justify-center gap-1.5 mt-3" data-region="dots"></div>
         <p data-region="caption" class="text-xs text-slate-400 text-center px-2 mt-2 leading-relaxed min-h-[1rem]"></p>
-      ` : ''}
+      `
+          : ''
+      }
     </div>
   `;
 
@@ -94,7 +98,9 @@ export function renderDemoCarousel(container, demos, options = {}) {
     if (!dotsContainer) return;
     // Uniform 4px circles. Active = full brand color, inactive = dim slate.
     // Touch target is larger via padding so they're still tappable.
-    dotsContainer.innerHTML = items.map((_, i) => `
+    dotsContainer.innerHTML = items
+      .map(
+        (_, i) => `
       <button
         data-dot-index="${i}"
         aria-label="Go to demo ${i + 1}"
@@ -104,8 +110,10 @@ export function renderDemoCarousel(container, demos, options = {}) {
           ${i === activeIndex ? 'bg-brand-400' : 'bg-slate-600 group-hover:bg-slate-500'}"
         ></span>
       </button>
-    `).join('');
-    dotsContainer.querySelectorAll('[data-dot-index]').forEach(el => {
+    `
+      )
+      .join('');
+    dotsContainer.querySelectorAll('[data-dot-index]').forEach((el) => {
       el.addEventListener('click', () => goTo(Number(el.dataset.dotIndex)));
     });
   };
@@ -176,14 +184,15 @@ function sortDemos(demos) {
 }
 
 function sourceLabel(demo) {
-  const typeLabel = {
-    cloudinary: demo.format === 'mp4' ? 'Original video' : 'Original',
-    youtube: 'YouTube',
-    tiktok: 'TikTok',
-    vimeo: 'Vimeo',
-    local: 'Local',
-    url: 'External'
-  }[demo.type] || demo.type;
+  const typeLabel =
+    {
+      cloudinary: demo.format === 'mp4' ? 'Original video' : 'Original',
+      youtube: 'YouTube',
+      tiktok: 'TikTok',
+      vimeo: 'Vimeo',
+      local: 'Local',
+      url: 'External'
+    }[demo.type] || demo.type;
   if (demo.notes) return `${typeLabel} · ${demo.notes}`;
   return typeLabel;
 }

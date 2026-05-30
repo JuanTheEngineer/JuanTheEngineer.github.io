@@ -5,7 +5,7 @@ const MESSAGES = [
   'Nice work!',
   'Killer moves!',
   'Awesome job!',
-  "Crushed it!",
+  'Crushed it!',
   'You did it!',
   'Beast mode!',
   'On fire!',

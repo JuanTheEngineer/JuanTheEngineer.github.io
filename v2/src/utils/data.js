@@ -22,7 +22,7 @@ export async function loadExercises() {
   if (!res.ok) throw new Error(`Failed to load exercises.json: ${res.status}`);
   cache.exercises = await res.json();
   // Build id -> exercise map for fast lookup
-  cache.exerciseMap = new Map(cache.exercises.exercises.map(e => [e.id, e]));
+  cache.exerciseMap = new Map(cache.exercises.exercises.map((e) => [e.id, e]));
   return cache.exercises;
 }
 
@@ -36,7 +36,7 @@ export async function loadPlans() {
 
 export async function getProgram(id) {
   const workouts = await loadWorkouts();
-  return workouts.programs.find(p => p.id === id) || null;
+  return workouts.programs.find((p) => p.id === id) || null;
 }
 
 export async function getExercise(id) {
@@ -74,7 +74,7 @@ export async function getResolvedProgram(id) {
     displayName: item.displayName,
     note: item.note,
     tags: item.tags || [],
-    exercises: item.exercises.map(member => {
+    exercises: item.exercises.map((member) => {
       const exercise = cache.exerciseMap.get(member.exerciseId) || null;
       return {
         exerciseId: member.exerciseId,
@@ -88,9 +88,9 @@ export async function getResolvedProgram(id) {
     })
   });
 
-  const resolvedItems = (program.items || []).map(item => {
-    if (item.kind) return resolveGroup(item);   // group: superset/compound/circuit
-    return resolveSingle(item);                  // single
+  const resolvedItems = (program.items || []).map((item) => {
+    if (item.kind) return resolveGroup(item); // group: superset/compound/circuit
+    return resolveSingle(item); // single
   });
 
   return { ...program, resolvedItems };

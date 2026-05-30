@@ -11,12 +11,12 @@ let searchIndex = null;
 async function ensureIndex() {
   if (searchIndex) return searchIndex;
   const { exercises } = await loadExercises();
-  searchIndex = exercises.map(ex => ({
+  searchIndex = exercises.map((ex) => ({
     id: ex.id,
     name: ex.name,
     hasDemos: (ex.demos || []).length > 0,
     tokens: tokenize(ex.name)
-      .concat((ex.aliases || []).flatMap(a => tokenize(a)))
+      .concat((ex.aliases || []).flatMap((a) => tokenize(a)))
       .concat(tokenize(ex.id.replace(/[-_]/g, ' '))),
     exercise: ex
   }));
@@ -33,7 +33,7 @@ export function addToIndex(exercise) {
     name: exercise.name,
     hasDemos: (exercise.demos || []).length > 0,
     tokens: tokenize(exercise.name)
-      .concat((exercise.aliases || []).flatMap(a => tokenize(a)))
+      .concat((exercise.aliases || []).flatMap((a) => tokenize(a)))
       .concat(tokenize(exercise.id.replace(/[-_]/g, ' '))),
     exercise
   });
@@ -47,8 +47,8 @@ export async function searchExercises(query, limit = 10) {
   if (!query || !query.trim()) return index.slice(0, limit);
   const qTokens = tokenize(query);
   return index
-    .map(entry => ({ ...entry, score: scoreMatch(entry.tokens, qTokens) }))
-    .filter(e => e.score > 0)
+    .map((entry) => ({ ...entry, score: scoreMatch(entry.tokens, qTokens) }))
+    .filter((e) => e.score > 0)
     .sort((a, b) => b.score - a.score)
     .slice(0, limit);
 }
@@ -99,7 +99,9 @@ export function renderExercisePicker(container, options = {}) {
     }
     emptyState.classList.add('hidden');
     resultsList.classList.remove('hidden');
-    resultsList.innerHTML = results.map(r => `
+    resultsList.innerHTML = results
+      .map(
+        (r) => `
       <li>
         <button
           data-exercise-id="${r.id}"
@@ -108,16 +110,22 @@ export function renderExercisePicker(container, options = {}) {
           <span class="flex-1 min-w-0">
             <span class="text-sm font-medium text-slate-100 block truncate">${escapeHtml(r.name)}</span>
           </span>
-          ${r.hasDemos ? `
+          ${
+            r.hasDemos
+              ? `
             <span class="text-[10px] text-slate-500 bg-slate-800 px-1.5 py-0.5 rounded">demo</span>
-          ` : ''}
+          `
+              : ''
+          }
         </button>
       </li>
-    `).join('');
+    `
+      )
+      .join('');
 
-    resultsList.querySelectorAll('[data-exercise-id]').forEach(btn => {
+    resultsList.querySelectorAll('[data-exercise-id]').forEach((btn) => {
       btn.addEventListener('click', () => {
-        const entry = results.find(r => r.id === btn.dataset.exerciseId);
+        const entry = results.find((r) => r.id === btn.dataset.exerciseId);
         if (entry) options.onSelect?.(entry.exercise);
       });
     });
@@ -138,8 +146,7 @@ export function renderExercisePicker(container, options = {}) {
   renderResults([], '');
 
   // Create new button
-  container.querySelector('[data-action="create-new"]')
-    ?.addEventListener('click', () => options.onCreateNew?.());
+  container.querySelector('[data-action="create-new"]')?.addEventListener('click', () => options.onCreateNew?.());
 }
 
 // --- Utility functions ---
@@ -147,10 +154,11 @@ export function renderExercisePicker(container, options = {}) {
 function tokenize(str) {
   if (!str) return [];
   return str
-    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
     .split(/[^a-z0-9]+/)
-    .filter(t => t.length > 0);
+    .filter((t) => t.length > 0);
 }
 
 function scoreMatch(entryTokens, queryTokens) {
@@ -158,9 +166,13 @@ function scoreMatch(entryTokens, queryTokens) {
   for (const qt of queryTokens) {
     let best = 0;
     for (const et of entryTokens) {
-      if (et === qt) { best = Math.max(best, 10); }
-      else if (et.startsWith(qt)) { best = Math.max(best, 7); }
-      else if (et.includes(qt)) { best = Math.max(best, 4); }
+      if (et === qt) {
+        best = Math.max(best, 10);
+      } else if (et.startsWith(qt)) {
+        best = Math.max(best, 7);
+      } else if (et.includes(qt)) {
+        best = Math.max(best, 4);
+      }
     }
     if (best === 0) return 0; // all query tokens must match something
     total += best;
@@ -170,7 +182,15 @@ function scoreMatch(entryTokens, queryTokens) {
 
 function escapeHtml(s) {
   if (s == null) return '';
-  return String(s).replace(/[&<>"']/g, c => ({
-    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-  })[c]);
+  return String(s).replace(
+    /[&<>"']/g,
+    (c) =>
+      ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      })[c]
+  );
 }
