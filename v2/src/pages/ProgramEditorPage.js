@@ -279,11 +279,11 @@ function renderTimeline(container) {
   let html = '';
   for (let i = 0; i < state.items.length; i++) {
     html += timelineCard(state.items[i], i);
-    // Show a link/group button between two adjacent singles
+    // Show a link/group button between two adjacent singles (overlapping, no extra space)
     if (i < state.items.length - 1 && state.items[i].type === 'single' && state.items[i + 1].type === 'single') {
-      html += `<li class="flex justify-center -my-1 relative z-10">
-        <button data-action="link" data-index="${i}" class="p-1 rounded-full bg-slate-800 border border-slate-700 hover:border-brand-500 hover:bg-brand-500/10 text-slate-500 hover:text-brand-400 transition-all" aria-label="Group these two exercises" title="Group into superset">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+      html += `<li class="relative h-0 flex justify-center z-10">
+        <button data-action="link" data-index="${i}" class="absolute -top-3 p-1 rounded-full bg-slate-800 border border-slate-700 hover:border-brand-500 hover:bg-brand-500/10 text-slate-500 hover:text-brand-400 transition-all shadow-sm" aria-label="Group these two exercises" title="Group into superset">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
         </button>
       </li>`;
     }
@@ -475,17 +475,41 @@ function wireTimelineActions(container) {
     });
   });
 
-  // Link button — group two adjacent singles into a superset/compound/circuit
+  // Link button — group two adjacent singles
   list.querySelectorAll('[data-action="link"]').forEach((btn) => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const i = +btn.dataset.index;
-      const kind = prompt('Group type? (superset, compound, circuit)', 'superset');
-      if (!kind || !['superset', 'compound', 'circuit'].includes(kind)) return;
-      const members = [state.items[i], state.items[i + 1]];
-      const group = { type: 'group', kind, note: '', tags: [], members };
-      state.items.splice(i, 2, group);
-      expandedIndex = -1;
-      renderTimeline(container);
+      // Show a small popover with 3 kind options
+      const existing = container.querySelector('[data-region="kind-popover"]');
+      if (existing) existing.remove();
+
+      const popover = document.createElement('div');
+      popover.dataset.region = 'kind-popover';
+      popover.className = 'absolute left-1/2 -translate-x-1/2 top-5 bg-slate-800 border border-slate-700 rounded-xl p-2 flex gap-1.5 shadow-xl z-50 animate-fade-in';
+      popover.innerHTML = `
+        <button data-kind="superset" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-500/20 text-brand-300 hover:bg-brand-500/30 transition-colors">Superset</button>
+        <button data-kind="compound" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-700 text-slate-300 hover:bg-slate-600 transition-colors">Compound</button>
+        <button data-kind="circuit" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-700 text-slate-300 hover:bg-slate-600 transition-colors">Circuit</button>
+      `;
+      btn.parentElement.appendChild(popover);
+
+      popover.querySelectorAll('[data-kind]').forEach((kindBtn) => {
+        kindBtn.addEventListener('click', () => {
+          const kind = kindBtn.dataset.kind;
+          const members = [state.items[i], state.items[i + 1]];
+          const group = { type: 'group', kind, note: '', tags: [], members };
+          state.items.splice(i, 2, group);
+          expandedIndex = -1;
+          renderTimeline(container);
+        });
+      });
+
+      // Close on outside click
+      setTimeout(() => {
+        const close = (ev) => { if (!popover.contains(ev.target)) { popover.remove(); document.removeEventListener('pointerdown', close); } };
+        document.addEventListener('pointerdown', close);
+      }, 10);
     });
   });
 
