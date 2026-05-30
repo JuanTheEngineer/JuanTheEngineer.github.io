@@ -228,3 +228,8 @@
     }
   }
 }
+
+/* Drag-and-drop indicator */
+.drag-over {
+  border-top: 2px solid var(--color-brand-500);
+}

@@ -4,7 +4,6 @@ import { renderExercisePicker, addToIndex } from '../components/ExercisePicker.j
 import { renderDemoManager } from '../components/DemoManager.js';
 import { renderDemoCarousel } from '../components/DemoCarousel.js';
 import { loadWorkouts, loadExercises } from '../utils/data.js';
-import Sortable from 'sortablejs';
 
 // Editor state (module-level singleton for this session)
 let state = createFreshState();
@@ -337,28 +336,46 @@ function groupEditForm(item, i) {
 </div>`;
 }
 
-let sortableInstance = null;
+let dragSrcIndex = null;
 
 function wireTimelineActions(container) {
   const list = container.querySelector('[data-region="timeline"]');
   if (!list) return;
 
-  // Drag-and-drop via SortableJS
-  if (sortableInstance) sortableInstance.destroy();
-  sortableInstance = Sortable.create(list, {
-    handle: '.drag-handle',
-    animation: 200,
-    ghostClass: 'opacity-30',
-    onEnd: (evt) => {
-      const { oldIndex, newIndex } = evt;
-      if (oldIndex === newIndex) return;
-      const [moved] = state.items.splice(oldIndex, 1);
+  // Native HTML5 drag-and-drop
+  list.querySelectorAll('[data-item-index]').forEach((li) => {
+    const handle = li.querySelector('.drag-handle');
+    li.setAttribute('draggable', 'true');
+
+    handle?.addEventListener('pointerdown', () => li.classList.add('dragging'));
+    li.addEventListener('dragstart', (e) => {
+      dragSrcIndex = +li.dataset.itemIndex;
+      e.dataTransfer.effectAllowed = 'move';
+      li.classList.add('opacity-30');
+    });
+    li.addEventListener('dragend', () => {
+      li.classList.remove('opacity-30', 'dragging');
+      list.querySelectorAll('.drag-over').forEach((el) => el.classList.remove('drag-over'));
+    });
+    li.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      li.classList.add('drag-over');
+    });
+    li.addEventListener('dragleave', () => li.classList.remove('drag-over'));
+    li.addEventListener('drop', (e) => {
+      e.preventDefault();
+      li.classList.remove('drag-over');
+      const newIndex = +li.dataset.itemIndex;
+      if (dragSrcIndex === null || dragSrcIndex === newIndex) return;
+      const [moved] = state.items.splice(dragSrcIndex, 1);
       state.items.splice(newIndex, 0, moved);
-      if (expandedIndex === oldIndex) expandedIndex = newIndex;
-      else if (oldIndex < expandedIndex && newIndex >= expandedIndex) expandedIndex--;
-      else if (oldIndex > expandedIndex && newIndex <= expandedIndex) expandedIndex++;
+      if (expandedIndex === dragSrcIndex) expandedIndex = newIndex;
+      else if (dragSrcIndex < expandedIndex && newIndex >= expandedIndex) expandedIndex--;
+      else if (dragSrcIndex > expandedIndex && newIndex <= expandedIndex) expandedIndex++;
+      dragSrcIndex = null;
       renderTimeline(container);
-    }
+    });
   });
 
   // Toggle expand
