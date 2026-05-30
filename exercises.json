@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-05-30T04:16:00.137Z",
+  "lastUpdated": "2026-05-30T06:22:08.456Z",
   "exercises": [
     {
       "id": "1a-db-row",
@@ -4591,10 +4591,11 @@
     },
     {
       "id": "chinups",
-      "name": "Weighted Chin-ups",
+      "name": "Chin-ups",
       "aliases": [
         "Chin-ups & Pull-overs",
-        "Chin-ups"
+        "Chin-ups",
+        "Weighted Chin-ups"
       ],
       "demos": [
         {

@@ -11,7 +11,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Two seconds down, one second up. Elevate your heel.",
-          "displayName": "Warm Up 1: Decline Pistols",
           "tags": [
             "warmup"
           ]
@@ -21,7 +20,6 @@
           "reps": "10",
           "sets": "4",
           "repUnits": "reps",
-          "displayName": "Warm Up 2: Heel Taps",
           "tags": [
             "warmup"
           ]
@@ -32,7 +30,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Keep the sole of your foot from rolling inward.",
-          "displayName": "Warm Up 3: TKEs",
           "tags": [
             "warmup"
           ]
@@ -42,40 +39,35 @@
           "reps": "4",
           "sets": "6",
           "repUnits": "reps",
-          "note": "Weight: 10 lbs",
-          "displayName": "Exercise 1: DB Squat Jumps"
+          "note": "Weight: 10 lbs"
         },
         {
           "exerciseId": "trapbardeadlift",
           "reps": "8",
           "sets": "4",
           "repUnits": "reps",
-          "note": "Rate of Perceived Exertion: 8/10",
-          "displayName": "Exercise 2: Trap Bar Deadlift"
+          "note": "Rate of Perceived Exertion: 8/10"
         },
         {
           "exerciseId": "swissballlegcurls",
           "reps": "100 Total",
           "sets": "Varies",
           "repUnits": "reps",
-          "note": "Focus on keeping your balance.",
-          "displayName": "Exercise 3: Swiss Ball Leg Curls"
+          "note": "Focus on keeping your balance."
         },
         {
           "exerciseId": "kneelingsideplanks",
           "reps": "45",
           "sets": "4",
           "repUnits": "secs",
-          "note": "Kneeling.",
-          "displayName": "Exercise 4: Side Planks"
+          "note": "Kneeling."
         },
         {
           "exerciseId": "hindusquats",
           "reps": "3",
           "sets": "1",
           "repUnits": "min",
-          "note": "No resting.",
-          "displayName": "Exercise 5: Hindu Squats"
+          "note": "No resting."
         }
       ]
     },
@@ -90,7 +82,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Two seconds down, 1 second up. Elevate your heel.",
-          "displayName": "Warm Up 1: Box Pistols",
           "tags": [
             "warmup"
           ]
@@ -100,7 +91,6 @@
           "reps": "10",
           "sets": "4",
           "repUnits": "reps",
-          "displayName": "Warm Up 2: KB Passes",
           "tags": [
             "warmup"
           ]
@@ -111,7 +101,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Keep the sole of your foot from rolling inward.",
-          "displayName": "Warm Up 3: Low Box Drops",
           "tags": [
             "warmup"
           ]
@@ -121,8 +110,7 @@
           "reps": "15",
           "sets": "5",
           "repUnits": "reps",
-          "note": "Weight: 10 lbs",
-          "displayName": "Exercise 1: DB Box Squat"
+          "note": "Weight: 10 lbs"
         },
         {
           "kind": "superset",
@@ -141,32 +129,28 @@
               "repUnits": "reps",
               "note": "Controlled on the way down. Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 2: DB RDL & Split Squats"
+          ]
         },
         {
           "exerciseId": "45degreebackraises",
           "reps": "60 Total",
           "sets": "Varies",
           "repUnits": "reps",
-          "note": "Go through full range of motion.",
-          "displayName": "Exercise 3: 45° Back Raise"
+          "note": "Go through full range of motion."
         },
         {
           "exerciseId": "ghrisohold",
           "reps": "30",
           "sets": "4",
           "repUnits": "secs",
-          "note": "Using a Weight.",
-          "displayName": "Exercise 4: GHR Iso-Hold"
+          "note": "Using a Weight."
         },
         {
           "exerciseId": "heavysledsuicide",
           "reps": "30",
           "sets": "2",
           "repUnits": "yd",
-          "note": "Add Weight to Sled.",
-          "displayName": "Exercise 5: Heavy Sled Suicide"
+          "note": "Add Weight to Sled."
         }
       ]
     },
@@ -181,7 +165,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Two seconds down, one second up. Elevate your heel.",
-          "displayName": "Warm Up 1: Decline Pistols",
           "tags": [
             "warmup"
           ]
@@ -192,7 +175,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Weight: 10 lbs",
-          "displayName": "Warm Up 2: Heel Taps",
           "tags": [
             "warmup"
           ]
@@ -203,7 +185,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Keep the sole of your foot from rolling inward.",
-          "displayName": "Warm Up 3: TKEs",
           "tags": [
             "warmup"
           ]
@@ -213,16 +194,14 @@
           "reps": "3",
           "sets": "5",
           "repUnits": "reps",
-          "note": "Weight: 10 lbs",
-          "displayName": "Exercise 1: DB Squat Jumps"
+          "note": "Weight: 10 lbs"
         },
         {
           "exerciseId": "trapbardeadlift",
           "reps": "3-5",
           "sets": "5",
           "repUnits": "reps",
-          "note": "Work up to your 3 to 5 rep maximum weight.",
-          "displayName": "Exercise 2: Trap Bar Deadlift"
+          "note": "Work up to your 3 to 5 rep maximum weight."
         },
         {
           "kind": "superset",
@@ -241,24 +220,21 @@
               "repUnits": "secs",
               "note": "Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 3: Split Squats & Split Squat Iso-Holds"
+          ]
         },
         {
           "exerciseId": "ghr",
           "reps": "30 Total",
           "sets": "Varies",
           "repUnits": "reps",
-          "note": "Can be substituted with any hamstring workout if necessary.",
-          "displayName": "Exercise 4: Glute Hamstring Raise"
+          "note": "Can be substituted with any hamstring workout if necessary."
         },
         {
           "exerciseId": "rollingsideplanks",
           "reps": "10",
           "sets": "5",
           "repUnits": "reps",
-          "note": "Rolling to each side is one rep.",
-          "displayName": "Exercise 5: Rolling Side Planks"
+          "note": "Rolling to each side is one rep."
         }
       ]
     },
@@ -273,7 +249,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Start with low box if necessary.",
-          "displayName": "Warm Up 1: Box Pistol Jumps",
           "tags": [
             "warmup"
           ]
@@ -284,7 +259,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "One rep for each side.",
-          "displayName": "Warm Up 2: KB Passes",
           "tags": [
             "warmup"
           ]
@@ -295,7 +269,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Land softly and compress your body on each rep.",
-          "displayName": "Warm Up 3: Low Box Jump to Heiden",
           "tags": [
             "warmup"
           ]
@@ -305,16 +278,14 @@
           "reps": "5",
           "sets": "5",
           "repUnits": "reps",
-          "note": "Rate of Perceived Exertion: 8/10",
-          "displayName": "Exercise 1: Front Squats"
+          "note": "Rate of Perceived Exertion: 8/10"
         },
         {
           "exerciseId": "stepups",
           "reps": "12",
           "sets": "4",
           "repUnits": "reps",
-          "note": "Complete reps for each side.",
-          "displayName": "Exercise 2: Step-ups"
+          "note": "Complete reps for each side."
         },
         {
           "kind": "compound",
@@ -340,16 +311,14 @@
               "repUnits": "rep",
               "note": "Jump as far as you can. Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 3: KB Swings, Box Depth Drops, Broad Jumps"
+          ]
         },
         {
           "exerciseId": "dbsidebends",
           "reps": "25",
           "sets": "4",
           "repUnits": "reps",
-          "note": "Complete reps for each side.",
-          "displayName": "Exercise 4: DB Side Bends"
+          "note": "Complete reps for each side."
         }
       ]
     },
@@ -364,7 +333,6 @@
           "sets": "3",
           "repUnits": "reps",
           "note": ".",
-          "displayName": "Warm Up 1: Turkish Get-ups",
           "tags": [
             "warmup"
           ]
@@ -374,7 +342,6 @@
           "reps": "150",
           "sets": "1",
           "repUnits": "yd",
-          "displayName": "Warm Up 2: OH KB Carry",
           "tags": [
             "warmup"
           ]
@@ -385,7 +352,6 @@
           "sets": "3",
           "repUnits": "rep",
           "note": "Can be done with a Squat Bar.",
-          "displayName": "Warm Up 3: Over/Under Hurdles",
           "tags": [
             "warmup"
           ]
@@ -407,24 +373,21 @@
               "repUnits": "reps",
               "note": "Box height should be 24-36 inches. Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 1: Front Squat Iso-hold & Box Jumps"
+          ]
         },
         {
           "exerciseId": "splitsquats",
           "reps": "12",
           "sets": "3",
           "repUnits": "reps",
-          "note": "Controlled on the way down.",
-          "displayName": "Exercise 2: DB Split Squats"
+          "note": "Controlled on the way down."
         },
         {
           "exerciseId": "chinups",
           "reps": "4",
           "sets": "5-6",
           "repUnits": "reps",
-          "note": "Do these with a weight.",
-          "displayName": "Exercise 3: Weighted Chin-ups"
+          "note": "Do these with a weight."
         },
         {
           "kind": "superset",
@@ -443,16 +406,14 @@
               "repUnits": "reps",
               "note": "Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 4: Hip Ext w/ Unilateral Eccentric & SL DB RDL"
+          ]
         },
         {
           "exerciseId": "sesitups",
           "reps": "50 Total",
           "sets": "Varies",
           "repUnits": "reps",
-          "note": "Weight: 5-10 lbs.",
-          "displayName": "Exercise 5: Spread Eagle Sit-ups"
+          "note": "Weight: 5-10 lbs."
         }
       ]
     },
@@ -467,7 +428,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Five in each direction on both arms.",
-          "displayName": "Warm Up 1: Floor Washers",
           "tags": [
             "warmup"
           ]
@@ -477,7 +437,6 @@
           "reps": "10",
           "sets": "4",
           "repUnits": "reps",
-          "displayName": "Warm Up 2: Cat/Camel",
           "tags": [
             "warmup"
           ]
@@ -488,7 +447,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Keep your elbows close to your body.",
-          "displayName": "Warm Up 3: No Money Drill",
           "tags": [
             "warmup"
           ]
@@ -499,7 +457,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Using an exercise band.",
-          "displayName": "Warm Up 4: Javelin Stretch",
           "tags": [
             "warmup"
           ]
@@ -509,8 +466,7 @@
           "reps": "8",
           "sets": "5",
           "repUnits": "reps",
-          "note": "Keep your palms facing each other.",
-          "displayName": "Exercise 1: NG DB Military Press"
+          "note": "Keep your palms facing each other."
         },
         {
           "kind": "superset",
@@ -529,32 +485,28 @@
               "repUnits": "reps",
               "note": "Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 2: Chin-ups & Pull-overs"
+          ]
         },
         {
           "exerciseId": "pushups",
           "reps": "15 → 1",
           "sets": "Decrementing",
           "repUnits": "reps",
-          "note": "Start with 15 reps and decrease by 1 for each set.",
-          "displayName": "Exercise 3: Push-ups"
+          "note": "Start with 15 reps and decrease by 1 for each set."
         },
         {
           "exerciseId": "ohsitups",
           "reps": "8",
           "sets": "3",
           "repUnits": "reps",
-          "note": "Use a 45lbs plate.",
-          "displayName": "Exercise 4: OH Sit-ups"
+          "note": "Use a 45lbs plate."
         },
         {
           "exerciseId": "battleropes",
           "reps": "1",
           "sets": "3",
           "repUnits": "min",
-          "note": "Aim for 1 minute but push to failure on each set.Try a variety of styles in 15 second segements.",
-          "displayName": "Exercise 5: Battle Ropes"
+          "note": "Aim for 1 minute but push to failure on each set.Try a variety of styles in 15 second segements."
         }
       ]
     },
@@ -569,7 +521,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Five in each direction on both arms.",
-          "displayName": "Warm Up 1: Floor Washers",
           "tags": [
             "warmup"
           ]
@@ -579,7 +530,6 @@
           "reps": "10",
           "sets": "4",
           "repUnits": "reps",
-          "displayName": "Warm Up 2: Cat/Camel",
           "tags": [
             "warmup"
           ]
@@ -590,7 +540,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Keep your elbows close to your body.",
-          "displayName": "Warm Up 3: No Money Drill",
           "tags": [
             "warmup"
           ]
@@ -601,7 +550,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Using an exercise band.",
-          "displayName": "Warm Up 4: Javelin Stretch",
           "tags": [
             "warmup"
           ]
@@ -611,8 +559,7 @@
           "reps": "8",
           "sets": "3",
           "repUnits": "reps",
-          "note": "Keep your palms facing each other.",
-          "displayName": "Exercise 1: NG DB Military Press"
+          "note": "Keep your palms facing each other."
         },
         {
           "kind": "superset",
@@ -631,32 +578,28 @@
               "repUnits": "reps",
               "note": "Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 2: Chin-ups & Pull-overs"
+          ]
         },
         {
           "exerciseId": "pushups",
           "reps": "12 → 1",
           "sets": "Decrementing",
           "repUnits": "reps",
-          "note": "Start with 12 reps and decrease by 1 for each set.",
-          "displayName": "Exercise 3: Push-ups"
+          "note": "Start with 12 reps and decrease by 1 for each set."
         },
         {
           "exerciseId": "ohsitups",
           "reps": "8",
           "sets": "3",
           "repUnits": "reps",
-          "note": "Use a 45lbs plate.",
-          "displayName": "Exercise 4: OH Sit-ups"
+          "note": "Use a 45lbs plate."
         },
         {
           "exerciseId": "battleropes",
           "reps": "1",
           "sets": "3",
           "repUnits": "min",
-          "note": "Aim for 1 minute but push to failure on each set.Try a variety of styles in 15 second segements.",
-          "displayName": "Exercise 5: Battle Ropes"
+          "note": "Aim for 1 minute but push to failure on each set.Try a variety of styles in 15 second segements."
         }
       ]
     },
@@ -671,7 +614,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Five in each direction on both arms. Reach your hand out between each rep.",
-          "displayName": "Warm Up 1: Floor Washers w/ Reach",
           "tags": [
             "warmup"
           ]
@@ -681,7 +623,6 @@
           "reps": "10",
           "sets": "4",
           "repUnits": "reps",
-          "displayName": "Warm Up 2: Yoga Push-up",
           "tags": [
             "warmup"
           ]
@@ -691,7 +632,6 @@
           "reps": "5",
           "sets": "4",
           "repUnits": "reps",
-          "displayName": "Warm Up 3: Downward Dog Toe Touch",
           "tags": [
             "warmup"
           ]
@@ -701,8 +641,7 @@
           "reps": "AMRAP",
           "sets": "1",
           "repUnits": "reps",
-          "note": "Go for as many reps as possible.",
-          "displayName": "Exercise 1: Chin-ups"
+          "note": "Go for as many reps as possible."
         },
         {
           "kind": "superset",
@@ -721,16 +660,14 @@
               "repUnits": "reps",
               "note": "Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 2: NG DB Incline Bench & Feet Elevated Push-ups"
+          ]
         },
         {
           "exerciseId": "krocrows1",
           "reps": "AMRAP",
           "sets": "1",
           "repUnits": "reps",
-          "note": "Weight: 30-50 lbs",
-          "displayName": "Exercise 3: Kroc Rows Burnout"
+          "note": "Weight: 30-50 lbs"
         },
         {
           "kind": "superset",
@@ -749,16 +686,14 @@
               "repUnits": "reps",
               "note": "Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 4: Kroc Rows & Scarecrows"
+          ]
         },
         {
           "exerciseId": "onearmohcarry",
           "reps": "50",
           "sets": "3",
           "repUnits": "yd",
-          "note": "Choose a safe weight.",
-          "displayName": "Exercise 5: One Arm OH Carry"
+          "note": "Choose a safe weight."
         }
       ]
     },
@@ -772,40 +707,35 @@
           "reps": "15",
           "sets": "3",
           "repUnits": "reps (each side)",
-          "note": "Details: Perform a lateral lunge while crossing one leg behind the other, akin to a curtsy. Use a strap or band to maintain balance and focus the load on the heel. Note: You only need to step behind your front foot. Crossing far outside your front foot is unnecessary and will lead to uneven hip posture.",
-          "displayName": "Strength 1: Curtsy Lunges"
+          "note": "Details: Perform a lateral lunge while crossing one leg behind the other, akin to a curtsy. Use a strap or band to maintain balance and focus the load on the heel. Note: You only need to step behind your front foot. Crossing far outside your front foot is unnecessary and will lead to uneven hip posture."
         },
         {
           "exerciseId": "barbellwalkinglunges",
           "reps": "10",
           "sets": "3",
           "repUnits": "reps (each side)",
-          "note": "Details: Perform walking lunges with a barbell placed behind your neck. Ensure each knee lightly taps the ground to engage the glutes properly. Note: May swap barbell for dumbbells or body weight.",
-          "displayName": "Strength 2: Barbell Walking Lunges"
+          "note": "Details: Perform walking lunges with a barbell placed behind your neck. Ensure each knee lightly taps the ground to engage the glutes properly. Note: May swap barbell for dumbbells or body weight."
         },
         {
           "exerciseId": "90degreebarbellsquats",
           "reps": "10-15",
           "sets": "4",
           "repUnits": "reps",
-          "note": "Detail: Squat to a 90-degree angle, then powerfully, but with control in one motion thrust your hips upward as you rise, tightly flexing your glutes. Note: Aim for 70% of your max repetition weight or above.",
-          "displayName": "Strength 3: Barbell 90° Squat with Hip Thrust"
+          "note": "Detail: Squat to a 90-degree angle, then powerfully, but with control in one motion thrust your hips upward as you rise, tightly flexing your glutes. Note: Aim for 70% of your max repetition weight or above."
         },
         {
           "exerciseId": "singleleghipthrusts",
           "reps": "15",
           "sets": "3",
           "repUnits": "reps (each side)",
-          "note": "Details: Perform hip thrusts with one leg, using a bench for support. Keep the thrust controlled, and focus on squeezing the glutes at the top of the movement. Note: Use a bench.",
-          "displayName": "Strength 4: Single Leg Hip Thrust on Bench"
+          "note": "Details: Perform hip thrusts with one leg, using a bench for support. Keep the thrust controlled, and focus on squeezing the glutes at the top of the movement. Note: Use a bench."
         },
         {
           "exerciseId": "firehydrant",
           "reps": "30",
           "sets": "3",
           "repUnits": "reps (each side)",
-          "note": "Details: From a tabletop position, lift one leg away from the body, keeping the knee bent. This exercise targets the gluteus medius and minimus for improved lateral stability.",
-          "displayName": "Strength 5: Fire Hydrants"
+          "note": "Details: From a tabletop position, lift one leg away from the body, keeping the knee bent. This exercise targets the gluteus medius and minimus for improved lateral stability."
         },
         {
           "exerciseId": "kneelinghipflexorstretch",
@@ -813,7 +743,6 @@
           "sets": "3",
           "repUnits": "secs (each side)",
           "note": "Details: Kneel on one knee with the other foot flat in front. Push hips forward to feel a stretch in the front of the back leg hip. Keep your torso upright. Use a foam pad or mat to protect the kneeling knee.",
-          "displayName": "Stretch 1: Kneeling Hip Flexor Stretch",
           "tags": [
             "stretch"
           ]
@@ -845,7 +774,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Note: Keep your elbows close to your body.",
-          "displayName": "Warm Up 1: No Money Drill",
           "tags": [
             "warmup"
           ]
@@ -856,7 +784,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Note: .",
-          "displayName": "Warm Up 2: Downward Dog Toe Touch",
           "tags": [
             "warmup"
           ]
@@ -878,8 +805,7 @@
               "repUnits": "reps",
               "note": "Note: Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 1: Close Grip Pulldowns & Cable Rows"
+          ]
         },
         {
           "kind": "superset",
@@ -898,8 +824,7 @@
               "repUnits": "reps",
               "note": "Note: Can be done with Dumbbells. Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 2: Wide Grip Pulldowns & Bent-over Rows"
+          ]
         },
         {
           "kind": "superset",
@@ -918,8 +843,7 @@
               "repUnits": "reps",
               "note": "Note: Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 3: Cable Lateral Pullovers & Zottman Curls"
+          ]
         },
         {
           "kind": "superset",
@@ -938,16 +862,14 @@
               "repUnits": "reps",
               "note": "Note: For the last set, perform an Iso-hold for as long as possible. Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 4: Shrugs & Crush Grip Curls"
+          ]
         },
         {
           "exerciseId": "dbsidebends",
           "reps": "100",
           "sets": "Varies",
           "repUnits": "reps",
-          "note": "Note: Complete reps for each side.",
-          "displayName": "Exercise 5: DB Side Bends"
+          "note": "Note: Complete reps for each side."
         }
       ]
     },
@@ -962,7 +884,6 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Note: Using an exercise band.",
-          "displayName": "Warm Up 4: Javelin Stretch",
           "tags": [
             "warmup"
           ]
@@ -972,7 +893,6 @@
           "reps": "10",
           "sets": "4",
           "repUnits": "reps",
-          "displayName": "Warm Up 2: Yoga Push-up",
           "tags": [
             "warmup"
           ]
@@ -994,8 +914,7 @@
               "repUnits": "reps",
               "note": "Weight: 45 lbs. Note: Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 1: Chest Flies & Front Raises"
+          ]
         },
         {
           "kind": "superset",
@@ -1014,8 +933,7 @@
               "repUnits": "reps",
               "note": "Note: Standing. Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 2: Flat Bench Press & DB Military Press"
+          ]
         },
         {
           "kind": "superset",
@@ -1034,8 +952,7 @@
               "repUnits": "reps",
               "note": "Note: Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 3: Skullcrushers & DB Side Lateral Raises"
+          ]
         },
         {
           "kind": "superset",
@@ -1054,16 +971,14 @@
               "repUnits": "reps",
               "note": "Note: Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 4: Dips & Feet-Elevated PushUps"
+          ]
         },
         {
           "exerciseId": "highlowplanks",
           "reps": "10",
           "sets": "3",
           "repUnits": "reps",
-          "note": "Note: Do the reps once for each direction.",
-          "displayName": "Exercise 5: High Plank/Low Plank"
+          "note": "Note: Do the reps once for each direction."
         }
       ]
     },
@@ -1078,7 +993,6 @@
           "sets": "3",
           "repUnits": "reps",
           "note": "Note: Two seconds down, one second up. Elevate your heel.",
-          "displayName": "Warm Up 1: Decline Pistols",
           "tags": [
             "warmup"
           ]
@@ -1088,7 +1002,6 @@
           "reps": "10",
           "sets": "3",
           "repUnits": "reps",
-          "displayName": "Warm Up 2: KB Passes",
           "tags": [
             "warmup"
           ]
@@ -1110,8 +1023,7 @@
               "repUnits": "reps",
               "note": "Weight: 10 lbs. Note: Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 1: Barbell Squats & DB Jump Squats"
+          ]
         },
         {
           "kind": "superset",
@@ -1130,8 +1042,7 @@
               "repUnits": "reps",
               "note": "Note: Controlled on the way down. Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 2: Split Squats & DB RDL"
+          ]
         },
         {
           "kind": "superset",
@@ -1150,8 +1061,7 @@
               "repUnits": "reps",
               "note": "Note: Squeeze toes together. Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 3: Elevated Heel Goblet Squats & Leg Curls"
+          ]
         },
         {
           "kind": "superset",
@@ -1170,8 +1080,7 @@
               "repUnits": "reps",
               "note": "Note: Meant to be a Super Set."
             }
-          ],
-          "displayName": "Exercise 4: Hip Abductions & Calf Raises"
+          ]
         }
       ]
     },
