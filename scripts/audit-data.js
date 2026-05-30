@@ -3,34 +3,28 @@
  * Data Audit Script
  *
  * Scans exercises.json and workouts.json for:
- * 1. Exercises with 0 demos (no media at all)
+ * 1. Exercises with 0 demos
  * 2. Demos with likely broken URLs (404 candidates)
  * 3. Duplicate YouTube URLs shared across exercises
  * 4. Programs referencing non-existent exercise ids
- * 5. Exercises never referenced by any program (orphans)
- * 6. Exercises with suspicious/generic names
+ * 5. Exercises never referenced by any program
+ * 6. Exercises with empty/generic names
+ * 7. Demos missing required fields (type, url)
  *
- * Output: structured report to stdout + audit-report.json
+ * Output: structured report to stdout + summary counts.
  */
-import { readFileSync, writeFileSync } from 'fs';
-import { dirname, join } from 'path';
+import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
 
-const exercises = JSON.parse(readFileSync(join(root, 'exercises.json'), 'utf8'));
-const workouts = JSON.parse(readFileSync(join(root, 'workouts.json'), 'utf8'));
+const exercises = JSON.parse(readFileSync(join(root, 'exercises.json'), 'utf-8'));
+const workouts = JSON.parse(readFileSync(join(root, 'workouts.json'), 'utf-8'));
 
 const exMap = new Map(exercises.exercises.map(e => [e.id, e]));
-const report = {
-  noDemos: [],
-  duplicateYouTube: [],
-  brokenReferences: [],
-  orphanExercises: [],
-  suspiciousNames: [],
-  stats: {}
-};
+const report = { noDemos: [], brokenDemos: [], duplicateYouTube: [], orphanRefs: [], neverUsed: [], badNames: [], malformedDemos: [] };
 
 // --- 1. Exercises with 0 demos ---
 for (const ex of exercises.exercises) {
@@ -39,12 +33,30 @@ for (const ex of exercises.exercises) {
   }
 }
 
-// --- 2. Duplicate YouTube URLs across exercises ---
+// --- 2 & 7. Demo URL issues ---
+for (const ex of exercises.exercises) {
+  for (const demo of (ex.demos || [])) {
+    if (!demo.type || !demo.url) {
+      report.malformedDemos.push({ exerciseId: ex.id, demo });
+      continue;
+    }
+    // Flag likely broken: empty url, localhost, or placeholder
+    if (!demo.url.trim() || demo.url.includes('localhost') || demo.url.includes('example.com')) {
+      report.brokenDemos.push({ exerciseId: ex.id, url: demo.url, reason: 'placeholder/empty' });
+    }
+    // Flag cloudinary URLs that might 404 (we can't HTTP check here, but flag suspicious patterns)
+    if (demo.type === 'cloudinary' && !demo.url.includes('res.cloudinary.com')) {
+      report.brokenDemos.push({ exerciseId: ex.id, url: demo.url, reason: 'cloudinary URL missing domain' });
+    }
+  }
+}
+
+// --- 3. Duplicate YouTube URLs across exercises ---
 const ytUrlToExercises = new Map();
 for (const ex of exercises.exercises) {
   for (const demo of (ex.demos || [])) {
     if (demo.type === 'youtube' && demo.url) {
-      const key = demo.url;
+      const key = demo.url.replace(/https?:\/\/(www\.)?/, '');
       if (!ytUrlToExercises.has(key)) ytUrlToExercises.set(key, []);
       ytUrlToExercises.get(key).push(ex.id);
     }
@@ -52,105 +64,87 @@ for (const ex of exercises.exercises) {
 }
 for (const [url, ids] of ytUrlToExercises) {
   if (ids.length > 1) {
-    report.duplicateYouTube.push({ url, exercises: ids });
+    report.duplicateYouTube.push({ url, sharedBy: ids });
   }
 }
 
-// --- 3. Programs referencing non-existent exercise ids ---
-const referencedIds = new Set();
-for (const prog of workouts.programs) {
-  for (const item of (prog.items || [])) {
-    if (item.exerciseId) {
-      referencedIds.add(item.exerciseId);
-      if (!exMap.has(item.exerciseId)) {
-        report.brokenReferences.push({ program: prog.id, exerciseId: item.exerciseId });
-      }
-    }
+// --- 4. Programs referencing non-existent exercise ids ---
+function collectExerciseIds(items) {
+  const ids = [];
+  for (const item of (items || [])) {
+    if (item.exerciseId) ids.push(item.exerciseId);
     if (item.exercises) {
-      for (const member of item.exercises) {
-        referencedIds.add(member.exerciseId);
-        if (!exMap.has(member.exerciseId)) {
-          report.brokenReferences.push({ program: prog.id, exerciseId: member.exerciseId, inGroup: true });
-        }
+      for (const m of item.exercises) {
+        if (m.exerciseId) ids.push(m.exerciseId);
       }
+    }
+  }
+  return ids;
+}
+
+for (const prog of workouts.programs) {
+  const refs = collectExerciseIds(prog.items);
+  for (const ref of refs) {
+    if (!exMap.has(ref)) {
+      report.orphanRefs.push({ programId: prog.id, programTitle: prog.title, missingExerciseId: ref });
     }
   }
 }
 
-// --- 4. Orphan exercises (never referenced by any program) ---
+// --- 5. Exercises never referenced by any program ---
+const allRefs = new Set();
+for (const prog of workouts.programs) {
+  for (const ref of collectExerciseIds(prog.items)) {
+    allRefs.add(ref);
+  }
+}
 for (const ex of exercises.exercises) {
-  if (!referencedIds.has(ex.id)) {
-    report.orphanExercises.push({ id: ex.id, name: ex.name });
+  if (!allRefs.has(ex.id)) {
+    report.neverUsed.push({ id: ex.id, name: ex.name });
   }
 }
 
-// --- 5. Suspicious names (too short, generic, or still paired) ---
+// --- 6. Bad/generic names ---
 for (const ex of exercises.exercises) {
-  const n = ex.name || '';
-  if (n.length <= 2) {
-    report.suspiciousNames.push({ id: ex.id, name: n, reason: 'too short' });
-  } else if (/^Exercise \d+$/i.test(n)) {
-    report.suspiciousNames.push({ id: ex.id, name: n, reason: 'generic placeholder' });
-  } else if (/( & |, )/.test(n) && !ex.aliases?.length) {
-    // Paired name that wasn't caught by the rename script
-    report.suspiciousNames.push({ id: ex.id, name: n, reason: 'possibly paired (no alias)' });
+  if (!ex.name || ex.name.length < 3) {
+    report.badNames.push({ id: ex.id, name: ex.name, reason: 'too short' });
+  }
+  if (/^Exercise \d+$/i.test(ex.name)) {
+    report.badNames.push({ id: ex.id, name: ex.name, reason: 'generic placeholder' });
   }
 }
-
-// --- Stats ---
-report.stats = {
-  totalExercises: exercises.exercises.length,
-  totalPrograms: workouts.programs.length,
-  exercisesWithDemos: exercises.exercises.filter(e => e.demos?.length > 0).length,
-  exercisesWithoutDemos: report.noDemos.length,
-  totalDemos: exercises.exercises.reduce((sum, e) => sum + (e.demos?.length || 0), 0),
-  uniqueYouTubeUrls: ytUrlToExercises.size,
-  duplicateYouTubeUrls: report.duplicateYouTube.length,
-  brokenReferences: report.brokenReferences.length,
-  orphanExercises: report.orphanExercises.length,
-  suspiciousNames: report.suspiciousNames.length
-};
 
 // --- Output ---
-console.log('\n📊 DATA AUDIT REPORT\n');
-console.log('Stats:');
-console.log(`  Exercises: ${report.stats.totalExercises} (${report.stats.exercisesWithDemos} with demos, ${report.stats.exercisesWithoutDemos} without)`);
-console.log(`  Programs: ${report.stats.totalPrograms}`);
-console.log(`  Total demos: ${report.stats.totalDemos}`);
-console.log(`  Unique YouTube URLs: ${report.stats.uniqueYouTubeUrls}`);
-console.log('');
+console.log('\n═══════════════════════════════════════════');
+console.log('  DATA AUDIT REPORT');
+console.log('═══════════════════════════════════════════\n');
 
-if (report.noDemos.length) {
-  console.log(`⚠️  ${report.noDemos.length} exercises with NO demos:`);
-  report.noDemos.forEach(e => console.log(`    • ${e.id} — "${e.name}"`));
+const sections = [
+  { key: 'noDemos', label: '❌ Exercises with 0 demos', desc: 'These exercises have no media — users see "No demos available"' },
+  { key: 'brokenDemos', label: '🔗 Likely broken demo URLs', desc: 'Placeholder, empty, or malformed URLs' },
+  { key: 'malformedDemos', label: '⚠️  Malformed demo entries', desc: 'Missing required type or url field' },
+  { key: 'duplicateYouTube', label: '🔁 Duplicate YouTube URLs', desc: 'Same YouTube video shared across multiple exercises (legacy pair issue)' },
+  { key: 'orphanRefs', label: '👻 Orphan exercise references', desc: 'Programs reference exercise ids that don\'t exist in exercises.json' },
+  { key: 'neverUsed', label: '🗂️  Exercises never used in any program', desc: 'Canonical exercises not referenced by any program' },
+  { key: 'badNames', label: '📛 Bad/generic exercise names', desc: 'Names that are too short or generic placeholders' }
+];
+
+let totalIssues = 0;
+for (const { key, label, desc } of sections) {
+  const items = report[key];
+  totalIssues += items.length;
+  console.log(`${label} (${items.length})`);
+  console.log(`  ${desc}`);
+  if (items.length === 0) { console.log('  ✓ None found\n'); continue; }
+  for (const item of items.slice(0, 20)) {
+    console.log(`  • ${JSON.stringify(item)}`);
+  }
+  if (items.length > 20) console.log(`  ... and ${items.length - 20} more`);
   console.log('');
 }
 
-if (report.duplicateYouTube.length) {
-  console.log(`⚠️  ${report.duplicateYouTube.length} YouTube URLs shared across multiple exercises:`);
-  report.duplicateYouTube.slice(0, 10).forEach(d => console.log(`    • ${d.url} → [${d.exercises.join(', ')}]`));
-  if (report.duplicateYouTube.length > 10) console.log(`    ... and ${report.duplicateYouTube.length - 10} more`);
-  console.log('');
-}
-
-if (report.brokenReferences.length) {
-  console.log(`❌ ${report.brokenReferences.length} broken exercise references in programs:`);
-  report.brokenReferences.forEach(r => console.log(`    • ${r.program} → "${r.exerciseId}"${r.inGroup ? ' (in group)' : ''}`));
-  console.log('');
-}
-
-if (report.orphanExercises.length) {
-  console.log(`🔍 ${report.orphanExercises.length} exercises not used by any program:`);
-  report.orphanExercises.forEach(e => console.log(`    • ${e.id} — "${e.name}"`));
-  console.log('');
-}
-
-if (report.suspiciousNames.length) {
-  console.log(`🏷️  ${report.suspiciousNames.length} suspicious exercise names:`);
-  report.suspiciousNames.forEach(e => console.log(`    • ${e.id} — "${e.name}" (${e.reason})`));
-  console.log('');
-}
-
-// Write full report
-writeFileSync(join(root, 'audit-report.json'), JSON.stringify(report, null, 2) + '\n');
-console.log('✓ Full report written to audit-report.json\n');
+console.log('═══════════════════════════════════════════');
+console.log(`  TOTAL ISSUES: ${totalIssues}`);
+console.log(`  Exercises: ${exercises.exercises.length}`);
+console.log(`  Programs: ${workouts.programs.length}`);
+console.log('═══════════════════════════════════════════\n');
