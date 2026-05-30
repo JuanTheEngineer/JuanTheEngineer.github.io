@@ -13,9 +13,7 @@ function createFreshState() {
   return {
     meta: { title: '', id: '', requirements: '', description: '', difficulty: '', duration: '' },
     items: [],
-    newExercises: [],
-    selectMode: false,
-    selected: new Set()
+    newExercises: []
   };
 }
 
@@ -128,11 +126,7 @@ function launchEditor(container, program, keepId) {
         <section class="space-y-3">
           <div class="flex items-center justify-between">
             <h2 class="eyebrow">Exercises</h2>
-            <div class="flex items-center gap-2">
-              <button data-action="toggle-select" class="hidden text-[11px] px-2 py-1 rounded-full bg-slate-800 text-slate-400 hover:text-brand-400 transition-colors">Select to group</button>
-              <button data-action="group-selected" class="hidden text-[11px] px-2 py-1 rounded-full bg-brand-500 text-white font-medium">Group selected</button>
-              <span data-region="item-count" class="text-[11px] text-slate-500 num">0 items</span>
-            </div>
+            <span data-region="item-count" class="text-[11px] text-slate-500 num">0 items</span>
           </div>
           <ul data-region="timeline" class="space-y-2"></ul>
           <div data-region="empty-timeline" class="card p-6 text-center">
@@ -269,29 +263,32 @@ function renderTimeline(container) {
   const empty = container.querySelector('[data-region="empty-timeline"]');
   const count = container.querySelector('[data-region="item-count"]');
   const exportSection = container.querySelector('[data-region="export-section"]');
-  const selectBtn = container.querySelector('[data-action="toggle-select"]');
-  const groupBtn = container.querySelector('[data-action="group-selected"]');
   if (!list) return;
   count.textContent = `${state.items.length} item${state.items.length !== 1 ? 's' : ''}`;
   if (state.items.length === 0) {
     list.classList.add('hidden');
     empty.classList.remove('hidden');
     exportSection?.classList.add('hidden');
-    selectBtn?.classList.add('hidden');
-    groupBtn?.classList.add('hidden');
     return;
   }
   list.classList.remove('hidden');
   empty.classList.add('hidden');
   exportSection?.classList.toggle('hidden', !state.meta.title.trim());
 
-  // Show select button when 2+ singles exist
-  const singleCount = state.items.filter((i) => i.type === 'single').length;
-  selectBtn?.classList.toggle('hidden', singleCount < 2);
-  // Show group button only in select mode with 2+ selected
-  groupBtn?.classList.toggle('hidden', !state.selectMode || state.selected.size < 2);
-
-  list.innerHTML = state.items.map((item, i) => timelineCard(item, i)).join('');
+  // Render cards with "link" buttons between adjacent singles
+  let html = '';
+  for (let i = 0; i < state.items.length; i++) {
+    html += timelineCard(state.items[i], i);
+    // Show a link/group button between two adjacent singles
+    if (i < state.items.length - 1 && state.items[i].type === 'single' && state.items[i + 1].type === 'single') {
+      html += `<li class="flex justify-center -my-1 relative z-10">
+        <button data-action="link" data-index="${i}" class="p-1 rounded-full bg-slate-800 border border-slate-700 hover:border-brand-500 hover:bg-brand-500/10 text-slate-500 hover:text-brand-400 transition-all" aria-label="Group these two exercises" title="Group into superset">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+        </button>
+      </li>`;
+    }
+  }
+  list.innerHTML = html;
   wireTimelineActions(container);
 }
 
@@ -299,25 +296,21 @@ function timelineCard(item, i) {
   const open = i === expandedIndex;
   const tagStr = item.tags.length ? ' · ' + item.tags.join(', ') : '';
   const isGroup = item.type === 'group';
-  const isSelected = state.selected?.has(i);
 
   if (isGroup) return groupCard(item, i);
 
-  // Show truncated note from canonical exercise recommendations if available
   const exNote = item.exerciseNote || '';
   const notePreview = exNote.length > 60 ? exNote.substring(0, 60) + '…' : exNote;
 
-  return `<li class="card overflow-hidden ${isSelected ? 'ring-2 ring-brand-500' : ''}" data-item-index="${i}">
+  return `<li class="card overflow-hidden" data-item-index="${i}">
   <div class="flex items-center gap-1 px-3 py-3">
-    ${state.selectMode ? `<input type="checkbox" data-action="select" data-index="${i}" ${isSelected ? 'checked' : ''} class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-brand-500 shrink-0"/>` : `<span class="drag-handle cursor-grab active:cursor-grabbing p-1 text-slate-600 hover:text-slate-400 touch-manipulation shrink-0" data-drag="${i}"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></svg></span>`}
+    <span class="drag-handle cursor-grab active:cursor-grabbing p-1 text-slate-600 hover:text-slate-400 touch-manipulation shrink-0" data-drag="${i}"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></svg></span>
     <button data-action="toggle-edit" data-index="${i}" class="flex-1 min-w-0 text-left touch-manipulation">
       <p class="text-sm font-medium text-slate-100 truncate">${esc(item.exerciseName)}</p>
       <p class="text-xs text-slate-400 num">${item.reps || '—'} ${item.repUnits || 'reps'} · ${item.sets || '—'} sets${tagStr}</p>
       ${notePreview ? `<p class="text-[11px] text-slate-500 truncate mt-0.5 italic">${esc(notePreview)}</p>` : ''}
     </button>
-    <div class="flex items-center shrink-0">
-      <button data-action="remove" data-index="${i}" class="p-1.5 rounded hover:bg-red-500/10 text-slate-600 hover:text-red-400" aria-label="Remove"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
-    </div>
+    <button data-action="remove" data-index="${i}" class="p-1.5 rounded hover:bg-red-500/10 text-slate-600 hover:text-red-400 shrink-0" aria-label="Remove"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
   </div>
   ${open ? editForm(item, i) : ''}
 </li>`;
@@ -482,15 +475,17 @@ function wireTimelineActions(container) {
     });
   });
 
-  // Select checkboxes (for grouping)
-  list.querySelectorAll('[data-action="select"]').forEach((cb) => {
-    cb.addEventListener('change', () => {
-      const i = +cb.dataset.index;
-      if (cb.checked) state.selected.add(i);
-      else state.selected.delete(i);
-      // Update group button visibility
-      const groupBtn = container.querySelector('[data-action="group-selected"]');
-      groupBtn?.classList.toggle('hidden', state.selected.size < 2);
+  // Link button — group two adjacent singles into a superset/compound/circuit
+  list.querySelectorAll('[data-action="link"]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const i = +btn.dataset.index;
+      const kind = prompt('Group type? (superset, compound, circuit)', 'superset');
+      if (!kind || !['superset', 'compound', 'circuit'].includes(kind)) return;
+      const members = [state.items[i], state.items[i + 1]];
+      const group = { type: 'group', kind, note: '', tags: [], members };
+      state.items.splice(i, 2, group);
+      expandedIndex = -1;
+      renderTimeline(container);
     });
   });
 
@@ -525,31 +520,6 @@ function wireTimelineActions(container) {
     const item = state.items[expandedIndex];
     if (item && item.exerciseId) renderDemoPreview(previewSlot, item.exerciseId);
   }
-
-  // Toggle select mode
-  container.querySelector('[data-action="toggle-select"]')?.addEventListener('click', () => {
-    state.selectMode = !state.selectMode;
-    state.selected.clear();
-    renderTimeline(container);
-  });
-
-  // Group selected items
-  container.querySelector('[data-action="group-selected"]')?.addEventListener('click', () => {
-    if (state.selected.size < 2) return;
-    const kind = prompt('Group type? (superset, compound, circuit)', 'superset');
-    if (!kind || !['superset', 'compound', 'circuit'].includes(kind)) return;
-    const indices = [...state.selected].sort((a, b) => a - b);
-    const members = indices.map((i) => state.items[i]);
-    const group = { type: 'group', kind, note: '', tags: [], members };
-    // Remove from items (reverse order)
-    for (let j = indices.length - 1; j >= 0; j--) state.items.splice(indices[j], 1);
-    state.items.splice(indices[0], 0, group);
-    state.selectMode = false;
-    state.selected.clear();
-    expandedIndex = -1;
-    renderTimeline(container);
-  });
-
 }
 
 function esc(s) {
