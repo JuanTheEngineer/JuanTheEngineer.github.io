@@ -239,17 +239,15 @@ function timelineCard(item, i) {
   const notePreview = exNote.length > 60 ? exNote.substring(0, 60) + '…' : exNote;
 
   return `<li class="card overflow-hidden ${isSelected ? 'ring-2 ring-brand-500' : ''}" data-item-index="${i}">
-  <div class="flex items-center gap-2 px-4 py-3">
-    ${state.selectMode ? `<input type="checkbox" data-action="select" data-index="${i}" ${isSelected ? 'checked' : ''} class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-brand-500 shrink-0"/>` : ''}
+  <div class="flex items-center gap-1 px-3 py-3">
+    ${state.selectMode ? `<input type="checkbox" data-action="select" data-index="${i}" ${isSelected ? 'checked' : ''} class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-brand-500 shrink-0"/>` : `<span class="drag-handle cursor-grab active:cursor-grabbing p-1 text-slate-600 hover:text-slate-400 touch-manipulation shrink-0" data-drag="${i}"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></svg></span>`}
     <button data-action="toggle-edit" data-index="${i}" class="flex-1 min-w-0 text-left touch-manipulation">
       <p class="text-sm font-medium text-slate-100 truncate">${esc(item.exerciseName)}</p>
       <p class="text-xs text-slate-400 num">${item.reps || '—'} ${item.repUnits || 'reps'} · ${item.sets || '—'} sets${tagStr}</p>
       ${notePreview ? `<p class="text-[11px] text-slate-500 truncate mt-0.5 italic">${esc(notePreview)}</p>` : ''}
     </button>
-    <div class="flex items-center gap-0.5 shrink-0">
-      <button data-action="move-up" data-index="${i}" class="p-1 rounded hover:bg-white/5 text-slate-600 hover:text-slate-300 ${i === 0 ? 'opacity-20 pointer-events-none' : ''}" aria-label="Move up"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg></button>
-      <button data-action="move-down" data-index="${i}" class="p-1 rounded hover:bg-white/5 text-slate-600 hover:text-slate-300 ${i === state.items.length - 1 ? 'opacity-20 pointer-events-none' : ''}" aria-label="Move down"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
-      <button data-action="remove" data-index="${i}" class="p-1 rounded hover:bg-red-500/10 text-slate-600 hover:text-red-400" aria-label="Remove"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
+    <div class="flex items-center shrink-0">
+      <button data-action="remove" data-index="${i}" class="p-1.5 rounded hover:bg-red-500/10 text-slate-600 hover:text-red-400" aria-label="Remove"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
     </div>
   </div>
   ${open ? editForm(item, i) : ''}
@@ -337,35 +335,56 @@ function wireTimelineActions(container) {
   const list = container.querySelector('[data-region="timeline"]');
   if (!list) return;
 
+  // Pointer-event drag reorder (works on touch + mouse)
+  list.querySelectorAll('[data-drag]').forEach((handle) => {
+    handle.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      const srcIndex = +handle.dataset.drag;
+      const srcLi = handle.closest('[data-item-index]');
+      if (!srcLi) return;
+
+      srcLi.classList.add('opacity-40');
+      let lastOverIndex = srcIndex;
+
+      const onMove = (ev) => {
+        const el = document.elementFromPoint(ev.clientX, ev.clientY);
+        const overLi = el?.closest('[data-item-index]');
+        if (overLi) {
+          const overIndex = +overLi.dataset.itemIndex;
+          if (overIndex !== lastOverIndex) {
+            list.querySelectorAll('.border-t-brand-500').forEach((x) => x.classList.remove('border-t-brand-500', 'border-t-2'));
+            overLi.classList.add('border-t-brand-500', 'border-t-2');
+            lastOverIndex = overIndex;
+          }
+        }
+      };
+
+      const onUp = () => {
+        document.removeEventListener('pointermove', onMove);
+        document.removeEventListener('pointerup', onUp);
+        srcLi.classList.remove('opacity-40');
+        list.querySelectorAll('.border-t-brand-500').forEach((x) => x.classList.remove('border-t-brand-500', 'border-t-2'));
+
+        if (lastOverIndex !== srcIndex) {
+          const [moved] = state.items.splice(srcIndex, 1);
+          state.items.splice(lastOverIndex, 0, moved);
+          if (expandedIndex === srcIndex) expandedIndex = lastOverIndex;
+          else if (srcIndex < expandedIndex && lastOverIndex >= expandedIndex) expandedIndex--;
+          else if (srcIndex > expandedIndex && lastOverIndex <= expandedIndex) expandedIndex++;
+          renderTimeline(container);
+        }
+      };
+
+      document.addEventListener('pointermove', onMove);
+      document.addEventListener('pointerup', onUp);
+    });
+  });
+
   // Toggle expand
   list.querySelectorAll('[data-action="toggle-edit"]').forEach((btn) => {
     btn.addEventListener('click', () => {
       expandedIndex = expandedIndex === +btn.dataset.index ? -1 : +btn.dataset.index;
       renderTimeline(container);
-    });
-  });
-
-  // Move up/down
-  list.querySelectorAll('[data-action="move-up"]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const i = +btn.dataset.index;
-      if (i > 0) {
-        [state.items[i - 1], state.items[i]] = [state.items[i], state.items[i - 1]];
-        if (expandedIndex === i) expandedIndex = i - 1;
-        else if (expandedIndex === i - 1) expandedIndex = i;
-        renderTimeline(container);
-      }
-    });
-  });
-  list.querySelectorAll('[data-action="move-down"]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const i = +btn.dataset.index;
-      if (i < state.items.length - 1) {
-        [state.items[i], state.items[i + 1]] = [state.items[i + 1], state.items[i]];
-        if (expandedIndex === i) expandedIndex = i + 1;
-        else if (expandedIndex === i + 1) expandedIndex = i;
-        renderTimeline(container);
-      }
     });
   });
 
