@@ -88,7 +88,7 @@ function renderEmbed(container, source, className, onEmbedPlay) {
   // Embeds (iframes) must have an explicit aspect ratio.
   // Default to portrait 9:16 for "shorts" URLs, otherwise 16:9.
   const isShorts = (source.url || '').includes('/shorts/');
-  const aspectClass = isShorts ? 'aspect-[9/16] max-h-[70vh] mx-auto' : 'aspect-video';
+  const aspectClass = isShorts ? 'aspect-9/16 max-h-[70vh] mx-auto' : 'aspect-video';
   const wrappedClassName = `${aspectClass} w-full rounded-2xl overflow-hidden bg-slate-900`;
 
   // Click-to-play pattern: show thumbnail, load iframe only on tap

@@ -31,7 +31,7 @@ export function renderDemoCarousel(container, demos, options = {}) {
         items.length > 1
           ? `
         <div class="flex items-center justify-center gap-1.5 mt-3" data-region="dots"></div>
-        <p data-region="caption" class="text-xs text-slate-400 text-center px-2 mt-2 leading-relaxed min-h-[1rem]"></p>
+        <p data-region="caption" class="text-xs text-slate-400 text-center px-2 mt-2 leading-relaxed min-h-4"></p>
       `
           : ''
       }
@@ -48,7 +48,7 @@ export function renderDemoCarousel(container, demos, options = {}) {
   // Build slides — each takes full width and snaps to center
   items.forEach((demo, i) => {
     const slide = document.createElement('div');
-    slide.className = 'flex-shrink-0 w-full snap-center';
+    slide.className = 'shrink-0 w-full snap-center';
     slide.dataset.slideIndex = String(i);
     track.appendChild(slide);
   });

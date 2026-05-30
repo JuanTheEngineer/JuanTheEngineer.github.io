@@ -69,7 +69,7 @@ export function renderExercisePicker(container, options = {}) {
           data-input="search"
           type="text"
           placeholder="Search exercises..."
-          class="w-full bg-slate-800/60 border border-slate-700 rounded-xl pl-10 pr-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30 transition-colors"
+          class="w-full bg-slate-800/60 border border-slate-700 rounded-xl pl-10 pr-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-hidden focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30 transition-colors"
         />
       </div>
       <ul data-region="results" class="space-y-1 max-h-[300px] overflow-y-auto"></ul>
@@ -113,7 +113,7 @@ export function renderExercisePicker(container, options = {}) {
           ${
             r.hasDemos
               ? `
-            <span class="text-[10px] text-slate-500 bg-slate-800 px-1.5 py-0.5 rounded">demo</span>
+            <span class="text-[10px] text-slate-500 bg-slate-800 px-1.5 py-0.5 rounded-sm">demo</span>
           `
               : ''
           }

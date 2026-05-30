@@ -46,19 +46,19 @@ export function renderDemoManager(container, demos) {
       <div class="bg-slate-800/40 border border-slate-700/50 rounded-xl p-3 space-y-2.5" data-demo-index="${i}">
         <div class="flex items-center gap-2">
           <span class="text-[10px] text-slate-500 font-bold num">#${i + 1}</span>
-          <select data-demo-field="type" data-index="${i}" class="flex-1 bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-1.5 text-xs text-slate-100 focus:outline-none focus:border-brand-500">
+          <select data-demo-field="type" data-index="${i}" class="flex-1 bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-1.5 text-xs text-slate-100 focus:outline-hidden focus:border-brand-500">
             ${DEMO_TYPES.map((t) => `<option value="${t.value}"${demo.type === t.value ? ' selected' : ''}>${t.label}</option>`).join('')}
           </select>
           <label class="flex items-center gap-1 text-[10px] text-slate-400 cursor-pointer select-none">
             <input type="radio" name="primary-demo" data-index="${i}" ${demo.isPrimary ? 'checked' : ''} class="w-3 h-3 text-brand-500"/>
             <span>Primary</span>
           </label>
-          <button data-action="remove-demo" data-index="${i}" class="p-1 rounded hover:bg-red-500/10 text-slate-500 hover:text-red-400 transition-colors" aria-label="Remove demo">
+          <button data-action="remove-demo" data-index="${i}" class="p-1 rounded-sm hover:bg-red-500/10 text-slate-500 hover:text-red-400 transition-colors" aria-label="Remove demo">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
           </button>
         </div>
         <div>
-          <input data-demo-field="url" data-index="${i}" value="${esc(demo.url || '')}" placeholder="https://..." class="w-full bg-slate-900/60 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500 font-mono"/>
+          <input data-demo-field="url" data-index="${i}" value="${esc(demo.url || '')}" placeholder="https://..." class="w-full bg-slate-900/60 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-100 placeholder:text-slate-600 focus:outline-hidden focus:border-brand-500 font-mono"/>
         </div>
         ${thumb ? `<img src="${thumb}" alt="Thumbnail" class="w-full h-20 object-cover rounded-lg bg-slate-900"/>` : ''}
         ${
@@ -66,15 +66,15 @@ export function renderDemoManager(container, demos) {
             ? `
           <div class="grid grid-cols-2 gap-2">
             <div><label class="text-[10px] text-slate-500 block mb-0.5">Start (sec)</label>
-              <input data-demo-field="startTime" data-index="${i}" type="number" min="0" value="${demo.startTime || 0}" class="w-full bg-slate-900/60 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-100 focus:outline-none focus:border-brand-500 num"/></div>
+              <input data-demo-field="startTime" data-index="${i}" type="number" min="0" value="${demo.startTime || 0}" class="w-full bg-slate-900/60 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-100 focus:outline-hidden focus:border-brand-500 num"/></div>
             <div><label class="text-[10px] text-slate-500 block mb-0.5">End (sec)</label>
-              <input data-demo-field="endTime" data-index="${i}" type="number" min="0" value="${demo.endTime || 0}" class="w-full bg-slate-900/60 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-100 focus:outline-none focus:border-brand-500 num"/></div>
+              <input data-demo-field="endTime" data-index="${i}" type="number" min="0" value="${demo.endTime || 0}" class="w-full bg-slate-900/60 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-100 focus:outline-hidden focus:border-brand-500 num"/></div>
           </div>
         `
             : ''
         }
         <div>
-          <input data-demo-field="notes" data-index="${i}" value="${esc(demo.notes || '')}" placeholder="Notes (optional)" class="w-full bg-slate-900/60 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/>
+          <input data-demo-field="notes" data-index="${i}" value="${esc(demo.notes || '')}" placeholder="Notes (optional)" class="w-full bg-slate-900/60 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-100 placeholder:text-slate-600 focus:outline-hidden focus:border-brand-500"/>
         </div>
       </div>
     `;

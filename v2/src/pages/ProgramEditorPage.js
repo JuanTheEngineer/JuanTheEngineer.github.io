@@ -46,36 +46,36 @@ export function renderProgramEditorPage(container) {
             <div>
               <label class="text-xs text-slate-400 mb-1 block">Title *</label>
               <input data-field="title" type="text" placeholder="e.g. Lower Body Rebuild A"
-                class="w-full bg-slate-800/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30" />
+                class="w-full bg-slate-800/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-hidden focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30" />
               <p data-region="id-preview" class="text-[11px] text-slate-500 mt-1 font-mono"></p>
             </div>
             <div>
               <label class="text-xs text-slate-400 mb-1 block">Requirements</label>
               <input data-field="requirements" type="text" placeholder="e.g. Dumbbells, Bench"
-                class="w-full bg-slate-800/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30" />
+                class="w-full bg-slate-800/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-hidden focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30" />
             </div>
             <button data-action="clone" class="w-full card p-3 text-left active:scale-[0.98] transition-transform mt-2">
               <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0">
+                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center shrink-0">
                   <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
                 </div>
                 <div class="flex-1 min-w-0">
                   <p class="text-sm font-medium text-slate-300">Clone existing program</p>
                   <p class="text-[11px] text-slate-500">Copy as a new program</p>
                 </div>
-                <svg class="w-4 h-4 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                <svg class="w-4 h-4 text-slate-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </div>
             </button>
             <button data-action="edit-program" class="w-full card p-3 text-left active:scale-[0.98] transition-transform mt-2">
               <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0">
+                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center shrink-0">
                   <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                 </div>
                 <div class="flex-1 min-w-0">
                   <p class="text-sm font-medium text-slate-300">Edit existing program</p>
                   <p class="text-[11px] text-slate-500">Modify and re-export</p>
                 </div>
-                <svg class="w-4 h-4 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                <svg class="w-4 h-4 text-slate-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </div>
             </button>
           </div>
@@ -109,7 +109,7 @@ export function renderProgramEditorPage(container) {
       </main>
 
       <!-- Export modal -->
-      <div data-region="export-modal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-end sm:items-center justify-center">
+      <div data-region="export-modal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-end sm:items-center justify-center">
         <div class="bg-slate-900 border border-slate-700 rounded-t-2xl sm:rounded-2xl w-full sm:max-w-lg max-h-[85vh] overflow-y-auto p-6 space-y-4">
           <div class="flex items-center justify-between">
             <h2 class="h-section">Export</h2>
@@ -122,7 +122,7 @@ export function renderProgramEditorPage(container) {
       </div>
 
       <!-- Exercise creation slide-over -->
-      <div data-region="exercise-slideover" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-end sm:items-center justify-center">
+      <div data-region="exercise-slideover" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-end sm:items-center justify-center">
         <div class="bg-slate-900 border border-slate-700 rounded-t-2xl sm:rounded-2xl w-full sm:max-w-lg max-h-[90vh] overflow-y-auto p-6 space-y-5">
           <div class="flex items-center justify-between">
             <h2 class="h-section">New Exercise</h2>
@@ -133,21 +133,21 @@ export function renderProgramEditorPage(container) {
           <div class="space-y-3">
             <div>
               <label class="text-xs text-slate-400 mb-1 block">Exercise Name *</label>
-              <input data-exfield="name" type="text" placeholder="e.g. Backward Treadmill Walk" class="w-full bg-slate-800/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30"/>
+              <input data-exfield="name" type="text" placeholder="e.g. Backward Treadmill Walk" class="w-full bg-slate-800/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-hidden focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30"/>
               <p data-region="ex-id-preview" class="text-[11px] text-slate-500 mt-1 font-mono"></p>
             </div>
             <div class="grid grid-cols-3 gap-2">
               <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Reps</label>
-                <input data-exfield="reps" type="text" placeholder="10" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500"/></div>
+                <input data-exfield="reps" type="text" placeholder="10" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-hidden focus:border-brand-500"/></div>
               <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Sets</label>
-                <input data-exfield="sets" type="text" placeholder="3" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500"/></div>
+                <input data-exfield="sets" type="text" placeholder="3" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-hidden focus:border-brand-500"/></div>
               <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Units</label>
-                <select data-exfield="repUnits" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500">
+                <select data-exfield="repUnits" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-2 text-sm text-slate-100 focus:outline-hidden focus:border-brand-500">
                   <option value="reps">reps</option><option value="secs">secs</option><option value="min">min</option><option value="yd">yd</option><option value="rep">rep</option><option value="reps (each side)">reps (each side)</option><option value="secs (each side)">secs (each side)</option>
                 </select></div>
             </div>
             <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Note</label>
-              <input data-exfield="note" type="text" placeholder="Form cues, weight, etc." class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/></div>
+              <input data-exfield="note" type="text" placeholder="Form cues, weight, etc." class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-hidden focus:border-brand-500"/></div>
           </div>
           <div data-region="demo-manager"></div>
           <div class="flex gap-3 pt-2">
@@ -254,7 +254,7 @@ function timelineCard(item, i) {
       <p class="text-sm font-medium text-slate-100 truncate">${esc(item.exerciseName)}</p>
       <p class="text-xs text-slate-400 num">${item.reps || '—'} ${item.repUnits || 'reps'} · ${item.sets || '—'} sets${tagStr}</p>
     </button>
-    <button data-action="remove" data-index="${i}" class="p-1.5 rounded-lg hover:bg-red-500/10 text-slate-500 hover:text-red-400 transition-colors flex-shrink-0" aria-label="Remove">
+    <button data-action="remove" data-index="${i}" class="p-1.5 rounded-lg hover:bg-red-500/10 text-slate-500 hover:text-red-400 transition-colors shrink-0" aria-label="Remove">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
   </div>
@@ -272,14 +272,14 @@ function groupCard(item, i) {
     </span>
     <button data-action="toggle-edit" data-index="${i}" class="flex-1 min-w-0 text-left touch-manipulation">
       <div class="flex items-center gap-1.5 mb-0.5">
-        <span class="text-[10px] font-bold uppercase tracking-[0.1em] px-1.5 py-0.5 rounded bg-brand-500/20 text-brand-300">${kindLabel}</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded-sm bg-brand-500/20 text-brand-300">${kindLabel}</span>
       </div>
       <p class="text-sm font-medium text-slate-100 truncate">${esc(item.members.map((m) => m.exerciseName).join(' + '))}</p>
     </button>
-    <button data-action="ungroup" data-index="${i}" class="p-1.5 rounded-lg hover:bg-white/5 text-slate-500 hover:text-slate-300 transition-colors flex-shrink-0" aria-label="Ungroup" title="Ungroup">
+    <button data-action="ungroup" data-index="${i}" class="p-1.5 rounded-lg hover:bg-white/5 text-slate-500 hover:text-slate-300 transition-colors shrink-0" aria-label="Ungroup" title="Ungroup">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17H7A2 2 0 017 13h2m6 4h2a2 2 0 002-2v0a2 2 0 00-2-2h-2m-6-4h6"/></svg>
     </button>
-    <button data-action="remove" data-index="${i}" class="p-1.5 rounded-lg hover:bg-red-500/10 text-slate-500 hover:text-red-400 transition-colors flex-shrink-0" aria-label="Remove">
+    <button data-action="remove" data-index="${i}" class="p-1.5 rounded-lg hover:bg-red-500/10 text-slate-500 hover:text-red-400 transition-colors shrink-0" aria-label="Remove">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
   </div>
@@ -294,16 +294,16 @@ function editForm(item, i) {
   <div data-demo-preview="${i}"></div>
   <div class="grid grid-cols-3 gap-2">
     <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Reps</label>
-      <input data-edit="reps" data-index="${i}" value="${esc(item.reps)}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500"/></div>
+      <input data-edit="reps" data-index="${i}" value="${esc(item.reps)}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-hidden focus:border-brand-500"/></div>
     <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Sets</label>
-      <input data-edit="sets" data-index="${i}" value="${esc(item.sets)}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500"/></div>
+      <input data-edit="sets" data-index="${i}" value="${esc(item.sets)}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-hidden focus:border-brand-500"/></div>
     <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Units</label>
-      <select data-edit="repUnits" data-index="${i}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500">
+      <select data-edit="repUnits" data-index="${i}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-2 text-sm text-slate-100 focus:outline-hidden focus:border-brand-500">
         ${UNITS.map((u) => `<option value="${u}"${item.repUnits === u ? ' selected' : ''}>${u}</option>`).join('')}
       </select></div>
   </div>
   <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Note</label>
-    <input data-edit="note" data-index="${i}" value="${esc(item.note)}" placeholder="Form cues, weight, etc." class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/></div>
+    <input data-edit="note" data-index="${i}" value="${esc(item.note)}" placeholder="Form cues, weight, etc." class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-hidden focus:border-brand-500"/></div>
   <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Tags</label>
     <div class="flex gap-2">${TAGS.map(
       (t) => `
@@ -318,12 +318,12 @@ function groupEditForm(item, i) {
   return `<div class="px-4 pb-4 pt-2 space-y-3 border-t border-slate-800 bg-slate-900/40 animate-fade-in">
   <div>
     <label class="text-[10px] text-slate-500 uppercase block mb-1">Group Type</label>
-    <select data-group-edit="kind" data-index="${i}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500">
+    <select data-group-edit="kind" data-index="${i}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-2 text-sm text-slate-100 focus:outline-hidden focus:border-brand-500">
       ${KINDS.map((k) => `<option value="${k}"${item.kind === k ? ' selected' : ''}>${k}</option>`).join('')}
     </select>
   </div>
   <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Note</label>
-    <input data-group-edit="note" data-index="${i}" value="${esc(item.note || '')}" placeholder="Shared note for the group" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/></div>
+    <input data-group-edit="note" data-index="${i}" value="${esc(item.note || '')}" placeholder="Shared note for the group" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-hidden focus:border-brand-500"/></div>
   <div class="space-y-1.5">
     <p class="text-[10px] text-slate-500 uppercase font-semibold">Members</p>
     ${item.members
@@ -737,7 +737,7 @@ function previewItem(item, i) {
     const kindLabel = { superset: 'Super Set', compound: 'Compound', circuit: 'Circuit' }[item.kind] || item.kind;
     return `<li class="card p-4 space-y-2">
       <div class="flex items-center gap-1.5 mb-1">
-        <span class="text-[10px] font-bold uppercase tracking-[0.1em] px-1.5 py-0.5 rounded bg-brand-500/20 text-brand-300">${kindLabel}</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded-sm bg-brand-500/20 text-brand-300">${kindLabel}</span>
       </div>
       <p class="text-sm font-semibold text-slate-100">${esc(item.exercises.map((e) => e.exerciseId).join(' + '))}</p>
       <div class="space-y-1.5 pl-3 border-l-2 border-slate-700">
@@ -755,7 +755,7 @@ function previewItem(item, i) {
     ? item.tags
         .map(
           (t) =>
-            `<span class="text-[10px] font-semibold uppercase tracking-[0.1em] px-2 py-0.5 rounded-md bg-slate-800 text-slate-400">${t}</span>`
+            `<span class="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-md bg-slate-800 text-slate-400">${t}</span>`
         )
         .join('')
     : '';

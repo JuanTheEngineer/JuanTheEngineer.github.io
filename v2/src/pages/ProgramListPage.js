@@ -100,7 +100,7 @@ function programCard(program) {
               <span class="num">${itemCount}</span> exercise${itemCount !== 1 ? 's' : ''}${program.requirements ? ` · ${program.requirements}` : ''}
             </p>
           </div>
-          <svg class="w-5 h-5 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 text-slate-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
           </svg>
         </div>

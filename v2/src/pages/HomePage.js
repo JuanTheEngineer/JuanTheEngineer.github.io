@@ -149,12 +149,12 @@ function recentCard(program) {
             <h3 class="font-semibold tracking-tight truncate">${escapeHtml(program.title)}</h3>
             <div class="flex items-center gap-2 mt-2">
               <div class="flex-1 h-1 bg-slate-800 rounded-full overflow-hidden">
-                <div class="h-full bg-gradient-to-r from-brand-500 to-brand-400 transition-all" style="width: ${pct}%"></div>
+                <div class="h-full bg-linear-to-r from-brand-500 to-brand-400 transition-all" style="width: ${pct}%"></div>
               </div>
               <span class="text-[11px] text-slate-400 num font-medium whitespace-nowrap">${progressLabel}</span>
             </div>
           </div>
-          <svg class="w-5 h-5 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 text-slate-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
           </svg>
         </div>

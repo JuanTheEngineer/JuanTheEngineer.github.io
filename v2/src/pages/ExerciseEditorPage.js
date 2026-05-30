@@ -32,7 +32,7 @@ export function renderExerciseEditorPage(container) {
               <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
             </svg>
             <input data-input="edit-search" type="text" placeholder="Search to edit an existing exercise..."
-              class="w-full bg-slate-800/60 border border-slate-700 rounded-xl pl-10 pr-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30"/>
+              class="w-full bg-slate-800/60 border border-slate-700 rounded-xl pl-10 pr-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-hidden focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30"/>
           </div>
           <ul data-region="edit-results" class="space-y-1 max-h-[200px] overflow-y-auto hidden"></ul>
           <div class="text-center">
@@ -46,21 +46,21 @@ export function renderExerciseEditorPage(container) {
           <div>
             <label class="text-xs text-slate-400 mb-1 block">Name *</label>
             <input data-field="name" type="text" placeholder="e.g. Backward Treadmill Walk"
-              class="w-full bg-slate-800/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30"/>
+              class="w-full bg-slate-800/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-hidden focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30"/>
             <p data-region="id-preview" class="text-[11px] text-slate-500 mt-1 font-mono"></p>
           </div>
           <div class="grid grid-cols-3 gap-2">
             <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Reps</label>
-              <input data-field="reps" type="text" placeholder="10" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500"/></div>
+              <input data-field="reps" type="text" placeholder="10" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-hidden focus:border-brand-500"/></div>
             <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Sets</label>
-              <input data-field="sets" type="text" placeholder="3" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500"/></div>
+              <input data-field="sets" type="text" placeholder="3" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-hidden focus:border-brand-500"/></div>
             <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Units</label>
-              <select data-field="repUnits" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500">
+              <select data-field="repUnits" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-2 text-sm text-slate-100 focus:outline-hidden focus:border-brand-500">
                 <option value="reps">reps</option><option value="secs">secs</option><option value="min">min</option><option value="yd">yd</option><option value="reps (each side)">reps (each side)</option><option value="secs (each side)">secs (each side)</option>
               </select></div>
           </div>
           <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Note</label>
-            <input data-field="note" type="text" placeholder="Form cues, weight, etc." class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/></div>
+            <input data-field="note" type="text" placeholder="Form cues, weight, etc." class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-hidden focus:border-brand-500"/></div>
         </section>
         <section>
           <div data-region="demos"></div>
@@ -70,7 +70,7 @@ export function renderExerciseEditorPage(container) {
         </section>
       </main>
       <!-- Export modal -->
-      <div data-region="export-modal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-end sm:items-center justify-center">
+      <div data-region="export-modal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-end sm:items-center justify-center">
         <div class="bg-slate-900 border border-slate-700 rounded-t-2xl sm:rounded-2xl w-full sm:max-w-lg max-h-[85vh] overflow-y-auto p-6 space-y-4">
           <div class="flex items-center justify-between">
             <h2 class="h-section">Export</h2>
@@ -118,7 +118,7 @@ function wireEditSearch(container) {
           (r) => `
         <li><button data-load-exercise="${r.id}" class="w-full text-left px-3 py-2.5 rounded-lg hover:bg-slate-800/60 active:bg-slate-800 transition-colors flex items-center gap-3 touch-manipulation">
           <span class="text-sm font-medium text-slate-100 truncate">${esc(r.name)}</span>
-          ${r.hasDemos ? '<span class="text-[10px] text-slate-500 bg-slate-800 px-1.5 py-0.5 rounded">demo</span>' : ''}
+          ${r.hasDemos ? '<span class="text-[10px] text-slate-500 bg-slate-800 px-1.5 py-0.5 rounded-sm">demo</span>' : ''}
         </button></li>
       `
         )

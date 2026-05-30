@@ -34,9 +34,9 @@ function renderContent(container, program) {
 
   container.innerHTML = renderShell(
     `
-    <div class="sticky top-[3.75rem] z-10 px-6 pt-2 pb-3 bg-slate-950/85 backdrop-blur-md border-b border-slate-900">
+    <div class="sticky top-15 z-10 px-6 pt-2 pb-3 bg-slate-950/85 backdrop-blur-md border-b border-slate-900">
       <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden">
-        <div data-region="progress-bar" class="h-full bg-gradient-to-r from-brand-500 to-brand-400 transition-all duration-500" style="width: ${(completed.size / total) * 100}%"></div>
+        <div data-region="progress-bar" class="h-full bg-linear-to-r from-brand-500 to-brand-400 transition-all duration-500" style="width: ${(completed.size / total) * 100}%"></div>
       </div>
       <p class="text-[11px] text-slate-500 mt-1.5 font-medium num">
         <span data-region="completed-count">${completed.size}</span> of ${total} complete

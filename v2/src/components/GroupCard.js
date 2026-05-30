@@ -40,11 +40,11 @@ export function createGroupCard(item, state) {
       >
         <div class="flex-1 min-w-0">
           <div class="flex items-center gap-1.5 mb-1.5">
-            <span class="text-[10px] font-bold uppercase tracking-[0.1em] px-2 py-0.5 rounded-md bg-brand-500/20 text-brand-300">${kindLabel}</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-md bg-brand-500/20 text-brand-300">${kindLabel}</span>
             ${(item.tags || [])
               .map(
                 (t) => `
-              <span class="text-[10px] font-semibold uppercase tracking-[0.1em] px-2 py-0.5 rounded-md bg-slate-800 text-slate-400">${escapeHtml(t)}</span>
+              <span class="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-md bg-slate-800 text-slate-400">${escapeHtml(t)}</span>
             `
               )
               .join('')}
@@ -54,14 +54,14 @@ export function createGroupCard(item, state) {
           </h3>
           <p class="text-sm text-slate-400 mt-1 num">${memberCount} exercises</p>
         </div>
-        <svg class="w-4 h-4 text-slate-500 flex-shrink-0 transition-transform ${state.isExpanded ? 'rotate-180' : ''}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <svg class="w-4 h-4 text-slate-500 shrink-0 transition-transform ${state.isExpanded ? 'rotate-180' : ''}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
         </svg>
       </button>
       <button
         data-action="complete"
         aria-label="${state.isCompleted ? 'Mark incomplete' : 'Mark complete'}"
-        class="flex-shrink-0 self-stretch px-4 flex items-center justify-center touch-manipulation active:bg-white/5 transition-colors"
+        class="shrink-0 self-stretch px-4 flex items-center justify-center touch-manipulation active:bg-white/5 transition-colors"
       >
         <span class="w-7 h-7 rounded-full border-2 ${state.isCompleted ? 'bg-brand-500 border-brand-500' : 'border-slate-600'} flex items-center justify-center transition-colors">
           ${
@@ -119,7 +119,7 @@ function memberBlock(member, idx, parentNum) {
   return `
     <div class="bg-slate-800/40 rounded-xl p-3 space-y-3">
       <div class="flex items-center gap-2">
-        <span class="w-6 h-6 rounded-full bg-slate-700 text-slate-300 text-xs font-bold flex items-center justify-center flex-shrink-0 num">${parentNum}${subLetter}</span>
+        <span class="w-6 h-6 rounded-full bg-slate-700 text-slate-300 text-xs font-bold flex items-center justify-center shrink-0 num">${parentNum}${subLetter}</span>
         <h4 class="font-medium text-slate-100 text-sm flex-1 leading-tight tracking-tight">${escapeHtml(member.name)}</h4>
       </div>
       <div data-member-media="${idx}"></div>
