@@ -27,6 +27,74 @@ function deriveId(title) {
 }
 
 export function renderProgramEditorPage(container) {
+  // Show chooser: Start fresh vs Edit existing
+  container.innerHTML = `
+    <div class="flex-1 flex flex-col">
+      <header class="px-6 pt-12 pb-2 flex items-center gap-3 sticky top-0 bg-slate-950/85 backdrop-blur-md z-20 border-b border-slate-900">
+        <button data-action="back" class="btn-ghost -ml-2 px-3" aria-label="Back">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <span class="text-sm font-medium text-slate-400">Programs</span>
+      </header>
+      <main class="flex-1 px-6 pb-24 pt-8">
+        <h1 class="h-page mb-2">Program Studio</h1>
+        <p class="text-sm text-slate-400 mb-8">What would you like to do?</p>
+        <div class="space-y-3">
+          <button data-action="start-fresh" class="w-full card p-5 text-left active:scale-[0.98] transition-transform animate-slide-up">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl bg-brand-500/15 flex items-center justify-center">
+                <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+              </div>
+              <div class="flex-1">
+                <h2 class="font-semibold tracking-tight text-sm">Create new program</h2>
+                <p class="text-xs text-slate-400 mt-0.5">Start from scratch</p>
+              </div>
+            </div>
+          </button>
+          <button data-action="edit-existing" class="w-full card p-5 text-left active:scale-[0.98] transition-transform animate-slide-up" style="animation-delay:50ms">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center">
+                <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+              </div>
+              <div class="flex-1">
+                <h2 class="font-semibold tracking-tight text-sm">Edit existing program</h2>
+                <p class="text-xs text-slate-400 mt-0.5">Modify an existing program</p>
+              </div>
+            </div>
+          </button>
+          <button data-action="clone-existing" class="w-full card p-5 text-left active:scale-[0.98] transition-transform animate-slide-up" style="animation-delay:100ms">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center">
+                <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+              </div>
+              <div class="flex-1">
+                <h2 class="font-semibold tracking-tight text-sm">Clone existing program</h2>
+                <p class="text-xs text-slate-400 mt-0.5">Copy as a starting point for a new one</p>
+              </div>
+            </div>
+          </button>
+        </div>
+      </main>
+    </div>
+  `;
+
+  container.querySelector('[data-action="back"]')?.addEventListener('click', () => navigate('/studio'));
+  container.querySelector('[data-action="start-fresh"]')?.addEventListener('click', () => {
+    launchEditor(container, null, false);
+  });
+  container.querySelector('[data-action="edit-existing"]')?.addEventListener('click', async () => {
+    const match = await pickProgram();
+    if (match) launchEditor(container, match, true);
+  });
+  container.querySelector('[data-action="clone-existing"]')?.addEventListener('click', async () => {
+    const match = await pickProgram();
+    if (match) launchEditor(container, match, false);
+  });
+}
+
+function launchEditor(container, program, keepId) {
   state = createFreshState();
   expandedIndex = -1;
 
@@ -38,10 +106,7 @@ export function renderProgramEditorPage(container) {
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
           </svg>
         </button>
-        <span data-region="header-title" class="text-sm font-medium text-slate-400 flex-1">New Program</span>
-        <button data-action="show-menu" class="btn-ghost px-2" aria-label="More options">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="6" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="18" r="1.5"/></svg>
-        </button>
+        <span data-region="header-title" class="text-sm font-medium text-slate-400 flex-1">${program ? (keepId ? 'Edit: ' + esc(program.title) : 'New (from ' + esc(program.title) + ')') : 'New Program'}</span>
       </header>
       <main class="flex-1 px-6 pb-32 pt-6 space-y-8">
         <section class="space-y-4">
@@ -145,8 +210,12 @@ export function renderProgramEditorPage(container) {
   wirePicker(container);
   renderTimeline(container);
   wireExport(container);
-  wireClone(container);
   wireUnsavedGuard();
+
+  // Pre-load program if editing/cloning
+  if (program) {
+    loadProgramIntoState(container, program, keepId);
+  }
 }
 
 function wireBack(container) {
@@ -481,12 +550,6 @@ function wireTimelineActions(container) {
     renderTimeline(container);
   });
 
-  // Header menu (clone/edit)
-  container.querySelector('[data-action="show-menu"]')?.addEventListener('click', () => {
-    const action = prompt('Choose action:\n1. Clone existing program\n2. Edit existing program\n\nType 1 or 2:');
-    if (action === '1') wireCloneAction(container);
-    else if (action === '2') wireEditAction(container);
-  });
 }
 
 function esc(s) {
@@ -515,24 +578,7 @@ async function renderDemoPreview(slot, exerciseId) {
 
 // --- Clone from existing ---
 
-async function wireClone(container) {
-  // Now triggered from menu — see wireCloneAction/wireEditAction below
-}
-
-async function wireCloneAction(container) {
-  if (state.items.length > 0 && !confirm('This will replace your current timeline. Continue?')) return;
-  const match = await pickProgram();
-  if (!match) return;
-  loadProgramIntoState(container, match, false);
-  alert(`Cloned "${match.title}" — set a new title to continue.`);
-}
-
-async function wireEditAction(container) {
-  if (state.items.length > 0 && !confirm('This will replace your current timeline. Continue?')) return;
-  const match = await pickProgram();
-  if (!match) return;
-  loadProgramIntoState(container, match, true);
-}
+// --- Clone/Edit handled by chooser page above ---
 
 async function pickProgram() {
   const { programs } = await loadWorkouts();
