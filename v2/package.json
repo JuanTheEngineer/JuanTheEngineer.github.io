@@ -10,9 +10,11 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint src/",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "@types/sortablejs": "^1.15.9",
     "autoprefixer": "^10.4.0",
     "eslint": "^10.4.1",
     "eslint-config-prettier": "^10.1.8",
@@ -20,6 +22,7 @@
     "postcss": "^8.4.0",
     "prettier": "^3.8.3",
     "tailwindcss": "^3.4.0",
+    "typescript": "^6.0.3",
     "vite": "^5.4.0"
   },
   "dependencies": {
