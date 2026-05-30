@@ -5,7 +5,7 @@ import { renderDemoCarousel } from './DemoCarousel.js';
 /**
  * Build an exercise card element for a single resolved item.
  *
- * @param {Object} item - { kind: 'single', exercise, reps, sets, repUnits, note, displayName, tags }
+ * @param {Object} item - { kind: 'single', exercise, name, reps, sets, repUnits, note, tags }
  * @param {Object} state - { isCompleted, isExpanded, onToggle, onComplete, index }
  */
 export function createExerciseCard(item, state) {
@@ -14,6 +14,8 @@ export function createExerciseCard(item, state) {
   card.dataset.itemIndex = String(state.index);
 
   const demos = item.exercise?.demos || [];
+  const num = state.index + 1;
+  const title = `${num}. ${item.name}`;
 
   card.innerHTML = `
     <div class="flex items-stretch">
@@ -24,7 +26,7 @@ export function createExerciseCard(item, state) {
         <div class="flex-1 min-w-0">
           ${tagBadges(item.tags)}
           <h3 class="font-semibold tracking-tight leading-tight ${state.isCompleted ? 'line-through text-slate-500' : 'text-slate-100'}">
-            ${escapeHtml(item.displayName)}
+            ${escapeHtml(title)}
           </h3>
           <p class="text-sm text-slate-400 mt-1 num">
             ${formatStats(item)}

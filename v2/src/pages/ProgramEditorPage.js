@@ -201,7 +201,6 @@ function wirePicker(container) {
         sets: exercise.recommendations?.sets || '',
         repUnits: exercise.recommendations?.repUnits || 'reps',
         note: '',
-        displayName: '',
         tags: []
       });
       renderTimeline(container);
@@ -252,7 +251,7 @@ function timelineCard(item, i) {
       <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></svg>
     </span>
     <button data-action="toggle-edit" data-index="${i}" class="flex-1 min-w-0 text-left touch-manipulation">
-      <p class="text-sm font-medium text-slate-100 truncate">${esc(item.displayName || item.exerciseName)}</p>
+      <p class="text-sm font-medium text-slate-100 truncate">${esc(item.exerciseName)}</p>
       <p class="text-xs text-slate-400 num">${item.reps || '—'} ${item.repUnits || 'reps'} · ${item.sets || '—'} sets${tagStr}</p>
     </button>
     <button data-action="remove" data-index="${i}" class="p-1.5 rounded-lg hover:bg-red-500/10 text-slate-500 hover:text-red-400 transition-colors flex-shrink-0" aria-label="Remove">
@@ -275,7 +274,7 @@ function groupCard(item, i) {
       <div class="flex items-center gap-1.5 mb-0.5">
         <span class="text-[10px] font-bold uppercase tracking-[0.1em] px-1.5 py-0.5 rounded bg-brand-500/20 text-brand-300">${kindLabel}</span>
       </div>
-      <p class="text-sm font-medium text-slate-100 truncate">${esc(item.displayName || `${item.members.length} exercises`)}</p>
+      <p class="text-sm font-medium text-slate-100 truncate">${esc(item.members.map((m) => m.exerciseName).join(' + '))}</p>
     </button>
     <button data-action="ungroup" data-index="${i}" class="p-1.5 rounded-lg hover:bg-white/5 text-slate-500 hover:text-slate-300 transition-colors flex-shrink-0" aria-label="Ungroup" title="Ungroup">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17H7A2 2 0 017 13h2m6 4h2a2 2 0 002-2v0a2 2 0 00-2-2h-2m-6-4h6"/></svg>
@@ -303,8 +302,6 @@ function editForm(item, i) {
         ${UNITS.map((u) => `<option value="${u}"${item.repUnits === u ? ' selected' : ''}>${u}</option>`).join('')}
       </select></div>
   </div>
-  <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Display Name</label>
-    <input data-edit="displayName" data-index="${i}" value="${esc(item.displayName)}" placeholder="${esc(item.exerciseName)}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/></div>
   <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Note</label>
     <input data-edit="note" data-index="${i}" value="${esc(item.note)}" placeholder="Form cues, weight, etc." class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/></div>
   <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Tags</label>
@@ -319,13 +316,11 @@ function editForm(item, i) {
 function groupEditForm(item, i) {
   const KINDS = ['superset', 'compound', 'circuit'];
   return `<div class="px-4 pb-4 pt-2 space-y-3 border-t border-slate-800 bg-slate-900/40 animate-fade-in">
-  <div class="grid grid-cols-2 gap-2">
-    <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Group Type</label>
-      <select data-group-edit="kind" data-index="${i}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500">
-        ${KINDS.map((k) => `<option value="${k}"${item.kind === k ? ' selected' : ''}>${k}</option>`).join('')}
-      </select></div>
-    <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Display Name</label>
-      <input data-group-edit="displayName" data-index="${i}" value="${esc(item.displayName || '')}" placeholder="e.g. Posterior Chain Pair" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/></div>
+  <div>
+    <label class="text-[10px] text-slate-500 uppercase block mb-1">Group Type</label>
+    <select data-group-edit="kind" data-index="${i}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-2 text-sm text-slate-100 focus:outline-none focus:border-brand-500">
+      ${KINDS.map((k) => `<option value="${k}"${item.kind === k ? ' selected' : ''}>${k}</option>`).join('')}
+    </select>
   </div>
   <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Note</label>
     <input data-group-edit="note" data-index="${i}" value="${esc(item.note || '')}" placeholder="Shared note for the group" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-brand-500"/></div>
@@ -334,7 +329,7 @@ function groupEditForm(item, i) {
     ${item.members
       .map(
         (m, mi) => `
-      <div class="bg-slate-800/40 rounded-lg px-3 py-2 text-xs text-slate-300">${mi + 1}. ${esc(m.exerciseName)} — ${m.reps || '—'} ${m.repUnits || 'reps'} · ${m.sets || '—'} sets</div>
+      <div class="bg-slate-800/40 rounded-lg px-3 py-2 text-xs text-slate-300">${String.fromCharCode(97 + mi)}. ${esc(m.exerciseName)} — ${m.reps || '—'} ${m.repUnits || 'reps'} · ${m.sets || '—'} sets</div>
     `
       )
       .join('')}
@@ -408,7 +403,7 @@ function wireTimelineActions(container) {
     el.addEventListener('change', update);
   });
 
-  // Group edits (kind, displayName, note)
+  // Group edits (kind, note)
   list.querySelectorAll('[data-group-edit]').forEach((el) => {
     const update = () => {
       state.items[+el.dataset.index][el.dataset.groupEdit] = el.value;
@@ -453,7 +448,7 @@ function wireTimelineActions(container) {
     // Take last 2 singles and group them
     const lastTwo = singles.slice(-2);
     const members = lastTwo.map((i) => state.items[i]);
-    const group = { type: 'group', kind, displayName: '', note: '', tags: [], members };
+    const group = { type: 'group', kind, note: '', tags: [], members };
     // Remove from items (reverse order to preserve indices)
     for (let j = lastTwo.length - 1; j >= 0; j--) state.items.splice(lastTwo[j], 1);
     // Insert group at the position of the first removed item
@@ -527,7 +522,6 @@ function loadProgramIntoState(container, match, keepId) {
       return {
         type: 'group',
         kind: item.kind,
-        displayName: item.displayName || '',
         note: item.note || '',
         tags: item.tags || [],
         members: item.exercises.map((m) => ({
@@ -538,7 +532,6 @@ function loadProgramIntoState(container, match, keepId) {
           sets: m.sets || '',
           repUnits: m.repUnits || 'reps',
           note: m.note || '',
-          displayName: '',
           tags: []
         }))
       };
@@ -546,12 +539,11 @@ function loadProgramIntoState(container, match, keepId) {
     return {
       type: 'single',
       exerciseId: item.exerciseId,
-      exerciseName: item.displayName || item.exerciseId,
+      exerciseName: item.exerciseId,
       reps: item.reps || '',
       sets: item.sets || '',
       repUnits: item.repUnits || 'reps',
       note: item.note || '',
-      displayName: item.displayName || '',
       tags: item.tags || []
     };
   });
@@ -668,7 +660,6 @@ function openExerciseSlideOver(container) {
         sets: sets || '',
         repUnits: repUnits || 'reps',
         note: '',
-        displayName: '',
         tags: []
       });
 
@@ -748,7 +739,7 @@ function previewItem(item, i) {
       <div class="flex items-center gap-1.5 mb-1">
         <span class="text-[10px] font-bold uppercase tracking-[0.1em] px-1.5 py-0.5 rounded bg-brand-500/20 text-brand-300">${kindLabel}</span>
       </div>
-      <p class="text-sm font-semibold text-slate-100">${esc(item.displayName || `${item.exercises.length} exercises`)}</p>
+      <p class="text-sm font-semibold text-slate-100">${esc(item.exercises.map((e) => e.exerciseId).join(' + '))}</p>
       <div class="space-y-1.5 pl-3 border-l-2 border-slate-700">
         ${item.exercises
           .map(
@@ -770,7 +761,7 @@ function previewItem(item, i) {
     : '';
   return `<li class="card px-4 py-3">
     ${tags ? `<div class="flex gap-1.5 mb-1">${tags}</div>` : ''}
-    <p class="text-sm font-semibold text-slate-100">${esc(item.displayName || item.exerciseId)}</p>
+    <p class="text-sm font-semibold text-slate-100">${esc(item.exerciseId)}</p>
     <p class="text-xs text-slate-400 num mt-0.5">${item.reps || '—'} ${item.repUnits || 'reps'} · ${item.sets || '—'} sets</p>
     ${item.note ? `<p class="text-xs text-slate-500 mt-1">${esc(item.note)}</p>` : ''}
   </li>`;
@@ -848,7 +839,6 @@ function buildProgramExport() {
           return out;
         })
       };
-      if (item.displayName) group.displayName = item.displayName;
       if (item.note) group.note = item.note;
       if (item.tags?.length) group.tags = item.tags;
       return group;
@@ -858,7 +848,6 @@ function buildProgramExport() {
     if (item.sets) out.sets = item.sets;
     if (item.repUnits && item.repUnits !== 'reps') out.repUnits = item.repUnits;
     if (item.note) out.note = item.note;
-    if (item.displayName) out.displayName = item.displayName;
     if (item.tags.length) out.tags = item.tags;
     return out;
   });

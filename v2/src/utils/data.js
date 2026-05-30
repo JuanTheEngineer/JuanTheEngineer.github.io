@@ -59,19 +59,18 @@ export async function getResolvedProgram(id) {
     return {
       kind: 'single',
       exerciseId: item.exerciseId,
-      exercise, // full canonical data (or null if unresolved)
+      exercise,
+      name: exercise?.name || item.exerciseId,
       reps: item.reps ?? exercise?.recommendations?.reps,
       sets: item.sets ?? exercise?.recommendations?.sets,
       repUnits: item.repUnits ?? exercise?.recommendations?.repUnits,
       note: item.note ?? exercise?.recommendations?.note,
-      displayName: item.displayName || exercise?.name || item.exerciseId,
       tags: item.tags || []
     };
   };
 
   const resolveGroup = (item) => ({
     kind: item.kind,
-    displayName: item.displayName,
     note: item.note,
     tags: item.tags || [],
     exercises: item.exercises.map((member) => {
@@ -79,11 +78,11 @@ export async function getResolvedProgram(id) {
       return {
         exerciseId: member.exerciseId,
         exercise,
+        name: exercise?.name || member.exerciseId,
         reps: member.reps ?? exercise?.recommendations?.reps,
         sets: member.sets ?? exercise?.recommendations?.sets,
         repUnits: member.repUnits ?? exercise?.recommendations?.repUnits,
-        note: member.note ?? exercise?.recommendations?.note,
-        displayName: exercise?.name || member.exerciseId
+        note: member.note ?? exercise?.recommendations?.note
       };
     })
   });

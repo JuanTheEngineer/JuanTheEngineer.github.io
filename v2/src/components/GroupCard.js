@@ -17,7 +17,7 @@ const KIND_DESCRIPTIONS = {
 /**
  * Build a group card for a resolved group item.
  *
- * @param {Object} item - { kind, exercises[], displayName?, note?, tags? }
+ * @param {Object} item - { kind, exercises[], note?, tags? }
  * @param {Object} state - { isExpanded, isCompleted, onToggle, onComplete, index }
  */
 export function createGroupCard(item, state) {
@@ -28,6 +28,9 @@ export function createGroupCard(item, state) {
   const kindLabel = KIND_LABELS[item.kind] || item.kind;
   const kindDesc = KIND_DESCRIPTIONS[item.kind] || '';
   const memberCount = item.exercises.length;
+  const num = state.index + 1;
+  const memberNames = item.exercises.map((m) => m.name).join(' + ');
+  const title = `${num}. ${memberNames}`;
 
   card.innerHTML = `
     <div class="flex items-stretch">
@@ -47,7 +50,7 @@ export function createGroupCard(item, state) {
               .join('')}
           </div>
           <h3 class="font-semibold tracking-tight leading-tight ${state.isCompleted ? 'line-through text-slate-500' : 'text-slate-100'}">
-            ${escapeHtml(item.displayName || `${kindLabel}: ${memberCount} exercises`)}
+            ${escapeHtml(title)}
           </h3>
           <p class="text-sm text-slate-400 mt-1 num">${memberCount} exercises</p>
         </div>
@@ -86,7 +89,7 @@ export function createGroupCard(item, state) {
             : ''
         }
         <div class="space-y-2">
-          ${item.exercises.map((member, i) => memberBlock(member, i)).join('')}
+          ${item.exercises.map((member, i) => memberBlock(member, i, num)).join('')}
         </div>
       </div>
     </div>
@@ -111,12 +114,13 @@ export function createGroupCard(item, state) {
   return card;
 }
 
-function memberBlock(member, idx) {
+function memberBlock(member, idx, parentNum) {
+  const subLetter = String.fromCharCode(97 + idx); // a, b, c...
   return `
     <div class="bg-slate-800/40 rounded-xl p-3 space-y-3">
       <div class="flex items-center gap-2">
-        <span class="w-6 h-6 rounded-full bg-slate-700 text-slate-300 text-xs font-bold flex items-center justify-center flex-shrink-0 num">${idx + 1}</span>
-        <h4 class="font-medium text-slate-100 text-sm flex-1 leading-tight tracking-tight">${escapeHtml(member.displayName)}</h4>
+        <span class="w-6 h-6 rounded-full bg-slate-700 text-slate-300 text-xs font-bold flex items-center justify-center flex-shrink-0 num">${parentNum}${subLetter}</span>
+        <h4 class="font-medium text-slate-100 text-sm flex-1 leading-tight tracking-tight">${escapeHtml(member.name)}</h4>
       </div>
       <div data-member-media="${idx}"></div>
       <div class="flex gap-2">
