@@ -1181,7 +1181,7 @@
       "requirements": "Equipment: Dumbbells, Weight Plates (20lb, 35lb, 40lb, 75lb), Exercise Band",
       "items": [
         {
-          "exerciseId": "split-squat-hold-with-hands-overhead",
+          "exerciseId": "split-squat-hold-hands-overhead",
           "reps": "30",
           "sets": "2",
           "repUnits": "secs",
@@ -1223,7 +1223,7 @@
           "note": "Use 75lb. Tempo: slow down, fast up."
         },
         {
-          "exerciseId": "dumbbell-chest-press",
+          "exerciseId": "db-chest-press",
           "reps": "10",
           "sets": "3",
           "repUnits": "reps",
@@ -1293,7 +1293,7 @@
           "note": "From 12in box."
         },
         {
-          "exerciseId": "trapbar-deadlift",
+          "exerciseId": "trapbardeadlift",
           "reps": "6",
           "sets": "3",
           "repUnits": "reps",

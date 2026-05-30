@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-05-29T05:21:11.729Z",
+  "lastUpdated": "2026-05-30T04:16:00.137Z",
   "exercises": [
     {
       "id": "1a-db-row",
@@ -1424,17 +1424,6 @@
         "sets": "2",
         "repUnits": "reps",
         "note": "Use 2x40lb. Option to warm up with a lighter weight."
-      }
-    },
-    {
-      "id": "dumbbell-chest-press",
-      "name": "Dumbbell Chest Press",
-      "demos": [],
-      "recommendations": {
-        "reps": "10",
-        "sets": "3",
-        "repUnits": "reps",
-        "note": "Use 2x35lb. Tempo: slow down, fast up."
       }
     },
     {
@@ -4131,17 +4120,6 @@
       ]
     },
     {
-      "id": "split-squat-hold-with-hands-overhead",
-      "name": "Split Squat Hold with Hands Overhead",
-      "demos": [],
-      "recommendations": {
-        "reps": "30",
-        "sets": "2",
-        "repUnits": "secs",
-        "note": "Keep pelvis level, stack torso over the back knee. Use 2x20lb weights."
-      }
-    },
-    {
       "id": "split-squat-hold-hands-overhead",
       "name": "Split Squat Hold, Hands Overhead",
       "demos": [],
@@ -4519,17 +4497,6 @@
         "sets": "4",
         "repUnits": "reps",
         "note": "Rate of Perceived Exertion: 8/10"
-      }
-    },
-    {
-      "id": "trapbar-deadlift",
-      "name": "Trapbar Deadlift",
-      "demos": [],
-      "recommendations": {
-        "reps": "6",
-        "sets": "3",
-        "repUnits": "reps",
-        "note": "Use 130lb (or available weight). Tempo: slow down, fast up."
       }
     },
     {
