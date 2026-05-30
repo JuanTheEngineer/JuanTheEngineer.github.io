@@ -13,7 +13,9 @@ function createFreshState() {
   return {
     meta: { title: '', id: '', requirements: '', description: '', difficulty: '', duration: '' },
     items: [],
-    newExercises: []
+    newExercises: [],
+    selectMode: false,
+    selected: new Set()
   };
 }
 
@@ -36,7 +38,10 @@ export function renderProgramEditorPage(container) {
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
           </svg>
         </button>
-        <span class="text-sm font-medium text-slate-400">New Program</span>
+        <span data-region="header-title" class="text-sm font-medium text-slate-400 flex-1">New Program</span>
+        <button data-action="show-menu" class="btn-ghost px-2" aria-label="More options">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="6" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="18" r="1.5"/></svg>
+        </button>
       </header>
       <main class="flex-1 px-6 pb-32 pt-6 space-y-8">
         <section class="space-y-4">
@@ -53,37 +58,14 @@ export function renderProgramEditorPage(container) {
               <input data-field="requirements" type="text" placeholder="e.g. Dumbbells, Bench"
                 class="w-full bg-slate-800/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-hidden focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30" />
             </div>
-            <button data-action="clone" class="w-full card p-3 text-left active:scale-[0.98] transition-transform mt-2">
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center shrink-0">
-                  <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="text-sm font-medium text-slate-300">Clone existing program</p>
-                  <p class="text-[11px] text-slate-500">Copy as a new program</p>
-                </div>
-                <svg class="w-4 h-4 text-slate-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-              </div>
-            </button>
-            <button data-action="edit-program" class="w-full card p-3 text-left active:scale-[0.98] transition-transform mt-2">
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center shrink-0">
-                  <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="text-sm font-medium text-slate-300">Edit existing program</p>
-                  <p class="text-[11px] text-slate-500">Modify and re-export</p>
-                </div>
-                <svg class="w-4 h-4 text-slate-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-              </div>
-            </button>
           </div>
         </section>
         <section class="space-y-3">
           <div class="flex items-center justify-between">
             <h2 class="eyebrow">Exercises</h2>
-            <div class="flex items-center gap-3">
-              <button data-action="group-selected" class="hidden text-[11px] text-brand-400 hover:text-brand-300 font-medium transition-colors">Group as…</button>
+            <div class="flex items-center gap-2">
+              <button data-action="toggle-select" class="hidden text-[11px] px-2 py-1 rounded-full bg-slate-800 text-slate-400 hover:text-brand-400 transition-colors">Select to group</button>
+              <button data-action="group-selected" class="hidden text-[11px] px-2 py-1 rounded-full bg-brand-500 text-white font-medium">Group selected</button>
               <span data-region="item-count" class="text-[11px] text-slate-500 num">0 items</span>
             </div>
           </div>
@@ -196,6 +178,7 @@ function wirePicker(container) {
         type: 'single',
         exerciseId: exercise.id,
         exerciseName: exercise.name,
+        exerciseNote: exercise.recommendations?.note || '',
         reps: exercise.recommendations?.reps || '',
         sets: exercise.recommendations?.sets || '',
         repUnits: exercise.recommendations?.repUnits || 'reps',
@@ -217,6 +200,7 @@ function renderTimeline(container) {
   const empty = container.querySelector('[data-region="empty-timeline"]');
   const count = container.querySelector('[data-region="item-count"]');
   const exportSection = container.querySelector('[data-region="export-section"]');
+  const selectBtn = container.querySelector('[data-action="toggle-select"]');
   const groupBtn = container.querySelector('[data-action="group-selected"]');
   if (!list) return;
   count.textContent = `${state.items.length} item${state.items.length !== 1 ? 's' : ''}`;
@@ -224,15 +208,20 @@ function renderTimeline(container) {
     list.classList.add('hidden');
     empty.classList.remove('hidden');
     exportSection?.classList.add('hidden');
+    selectBtn?.classList.add('hidden');
     groupBtn?.classList.add('hidden');
     return;
   }
   list.classList.remove('hidden');
   empty.classList.add('hidden');
   exportSection?.classList.toggle('hidden', !state.meta.title.trim());
-  // Show group button when 2+ singles exist
+
+  // Show select button when 2+ singles exist
   const singleCount = state.items.filter((i) => i.type === 'single').length;
-  groupBtn?.classList.toggle('hidden', singleCount < 2);
+  selectBtn?.classList.toggle('hidden', singleCount < 2);
+  // Show group button only in select mode with 2+ selected
+  groupBtn?.classList.toggle('hidden', !state.selectMode || state.selected.size < 2);
+
   list.innerHTML = state.items.map((item, i) => timelineCard(item, i)).join('');
   wireTimelineActions(container);
 }
@@ -241,21 +230,27 @@ function timelineCard(item, i) {
   const open = i === expandedIndex;
   const tagStr = item.tags.length ? ' · ' + item.tags.join(', ') : '';
   const isGroup = item.type === 'group';
+  const isSelected = state.selected?.has(i);
 
   if (isGroup) return groupCard(item, i);
 
-  return `<li class="card overflow-hidden" data-item-index="${i}">
+  // Show truncated note from canonical exercise recommendations if available
+  const exNote = item.exerciseNote || '';
+  const notePreview = exNote.length > 60 ? exNote.substring(0, 60) + '…' : exNote;
+
+  return `<li class="card overflow-hidden ${isSelected ? 'ring-2 ring-brand-500' : ''}" data-item-index="${i}">
   <div class="flex items-center gap-2 px-4 py-3">
-    <span class="drag-handle cursor-grab active:cursor-grabbing p-1 text-slate-600 hover:text-slate-400 touch-manipulation">
-      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></svg>
-    </span>
+    ${state.selectMode ? `<input type="checkbox" data-action="select" data-index="${i}" ${isSelected ? 'checked' : ''} class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-brand-500 shrink-0"/>` : ''}
     <button data-action="toggle-edit" data-index="${i}" class="flex-1 min-w-0 text-left touch-manipulation">
       <p class="text-sm font-medium text-slate-100 truncate">${esc(item.exerciseName)}</p>
       <p class="text-xs text-slate-400 num">${item.reps || '—'} ${item.repUnits || 'reps'} · ${item.sets || '—'} sets${tagStr}</p>
+      ${notePreview ? `<p class="text-[11px] text-slate-500 truncate mt-0.5 italic">${esc(notePreview)}</p>` : ''}
     </button>
-    <button data-action="remove" data-index="${i}" class="p-1.5 rounded-lg hover:bg-red-500/10 text-slate-500 hover:text-red-400 transition-colors shrink-0" aria-label="Remove">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-    </button>
+    <div class="flex items-center gap-0.5 shrink-0">
+      <button data-action="move-up" data-index="${i}" class="p-1 rounded hover:bg-white/5 text-slate-600 hover:text-slate-300 ${i === 0 ? 'opacity-20 pointer-events-none' : ''}" aria-label="Move up"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg></button>
+      <button data-action="move-down" data-index="${i}" class="p-1 rounded hover:bg-white/5 text-slate-600 hover:text-slate-300 ${i === state.items.length - 1 ? 'opacity-20 pointer-events-none' : ''}" aria-label="Move down"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+      <button data-action="remove" data-index="${i}" class="p-1 rounded hover:bg-red-500/10 text-slate-600 hover:text-red-400" aria-label="Remove"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
+    </div>
   </div>
   ${open ? editForm(item, i) : ''}
 </li>`;
@@ -342,47 +337,35 @@ function wireTimelineActions(container) {
   const list = container.querySelector('[data-region="timeline"]');
   if (!list) return;
 
-  // Native HTML5 drag-and-drop
-  list.querySelectorAll('[data-item-index]').forEach((li) => {
-    const handle = li.querySelector('.drag-handle');
-    li.setAttribute('draggable', 'true');
-
-    handle?.addEventListener('pointerdown', () => li.classList.add('dragging'));
-    li.addEventListener('dragstart', (e) => {
-      dragSrcIndex = +li.dataset.itemIndex;
-      e.dataTransfer.effectAllowed = 'move';
-      li.classList.add('opacity-30');
-    });
-    li.addEventListener('dragend', () => {
-      li.classList.remove('opacity-30', 'dragging');
-      list.querySelectorAll('.drag-over').forEach((el) => el.classList.remove('drag-over'));
-    });
-    li.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      e.dataTransfer.dropEffect = 'move';
-      li.classList.add('drag-over');
-    });
-    li.addEventListener('dragleave', () => li.classList.remove('drag-over'));
-    li.addEventListener('drop', (e) => {
-      e.preventDefault();
-      li.classList.remove('drag-over');
-      const newIndex = +li.dataset.itemIndex;
-      if (dragSrcIndex === null || dragSrcIndex === newIndex) return;
-      const [moved] = state.items.splice(dragSrcIndex, 1);
-      state.items.splice(newIndex, 0, moved);
-      if (expandedIndex === dragSrcIndex) expandedIndex = newIndex;
-      else if (dragSrcIndex < expandedIndex && newIndex >= expandedIndex) expandedIndex--;
-      else if (dragSrcIndex > expandedIndex && newIndex <= expandedIndex) expandedIndex++;
-      dragSrcIndex = null;
-      renderTimeline(container);
-    });
-  });
-
   // Toggle expand
   list.querySelectorAll('[data-action="toggle-edit"]').forEach((btn) => {
     btn.addEventListener('click', () => {
       expandedIndex = expandedIndex === +btn.dataset.index ? -1 : +btn.dataset.index;
       renderTimeline(container);
+    });
+  });
+
+  // Move up/down
+  list.querySelectorAll('[data-action="move-up"]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const i = +btn.dataset.index;
+      if (i > 0) {
+        [state.items[i - 1], state.items[i]] = [state.items[i], state.items[i - 1]];
+        if (expandedIndex === i) expandedIndex = i - 1;
+        else if (expandedIndex === i - 1) expandedIndex = i;
+        renderTimeline(container);
+      }
+    });
+  });
+  list.querySelectorAll('[data-action="move-down"]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const i = +btn.dataset.index;
+      if (i < state.items.length - 1) {
+        [state.items[i], state.items[i + 1]] = [state.items[i + 1], state.items[i]];
+        if (expandedIndex === i) expandedIndex = i + 1;
+        else if (expandedIndex === i + 1) expandedIndex = i;
+        renderTimeline(container);
+      }
     });
   });
 
@@ -393,6 +376,7 @@ function wireTimelineActions(container) {
       state.items.splice(i, 1);
       if (expandedIndex === i) expandedIndex = -1;
       else if (expandedIndex > i) expandedIndex--;
+      state.selected.delete(i);
       renderTimeline(container);
     });
   });
@@ -403,7 +387,6 @@ function wireTimelineActions(container) {
       const i = +btn.dataset.index;
       const group = state.items[i];
       if (group.type !== 'group') return;
-      // Replace group with its members as singles
       const singles = group.members.map((m) => ({ ...m, type: 'single' }));
       state.items.splice(i, 1, ...singles);
       expandedIndex = -1;
@@ -411,20 +394,28 @@ function wireTimelineActions(container) {
     });
   });
 
+  // Select checkboxes (for grouping)
+  list.querySelectorAll('[data-action="select"]').forEach((cb) => {
+    cb.addEventListener('change', () => {
+      const i = +cb.dataset.index;
+      if (cb.checked) state.selected.add(i);
+      else state.selected.delete(i);
+      // Update group button visibility
+      const groupBtn = container.querySelector('[data-action="group-selected"]');
+      groupBtn?.classList.toggle('hidden', state.selected.size < 2);
+    });
+  });
+
   // Inline field edits
   list.querySelectorAll('[data-edit]').forEach((el) => {
-    const update = () => {
-      state.items[+el.dataset.index][el.dataset.edit] = el.value;
-    };
+    const update = () => { state.items[+el.dataset.index][el.dataset.edit] = el.value; };
     el.addEventListener('input', update);
     el.addEventListener('change', update);
   });
 
   // Group edits (kind, note)
   list.querySelectorAll('[data-group-edit]').forEach((el) => {
-    const update = () => {
-      state.items[+el.dataset.index][el.dataset.groupEdit] = el.value;
-    };
+    const update = () => { state.items[+el.dataset.index][el.dataset.groupEdit] = el.value; };
     el.addEventListener('input', update);
     el.addEventListener('change', update);
   });
@@ -434,11 +425,8 @@ function wireTimelineActions(container) {
     btn.addEventListener('click', () => {
       const item = state.items[+btn.dataset.index];
       const tag = btn.dataset.pill;
-      if (item.tags.includes(tag)) {
-        item.tags = item.tags.filter((t) => t !== tag);
-      } else {
-        item.tags.push(tag);
-      }
+      if (item.tags.includes(tag)) item.tags = item.tags.filter((t) => t !== tag);
+      else item.tags.push(tag);
       renderTimeline(container);
     });
   });
@@ -447,31 +435,38 @@ function wireTimelineActions(container) {
   const previewSlot = list.querySelector(`[data-demo-preview="${expandedIndex}"]`);
   if (previewSlot && expandedIndex >= 0) {
     const item = state.items[expandedIndex];
-    if (item && item.exerciseId) {
-      renderDemoPreview(previewSlot, item.exerciseId);
-    }
+    if (item && item.exerciseId) renderDemoPreview(previewSlot, item.exerciseId);
   }
 
-  // Group button (shows a prompt for kind selection)
+  // Toggle select mode
+  container.querySelector('[data-action="toggle-select"]')?.addEventListener('click', () => {
+    state.selectMode = !state.selectMode;
+    state.selected.clear();
+    renderTimeline(container);
+  });
+
+  // Group selected items
   container.querySelector('[data-action="group-selected"]')?.addEventListener('click', () => {
-    // Group the last 2 ungrouped singles (simple approach)
-    const singles = state.items.reduce((acc, item, i) => {
-      if (item.type === 'single') acc.push(i);
-      return acc;
-    }, []);
-    if (singles.length < 2) return;
+    if (state.selected.size < 2) return;
     const kind = prompt('Group type? (superset, compound, circuit)', 'superset');
     if (!kind || !['superset', 'compound', 'circuit'].includes(kind)) return;
-    // Take last 2 singles and group them
-    const lastTwo = singles.slice(-2);
-    const members = lastTwo.map((i) => state.items[i]);
+    const indices = [...state.selected].sort((a, b) => a - b);
+    const members = indices.map((i) => state.items[i]);
     const group = { type: 'group', kind, note: '', tags: [], members };
-    // Remove from items (reverse order to preserve indices)
-    for (let j = lastTwo.length - 1; j >= 0; j--) state.items.splice(lastTwo[j], 1);
-    // Insert group at the position of the first removed item
-    state.items.splice(lastTwo[0], 0, group);
+    // Remove from items (reverse order)
+    for (let j = indices.length - 1; j >= 0; j--) state.items.splice(indices[j], 1);
+    state.items.splice(indices[0], 0, group);
+    state.selectMode = false;
+    state.selected.clear();
     expandedIndex = -1;
     renderTimeline(container);
+  });
+
+  // Header menu (clone/edit)
+  container.querySelector('[data-action="show-menu"]')?.addEventListener('click', () => {
+    const action = prompt('Choose action:\n1. Clone existing program\n2. Edit existing program\n\nType 1 or 2:');
+    if (action === '1') wireCloneAction(container);
+    else if (action === '2') wireEditAction(container);
   });
 }
 
@@ -502,20 +497,22 @@ async function renderDemoPreview(slot, exerciseId) {
 // --- Clone from existing ---
 
 async function wireClone(container) {
-  container.querySelector('[data-action="clone"]')?.addEventListener('click', async () => {
-    if (state.items.length > 0 && !confirm('This will replace your current timeline. Continue?')) return;
-    const match = await pickProgram();
-    if (!match) return;
-    loadProgramIntoState(container, match, false);
-    alert(`Cloned "${match.title}" — set a new title to continue.`);
-  });
+  // Now triggered from menu — see wireCloneAction/wireEditAction below
+}
 
-  container.querySelector('[data-action="edit-program"]')?.addEventListener('click', async () => {
-    if (state.items.length > 0 && !confirm('This will replace your current timeline. Continue?')) return;
-    const match = await pickProgram();
-    if (!match) return;
-    loadProgramIntoState(container, match, true);
-  });
+async function wireCloneAction(container) {
+  if (state.items.length > 0 && !confirm('This will replace your current timeline. Continue?')) return;
+  const match = await pickProgram();
+  if (!match) return;
+  loadProgramIntoState(container, match, false);
+  alert(`Cloned "${match.title}" — set a new title to continue.`);
+}
+
+async function wireEditAction(container) {
+  if (state.items.length > 0 && !confirm('This will replace your current timeline. Continue?')) return;
+  const match = await pickProgram();
+  if (!match) return;
+  loadProgramIntoState(container, match, true);
 }
 
 async function pickProgram() {
@@ -557,6 +554,7 @@ function loadProgramIntoState(container, match, keepId) {
       type: 'single',
       exerciseId: item.exerciseId,
       exerciseName: item.exerciseId,
+      exerciseNote: item.note || '',
       reps: item.reps || '',
       sets: item.sets || '',
       repUnits: item.repUnits || 'reps',
@@ -574,7 +572,7 @@ function loadProgramIntoState(container, match, keepId) {
 
   // Update header
   if (keepId) {
-    container.querySelector('header span').textContent = `Edit: ${match.title}`;
+    container.querySelector('[data-region="header-title"]').textContent = `Edit: ${match.title}`;
   }
 
   renderTimeline(container);
@@ -673,6 +671,7 @@ function openExerciseSlideOver(container) {
         type: 'single',
         exerciseId: id,
         exerciseName: name,
+        exerciseNote: note || '',
         reps: reps || '',
         sets: sets || '',
         repUnits: repUnits || 'reps',
