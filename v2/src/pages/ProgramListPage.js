@@ -96,17 +96,9 @@ function programCard(program) {
         <div class="flex items-center gap-3">
           <div class="flex-1 min-w-0">
             <h3 class="font-semibold tracking-tight truncate">${program.title}</h3>
-            <div class="flex items-center gap-2 mt-1 text-xs text-slate-400">
-              <span class="num">${itemCount} item${itemCount !== 1 ? 's' : ''}</span>
-              ${
-                program.requirements
-                  ? `
-                <span class="text-slate-600">•</span>
-                <span class="truncate">${program.requirements}</span>
-              `
-                  : ''
-              }
-            </div>
+            <p class="text-xs text-slate-400 mt-1 truncate">
+              <span class="num">${itemCount}</span> exercise${itemCount !== 1 ? 's' : ''}${program.requirements ? ` · ${program.requirements}` : ''}
+            </p>
           </div>
           <svg class="w-5 h-5 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
