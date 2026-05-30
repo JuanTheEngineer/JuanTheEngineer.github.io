@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "lint": "eslint src/",
     "format": "prettier --write src/",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node scripts/smoke-test.js"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.0",
