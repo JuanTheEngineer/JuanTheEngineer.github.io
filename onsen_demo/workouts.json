@@ -1027,6 +1027,7 @@
           "gif": "",
           "reps": "4",
           "sets": "rounds",
+          "repUnits": "reps",
           "note": "Perform running gear drills."
         },
         {
@@ -1105,6 +1106,7 @@
           "gif": "",
           "reps": "4",
           "sets": "rounds",
+          "repUnits": "reps",
           "note": "Perform running gear drills."
         },
         {

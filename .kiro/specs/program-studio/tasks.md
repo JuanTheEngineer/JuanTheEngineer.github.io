@@ -22,10 +22,10 @@ Build the Program Studio as 12 incremental commits following the 150-150-CR rule
 
 ## Tasks
 
-- [ ] 1. Studio route + chooser page: Register /#/studio route in main.js, add "Create" button to HomePage, render StudioPage with "New Program" / "New Exercise" cards, wire navigation. ~80 lines. Implements FR-1, FR-11 entry point.
-- [ ] 2. Exercise search component (ExercisePicker): Build search index from exercises.json (name + aliases + id tokens), implement fuzzy scoring, render search input + results list, "No results" state with "+ Create new exercise" button. ~120 lines. Implements FR-3.
-- [ ] 3. Program metadata form + timeline shell: ProgramEditor component with meta form (title, requirements, description, difficulty, duration), auto-derive id, empty timeline placeholder, wire ExercisePicker so clicking a result calls addItem(). ~130 lines. Implements FR-2, FR-4.
-- [ ] 4. Per-item editing + timeline rendering: Render timeline items as cards, expandable edit form per item (reps, sets, repUnits, note, displayName, tags), remove button, move-up/move-down buttons. ~140 lines. Implements FR-5.
+- [x] 1. Studio route + chooser page: Register /#/studio route in main.js, add "Create" button to HomePage, render StudioPage with "New Program" / "New Exercise" cards, wire navigation. ~80 lines. Implements FR-1, FR-11 entry point.
+- [x] 2. Exercise search component (ExercisePicker): Build search index from exercises.json (name + aliases + id tokens), implement fuzzy scoring, render search input + results list, "No results" state with "+ Create new exercise" button. ~120 lines. Implements FR-3.
+- [x] 3. Program metadata form + timeline shell: ProgramEditor component with meta form (title, requirements, description, difficulty, duration), auto-derive id, empty timeline placeholder, wire ExercisePicker so clicking a result calls addItem(). ~130 lines. Implements FR-2, FR-4.
+- [x] 4. Per-item editing + timeline rendering: Render timeline items as cards, expandable edit form per item (reps, sets, repUnits, note, displayName, tags), remove button, move-up/move-down buttons. ~140 lines. Implements FR-5.
 - [ ] 5. Drag-and-drop reordering: Add SortableJS, make timeline items draggable with touch support, update state on drop, visual drag handle + drop indicator. ~90 lines. Implements FR-6.
 - [ ] 6. Grouping (superset/compound/circuit): Multi-select checkboxes, "Group" button with kind dropdown, GroupWrapper component, ungroup button, group metadata editing. ~150 lines. Implements FR-7, FR-8.
 - [ ] 7. Exercise creation slide-over (ExerciseEditor): Slide-over panel from picker, name input with id preview, recommendations form, tags/equipment inputs, save adds to index + queue, cancel discards. ~130 lines. Implements FR-9.

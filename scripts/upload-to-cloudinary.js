@@ -14,6 +14,7 @@
  *   CLOUDINARY_API_SECRET - Your Cloudinary API secret
  */
 
+import 'dotenv/config';
 import { v2 as cloudinary } from 'cloudinary';
 import fs from 'fs';
 import path from 'path';
@@ -63,14 +64,17 @@ export async function uploadAllGifs() {
     throw new Error(`GIFs directory not found: ${gifsDir}`);
   }
   
-  // Get all GIF files
-  const files = fs.readdirSync(gifsDir).filter(f => f.endsWith('.gif'));
+  // Get all image files (GIF, JPG, PNG, WebP)
+  const imageExtensions = ['.gif', '.jpg', '.jpeg', '.png', '.webp'];
+  const files = fs.readdirSync(gifsDir).filter(f => 
+    imageExtensions.some(ext => f.toLowerCase().endsWith(ext))
+  );
   
   if (files.length === 0) {
-    throw new Error('No GIF files found in gifs/ directory');
+    throw new Error('No image files found in gifs/ directory');
   }
   
-  console.log(`Found ${files.length} GIF files to upload\n`);
+  console.log(`Found ${files.length} image files to upload\n`);
   
   const migrationLog = {};
   let successCount = 0;
@@ -78,7 +82,7 @@ export async function uploadAllGifs() {
   
   for (const file of files) {
     const filePath = path.join(gifsDir, file);
-    const publicId = path.basename(file, '.gif');
+    const publicId = path.basename(file, path.extname(file)); // Handle any extension
     
     try {
       console.log(`Uploading: ${file}...`);
@@ -117,6 +121,51 @@ export function saveMigrationLog(log, outputPath = 'migration-log.json') {
   console.log(`\n✓ Migration log saved to: ${outputPath}`);
 }
 
+/**
+ * Update video-sources.json with GIF uploads
+ * @param {Object} log - Migration log object
+ */
+export function updateVideoSourcesFromGifs(log) {
+  const projectRoot = path.join(__dirname, '..');
+  const sourcesPath = path.join(projectRoot, 'video-sources.json');
+  
+  // Load existing sources or create new
+  let sources = {};
+  if (fs.existsSync(sourcesPath)) {
+    try {
+      sources = JSON.parse(fs.readFileSync(sourcesPath, 'utf-8'));
+    } catch (error) {
+      console.warn('⚠️  Could not parse existing video-sources.json, creating new file');
+    }
+  }
+  
+  // Add successful uploads (only if not already tracked)
+  let addedCount = 0;
+  for (const [filename, value] of Object.entries(log)) {
+    if (typeof value === 'string' && value.includes('cloudinary.com')) {
+      const exerciseName = path.basename(filename, path.extname(filename));
+      
+      // Only add if not already tracked (don't overwrite YouTube sources)
+      if (!sources[exerciseName]) {
+        sources[exerciseName] = {
+          cloudinaryUrl: value,
+          source: {
+            originalFile: filename,
+            uploadedAt: new Date().toISOString()
+          },
+          type: 'original-gif',
+          fileSize: 'unknown'
+        };
+        addedCount++;
+      }
+    }
+  }
+  
+  // Save updated sources
+  fs.writeFileSync(sourcesPath, JSON.stringify(sources, null, 2));
+  console.log(`✓ Updated video-sources.json with ${addedCount} new GIF entries`);
+}
+
 // Run if executed directly
 if (import.meta.url === `file://${process.argv[1]}`) {
   // Check for required environment variables
@@ -139,15 +188,17 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   }
   
   console.log('═'.repeat(70));
-  console.log('CLOUDINARY GIF UPLOAD');
+  console.log('CLOUDINARY IMAGE UPLOAD');
   console.log('═'.repeat(70));
   console.log(`Cloud: ${process.env.CLOUDINARY_CLOUD_NAME}`);
+  console.log('Note: Files over 10MB will fail on free tier');
   console.log('═'.repeat(70));
   console.log('');
   
   uploadAllGifs()
     .then(log => {
       saveMigrationLog(log);
+      updateVideoSourcesFromGifs(log);
       
       // Check if all uploads succeeded
       const failedUploads = Object.entries(log).filter(([_, value]) => 

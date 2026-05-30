@@ -1126,17 +1126,17 @@
   },
   "90DegreeBarbellSquats": {
     "primary": {
-      "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779215296/exercises/90DegreeBarbellSquats.mp4",
+      "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779430263/exercises/90DegreeBarbellSquats.mp4",
       "source": {
         "type": "youtube",
         "url": "https://www.youtube.com/shorts/m-xvBOf6Oig",
         "startTime": 0,
-        "endTime": 14,
-        "uploadedAt": "2026-05-19T18:36:04.996Z",
-        "notes": "Original GIF was 84MB"
+        "endTime": 0,
+        "uploadedAt": "2026-05-22T06:11:04.484Z",
+        "notes": "good form demonstration"
       },
-      "fileSize": "1.63 MB",
-      "duration": 14
+      "fileSize": "1.72 MB",
+      "duration": null
     },
     "alternatives": [
       {
@@ -1157,26 +1157,35 @@
       }
     ],
     "metadata": {
-      "lastUpdated": "2026-05-19T18:36:14.056Z"
+      "lastUpdated": "2026-05-22T06:11:33.945Z"
     }
   },
   "BarbellWalkingLunges": {
     "primary": {
-      "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779215303/exercises/BarbellWalkingLunges.mp4",
+      "cloudinaryUrl": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779430268/exercises/BarbellWalkingLunges.mp4",
       "source": {
         "type": "youtube",
-        "url": "https://www.youtube.com/shorts/La8YR6wCsEE",
+        "url": "https://www.youtube.com/shorts/LGcsNnWhPuY",
         "startTime": 0,
         "endTime": 0,
-        "uploadedAt": "2026-05-19T18:36:12.298Z",
-        "notes": "Full video - Original GIF was 59MB"
+        "uploadedAt": "2026-05-22T06:11:09.835Z",
+        "notes": "good form demonstration"
       },
-      "fileSize": "2.58 MB",
+      "fileSize": "1.61 MB",
       "duration": null
     },
-    "alternatives": [],
+    "alternatives": [
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/shorts/La8YR6wCsEE",
+        "startTime": 12,
+        "endTime": 36,
+        "notes": "upgrade",
+        "addedAt": "2026-05-22T06:11:33.946Z"
+      }
+    ],
     "metadata": {
-      "lastUpdated": "2026-05-19T18:36:14.056Z"
+      "lastUpdated": "2026-05-22T06:11:33.946Z"
     }
   },
   "CurtsyLunges": {
@@ -1187,7 +1196,7 @@
         "url": "https://www.youtube.com/shorts/WAW-2ehQ1GM",
         "startTime": 0,
         "endTime": 0,
-        "uploadedAt": "2026-05-19T22:18:49.161Z",
+        "uploadedAt": "2026-05-22T06:11:19.947Z",
         "notes": "good form demonstration vs bad form"
       },
       "fileSize": "0.42 MB",
@@ -1195,7 +1204,7 @@
     },
     "alternatives": [],
     "metadata": {
-      "lastUpdated": "2026-05-19T22:18:58.632Z"
+      "lastUpdated": "2026-05-22T06:11:33.946Z"
     }
   },
   "FireHydrant": {
@@ -1206,7 +1215,7 @@
         "url": "https://www.youtube.com/shorts/9Rrz2R2Y6AQ",
         "startTime": 0,
         "endTime": 0,
-        "uploadedAt": "2026-05-19T22:18:54.310Z",
+        "uploadedAt": "2026-05-22T06:11:25.376Z",
         "notes": "good form demonstration vs bad form"
       },
       "fileSize": "1.48 MB",
@@ -1214,7 +1223,7 @@
     },
     "alternatives": [],
     "metadata": {
-      "lastUpdated": "2026-05-19T22:18:58.632Z"
+      "lastUpdated": "2026-05-22T06:11:33.946Z"
     }
   },
   "SingleLegHipThrusts": {
@@ -1225,7 +1234,7 @@
         "url": "https://www.youtube.com/shorts/hKXqCXSXylA",
         "startTime": 0,
         "endTime": 0,
-        "uploadedAt": "2026-05-19T22:18:58.628Z",
+        "uploadedAt": "2026-05-22T06:11:33.942Z",
         "notes": "simple demo"
       },
       "fileSize": "0.2 MB",
@@ -1238,11 +1247,35 @@
         "startTime": 0,
         "endTime": 0,
         "notes": "upgrade",
+        "addedAt": "2026-05-22T06:11:33.946Z"
+      },
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/shorts/lskHiO7CfJM",
+        "startTime": 0,
+        "endTime": 0,
+        "notes": "upgrade",
+        "addedAt": "2026-05-22T06:10:54.160Z"
+      },
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/shorts/lskHiO7CfJM",
+        "startTime": 0,
+        "endTime": 0,
+        "notes": "upgrade",
+        "addedAt": "2026-05-22T05:41:04.026Z"
+      },
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/shorts/lskHiO7CfJM",
+        "startTime": 0,
+        "endTime": 0,
+        "notes": "upgrade",
         "addedAt": "2026-05-19T22:18:58.632Z"
       }
     ],
     "metadata": {
-      "lastUpdated": "2026-05-19T22:18:58.632Z"
+      "lastUpdated": "2026-05-22T06:11:33.946Z"
     }
   },
   "BoxDepthDrop": {
@@ -1253,7 +1286,7 @@
         "url": "https://www.youtube.com/shorts/P-_jpcu3WH4",
         "startTime": 0,
         "endTime": 0,
-        "uploadedAt": "2026-05-19T22:20:27.987Z",
+        "uploadedAt": "2026-05-22T06:11:15.750Z",
         "notes": "good demonstration and loops"
       },
       "fileSize": "1.24 MB",
@@ -1261,7 +1294,7 @@
     },
     "alternatives": [],
     "metadata": {
-      "lastUpdated": "2026-05-19T22:20:32.765Z"
+      "lastUpdated": "2026-05-22T06:11:33.946Z"
     }
   },
   "KneelingHipFlexorStretch": {
@@ -1272,7 +1305,7 @@
         "url": "https://www.youtube.com/shorts/ktgtEWGhFd8",
         "startTime": 0,
         "endTime": 0,
-        "uploadedAt": "2026-05-19T22:20:32.763Z",
+        "uploadedAt": "2026-05-22T06:11:30.660Z",
         "notes": "good explanation vs bad form"
       },
       "fileSize": "1.24 MB",
@@ -1285,11 +1318,35 @@
         "startTime": 0,
         "endTime": 0,
         "notes": "quicker explanation",
+        "addedAt": "2026-05-22T06:11:33.946Z"
+      },
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/shorts/bfJabpwvP-g",
+        "startTime": 0,
+        "endTime": 0,
+        "notes": "quicker explanation",
+        "addedAt": "2026-05-22T06:10:54.160Z"
+      },
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/shorts/bfJabpwvP-g",
+        "startTime": 0,
+        "endTime": 0,
+        "notes": "quicker explanation",
+        "addedAt": "2026-05-22T05:41:04.026Z"
+      },
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/shorts/bfJabpwvP-g",
+        "startTime": 0,
+        "endTime": 0,
+        "notes": "quicker explanation",
         "addedAt": "2026-05-19T22:20:32.765Z"
       }
     ],
     "metadata": {
-      "lastUpdated": "2026-05-19T22:20:32.765Z"
+      "lastUpdated": "2026-05-22T06:11:33.946Z"
     }
   }
 }

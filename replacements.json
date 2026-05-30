@@ -1,7 +1,7 @@
 [
   {
     "exerciseName": "90DegreeBarbellSquats",
-    "youtubeUrl": "https://www.youtube.com/shorts/Hy-Vu-Yx-Ow",
+    "youtubeUrl": "https://www.youtube.com/shorts/m-xvBOf6Oig",
     "startTime": 0,
     "endTime": 0,
     "notes": "good form demonstration",
@@ -9,11 +9,19 @@
   },
   {
     "exerciseName": "BarbellWalkingLunges",
-    "youtubeUrl": "https://www.youtube.com/shorts/Hy-Vu-Yx-Ow",
+    "youtubeUrl": "https://www.youtube.com/shorts/LGcsNnWhPuY",
     "startTime": 0,
     "endTime": 0,
     "notes": "good form demonstration",
-    "alternatives": []
+    "alternatives": [
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/shorts/La8YR6wCsEE",
+        "startTime": 12,
+        "endTime": 36,
+        "notes": "upgrade"
+      }
+    ]
   },
   {
     "exerciseName": "BoxDepthDrop",
