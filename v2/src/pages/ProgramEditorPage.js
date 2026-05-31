@@ -3,6 +3,7 @@ import { navigate } from '../utils/router.js';
 import { renderExercisePicker, addToIndex } from '../components/ExercisePicker.js';
 import { renderDemoManager } from '../components/DemoManager.js';
 import { renderDemoCarousel } from '../components/DemoCarousel.js';
+import { renderStudioTimeline } from '../components/StudioTimeline.js';
 import { loadWorkouts, loadExercises } from '../utils/data.js';
 
 // Editor state (module-level singleton for this session)
@@ -256,7 +257,7 @@ function wirePicker(container) {
   });
 }
 
-// --- Timeline rendering with inline editing ---
+// --- Timeline rendering (delegates to StudioTimeline component) ---
 
 function renderTimeline(container) {
   const list = container.querySelector('[data-region="timeline"]');
@@ -275,274 +276,99 @@ function renderTimeline(container) {
   empty.classList.add('hidden');
   exportSection?.classList.toggle('hidden', !state.meta.title.trim());
 
-  // Render cards with "link" buttons between adjacent singles
-  let html = '';
-  for (let i = 0; i < state.items.length; i++) {
-    html += timelineCard(state.items[i], i);
-    // Show a link/group button between two adjacent singles (overlapping, no extra space)
-    if (i < state.items.length - 1 && state.items[i].type === 'single' && state.items[i + 1].type === 'single') {
-      html += `<li class="relative h-0 flex justify-center z-10">
-        <button data-action="link" data-index="${i}" class="absolute -top-3 p-1 rounded-full bg-slate-800 border border-slate-700 hover:border-brand-500 hover:bg-brand-500/10 text-slate-500 hover:text-brand-400 transition-all shadow-sm" aria-label="Group these two exercises" title="Group into superset">
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
-        </button>
-      </li>`;
-    }
-  }
-  list.innerHTML = html;
-  wireTimelineActions(container);
-}
-
-function timelineCard(item, i) {
-  const open = i === expandedIndex;
-  const tagStr = item.tags.length ? ' · ' + item.tags.join(', ') : '';
-  const isGroup = item.type === 'group';
-
-  if (isGroup) return groupCard(item, i);
-
-  const exNote = item.exerciseNote || '';
-  const notePreview = exNote.length > 60 ? exNote.substring(0, 60) + '…' : exNote;
-
-  return `<li class="card overflow-hidden" data-item-index="${i}">
-  <div class="flex items-center gap-1 px-3 py-3">
-    <span class="drag-handle cursor-grab active:cursor-grabbing p-1 text-slate-600 hover:text-slate-400 touch-manipulation shrink-0" data-drag="${i}"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></svg></span>
-    <button data-action="toggle-edit" data-index="${i}" class="flex-1 min-w-0 text-left touch-manipulation">
-      <p class="text-sm font-medium text-slate-100 truncate">${esc(item.exerciseName)}</p>
-      <p class="text-xs text-slate-400 num">${item.reps || '—'} ${item.repUnits || 'reps'} · ${item.sets || '—'} sets${tagStr}</p>
-      ${notePreview ? `<p class="text-[11px] text-slate-500 truncate mt-0.5 italic">${esc(notePreview)}</p>` : ''}
-    </button>
-    <button data-action="remove" data-index="${i}" class="p-1.5 rounded hover:bg-red-500/10 text-slate-600 hover:text-red-400 shrink-0" aria-label="Remove"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
-  </div>
-  ${open ? editForm(item, i) : ''}
-</li>`;
-}
-
-function groupCard(item, i) {
-  const open = i === expandedIndex;
-  const kindLabel = { superset: 'Super Set', compound: 'Compound', circuit: 'Circuit' }[item.kind] || item.kind;
-  return `<li class="card overflow-hidden border-brand-500/30" data-item-index="${i}">
-  <div class="flex items-center gap-2 px-4 py-3">
-    <span class="drag-handle cursor-grab active:cursor-grabbing p-1 text-slate-600 hover:text-slate-400 touch-manipulation">
-      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></svg>
-    </span>
-    <button data-action="toggle-edit" data-index="${i}" class="flex-1 min-w-0 text-left touch-manipulation">
-      <div class="flex items-center gap-1.5 mb-0.5">
-        <span class="text-[10px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded-sm bg-brand-500/20 text-brand-300">${kindLabel}</span>
-      </div>
-      <p class="text-sm font-medium text-slate-100 truncate">${esc(item.members.map((m) => m.exerciseName).join(' + '))}</p>
-    </button>
-    <button data-action="ungroup" data-index="${i}" class="p-1.5 rounded-lg hover:bg-white/5 text-slate-500 hover:text-slate-300 transition-colors shrink-0" aria-label="Ungroup" title="Ungroup">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17H7A2 2 0 017 13h2m6 4h2a2 2 0 002-2v0a2 2 0 00-2-2h-2m-6-4h6"/></svg>
-    </button>
-    <button data-action="remove" data-index="${i}" class="p-1.5 rounded-lg hover:bg-red-500/10 text-slate-500 hover:text-red-400 transition-colors shrink-0" aria-label="Remove">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-    </button>
-  </div>
-  ${open ? groupEditForm(item, i) : ''}
-</li>`;
-}
-
-function editForm(item, i) {
-  const UNITS = ['reps', 'secs', 'min', 'yd', 'rep', 'reps (each side)', 'secs (each side)'];
-  const TAGS = ['warmup', 'stretch'];
-  return `<div class="px-4 pb-4 pt-2 space-y-3 border-t border-slate-800 bg-slate-900/40 animate-fade-in">
-  <div data-demo-preview="${i}"></div>
-  <div class="grid grid-cols-3 gap-2">
-    <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Reps</label>
-      <input data-edit="reps" data-index="${i}" value="${esc(item.reps)}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-hidden focus:border-brand-500"/></div>
-    <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Sets</label>
-      <input data-edit="sets" data-index="${i}" value="${esc(item.sets)}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-hidden focus:border-brand-500"/></div>
-    <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Units</label>
-      <select data-edit="repUnits" data-index="${i}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-2 text-sm text-slate-100 focus:outline-hidden focus:border-brand-500">
-        ${UNITS.map((u) => `<option value="${u}"${item.repUnits === u ? ' selected' : ''}>${u}</option>`).join('')}
-      </select></div>
-  </div>
-  <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Note</label>
-    <input data-edit="note" data-index="${i}" value="${esc(item.note)}" placeholder="Form cues, weight, etc." class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-hidden focus:border-brand-500"/></div>
-  <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Tags</label>
-    <div class="flex gap-2">${TAGS.map(
-      (t) => `
-      <button type="button" data-pill="${t}" data-index="${i}" class="px-3 py-1.5 rounded-full text-xs font-medium transition-all ${item.tags.includes(t) ? 'bg-brand-500 text-white' : 'bg-slate-800 text-slate-400 hover:bg-slate-700'}">${t}</button>`
-    ).join('')}
-    </div></div>
-</div>`;
-}
-
-function groupEditForm(item, i) {
-  const KINDS = ['superset', 'compound', 'circuit'];
-  return `<div class="px-4 pb-4 pt-2 space-y-3 border-t border-slate-800 bg-slate-900/40 animate-fade-in">
-  <div>
-    <label class="text-[10px] text-slate-500 uppercase block mb-1">Group Type</label>
-    <select data-group-edit="kind" data-index="${i}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-2 text-sm text-slate-100 focus:outline-hidden focus:border-brand-500">
-      ${KINDS.map((k) => `<option value="${k}"${item.kind === k ? ' selected' : ''}>${k}</option>`).join('')}
-    </select>
-  </div>
-  <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Note</label>
-    <input data-group-edit="note" data-index="${i}" value="${esc(item.note || '')}" placeholder="Shared note for the group" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-hidden focus:border-brand-500"/></div>
-  <div class="space-y-1.5">
-    <p class="text-[10px] text-slate-500 uppercase font-semibold">Members</p>
-    ${item.members
-      .map(
-        (m, mi) => `
-      <div class="bg-slate-800/40 rounded-lg px-3 py-2 text-xs text-slate-300">${String.fromCharCode(97 + mi)}. ${esc(m.exerciseName)} — ${m.reps || '—'} ${m.repUnits || 'reps'} · ${m.sets || '—'} sets</div>
-    `
-      )
-      .join('')}
-  </div>
-</div>`;
-}
-
-let dragSrcIndex = null;
-
-function wireTimelineActions(container) {
-  const list = container.querySelector('[data-region="timeline"]');
-  if (!list) return;
-
-  // Pointer-event drag reorder (works on touch + mouse)
-  list.querySelectorAll('[data-drag]').forEach((handle) => {
-    handle.addEventListener('pointerdown', (e) => {
-      e.preventDefault();
-      const srcIndex = +handle.dataset.drag;
-      const srcLi = handle.closest('[data-item-index]');
-      if (!srcLi) return;
-
-      srcLi.classList.add('opacity-40');
-      let lastOverIndex = srcIndex;
-
-      const onMove = (ev) => {
-        const el = document.elementFromPoint(ev.clientX, ev.clientY);
-        const overLi = el?.closest('[data-item-index]');
-        if (overLi) {
-          const overIndex = +overLi.dataset.itemIndex;
-          if (overIndex !== lastOverIndex) {
-            list.querySelectorAll('.border-t-brand-500').forEach((x) => x.classList.remove('border-t-brand-500', 'border-t-2'));
-            overLi.classList.add('border-t-brand-500', 'border-t-2');
-            lastOverIndex = overIndex;
-          }
-        }
-      };
-
-      const onUp = () => {
-        document.removeEventListener('pointermove', onMove);
-        document.removeEventListener('pointerup', onUp);
-        srcLi.classList.remove('opacity-40');
-        list.querySelectorAll('.border-t-brand-500').forEach((x) => x.classList.remove('border-t-brand-500', 'border-t-2'));
-
-        if (lastOverIndex !== srcIndex) {
-          const [moved] = state.items.splice(srcIndex, 1);
-          state.items.splice(lastOverIndex, 0, moved);
-          if (expandedIndex === srcIndex) expandedIndex = lastOverIndex;
-          else if (srcIndex < expandedIndex && lastOverIndex >= expandedIndex) expandedIndex--;
-          else if (srcIndex > expandedIndex && lastOverIndex <= expandedIndex) expandedIndex++;
-          renderTimeline(container);
-        }
-      };
-
-      document.addEventListener('pointermove', onMove);
-      document.addEventListener('pointerup', onUp);
-    });
-  });
-
-  // Toggle expand
-  list.querySelectorAll('[data-action="toggle-edit"]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      expandedIndex = expandedIndex === +btn.dataset.index ? -1 : +btn.dataset.index;
+  renderStudioTimeline(list, { items: state.items, expandedIndex }, {
+    onEdit: (idx) => {
+      expandedIndex = expandedIndex === idx ? -1 : idx;
       renderTimeline(container);
-    });
-  });
-
-  // Remove
-  list.querySelectorAll('[data-action="remove"]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const i = +btn.dataset.index;
-      state.items.splice(i, 1);
-      if (expandedIndex === i) expandedIndex = -1;
-      else if (expandedIndex > i) expandedIndex--;
-      state.selected.delete(i);
+    },
+    onRemove: (idx) => {
+      state.items.splice(idx, 1);
+      if (expandedIndex === idx) expandedIndex = -1;
+      else if (expandedIndex > idx) expandedIndex--;
       renderTimeline(container);
-    });
-  });
-
-  // Ungroup
-  list.querySelectorAll('[data-action="ungroup"]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const i = +btn.dataset.index;
-      const group = state.items[i];
-      if (group.type !== 'group') return;
-      const singles = group.members.map((m) => ({ ...m, type: 'single' }));
-      state.items.splice(i, 1, ...singles);
+    },
+    onMove: (from, to) => {
+      const [moved] = state.items.splice(from, 1);
+      state.items.splice(to, 0, moved);
+      if (expandedIndex === from) expandedIndex = to;
+      else if (from < expandedIndex && to >= expandedIndex) expandedIndex--;
+      else if (from > expandedIndex && to <= expandedIndex) expandedIndex++;
+      renderTimeline(container);
+    },
+    onGroup: (idx, direction, kind) => {
+      const otherIdx = direction === 'above' ? idx - 1 : idx + 1;
+      const first = Math.min(idx, otherIdx);
+      const members = [state.items[first], state.items[first + 1]];
+      const group = { type: 'group', kind, note: '', tags: [], members };
+      state.items.splice(first, 2, group);
       expandedIndex = -1;
       renderTimeline(container);
-    });
+    },
+    onUngroup: (idx) => {
+      const group = state.items[idx];
+      if (group.type !== 'group') return;
+      const singles = group.members.map(m => ({ ...m, type: 'single' }));
+      state.items.splice(idx, 1, ...singles);
+      expandedIndex = -1;
+      renderTimeline(container);
+    }
   });
 
-  // Link button — group two adjacent singles
-  list.querySelectorAll('[data-action="link"]').forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const i = +btn.dataset.index;
-      // Show a small popover with 3 kind options
-      const existing = container.querySelector('[data-region="kind-popover"]');
-      if (existing) existing.remove();
+  // Render edit form for expanded item
+  if (expandedIndex >= 0 && expandedIndex < state.items.length) {
+    const formSlot = list.querySelector(`[data-region="edit-form"][data-idx="${expandedIndex}"]`);
+    if (formSlot) renderEditForm(formSlot, state.items[expandedIndex], expandedIndex, container);
+  }
+}
 
-      const popover = document.createElement('div');
-      popover.dataset.region = 'kind-popover';
-      popover.className = 'absolute left-1/2 -translate-x-1/2 top-5 bg-slate-800 border border-slate-700 rounded-xl p-2 flex gap-1.5 shadow-xl z-50 animate-fade-in';
-      popover.innerHTML = `
-        <button data-kind="superset" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-500/20 text-brand-300 hover:bg-brand-500/30 transition-colors">Superset</button>
-        <button data-kind="compound" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-700 text-slate-300 hover:bg-slate-600 transition-colors">Compound</button>
-        <button data-kind="circuit" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-700 text-slate-300 hover:bg-slate-600 transition-colors">Circuit</button>
-      `;
-      btn.parentElement.appendChild(popover);
+function renderEditForm(slot, item, idx, container) {
+  const UNITS = ['reps', 'secs', 'min', 'yd', 'rep', 'reps (each side)', 'secs (each side)'];
+  const TAGS = ['warmup', 'stretch'];
 
-      popover.querySelectorAll('[data-kind]').forEach((kindBtn) => {
-        kindBtn.addEventListener('click', () => {
-          const kind = kindBtn.dataset.kind;
-          const members = [state.items[i], state.items[i + 1]];
-          const group = { type: 'group', kind, note: '', tags: [], members };
-          state.items.splice(i, 2, group);
-          expandedIndex = -1;
-          renderTimeline(container);
-        });
-      });
+  slot.innerHTML = `
+    <div class="px-4 pb-4 pt-3 space-y-3 bg-slate-900/40">
+      <div data-demo-preview="${idx}"></div>
+      <div class="grid grid-cols-3 gap-2">
+        <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Reps</label>
+          <input data-edit="reps" value="${esc(item.reps || '')}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-hidden focus:border-brand-500"/></div>
+        <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Sets</label>
+          <input data-edit="sets" value="${esc(item.sets || '')}" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-hidden focus:border-brand-500"/></div>
+        <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Units</label>
+          <select data-edit="repUnits" class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-2 py-2 text-sm text-slate-100 focus:outline-hidden focus:border-brand-500">
+            ${UNITS.map(u => `<option value="${u}"${(item.repUnits || 'reps') === u ? ' selected' : ''}>${u}</option>`).join('')}
+          </select></div>
+      </div>
+      <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Note</label>
+        <input data-edit="note" value="${esc(item.note || '')}" placeholder="Form cues, weight, etc." class="w-full bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-hidden focus:border-brand-500"/></div>
+      <div><label class="text-[10px] text-slate-500 uppercase block mb-1">Tags</label>
+        <div class="flex gap-2">${TAGS.map(t => `
+          <button type="button" data-pill="${t}" class="px-3 py-1.5 rounded-full text-xs font-medium transition-all ${(item.tags || []).includes(t) ? 'bg-brand-500 text-white' : 'bg-slate-800 text-slate-400 hover:bg-slate-700'}">${t}</button>`).join('')}
+        </div></div>
+    </div>
+  `;
 
-      // Close on outside click
-      setTimeout(() => {
-        const close = (ev) => { if (!popover.contains(ev.target)) { popover.remove(); document.removeEventListener('pointerdown', close); } };
-        document.addEventListener('pointerdown', close);
-      }, 10);
-    });
-  });
-
-  // Inline field edits
-  list.querySelectorAll('[data-edit]').forEach((el) => {
-    const update = () => { state.items[+el.dataset.index][el.dataset.edit] = el.value; };
+  // Wire edit fields
+  slot.querySelectorAll('[data-edit]').forEach(el => {
+    const update = () => { item[el.dataset.edit] = el.value; };
     el.addEventListener('input', update);
     el.addEventListener('change', update);
   });
 
-  // Group edits (kind, note)
-  list.querySelectorAll('[data-group-edit]').forEach((el) => {
-    const update = () => { state.items[+el.dataset.index][el.dataset.groupEdit] = el.value; };
-    el.addEventListener('input', update);
-    el.addEventListener('change', update);
-  });
-
-  // Pill tag toggles
-  list.querySelectorAll('[data-pill]').forEach((btn) => {
+  // Wire tag pills
+  slot.querySelectorAll('[data-pill]').forEach(btn => {
     btn.addEventListener('click', () => {
-      const item = state.items[+btn.dataset.index];
+      if (!item.tags) item.tags = [];
       const tag = btn.dataset.pill;
-      if (item.tags.includes(tag)) item.tags = item.tags.filter((t) => t !== tag);
+      if (item.tags.includes(tag)) item.tags = item.tags.filter(t => t !== tag);
       else item.tags.push(tag);
       renderTimeline(container);
     });
   });
 
-  // Demo preview for expanded item
-  const previewSlot = list.querySelector(`[data-demo-preview="${expandedIndex}"]`);
-  if (previewSlot && expandedIndex >= 0) {
-    const item = state.items[expandedIndex];
-    if (item && item.exerciseId) renderDemoPreview(previewSlot, item.exerciseId);
+  // Demo preview
+  const previewSlot = slot.querySelector(`[data-demo-preview="${idx}"]`);
+  if (previewSlot && item.exerciseId) {
+    renderDemoPreview(previewSlot, item.exerciseId);
   }
 }
 
