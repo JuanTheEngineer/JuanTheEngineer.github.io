@@ -3,6 +3,10 @@ import { navigate } from '../utils/router.js';
 import { getRecentPrograms, getProgress } from '../utils/storage.js';
 import { loadWorkouts } from '../utils/data.js';
 
+function isLocalDev() {
+  return ['localhost', '127.0.0.1'].includes(window.location.hostname);
+}
+
 export function renderHomePage(container) {
   container.innerHTML = `
     <div class="flex-1 flex flex-col">
@@ -19,7 +23,7 @@ export function renderHomePage(container) {
         <section data-region="recent" class="hidden space-y-3 animate-slide-up"></section>
 
         <section class="space-y-3">
-          <button
+          ${isLocalDev() ? `<button
             data-action="create"
             class="w-full card p-5 text-left active:scale-[0.98] transition-transform animate-slide-up"
           >
@@ -37,7 +41,7 @@ export function renderHomePage(container) {
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
               </svg>
             </div>
-          </button>
+          </button>` : ''}
 
           <button
             data-action="programs"

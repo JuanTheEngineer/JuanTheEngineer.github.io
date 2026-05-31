@@ -54,11 +54,16 @@ function renderStub(title, message) {
 route('/', () => renderHomePage(app));
 route('/programs', () => renderProgramListPage(app));
 route('/program/:id', ({ id }) => renderProgramDetailPage(app, id));
-route('/studio', () => renderStudioPage(app));
-route('/studio/program', () => renderProgramEditorPage(app));
-route('/studio/exercise', () => renderExerciseEditorPage(app));
 route('/exercises', () => renderExerciseLibraryPage(app));
 route('/exercise/:id', renderStub('Exercise', 'Single exercise page coming next.'));
+
+// Studio routes — only available in local dev
+const isLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+if (isLocal) {
+  route('/studio', () => renderStudioPage(app));
+  route('/studio/program', () => renderProgramEditorPage(app));
+  route('/studio/exercise', () => renderExerciseEditorPage(app));
+}
 
 setNotFound((path) => {
   app.innerHTML = `
