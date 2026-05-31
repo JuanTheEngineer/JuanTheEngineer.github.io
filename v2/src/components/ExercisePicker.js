@@ -72,17 +72,18 @@ export function renderExercisePicker(container, options = {}) {
           class="w-full bg-slate-800/60 border border-slate-700 rounded-xl pl-10 pr-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-hidden focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30 transition-colors"
         />
       </div>
-      <ul data-region="results" class="space-y-1 max-h-[300px] overflow-y-auto"></ul>
-      <div data-region="empty" class="hidden text-center py-6">
-        <p class="text-sm text-slate-400 mb-3">No exercises found</p>
-        <button data-action="create-new" class="btn-primary text-sm px-4 py-2">+ Create new exercise</button>
+      <ul data-region="results" class="space-y-1 max-h-[300px] overflow-y-auto hidden"></ul>
+      <div data-region="empty" class="hidden text-center py-4">
+        <p class="text-sm text-slate-400">No exercises match that name.</p>
       </div>
+      <button data-action="create-new" class="hidden w-full py-2.5 text-sm text-brand-400 hover:text-brand-300 font-medium transition-colors">+ Create new exercise</button>
     </div>
   `;
 
   const input = container.querySelector('[data-input="search"]');
   const resultsList = container.querySelector('[data-region="results"]');
   const emptyState = container.querySelector('[data-region="empty"]');
+  const createBtn = container.querySelector('[data-action="create-new"]');
 
   let debounceTimer = null;
 
@@ -90,8 +91,13 @@ export function renderExercisePicker(container, options = {}) {
     if (!query || !query.trim()) {
       resultsList.classList.add('hidden');
       emptyState.classList.add('hidden');
+      createBtn.classList.add('hidden');
       return;
     }
+
+    // Always show create button when user has typed something
+    createBtn.classList.remove('hidden');
+
     if (results.length === 0) {
       resultsList.classList.add('hidden');
       emptyState.classList.remove('hidden');
@@ -145,8 +151,8 @@ export function renderExercisePicker(container, options = {}) {
   // Initial render (empty — wait for user to type)
   renderResults([], '');
 
-  // Create new button
-  container.querySelector('[data-action="create-new"]')?.addEventListener('click', () => options.onCreateNew?.());
+  // Create new button — passes current search text for auto-fill
+  createBtn?.addEventListener('click', () => options.onCreateNew?.(input.value.trim()));
 }
 
 // --- Utility functions ---

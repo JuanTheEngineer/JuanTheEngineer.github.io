@@ -251,8 +251,8 @@ function wirePicker(container) {
       });
       renderTimeline(container);
     },
-    onCreateNew: () => {
-      openExerciseSlideOver(container);
+    onCreateNew: (searchText) => {
+      openExerciseSlideOver(container, searchText);
     }
   });
 }
@@ -529,18 +529,21 @@ function wireUnsavedGuard() {
 
 let newExDemos = [];
 
-function openExerciseSlideOver(container) {
+function openExerciseSlideOver(container, prefillName = '') {
   const panel = container.querySelector('[data-region="exercise-slideover"]');
   if (!panel) return;
 
   // Reset fields
   newExDemos = [];
-  panel.querySelector('[data-exfield="name"]').value = '';
+  panel.querySelector('[data-exfield="name"]').value = prefillName;
   panel.querySelector('[data-exfield="reps"]').value = '';
   panel.querySelector('[data-exfield="sets"]').value = '';
   panel.querySelector('[data-exfield="repUnits"]').value = 'reps';
   panel.querySelector('[data-exfield="note"]').value = '';
-  panel.querySelector('[data-region="ex-id-preview"]').textContent = '';
+
+  // Show id preview for prefilled name
+  const idFromPrefill = prefillName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/g, '');
+  panel.querySelector('[data-region="ex-id-preview"]').textContent = idFromPrefill ? `id: ${idFromPrefill}` : '';
 
   // Render demo manager
   const demoSlot = panel.querySelector('[data-region="demo-manager"]');
@@ -560,7 +563,7 @@ function openExerciseSlideOver(container) {
   // Wire save
   panel.querySelector('[data-action="save-exercise"]')?.addEventListener(
     'click',
-    () => {
+    async () => {
       const name = nameInput.value.trim();
       if (!name) {
         nameInput.focus();
@@ -570,6 +573,14 @@ function openExerciseSlideOver(container) {
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/-+$/g, '');
+
+      // Check for duplicate name/id
+      const { exercises } = await loadExercises();
+      const existing = exercises.find((e) => e.id === id || e.name.toLowerCase() === name.toLowerCase());
+      if (existing) {
+        const proceed = confirm(`An exercise named "${existing.name}" already exists (id: ${existing.id}).\n\nDo you still want to create "${name}"?`);
+        if (!proceed) return;
+      }
       const reps = panel.querySelector('[data-exfield="reps"]').value;
       const sets = panel.querySelector('[data-exfield="sets"]').value;
       const repUnits = panel.querySelector('[data-exfield="repUnits"]').value;
