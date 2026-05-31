@@ -1,0 +1,40 @@
+{
+  "glossaryTerms": [
+    {
+      "term": "AMRAP",
+      "definition": "As many reps as possible"
+    },
+    {
+      "term": "Circuit",
+      "definition": "A group of exercises performed in rotation for multiple rounds, with minimal rest between exercises and longer rest between rounds."
+    },
+    {
+      "term": "Compound Set",
+      "definition": "A group of exercises performed back-to-back as one continuous set with no rest until all are completed."
+    },
+    {
+      "term": "GHR",
+      "definition": "Glute Hamstring Raise"
+    },
+    {
+      "term": "KB",
+      "definition": "Kettle Bells"
+    },
+    {
+      "term": "Reps",
+      "definition": "Repetitions"
+    },
+    {
+      "term": "RPE",
+      "definition": "Rate of Perceived Exertion. A scale from 1-10 measuring how hard an exercise feels."
+    },
+    {
+      "term": "Superset",
+      "definition": "Two or more exercises alternated with no rest between them. Perform one set of each exercise before resting."
+    },
+    {
+      "term": "TKE",
+      "definition": "Terminal Knee Extension"
+    }
+  ]
+}

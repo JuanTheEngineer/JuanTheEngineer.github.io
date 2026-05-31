@@ -1,16 +1,15 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  // Build to ../v2-dist when running `npm run build`
-  // (so it doesn't conflict with the v2 source)
+  // Build to repo root /docs folder for GitHub Pages
+  // GitHub Pages can serve from /docs on main branch
   build: {
-    outDir: 'dist',
+    outDir: '../docs',
     emptyOutDir: true,
     target: 'es2020',
     minify: 'esbuild'
   },
-  // Base path for GitHub Pages deployment under /v2/
-  // Will be served at https://juantheengineer.github.io/v2/
+  // Relative base path — works for both root domain and subdirectory
   base: './',
   server: {
     port: 5173,

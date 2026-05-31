@@ -1,0 +1,4841 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-05-30T06:22:08.456Z",
+  "exercises": [
+    {
+      "id": "1a-db-row",
+      "name": "1A DB Row",
+      "demos": [],
+      "recommendations": {
+        "reps": "8",
+        "sets": "2",
+        "repUnits": "reps",
+        "note": "Use 25lb dumbbells."
+      }
+    },
+    {
+      "id": "1l-rdl-w-band-above-knee",
+      "name": "1L RDL w/ Band Above Knee",
+      "demos": [],
+      "recommendations": {
+        "reps": "30",
+        "sets": "2",
+        "repUnits": "secs",
+        "note": "Hand on railing, reach back leg outwards."
+      }
+    },
+    {
+      "id": "2l-pogo",
+      "name": "2L Pogo",
+      "demos": [],
+      "recommendations": {
+        "reps": "15",
+        "sets": "2",
+        "repUnits": "reps",
+        "note": "Landing midfoot."
+      }
+    },
+    {
+      "id": "45degreebackraises",
+      "name": "45° Back Raise",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208272/exercises/45DegreeBackRaises.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/45DegreeBackRaises.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=9XN23dIEqLE",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Hyperextensions for GLUTE focus 🍑 Save this post for your next glute day #shorts"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=EBui4Bt5N7o",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Hyperextensions for GLUTE focus 🍑 Save this post for your next glute day #shorts"
+        }
+      ],
+      "recommendations": {
+        "reps": "60 Total",
+        "sets": "Varies",
+        "repUnits": "reps",
+        "note": "Go through full range of motion."
+      }
+    },
+    {
+      "id": "a-runs-gear-1-3",
+      "name": "A Runs Gear 1-3",
+      "demos": [],
+      "recommendations": {
+        "reps": "4",
+        "sets": "rounds",
+        "repUnits": "reps",
+        "note": "Perform running gear drills."
+      }
+    },
+    {
+      "id": "90degreebarbellsquats",
+      "name": "Barbell 90° Squat with Hip Thrust",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "mp4",
+          "url": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779430263/exercises/90DegreeBarbellSquats.mp4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/90DegreeBarbellSquats.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=_i6qpcI1Nw4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Hip Thrust Tips:",
+          "metadata": {
+            "title": "Hip Thrust Tips:",
+            "channel": "ArielYu_Fit",
+            "duration": 20,
+            "views": 3410436,
+            "confidence": 0.5
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=4_BZ2G9SFLQ",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=7Iu_poBeYEo",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "10-15",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Detail: Squat to a 90-degree angle, then powerfully, but with control in one motion thrust your hips upward as you rise, tightly flexing your glutes. Note: Aim for 70% of your max repetition weight or above."
+      }
+    },
+    {
+      "id": "barbellsquat",
+      "name": "Barbell Squat",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208306/exercises/BarbellSquat.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/BarbellSquat.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=dW3zj79xfrc",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Barbell Jump Squat - How To"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=XOTO2qWRy9U",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Barbell Jump Squat - How To"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=0pTBkUPuMkk",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Barbell Jump Squat - How To",
+          "metadata": {
+            "title": "Barbell Jump Squat - How To",
+            "channel": "Bobby Maximus",
+            "duration": 34,
+            "views": 149864,
+            "confidence": 0.85
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "12, 10, 8, 6",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Note: Increase weight after each set. Meant to be a Super Set."
+      },
+      "aliases": [
+        "Barbell Squats & DB Jump Squats"
+      ]
+    },
+    {
+      "id": "barbellwalkinglunges",
+      "name": "Barbell Walking Lunges",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "mp4",
+          "url": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779430268/exercises/BarbellWalkingLunges.mp4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/BarbellWalkingLunges.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=1cS-6KsJW9g",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How To Do A BARBELL WALKING LUNGE | Exercise Demonstration Video and Guide"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=QQEcLAcVtHw",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How To Do A BARBELL WALKING LUNGE | Exercise Demonstration Video and Guide"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=hm3zBA8_Iak",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How To Do A BARBELL WALKING LUNGE | Exercise Demonstration Video and Guide",
+          "metadata": {
+            "title": "How To Do A BARBELL WALKING LUNGE | Exercise Demonstration Video and Guide",
+            "channel": "Live Lean TV Daily Exercises",
+            "duration": 31,
+            "views": 3458,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "3",
+        "repUnits": "reps (each side)",
+        "note": "Details: Perform walking lunges with a barbell placed behind your neck. Ensure each knee lightly taps the ground to engage the glutes properly. Note: May swap barbell for dumbbells or body weight."
+      }
+    },
+    {
+      "id": "battleropes",
+      "name": "Battle Ropes",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208333/exercises/BattleRopes.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/BattleRopes.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=zw0OMi00X5g",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "the do's and dont's of the battle ropes!"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=ZEAqK0lXnb0",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "the do's and dont's of the battle ropes!"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=X5g7P_M8Wo4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "the do's and dont's of the battle ropes!",
+          "metadata": {
+            "title": "the do's and dont's of the battle ropes!",
+            "channel": "Chelsea Cooke",
+            "duration": 21,
+            "views": 662365,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "1",
+        "sets": "3",
+        "repUnits": "min",
+        "note": "Aim for 1 minute but push to failure on each set.Try a variety of styles in 15 second segements."
+      }
+    },
+    {
+      "id": "boxpistols",
+      "name": "Box Pistols",
+      "aliases": [
+        "Box Pistol Jumps"
+      ],
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208348/exercises/BoxPistols.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/BoxPistols.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=IfESGr170DY",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=krEKdEKTCkQ",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=K24V4r9Z710",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Two seconds down, 1 second up. Elevate your heel."
+      }
+    },
+    {
+      "id": "cablelateralpullovers",
+      "name": "Cable Lateral Pullover",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208352/exercises/CableLateralPullovers.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/CableLateralPullovers.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=wdMMFyDEpVI",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=n8KIHmsSU9s",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=DQnVsbeaNQo",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "12",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Note: Meant to be a Super Set."
+      },
+      "aliases": [
+        "Cable Lateral Pullovers & Zottman Curls"
+      ]
+    },
+    {
+      "id": "zottmancurls",
+      "name": "Zottman Curl",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208534/exercises/ZottmanCurls.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/ZottmanCurls.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        }
+      ],
+      "recommendations": {
+        "reps": "12",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Note: Meant to be a Super Set."
+      },
+      "aliases": [
+        "Cable Lateral Pullovers & Zottman Curls"
+      ]
+    },
+    {
+      "id": "cat-camel",
+      "name": "Cat/Camel",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208359/exercises/Cat_Camel.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/Cat_Camel.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=JJkjIKlimW8",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "CAT-COW POSE (Marjaryasana-Bitilasana)🐮 😺"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=1cs3SKwQZpM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "CAT-COW POSE (Marjaryasana-Bitilasana)🐮 😺"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=2of247Kt0tU",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "CAT-COW POSE (Marjaryasana-Bitilasana)🐮 😺",
+          "metadata": {
+            "title": "CAT-COW POSE (Marjaryasana-Bitilasana)🐮 😺",
+            "channel": "Muscle & Motion",
+            "duration": 9,
+            "views": 12809636,
+            "confidence": 0.9
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "4",
+        "repUnits": "reps"
+      }
+    },
+    {
+      "id": "chestflies",
+      "name": "Chest Fly",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208360/exercises/ChestFlies.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/ChestFlies.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=JHkLdEwSESQ",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "FIX THESE Dumbbell Chest Fly Mistakes!"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=zb-MSO-Cv2Y",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "FIX THESE Dumbbell Chest Fly Mistakes!"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=rk8YayRoTRQ",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "FIX THESE Dumbbell Chest Fly Mistakes!",
+          "metadata": {
+            "title": "FIX THESE Dumbbell Chest Fly Mistakes!",
+            "channel": "Andrew Kwong (DeltaBolic)",
+            "duration": 11,
+            "views": 4647403,
+            "confidence": 0.7
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "12",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Note: Can be done with Cables or Dumbbells. Meant to be a Super Set."
+      },
+      "aliases": [
+        "Chest Flies & Front Raises"
+      ]
+    },
+    {
+      "id": "frontraises",
+      "name": "Front Raise",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208430/exercises/FrontRaises.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/FrontRaises.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        }
+      ],
+      "recommendations": {
+        "reps": "12",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Weight: 45 lbs. Note: Meant to be a Super Set."
+      },
+      "aliases": [
+        "Chest Flies & Front Raises"
+      ]
+    },
+    {
+      "id": "pullovers",
+      "name": "Pull-over",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208498/exercises/Pullovers.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/Pullovers.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=MA1eVI7Am7s",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=uW4bC8xad7A",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=QechLgf6fms",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "5",
+        "repUnits": "reps",
+        "note": "Meant to be a Super Set."
+      },
+      "aliases": [
+        "Chin-ups & Pull-overs"
+      ]
+    },
+    {
+      "id": "closegrippulldowns",
+      "name": "Close Grip Pulldown",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208365/exercises/CloseGripPulldowns.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/CloseGripPulldowns.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=qD1WZ5pSuvk",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "🛑 STOP Doing Cable Rows LIKE THIS!"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=e3S820r53uk",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "🛑 STOP Doing Cable Rows LIKE THIS!"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=LyZH4UGdDTc",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "🛑 STOP Doing Cable Rows LIKE THIS!",
+          "metadata": {
+            "title": "🛑 STOP Doing Cable Rows LIKE THIS!",
+            "channel": "Andrew Kwong (DeltaBolic)",
+            "duration": 8,
+            "views": 19616851,
+            "confidence": 0.7
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "12",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Note: Meant to be a Super Set."
+      },
+      "aliases": [
+        "Close Grip Pulldowns & Cable Rows"
+      ]
+    },
+    {
+      "id": "cablerows",
+      "name": "Cable Row",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208354/exercises/CableRows.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/CableRows.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        }
+      ],
+      "recommendations": {
+        "reps": "12",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Note: Meant to be a Super Set."
+      },
+      "aliases": [
+        "Close Grip Pulldowns & Cable Rows"
+      ]
+    },
+    {
+      "id": "copenhagen-plank-at-upper-calf-with-lifts",
+      "name": "Copenhagen Plank at Upper Calf with Lifts",
+      "demos": [],
+      "recommendations": {
+        "reps": "8",
+        "sets": "2",
+        "repUnits": "reps",
+        "note": "Perform at ankle with lifts."
+      }
+    },
+    {
+      "id": "curtsylunges",
+      "name": "Curtsy Lunges",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "mp4",
+          "url": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229128/exercises/CurtsyLunges.mp4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/CurtsyLunges.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=cVYnf2CFO9M",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Time for a highly-requested form review: the Curtsy Lunge! #lunges"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=WAW-2ehQ1GM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Time for a highly-requested form review: the Curtsy Lunge! #lunges"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=quIDO9QkuBQ",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Time for a highly-requested form review: the Curtsy Lunge! #lunges",
+          "metadata": {
+            "title": "Time for a highly-requested form review: the Curtsy Lunge! #lunges",
+            "channel": "FitnessBlender",
+            "duration": 60,
+            "views": 59878,
+            "confidence": 0.9
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "15",
+        "sets": "3",
+        "repUnits": "reps (each side)",
+        "note": "Details: Perform a lateral lunge while crossing one leg behind the other, akin to a curtsy. Use a strap or band to maintain balance and focus the load on the heel. Note: You only need to step behind your front foot. Crossing far outside your front foot is unnecessary and will lead to uneven hip posture."
+      }
+    },
+    {
+      "id": "dbboxsquats",
+      "name": "DB Box Squat",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208382/exercises/DBBoxSquats.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/DBBoxSquats.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=2aIgi73HIw8",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "DB Box Squat"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=rMEPHwNhQfo",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "DB Box Squat"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=o8R9B1t-Kv0",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "DB Box Squat",
+          "metadata": {
+            "title": "DB Box Squat",
+            "channel": "Ruth Maleski",
+            "duration": 28,
+            "views": 62543,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "15",
+        "sets": "5",
+        "repUnits": "reps",
+        "note": "Weight: 10 lbs"
+      }
+    },
+    {
+      "id": "db-chest-press",
+      "name": "DB Chest Press",
+      "demos": [],
+      "recommendations": {
+        "reps": "10",
+        "sets": "3",
+        "repUnits": "reps",
+        "note": "Use 2x35lb. Use same concept as goblet squat. Tempo: slow down, fast up."
+      }
+    },
+    {
+      "id": "dbrdls",
+      "name": "DB Romanian Deadlift",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208384/exercises/DBRDLs.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/DBRDLs.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=mJilHWIBWO8",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=CBOhr6H7BEY",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Meant to be a Super Set."
+      },
+      "aliases": [
+        "DB RDL & Split Squats"
+      ]
+    },
+    {
+      "id": "splitsquats",
+      "name": "Split Squat",
+      "aliases": [
+        "Split Squats & Split Squat Iso-Holds",
+        "DB Split Squats",
+        "Split Squats & DB RDL",
+        "DB RDL & Split Squats"
+      ],
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208523/exercises/SplitSquats.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/SplitSquats.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=uODWo4YqbT8",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How to Bulgarian Split Squat | 3 Simple Steps",
+          "metadata": {
+            "title": "How to Bulgarian Split Squat | 3 Simple Steps",
+            "channel": "Davis Diley",
+            "duration": 55,
+            "views": 6055109,
+            "confidence": 0.85
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "12",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Controlled on the way down. Meant to be a Super Set."
+      }
+    },
+    {
+      "id": "dbsidebends",
+      "name": "DB Side Bends",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208385/exercises/DBSideBends.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/DBSideBends.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=VwLXMuL_30Q",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=dL9ZzqtQI5c",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=kqr_IjiUuyY",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "25",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Complete reps for each side."
+      }
+    },
+    {
+      "id": "dbsquatjumps",
+      "name": "DB Squat Jumps",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208389/exercises/DBSquatJumps.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/DBSquatJumps.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=OTyb4YUDYYY",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Dumbbell Jump Squat | Exercise Guide"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=iE7v4vgLeHg",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Dumbbell Jump Squat | Exercise Guide"
+        }
+      ],
+      "recommendations": {
+        "reps": "4",
+        "sets": "6",
+        "repUnits": "reps",
+        "note": "Weight: 10 lbs"
+      }
+    },
+    {
+      "id": "declinepistols",
+      "name": "Decline Pistols",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208391/exercises/DeclinePistols.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/DeclinePistols.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=or1frhkjBDc",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Unlock🔓 Your 1st Pistol Squat"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=sBKIoPQsw1U",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Unlock🔓 Your 1st Pistol Squat"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=aYZnBGYloG4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Unlock🔓 Your 1st Pistol Squat",
+          "metadata": {
+            "title": "Unlock🔓 Your 1st Pistol Squat",
+            "channel": "Squat University",
+            "duration": 52,
+            "views": 3112528,
+            "confidence": 0.85
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Two seconds down, one second up. Elevate your heel."
+      }
+    },
+    {
+      "id": "dips",
+      "name": "Dip",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208392/exercises/Dips.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/Dips.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=3ZCDVRbhOMM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=XYjTEvlPAfU",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "10-15",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Note: Meant to be a Super Set."
+      },
+      "aliases": [
+        "Dips & Feet-Elevated PushUps"
+      ]
+    },
+    {
+      "id": "downwarddogtoetouches",
+      "name": "Downward Dog Toe Touch",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208395/exercises/DownwardDogToeTouches.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/DownwardDogToeTouches.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=ZepZd60Q0aY",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "5",
+        "sets": "4",
+        "repUnits": "reps"
+      }
+    },
+    {
+      "id": "dumbbell-bulgarian-split-squat-rfess",
+      "name": "Dumbbell Bulgarian Split Squat (RFESS)",
+      "demos": [],
+      "recommendations": {
+        "reps": "6",
+        "sets": "2",
+        "repUnits": "reps",
+        "note": "Use 2x40lb. Option to warm up with a lighter weight."
+      }
+    },
+    {
+      "id": "elevatedheelgobletsquat",
+      "name": "Elevated Heel Goblet Squat",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208397/exercises/ElevatedHeelGobletSquat.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/ElevatedHeelGobletSquat.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=UPeQpDPRWOg",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "📌HOW TO DO A GOBLET SQUAT"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=aed0XSePG6Y",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "📌HOW TO DO A GOBLET SQUAT"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=lRYBbchqxtI",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "📌HOW TO DO A GOBLET SQUAT",
+          "metadata": {
+            "title": "📌HOW TO DO A GOBLET SQUAT",
+            "channel": "SquatCouple",
+            "duration": 22,
+            "views": 3566830,
+            "confidence": 0.7
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Note: Meant to be a Super Set."
+      },
+      "aliases": [
+        "Elevated Heel Goblet Squats & Leg Curls"
+      ]
+    },
+    {
+      "id": "legcurls",
+      "name": "Leg Curl",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208481/exercises/LegCurls.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/LegCurls.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        }
+      ],
+      "recommendations": {
+        "reps": "12",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Note: Squeeze toes together. Meant to be a Super Set."
+      },
+      "aliases": [
+        "Elevated Heel Goblet Squats & Leg Curls"
+      ]
+    },
+    {
+      "id": "posture-ex1",
+      "name": "Posture Drill",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208496/exercises/Posture_Ex1.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/Posture_Ex1.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=H1F-UfC8Mb8",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=HaSFRSnRsXk",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "2",
+        "repUnits": "reps",
+        "note": "Note: Inhale forward, Exhale back. Keep chin to chest and butt on the ground."
+      },
+      "aliases": [
+        "Exercise 1"
+      ]
+    },
+    {
+      "id": "firehydrant",
+      "name": "Fire Hydrants",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "mp4",
+          "url": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229133/exercises/FireHydrant.mp4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/FireHydrant.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=IRkRgk2Gc1E",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How To Do a Fire Hydrant Exercise with Resistance Bands"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=Y0G0DqWsSuM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How To Do a Fire Hydrant Exercise with Resistance Bands"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=BLx5wSzafxg",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How To Do a Fire Hydrant Exercise with Resistance Bands",
+          "metadata": {
+            "title": "How To Do a Fire Hydrant Exercise with Resistance Bands",
+            "channel": "Quoia Active",
+            "duration": 9,
+            "views": 389556,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "30",
+        "sets": "3",
+        "repUnits": "reps (each side)",
+        "note": "Details: From a tabletop position, lift one leg away from the body, keeping the knee bent. This exercise targets the gluteus medius and minimus for improved lateral stability."
+      }
+    },
+    {
+      "id": "flatbenchpress",
+      "name": "Flat Bench Press",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208424/exercises/FlatBenchPress.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/FlatBenchPress.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=1V3vpcaxRYQ",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=WbCEvFA0NJs",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=o7TvO377OqA",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "6-12",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Note: Can be done with Barbell or Dumbbells. Meant to be a Super Set."
+      },
+      "aliases": [
+        "Flat Bench Press & DB Military Press"
+      ]
+    },
+    {
+      "id": "floorwashers",
+      "name": "Floor Washers",
+      "aliases": [
+        "Floor Washers w/ Reach"
+      ],
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208426/exercises/FloorWashers.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/FloorWashers.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=_PP-hcgM-rk",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Chair Workout to Lose Belly Fat"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=MMgT6E8meac",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Chair Workout to Lose Belly Fat",
+          "metadata": {
+            "title": "Chair Workout to Lose Belly Fat",
+            "channel": "Workout Guru",
+            "duration": 24,
+            "views": 1345351,
+            "confidence": 0.7
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Five in each direction on both arms."
+      }
+    },
+    {
+      "id": "frontsquatisoholds",
+      "name": "Front Squat Iso-Hold",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208432/exercises/FrontSquatIsoHolds.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/FrontSquatIsoHolds.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=CFB3JHkdyt8",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Deep tier squat oscillation jumps w/ front med ball hold"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=-b2h0cegrNI",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Deep tier squat oscillation jumps w/ front med ball hold"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=BNUZU9TV1Eo",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Deep tier squat oscillation jumps w/ front med ball hold",
+          "metadata": {
+            "title": "Deep tier squat oscillation jumps w/ front med ball hold",
+            "channel": "George Progress Physio",
+            "duration": 27,
+            "views": 6958,
+            "confidence": 0.5
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "6",
+        "sets": "6",
+        "repUnits": "secs",
+        "note": "Rate of Perceived Exertion: 9/10. Meant to be a Super Set."
+      },
+      "aliases": [
+        "Front Squat Iso-hold & Box Jumps"
+      ]
+    },
+    {
+      "id": "boxjumps",
+      "name": "Box Jump",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208343/exercises/BoxJumps.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/BoxJumps.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        }
+      ],
+      "recommendations": {
+        "reps": "6",
+        "sets": "3",
+        "repUnits": "reps",
+        "note": "Box height should be 24-36 inches. Meant to be a Super Set."
+      },
+      "aliases": [
+        "Front Squat Iso-hold & Box Jumps"
+      ]
+    },
+    {
+      "id": "frontsquats",
+      "name": "Front Squats",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208433/exercises/FrontSquats.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/FrontSquats.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=_qv0m3tPd3s",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "The Front Squat"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=rKjh8K-ZxLc",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "The Front Squat"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=uYumuL_G_V0",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "The Front Squat",
+          "metadata": {
+            "title": "The Front Squat",
+            "channel": "CrossFit",
+            "duration": 66,
+            "views": 1850586,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "5",
+        "sets": "5",
+        "repUnits": "reps",
+        "note": "Rate of Perceived Exertion: 8/10"
+      }
+    },
+    {
+      "id": "ghrisohold",
+      "name": "GHR Iso-Hold",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208439/exercises/GHRIsoHold.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/GHRIsoHold.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=CoCh6Ebh3Qk",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "GHR [IsoHold]"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=_WCwpLO3ZMc",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "GHR [IsoHold]"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=rYhIx6oNRqM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "GHR [IsoHold]",
+          "metadata": {
+            "title": "GHR [IsoHold]",
+            "channel": "SuperTrening",
+            "duration": 19,
+            "views": 704,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "30",
+        "sets": "4",
+        "repUnits": "secs",
+        "note": "Using a Weight."
+      }
+    },
+    {
+      "id": "ghr",
+      "name": "Glute Hamstring Raise",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208437/exercises/GHR.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/GHR.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=BhUpWmlKcJ8",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How to use the GLUTE HAM RAISE"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=S1_eZIIZlIc",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How to use the GLUTE HAM RAISE"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=blX1If7ScxY",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How to use the GLUTE HAM RAISE",
+          "metadata": {
+            "title": "How to use the GLUTE HAM RAISE",
+            "channel": "TylerPath",
+            "duration": 11,
+            "views": 325998,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "30 Total",
+        "sets": "Varies",
+        "repUnits": "reps",
+        "note": "Can be substituted with any hamstring workout if necessary."
+      }
+    },
+    {
+      "id": "goblet-squat-tempo",
+      "name": "Goblet Squat (Tempo)",
+      "demos": [],
+      "recommendations": {
+        "reps": "5",
+        "sets": "3",
+        "repUnits": "reps",
+        "note": "Use 75lb. Tempo: slow down, fast up."
+      }
+    },
+    {
+      "id": "heavysledsuicide",
+      "name": "Heavy Sled Suicide",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208441/exercises/HeavySledSuicide.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/HeavySledSuicide.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=v-wlUeCldXs",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "DeFrancosGym.com: HASD's (Heavy Ass Sled Drags)"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=BIlSvaS2YsY",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "DeFrancosGym.com: HASD's (Heavy Ass Sled Drags)"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=pM-JH-dvmAg",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "DeFrancosGym.com: HASD's (Heavy Ass Sled Drags)",
+          "metadata": {
+            "title": "DeFrancosGym.com: HASD's (Heavy Ass Sled Drags)",
+            "channel": "joedefranco",
+            "duration": 63,
+            "views": 61679,
+            "confidence": 0.85
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "30",
+        "sets": "2",
+        "repUnits": "yd",
+        "note": "Add Weight to Sled."
+      }
+    },
+    {
+      "id": "heeltaps",
+      "name": "Heel Taps",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208442/exercises/HeelTaps.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/HeelTaps.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=w2Um9ULrcBI",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=3MNj7LrRX3U",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=V87VgAcB6CY",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "4",
+        "repUnits": "reps"
+      }
+    },
+    {
+      "id": "highlowplanks",
+      "name": "High Plank/Low Plank",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208443/exercises/HighLowPlanks.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/HighLowPlanks.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=v25dawSzRTM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "High to Low Plank Exercise"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=pvIjsG5Svck",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "High to Low Plank Exercise"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=kJp-8Me6_84",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "High to Low Plank Exercise",
+          "metadata": {
+            "title": "High to Low Plank Exercise",
+            "channel": "Live Being Fit",
+            "duration": 51,
+            "views": 180425,
+            "confidence": 0.9
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "3",
+        "repUnits": "reps",
+        "note": "Note: Do the reps once for each direction."
+      }
+    },
+    {
+      "id": "hindusquats",
+      "name": "Hindu Squats",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208444/exercises/HinduSquats.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/HinduSquats.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=DXvIzLtN-qY",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "The Unreal Power of Hindu Squats."
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=E1GJi0iiUk4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "The Unreal Power of Hindu Squats."
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=71HQpGSGDKQ",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "The Unreal Power of Hindu Squats.",
+          "metadata": {
+            "title": "The Unreal Power of Hindu Squats.",
+            "channel": "Strength Side",
+            "duration": 38,
+            "views": 430609,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "3",
+        "sets": "1",
+        "repUnits": "min",
+        "note": "No resting."
+      }
+    },
+    {
+      "id": "hipabductions",
+      "name": "Hip Abduction",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208448/exercises/HipAbductions.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/HipAbductions.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=sNqa1ad2qIQ",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=FPlHiEykiy8",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=iOh08wn1s_Y",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "3",
+        "repUnits": "reps",
+        "note": "Note: Meant to be a Super Set."
+      },
+      "aliases": [
+        "Hip Abductions & Calf Raises"
+      ]
+    },
+    {
+      "id": "calfraises",
+      "name": "Calf Raise",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208356/exercises/CalfRaises.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/CalfRaises.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=uFWuVSxsT0Y",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "15",
+        "sets": "3",
+        "repUnits": "reps",
+        "note": "Note: Meant to be a Super Set."
+      },
+      "aliases": [
+        "Hip Abductions & Calf Raises"
+      ]
+    },
+    {
+      "id": "hipext",
+      "name": "Hip Extension w/ Unilateral Eccentric",
+      "demos": [
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/HipExt.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=v5JFb2AsSVs",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=E1mG5L9rpFc",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "15",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Meant to be a Super Set."
+      },
+      "aliases": [
+        "Hip Ext w/ Unilateral Eccentric & SL DB RDL"
+      ]
+    },
+    {
+      "id": "sldbrdl",
+      "name": "Single-Leg DB Romanian Deadlift",
+      "demos": [
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/SLDBRDL.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=Lu1utKnijTA",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=WwTJM8VxpvE",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "15",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Meant to be a Super Set."
+      },
+      "aliases": [
+        "Hip Ext w/ Unilateral Eccentric & SL DB RDL"
+      ]
+    },
+    {
+      "id": "javelinstretch",
+      "name": "Javelin Stretch",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208449/exercises/JavelinStretch.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/JavelinStretch.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=s2_ISPAkzew",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=V7pWvW2kSNc",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=86F2grEKDzU",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Using an exercise band."
+      }
+    },
+    {
+      "id": "kbpasses",
+      "name": "KB Passes",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208451/exercises/KBPasses.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/KBPasses.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=ec75RHE3Gwk",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Her Kettlebell ABS WORKOUT!😳"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=Dvt2KtkzLuo",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Her Kettlebell ABS WORKOUT!😳"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=cztsuNzkbG8",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Her Kettlebell ABS WORKOUT!😳",
+          "metadata": {
+            "title": "Her Kettlebell ABS WORKOUT!😳",
+            "channel": "Squat University",
+            "duration": 60,
+            "views": 10501203,
+            "confidence": 0.85
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "4",
+        "repUnits": "reps"
+      }
+    },
+    {
+      "id": "kbswings",
+      "name": "KB Swing",
+      "demos": [
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/KBSwings.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=bXgFx93CGow",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "DON’T do THIS when doing box jumps!",
+          "metadata": {
+            "title": "DON’T do THIS when doing box jumps!",
+            "channel": "Sam Vickers Golf Performance",
+            "duration": 20,
+            "views": 443830,
+            "confidence": 0.3
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=aSYap2yhW8s",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=kP5PoazFK8c",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "4",
+        "sets": "10",
+        "repUnits": "reps",
+        "note": "Squat on each rep and press your hips forward at extension. Meant to be a Super Set."
+      },
+      "aliases": [
+        "KB Swings, Box Depth Drops, Broad Jumps"
+      ]
+    },
+    {
+      "id": "boxdepthdrop",
+      "name": "Box Depth Drop",
+      "demos": [
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/BoxDepthDrop.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=yDC2RCiKb5U",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "2",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "You may add a vertical drop at the end. Meant to be a Super Set."
+      },
+      "aliases": [
+        "KB Swings, Box Depth Drops, Broad Jumps"
+      ]
+    },
+    {
+      "id": "broadjumps",
+      "name": "Broad Jump",
+      "demos": [
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/BroadJumps.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        }
+      ],
+      "recommendations": {
+        "reps": "1",
+        "sets": "4",
+        "repUnits": "rep",
+        "note": "Jump as far as you can. Meant to be a Super Set."
+      },
+      "aliases": [
+        "KB Swings, Box Depth Drops, Broad Jumps"
+      ]
+    },
+    {
+      "id": "kneelinghipflexorstretch",
+      "name": "Kneeling Hip Flexor Stretch",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "mp4",
+          "url": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229231/exercises/KneelingHipFlexorStretch.mp4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/KneelingHipFlexorStretch.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=ktgtEWGhFd8",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "⭐️True Hip Flexor Stretch (Simple Fix For Lasting Results) #shorts"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=DXuStgWuJV8",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "⭐️True Hip Flexor Stretch (Simple Fix For Lasting Results) #shorts"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=2PNT-FFKLgY",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "⭐️True Hip Flexor Stretch (Simple Fix For Lasting Results) #shorts",
+          "metadata": {
+            "title": "⭐️True Hip Flexor Stretch (Simple Fix For Lasting Results) #shorts",
+            "channel": "FIN Treatment & Training",
+            "duration": 31,
+            "views": 612375,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "30",
+        "sets": "3",
+        "repUnits": "secs (each side)",
+        "note": "Details: Kneel on one knee with the other foot flat in front. Push hips forward to feel a stretch in the front of the back leg hip. Keep your torso upright. Use a foam pad or mat to protect the kneeling knee."
+      }
+    },
+    {
+      "id": "krocrows2",
+      "name": "Kroc Row",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208478/exercises/KrocRows2.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/KrocRows2.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=sGwDvbqUSpk",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "8",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Meant to be a Super Set."
+      },
+      "aliases": [
+        "Kroc Rows & Scarecrows"
+      ]
+    },
+    {
+      "id": "scarecrows",
+      "name": "Scarecrow",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208502/exercises/Scarecrows.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/Scarecrows.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        }
+      ],
+      "recommendations": {
+        "reps": "15",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Meant to be a Super Set."
+      },
+      "aliases": [
+        "Kroc Rows & Scarecrows"
+      ]
+    },
+    {
+      "id": "krocrows1",
+      "name": "Kroc Rows Burnout",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208477/exercises/KrocRows1.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/KrocRows1.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=1mGXae-LCiM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Are Deadlifts Beneficial? #gymtips"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=8AJc_8y_r8Y",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Are Deadlifts Beneficial? #gymtips"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=eC0KqOYsOZY",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Are Deadlifts Beneficial? #gymtips",
+          "metadata": {
+            "title": "Are Deadlifts Beneficial? #gymtips",
+            "channel": "JayCutlerTV",
+            "duration": 44,
+            "views": 1469642,
+            "confidence": 0.3
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "AMRAP",
+        "sets": "1",
+        "repUnits": "reps",
+        "note": "Weight: 30-50 lbs"
+      }
+    },
+    {
+      "id": "landing-from-a-box",
+      "name": "Landing from a Box",
+      "demos": [],
+      "recommendations": {
+        "reps": "5",
+        "sets": "3",
+        "repUnits": "reps",
+        "note": "From 12in box."
+      }
+    },
+    {
+      "id": "lowboxdrops",
+      "name": "Low Box Drops",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208483/exercises/LowBoxDrops.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/LowBoxDrops.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=HSLcfruScKU",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=I_cwsX_95nw",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=iCuglFclkUM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Keep the sole of your foot from rolling inward."
+      }
+    },
+    {
+      "id": "lowboxjumptoheiden",
+      "name": "Low Box Jump to Heiden",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208485/exercises/LowBoxJumptoHeiden.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/LowBoxJumptoHeiden.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=VezYQD9_l2g",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Lateral plyometric box jumps"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=LqEZv0eELNg",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Lateral plyometric box jumps"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=N-jzh4g0gcc",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Lateral plyometric box jumps",
+          "metadata": {
+            "title": "Lateral plyometric box jumps",
+            "channel": "Abethephysio",
+            "duration": 25,
+            "views": 1249,
+            "confidence": 0.85
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "5",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Land softly and compress your body on each rep."
+      }
+    },
+    {
+      "id": "ngdbinclinebench",
+      "name": "Neutral-Grip DB Incline Bench Press",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208487/exercises/NGDBInclineBench.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/NGDBInclineBench.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=dcV-ATSeryA",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How to do a Dumbbell Incline Chest Press!"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=V3BNe4vJX60",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How to do a Dumbbell Incline Chest Press!"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=5orOHJL2qS4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How to do a Dumbbell Incline Chest Press!",
+          "metadata": {
+            "title": "How to do a Dumbbell Incline Chest Press!",
+            "channel": "Elite Performance",
+            "duration": 19,
+            "views": 2277905,
+            "confidence": 0.85
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "8",
+        "sets": "5",
+        "repUnits": "reps",
+        "note": "Keep your palms facing each other. Meant to be a Super Set."
+      },
+      "aliases": [
+        "NG DB Incline Bench & Feet Elevated Push-ups"
+      ]
+    },
+    {
+      "id": "feetelevatedpushups",
+      "name": "Feet-Elevated Push-up",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208398/exercises/FeetElevatedPushUps.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/FeetElevatedPushUps.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=_TgzORKssAs",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Bench Angle & Muscles Worked (KNOW THE DIFFERENCE!)",
+          "metadata": {
+            "title": "Bench Angle & Muscles Worked (KNOW THE DIFFERENCE!)",
+            "channel": "Andrew Kwong (DeltaBolic)",
+            "duration": 15,
+            "views": 4106651,
+            "confidence": 0.85
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=Cj96ZZlmJRU",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=nu5908Dn78Q",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "15-20",
+        "sets": "5",
+        "repUnits": "reps",
+        "note": "Meant to be a Super Set."
+      },
+      "aliases": [
+        "NG DB Incline Bench & Feet Elevated Push-ups"
+      ]
+    },
+    {
+      "id": "ngdbmilitarypress",
+      "name": "NG DB Military Press",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208488/exercises/NGDBMilitaryPress.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/NGDBMilitaryPress.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=osEKVtXBLlU",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=OLePvpxQEGk",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=6v4nrRVySj0",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "8",
+        "sets": "5",
+        "repUnits": "reps",
+        "note": "Keep your palms facing each other."
+      }
+    },
+    {
+      "id": "nomoneydrill",
+      "name": "No Money Drill",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "image",
+          "format": "png",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208969/exercises/NoMoneyDrill.png",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "image",
+          "format": "png",
+          "url": "gifs/NoMoneyDrill.png",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=RfZlK7N2uBc",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=AmxbPZroRK0",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=-hraEWDf170",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Keep your elbows close to your body."
+      }
+    },
+    {
+      "id": "ohkbcarry",
+      "name": "OH KB Carry",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208489/exercises/OHKBCarry.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/OHKBCarry.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=mPcwZ0BdvHg",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=H_Yt-81WM2w",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "150",
+        "sets": "1",
+        "repUnits": "yd"
+      }
+    },
+    {
+      "id": "ohsitups",
+      "name": "OH Sit-ups",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208489/exercises/OHSitups.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/OHSitups.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=jDwoBqPH0jk",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Sit Up vs Crunch Which is Better #sixpack"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=hgjSJN3SXC4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Sit Up vs Crunch Which is Better #sixpack"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=nKQyGwQJDm4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Sit Up vs Crunch Which is Better #sixpack",
+          "metadata": {
+            "title": "Sit Up vs Crunch Which is Better #sixpack",
+            "channel": "Lean4ever_",
+            "duration": 19,
+            "views": 2040946,
+            "confidence": 0.7
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "8",
+        "sets": "3",
+        "repUnits": "reps",
+        "note": "Use a 45lbs plate."
+      }
+    },
+    {
+      "id": "one-arm-dumbbell-rows",
+      "name": "One Arm Dumbbell Rows",
+      "demos": [],
+      "recommendations": {
+        "reps": "8",
+        "sets": "2",
+        "repUnits": "reps",
+        "note": "Use 25lb dumbbells."
+      }
+    },
+    {
+      "id": "onearmohcarry",
+      "name": "One Arm OH Carry",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208491/exercises/OneArmOHCarry.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/OneArmOHCarry.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=X72HhVGAko4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=xCkeisugHlY",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "50",
+        "sets": "3",
+        "repUnits": "yd",
+        "note": "Choose a safe weight."
+      }
+    },
+    {
+      "id": "overunderhurdles",
+      "name": "Over/Under Hurdles",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208494/exercises/OverUnderHurdles.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/OverUnderHurdles.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=tbPB2pIf1FU",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Hurdle Over Unders"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=TYHxvW_O0Io",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Hurdle Over Unders"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=haxN7h8k56k",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Hurdle Over Unders",
+          "metadata": {
+            "title": "Hurdle Over Unders",
+            "channel": "Trackwired",
+            "duration": 35,
+            "views": 5231,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "1",
+        "sets": "3",
+        "repUnits": "rep",
+        "note": "Can be done with a Squat Bar."
+      }
+    },
+    {
+      "id": "pushups",
+      "name": "Push-ups",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208499/exercises/Pushups.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/Pushups.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=yQEx9OC2C3E",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How to do a Push-Up | Proper Form & Technique | NASM"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=WDIpL0pjun0",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How to do a Push-Up | Proper Form & Technique | NASM",
+          "metadata": {
+            "title": "How to do a Push-Up | Proper Form & Technique | NASM",
+            "channel": "National Academy of Sports Medicine (NASM)",
+            "duration": 14,
+            "views": 860958,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "15 → 1",
+        "sets": "Decrementing",
+        "repUnits": "reps",
+        "note": "Start with 15 reps and decrease by 1 for each set."
+      }
+    },
+    {
+      "id": "rollingsideplanks",
+      "name": "Rolling Side Planks",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208501/exercises/RollingSidePlanks.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/RollingSidePlanks.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=kISuoI7QCYk",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How not to side plank and how to do the side plank! #plank #abs #abworkout"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=BFOyHDlY2UE",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How not to side plank and how to do the side plank! #plank #abs #abworkout"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=sKMD_pbNm7w",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How not to side plank and how to do the side plank! #plank #abs #abworkout",
+          "metadata": {
+            "title": "How not to side plank and how to do the side plank! #plank #abs #abworkout",
+            "channel": "brockashby",
+            "duration": 29,
+            "views": 1338181,
+            "confidence": 0.5
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "5",
+        "repUnits": "reps",
+        "note": "Rolling to each side is one rep."
+      }
+    },
+    {
+      "id": "shrugs",
+      "name": "Shrug",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208505/exercises/Shrugs.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/Shrugs.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=V6BtY3Lt0Ys",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=WKBJ3pc0_IM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=6K_N9AGhItQ",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "15",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Note: Meant to be a Super Set."
+      },
+      "aliases": [
+        "Shrugs & Crush Grip Curls"
+      ]
+    },
+    {
+      "id": "crushgripcurls",
+      "name": "Crush Grip Curl",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208368/exercises/CrushGripCurls.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/CrushGripCurls.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Note: For the last set, perform an Iso-hold for as long as possible. Meant to be a Super Set."
+      },
+      "aliases": [
+        "Shrugs & Crush Grip Curls"
+      ]
+    },
+    {
+      "id": "kneelingsideplanks",
+      "name": "Side Planks",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208476/exercises/KneelingSidePlanks.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/KneelingSidePlanks.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=NXr4Fw8q60o",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How not to side plank and how to do the side plank! #plank #abs #abworkout"
+        }
+      ],
+      "recommendations": {
+        "reps": "45",
+        "sets": "4",
+        "repUnits": "secs",
+        "note": "Kneeling."
+      }
+    },
+    {
+      "id": "singleleghipthrusts",
+      "name": "Single Leg Hip Thrust on Bench",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "mp4",
+          "url": "https://res.cloudinary.com/djhmqm9jy/video/upload/v1779229138/exercises/SingleLegHipThrusts.mp4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/SingleLegHipThrusts.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=3suM3LwVlVM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "DB Weighted Single Leg (SL) Hip Thrust"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=ymg2AMDAwrY",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "DB Weighted Single Leg (SL) Hip Thrust"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=hKXqCXSXylA",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "DB Weighted Single Leg (SL) Hip Thrust",
+          "metadata": {
+            "title": "DB Weighted Single Leg (SL) Hip Thrust",
+            "channel": "Onward ATL",
+            "duration": 6,
+            "views": 163130,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "15",
+        "sets": "3",
+        "repUnits": "reps (each side)",
+        "note": "Details: Perform hip thrusts with one leg, using a bench for support. Keep the thrust controlled, and focus on squeezing the glutes at the top of the movement. Note: Use a bench."
+      }
+    },
+    {
+      "id": "skullcrushers",
+      "name": "Skullcrusher",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208521/exercises/Skullcrushers.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/Skullcrushers.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=G-piLwLu0d4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "5 Steps to Perfect Dumbbell Skullcrushers ⚠️ #triceps"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=kDqklk1ZESo",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "5 Steps to Perfect Dumbbell Skullcrushers ⚠️ #triceps"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=iuYB_fLp26Q",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "5 Steps to Perfect Dumbbell Skullcrushers ⚠️ #triceps",
+          "metadata": {
+            "title": "5 Steps to Perfect Dumbbell Skullcrushers ⚠️ #triceps",
+            "channel": "Hazzytrainer",
+            "duration": 13,
+            "views": 1332843,
+            "confidence": 0.85
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "10-12",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Note: Meant to be a Super Set."
+      },
+      "aliases": [
+        "Skullcrushers & DB Side Lateral Raises"
+      ]
+    },
+    {
+      "id": "dbsidelateralraises",
+      "name": "DB Side Lateral Raise",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208387/exercises/DBSideLateralRaises.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/DBSideLateralRaises.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=JIhbYYA1Q90",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "10-12",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Note: Meant to be a Super Set."
+      },
+      "aliases": [
+        "Skullcrushers & DB Side Lateral Raises"
+      ]
+    },
+    {
+      "id": "split-squat-hold-hands-overhead",
+      "name": "Split Squat Hold, Hands Overhead",
+      "demos": [],
+      "recommendations": {
+        "reps": "30",
+        "sets": "2",
+        "repUnits": "secs",
+        "note": "Keep pelvis level, stack torso over the back knee. Use 2x20lb weights."
+      }
+    },
+    {
+      "id": "splitsquatisohold",
+      "name": "Split Squat Iso-Hold",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "image",
+          "format": "jpg",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208996/exercises/SplitSquatIsoHold.jpg",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "image",
+          "format": "jpg",
+          "url": "gifs/SplitSquatIsoHold.jpg",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=uE_NeT2D0lo",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=zzUZOMiE-mg",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=9-E7YW2WAlM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "30",
+        "sets": "4",
+        "repUnits": "secs",
+        "note": "Meant to be a Super Set."
+      },
+      "aliases": [
+        "Split Squats & Split Squat Iso-Holds"
+      ]
+    },
+    {
+      "id": "sesitups",
+      "name": "Spread Eagle Sit-ups",
+      "demos": [
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/SESitups.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=IiLt3JYP75I",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=G8UPVpv2cQc",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "metadata": {
+            "confidence": 0.7
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "50 Total",
+        "sets": "Varies",
+        "repUnits": "reps",
+        "note": "Weight: 5-10 lbs."
+      }
+    },
+    {
+      "id": "stepups",
+      "name": "Step-ups",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208524/exercises/StepUps.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/StepUps.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=PzDbmqL6qo8",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Step up form for QUADS vs GLUTES 🔥 #shorts"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=wfhXnLILqdk",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Step up form for QUADS vs GLUTES 🔥 #shorts"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=8q9LVgN2RD4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Step up form for QUADS vs GLUTES 🔥 #shorts",
+          "metadata": {
+            "title": "Step up form for QUADS vs GLUTES 🔥 #shorts",
+            "channel": "LISAFIITT",
+            "duration": 5,
+            "views": 2429427,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "12",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Complete reps for each side."
+      }
+    },
+    {
+      "id": "swissballlegcurls",
+      "name": "Swiss Ball Leg Curls",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208526/exercises/SwissBallLegCurls.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/SwissBallLegCurls.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=USf54AlNk1g",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Swiss Ball Hamstring Curl | Nuffield Health"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=XkESHgkTdFw",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Swiss Ball Hamstring Curl | Nuffield Health",
+          "metadata": {
+            "title": "Swiss Ball Hamstring Curl | Nuffield Health",
+            "channel": "Nuffield Health",
+            "duration": 38,
+            "views": 432002,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "100 Total",
+        "sets": "Varies",
+        "repUnits": "reps",
+        "note": "Focus on keeping your balance."
+      }
+    },
+    {
+      "id": "tkes",
+      "name": "TKEs",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208526/exercises/TKEs.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/TKEs.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=CNEXyR1fPZo",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How to perform the banded Terminal Knee Extension (TKE) exercise | Knee Pain"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=W7n9dUiEbLM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How to perform the banded Terminal Knee Extension (TKE) exercise | Knee Pain"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=7xG3MeoLjC0",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How to perform the banded Terminal Knee Extension (TKE) exercise | Knee Pain",
+          "metadata": {
+            "title": "How to perform the banded Terminal Knee Extension (TKE) exercise | Knee Pain",
+            "channel": "Tim Trevail",
+            "duration": 87,
+            "views": 45786,
+            "confidence": 0.9
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "20",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Keep the sole of your foot from rolling inward."
+      }
+    },
+    {
+      "id": "trapbardeadlift",
+      "name": "Trap Bar Deadlift",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208528/exercises/TrapBarDeadlift.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/TrapBarDeadlift.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=v-SrIcAp3vM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Body Steel The Rise of HEX BAR 5 WORKOUT VIDEO #bodysteelfitness #gymequipmentsupplier #ytshort"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=a7sQPZsmxvA",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Body Steel The Rise of HEX BAR 5 WORKOUT VIDEO #bodysteelfitness #gymequipmentsupplier #ytshort"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=A-2h-Yqxrb8",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Body Steel The Rise of HEX BAR 5 WORKOUT VIDEO #bodysteelfitness #gymequipmentsupplier #ytshort",
+          "metadata": {
+            "title": "Body Steel The Rise of HEX BAR 5 WORKOUT VIDEO #bodysteelfitness #gymequipmentsupplier #ytshort",
+            "channel": "BODY STEEL FITNESS",
+            "duration": 12,
+            "views": 21690,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "8",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Rate of Perceived Exertion: 8/10"
+      }
+    },
+    {
+      "id": "turkishgetups",
+      "name": "Turkish Get-ups",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208530/exercises/TurkishGetups.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/TurkishGetups.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=XVEMTDlNLyU",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Master The Art of This Functional Kettlebell Exercise: The Turkish Getup"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=-Zsx2JTfGsU",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Master The Art of This Functional Kettlebell Exercise: The Turkish Getup"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=g5dwOlGGfmU",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Master The Art of This Functional Kettlebell Exercise: The Turkish Getup",
+          "metadata": {
+            "title": "Master The Art of This Functional Kettlebell Exercise: The Turkish Getup",
+            "channel": "Pat Damiano ",
+            "duration": 72,
+            "views": 200537,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "3",
+        "sets": "3",
+        "repUnits": "reps",
+        "note": "."
+      }
+    },
+    {
+      "id": "two-leg-pogo",
+      "name": "Two Leg Pogo",
+      "demos": [],
+      "recommendations": {
+        "reps": "15",
+        "sets": "2",
+        "repUnits": "reps",
+        "note": "Landing midfoot, bounce on both feet while not allowing the heel to touch the floor or the ankle to extend."
+      }
+    },
+    {
+      "id": "wall-lower-calf-holds-lifts",
+      "name": "Wall Lower Calf Holds & Lifts",
+      "demos": [],
+      "recommendations": {
+        "reps": "20 / 30",
+        "sets": "2",
+        "repUnits": "secs",
+        "note": "Perform 2 sets of 20s with 30lb, then 2 sets of 30s each side."
+      }
+    },
+    {
+      "id": "chinups",
+      "name": "Chin-ups",
+      "aliases": [
+        "Chin-ups & Pull-overs",
+        "Chin-ups",
+        "Weighted Chin-ups"
+      ],
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208362/exercises/Chinups.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/Chinups.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=oD2ohgW30fQ",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Weighted Chin-up"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=jIvbJzs1V4I",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Weighted Chin-up"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=1C272Ws8WwU",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Weighted Chin-up",
+          "metadata": {
+            "title": "Weighted Chin-up",
+            "channel": "BioFit Performance",
+            "duration": 15,
+            "views": 21848,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "4",
+        "sets": "5-6",
+        "repUnits": "reps",
+        "note": "Do these with a weight."
+      }
+    },
+    {
+      "id": "widegrippulldowns",
+      "name": "Wide Grip Pulldown",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208532/exercises/WideGripPulldowns.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/WideGripPulldowns.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=9n1OGTqCyeI",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "✅ The PERFECT Lat Pulldown (DO THIS!)"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=z-lxcsIN4T4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "✅ The PERFECT Lat Pulldown (DO THIS!)"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=bNmvKpJSWKM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "✅ The PERFECT Lat Pulldown (DO THIS!)",
+          "metadata": {
+            "title": "✅ The PERFECT Lat Pulldown (DO THIS!)",
+            "channel": "Andrew Kwong (DeltaBolic)",
+            "duration": 13,
+            "views": 9264919,
+            "confidence": 0.85
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "12",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Note: Meant to be a Super Set."
+      },
+      "aliases": [
+        "Wide Grip Pulldowns & Bent-over Rows"
+      ]
+    },
+    {
+      "id": "bentoverrows",
+      "name": "Bent-over Row",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208336/exercises/BentoverRows.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/BentoverRows.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=phVtqawIgbk",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "12",
+        "sets": "4",
+        "repUnits": "reps",
+        "note": "Note: Can be done with Dumbbells. Meant to be a Super Set."
+      },
+      "aliases": [
+        "Wide Grip Pulldowns & Bent-over Rows"
+      ]
+    },
+    {
+      "id": "yogapushup",
+      "name": "Yoga Push-up",
+      "demos": [
+        {
+          "type": "cloudinary",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "https://res.cloudinary.com/djhmqm9jy/image/upload/v1779208533/exercises/YogaPushup.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true
+        },
+        {
+          "type": "local",
+          "mediaType": "video",
+          "format": "gif",
+          "url": "gifs/YogaPushup.gif",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Local fallback"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=UIcct-7b6oE",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=Mdoz2uCxNLk",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=eP6habJpue8",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "AI-suggested alternative"
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "4",
+        "repUnits": "reps"
+      }
+    }
+  ]
+}

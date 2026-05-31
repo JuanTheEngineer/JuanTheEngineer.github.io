@@ -1,0 +1,1235 @@
+{
+  "programs": [
+    {
+      "id": "agility_lower_1-1",
+      "title": "Agility Lower Body Program 1.1",
+      "requirements": "Dumbbells, Exercise Band, Swiss Ball, Trap Bar",
+      "items": [
+        {
+          "exerciseId": "declinepistols",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Two seconds down, one second up. Elevate your heel.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "heeltaps",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "tkes",
+          "reps": "20",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Keep the sole of your foot from rolling inward.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "dbsquatjumps",
+          "reps": "4",
+          "sets": "6",
+          "repUnits": "reps",
+          "note": "Weight: 10 lbs"
+        },
+        {
+          "exerciseId": "trapbardeadlift",
+          "reps": "8",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Rate of Perceived Exertion: 8/10"
+        },
+        {
+          "exerciseId": "swissballlegcurls",
+          "reps": "100 Total",
+          "sets": "Varies",
+          "repUnits": "reps",
+          "note": "Focus on keeping your balance."
+        },
+        {
+          "exerciseId": "kneelingsideplanks",
+          "reps": "45",
+          "sets": "4",
+          "repUnits": "secs",
+          "note": "Kneeling."
+        },
+        {
+          "exerciseId": "hindusquats",
+          "reps": "3",
+          "sets": "1",
+          "repUnits": "min",
+          "note": "No resting."
+        }
+      ]
+    },
+    {
+      "id": "agility_lower_1-2",
+      "title": "Agility Lower Body Program 1.2",
+      "requirements": "Dumbbells, Exercise Band, Power Sled, Swiss Ball, Trap Bar",
+      "items": [
+        {
+          "exerciseId": "boxpistols",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Two seconds down, 1 second up. Elevate your heel.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "kbpasses",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "lowboxdrops",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Keep the sole of your foot from rolling inward.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "dbboxsquats",
+          "reps": "15",
+          "sets": "5",
+          "repUnits": "reps",
+          "note": "Weight: 10 lbs"
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "dbrdls",
+              "reps": "10",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "splitsquats",
+              "reps": "12",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Controlled on the way down. Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "exerciseId": "45degreebackraises",
+          "reps": "60 Total",
+          "sets": "Varies",
+          "repUnits": "reps",
+          "note": "Go through full range of motion."
+        },
+        {
+          "exerciseId": "ghrisohold",
+          "reps": "30",
+          "sets": "4",
+          "repUnits": "secs",
+          "note": "Using a Weight."
+        },
+        {
+          "exerciseId": "heavysledsuicide",
+          "reps": "30",
+          "sets": "2",
+          "repUnits": "yd",
+          "note": "Add Weight to Sled."
+        }
+      ]
+    },
+    {
+      "id": "agility_lower_2-1",
+      "title": "Agility Lower Body Program 2.1",
+      "requirements": "Dumbbells, Exercise Band, Trap Bar",
+      "items": [
+        {
+          "exerciseId": "declinepistols",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Two seconds down, one second up. Elevate your heel.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "heeltaps",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Weight: 10 lbs",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "tkes",
+          "reps": "25",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Keep the sole of your foot from rolling inward.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "dbsquatjumps",
+          "reps": "3",
+          "sets": "5",
+          "repUnits": "reps",
+          "note": "Weight: 10 lbs"
+        },
+        {
+          "exerciseId": "trapbardeadlift",
+          "reps": "3-5",
+          "sets": "5",
+          "repUnits": "reps",
+          "note": "Work up to your 3 to 5 rep maximum weight."
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "splitsquats",
+              "reps": "10",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Controlled on the way down. Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "splitsquatisohold",
+              "reps": "30",
+              "sets": "4",
+              "repUnits": "secs",
+              "note": "Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "exerciseId": "ghr",
+          "reps": "30 Total",
+          "sets": "Varies",
+          "repUnits": "reps",
+          "note": "Can be substituted with any hamstring workout if necessary."
+        },
+        {
+          "exerciseId": "rollingsideplanks",
+          "reps": "10",
+          "sets": "5",
+          "repUnits": "reps",
+          "note": "Rolling to each side is one rep."
+        }
+      ]
+    },
+    {
+      "id": "agility_lower_2-2",
+      "title": "Agility Lower Body Program 2.2",
+      "requirements": "Box, Dumbbells, Squat Bar",
+      "items": [
+        {
+          "exerciseId": "boxpistols",
+          "reps": "5",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Start with low box if necessary.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "kbpasses",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "One rep for each side.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "lowboxjumptoheiden",
+          "reps": "5",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Land softly and compress your body on each rep.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "frontsquats",
+          "reps": "5",
+          "sets": "5",
+          "repUnits": "reps",
+          "note": "Rate of Perceived Exertion: 8/10"
+        },
+        {
+          "exerciseId": "stepups",
+          "reps": "12",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Complete reps for each side."
+        },
+        {
+          "kind": "compound",
+          "exercises": [
+            {
+              "exerciseId": "kbswings",
+              "reps": "4",
+              "sets": "10",
+              "repUnits": "reps",
+              "note": "Squat on each rep and press your hips forward at extension. Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "boxdepthdrop",
+              "reps": "2",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "You may add a vertical drop at the end. Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "broadjumps",
+              "reps": "1",
+              "sets": "4",
+              "repUnits": "rep",
+              "note": "Jump as far as you can. Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "exerciseId": "dbsidebends",
+          "reps": "25",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Complete reps for each side."
+        }
+      ]
+    },
+    {
+      "id": "agility_lower_3-1",
+      "title": "Agility Lower Body Program 3.1",
+      "requirements": "Dumbbells",
+      "items": [
+        {
+          "exerciseId": "turkishgetups",
+          "reps": "3",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": ".",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "ohkbcarry",
+          "reps": "150",
+          "sets": "1",
+          "repUnits": "yd",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "overunderhurdles",
+          "reps": "1",
+          "sets": "3",
+          "repUnits": "rep",
+          "note": "Can be done with a Squat Bar.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "frontsquatisoholds",
+              "reps": "6",
+              "sets": "6",
+              "repUnits": "secs",
+              "note": "Rate of Perceived Exertion: 9/10. Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "boxjumps",
+              "reps": "6",
+              "sets": "3",
+              "repUnits": "reps",
+              "note": "Box height should be 24-36 inches. Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "exerciseId": "splitsquats",
+          "reps": "12",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Controlled on the way down."
+        },
+        {
+          "exerciseId": "chinups",
+          "reps": "4",
+          "sets": "5-6",
+          "repUnits": "reps",
+          "note": "Do these with a weight."
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "hipext",
+              "reps": "15",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "sldbrdl",
+              "reps": "15",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "exerciseId": "sesitups",
+          "reps": "50 Total",
+          "sets": "Varies",
+          "repUnits": "reps",
+          "note": "Weight: 5-10 lbs."
+        }
+      ]
+    },
+    {
+      "id": "agility_upper_1-2",
+      "title": "Agility Upper Body Program 1.2",
+      "requirements": "Dumbbells, Pull-up Bar, Battle Ropes, Exercise Band",
+      "items": [
+        {
+          "exerciseId": "floorwashers",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Five in each direction on both arms.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "cat-camel",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "nomoneydrill",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Keep your elbows close to your body.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "javelinstretch",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Using an exercise band.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "ngdbmilitarypress",
+          "reps": "8",
+          "sets": "5",
+          "repUnits": "reps",
+          "note": "Keep your palms facing each other."
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "chinups",
+              "reps": "8-10",
+              "sets": "5",
+              "repUnits": "reps",
+              "note": "Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "pullovers",
+              "reps": "10",
+              "sets": "5",
+              "repUnits": "reps",
+              "note": "Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "exerciseId": "pushups",
+          "reps": "15 → 1",
+          "sets": "Decrementing",
+          "repUnits": "reps",
+          "note": "Start with 15 reps and decrease by 1 for each set."
+        },
+        {
+          "exerciseId": "ohsitups",
+          "reps": "8",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Use a 45lbs plate."
+        },
+        {
+          "exerciseId": "battleropes",
+          "reps": "1",
+          "sets": "3",
+          "repUnits": "min",
+          "note": "Aim for 1 minute but push to failure on each set.Try a variety of styles in 15 second segements."
+        }
+      ]
+    },
+    {
+      "id": "agility_upper_1-1",
+      "title": "Agility Upper Body Program 1.1",
+      "requirements": "Dumbbells, Pull-up Bar, Battle Ropes, Exercise Band",
+      "items": [
+        {
+          "exerciseId": "floorwashers",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Five in each direction on both arms.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "cat-camel",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "nomoneydrill",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Keep your elbows close to your body.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "javelinstretch",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Using an exercise band.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "ngdbmilitarypress",
+          "reps": "8",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Keep your palms facing each other."
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "chinups",
+              "reps": "6-8",
+              "sets": "3",
+              "repUnits": "reps",
+              "note": "Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "pullovers",
+              "reps": "10",
+              "sets": "3",
+              "repUnits": "reps",
+              "note": "Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "exerciseId": "pushups",
+          "reps": "12 → 1",
+          "sets": "Decrementing",
+          "repUnits": "reps",
+          "note": "Start with 12 reps and decrease by 1 for each set."
+        },
+        {
+          "exerciseId": "ohsitups",
+          "reps": "8",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Use a 45lbs plate."
+        },
+        {
+          "exerciseId": "battleropes",
+          "reps": "1",
+          "sets": "3",
+          "repUnits": "min",
+          "note": "Aim for 1 minute but push to failure on each set.Try a variety of styles in 15 second segements."
+        }
+      ]
+    },
+    {
+      "id": "agility_upper_2-1",
+      "title": "Agility Upper Body Program 2.1",
+      "requirements": "Dumbbells, Pull-up Bar, Battle Ropes, Exercise Band",
+      "items": [
+        {
+          "exerciseId": "floorwashers",
+          "reps": "5",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Five in each direction on both arms. Reach your hand out between each rep.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "yogapushup",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "downwarddogtoetouches",
+          "reps": "5",
+          "sets": "4",
+          "repUnits": "reps",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "chinups",
+          "reps": "AMRAP",
+          "sets": "1",
+          "repUnits": "reps",
+          "note": "Go for as many reps as possible."
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "ngdbinclinebench",
+              "reps": "8",
+              "sets": "5",
+              "repUnits": "reps",
+              "note": "Keep your palms facing each other. Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "feetelevatedpushups",
+              "reps": "15-20",
+              "sets": "5",
+              "repUnits": "reps",
+              "note": "Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "exerciseId": "krocrows1",
+          "reps": "AMRAP",
+          "sets": "1",
+          "repUnits": "reps",
+          "note": "Weight: 30-50 lbs"
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "krocrows2",
+              "reps": "8",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "scarecrows",
+              "reps": "15",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "exerciseId": "onearmohcarry",
+          "reps": "50",
+          "sets": "3",
+          "repUnits": "yd",
+          "note": "Choose a safe weight."
+        }
+      ]
+    },
+    {
+      "id": "asics_1-0",
+      "title": "Runner's Glute & Hip Flexor Guide",
+      "requirements": "Barbells or Dumbbells, Straps or Band, Knee Pad, Bench, Machines(Optional)",
+      "items": [
+        {
+          "exerciseId": "curtsylunges",
+          "reps": "15",
+          "sets": "3",
+          "repUnits": "reps (each side)",
+          "note": "Details: Perform a lateral lunge while crossing one leg behind the other, akin to a curtsy. Use a strap or band to maintain balance and focus the load on the heel. Note: You only need to step behind your front foot. Crossing far outside your front foot is unnecessary and will lead to uneven hip posture."
+        },
+        {
+          "exerciseId": "barbellwalkinglunges",
+          "reps": "10",
+          "sets": "3",
+          "repUnits": "reps (each side)",
+          "note": "Details: Perform walking lunges with a barbell placed behind your neck. Ensure each knee lightly taps the ground to engage the glutes properly. Note: May swap barbell for dumbbells or body weight."
+        },
+        {
+          "exerciseId": "90degreebarbellsquats",
+          "reps": "10-15",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Detail: Squat to a 90-degree angle, then powerfully, but with control in one motion thrust your hips upward as you rise, tightly flexing your glutes. Note: Aim for 70% of your max repetition weight or above."
+        },
+        {
+          "exerciseId": "singleleghipthrusts",
+          "reps": "15",
+          "sets": "3",
+          "repUnits": "reps (each side)",
+          "note": "Details: Perform hip thrusts with one leg, using a bench for support. Keep the thrust controlled, and focus on squeezing the glutes at the top of the movement. Note: Use a bench."
+        },
+        {
+          "exerciseId": "firehydrant",
+          "reps": "30",
+          "sets": "3",
+          "repUnits": "reps (each side)",
+          "note": "Details: From a tabletop position, lift one leg away from the body, keeping the knee bent. This exercise targets the gluteus medius and minimus for improved lateral stability."
+        },
+        {
+          "exerciseId": "kneelinghipflexorstretch",
+          "reps": "30",
+          "sets": "3",
+          "repUnits": "secs (each side)",
+          "note": "Details: Kneel on one knee with the other foot flat in front. Push hips forward to feel a stretch in the front of the back leg hip. Keep your torso upright. Use a foam pad or mat to protect the kneeling knee.",
+          "tags": [
+            "stretch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "posture_1-0",
+      "title": "Posture",
+      "requirements": "This workout is meant to be done twice daily to improve your posture",
+      "items": [
+        {
+          "exerciseId": "posture-ex1",
+          "reps": "10",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Note: Inhale forward, Exhale back. Keep chin to chest and butt on the ground."
+        }
+      ]
+    },
+    {
+      "id": "ppl_pull_day_1-0",
+      "title": "PPL 3-Day Rotation: Pull Day 1",
+      "requirements": "Cables, Dumbbells, Barbell, Exercise Band",
+      "items": [
+        {
+          "exerciseId": "nomoneydrill",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Note: Keep your elbows close to your body.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "downwarddogtoetouches",
+          "reps": "5",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Note: .",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "closegrippulldowns",
+              "reps": "12",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "cablerows",
+              "reps": "12",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "widegrippulldowns",
+              "reps": "12",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "bentoverrows",
+              "reps": "12",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Can be done with Dumbbells. Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "cablelateralpullovers",
+              "reps": "12",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "zottmancurls",
+              "reps": "12",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "shrugs",
+              "reps": "15",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "crushgripcurls",
+              "reps": "10",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: For the last set, perform an Iso-hold for as long as possible. Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "exerciseId": "dbsidebends",
+          "reps": "100",
+          "sets": "Varies",
+          "repUnits": "reps",
+          "note": "Note: Complete reps for each side."
+        }
+      ]
+    },
+    {
+      "id": "ppl_push_day_1-0",
+      "title": "PPL 3-Day Rotation: Push Day 1",
+      "requirements": "Barbells, Bench, Dumbbells, Exercise Band",
+      "items": [
+        {
+          "exerciseId": "javelinstretch",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "note": "Note: Using an exercise band.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "yogapushup",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "chestflies",
+              "reps": "12",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Can be done with Cables or Dumbbells. Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "frontraises",
+              "reps": "12",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Weight: 45 lbs. Note: Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "flatbenchpress",
+              "reps": "6-12",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Can be done with Barbell or Dumbbells. Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "ngdbmilitarypress",
+              "reps": "10-12",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Standing. Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "skullcrushers",
+              "reps": "10-12",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "dbsidelateralraises",
+              "reps": "10-12",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "dips",
+              "reps": "10-15",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "feetelevatedpushups",
+              "reps": "12-15",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "exerciseId": "highlowplanks",
+          "reps": "10",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Note: Do the reps once for each direction."
+        }
+      ]
+    },
+    {
+      "id": "ppl_leg_day_1-0",
+      "title": "PPL 3-Day Rotation: Leg Day 1",
+      "requirements": "Barbell, Dumbbells, KettleBells, Bench, Machines(Optional)",
+      "items": [
+        {
+          "exerciseId": "declinepistols",
+          "reps": "10",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Note: Two seconds down, one second up. Elevate your heel.",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "exerciseId": "kbpasses",
+          "reps": "10",
+          "sets": "3",
+          "repUnits": "reps",
+          "tags": [
+            "warmup"
+          ]
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "barbellsquat",
+              "reps": "12, 10, 8, 6",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Increase weight after each set. Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "dbsquatjumps",
+              "reps": "6",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Weight: 10 lbs. Note: Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "splitsquats",
+              "reps": "12",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "dbrdls",
+              "reps": "12",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Controlled on the way down. Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "elevatedheelgobletsquat",
+              "reps": "10",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "legcurls",
+              "reps": "12",
+              "sets": "4",
+              "repUnits": "reps",
+              "note": "Note: Squeeze toes together. Meant to be a Super Set."
+            }
+          ]
+        },
+        {
+          "kind": "superset",
+          "exercises": [
+            {
+              "exerciseId": "hipabductions",
+              "reps": "10",
+              "sets": "3",
+              "repUnits": "reps",
+              "note": "Note: Meant to be a Super Set."
+            },
+            {
+              "exerciseId": "calfraises",
+              "reps": "15",
+              "sets": "3",
+              "repUnits": "reps",
+              "note": "Note: Meant to be a Super Set."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reload_pt_strength_1-1",
+      "title": "Reload PT Strength 1.1",
+      "requirements": "Equipment: Dumbbells, Weight Plates (20lb, 35lb, 40lb, 75lb), Exercise Band",
+      "items": [
+        {
+          "exerciseId": "split-squat-hold-hands-overhead",
+          "reps": "30",
+          "sets": "2",
+          "repUnits": "secs",
+          "note": "Keep pelvis level, stack torso over the back knee. Use 2x20lb weights."
+        },
+        {
+          "exerciseId": "wall-lower-calf-holds-lifts",
+          "reps": "20 / 30",
+          "sets": "2",
+          "repUnits": "secs",
+          "note": "Perform 2 sets of 20s with 30lb, then 2 sets of 30s each side."
+        },
+        {
+          "exerciseId": "copenhagen-plank-at-upper-calf-with-lifts",
+          "reps": "8",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Perform at ankle with lifts."
+        },
+        {
+          "exerciseId": "two-leg-pogo",
+          "reps": "15",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Landing midfoot, bounce on both feet while not allowing the heel to touch the floor or the ankle to extend."
+        },
+        {
+          "exerciseId": "a-runs-gear-1-3",
+          "reps": "4",
+          "sets": "rounds",
+          "repUnits": "reps",
+          "note": "Perform running gear drills."
+        },
+        {
+          "exerciseId": "goblet-squat-tempo",
+          "reps": "5",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Use 75lb. Tempo: slow down, fast up."
+        },
+        {
+          "exerciseId": "db-chest-press",
+          "reps": "10",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Use 2x35lb. Tempo: slow down, fast up."
+        },
+        {
+          "exerciseId": "dumbbell-bulgarian-split-squat-rfess",
+          "reps": "6",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Use 2x40lb. Option to warm up with a lighter weight."
+        },
+        {
+          "exerciseId": "one-arm-dumbbell-rows",
+          "reps": "8",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Use 25lb dumbbells."
+        }
+      ]
+    },
+    {
+      "id": "reload_pt_strength_1-2",
+      "title": "Reload PT Strength 1.2",
+      "requirements": "Equipment: Dumbbells, Trap Bar, Weight Plates (20lb, 30lb, 130lb), Exercise Band",
+      "items": [
+        {
+          "exerciseId": "split-squat-hold-hands-overhead",
+          "reps": "30",
+          "sets": "2",
+          "repUnits": "secs",
+          "note": "Keep pelvis level, stack torso over the back knee. Use 2x20lb weights."
+        },
+        {
+          "exerciseId": "wall-lower-calf-holds-lifts",
+          "reps": "20 / 30",
+          "sets": "2",
+          "repUnits": "secs",
+          "note": "Perform 2 sets of 20s with 30lb, then 2 sets of 30s each side."
+        },
+        {
+          "exerciseId": "copenhagen-plank-at-upper-calf-with-lifts",
+          "reps": "8",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Perform at ankle with lifts."
+        },
+        {
+          "exerciseId": "2l-pogo",
+          "reps": "15",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Landing midfoot."
+        },
+        {
+          "exerciseId": "a-runs-gear-1-3",
+          "reps": "4",
+          "sets": "rounds",
+          "repUnits": "reps",
+          "note": "Perform running gear drills."
+        },
+        {
+          "exerciseId": "landing-from-a-box",
+          "reps": "5",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "From 12in box."
+        },
+        {
+          "exerciseId": "trapbardeadlift",
+          "reps": "6",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Use 130lb (or available weight). Tempo: slow down, fast up."
+        },
+        {
+          "exerciseId": "db-chest-press",
+          "reps": "10",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Use 2x35lb. Use same concept as goblet squat. Tempo: slow down, fast up."
+        },
+        {
+          "exerciseId": "1l-rdl-w-band-above-knee",
+          "reps": "30",
+          "sets": "2",
+          "repUnits": "secs",
+          "note": "Hand on railing, reach back leg outwards."
+        },
+        {
+          "exerciseId": "1a-db-row",
+          "reps": "8",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Use 25lb dumbbells."
+        }
+      ]
+    }
+  ]
+}

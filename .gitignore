@@ -5,6 +5,7 @@ v2/node_modules/
 # === Build output ===
 v2/dist/
 _site/
+v2/public/
 
 # === IDE / Editor ===
 .idea/

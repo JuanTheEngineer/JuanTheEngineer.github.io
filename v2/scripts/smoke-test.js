@@ -90,8 +90,8 @@ assert(hasDisplayName === 0, `No displayName fields in workouts.json (${hasDispl
 
 // --- 6. Build output exists ---
 console.log('\nBuild output:');
-const distIndex = join(root, 'dist', 'index.html');
-assert(existsSync(distIndex), 'dist/index.html exists (run npm run build first)');
+const distIndex = join(projectRoot, 'docs', 'index.html');
+assert(existsSync(distIndex), 'docs/index.html exists (run npm run build first)');
 
 // --- Summary ---
 console.log(`\n${'═'.repeat(40)}`);

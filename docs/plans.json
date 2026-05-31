@@ -1,0 +1,79 @@
+{
+  "plans": [
+    {
+      "name": "Strength",
+      "description": "All programs for Strength by zone.",
+      "subPlans": [
+        {
+          "name": "Push/Pull/Legs 3-Day Rotation",
+          "description": "Strength workouts that push your muscles to their limits and aim to increase your lift capacity.",
+          "programs": [
+            "ppl_push_day_1-0",
+            "ppl_pull_day_1-0",
+            "ppl_leg_day_1-0"
+          ]
+        },
+        {
+          "name": "Reload PT Strength",
+          "description": "Reload physical therapy strength workouts. For rehabilitation of the knees, ankles, and hips.",
+          "programs": [
+            "reload_pt_strength_1-1",
+            "reload_pt_strength_1-2"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Agility",
+      "description": "All programs for Agility by zone.",
+      "subPlans": [
+        {
+          "name": "Upper Body",
+          "description": "Agility workouts for the upper body focused on quick movements and coordination.",
+          "programs": [
+            "agility_upper_1-1",
+            "agility_upper_1-2",
+            "agility_upper_2-1"
+          ]
+        },
+        {
+          "name": "Lower Body",
+          "description": "Agility workouts for the lower body emphasizing power, balance, and speed.",
+          "programs": [
+            "agility_lower_1-1",
+            "agility_lower_1-2",
+            "agility_lower_2-1",
+            "agility_lower_2-2",
+            "agility_lower_3-1"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Running",
+      "description": "All programs for Runners.",
+      "subPlans": [
+        {
+          "name": "Asics’ Strength & Stretch Guide",
+          "description": "A guide combining strength and stretching specifically for runners.",
+          "programs": [
+            "asics_1-0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Other",
+      "description": "All programs for Special workouts.",
+      "subPlans": [
+        {
+          "name": "Special Workouts",
+          "description": "Workouts designed for specific goals and special training needs.",
+          "programs": [
+            "posture_1-0"
+          ]
+        }
+      ]
+    }
+  ]
+}

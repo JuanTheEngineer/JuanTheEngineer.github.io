@@ -119,6 +119,7 @@ export async function renderExerciseLibraryPage(container) {
         }
         ${ex.recommendations?.note ? `<div class="bg-brand-500/10 border-l-2 border-brand-500 px-3 py-2 rounded-r-lg"><p class="text-xs text-slate-300 leading-relaxed">${esc(ex.recommendations.note)}</p></div>` : ''}
         ${ex.aliases?.length ? `<p class="text-[11px] text-slate-500">Also known as: ${ex.aliases.join(', ')}</p>` : ''}
+        <a href="#/exercise/${ex.id}" class="inline-block text-xs text-brand-400 hover:text-brand-300 font-medium transition-colors">View full page →</a>
       </div>
     `;
   }
