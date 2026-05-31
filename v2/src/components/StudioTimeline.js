@@ -36,8 +36,8 @@ function singleHtml(item, i, state, total) {
       <p class="text-xs text-slate-400 num mt-0.5">${item.reps || '—'} ${item.repUnits || 'reps'} · ${item.sets || '—'} sets</p>
       ${notePreview ? `<p class="text-[11px] text-slate-500 truncate mt-0.5 italic">${esc(notePreview)}</p>` : ''}
     </div>
-    <button data-action="menu" data-idx="${i}" class="p-3 -mr-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-white/10 active:bg-white/20 transition-colors touch-manipulation shrink-0" aria-label="Actions">
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
+    <button data-action="menu" data-idx="${i}" class="relative z-10 p-3 -mr-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-white/10 active:bg-white/20 transition-colors touch-manipulation shrink-0" aria-label="Actions">
+      <svg class="w-5 h-5 pointer-events-none" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
     </button>
   </div>
   ${expanded ? `<div class="border-t border-slate-800" data-region="edit-form" data-idx="${i}"></div>` : ''}
@@ -62,8 +62,8 @@ function groupHtml(item, i, state) {
     <span class="text-[10px] font-bold uppercase tracking-wide text-brand-300">${kindLabel}</span>
     <span class="text-[10px] text-slate-500 num">${item.members.length} exercises</span>
     <div class="flex-1"></div>
-    <button data-action="menu" data-idx="${i}" class="p-3 -mr-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-white/10 active:bg-white/20 transition-colors touch-manipulation shrink-0" aria-label="Actions">
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
+    <button data-action="menu" data-idx="${i}" class="relative z-10 p-3 -mr-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-white/10 active:bg-white/20 transition-colors touch-manipulation shrink-0" aria-label="Actions">
+      <svg class="w-5 h-5 pointer-events-none" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
     </button>
   </div>
   ${membersHtml}
@@ -75,8 +75,6 @@ function groupHtml(item, i, state) {
 
 function showMenu(container, idx, state, callbacks) {
   closeMenu(container);
-  const li = container.querySelector(`[data-idx="${idx}"]`);
-  if (!li) return;
   const item = state.items[idx];
   const isGroup = item.type === 'group';
   const total = state.items.length;
@@ -85,52 +83,51 @@ function showMenu(container, idx, state, callbacks) {
   const canGroupAbove = !isGroup && idx > 0 && state.items[idx - 1].type === 'single';
   const canGroupBelow = !isGroup && idx < total - 1 && state.items[idx + 1].type === 'single';
 
-  const menu = document.createElement('div');
-  menu.dataset.region = 'action-menu';
-  menu.className = 'absolute right-3 top-full mt-1 bg-slate-800 border border-slate-700 rounded-xl py-1.5 shadow-xl z-50 min-w-[160px] animate-fade-in';
-
+  // Build options
   let options = '';
-  if (!isGroup) options += menuItem('edit', '✎ Edit');
-  if (canMoveUp) options += menuItem('move-up', '↑ Move up');
-  if (canMoveDown) options += menuItem('move-down', '↓ Move down');
-  if (canGroupAbove || canGroupBelow) {
-    options += `<div class="border-t border-slate-700 my-1"></div>`;
-    if (canGroupAbove) options += menuItem('group-above', '🔗 Group with above');
-    if (canGroupBelow) options += menuItem('group-below', '🔗 Group with below');
-  }
-  if (isGroup) options += menuItem('ungroup', '↔ Ungroup');
-  options += `<div class="border-t border-slate-700 my-1"></div>`;
-  options += menuItem('remove', '🗑 Remove', 'text-red-400');
+  if (!isGroup) options += menuItem('edit', 'Edit');
+  if (canMoveUp) options += menuItem('move-up', 'Move up');
+  if (canMoveDown) options += menuItem('move-down', 'Move down');
+  if (canGroupAbove) options += menuItem('group-above', 'Group with above');
+  if (canGroupBelow) options += menuItem('group-below', 'Group with below');
+  if (isGroup) options += menuItem('ungroup', 'Ungroup');
+  options += menuItem('remove', 'Remove', 'text-red-400');
 
-  menu.innerHTML = options;
+  // Render as a fixed bottom sheet (mobile-friendly, never clips)
+  const sheet = document.createElement('div');
+  sheet.dataset.region = 'action-menu';
+  sheet.className = 'fixed inset-0 z-50 flex items-end justify-center bg-black/40 animate-fade-in';
+  sheet.innerHTML = `
+    <div class="bg-slate-900 border-t border-slate-700 rounded-t-2xl w-full max-w-sm pb-8 pt-3 px-2">
+      <div class="w-10 h-1 bg-slate-700 rounded-full mx-auto mb-3"></div>
+      <p class="text-xs text-slate-500 text-center mb-2 px-4">${esc(item.exerciseName || (isGroup ? 'Group' : 'Item'))}</p>
+      <div class="space-y-0.5">${options}</div>
+      <button data-menu-action="cancel" class="w-full mt-2 py-3 text-sm text-slate-500 hover:text-slate-300 transition-colors">Cancel</button>
+    </div>
+  `;
 
-  // Position relative to the ⋮ button
-  const btn = li.querySelector('[data-action="menu"]');
-  btn.parentElement.appendChild(menu);
+  document.body.appendChild(sheet);
 
-  // Wire menu actions
-  menu.querySelectorAll('[data-menu-action]').forEach(el => {
+  // Wire actions
+  sheet.querySelectorAll('[data-menu-action]').forEach(el => {
     el.addEventListener('click', (e) => {
       e.stopPropagation();
       const action = el.dataset.menuAction;
-      closeMenu(container);
-      handleMenuAction(action, idx, state, callbacks, container);
+      sheet.remove();
+      if (action !== 'cancel') handleMenuAction(action, idx, state, callbacks, container);
     });
   });
 
-  // Close on outside click
-  setTimeout(() => {
-    const close = (e) => { if (!menu.contains(e.target)) { closeMenu(container); document.removeEventListener('pointerdown', close); } };
-    document.addEventListener('pointerdown', close);
-  }, 10);
+  // Close on backdrop tap
+  sheet.addEventListener('click', (e) => { if (e.target === sheet) sheet.remove(); });
 }
 
 function menuItem(action, label, extraClass = '') {
-  return `<button data-menu-action="${action}" class="w-full text-left px-4 py-2 text-sm hover:bg-white/5 transition-colors ${extraClass}">${label}</button>`;
+  return `<button data-menu-action="${action}" class="w-full text-left px-5 py-3 text-sm font-medium rounded-xl hover:bg-white/5 active:bg-white/10 transition-colors ${extraClass}">${label}</button>`;
 }
 
-function closeMenu(container) {
-  container.querySelectorAll('[data-region="action-menu"]').forEach(el => el.remove());
+function closeMenu() {
+  document.querySelectorAll('[data-region="action-menu"]').forEach(el => el.remove());
 }
 
 function handleMenuAction(action, idx, state, callbacks, container) {
