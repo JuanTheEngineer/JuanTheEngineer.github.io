@@ -30,9 +30,9 @@ jobs:
         working-directory: v2
         run: npm ci
 
-      - name: Build
+      - name: Build & Test
         working-directory: v2
-        run: npm run build
+        run: npm test
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
