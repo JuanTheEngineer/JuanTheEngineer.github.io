@@ -304,6 +304,45 @@ function renderTimeline(container) {
       expandedIndex = -1;
       renderTimeline(container);
     },
+    onJoinGroup: (singleIdx, groupIdx) => {
+      // Single joins an existing group
+      const single = state.items[singleIdx];
+      const group = state.items[groupIdx];
+      group.members.push(single);
+      state.items.splice(singleIdx, 1);
+      expandedIndex = -1;
+      renderTimeline(container);
+    },
+    onAbsorbIntoGroup: (groupIdx, singleIdx) => {
+      // Group absorbs an adjacent single
+      const single = state.items[singleIdx];
+      const group = state.items[groupIdx];
+      if (singleIdx < groupIdx) group.members.unshift(single);
+      else group.members.push(single);
+      state.items.splice(singleIdx, 1);
+      expandedIndex = -1;
+      renderTimeline(container);
+    },
+    onMemberMove: (groupIdx, memberIdx, toIdx) => {
+      const group = state.items[groupIdx];
+      if (!group || group.type !== 'group') return;
+      const [moved] = group.members.splice(memberIdx, 1);
+      group.members.splice(toIdx, 0, moved);
+      renderTimeline(container);
+    },
+    onMemberRemove: (groupIdx, memberIdx) => {
+      const group = state.items[groupIdx];
+      if (!group || group.type !== 'group') return;
+      const [removed] = group.members.splice(memberIdx, 1);
+      // If only 1 member left, auto-ungroup
+      if (group.members.length <= 1) {
+        const remaining = group.members[0] || removed;
+        remaining.type = 'single';
+        state.items.splice(groupIdx, 1, remaining);
+      }
+      expandedIndex = -1;
+      renderTimeline(container);
+    },
     onUngroup: (idx) => {
       const group = state.items[idx];
       if (group.type !== 'group') return;
