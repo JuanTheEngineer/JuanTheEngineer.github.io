@@ -28,16 +28,16 @@ function singleHtml(item, i, state, total) {
   const notePreview = note.length > 50 ? note.substring(0, 50) + '…' : note;
   const tags = (item.tags || []).map(t => `<span class="text-[10px] font-medium px-1.5 py-0.5 rounded bg-brand-500/15 text-brand-300">${t}</span>`).join('');
 
-  return `<li class="card overflow-hidden" data-idx="${i}" data-type="single">
-  <div class="flex items-center px-4 py-3 gap-2">
+  return `<li class="card" data-idx="${i}" data-type="single">
+  <div class="flex items-center px-4 py-3 gap-2 relative">
     <div class="flex-1 min-w-0 cursor-pointer" data-action="expand" data-idx="${i}">
       ${tags ? `<div class="flex gap-1 mb-1">${tags}</div>` : ''}
       <p class="text-sm font-medium text-slate-100 truncate">${esc(item.exerciseName)}</p>
       <p class="text-xs text-slate-400 num mt-0.5">${item.reps || '—'} ${item.repUnits || 'reps'} · ${item.sets || '—'} sets</p>
       ${notePreview ? `<p class="text-[11px] text-slate-500 truncate mt-0.5 italic">${esc(notePreview)}</p>` : ''}
     </div>
-    <button data-action="menu" data-idx="${i}" class="p-2 -mr-1 rounded-lg text-slate-500 hover:text-slate-300 hover:bg-white/5 transition-colors touch-manipulation shrink-0" aria-label="Actions">
-      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="6" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="18" r="2"/></svg>
+    <button data-action="menu" data-idx="${i}" class="p-3 -mr-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-white/10 active:bg-white/20 transition-colors touch-manipulation shrink-0" aria-label="Actions">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
     </button>
   </div>
   ${expanded ? `<div class="border-t border-slate-800" data-region="edit-form" data-idx="${i}"></div>` : ''}
@@ -57,13 +57,13 @@ function groupHtml(item, i, state) {
     </div>
   `).join('');
 
-  return `<li class="card overflow-hidden border-l-[3px] border-l-brand-500" data-idx="${i}" data-type="group">
-  <div class="flex items-center px-4 py-2 gap-2 bg-brand-500/5">
+  return `<li class="card border-l-[3px] border-l-brand-500" data-idx="${i}" data-type="group">
+  <div class="flex items-center px-4 py-2 gap-2 bg-brand-500/5 relative">
     <span class="text-[10px] font-bold uppercase tracking-wide text-brand-300">${kindLabel}</span>
     <span class="text-[10px] text-slate-500 num">${item.members.length} exercises</span>
     <div class="flex-1"></div>
-    <button data-action="menu" data-idx="${i}" class="p-2 -mr-1 rounded-lg text-slate-500 hover:text-slate-300 hover:bg-white/5 transition-colors touch-manipulation shrink-0" aria-label="Actions">
-      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="6" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="18" r="2"/></svg>
+    <button data-action="menu" data-idx="${i}" class="p-3 -mr-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-white/10 active:bg-white/20 transition-colors touch-manipulation shrink-0" aria-label="Actions">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
     </button>
   </div>
   ${membersHtml}
@@ -106,7 +106,6 @@ function showMenu(container, idx, state, callbacks) {
 
   // Position relative to the ⋮ button
   const btn = li.querySelector('[data-action="menu"]');
-  btn.parentElement.style.position = 'relative';
   btn.parentElement.appendChild(menu);
 
   // Wire menu actions
