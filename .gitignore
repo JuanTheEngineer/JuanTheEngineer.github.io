@@ -4,8 +4,10 @@ v2/node_modules/
 
 # === Build output ===
 v2/dist/
-_site/
 v2/public/
+
+# === Archive (old versions kept locally) ===
+.archive/
 
 # === IDE / Editor ===
 .idea/
@@ -14,7 +16,6 @@ v2/public/
 # === Environment / Secrets ===
 .env
 .env.local
-chatgpt_api.py
 
 # === OS files ===
 .DS_Store
@@ -24,17 +25,11 @@ Thumbs.db
 .playwright-mcp/
 *.log
 
-# === Python (legacy scripts) ===
+# === Python ===
 __pycache__/
 *.py[cod]
 .venv/
 venv/
 
-# === Deprecated scripts (keep for reference but don't track) ===
-youtube_to_gif.py
-
-# === Temporary / staging ===
+# === Temporary ===
 gifs_staging/
-video-sources-partial.json
-migration-log.json
-replacements-with-alternatives-example.json
