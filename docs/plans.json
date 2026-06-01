@@ -74,6 +74,19 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Rebuild",
+      "description": "Rebuild and rehab programs.",
+      "subPlans": [
+        {
+          "name": "Lower Body",
+          "description": "Knee-friendly lower body rebuild sessions.",
+          "programs": [
+            "lower_rebuild_a"
+          ]
+        }
+      ]
     }
   ]
 }

@@ -4836,6 +4836,39 @@
         "sets": "4",
         "repUnits": "reps"
       }
+    },
+    {
+      "id": "backward-treadmill-walk",
+      "name": "Backward Treadmill Walk",
+      "demos": [],
+      "recommendations": {
+        "reps": "5",
+        "sets": "1",
+        "repUnits": "min",
+        "note": "Incline 3, slow pace; warms up quads + ankles."
+      }
+    },
+    {
+      "id": "hamstring-heel-dig-isometric",
+      "name": "Hamstring Heel Dig Isometric",
+      "demos": [],
+      "recommendations": {
+        "reps": "30",
+        "sets": "3",
+        "repUnits": "secs",
+        "note": "Push heel into floor, squeeze hamstrings."
+      }
+    },
+    {
+      "id": "glute-bridge",
+      "name": "Glute Bridge",
+      "demos": [],
+      "recommendations": {
+        "reps": "12",
+        "sets": "3",
+        "repUnits": "reps",
+        "note": "Pause 2s at top, drive through heels."
+      }
     }
   ]
 }

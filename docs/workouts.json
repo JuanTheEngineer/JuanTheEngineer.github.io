@@ -1230,6 +1230,68 @@
           "note": "Use 25lb dumbbells."
         }
       ]
+    },
+    {
+      "id": "lower_rebuild_a",
+      "title": "Lower Body Rebuild A",
+      "requirements": "Dumbbells, Treadmill, Bench",
+      "items": [
+        {
+          "exerciseId": "backward-treadmill-walk",
+          "reps": "5",
+          "sets": "1",
+          "repUnits": "min",
+          "note": "Incline 3, slow pace; warms up quads + ankles.",
+          "tags": ["warmup"]
+        },
+        {
+          "exerciseId": "hamstring-heel-dig-isometric",
+          "reps": "30",
+          "sets": "3",
+          "repUnits": "secs",
+          "note": "Push heel into floor, squeeze hamstrings."
+        },
+        {
+          "exerciseId": "glute-bridge",
+          "reps": "12",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Pause 2s at top, drive through heels."
+        },
+        {
+          "exerciseId": "dbrdls",
+          "reps": "10",
+          "sets": "4",
+          "repUnits": "reps"
+        },
+        {
+          "exerciseId": "dbboxsquats",
+          "reps": "15",
+          "sets": "5",
+          "repUnits": "reps",
+          "note": "Weight: 10 lbs"
+        },
+        {
+          "exerciseId": "calfraises",
+          "reps": "15",
+          "sets": "3",
+          "repUnits": "reps"
+        },
+        {
+          "exerciseId": "sldbrdl",
+          "reps": "15",
+          "sets": "4",
+          "repUnits": "reps"
+        },
+        {
+          "exerciseId": "posture-ex1",
+          "reps": "10",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Inhale forward, Exhale back.",
+          "tags": ["stretch"]
+        }
+      ]
     }
   ]
 }
