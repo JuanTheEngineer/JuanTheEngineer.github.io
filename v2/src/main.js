@@ -7,6 +7,7 @@ import { renderProgramDetailPage } from './pages/ProgramDetailPage.js';
 import { renderStudioPage } from './pages/StudioPage.js';
 import { renderProgramEditorPage } from './pages/ProgramEditorPage.js';
 import { renderExerciseEditorPage } from './pages/ExerciseEditorPage.js';
+import { renderAIChatPage } from './pages/AIChatPage.js';
 import { renderExerciseLibraryPage } from './pages/ExerciseLibraryPage.js';
 import { renderExerciseDetailPage } from './pages/ExerciseDetailPage.js';
 import { renderSearchPage } from './pages/SearchPage.js';
@@ -27,6 +28,7 @@ if (isLocal) {
   route('/studio', () => renderStudioPage(app));
   route('/studio/program', () => renderProgramEditorPage(app));
   route('/studio/exercise', () => renderExerciseEditorPage(app));
+  route('/studio/ai', () => renderAIChatPage(app));
 }
 
 setNotFound((path) => {

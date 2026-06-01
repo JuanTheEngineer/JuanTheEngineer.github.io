@@ -58,6 +58,27 @@ export function renderStudioPage(container) {
               </svg>
             </div>
           </button>
+
+          <button
+            data-action="ai-builder"
+            class="w-full card p-5 text-left active:scale-[0.98] transition-transform animate-slide-up"
+            style="animation-delay: 100ms"
+          >
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/15 flex items-center justify-center">
+                <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h2 class="font-semibold tracking-tight">AI Builder</h2>
+                <p class="text-sm text-slate-400 mt-0.5">Chat with AI to build a program</p>
+              </div>
+              <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </button>
         </div>
       </main>
     </div>
@@ -65,7 +86,6 @@ export function renderStudioPage(container) {
 
   container.querySelector('[data-action="back"]')?.addEventListener('click', () => navigate('/'));
   container.querySelector('[data-action="new-program"]')?.addEventListener('click', () => navigate('/studio/program'));
-  container
-    .querySelector('[data-action="new-exercise"]')
-    ?.addEventListener('click', () => navigate('/studio/exercise'));
+  container.querySelector('[data-action="new-exercise"]')?.addEventListener('click', () => navigate('/studio/exercise'));
+  container.querySelector('[data-action="ai-builder"]')?.addEventListener('click', () => navigate('/studio/ai'));
 }
