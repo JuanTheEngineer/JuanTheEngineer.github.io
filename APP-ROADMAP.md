@@ -119,6 +119,15 @@ graph TD
     J1 --> J3
     J4 --> J5
 
+    %% === FEEDBACK & COMMUNICATION ===
+    K1[K1 Feedback Button]
+    K2[K2 Bug Report with Context]
+    K3[K3 Feature Request Voting]
+    K4[K4 In-App Changelog]
+    K5[K5 Contact / About Page]
+
+    K1 --> K2
+
     %% === STYLING ===
     classDef ux fill:#3b82f6,stroke:#1d4ed8,color:white
     classDef program fill:#f59e0b,stroke:#d97706,color:white
@@ -130,6 +139,7 @@ graph TD
     classDef pwa fill:#f97316,stroke:#c2410c,color:white
     classDef a11y fill:#14b8a6,stroke:#0f766e,color:white
     classDef dx fill:#6b7280,stroke:#374151,color:white
+    classDef feedback fill:#6366f1,stroke:#4338ca,color:white
 
     class A1,A2,A3,A4,A5,A6,A7,A8 ux
     class B1,B2,B3,B4,B5,B6,B7,B8 program
@@ -141,6 +151,7 @@ graph TD
     class H1,H2,H3,H4,H5,H6 pwa
     class I1,I2,I3,I4,I5,I6 a11y
     class J1,J2,J3,J4,J5,J6 dx
+    class K1,K2,K3,K4,K5 feedback
 ```
 
 ## All Improvements (Detailed)
@@ -306,6 +317,20 @@ graph TD
 **J5 Lighthouse CI Score Check** — Run Lighthouse in CI and fail the build if performance/accessibility scores drop below thresholds. Keeps quality high over time.
 
 **J6 Auto-format on Commit (Husky)** — Pre-commit hook that runs Prettier + ESLint. Ensures consistent code style without thinking about it. Already have the tools — just need the hook.
+
+---
+
+### K. FEEDBACK & COMMUNICATION (Indigo) — Letting users talk to you
+
+**K1 Feedback Button (Formspree)** — A floating "Feedback" button or footer link that opens a simple one-field form. Submits via Formspree (free, no backend) and emails you directly. Users don't need an account.
+
+**K2 Bug Report with Context** — When submitting feedback, auto-attach the current page, browser info, and screen size. Helps you reproduce issues without asking follow-up questions.
+
+**K3 Feature Request Voting** — A simple page listing planned features where users can upvote. Could be a link to a GitHub Discussions page or a Canny board (free tier). Helps prioritize what to build next.
+
+**K4 In-App Changelog** — A "What's New" section or modal showing recent updates. Keeps users informed and shows the app is actively maintained. Can be a simple JSON file of entries.
+
+**K5 Contact / About Page** — A `/#/about` page with your name, the project's story, links to GitHub, and a way to reach you. Builds trust and personality.
 
 ---
 
