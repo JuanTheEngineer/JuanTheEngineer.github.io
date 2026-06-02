@@ -2,156 +2,106 @@
 
 (Excludes AI Program Builder — see AI-BUILDER-ROADMAP.md for that)
 
-## Dependency Graph
+## Dependency Graphs
+
+### Session History Tree (A3 is the key unlock)
 
 ```mermaid
-graph TD
-    %% === USER EXPERIENCE ===
-    A1[A1 Workout Timer]
-    A2[A2 Rest Timer Between Sets]
-    A3[A3 Session History / Log]
-    A4[A4 Calendar View]
-    A5[A5 Streak Tracking]
-    A6[A6 Per-Exercise Progress History]
-    A7[A7 Notes Per Session]
-    A8[A8 Dark/Light Theme Toggle]
-
-    A3 --> A4
-    A3 --> A5
-    A3 --> A6
-
-    %% === PROGRAM DETAIL PAGE ===
-    B1[B1 Estimated Session Duration]
-    B2[B2 Equipment Checklist]
-    B3[B3 Warm-up / Main / Cooldown Sections]
-    B4[B4 Set-by-Set Tracking]
-    B5[B5 Weight Input Per Exercise]
-    B6[B6 Notes Input During Workout]
-    B7[B7 Next Program Suggestion]
-    B8[B8 Print / PDF Export]
-
-    B4 --> B5
-    B4 --> B6
+graph LR
+    A3[A3 Session History] --> A4[A4 Calendar View]
+    A3 --> A5[A5 Streak Tracking]
+    A3 --> A6[A6 Per-Exercise Progress]
+    A3 --> C4[C4 Exercise History]
+    A3 --> D4[D4 Recently Completed Badge]
+    A3 --> D5[D5 Recommended Next Program]
+    A3 --> E1[E1 Today's Suggestion]
+    A3 --> E2[E2 Weekly Summary]
+    A5 --> E3[E3 Streak Display]
+    B4[B4 Set-by-Set Tracking] --> B5[B5 Weight Input]
+    B4 --> B6[B6 Notes During Workout]
     B5 --> A6
+```
 
-    %% === EXERCISE LIBRARY ===
-    C1[C1 Muscle Group Filters]
-    C2[C2 Equipment Filters]
-    C3[C3 Favorites / Bookmarks]
-    C4[C4 Exercise History - when did I last do this]
-    C5[C5 User-Submitted Demos]
-    C6[C6 Video Playback Speed Control]
-    C7[C7 Offline Demo Caching]
+### Data Enrichment Tree (G tags enable filters)
 
-    C1 --> C4
-    A3 --> C4
+```mermaid
+graph LR
+    G5[G5 Muscle Group Tags] --> C1[C1 Muscle Group Filters]
+    G3[G3 Equipment Tags] --> C2[C2 Equipment Filters]
+    G3 --> D1[D1 Filter by Equipment]
+    G4[G4 Difficulty Rating] --> D3[D3 Filter by Difficulty]
+    C1 --> C4[C4 Exercise History]
+```
 
-    %% === PROGRAMS LIST / SEARCH ===
-    D1[D1 Filter by Equipment Available]
+### PWA Tree (offline + installable)
+
+```mermaid
+graph LR
+    H1[H1 Service Worker] --> H3[H3 Push Notifications]
+    H2[H2 App Manifest] --> H3
+    H1 --> C7[C7 Offline Demo Caching]
+```
+
+### Social Tree
+
+```mermaid
+graph LR
+    F1[F1 Share Program as Link] --> F3[F3 Import Shared Program]
+```
+
+### Dev Experience Tree
+
+```mermaid
+graph LR
+    J1[J1 E2E Tests] --> J3[J3 Visual Regression]
+    J4[J4 PR Preview Deploys] --> J5[J5 Lighthouse CI]
+```
+
+### Feedback Tree
+
+```mermaid
+graph LR
+    K1[K1 Feedback Button] --> K2[K2 Bug Report with Context]
+```
+
+### Standalone Items (no dependencies)
+
+```mermaid
+graph LR
+    A1[A1 Workout Timer]
+    A2[A2 Rest Timer]
+    A7[A7 Notes Per Session]
+    A8[A8 Theme Toggle]
+    B1[B1 Duration Estimate]
+    B2[B2 Equipment Checklist]
+    B3[B3 Section Headers]
+    B7[B7 Next Program Suggestion]
+    B8[B8 Print Export]
+    C3[C3 Favorites]
+    C5[C5 User Demos]
+    C6[C6 Playback Speed]
     D2[D2 Filter by Duration]
-    D3[D3 Filter by Difficulty]
-    D4[D4 Recently Completed Badge]
-    D5[D5 Recommended Next Program]
-    D6[D6 User-Created Programs Visible on Prod]
-
-    A3 --> D4
-    A3 --> D5
-
-    %% === HOME PAGE ===
-    E1[E1 Today's Workout Suggestion]
-    E2[E2 Weekly Summary Card]
-    E3[E3 Motivation Quote / Streak Display]
-    E4[E4 Quick Resume Button]
-
-    A3 --> E1
-    A5 --> E3
-    A3 --> E2
-
-    %% === SOCIAL / SHARING ===
-    F1[F1 Share Program as Link]
-    F2[F2 Share Progress Screenshot]
-    F3[F3 Import Shared Program]
-    F4[F4 Leaderboard / Challenges]
-
-    F1 --> F3
-
-    %% === DATA & CONTENT ===
-    G1[G1 Add Demos to 13 Missing Exercises]
-    G2[G2 More Programs - Upper Rebuild, Core, HIIT]
-    G3[G3 Equipment Tagging on Exercises]
-    G4[G4 Difficulty Rating on Programs]
-    G5[G5 Muscle Group Tagging on Exercises]
-    G6[G6 Glossary Integrated Inline]
-
-    G5 --> C1
-    G3 --> C2
-    G3 --> D1
-    G4 --> D3
-
-    %% === PERFORMANCE & PWA ===
-    H1[H1 Service Worker - Offline Support]
-    H2[H2 App Manifest - Install to Home Screen]
-    H3[H3 Push Notifications - Workout Reminders]
-    H4[H4 Prefetch Program Data]
-    H5[H5 Image/Video Lazy Loading Improvements]
-    H6[H6 Bundle Size Optimization]
-
-    H1 --> H3
-    H2 --> H3
-    H1 --> C7
-
-    %% === ACCESSIBILITY & MOBILE ===
-    I1[I1 Haptic Feedback on Completion]
-    I2[I2 Voice Readout of Exercise]
-    I3[I3 Larger Touch Targets]
+    D6[D6 User Programs on Prod]
+    E4[E4 Quick Resume]
+    F2[F2 Progress Screenshot]
+    F4[F4 Leaderboard]
+    G1[G1 Missing Demos]
+    G2[G2 More Programs]
+    G6[G6 Inline Glossary]
+    H4[H4 Prefetch Data]
+    H5[H5 Lazy Loading]
+    H6[H6 Bundle Optimization]
+    I1[I1 Haptic Feedback]
+    I2[I2 Voice Readout]
+    I3[I3 Touch Targets]
     I4[I4 Screen Reader Audit]
-    I5[I5 Reduce Motion Option]
-    I6[I6 Landscape Mode Support]
-
-    %% === DEVELOPER EXPERIENCE ===
-    J1[J1 E2E Tests with Playwright]
-    J2[J2 Component Unit Tests]
-    J3[J3 Visual Regression Tests]
-    J4[J4 PR Preview Deployments]
-    J5[J5 Lighthouse CI Score Check]
-    J6[J6 Auto-format on Commit - Husky]
-
-    J1 --> J3
-    J4 --> J5
-
-    %% === FEEDBACK & COMMUNICATION ===
-    K1[K1 Feedback Button]
-    K2[K2 Bug Report with Context]
-    K3[K3 Feature Request Voting]
-    K4[K4 In-App Changelog]
-    K5[K5 Contact / About Page]
-
-    K1 --> K2
-
-    %% === STYLING ===
-    classDef ux fill:#3b82f6,stroke:#1d4ed8,color:white
-    classDef program fill:#f59e0b,stroke:#d97706,color:white
-    classDef library fill:#10b981,stroke:#059669,color:white
-    classDef search fill:#06b6d4,stroke:#0e7490,color:white
-    classDef home fill:#a855f7,stroke:#7c3aed,color:white
-    classDef social fill:#ec4899,stroke:#be185d,color:white
-    classDef data fill:#84cc16,stroke:#4d7c0f,color:white
-    classDef pwa fill:#f97316,stroke:#c2410c,color:white
-    classDef a11y fill:#14b8a6,stroke:#0f766e,color:white
-    classDef dx fill:#6b7280,stroke:#374151,color:white
-    classDef feedback fill:#6366f1,stroke:#4338ca,color:white
-
-    class A1,A2,A3,A4,A5,A6,A7,A8 ux
-    class B1,B2,B3,B4,B5,B6,B7,B8 program
-    class C1,C2,C3,C4,C5,C6,C7 library
-    class D1,D2,D3,D4,D5,D6 search
-    class E1,E2,E3,E4 home
-    class F1,F2,F3,F4 social
-    class G1,G2,G3,G4,G5,G6 data
-    class H1,H2,H3,H4,H5,H6 pwa
-    class I1,I2,I3,I4,I5,I6 a11y
-    class J1,J2,J3,J4,J5,J6 dx
-    class K1,K2,K3,K4,K5 feedback
+    I5[I5 Reduce Motion]
+    I6[I6 Landscape Mode]
+    J2[J2 Unit Tests]
+    J6[J6 Auto-format Hook]
+    K3[K3 Feature Voting]
+    K4[K4 Changelog]
+    K5[K5 About Page]
 ```
 
 ## All Improvements (Detailed)
