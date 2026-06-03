@@ -50,7 +50,7 @@ export function createGroupCard(item, state) {
               <h3 class="font-semibold tracking-tight leading-tight ${state.isCompleted ? 'line-through text-slate-500' : 'text-slate-100'}">
                 ${title}
               </h3>
-              <p class="text-sm text-slate-400 mt-1 num">
+              <p class="text-sm text-slate-400 mt-1 num truncate">
                 ${member.reps || '—'} · ${member.sets || '—'} sets
               </p>
             </div>
@@ -72,12 +72,12 @@ export function createGroupCard(item, state) {
           <div class="px-4 pb-4 space-y-4">
             <div data-member-media="${i}"></div>
             <div class="grid grid-cols-2 gap-3">
-              <div class="bg-slate-800/50 rounded-xl p-3 text-center">
-                <p class="text-3xl font-extrabold text-brand-400 leading-none num tracking-tight">${escapeHtml(member.reps || '—')}</p>
+              <div class="bg-slate-800/50 rounded-xl p-3 text-center overflow-hidden">
+                <p class="${(member.reps || '').length > 5 ? 'text-lg' : 'text-3xl'} font-extrabold text-brand-400 leading-none num tracking-tight">${escapeHtml(member.reps || '—')}</p>
                 <p class="label-meta mt-1.5">${escapeHtml(member.repUnits || 'reps')}</p>
               </div>
-              <div class="bg-slate-800/50 rounded-xl p-3 text-center">
-                <p class="text-3xl font-extrabold text-brand-400 leading-none num tracking-tight">${escapeHtml(member.sets || '—')}</p>
+              <div class="bg-slate-800/50 rounded-xl p-3 text-center overflow-hidden">
+                <p class="${(member.sets || '').length > 5 ? 'text-lg' : 'text-3xl'} font-extrabold text-brand-400 leading-none num tracking-tight">${escapeHtml(member.sets || '—')}</p>
                 <p class="label-meta mt-1.5">sets</p>
               </div>
             </div>
