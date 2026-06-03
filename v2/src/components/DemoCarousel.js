@@ -79,10 +79,12 @@ export function renderDemoCarousel(container, demos, options = {}) {
     renderSlide(idx);
   };
 
-  // Defensive: if a media source fails to load, remove it from the carousel
+  // Defensive: if a media source fails to load, show error placeholder (don't remove the slide)
   const removeSlide = (idx) => {
-    items.splice(idx, 1);
-    rebuild();
+    const slide = track.children[idx];
+    if (slide) {
+      slide.innerHTML = `<div class="aspect-video bg-slate-800 rounded-2xl flex items-center justify-center text-slate-500 text-sm">Couldn't load demo</div>`;
+    }
   };
 
   const rebuild = () => {
@@ -186,11 +188,11 @@ function sortDemos(demos) {
 function sourceLabel(demo) {
   const typeLabel =
     {
-      cloudinary: demo.format === 'mp4' ? 'Original video' : 'Original',
+      cloudinary: demo.format === 'mp4' ? 'Video' : 'Demo',
       youtube: 'YouTube',
       tiktok: 'TikTok',
       vimeo: 'Vimeo',
-      local: 'Local',
+      local: 'Demo',
       url: 'External'
     }[demo.type] || demo.type;
   if (demo.notes) return `${typeLabel} · ${demo.notes}`;

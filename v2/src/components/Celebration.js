@@ -9,7 +9,8 @@ const MESSAGES = [
   'You did it!',
   'Beast mode!',
   'On fire!',
-  'Way to go!'
+  'Way to go!',
+  'Strengthened and Conditioned!'
 ];
 
 let lastFiredAt = 0;

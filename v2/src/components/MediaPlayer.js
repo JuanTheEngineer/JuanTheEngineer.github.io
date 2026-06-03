@@ -70,7 +70,7 @@ function renderVideo(container, source, className, autoplay = true, onError) {
   container.innerHTML = `
     <video
       src="${url}${startAttr}"
-      class="${className}"
+      class="${className} cursor-pointer"
       ${autoplay ? 'autoplay' : ''}
       loop
       muted
@@ -78,8 +78,13 @@ function renderVideo(container, source, className, autoplay = true, onError) {
       preload="metadata"
     ></video>
   `;
+  const video = container.querySelector('video');
+  // Tap to pause/resume
+  video?.addEventListener('click', () => {
+    if (video.paused) video.play();
+    else video.pause();
+  });
   if (onError) {
-    const video = container.querySelector('video');
     video?.addEventListener('error', () => onError(), { once: true });
   }
 }
