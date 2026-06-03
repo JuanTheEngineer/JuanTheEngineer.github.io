@@ -1,25 +1,106 @@
-// DemoCarousel: native scroll-snap carousel that tracks the finger
-// Hardware-accelerated, follows finger movement, snaps on release
+// DemoCarousel: progressive reveal — demos appear as they load
+// Only loaded demos get a spot. Maintains original order. Auto-focuses to first demo.
 import { renderMedia } from './MediaPlayer.js';
 
 /**
  * Render a carousel of demos into the container.
- * @param {HTMLElement} container
- * @param {Array} demos - array of demo source objects
- * @param {Object} options - { startIndex }
+ * Demos load in parallel. Only ready ones appear. Order preserved.
+ * If user hasn't swiped, auto-scrolls to the highest-priority (first) demo.
  */
-export function renderDemoCarousel(container, demos, options = {}) {
-  let items = (demos || []).filter(Boolean);
-  if (items.length === 0) {
+export function renderDemoCarousel(container, demos) {
+  const allItems = sortDemos((demos || []).filter(Boolean));
+  if (allItems.length === 0) {
     container.innerHTML = `<div class="aspect-video bg-slate-800 rounded-2xl flex items-center justify-center text-slate-500 text-sm">No demos available</div>`;
     return;
   }
 
-  // Sort: primary first, then by type preference (cloudinary > youtube > local)
-  items = sortDemos(items);
-  let activeIndex = clampIndex(options.startIndex ?? 0, items.length);
+  // Track which items are ready, preserving original order
+  const readySet = new Set();
+  let userHasSwiped = false;
 
-  // Render shell — horizontal scroll container with scroll-snap
+  // Instant types (embeds with thumbnails) are ready immediately
+  const instantTypes = new Set(['youtube', 'tiktok', 'vimeo']);
+  allItems.forEach((item, i) => {
+    if (instantTypes.has(item.type)) readySet.add(i);
+  });
+
+  // If any are ready now, build carousel immediately
+  if (readySet.size > 0) {
+    buildFromReady();
+  } else {
+    // Show pixel lifter until something loads
+    container.innerHTML = `
+      <div data-region="loader" class="aspect-video bg-slate-800 rounded-2xl flex items-center justify-center">
+        <div class="demo-loader" aria-label="Loading demo"></div>
+      </div>
+    `;
+  }
+
+  // Probe-load all non-instant items in parallel
+  allItems.forEach((item, i) => {
+    if (instantTypes.has(item.type)) return; // already ready
+    probeLoad(item, (success) => {
+      if (success) {
+        readySet.add(i);
+        buildFromReady();
+      }
+      // If failed, just don't add it — it never gets a spot
+    });
+  });
+
+  // Fallback: after 6s, if nothing loaded, just render everything and let browser handle errors
+  setTimeout(() => {
+    if (readySet.size === 0) {
+      allItems.forEach((_, i) => readySet.add(i));
+      buildFromReady();
+    }
+  }, 6000);
+
+  // --- Core: rebuild carousel from ready items in original order ---
+  function buildFromReady() {
+    const readyItems = allItems.filter((_, i) => readySet.has(i));
+    if (readyItems.length === 0) return;
+
+    // Find what index to focus on: first item in original order
+    const firstReadyOriginalIdx = allItems.findIndex((_, i) => readySet.has(i));
+    const focusIdx = userHasSwiped ? -1 : readyItems.indexOf(allItems[firstReadyOriginalIdx]);
+
+    renderCarousel(container, readyItems, focusIdx >= 0 ? focusIdx : 0, (swiped) => {
+      userHasSwiped = userHasSwiped || swiped;
+    });
+  }
+}
+
+/**
+ * Probe if a media item can load. Calls onDone(true) on success, onDone(false) on error.
+ */
+function probeLoad(item, onDone) {
+  const url = item.url;
+  if (!url) { onDone(false); return; }
+
+  const isVideo = item.mediaType === 'video' || ['mp4', 'webm', 'mov'].includes(item.format);
+
+  if (isVideo) {
+    const video = document.createElement('video');
+    video.preload = 'metadata';
+    video.src = url;
+    video.addEventListener('loadeddata', () => onDone(true), { once: true });
+    video.addEventListener('error', () => onDone(false), { once: true });
+  } else {
+    const img = new Image();
+    img.src = url;
+    if (img.complete && img.naturalWidth > 0) { onDone(true); return; }
+    img.addEventListener('load', () => onDone(true), { once: true });
+    img.addEventListener('error', () => onDone(false), { once: true });
+  }
+}
+
+/**
+ * Build the scroll-snap carousel with given ready items.
+ */
+function renderCarousel(container, items, focusIndex, onSwipe) {
+  let activeIndex = clampIndex(focusIndex, items.length);
+
   container.innerHTML = `
     <div class="relative">
       <div
@@ -27,96 +108,48 @@ export function renderDemoCarousel(container, demos, options = {}) {
         class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar -mx-4 px-4 gap-3 pb-1"
         style="scroll-snap-stop: always;"
       ></div>
-      ${
-        items.length > 1
-          ? `
+      ${items.length > 1 ? `
         <div class="flex items-center justify-center gap-1.5 mt-3" data-region="dots"></div>
         <p data-region="caption" class="text-xs text-slate-400 text-center px-2 mt-2 leading-relaxed min-h-4"></p>
-      `
-          : ''
-      }
+      ` : ''}
     </div>
   `;
 
   const track = container.querySelector('[data-region="track"]');
   const dotsContainer = container.querySelector('[data-region="dots"]');
   const caption = container.querySelector('[data-region="caption"]');
-
-  // Hide native scrollbar
   track.style.scrollbarWidth = 'none';
 
-  // Build slides — each takes full width and snaps to center
-  items.forEach((demo, i) => {
+  const playingEmbedSlides = new Set();
+
+  // Render all ready slides
+  items.forEach((item, i) => {
     const slide = document.createElement('div');
     slide.className = 'shrink-0 w-full snap-center';
-    slide.dataset.slideIndex = String(i);
+    renderMedia(slide, item, {
+      onError: () => {
+        slide.innerHTML = `<div class="aspect-video bg-slate-800 rounded-2xl flex items-center justify-center text-slate-500 text-sm">Couldn't load</div>`;
+      },
+      onEmbedPlay: () => playingEmbedSlides.add(i)
+    });
     track.appendChild(slide);
   });
 
-  // Render media into each slide once it scrolls near (defer YouTube embeds)
-  const renderedSlides = new Set();
-  const playingEmbedSlides = new Set(); // Track slides that have a playing iframe
-  const renderSlide = (idx) => {
-    if (renderedSlides.has(idx)) return;
-    const slide = track.children[idx];
-    if (!slide) return;
-    const demo = items[idx];
-    renderMedia(slide, demo, {
-      onError: () => removeSlide(idx),
-      onEmbedPlay: () => playingEmbedSlides.add(idx)
-    });
-    renderedSlides.add(idx);
-  };
-
-  // When a slide is no longer active, reset any playing iframe back to thumbnail
-  // so it stops capturing touch events and lets the user keep swiping.
-  const resetEmbedSlide = (idx) => {
-    if (!playingEmbedSlides.has(idx)) return;
-    const slide = track.children[idx];
-    if (!slide) return;
-    playingEmbedSlides.delete(idx);
-    renderedSlides.delete(idx);
-    renderSlide(idx);
-  };
-
-  // Defensive: if a media source fails to load, show error placeholder (don't remove the slide)
-  const removeSlide = (idx) => {
-    const slide = track.children[idx];
-    if (slide) {
-      slide.innerHTML = `<div class="aspect-video bg-slate-800 rounded-2xl flex items-center justify-center text-slate-500 text-sm">Couldn't load demo</div>`;
-    }
-  };
-
-  const rebuild = () => {
-    if (items.length === 0) {
-      container.innerHTML = `<div class="aspect-video bg-slate-800 rounded-2xl flex items-center justify-center text-slate-500 text-sm">No demos available</div>`;
-      return;
-    }
-    activeIndex = clampIndex(activeIndex, items.length);
-    renderDemoCarousel(container, items, { startIndex: activeIndex });
-  };
-
   const updateDots = () => {
     if (!dotsContainer) return;
-    // Uniform 4px circles. Active = full brand color, inactive = dim slate.
-    // Touch target is larger via padding so they're still tappable.
     dotsContainer.innerHTML = items
-      .map(
-        (_, i) => `
-      <button
-        data-dot-index="${i}"
-        aria-label="Go to demo ${i + 1}"
-        class="p-1.5 -m-1.5 group touch-manipulation"
-      >
-        <span class="block w-1 h-1 rounded-full transition-colors
-          ${i === activeIndex ? 'bg-brand-400' : 'bg-slate-600 group-hover:bg-slate-500'}"
-        ></span>
-      </button>
-    `
-      )
+      .map((_, i) => `
+        <button data-dot-index="${i}" aria-label="Demo ${i + 1}" class="p-1.5 -m-1.5 group touch-manipulation">
+          <span class="block w-1 h-1 rounded-full transition-colors ${i === activeIndex ? 'bg-brand-400' : 'bg-slate-600 group-hover:bg-slate-500'}"></span>
+        </button>`)
       .join('');
     dotsContainer.querySelectorAll('[data-dot-index]').forEach((el) => {
-      el.addEventListener('click', () => goTo(Number(el.dataset.dotIndex)));
+      el.addEventListener('click', () => {
+        onSwipe(true);
+        const idx = Number(el.dataset.dotIndex);
+        const slide = track.children[idx];
+        if (slide) track.scrollTo({ left: slide.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+      });
     });
   };
 
@@ -125,15 +158,9 @@ export function renderDemoCarousel(container, demos, options = {}) {
     caption.textContent = sourceLabel(items[activeIndex]);
   };
 
-  function goTo(idx) {
-    const slide = track.children[idx];
-    if (!slide) return;
-    track.scrollTo({ left: slide.offsetLeft - track.offsetLeft, behavior: 'smooth' });
-  }
-
-  // Track active slide via scroll position. Use rAF to throttle.
+  // Scroll tracking
   let rafPending = false;
-  const onScroll = () => {
+  track.addEventListener('scroll', () => {
     if (rafPending) return;
     rafPending = true;
     requestAnimationFrame(() => {
@@ -141,28 +168,26 @@ export function renderDemoCarousel(container, demos, options = {}) {
       const slideWidth = track.children[0]?.offsetWidth || 1;
       const newIndex = Math.round(track.scrollLeft / slideWidth);
       if (newIndex !== activeIndex && newIndex >= 0 && newIndex < items.length) {
-        const previousIndex = activeIndex;
+        onSwipe(true);
+        // Reset playing embed
+        if (playingEmbedSlides.has(activeIndex)) {
+          const slide = track.children[activeIndex];
+          if (slide) {
+            playingEmbedSlides.delete(activeIndex);
+            renderMedia(slide, items[activeIndex], {
+              onError: () => {},
+              onEmbedPlay: () => playingEmbedSlides.add(activeIndex)
+            });
+          }
+        }
         activeIndex = newIndex;
-        // Reset any playing iframe on the slide we just left so the user
-        // can keep swiping (iframes swallow touch events).
-        resetEmbedSlide(previousIndex);
         updateDots();
         updateCaption();
-        // Render the active slide and its neighbors lazily
-        renderSlide(activeIndex);
-        if (activeIndex + 1 < items.length) renderSlide(activeIndex + 1);
-        if (activeIndex - 1 >= 0) renderSlide(activeIndex - 1);
       }
     });
-  };
-  track.addEventListener('scroll', onScroll, { passive: true });
+  }, { passive: true });
 
-  // Initial: render first slide and its neighbors, jump to startIndex without animation
-  renderSlide(activeIndex);
-  if (activeIndex + 1 < items.length) renderSlide(activeIndex + 1);
-  if (activeIndex - 1 >= 0) renderSlide(activeIndex - 1);
-
-  // Position track at startIndex (without smooth, since it's the initial render)
+  // Set initial position
   requestAnimationFrame(() => {
     const slide = track.children[activeIndex];
     if (slide) track.scrollLeft = slide.offsetLeft - track.offsetLeft;
@@ -186,15 +211,14 @@ function sortDemos(demos) {
 }
 
 function sourceLabel(demo) {
-  const typeLabel =
-    {
-      cloudinary: demo.format === 'mp4' ? 'Video' : 'Demo',
-      youtube: 'YouTube',
-      tiktok: 'TikTok',
-      vimeo: 'Vimeo',
-      local: 'Demo',
-      url: 'External'
-    }[demo.type] || demo.type;
+  const typeLabel = {
+    cloudinary: demo.format === 'mp4' ? 'Video' : 'Demo',
+    youtube: 'YouTube',
+    tiktok: 'TikTok',
+    vimeo: 'Vimeo',
+    local: 'Demo',
+    url: 'External'
+  }[demo.type] || demo.type;
   if (demo.notes) return `${typeLabel} · ${demo.notes}`;
   return typeLabel;
 }

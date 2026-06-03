@@ -233,3 +233,96 @@
 .drag-over {
   border-top: 2px solid var(--color-brand-500);
 }
+
+/* Demo loading animation — 16x16 pixel-art lifter */
+.demo-loader {
+  width: 2px;
+  height: 2px;
+  color: var(--color-brand-400);
+  animation: lifter-press 0.9s ease-in-out infinite;
+  box-shadow:
+    /* barbell bar */
+    -14px -20px 0 0, -12px -20px 0 0, -10px -20px 0 0, -8px -20px 0 0, -6px -20px 0 0, -4px -20px 0 0, -2px -20px 0 0, 0px -20px 0 0, 2px -20px 0 0, 4px -20px 0 0, 6px -20px 0 0, 8px -20px 0 0, 10px -20px 0 0, 12px -20px 0 0, 14px -20px 0 0,
+    /* left plate */
+    -14px -22px 0 0, -14px -18px 0 0, -12px -22px 0 0, -12px -18px 0 0,
+    /* right plate */
+    12px -22px 0 0, 12px -18px 0 0, 14px -22px 0 0, 14px -18px 0 0,
+    /* head */
+    -2px -16px 0 0, 0px -16px 0 0, 2px -16px 0 0, -2px -14px 0 0, 0px -14px 0 0, 2px -14px 0 0,
+    /* neck */
+    0px -12px 0 0,
+    /* shoulders + arms up */
+    -6px -12px 0 0, -4px -12px 0 0, 4px -12px 0 0, 6px -12px 0 0,
+    -8px -14px 0 0, -8px -16px 0 0, -8px -18px 0 0,
+    8px -14px 0 0, 8px -16px 0 0, 8px -18px 0 0,
+    /* torso */
+    -2px -10px 0 0, 0px -10px 0 0, 2px -10px 0 0,
+    -2px -8px 0 0, 0px -8px 0 0, 2px -8px 0 0,
+    -2px -6px 0 0, 0px -6px 0 0, 2px -6px 0 0,
+    /* hips */
+    -4px -4px 0 0, -2px -4px 0 0, 0px -4px 0 0, 2px -4px 0 0, 4px -4px 0 0,
+    /* legs */
+    -4px -2px 0 0, -4px 0px 0 0, -4px 2px 0 0, -4px 4px 0 0,
+    4px -2px 0 0, 4px 0px 0 0, 4px 2px 0 0, 4px 4px 0 0,
+    /* feet */
+    -6px 4px 0 0, -4px 4px 0 0, 4px 4px 0 0, 6px 4px 0 0;
+}
+
+@keyframes lifter-press {
+  0%, 100% {
+    box-shadow:
+      /* barbell bar — down position */
+      -14px -14px 0 0, -12px -14px 0 0, -10px -14px 0 0, -8px -14px 0 0, -6px -14px 0 0, -4px -14px 0 0, -2px -14px 0 0, 0px -14px 0 0, 2px -14px 0 0, 4px -14px 0 0, 6px -14px 0 0, 8px -14px 0 0, 10px -14px 0 0, 12px -14px 0 0, 14px -14px 0 0,
+      /* left plate */
+      -14px -16px 0 0, -14px -12px 0 0, -12px -16px 0 0, -12px -12px 0 0,
+      /* right plate */
+      12px -16px 0 0, 12px -12px 0 0, 14px -16px 0 0, 14px -12px 0 0,
+      /* head */
+      -2px -16px 0 0, 0px -16px 0 0, 2px -16px 0 0, -2px -14px 0 0, 0px -14px 0 0, 2px -14px 0 0,
+      /* neck */
+      0px -12px 0 0,
+      /* shoulders + arms bent */
+      -6px -12px 0 0, -4px -12px 0 0, 4px -12px 0 0, 6px -12px 0 0,
+      -8px -12px 0 0, -8px -14px 0 0, -8px -14px 0 0,
+      8px -12px 0 0, 8px -14px 0 0, 8px -14px 0 0,
+      /* torso */
+      -2px -10px 0 0, 0px -10px 0 0, 2px -10px 0 0,
+      -2px -8px 0 0, 0px -8px 0 0, 2px -8px 0 0,
+      -2px -6px 0 0, 0px -6px 0 0, 2px -6px 0 0,
+      /* hips */
+      -4px -4px 0 0, -2px -4px 0 0, 0px -4px 0 0, 2px -4px 0 0, 4px -4px 0 0,
+      /* legs */
+      -4px -2px 0 0, -4px 0px 0 0, -4px 2px 0 0, -4px 4px 0 0,
+      4px -2px 0 0, 4px 0px 0 0, 4px 2px 0 0, 4px 4px 0 0,
+      /* feet */
+      -6px 4px 0 0, -4px 4px 0 0, 4px 4px 0 0, 6px 4px 0 0;
+  }
+  50% {
+    box-shadow:
+      /* barbell bar — up position */
+      -14px -20px 0 0, -12px -20px 0 0, -10px -20px 0 0, -8px -20px 0 0, -6px -20px 0 0, -4px -20px 0 0, -2px -20px 0 0, 0px -20px 0 0, 2px -20px 0 0, 4px -20px 0 0, 6px -20px 0 0, 8px -20px 0 0, 10px -20px 0 0, 12px -20px 0 0, 14px -20px 0 0,
+      /* left plate */
+      -14px -22px 0 0, -14px -18px 0 0, -12px -22px 0 0, -12px -18px 0 0,
+      /* right plate */
+      12px -22px 0 0, 12px -18px 0 0, 14px -22px 0 0, 14px -18px 0 0,
+      /* head */
+      -2px -16px 0 0, 0px -16px 0 0, 2px -16px 0 0, -2px -14px 0 0, 0px -14px 0 0, 2px -14px 0 0,
+      /* neck */
+      0px -12px 0 0,
+      /* shoulders + arms up */
+      -6px -12px 0 0, -4px -12px 0 0, 4px -12px 0 0, 6px -12px 0 0,
+      -8px -14px 0 0, -8px -16px 0 0, -8px -18px 0 0,
+      8px -14px 0 0, 8px -16px 0 0, 8px -18px 0 0,
+      /* torso */
+      -2px -10px 0 0, 0px -10px 0 0, 2px -10px 0 0,
+      -2px -8px 0 0, 0px -8px 0 0, 2px -8px 0 0,
+      -2px -6px 0 0, 0px -6px 0 0, 2px -6px 0 0,
+      /* hips */
+      -4px -4px 0 0, -2px -4px 0 0, 0px -4px 0 0, 2px -4px 0 0, 4px -4px 0 0,
+      /* legs */
+      -4px -2px 0 0, -4px 0px 0 0, -4px 2px 0 0, -4px 4px 0 0,
+      4px -2px 0 0, 4px 0px 0 0, 4px 2px 0 0, 4px 4px 0 0,
+      /* feet */
+      -6px 4px 0 0, -4px 4px 0 0, 4px 4px 0 0, 6px 4px 0 0;
+  }
+}
