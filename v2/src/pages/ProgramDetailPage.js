@@ -81,7 +81,25 @@ function renderContent(container, program) {
 
   const renderList = () => {
     list.innerHTML = '';
+    let currentSection = null;
+
     program.resolvedItems.forEach((item, i) => {
+      // Determine section from tags
+      const tags = item.tags || [];
+      let section = 'main';
+      if (tags.includes('warmup')) section = 'warmup';
+      else if (tags.includes('stretch')) section = 'stretch';
+
+      // Insert section header when section changes
+      if (section !== currentSection) {
+        currentSection = section;
+        const header = document.createElement('li');
+        header.className = 'pt-4 pb-1 first:pt-0';
+        const label = { warmup: 'WARM-UP', main: 'MAIN WORK', stretch: 'COOL-DOWN' }[section];
+        header.innerHTML = `<p class="eyebrow border-b border-slate-800 pb-2">${label}</p>`;
+        list.appendChild(header);
+      }
+
       const li = document.createElement('li');
       const cardState = {
         index: i,
@@ -90,7 +108,6 @@ function renderContent(container, program) {
         onToggle: (idx) => {
           expandedIndex = expandedIndex === idx ? -1 : idx;
           renderAll();
-          // Smooth-scroll the newly opened card into view (below the sticky header)
           if (expandedIndex === idx) {
             requestAnimationFrame(() => {
               const card = list.querySelector(`[data-item-index="${idx}"]`);
@@ -106,12 +123,10 @@ function renderContent(container, program) {
           const next = toggleProgress(program.id, idx);
           completed.clear();
           next.forEach((v) => completed.add(v));
-          // Auto-collapse on completion (smoother UX). User can re-open if needed.
           if (next.has(idx) && expandedIndex === idx) {
             expandedIndex = -1;
           }
           renderAll();
-          // Celebrate when crossing the finish line (and not on un-complete)
           if (!wasComplete && completed.size === total) {
             setTimeout(celebrate, 250);
           }
