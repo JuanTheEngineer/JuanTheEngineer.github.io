@@ -31,13 +31,14 @@ export function createGroupCard(item, state) {
     const title = `${num}${subLetter}. ${escapeHtml(member.name)}`;
     const isFirst = i === 0;
     const isLast = i === item.exercises.length - 1;
-    const roundTop = isFirst ? 'rounded-t-2xl' : '';
-    const roundBottom = isLast ? 'rounded-b-2xl' : '';
-    const borderTop = !isFirst ? 'border-t border-slate-800' : '';
+
+    // Connected card: shared border, no gap, just a thin divider between
+    const roundTop = isFirst ? 'rounded-t-2xl' : 'rounded-t-none';
+    const roundBottom = isLast ? 'rounded-b-2xl' : 'rounded-b-none';
 
     return `
-      ${!isFirst ? `<div class="flex items-center justify-center -my-px relative z-10"><span class="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full bg-slate-800 text-brand-300 border border-slate-700">${kindLabel}</span></div>` : ''}
-      <div class="card ${roundTop} ${roundBottom} ${!isFirst ? 'rounded-t-none' : ''} ${!isLast ? 'rounded-b-none' : ''} ${borderTop} overflow-hidden">
+      <div class="card ${roundTop} ${roundBottom} overflow-hidden ${!isFirst ? 'border-t-0' : ''}">
+        ${!isFirst ? `<div class="h-px bg-slate-700/50"></div>` : ''}
         <div class="flex items-stretch">
           <button
             data-action="toggle-member"
@@ -45,6 +46,7 @@ export function createGroupCard(item, state) {
             class="flex-1 min-w-0 px-4 py-4 flex items-center gap-3 text-left active:bg-white/5 transition-colors touch-manipulation"
           >
             <div class="flex-1 min-w-0">
+              ${isFirst ? `<div class="flex gap-1.5 mb-1.5"><span class="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-md bg-brand-500/20 text-brand-300">${kindLabel}</span></div>` : ''}
               <h3 class="font-semibold tracking-tight leading-tight ${state.isCompleted ? 'line-through text-slate-500' : 'text-slate-100'}">
                 ${title}
               </h3>

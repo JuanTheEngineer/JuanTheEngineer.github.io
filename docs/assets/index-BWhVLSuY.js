@@ -325,9 +325,9 @@
         <span class="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-md bg-slate-800 text-slate-400">${N(t)}</span>
       `).join("")}
     </div>
-  `:""}function N(e){return e==null?"":String(e).replace(/[&<>"']/g,t=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[t])}const it={superset:"Super Set",compound:"Compound",circuit:"Circuit"};function lt(e,t){const s=document.createElement("article");s.className=`transition-all ${t.isCompleted?"opacity-60":""}`,s.dataset.itemIndex=String(t.index);const a=it[e.kind]||e.kind,n=t.index+1,r=e.exercises.map((o,i)=>{const d=String.fromCharCode(97+i),l=`${n}${d}. ${z(o.name)}`,p=i===0,c=i===e.exercises.length-1,u=p?"rounded-t-2xl":"",g=c?"rounded-b-2xl":"",v=p?"":"border-t border-slate-800";return`
-      ${p?"":`<div class="flex items-center justify-center -my-px relative z-10"><span class="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full bg-slate-800 text-brand-300 border border-slate-700">${a}</span></div>`}
-      <div class="card ${u} ${g} ${p?"":"rounded-t-none"} ${c?"":"rounded-b-none"} ${v} overflow-hidden">
+  `:""}function N(e){return e==null?"":String(e).replace(/[&<>"']/g,t=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[t])}const it={superset:"Super Set",compound:"Compound",circuit:"Circuit"};function lt(e,t){const s=document.createElement("article");s.className=`transition-all ${t.isCompleted?"opacity-60":""}`,s.dataset.itemIndex=String(t.index);const a=it[e.kind]||e.kind,n=t.index+1,r=e.exercises.map((o,i)=>{const d=String.fromCharCode(97+i),l=`${n}${d}. ${z(o.name)}`,p=i===0,c=i===e.exercises.length-1;return`
+      <div class="card ${p?"rounded-t-2xl":"rounded-t-none"} ${c?"rounded-b-2xl":"rounded-b-none"} overflow-hidden ${p?"":"border-t-0"}">
+        ${p?"":'<div class="h-px bg-slate-700/50"></div>'}
         <div class="flex items-stretch">
           <button
             data-action="toggle-member"
@@ -335,6 +335,7 @@
             class="flex-1 min-w-0 px-4 py-4 flex items-center gap-3 text-left active:bg-white/5 transition-colors touch-manipulation"
           >
             <div class="flex-1 min-w-0">
+              ${p?`<div class="flex gap-1.5 mb-1.5"><span class="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-md bg-brand-500/20 text-brand-300">${a}</span></div>`:""}
               <h3 class="font-semibold tracking-tight leading-tight ${t.isCompleted?"line-through text-slate-500":"text-slate-100"}">
                 ${l}
               </h3>
