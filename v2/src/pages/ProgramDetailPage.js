@@ -81,6 +81,7 @@ function renderContent(container, program) {
 
   const renderList = () => {
     list.innerHTML = '';
+
     program.resolvedItems.forEach((item, i) => {
       const li = document.createElement('li');
       const cardState = {
