@@ -247,6 +247,9 @@ class DataEditorApp:
             # Preview button (opens in browser)
             ttk.Button(row, text="▶", width=2, command=lambda d=demo: webbrowser.open(d.get("url", ""))).pack(side="left", padx=2)
 
+            # Reject button (moves to rejectedDemos)
+            ttk.Button(row, text="👎", width=2, command=lambda idx=i: self.reject_demo(idx)).pack(side="left", padx=2)
+
             # Delete button
             ttk.Button(row, text="✕", width=2, command=lambda idx=i: self.delete_demo(idx)).pack(side="left", padx=2)
 
@@ -341,6 +344,30 @@ class DataEditorApp:
             demos.pop(demo_idx)
             self.unsaved_changes = True
             self.load_exercise(self.current_idx)
+
+    def reject_demo(self, demo_idx):
+        """Move a demo to rejectedDemos with an optional reason."""
+        ex = self.exercises[self.current_idx]
+        demos = ex.get("demos", [])
+        if demo_idx < 0 or demo_idx >= len(demos):
+            return
+        demo = demos[demo_idx]
+        reason = simpledialog.askstring("Reject Demo", "Why is this demo bad? (optional):", parent=self.root)
+        if reason is None:  # cancelled
+            return
+        # Move to rejectedDemos
+        rejected_entry = {"url": demo.get("url", ""), "reason": reason or "not relevant"}
+        if demo.get("metadata", {}).get("title"):
+            rejected_entry["title"] = demo["metadata"]["title"]
+        if demo.get("metadata", {}).get("channel"):
+            rejected_entry["channel"] = demo["metadata"]["channel"]
+        if "rejectedDemos" not in ex:
+            ex["rejectedDemos"] = []
+        ex["rejectedDemos"].append(rejected_entry)
+        # Remove from demos
+        demos.pop(demo_idx)
+        self.unsaved_changes = True
+        self.load_exercise(self.current_idx)
 
     def add_demo_dialog(self):
         """Pop up a window to add a demo with all attributes as dropdowns."""

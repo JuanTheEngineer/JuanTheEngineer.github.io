@@ -82,17 +82,18 @@ async function main() {
         const videos = await searchYouTube(ex.name, MAX_YOUTUBE_RESULTS);
         if (videos.length > 0) {
           if (!ex.demos) ex.demos = [];
-          // Don't add duplicates (check URL)
+          // Don't add duplicates or previously rejected URLs
           const existingUrls = new Set(ex.demos.map(d => d.url));
+          const rejectedUrls = new Set((ex.rejectedDemos || []).map(r => r.url));
           let added = 0;
           for (const vid of videos) {
-            if (!existingUrls.has(vid.url)) {
+            if (!existingUrls.has(vid.url) && !rejectedUrls.has(vid.url)) {
               ex.demos.push(vid);
               existingUrls.add(vid.url);
               added++;
             }
           }
-          console.log(`   ✓ Added ${added} YouTube demos (${videos.length} found)`);
+          console.log(`   ✓ Added ${added} YouTube demos (${videos.length} found, ${rejectedUrls.size} rejected skipped)`);
         } else {
           console.log(`   ⚠ No YouTube results`);
         }
