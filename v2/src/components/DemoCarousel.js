@@ -155,7 +155,14 @@ function renderCarousel(container, items, focusIndex, onSwipe) {
 
   const updateCaption = () => {
     if (!caption) return;
-    caption.textContent = sourceLabel(items[activeIndex]);
+    const demo = items[activeIndex];
+    const label = sourceLabel(demo);
+    const url = demo.url;
+    if (url && (demo.type === 'youtube' || demo.type === 'tiktok' || demo.type === 'vimeo')) {
+      caption.innerHTML = `<a href="${url}" target="_blank" rel="noopener" class="hover:text-brand-400 transition-colors">${escapeHtml(label)} ↗</a>`;
+    } else {
+      caption.textContent = label;
+    }
   };
 
   // Scroll tracking
@@ -219,6 +226,13 @@ function sourceLabel(demo) {
     local: 'Demo',
     url: 'External'
   }[demo.type] || demo.type;
+  const channel = demo.metadata?.channel;
+  if (channel) return `${typeLabel} · ${channel}`;
   if (demo.notes) return `${typeLabel} · ${demo.notes}`;
   return typeLabel;
+}
+
+function escapeHtml(s) {
+  if (s == null) return '';
+  return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 }

@@ -22,7 +22,8 @@
           "repUnits": "reps",
           "tags": [
             "warmup"
-          ]
+          ],
+          "note": "Keep your lower back pressed into the ground throughout the movement. You should feel tension in your core as you engage your abs and control the movement. Avoid letting your hips lift or sag; maintain a neutral spine. Remember, it's about quality over quantity—focus on slow, controlled taps rather than rushing through the reps."
         },
         {
           "exerciseId": "tkes",
@@ -93,7 +94,8 @@
           "repUnits": "reps",
           "tags": [
             "warmup"
-          ]
+          ],
+          "note": "Keep your core tight and maintain a neutral spine throughout the movement. You should feel tension in your abs and shoulders as you pass the kettlebell. A common mistake is to overextend your back; avoid arching or rounding your spine. Focus on controlled movements and engage your glutes to stabilize your hips. Remember, quality over quantity!"
         },
         {
           "exerciseId": "lowboxdrops",
@@ -120,7 +122,7 @@
               "reps": "10",
               "sets": "4",
               "repUnits": "reps",
-              "note": "Meant to be a Super Set."
+              "note": "Keep your back straight and hinge at the hips, not the waist. Feel the tension in your hamstrings as you lower the dumbbells, keeping them close to your legs. Engage your core throughout to maintain stability. A common mistake is bending your knees too much; focus on pushing your hips back instead. Remember, the movement should be driven by your hips, not your knees."
             },
             {
               "exerciseId": "splitsquats",
@@ -218,7 +220,7 @@
               "reps": "30",
               "sets": "4",
               "repUnits": "secs",
-              "note": "Meant to be a Super Set."
+              "note": "Keep your front knee aligned over your ankle; this is crucial for stability. Feel the tension in your front leg's quadriceps and glutes while maintaining a straight back. Avoid leaning forward or letting your knee cave inward, as this can lead to injury. Focus on keeping your core engaged to support your spine throughout the hold."
             }
           ]
         },
@@ -332,7 +334,7 @@
           "reps": "3",
           "sets": "3",
           "repUnits": "reps",
-          "note": ".",
+          "note": "Keep your eyes on the weight throughout the movement to maintain stability and alignment. Feel the tension in your core and the shoulder that's supporting the weight; it should feel strong and engaged. A common mistake to avoid is letting your lower back sag or your shoulder roll forward—this can lead to injury. Focus on keeping your body in a straight line from your hand to your foot as you transition through each phase.",
           "tags": [
             "warmup"
           ]
@@ -344,7 +346,8 @@
           "repUnits": "yd",
           "tags": [
             "warmup"
-          ]
+          ],
+          "note": "Keep your core tight and your shoulder engaged, pulling it down and back to maintain stability. You should feel tension through your shoulder and core, with your arm straight overhead. Avoid leaning to one side; this can lead to imbalances and strain. Focus on walking tall and controlled, keeping your hips level. Remember to breathe steadily throughout the carry."
         },
         {
           "exerciseId": "overunderhurdles",
@@ -397,14 +400,14 @@
               "reps": "15",
               "sets": "4",
               "repUnits": "reps",
-              "note": "Meant to be a Super Set."
+              "note": "Keep your core engaged and maintain a neutral spine throughout the movement. Focus on feeling the tension in your glutes and hamstrings as you extend your hip. Avoid arching your lower back; this can lead to injury and reduce effectiveness. Remember, control the eccentric phase—slowly lower your leg to maximize muscle engagement."
             },
             {
               "exerciseId": "sldbrdl",
               "reps": "15",
               "sets": "4",
               "repUnits": "reps",
-              "note": "Meant to be a Super Set."
+              "note": "Keep your back straight and hinge at the hips, not the waist. You should feel tension in your hamstring and glutes of the standing leg as you lower the dumbbell. A common mistake is rounding your back; maintain a neutral spine throughout the movement. Focus on keeping your standing knee slightly bent and engage your core for stability. Control the movement both down and up to maximize effectiveness."
             }
           ]
         },
@@ -439,7 +442,8 @@
           "repUnits": "reps",
           "tags": [
             "warmup"
-          ]
+          ],
+          "note": "Focus on keeping your spine neutral throughout the movement. As you arch and round your back, feel the tension in your core and upper back. Ensure your shoulders are away from your ears to avoid unnecessary strain. A common mistake is overextending your neck; keep it in line with your spine to prevent discomfort. Move slowly and deliberately, allowing each segment of your spine to flex and extend fully."
         },
         {
           "exerciseId": "nomoneydrill",
@@ -476,14 +480,14 @@
               "reps": "8-10",
               "sets": "5",
               "repUnits": "reps",
-              "note": "Meant to be a Super Set."
+              "note": "Engage your core and pull from your elbows, not your hands. Focus on feeling the tension in your lats and upper back as you lift. Avoid swinging or using momentum; keep your body straight and controlled throughout the movement. Remember to lower yourself fully to maximize the range of motion. Keep your chin above the bar at the top for a proper finish."
             },
             {
               "exerciseId": "pullovers",
               "reps": "10",
               "sets": "5",
               "repUnits": "reps",
-              "note": "Meant to be a Super Set."
+              "note": "Keep your core engaged and maintain a slight bend in your elbows throughout the movement. Focus on feeling the stretch in your lats as you lower the weight and the contraction as you bring it back up. Ensure your shoulders stay down and away from your ears to avoid straining your neck. A common mistake is letting your elbows flare out too much; keep them in line with your torso for better control and effectiveness."
             }
           ]
         },
@@ -532,7 +536,8 @@
           "repUnits": "reps",
           "tags": [
             "warmup"
-          ]
+          ],
+          "note": "Focus on keeping your spine neutral throughout the movement. As you arch your back up (cat), feel the tension in your upper back and shoulders. When you drop your belly down (camel), engage your core to support your lower back. A common mistake is overextending your neck; keep it in line with your spine to avoid strain. Remember to breathe steadily and move fluidly between the positions."
         },
         {
           "exerciseId": "nomoneydrill",
@@ -569,14 +574,14 @@
               "reps": "6-8",
               "sets": "3",
               "repUnits": "reps",
-              "note": "Meant to be a Super Set."
+              "note": "Engage your core and keep your body straight throughout the movement. Focus on pulling through your elbows, feeling the tension in your lats and upper back. Avoid swinging or using momentum; keep the movement controlled. Remember, your chin should clear the bar at the top, and lower yourself fully to maximize the range of motion. Stay strong and steady!"
             },
             {
               "exerciseId": "pullovers",
               "reps": "10",
               "sets": "3",
               "repUnits": "reps",
-              "note": "Meant to be a Super Set."
+              "note": "Keep your core engaged and maintain a slight bend in your elbows throughout the movement. You should feel the tension primarily in your lats and chest as you lower the weight behind your head. A common mistake is allowing your lower back to arch excessively; this can lead to injury. Focus on keeping your back flat against the bench and control the weight on the way down to maximize muscle engagement."
             }
           ]
         },
@@ -625,7 +630,8 @@
           "repUnits": "reps",
           "tags": [
             "warmup"
-          ]
+          ],
+          "note": "Engage your core and keep your body in a straight line from head to heels throughout the movement. You should feel tension in your chest, shoulders, and triceps as you lower and push up. A common mistake is letting your hips sag or rise too high; maintain that straight line to maximize effectiveness and prevent injury. Focus on controlled movements, inhaling as you lower and exhaling as you push back up."
         },
         {
           "exerciseId": "downwarddogtoetouches",
@@ -634,7 +640,8 @@
           "repUnits": "reps",
           "tags": [
             "warmup"
-          ]
+          ],
+          "note": "Keep your hands shoulder-width apart and press firmly into the ground, driving your heels towards the floor. You should feel the stretch in your hamstrings and calves while engaging your core. Avoid rounding your back; instead, keep it straight and focus on hinging at the hips. Remember to breathe deeply as you reach for your toes. A common mistake is letting your head drop too low; maintain a neutral neck position to prevent strain."
         },
         {
           "exerciseId": "chinups",
@@ -658,7 +665,7 @@
               "reps": "15-20",
               "sets": "5",
               "repUnits": "reps",
-              "note": "Meant to be a Super Set."
+              "note": "Keep your body in a straight line from head to heels; engage your core to prevent sagging or arching. You should feel tension in your chest, shoulders, and triceps as you lower and push up. Avoid flaring your elbows out too wide; keep them at about a 45-degree angle to your body to protect your shoulders and maximize effectiveness. Focus on controlled movements, ensuring you fully extend your arms at the top for full range of motion."
             }
           ]
         },
@@ -677,14 +684,14 @@
               "reps": "8",
               "sets": "4",
               "repUnits": "reps",
-              "note": "Meant to be a Super Set."
+              "note": "Keep your back flat and hinge at the hips; this is crucial for maintaining stability and protecting your lower back. Focus on feeling the tension in your lats and upper back as you pull the weight towards your hip. Avoid rotating your torso or using momentum to lift the weight; this can lead to injury and reduce the effectiveness of the exercise. Keep your core engaged throughout to support your spine."
             },
             {
               "exerciseId": "scarecrows",
               "reps": "15",
               "sets": "4",
               "repUnits": "reps",
-              "note": "Meant to be a Super Set."
+              "note": "Keep your elbows at a 90-degree angle and maintain a strong, stable posture throughout. Focus on feeling the tension in your upper back and shoulders as you rotate your arms outwards. Avoid letting your shoulders rise towards your ears; they should stay relaxed and down. Engage your core to support your spine and prevent any arching. Remember, quality over quantity—control the movement to maximize effectiveness."
             }
           ]
         },
@@ -783,7 +790,7 @@
           "reps": "5",
           "sets": "4",
           "repUnits": "reps",
-          "note": "Note: .",
+          "note": "Keep your hips high and push through your hands to create a strong, straight line from your wrists to your hips. You should feel tension in your hamstrings and calves as you reach for your toes. Avoid rounding your back; instead, keep it flat to prevent strain. Focus on engaging your core to maintain stability throughout the movement.",
           "tags": [
             "warmup"
           ]
@@ -796,14 +803,14 @@
               "reps": "12",
               "sets": "4",
               "repUnits": "reps",
-              "note": "Note: Meant to be a Super Set."
+              "note": "Keep your elbows tucked close to your body throughout the movement. You should feel the tension in your lats and upper back as you pull the bar down. A common mistake is leaning back too far; maintain a slight lean forward to engage the correct muscles. Focus on squeezing your shoulder blades together at the bottom of the movement for maximum effectiveness."
             },
             {
               "exerciseId": "cablerows",
               "reps": "12",
               "sets": "4",
               "repUnits": "reps",
-              "note": "Note: Meant to be a Super Set."
+              "note": "Keep your back straight and hinge slightly at the hips; this is crucial for maintaining proper form. Focus on squeezing your shoulder blades together as you pull the cable towards your torso. You should feel tension in your upper back and lats. Avoid leaning back too far or using your arms to pull; this can lead to poor form and reduce effectiveness. Keep the movement controlled and engage your core throughout."
             }
           ]
         },
@@ -815,7 +822,7 @@
               "reps": "12",
               "sets": "4",
               "repUnits": "reps",
-              "note": "Note: Meant to be a Super Set."
+              "note": "Engage your core and keep your chest up throughout the movement. Focus on pulling through your elbows, not your hands, to feel the tension in your lats. You should feel the stretch in your back as you lower the bar and a strong contraction as you pull it down. Avoid leaning back excessively; keep your torso stable to prevent strain on your lower back. Remember, control the weight on the way up to maximize muscle engagement."
             },
             {
               "exerciseId": "bentoverrows",
@@ -834,14 +841,14 @@
               "reps": "12",
               "sets": "4",
               "repUnits": "reps",
-              "note": "Note: Meant to be a Super Set."
+              "note": "Keep your core tight and maintain a slight bend in your elbows throughout the movement. Focus on feeling the tension in your lats and shoulders as you pull the cable down and across your body. A common mistake is letting your back arch or using momentum; keep your movements controlled to maximize muscle engagement. Remember to breathe out as you pull down, and feel that stretch in your lats at the top. Stay focused on form to avoid injury and ensure effectiveness!"
             },
             {
               "exerciseId": "zottmancurls",
               "reps": "12",
               "sets": "4",
               "repUnits": "reps",
-              "note": "Note: Meant to be a Super Set."
+              "note": "Keep your elbows tucked close to your sides throughout the movement. You should feel the tension in your biceps during the curl and in your forearms as you rotate and lower the weights. A common mistake is letting your elbows flare out, which reduces the effectiveness and can lead to injury. Focus on controlled movements; don’t rush through the reps."
             }
           ]
         },
@@ -853,7 +860,7 @@
               "reps": "15",
               "sets": "4",
               "repUnits": "reps",
-              "note": "Note: Meant to be a Super Set."
+              "note": "Keep your shoulders down and back as you lift; avoid rolling them forward. Feel the tension in your upper traps and the back of your shoulders. A common mistake is using your arms or bending your elbows—focus on isolating the traps by keeping your arms straight. Control the movement on the way down to maximize tension."
             },
             {
               "exerciseId": "crushgripcurls",
@@ -895,7 +902,8 @@
           "repUnits": "reps",
           "tags": [
             "warmup"
-          ]
+          ],
+          "note": "Keep your elbows close to your body as you lower down. You should feel tension in your chest and triceps while maintaining a strong core. As you push back up, engage your shoulders and keep your hips in line with your body. A common mistake is flaring your elbows out too wide, which can strain your shoulders. Focus on smooth, controlled movements to maximize effectiveness and prevent injury."
         },
         {
           "kind": "superset",
@@ -943,14 +951,14 @@
               "reps": "10-12",
               "sets": "4",
               "repUnits": "reps",
-              "note": "Note: Meant to be a Super Set."
+              "note": "Keep your elbows tucked in and stationary throughout the movement; this is crucial for targeting the triceps effectively. You should feel tension in the back of your arms as you lower the weight. A common mistake is flaring your elbows out, which can lead to shoulder strain and reduce tricep engagement. Focus on a controlled motion, lowering the weight just above your forehead, then pressing back up to full extension. Maintain a strong grip and avoid letting your wrists bend."
             },
             {
               "exerciseId": "dbsidelateralraises",
               "reps": "10-12",
               "sets": "4",
               "repUnits": "reps",
-              "note": "Note: Meant to be a Super Set."
+              "note": "Keep your elbows slightly bent and lead with your elbows as you lift the weights to shoulder height. Focus on feeling the tension in your deltoids, not your traps. A common mistake is using momentum; avoid swinging your body or lifting too heavy. Control the movement both up and down to maximize muscle engagement. Remember, quality over quantity!"
             }
           ]
         },
@@ -962,14 +970,14 @@
               "reps": "10-15",
               "sets": "4",
               "repUnits": "reps",
-              "note": "Note: Meant to be a Super Set."
+              "note": "Keep your elbows tucked close to your body as you lower yourself; this protects your shoulders and maximizes tricep engagement. You should feel tension in your triceps and chest as you push back up. A common mistake is flaring your elbows out, which can lead to shoulder strain and less effective muscle activation. Focus on a controlled movement, maintaining a straight line from your shoulders to your hips."
             },
             {
               "exerciseId": "feetelevatedpushups",
               "reps": "12-15",
               "sets": "4",
               "repUnits": "reps",
-              "note": "Note: Meant to be a Super Set."
+              "note": "Keep your body in a straight line from head to heels; engage your core to avoid sagging hips. You should feel tension in your chest, shoulders, and triceps as you lower yourself. A common mistake is letting your hips drop or piking your butt up—this can lead to poor form and reduce effectiveness. Focus on controlled movements and maintain that plank position throughout the set."
             }
           ]
         },
@@ -1004,7 +1012,8 @@
           "repUnits": "reps",
           "tags": [
             "warmup"
-          ]
+          ],
+          "note": "Keep your core tight and maintain a neutral spine throughout the movement. You should feel tension in your abs and shoulders as you pass the kettlebell. Avoid leaning back or rounding your back; this can lead to injury. Focus on controlled movements, ensuring your hips remain stable while your upper body does the work. Keep your feet shoulder-width apart for balance."
         },
         {
           "kind": "superset",
@@ -1033,7 +1042,7 @@
               "reps": "12",
               "sets": "4",
               "repUnits": "reps",
-              "note": "Note: Meant to be a Super Set."
+              "note": "Keep your front knee aligned over your ankle as you lower into the squat; this is crucial for stability. You should feel tension in your front leg's quads and glutes, while your back leg's hip flexor should be engaged. Avoid letting your front knee cave inward—this can lead to injury. Focus on keeping your torso upright and core tight throughout the movement."
             },
             {
               "exerciseId": "dbrdls",
@@ -1052,7 +1061,7 @@
               "reps": "10",
               "sets": "4",
               "repUnits": "reps",
-              "note": "Note: Meant to be a Super Set."
+              "note": "Keep your chest up and core engaged throughout the movement. Feel the tension in your quads and glutes as you lower into the squat. Make sure your knees track over your toes, not caving inward. A common mistake is leaning too far forward; focus on sitting back into your heels while maintaining an upright torso. Keep your weight centered and drive through your heels as you rise."
             },
             {
               "exerciseId": "legcurls",
@@ -1071,14 +1080,14 @@
               "reps": "10",
               "sets": "3",
               "repUnits": "reps",
-              "note": "Note: Meant to be a Super Set."
+              "note": "Engage your core and keep your back straight throughout the movement. Focus on feeling the tension in your outer thighs and glutes as you lift your leg. Ensure your hips stay level; avoid rotating your torso. A common mistake is leaning too far to one side or using momentum instead of controlled movement. Keep it slow and steady to maximize muscle activation."
             },
             {
               "exerciseId": "calfraises",
               "reps": "15",
               "sets": "3",
               "repUnits": "reps",
-              "note": "Note: Meant to be a Super Set."
+              "note": "Keep your core engaged and your shoulders back. As you raise up onto your toes, focus on feeling the tension in your calf muscles, especially the gastrocnemius. Avoid letting your knees lock out at the top; maintain a slight bend to keep the tension in your calves. A common mistake is bouncing at the bottom—control the movement both up and down for maximum effectiveness."
             }
           ]
         }
@@ -1242,7 +1251,9 @@
           "sets": "1",
           "repUnits": "min",
           "note": "Incline 3, slow pace; warms up quads + ankles.",
-          "tags": ["warmup"]
+          "tags": [
+            "warmup"
+          ]
         },
         {
           "exerciseId": "hamstring-heel-dig-isometric",
@@ -1262,7 +1273,8 @@
           "exerciseId": "dbrdls",
           "reps": "10",
           "sets": "4",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "note": "Keep your back straight and hinge at the hips, pushing your glutes back while maintaining a slight bend in your knees. You should feel tension in your hamstrings and glutes as you lower the dumbbells. A common mistake is rounding your back; this can lead to injury. Focus on keeping your chest up and shoulders back throughout the movement to ensure proper form and maximize effectiveness."
         },
         {
           "exerciseId": "dbboxsquats",
@@ -1275,13 +1287,15 @@
           "exerciseId": "calfraises",
           "reps": "15",
           "sets": "3",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "note": "Keep your shoulders back and chest up throughout the movement. Focus on rising through the balls of your feet, feeling the tension in your calves. Make sure to fully extend at the top and control the descent to maximize muscle engagement. A common mistake is letting your knees buckle inward; keep them aligned with your toes to avoid strain and ensure proper activation."
         },
         {
           "exerciseId": "sldbrdl",
           "reps": "15",
           "sets": "4",
-          "repUnits": "reps"
+          "repUnits": "reps",
+          "note": "Keep your back straight and hinge at the hips as you lower the dumbbell, ensuring your standing leg stays slightly bent. Feel the tension in your hamstring and glutes of the standing leg as you lower and lift. A common mistake is rounding your back or letting your hips rotate; keep your hips square to the ground. Focus on maintaining balance and control throughout the movement for maximum effectiveness."
         },
         {
           "exerciseId": "posture-ex1",
@@ -1289,7 +1303,9 @@
           "sets": "2",
           "repUnits": "reps",
           "note": "Inhale forward, Exhale back.",
-          "tags": ["stretch"]
+          "tags": [
+            "stretch"
+          ]
         }
       ]
     }
