@@ -441,6 +441,9 @@ class DataEditorApp:
     def save_current(self):
         if not hasattr(self, 'current_idx'):
             return
+        # Don't save if fields haven't been populated yet
+        if not self.entry_name.get().strip() and self.exercises[self.current_idx].get("name"):
+            return
         ex = self.exercises[self.current_idx]
         ex["name"] = self.entry_name.get().strip()
 

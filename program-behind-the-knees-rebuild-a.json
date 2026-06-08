@@ -1,0 +1,89 @@
+{
+  "newExercises": [
+    {
+      "id": "backward-treadmill-walk",
+      "name": "Backward Treadmill Walk",
+      "demos": [],
+      "recommendations": {
+        "reps": "5",
+        "sets": "1",
+        "note": "min (Incline 3, slow pace; warms up quads + ankles)"
+      }
+    },
+    {
+      "id": "hamstring-heel-dig-isometric",
+      "name": "Hamstring Heel Dig Isometric",
+      "demos": [],
+      "recommendations": {
+        "reps": "30",
+        "sets": "3",
+        "note": "secs (Push heel into floor, squeeze hamstrings)"
+      }
+    },
+    {
+      "id": "glute-bridge",
+      "name": "Glute Bridge",
+      "demos": [],
+      "recommendations": {
+        "reps": "12",
+        "sets": "3",
+        "note": "reps (Pause 2s at top, drive through heels)"
+      }
+    }
+  ],
+  "program": {
+    "id": "behind-the-knees-rebuild-a",
+    "title": "Behind the Knees Rebuild A",
+    "requirements": "Dumbbells, Bench, Mat, Treadmill",
+    "items": [
+      {
+        "exerciseId": "backward-treadmill-walk",
+        "reps": "5",
+        "sets": "1",
+        "note": "min (Incline 3, slow pace; warms up quads + ankles)"
+      },
+      {
+        "exerciseId": "hamstring-heel-dig-isometric",
+        "reps": "30",
+        "sets": "3",
+        "note": "secs (Push heel into floor, squeeze hamstrings)"
+      },
+      {
+        "exerciseId": "glute-bridge",
+        "reps": "12",
+        "sets": "3",
+        "note": "reps (Pause 2s at top, drive through heels)"
+      },
+      {
+        "exerciseId": "dbrdls",
+        "reps": "10",
+        "sets": "4",
+        "note": "reps"
+      },
+      {
+        "exerciseId": "dbboxsquats",
+        "reps": "15",
+        "sets": "5",
+        "note": "reps (Weight: 10 lbs)"
+      },
+      {
+        "exerciseId": "calfraises",
+        "reps": "15",
+        "sets": "3",
+        "note": "reps"
+      },
+      {
+        "exerciseId": "sldbrdl",
+        "reps": "15",
+        "sets": "4",
+        "note": "reps"
+      },
+      {
+        "exerciseId": "posture-ex1",
+        "reps": "10",
+        "sets": "2",
+        "note": "reps (Inhale forward, Exhale back)"
+      }
+    ]
+  }
+}

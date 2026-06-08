@@ -1,10 +1,10 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-06-06T05:37:59.349Z",
+  "lastUpdated": "2026-06-06T20:08:35.102Z",
   "exercises": [
     {
       "id": "1a-db-row",
-      "name": "1A DB Rows",
+      "name": "1A DB Row",
       "demos": [
         {
           "type": "youtube",
@@ -62,9 +62,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "❌ DON&#39;T DO THIS on the Dumbbell Row!",
+          "notes": "❌ DON'T DO THIS on the Dumbbell Row!",
           "metadata": {
-            "title": "❌ DON&#39;T DO THIS on the Dumbbell Row!",
+            "title": "❌ DON'T DO THIS on the Dumbbell Row!",
             "channel": "Andrew Kwong (DeltaBolic)",
             "publishedAt": "2025-05-19T00:25:57Z",
             "thumbnail": "https://i.ytimg.com/vi/vu_YDt9nGv4/hqdefault.jpg"
@@ -72,7 +72,9 @@
         }
       ],
       "recommendations": {
-        "note": "Keep your back flat; avoid rounding your shoulders. Hinge at the hips, and engage your core. Pull the dumbbell to your hip, not your shoulder. Exhale as you pull, feeling your lats and upper back working. If done right, you should feel tension in your back and stability in your core."
+        "reps": "10-15",
+        "sets": "3",
+        "note": "Ensure your back is straight and core is engaged throughout the movement. Breathe out as you exert force and avoid locking your joints."
       }
     },
     {
@@ -93,6 +95,70 @@
             "channel": "VIRFIT",
             "publishedAt": "2020-05-11T14:34:40Z",
             "thumbnail": "https://i.ytimg.com/vi/AKSgIDXCO34/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=jaRAR9l1e2o",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Banded Romanian Deadlift Demo",
+          "metadata": {
+            "title": "Banded Romanian Deadlift Demo",
+            "channel": "RZN Athletics - Fergus Falls",
+            "publishedAt": "2023-06-19T00:48:27Z",
+            "thumbnail": "https://i.ytimg.com/vi/jaRAR9l1e2o/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=wHktyQBgejo",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How To Single Leg Romanian Deadlift #gluteexercises #glutes #fatloss",
+          "metadata": {
+            "title": "How To Single Leg Romanian Deadlift #gluteexercises #glutes #fatloss",
+            "channel": "Madeline Snacks",
+            "publishedAt": "2024-07-26T10:23:33Z",
+            "thumbnail": "https://i.ytimg.com/vi/wHktyQBgejo/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=kNZlId2h7i8",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Exercise Tips: The Single Leg Deadlift (Right vs Wrong)",
+          "metadata": {
+            "title": "Exercise Tips: The Single Leg Deadlift (Right vs Wrong)",
+            "channel": "SET FOR SET",
+            "publishedAt": "2022-10-28T16:30:04Z",
+            "thumbnail": "https://i.ytimg.com/vi/kNZlId2h7i8/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=68g0Svu3E0o",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "✨ Struggling with balance during Single Leg RDLs? #gymtips #rdl",
+          "metadata": {
+            "title": "✨ Struggling with balance during Single Leg RDLs? #gymtips #rdl",
+            "channel": "Stay Fit With Daisy",
+            "publishedAt": "2025-04-16T16:40:23Z",
+            "thumbnail": "https://i.ytimg.com/vi/68g0Svu3E0o/hqdefault.jpg"
           }
         }
       ],
@@ -3602,6 +3668,70 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": true
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=v0yrBWA3eEs",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Broad Jump",
+          "metadata": {
+            "title": "Broad Jump",
+            "channel": "Exercise and Performance Nutrition Laboratory",
+            "publishedAt": "2022-01-06T13:04:17Z",
+            "thumbnail": "https://i.ytimg.com/vi/v0yrBWA3eEs/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=uhz-ia-2UcM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How To Do Broad Jumps",
+          "metadata": {
+            "title": "How To Do Broad Jumps",
+            "channel": "PureGym",
+            "publishedAt": "2018-01-26T11:03:48Z",
+            "thumbnail": "https://i.ytimg.com/vi/uhz-ia-2UcM/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=bOU_G9qRV6s",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Broad Jump Progressions",
+          "metadata": {
+            "title": "Broad Jump Progressions",
+            "channel": "BrotherFaris",
+            "publishedAt": "2024-10-16T00:49:16Z",
+            "thumbnail": "https://i.ytimg.com/vi/bOU_G9qRV6s/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=6L6CJXF5CNs",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Perfect your Broad Jump Form🔥",
+          "metadata": {
+            "title": "Perfect your Broad Jump Form🔥",
+            "channel": "Isaac Hadac",
+            "publishedAt": "2024-06-03T00:01:21Z",
+            "thumbnail": "https://i.ytimg.com/vi/6L6CJXF5CNs/hqdefault.jpg"
+          }
         }
       ],
       "recommendations": {
@@ -4331,20 +4461,6 @@
           "type": "youtube",
           "mediaType": "video",
           "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=RfZlK7N2uBc",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative",
-          "metadata": {
-            "channel": "TheGunGuy",
-            "title": "Should All School Practice This Drill? #thegunguy #viral #schoolDrills #like"
-          }
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
           "url": "https://www.youtube.com/watch?v=AmxbPZroRK0",
           "startTime": 0,
           "endTime": 0,
@@ -4353,20 +4469,6 @@
           "metadata": {
             "channel": "Lucy Lismore",
             "title": "THE home calisthenics workout for beginners - No equipment or space required!"
-          }
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=-hraEWDf170",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI suggested alternative",
-          "metadata": {
-            "channel": "Royal Badminton Club",
-            "title": "Solo Badminton Training at Home: Double Shuttle Drills for Explosive Improvement"
           }
         }
       ],
