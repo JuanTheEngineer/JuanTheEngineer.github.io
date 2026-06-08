@@ -10,7 +10,7 @@ const cache = {
 
 export async function loadWorkouts() {
   if (cache.workouts) return cache.workouts;
-  const res = await fetch('./workouts.json');
+  const res = await fetch('/workouts.json');
   if (!res.ok) throw new Error(`Failed to load workouts.json: ${res.status}`);
   cache.workouts = await res.json();
   return cache.workouts;
@@ -18,7 +18,7 @@ export async function loadWorkouts() {
 
 export async function loadExercises() {
   if (cache.exercises) return cache.exercises;
-  const res = await fetch('./exercises.json');
+  const res = await fetch('/exercises.json');
   if (!res.ok) throw new Error(`Failed to load exercises.json: ${res.status}`);
   cache.exercises = await res.json();
   // Build id -> exercise map for fast lookup
@@ -28,7 +28,7 @@ export async function loadExercises() {
 
 export async function loadPlans() {
   if (cache.plans) return cache.plans;
-  const res = await fetch('./plans.json');
+  const res = await fetch('/plans.json');
   if (!res.ok) throw new Error(`Failed to load plans.json: ${res.status}`);
   cache.plans = await res.json();
   return cache.plans;
