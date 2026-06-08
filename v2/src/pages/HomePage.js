@@ -109,7 +109,7 @@ export function renderHomePage(container) {
       </main>
 
       <footer class="px-6 pb-8 text-center">
-        <a href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform" target="_blank" rel="noopener"
+        <a href="https://forms.gle/QWEpe3gCLZWDiJjR8" target="_blank" rel="noopener"
           class="text-xs text-slate-500 hover:text-brand-400 transition-colors">
           Send feedback →
         </a>

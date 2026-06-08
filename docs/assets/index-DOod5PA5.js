@@ -99,7 +99,7 @@
       </main>
 
       <footer class="px-6 pb-8 text-center">
-        <a href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform" target="_blank" rel="noopener"
+        <a href="https://forms.gle/QWEpe3gCLZWDiJjR8" target="_blank" rel="noopener"
           class="text-xs text-slate-500 hover:text-brand-400 transition-colors">
           Send feedback →
         </a>
@@ -147,7 +147,7 @@
     <main class="flex-1 px-6 pb-24 flex items-center justify-center">
       <div class="w-8 h-8 border-2 border-brand-500 border-t-transparent rounded-full animate-spin"></div>
     </main>
-  `,e.querySelector('[data-action="back"]')?.addEventListener("click",()=>h("/"));try{const[t,s]=await Promise.all([_(),ke()]);Ge(e,t.programs,s.plans)}catch(t){Ve(e,t)}}function Ge(e,t,s){const a=new Map(t.map(r=>[r.id,r])),n=[];for(const r of s)for(const o of r.subPlans||[]){const i=(o.programs||[]).map(d=>a.get(d)).filter(Boolean);i.length!==0&&n.push({category:r.name,title:o.name,description:o.description,programs:i})}e.innerHTML=`
+  `,e.querySelector('[data-action="back"]')?.addEventListener("click",()=>h("/"));try{const[t,s]=await Promise.all([_(),ke()]);Ge(e,t.programs,s.plans)}catch(t){Ye(e,t)}}function Ge(e,t,s){const a=new Map(t.map(r=>[r.id,r])),n=[];for(const r of s)for(const o of r.subPlans||[]){const i=(o.programs||[]).map(d=>a.get(d)).filter(Boolean);i.length!==0&&n.push({category:r.name,title:o.name,description:o.description,programs:i})}e.innerHTML=`
     <header class="px-6 pt-12 pb-4 flex items-center gap-3">
       <button data-action="back" class="btn-ghost -ml-2 px-3" aria-label="Back">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -166,12 +166,12 @@
             ${r.description?`<p class="text-sm text-slate-400 mt-1 leading-relaxed">${r.description}</p>`:""}
           </div>
           <ul class="space-y-2">
-            ${r.programs.map(i=>Ye(i)).join("")}
+            ${r.programs.map(i=>We(i)).join("")}
           </ul>
         </section>
       `).join("")}
     </main>
-  `,e.querySelector('[data-action="back"]')?.addEventListener("click",()=>h("/")),e.querySelectorAll("[data-program-id]").forEach(r=>{r.addEventListener("click",()=>{h(`/program/${r.dataset.programId}`)})})}function Ye(e){const t=e.items?.length||e.exercises?.length||0;return`
+  `,e.querySelector('[data-action="back"]')?.addEventListener("click",()=>h("/")),e.querySelectorAll("[data-program-id]").forEach(r=>{r.addEventListener("click",()=>{h(`/program/${r.dataset.programId}`)})})}function We(e){const t=e.items?.length||e.exercises?.length||0;return`
     <li>
       <button
         data-program-id="${e.id}"
@@ -190,14 +190,14 @@
         </div>
       </button>
     </li>
-  `}function Ve(e,t){e.innerHTML=`
+  `}function Ye(e,t){e.innerHTML=`
     <main class="flex-1 px-6 pt-12 pb-24">
       <div class="card p-6">
         <h2 class="font-semibold text-red-400 mb-2">Couldn't load programs</h2>
         <p class="text-sm text-slate-400">${t?.message||t}</p>
       </div>
     </main>
-  `}function $e(e){if(!e)return null;const t=[/youtube\.com\/watch\?v=([^&]+)/,/youtube\.com\/shorts\/([^?&/]+)/,/youtube\.com\/embed\/([^?&/]+)/,/youtu\.be\/([^?&/]+)/];for(const s of t){const a=e.match(s);if(a)return a[1]}return null}function We(e,t="hqdefault"){const s=$e(e);return s?`https://i.ytimg.com/vi/${s}/${t}.jpg`:null}function Ke(e,t={}){const s=$e(e);if(!s)return null;const a=new URLSearchParams({autoplay:"1",rel:"0",modestbranding:"1",playsinline:"1"});return t.startTime&&a.set("start",String(Math.floor(t.startTime))),t.endTime&&a.set("end",String(Math.floor(t.endTime))),`https://www.youtube.com/embed/${s}?${a.toString()}`}function Se(e,t="w_800,q_auto,f_auto"){return!e||!e.includes("cloudinary.com")?e:e.replace("/upload/",`/upload/${t}/`)}function Ze(e){if(!e||!e.type)return"unknown";if(["youtube","tiktok","vimeo"].includes(e.type))return"embed";const t=e.mediaType==="video"||["mp4","webm","mov"].includes(e.format);return e.format==="gif"?"image":t?"video":"image"}function ie(e,t,s={}){if(!t){e.innerHTML='<div class="aspect-video bg-slate-800 rounded-2xl flex items-center justify-center text-slate-500 text-sm">No media</div>';return}const a=Ze(t),n=s.className||"w-full max-h-[60vh] object-contain rounded-2xl bg-slate-800";switch(e.classList.add("animate-fade-in"),a){case"image":Qe(e,t,n,s.onError);break;case"video":Xe(e,t,n,s.autoplay,s.onError);break;case"embed":et(e,t,n,s.onEmbedPlay);break;default:e.innerHTML=`<div class="${n} flex items-center justify-center text-slate-500 text-sm">Unsupported media type</div>`}}function Qe(e,t,s,a){const n=t.type==="cloudinary"?Se(t.url,"w_800,q_auto,f_auto"):t.url;e.innerHTML=`
+  `}function $e(e){if(!e)return null;const t=[/youtube\.com\/watch\?v=([^&]+)/,/youtube\.com\/shorts\/([^?&/]+)/,/youtube\.com\/embed\/([^?&/]+)/,/youtu\.be\/([^?&/]+)/];for(const s of t){const a=e.match(s);if(a)return a[1]}return null}function Ve(e,t="hqdefault"){const s=$e(e);return s?`https://i.ytimg.com/vi/${s}/${t}.jpg`:null}function Ke(e,t={}){const s=$e(e);if(!s)return null;const a=new URLSearchParams({autoplay:"1",rel:"0",modestbranding:"1",playsinline:"1"});return t.startTime&&a.set("start",String(Math.floor(t.startTime))),t.endTime&&a.set("end",String(Math.floor(t.endTime))),`https://www.youtube.com/embed/${s}?${a.toString()}`}function Se(e,t="w_800,q_auto,f_auto"){return!e||!e.includes("cloudinary.com")?e:e.replace("/upload/",`/upload/${t}/`)}function Ze(e){if(!e||!e.type)return"unknown";if(["youtube","tiktok","vimeo"].includes(e.type))return"embed";const t=e.mediaType==="video"||["mp4","webm","mov"].includes(e.format);return e.format==="gif"?"image":t?"video":"image"}function ie(e,t,s={}){if(!t){e.innerHTML='<div class="aspect-video bg-slate-800 rounded-2xl flex items-center justify-center text-slate-500 text-sm">No media</div>';return}const a=Ze(t),n=s.className||"w-full max-h-[60vh] object-contain rounded-2xl bg-slate-800";switch(e.classList.add("animate-fade-in"),a){case"image":Qe(e,t,n,s.onError);break;case"video":Xe(e,t,n,s.autoplay,s.onError);break;case"embed":et(e,t,n,s.onEmbedPlay);break;default:e.innerHTML=`<div class="${n} flex items-center justify-center text-slate-500 text-sm">Unsupported media type</div>`}}function Qe(e,t,s,a){const n=t.type==="cloudinary"?Se(t.url,"w_800,q_auto,f_auto"):t.url;e.innerHTML=`
     <img
       src="${n}"
       alt="Exercise demonstration"
@@ -215,7 +215,7 @@
       playsinline
       preload="metadata"
     ></video>
-  `;const i=e.querySelector("video");i?.addEventListener("click",()=>{i.paused?i.play():i.pause()}),n&&i?.addEventListener("error",()=>n(),{once:!0})}function et(e,t,s,a){const o=`${(t.url||"").includes("/shorts/")?"aspect-9/16 max-h-[70vh] mx-auto":"aspect-video"} w-full rounded-2xl overflow-hidden bg-slate-900`,i=t.type==="youtube"?We(t.url,"hqdefault"):null;e.innerHTML=`
+  `;const i=e.querySelector("video");i?.addEventListener("click",()=>{i.paused?i.play():i.pause()}),n&&i?.addEventListener("error",()=>n(),{once:!0})}function et(e,t,s,a){const o=`${(t.url||"").includes("/shorts/")?"aspect-9/16 max-h-[70vh] mx-auto":"aspect-video"} w-full rounded-2xl overflow-hidden bg-slate-900`,i=t.type==="youtube"?Ve(t.url,"hqdefault"):null;e.innerHTML=`
     <div class="${o} relative">
       <button
         class="group absolute inset-0 flex items-center justify-center overflow-hidden touch-manipulation"
@@ -374,11 +374,11 @@
           </div>
         </div>
       </div>
-    `}).join("");return s.innerHTML=r,s.querySelectorAll('[data-action="toggle-member"]').forEach(o=>{o.addEventListener("click",()=>{t.onToggle?.(t.index)})}),s.querySelectorAll('[data-action="complete"]').forEach(o=>{o.addEventListener("click",i=>{i.stopPropagation(),t.onComplete?.(t.index)})}),t.isExpanded&&e.exercises.forEach((o,i)=>{const d=s.querySelector(`[data-member-media="${i}"]`),l=o.exercise?.demos||[];d&&l.length>0&&H(d,l)}),s}function z(e){return e==null?"":String(e).replace(/[&<>"']/g,t=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[t])}const le=["Nice work!","Killer moves!","Awesome job!","Crushed it!","You did it!","Beast mode!","On fire!","Way to go!","Strengthened and Conditioned!"];let de=0;function ut(){const e=Date.now();if(e-de<5e3)return;de=e;const t=le[Math.floor(Math.random()*le.length)],s=document.createElement("div");s.className="celebration-flash";const a=document.createElement("div");a.className="celebration-text",a.textContent=t,document.body.appendChild(s),document.body.appendChild(a),setTimeout(()=>s.remove(),700),setTimeout(()=>a.remove(),3100)}async function mt(e,t){e.innerHTML=V(`
+    `}).join("");return s.innerHTML=r,s.querySelectorAll('[data-action="toggle-member"]').forEach(o=>{o.addEventListener("click",()=>{t.onToggle?.(t.index)})}),s.querySelectorAll('[data-action="complete"]').forEach(o=>{o.addEventListener("click",i=>{i.stopPropagation(),t.onComplete?.(t.index)})}),t.isExpanded&&e.exercises.forEach((o,i)=>{const d=s.querySelector(`[data-member-media="${i}"]`),l=o.exercise?.demos||[];d&&l.length>0&&H(d,l)}),s}function z(e){return e==null?"":String(e).replace(/[&<>"']/g,t=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[t])}const le=["Nice work!","Killer moves!","Awesome job!","Crushed it!","You did it!","Beast mode!","On fire!","Way to go!","Strengthened and Conditioned!"];let de=0;function ut(){const e=Date.now();if(e-de<5e3)return;de=e;const t=le[Math.floor(Math.random()*le.length)],s=document.createElement("div");s.className="celebration-flash";const a=document.createElement("div");a.className="celebration-text",a.textContent=t,document.body.appendChild(s),document.body.appendChild(a),setTimeout(()=>s.remove(),700),setTimeout(()=>a.remove(),3100)}async function mt(e,t){e.innerHTML=Y(`
     <main class="flex-1 px-6 pb-24 flex items-center justify-center">
       <div class="w-8 h-8 border-2 border-brand-500 border-t-transparent rounded-full animate-spin"></div>
     </main>
-  `),W(e);try{const s=await _e(t);if(!s){ft(e,t);return}Ne(s.id),xt(e,s)}catch(s){gt(e,s)}}function xt(e,t){const s=ye(t.id),a=t.resolvedItems.length;let n=-1;e.innerHTML=V(`
+  `),V(e);try{const s=await _e(t);if(!s){ft(e,t);return}Ne(s.id),xt(e,s)}catch(s){gt(e,s)}}function xt(e,t){const s=ye(t.id),a=t.resolvedItems.length;let n=-1;e.innerHTML=Y(`
     <div class="sticky top-15 z-10 px-6 pt-2 pb-3 bg-slate-950/85 backdrop-blur-md border-b border-slate-900">
       <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden">
         <div data-region="progress-bar" class="h-full bg-linear-to-r from-brand-500 to-brand-400 transition-all duration-500" style="width: ${s.size/a*100}%"></div>
@@ -411,7 +411,7 @@
         <span>Share program</span>
       </button>
     </main>
-  `,t.title),W(e);const r=e.querySelector('[data-region="items"]'),o=e.querySelector('[data-region="actions"]'),i=()=>{r.innerHTML="",t.resolvedItems.forEach((u,c)=>{const p=document.createElement("li"),x={index:c,isExpanded:c===n,isCompleted:s.has(c),onToggle:y=>{n=n===y?-1:y,l(),n===y&&requestAnimationFrame(()=>{const L=r.querySelector(`[data-item-index="${y}"]`);if(L){const f=window.scrollY+L.getBoundingClientRect().top-130;window.scrollTo({top:Math.max(0,f),behavior:"smooth"})}})},onComplete:y=>{const L=s.size===a,f=Ae(t.id,y);s.clear(),f.forEach(k=>s.add(k)),f.has(y)&&n===y&&(n=-1),l(),!L&&s.size===a&&setTimeout(ut,250)}},g=u.kind==="single"?it(u,x):pt(u,x);p.appendChild(g),r.appendChild(p)})},d=()=>{const u=e.querySelector('[data-region="progress-bar"]');u&&(u.style.width=`${s.size/a*100}%`);const c=e.querySelector('[data-region="completed-count"]');c&&(c.textContent=String(s.size)),o.classList.toggle("hidden",s.size===0)},l=()=>{i(),d()};l(),e.querySelector('[data-action="reset"]')?.addEventListener("click",()=>{confirm("Reset progress for this program?")&&(Be(t.id),s.clear(),l())}),e.querySelector('[data-action="share"]')?.addEventListener("click",()=>{const u=window.location.href;navigator.share?navigator.share({title:t.title,text:`Check out: ${t.title}`,url:u}).catch(()=>{}):navigator.clipboard?.writeText(u).then(()=>alert("Link copied!")).catch(()=>prompt("Copy:",u))})}function V(e,t="Program"){return`
+  `,t.title),V(e);const r=e.querySelector('[data-region="items"]'),o=e.querySelector('[data-region="actions"]'),i=()=>{r.innerHTML="",t.resolvedItems.forEach((u,c)=>{const p=document.createElement("li"),x={index:c,isExpanded:c===n,isCompleted:s.has(c),onToggle:y=>{n=n===y?-1:y,l(),n===y&&requestAnimationFrame(()=>{const L=r.querySelector(`[data-item-index="${y}"]`);if(L){const f=window.scrollY+L.getBoundingClientRect().top-130;window.scrollTo({top:Math.max(0,f),behavior:"smooth"})}})},onComplete:y=>{const L=s.size===a,f=Ae(t.id,y);s.clear(),f.forEach(k=>s.add(k)),f.has(y)&&n===y&&(n=-1),l(),!L&&s.size===a&&setTimeout(ut,250)}},g=u.kind==="single"?it(u,x):pt(u,x);p.appendChild(g),r.appendChild(p)})},d=()=>{const u=e.querySelector('[data-region="progress-bar"]');u&&(u.style.width=`${s.size/a*100}%`);const c=e.querySelector('[data-region="completed-count"]');c&&(c.textContent=String(s.size)),o.classList.toggle("hidden",s.size===0)},l=()=>{i(),d()};l(),e.querySelector('[data-action="reset"]')?.addEventListener("click",()=>{confirm("Reset progress for this program?")&&(Be(t.id),s.clear(),l())}),e.querySelector('[data-action="share"]')?.addEventListener("click",()=>{const u=window.location.href;navigator.share?navigator.share({title:t.title,text:`Check out: ${t.title}`,url:u}).catch(()=>{}):navigator.clipboard?.writeText(u).then(()=>alert("Link copied!")).catch(()=>prompt("Copy:",u))})}function Y(e,t="Program"){return`
     <div class="flex-1 flex flex-col">
       <header class="px-6 pt-12 pb-2 flex items-center gap-3 sticky top-0 bg-slate-950/85 backdrop-blur-md z-20 border-b border-slate-900">
         <button data-action="back" class="btn-ghost -ml-2 px-3" aria-label="Back">
@@ -423,21 +423,21 @@
       </header>
       ${e}
     </div>
-  `}function W(e){e.querySelector('[data-action="back"]')?.addEventListener("click",()=>h("/programs"))}function ft(e,t){e.innerHTML=V(`
+  `}function V(e){e.querySelector('[data-action="back"]')?.addEventListener("click",()=>h("/programs"))}function ft(e,t){e.innerHTML=Y(`
     <main class="flex-1 px-6 pt-12 pb-24">
       <div class="card p-6">
         <h2 class="font-semibold mb-2">Program not found</h2>
         <p class="text-sm text-slate-400">No program with id <code class="text-slate-300">${O(t)}</code>.</p>
       </div>
     </main>
-  `),W(e)}function gt(e,t){e.innerHTML=V(`
+  `),V(e)}function gt(e,t){e.innerHTML=Y(`
     <main class="flex-1 px-6 pt-12 pb-24">
       <div class="card p-6">
         <h2 class="font-semibold text-red-400 mb-2">Couldn't load program</h2>
         <p class="text-sm text-slate-400">${O(t?.message||String(t))}</p>
       </div>
     </main>
-  `),W(e)}function O(e){return e==null?"":String(e).replace(/[&<>"']/g,t=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[t])}function bt(e){e.innerHTML=`
+  `),V(e)}function O(e){return e==null?"":String(e).replace(/[&<>"']/g,t=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[t])}function bt(e){e.innerHTML=`
     <div class="flex-1 flex flex-col">
       <header class="px-6 pt-12 pb-2 flex items-center gap-3 sticky top-0 bg-slate-950/85 backdrop-blur-md z-20 border-b border-slate-900">
         <button data-action="back" class="btn-ghost -ml-2 px-3" aria-label="Back">
@@ -599,9 +599,9 @@
   <div class="flex items-center px-4 py-3 gap-2 relative">
     <div class="flex-1 min-w-0 cursor-pointer" data-action="expand" data-idx="${t}">
       ${o?`<div class="flex gap-1 mb-1">${o}</div>`:""}
-      <p class="text-sm font-medium text-slate-100 truncate">${Y(e.exerciseName)}</p>
+      <p class="text-sm font-medium text-slate-100 truncate">${W(e.exerciseName)}</p>
       <p class="text-xs text-slate-400 num mt-0.5">${e.reps||"—"} ${e.repUnits||"reps"} · ${e.sets||"—"} sets</p>
-      ${r?`<p class="text-[11px] text-slate-500 truncate mt-0.5 italic">${Y(r)}</p>`:""}
+      ${r?`<p class="text-[11px] text-slate-500 truncate mt-0.5 italic">${W(r)}</p>`:""}
     </div>
     ${Ee(t)}
   </div>
@@ -609,7 +609,7 @@
 </li>`}function Lt(e,t,s){const a=s.expandedIndex===t,n={superset:"Superset",compound:"Compound",circuit:"Circuit"}[e.kind]||e.kind,r=e.members.map((o,i)=>`
     <div class="flex items-center px-4 py-2.5 gap-2 ${i>0?"border-t border-slate-800/50":""}">
       <div class="flex-1 min-w-0">
-        <p class="text-sm font-medium text-slate-100 truncate">${Y(o.exerciseName)}</p>
+        <p class="text-sm font-medium text-slate-100 truncate">${W(o.exerciseName)}</p>
         <p class="text-xs text-slate-400 num mt-0.5">${o.reps||"—"} ${o.repUnits||"reps"} · ${o.sets||"—"} sets</p>
       </div>
       ${a?`<div class="flex gap-0.5">
@@ -633,7 +633,7 @@
   </button>`}function qt(e,t,s,a){Ct();const n=s.items[t],r=n.type==="group",o=s.items.length,i=t>0?s.items[t-1]:null,d=t<o-1?s.items[t+1]:null;let l="";r?(l+=S("edit","Edit group"),t>0&&(l+=S("move-up","Move up")),t<o-1&&(l+=S("move-down","Move down")),i?.type==="single"&&(l+=S("group-above","Add above to group")),d?.type==="single"&&(l+=S("group-below","Add below to group")),l+=S("ungroup","Ungroup")):(l+=S("edit","Edit"),t>0&&(l+=S("move-up","Move up")),t<o-1&&(l+=S("move-down","Move down")),i?.type==="single"?l+=S("group-above","Group with above"):i?.type==="group"&&(l+=S("group-above","Join group above")),d?.type==="single"?l+=S("group-below","Group with below"):d?.type==="group"&&(l+=S("group-below","Join group below"))),l+=S("remove","Remove","text-red-400");const u=r?n.members.map(p=>p.exerciseName).join(" + "):n.exerciseName||"Item",c=document.createElement("div");c.dataset.region="action-menu",c.className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 animate-fade-in",c.innerHTML=`
     <div class="bg-slate-900 border-t border-slate-700 rounded-t-2xl w-full max-w-sm pb-8 pt-3 px-2">
       <div class="w-10 h-1 bg-slate-700 rounded-full mx-auto mb-3"></div>
-      <p class="text-xs text-slate-500 text-center mb-2 px-4 truncate">${Y(u)}</p>
+      <p class="text-xs text-slate-500 text-center mb-2 px-4 truncate">${W(u)}</p>
       <div class="space-y-0.5">${l}</div>
       <button data-menu-action="cancel" class="w-full mt-2 py-3 text-sm text-slate-500 hover:text-slate-300 transition-colors">Cancel</button>
     </div>
@@ -647,7 +647,7 @@
       </div>
       <button data-action="cancel-kind" class="w-full py-2 text-sm text-slate-500 hover:text-slate-300 transition-colors">Cancel</button>
     </div>
-  `,document.body.appendChild(a),a.querySelectorAll("[data-kind]").forEach(n=>{n.addEventListener("click",()=>{a.remove(),s.onGroup?.(e,t,n.dataset.kind)})}),a.querySelector('[data-action="cancel-kind"]')?.addEventListener("click",()=>a.remove()),a.addEventListener("click",n=>{n.target===a&&a.remove()})}function jt(e,t,s){e.querySelectorAll('[data-action="expand"]').forEach(a=>{a.addEventListener("click",()=>s.onEdit?.(+a.dataset.idx))}),e.querySelectorAll('[data-action="menu"]').forEach(a=>{a.addEventListener("click",n=>{n.stopPropagation(),qt(e,+a.dataset.idx,t,s)})}),e.querySelectorAll('[data-action="member-up"]').forEach(a=>{a.addEventListener("click",n=>{n.stopPropagation(),s.onMemberMove?.(+a.dataset.idx,+a.dataset.mi,+a.dataset.mi-1)})}),e.querySelectorAll('[data-action="member-down"]').forEach(a=>{a.addEventListener("click",n=>{n.stopPropagation(),s.onMemberMove?.(+a.dataset.idx,+a.dataset.mi,+a.dataset.mi+1)})}),e.querySelectorAll('[data-action="member-remove"]').forEach(a=>{a.addEventListener("click",n=>{n.stopPropagation(),s.onMemberRemove?.(+a.dataset.idx,+a.dataset.mi)})})}function Y(e){return e==null?"":String(e).replace(/[&<>"']/g,t=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[t])}let m=Le(),b=-1;function Le(){return{meta:{title:"",id:"",requirements:"",description:"",difficulty:"",duration:""},items:[],newExercises:[]}}function Tt(e){return e.toLowerCase().replace(/[^a-z0-9]+/g,"_").replace(/_+$/g,"")}function Pt(e){e.innerHTML=`
+  `,document.body.appendChild(a),a.querySelectorAll("[data-kind]").forEach(n=>{n.addEventListener("click",()=>{a.remove(),s.onGroup?.(e,t,n.dataset.kind)})}),a.querySelector('[data-action="cancel-kind"]')?.addEventListener("click",()=>a.remove()),a.addEventListener("click",n=>{n.target===a&&a.remove()})}function jt(e,t,s){e.querySelectorAll('[data-action="expand"]').forEach(a=>{a.addEventListener("click",()=>s.onEdit?.(+a.dataset.idx))}),e.querySelectorAll('[data-action="menu"]').forEach(a=>{a.addEventListener("click",n=>{n.stopPropagation(),qt(e,+a.dataset.idx,t,s)})}),e.querySelectorAll('[data-action="member-up"]').forEach(a=>{a.addEventListener("click",n=>{n.stopPropagation(),s.onMemberMove?.(+a.dataset.idx,+a.dataset.mi,+a.dataset.mi-1)})}),e.querySelectorAll('[data-action="member-down"]').forEach(a=>{a.addEventListener("click",n=>{n.stopPropagation(),s.onMemberMove?.(+a.dataset.idx,+a.dataset.mi,+a.dataset.mi+1)})}),e.querySelectorAll('[data-action="member-remove"]').forEach(a=>{a.addEventListener("click",n=>{n.stopPropagation(),s.onMemberRemove?.(+a.dataset.idx,+a.dataset.mi)})})}function W(e){return e==null?"":String(e).replace(/[&<>"']/g,t=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[t])}let m=Le(),b=-1;function Le(){return{meta:{title:"",id:"",requirements:"",description:"",difficulty:"",duration:""},items:[],newExercises:[]}}function Tt(e){return e.toLowerCase().replace(/[^a-z0-9]+/g,"_").replace(/_+$/g,"")}function Pt(e){e.innerHTML=`
     <div class="flex-1 flex flex-col">
       <header class="px-6 pt-12 pb-2 flex items-center gap-3 sticky top-0 bg-slate-950/85 backdrop-blur-md z-20 border-b border-slate-900">
         <button data-action="back" class="btn-ghost -ml-2 px-3" aria-label="Back">
@@ -936,12 +936,12 @@ Do you still want to create "${d}"?`))return;const p=s.querySelector('[data-exfi
         </div>
       </div>
     </div>
-  `,Gt(e),Yt(e),Wt(e),Kt(e)}function Gt(e){e.querySelector('[data-action="back"]')?.addEventListener("click",()=>h("/studio"))}function Yt(e){const t=e.querySelector('[data-input="edit-search"]'),s=e.querySelector('[data-region="edit-results"]');let a=null;t?.addEventListener("input",()=>{clearTimeout(a),a=setTimeout(async()=>{const n=t.value.trim();if(!n){s.classList.add("hidden");return}const r=await K(n,8);if(r.length===0){s.classList.add("hidden");return}s.classList.remove("hidden"),s.innerHTML=r.map(o=>`
+  `,Gt(e),Wt(e),Vt(e),Kt(e)}function Gt(e){e.querySelector('[data-action="back"]')?.addEventListener("click",()=>h("/studio"))}function Wt(e){const t=e.querySelector('[data-input="edit-search"]'),s=e.querySelector('[data-region="edit-results"]');let a=null;t?.addEventListener("input",()=>{clearTimeout(a),a=setTimeout(async()=>{const n=t.value.trim();if(!n){s.classList.add("hidden");return}const r=await K(n,8);if(r.length===0){s.classList.add("hidden");return}s.classList.remove("hidden"),s.innerHTML=r.map(o=>`
         <li><button data-load-exercise="${o.id}" class="w-full text-left px-3 py-2.5 rounded-lg hover:bg-slate-800/60 active:bg-slate-800 transition-colors flex items-center gap-3 touch-manipulation">
           <span class="text-sm font-medium text-slate-100 truncate">${Ce(o.name)}</span>
           ${o.hasDemos?'<span class="text-[10px] text-slate-500 bg-slate-800 px-1.5 py-0.5 rounded-sm">demo</span>':""}
         </button></li>
-      `).join(""),s.querySelectorAll("[data-load-exercise]").forEach(o=>{o.addEventListener("click",()=>{const i=r.find(d=>d.id===o.dataset.loadExercise);i&&Vt(e,i.exercise),s.classList.add("hidden"),t.value=""})})},150)})}function Vt(e,t){F=!0,J=t.id,D=JSON.parse(JSON.stringify(t.demos||[])),e.querySelector('[data-region="header-title"]').textContent=`Edit: ${t.name}`,e.querySelector('[data-region="form-label"]').textContent="Editing Exercise";const s=e.querySelector('[data-field="name"]');s.value=t.name,s.dispatchEvent(new Event("input"));const a=t.recommendations||{};e.querySelector('[data-field="reps"]').value=a.reps||"",e.querySelector('[data-field="sets"]').value=a.sets||"",e.querySelector('[data-field="repUnits"]').value=a.repUnits||"reps",e.querySelector('[data-field="note"]').value=a.note||"",ne(e.querySelector('[data-region="demos"]'),D),e.querySelector('[data-region="export-section"]')?.classList.remove("hidden")}function Wt(e){const t=e.querySelector('[data-field="name"]'),s=e.querySelector('[data-region="id-preview"]'),a=e.querySelector('[data-region="export-section"]');t?.addEventListener("input",()=>{if(F)s.textContent=`id: ${J} (existing)`;else{const n=t.value.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/-+$/g,"");s.textContent=n?`id: ${n}`:""}a?.classList.toggle("hidden",!t.value.trim())}),ne(e.querySelector('[data-region="demos"]'),D)}function Kt(e){const t=e.querySelector('[data-region="export-modal"]');e.querySelector('[data-action="export"]')?.addEventListener("click",()=>{const s=e.querySelector('[data-field="name"]'),a=s.value.trim();if(!a){s.focus();return}const r={id:F?J:a.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/-+$/g,""),name:a,demos:D.filter(x=>x.url),recommendations:{}},o=e.querySelector('[data-field="reps"]').value,i=e.querySelector('[data-field="sets"]').value,d=e.querySelector('[data-field="repUnits"]').value,l=e.querySelector('[data-field="note"]').value;o&&(r.recommendations.reps=o),i&&(r.recommendations.sets=i),d&&d!=="reps"&&(r.recommendations.repUnits=d),l&&(r.recommendations.note=l);const u=e.querySelector('[data-region="export-content"]'),c=JSON.stringify(r,null,2),p=F?`Replace entry with id "${J}" in exercises.json`:"Append to exercises.json → exercises[]";u.innerHTML=`
+      `).join(""),s.querySelectorAll("[data-load-exercise]").forEach(o=>{o.addEventListener("click",()=>{const i=r.find(d=>d.id===o.dataset.loadExercise);i&&Yt(e,i.exercise),s.classList.add("hidden"),t.value=""})})},150)})}function Yt(e,t){F=!0,J=t.id,D=JSON.parse(JSON.stringify(t.demos||[])),e.querySelector('[data-region="header-title"]').textContent=`Edit: ${t.name}`,e.querySelector('[data-region="form-label"]').textContent="Editing Exercise";const s=e.querySelector('[data-field="name"]');s.value=t.name,s.dispatchEvent(new Event("input"));const a=t.recommendations||{};e.querySelector('[data-field="reps"]').value=a.reps||"",e.querySelector('[data-field="sets"]').value=a.sets||"",e.querySelector('[data-field="repUnits"]').value=a.repUnits||"reps",e.querySelector('[data-field="note"]').value=a.note||"",ne(e.querySelector('[data-region="demos"]'),D),e.querySelector('[data-region="export-section"]')?.classList.remove("hidden")}function Vt(e){const t=e.querySelector('[data-field="name"]'),s=e.querySelector('[data-region="id-preview"]'),a=e.querySelector('[data-region="export-section"]');t?.addEventListener("input",()=>{if(F)s.textContent=`id: ${J} (existing)`;else{const n=t.value.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/-+$/g,"");s.textContent=n?`id: ${n}`:""}a?.classList.toggle("hidden",!t.value.trim())}),ne(e.querySelector('[data-region="demos"]'),D)}function Kt(e){const t=e.querySelector('[data-region="export-modal"]');e.querySelector('[data-action="export"]')?.addEventListener("click",()=>{const s=e.querySelector('[data-field="name"]'),a=s.value.trim();if(!a){s.focus();return}const r={id:F?J:a.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/-+$/g,""),name:a,demos:D.filter(x=>x.url),recommendations:{}},o=e.querySelector('[data-field="reps"]').value,i=e.querySelector('[data-field="sets"]').value,d=e.querySelector('[data-field="repUnits"]').value,l=e.querySelector('[data-field="note"]').value;o&&(r.recommendations.reps=o),i&&(r.recommendations.sets=i),d&&d!=="reps"&&(r.recommendations.repUnits=d),l&&(r.recommendations.note=l);const u=e.querySelector('[data-region="export-content"]'),c=JSON.stringify(r,null,2),p=F?`Replace entry with id "${J}" in exercises.json`:"Append to exercises.json → exercises[]";u.innerHTML=`
       <div class="space-y-2">
         <div class="flex items-center justify-between">
           <p class="text-xs text-slate-400">${p}</p>
