@@ -7,7 +7,7 @@
     "predev": "node scripts/copy-data.js",
     "prebuild": "node scripts/copy-data.js",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp ../docs/index.html ../docs/404.html",
     "preview": "vite preview",
     "lint": "eslint src/",
     "format": "prettier --write src/",

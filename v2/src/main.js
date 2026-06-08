@@ -37,7 +37,7 @@ setNotFound((path) => {
       <p class="text-6xl mb-4">🤔</p>
       <h1 class="text-2xl font-bold mb-2">Page not found</h1>
       <p class="text-slate-400 mb-6 text-sm">${path}</p>
-      <a href="#/" class="btn-primary">Back home</a>
+      <a href="/" class="btn-primary">Back home</a>
     </div>
   `;
 });

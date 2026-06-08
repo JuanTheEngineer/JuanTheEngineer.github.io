@@ -139,7 +139,7 @@ function renderNotFound(container, id) {
       <p class="text-6xl mb-4">🤷</p>
       <h1 class="text-2xl font-bold mb-2">Exercise not found</h1>
       <p class="text-slate-400 mb-6 text-sm font-mono">${esc(id)}</p>
-      <a href="#/exercises" class="btn-primary">Browse exercises</a>
+      <a href="/exercises" class="btn-primary">Browse exercises</a>
     </div>
   `;
 }
