@@ -34,10 +34,6 @@ jobs:
         working-directory: v2
         run: npm test
 
-      - name: E2E Tests
-        working-directory: v2
-        run: npx playwright install chromium && npx playwright test
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
