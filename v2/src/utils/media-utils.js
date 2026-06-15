@@ -29,7 +29,10 @@ export function getYouTubeThumbnail(url, quality = 'hqdefault') {
 }
 
 /**
- * Build YouTube embed URL with optional start/end time
+ * Build YouTube embed URL with optional start/end time.
+ * If both startTime and endTime are > 0 and startTime >= endTime, the range
+ * is invalid — ignore both and play the full video.
+ * A value of 0 means "no constraint" for that boundary.
  */
 export function getYouTubeEmbedUrl(url, options = {}) {
   const id = getYouTubeId(url);
@@ -40,8 +43,16 @@ export function getYouTubeEmbedUrl(url, options = {}) {
     modestbranding: '1',
     playsinline: '1'
   });
-  if (options.startTime) params.set('start', String(Math.floor(options.startTime)));
-  if (options.endTime) params.set('end', String(Math.floor(options.endTime)));
+
+  const start = Math.floor(options.startTime || 0);
+  const end = Math.floor(options.endTime || 0);
+
+  // Validate: if both > 0 and start >= end, the range is invalid — skip both
+  const isValid = !(start > 0 && end > 0 && start >= end);
+
+  if (isValid && start > 0) params.set('start', String(start));
+  if (isValid && end > 0) params.set('end', String(end));
+
   return `https://www.youtube.com/embed/${id}?${params.toString()}`;
 }
 

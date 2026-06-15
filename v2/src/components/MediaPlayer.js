@@ -65,11 +65,24 @@ function renderImage(container, source, className, onError) {
 function renderVideo(container, source, className, autoplay = true, onError) {
   const url = source.type === 'cloudinary' ? transformCloudinaryUrl(source.url, 'w_800,q_auto,f_auto') : source.url;
 
-  const startAttr = source.startTime ? `#t=${source.startTime}` : '';
+  // Build media fragment for mp4 clips (e.g. #t=15,45)
+  let fragment = '';
+  if (source.format === 'mp4') {
+    const start = source.startTime || 0;
+    const end = source.endTime || 0;
+    // Validate: if both > 0 and start >= end, ignore both (invalid range)
+    const isValid = !(start > 0 && end > 0 && start >= end);
+    if (isValid && start > 0 && end > 0) {
+      fragment = `#t=${start},${end}`;
+    } else if (isValid && start > 0) {
+      fragment = `#t=${start}`;
+    }
+    // endTime-only without startTime is not standard for media fragments; skip
+  }
 
   container.innerHTML = `
     <video
-      src="${url}${startAttr}"
+      src="${url}${fragment}"
       class="${className} cursor-pointer"
       ${autoplay ? 'autoplay' : ''}
       loop

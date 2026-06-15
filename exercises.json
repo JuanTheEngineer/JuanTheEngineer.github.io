@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-06-06T20:08:35.102Z",
+  "lastUpdated": "2026-06-14T00:00:00.000Z",
   "exercises": [
     {
       "id": "1a-db-row",
@@ -188,62 +188,27 @@
             "publishedAt": "2023-08-01T13:59:27Z",
             "thumbnail": "https://i.ytimg.com/vi/SjHRwhGXBl8/hqdefault.jpg"
           }
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=D-sf4w27kys",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "How to HXC dance! #hxc #hardcore #dance #mosh #punk #dad #metal #twostep #howto #tutorial",
-          "metadata": {
-            "title": "How to HXC dance! #hxc #hardcore #dance #mosh #punk #dad #metal #twostep #howto #tutorial",
-            "channel": "HESH DAD",
-            "publishedAt": "2022-07-06T18:13:47Z",
-            "thumbnail": "https://i.ytimg.com/vi/D-sf4w27kys/hqdefault.jpg"
-          }
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=tmYsA-bsZUo",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "How to take protein powder in tamil | protein powder #fitness #tamil",
-          "metadata": {
-            "title": "How to take protein powder in tamil | protein powder #fitness #tamil",
-            "channel": "BHEEMA’s Fitness",
-            "publishedAt": "2023-07-05T10:01:14Z",
-            "thumbnail": "https://i.ytimg.com/vi/tmYsA-bsZUo/hqdefault.jpg"
-          }
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=vgfVLN-gTJI",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "Pogo stick must have for kids !!! #ad",
-          "metadata": {
-            "title": "Pogo stick must have for kids !!! #ad",
-            "channel": "SavvyShopperMom",
-            "publishedAt": "2023-12-11T01:55:10Z",
-            "thumbnail": "https://i.ytimg.com/vi/vgfVLN-gTJI/hqdefault.jpg"
-          }
         }
       ],
       "recommendations": {
         "reps": "15",
         "sets": "2",
-        "repUnits": "reps",
         "note": "Landing midfoot."
-      }
+      },
+      "rejectedDemos": [
+        {
+          "url": "https://www.youtube.com/watch?v=D-sf4w27kys",
+          "reason": "Irrelevant content"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=tmYsA-bsZUo",
+          "reason": "Irrelevant content"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=vgfVLN-gTJI",
+          "reason": "Irrelevant content"
+        }
+      ]
     },
     {
       "id": "45degreebackraises",
@@ -300,7 +265,6 @@
       "recommendations": {
         "reps": "60 Total",
         "sets": "Varies",
-        "repUnits": "reps",
         "note": "Go through full range of motion."
       }
     },
@@ -376,7 +340,6 @@
       "recommendations": {
         "reps": "4",
         "sets": "rounds",
-        "repUnits": "reps",
         "note": "Perform running gear drills."
       }
     },
@@ -452,7 +415,6 @@
       "recommendations": {
         "reps": "10-15",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Detail: Squat to a 90-degree angle, then powerfully, but with control in one motion thrust your hips upward as you rise, tightly flexing your glutes. Note: Aim for 70% of your max repetition weight or above."
       }
     },
@@ -528,7 +490,6 @@
       "recommendations": {
         "reps": "12, 10, 8, 6",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Note: Increase weight after each set. Meant to be a Super Set."
       },
       "aliases": [
@@ -759,7 +720,6 @@
       "recommendations": {
         "reps": "10",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Two seconds down, 1 second up. Elevate your heel."
       }
     },
@@ -832,7 +792,6 @@
       "recommendations": {
         "reps": "12",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
       },
       "aliases": [
@@ -866,7 +825,6 @@
       "recommendations": {
         "reps": "12",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
       },
       "aliases": [
@@ -945,7 +903,6 @@
       "recommendations": {
         "reps": "10",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Don’t let your back sag or arch too much; keep a neutral spine. Inhale as you arch your back (camel), exhale as you round it (cat). Focus on moving from the pelvis through the spine. You should feel a gentle stretch in your back and core activation. Keep it controlled and fluid!"
       }
     },
@@ -1021,7 +978,6 @@
       "recommendations": {
         "reps": "12",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Note: Can be done with Cables or Dumbbells. Meant to be a Super Set."
       },
       "aliases": [
@@ -1055,7 +1011,6 @@
       "recommendations": {
         "reps": "12",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Weight: 45 lbs. Note: Meant to be a Super Set."
       },
       "aliases": [
@@ -1131,7 +1086,6 @@
       "recommendations": {
         "reps": "10",
         "sets": "5",
-        "repUnits": "reps",
         "note": "Meant to be a Super Set."
       },
       "aliases": [
@@ -1210,7 +1164,6 @@
       "recommendations": {
         "reps": "12",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
       },
       "aliases": [
@@ -1244,7 +1197,6 @@
       "recommendations": {
         "reps": "12",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
       },
       "aliases": [
@@ -1323,7 +1275,6 @@
       "recommendations": {
         "reps": "8",
         "sets": "2",
-        "repUnits": "reps",
         "note": "Perform at ankle with lifts."
       }
     },
@@ -1475,7 +1426,6 @@
       "recommendations": {
         "reps": "15",
         "sets": "5",
-        "repUnits": "reps",
         "note": "Weight: 10 lbs"
       }
     },
@@ -1551,7 +1501,6 @@
       "recommendations": {
         "reps": "10",
         "sets": "3",
-        "repUnits": "reps",
         "note": "Use 2x35lb. Use same concept as goblet squat. Tempo: slow down, fast up."
       }
     },
@@ -1610,7 +1559,6 @@
       "recommendations": {
         "reps": "10",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Meant to be a Super Set."
       },
       "aliases": [
@@ -1667,7 +1615,6 @@
       "recommendations": {
         "reps": "12",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Controlled on the way down. Meant to be a Super Set."
       }
     },
@@ -1740,7 +1687,6 @@
       "recommendations": {
         "reps": "25",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Complete reps for each side."
       }
     },
@@ -1799,7 +1745,6 @@
       "recommendations": {
         "reps": "4",
         "sets": "6",
-        "repUnits": "reps",
         "note": "Weight: 10 lbs"
       }
     },
@@ -1875,7 +1820,6 @@
       "recommendations": {
         "reps": "10",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Two seconds down, one second up. Elevate your heel."
       }
     },
@@ -1934,7 +1878,6 @@
       "recommendations": {
         "reps": "10-15",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
       },
       "aliases": [
@@ -1982,7 +1925,6 @@
       "recommendations": {
         "reps": "5",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Keep your hips high; don’t let them sag. Press through your palms and engage your core. As you reach for your toes, keep a slight bend in your knees if needed. Breathe deeply—exhale as you reach. You should feel a stretch in your hamstrings and calves, and your shoulders should be active, not col..."
       }
     },
@@ -2058,7 +2000,6 @@
       "recommendations": {
         "reps": "6",
         "sets": "2",
-        "repUnits": "reps",
         "note": "Use 2x40lb. Option to warm up with a lighter weight."
       }
     },
@@ -2134,7 +2075,6 @@
       "recommendations": {
         "reps": "10",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
       },
       "aliases": [
@@ -2168,7 +2108,6 @@
       "recommendations": {
         "reps": "12",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Note: Squeeze toes together. Meant to be a Super Set."
       },
       "aliases": [
@@ -2230,7 +2169,6 @@
       "recommendations": {
         "reps": "10",
         "sets": "2",
-        "repUnits": "reps",
         "note": "Note: Inhale forward, Exhale back. Keep chin to chest and butt on the ground."
       },
       "aliases": [
@@ -2382,7 +2320,6 @@
       "recommendations": {
         "reps": "6-12",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Note: Can be done with Barbell or Dumbbells. Meant to be a Super Set."
       },
       "aliases": [
@@ -2450,7 +2387,6 @@
       "recommendations": {
         "reps": "10",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Five in each direction on both arms."
       }
     },
@@ -2560,7 +2496,6 @@
       "recommendations": {
         "reps": "6",
         "sets": "3",
-        "repUnits": "reps",
         "note": "Box height should be 24-36 inches. Meant to be a Super Set."
       },
       "aliases": [
@@ -2639,7 +2574,6 @@
       "recommendations": {
         "reps": "5",
         "sets": "5",
-        "repUnits": "reps",
         "note": "Rate of Perceived Exertion: 8/10"
       }
     },
@@ -2791,7 +2725,6 @@
       "recommendations": {
         "reps": "30 Total",
         "sets": "Varies",
-        "repUnits": "reps",
         "note": "Can be substituted with any hamstring workout if necessary."
       }
     },
@@ -2867,7 +2800,6 @@
       "recommendations": {
         "reps": "5",
         "sets": "3",
-        "repUnits": "reps",
         "note": "Use 75lb. Tempo: slow down, fast up."
       }
     },
@@ -3016,7 +2948,6 @@
       "recommendations": {
         "reps": "10",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Keep your lower back pressed into the ground—don’t let it arch. Engage your core and breathe out as you lower each heel. You should feel your abs working hard, not your back. Focus on controlled movements; tap gently and return to the start without rushing. Keep it steady!"
       }
     },
@@ -3092,7 +3023,6 @@
       "recommendations": {
         "reps": "10",
         "sets": "3",
-        "repUnits": "reps",
         "note": "Note: Do the reps once for each direction."
       }
     },
@@ -3241,7 +3171,6 @@
       "recommendations": {
         "reps": "10",
         "sets": "3",
-        "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
       },
       "aliases": [
@@ -3289,7 +3218,6 @@
       "recommendations": {
         "reps": "15",
         "sets": "3",
-        "repUnits": "reps",
         "note": "Note: Meant to be a Super Set."
       },
       "aliases": [
@@ -3341,7 +3269,6 @@
       "recommendations": {
         "reps": "15",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Meant to be a Super Set."
       },
       "aliases": [
@@ -3393,7 +3320,6 @@
       "recommendations": {
         "reps": "15",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Meant to be a Super Set."
       },
       "aliases": [
@@ -3412,64 +3338,11 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": true
-        },
-        {
-          "type": "local",
-          "mediaType": "video",
-          "format": "gif",
-          "url": "gifs/JavelinStretch.gif",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "Local fallback"
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=s2_ISPAkzew",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI-suggested alternative",
-          "metadata": {
-            "channel": "Julia Campezato",
-            "title": "3 of my favorite drills to improve “blocking” in the javelin throw🚀 #javelin #trackandfield"
-          }
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=V7pWvW2kSNc",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI-suggested alternative",
-          "metadata": {
-            "channel": "TRACKLETICS TRACK & FIELD NETWORK",
-            "title": "How to throw javelin"
-          }
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=86F2grEKDzU",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "AI-suggested alternative",
-          "metadata": {
-            "channel": "Track Pain",
-            "title": "How to Throw a Javelin Like a Pro – Step by Step Technique & Tips #sports #usa #olympics"
-          }
         }
       ],
       "recommendations": {
         "reps": "10",
         "sets": "4",
-        "repUnits": "reps",
         "note": "Using an exercise band."
       }
     },
@@ -6548,6 +6421,298 @@
         "sets": "3",
         "repUnits": "reps",
         "note": "Pause 2s at top, drive through heels."
+      }
+    },
+    {
+      "id": "single-leg-calf-raise-against-wall",
+      "name": "Single-Leg Calf Raise Against Wall",
+      "demos": [
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=E1mG5L9rpFc",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Dumbbell Single Leg Calf Raise",
+          "metadata": {
+            "title": "Dumbbell Single Leg Calf Raise",
+            "channel": "Evolutio Sports Physio Richmond (Melbourne)",
+            "publishedAt": "2016-10-17T00:32:27Z",
+            "thumbnail": "https://i.ytimg.com/vi/E1mG5L9rpFc/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=1TS3P8j3aHA",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Single Leg Calf Raise (wall)",
+          "metadata": {
+            "title": "Single Leg Calf Raise (wall)",
+            "channel": "Strength for Fencing",
+            "publishedAt": "2021-12-13T17:53:56Z",
+            "thumbnail": "https://i.ytimg.com/vi/1TS3P8j3aHA/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=RHJIiWflo_s",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Single Leg Calf Raise Isometric",
+          "metadata": {
+            "title": "Single Leg Calf Raise Isometric",
+            "channel": "Evolution Physical Therapy & Fitness",
+            "publishedAt": "2022-10-24T16:42:32Z",
+            "thumbnail": "https://i.ytimg.com/vi/RHJIiWflo_s/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=wdOkFomQNp8",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Build BIGGER Calves (DO THIS!)",
+          "metadata": {
+            "title": "Build BIGGER Calves (DO THIS!)",
+            "channel": "Andrew Kwong (DeltaBolic)",
+            "publishedAt": "2025-10-04T23:13:01Z",
+            "thumbnail": "https://i.ytimg.com/vi/wdOkFomQNp8/hqdefault.jpg"
+          }
+        }
+      ],
+      "recommendations": {
+        "note": "Avoid letting your hips shift to the side; keep your torso upright and aligned over your standing leg. Focus on pushing through the ball of your foot as you rise. Breathe out as you lift. You should feel a strong contraction in your calf and stability in your ankle. Keep it controlled on the way ..."
+      }
+    },
+    {
+      "id": "single-leg-pogo-in-place",
+      "name": "Single-Leg Pogo in Place",
+      "demos": [
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=_pDStuHcvTc",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Single Leg Pogos",
+          "metadata": {
+            "title": "Single Leg Pogos",
+            "channel": "The Exercise Library",
+            "publishedAt": "2022-06-22T15:23:07Z",
+            "thumbnail": "https://i.ytimg.com/vi/_pDStuHcvTc/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=L_khHgMz9uU",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Pogo Jumps",
+          "metadata": {
+            "title": "Pogo Jumps",
+            "channel": "Ashby Smith",
+            "publishedAt": "2023-03-19T03:11:18Z",
+            "thumbnail": "https://i.ytimg.com/vi/L_khHgMz9uU/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=j0nl5dWuqN4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Pogo Jumps Tutorial - Proper Form and Technique",
+          "metadata": {
+            "title": "Pogo Jumps Tutorial - Proper Form and Technique",
+            "channel": "Runna",
+            "publishedAt": "2024-06-11T12:30:50Z",
+            "thumbnail": "https://i.ytimg.com/vi/j0nl5dWuqN4/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=iCuglFclkUM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Beginner to Advanced Plyometrics for Runners",
+          "metadata": {
+            "title": "Beginner to Advanced Plyometrics for Runners",
+            "channel": "Matthew Choi",
+            "publishedAt": "2022-10-21T01:18:07Z",
+            "thumbnail": "https://i.ytimg.com/vi/iCuglFclkUM/hqdefault.jpg"
+          }
+        }
+      ],
+      "recommendations": {
+        "note": "Avoid letting your knee cave inward; keep it aligned over your toes. Maintain a tall posture with your core engaged and chest up. Focus on quick, light bounces from the ball of your foot. You should feel your calf and ankle working hard, with a slight burn in your glutes for stability. Keep it co..."
+      }
+    },
+    {
+      "id": "single-leg-pogo-side-to-side",
+      "name": "Single-Leg Pogo Side to Side",
+      "demos": [
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=L_khHgMz9uU",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Pogo Jumps",
+          "metadata": {
+            "title": "Pogo Jumps",
+            "channel": "Ashby Smith",
+            "publishedAt": "2023-03-19T03:11:18Z",
+            "thumbnail": "https://i.ytimg.com/vi/L_khHgMz9uU/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=ztjByc9Afj4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "3 tips to the perfect Pogo jump",
+          "metadata": {
+            "title": "3 tips to the perfect Pogo jump",
+            "channel": "Health & High Performance",
+            "publishedAt": "2022-07-28T11:17:56Z",
+            "thumbnail": "https://i.ytimg.com/vi/ztjByc9Afj4/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=ZkYORFHgRTw",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Lateral Bound",
+          "metadata": {
+            "title": "Lateral Bound",
+            "channel": "Olympia Fitness and Performance",
+            "publishedAt": "2021-10-20T18:13:40Z",
+            "thumbnail": "https://i.ytimg.com/vi/ZkYORFHgRTw/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=iCuglFclkUM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Beginner to Advanced Plyometrics for Runners",
+          "metadata": {
+            "title": "Beginner to Advanced Plyometrics for Runners",
+            "channel": "Matthew Choi",
+            "publishedAt": "2022-10-21T01:18:07Z",
+            "thumbnail": "https://i.ytimg.com/vi/iCuglFclkUM/hqdefault.jpg"
+          }
+        }
+      ],
+      "recommendations": {
+        "note": "Don’t let your hips drop; keep them level. Engage your core and maintain a slight bend in your standing knee. Focus on pushing off the ground with your foot and landing softly. You should feel your glutes and calves working hard, and your balance improving with each jump. Keep it controlled!"
+      }
+    },
+    {
+      "id": "single-leg-squat-to-bench",
+      "name": "Single-Leg Squat to Bench",
+      "demos": [
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=AYWWdxabA3s",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Single Leg Squat, Bench",
+          "metadata": {
+            "title": "Single Leg Squat, Bench",
+            "channel": "OSVi",
+            "publishedAt": "2023-09-08T04:37:20Z",
+            "thumbnail": "https://i.ytimg.com/vi/AYWWdxabA3s/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=DaF1Qpr1y38",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Single Leg Squat to Bench",
+          "metadata": {
+            "title": "Single Leg Squat to Bench",
+            "channel": "Matt Klingler",
+            "publishedAt": "2014-01-19T03:07:40Z",
+            "thumbnail": "https://i.ytimg.com/vi/DaF1Qpr1y38/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=2FwPOPNmZDI",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Single Leg Squat To Bench",
+          "metadata": {
+            "title": "Single Leg Squat To Bench",
+            "channel": "Burlington PT",
+            "publishedAt": "2025-10-01T19:31:30Z",
+            "thumbnail": "https://i.ytimg.com/vi/2FwPOPNmZDI/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=_HukgYk7lTw",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How far should your foot be on Bulgarian split squat?",
+          "metadata": {
+            "title": "How far should your foot be on Bulgarian split squat?",
+            "channel": "TylerPath",
+            "publishedAt": "2023-12-15T15:44:00Z",
+            "thumbnail": "https://i.ytimg.com/vi/_HukgYk7lTw/hqdefault.jpg"
+          }
+        }
+      ],
+      "recommendations": {
+        "note": "Don’t let your knee cave in; keep it aligned over your toes. Sit back into your hip while lowering. Keep your chest up and core tight. Inhale as you lower, exhale as you push up. You should feel your glutes and quads working hard. If you’re wobbling, reset your stance and focus on balance."
       }
     }
   ]

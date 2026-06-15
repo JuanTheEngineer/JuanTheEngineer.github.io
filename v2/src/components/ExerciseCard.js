@@ -76,6 +76,26 @@ export function createExerciseCard(item, state) {
         `
             : ''
         }
+        ${
+          item.exercise?.purpose?.trim()
+            ? `
+          <div class="text-sm text-slate-300 leading-relaxed">
+            <p class="text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-1">Purpose</p>
+            <p>${escapeHtml(item.exercise.purpose)}</p>
+          </div>
+        `
+            : ''
+        }
+        ${
+          item.exercise?.how_to?.trim()
+            ? `
+          <div class="text-sm text-slate-300 leading-relaxed">
+            <p class="text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-1">How to perform</p>
+            <p class="whitespace-pre-line">${escapeHtml(item.exercise.how_to)}</p>
+          </div>
+        `
+            : ''
+        }
       </div>
     </div>
   `;

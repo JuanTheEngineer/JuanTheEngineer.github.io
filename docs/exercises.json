@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-06-06T20:08:35.102Z",
+  "lastUpdated": "2026-06-14T00:00:00.000Z",
   "exercises": [
     {
       "id": "1a-db-row",
@@ -62,9 +62,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "❌ DON'T DO THIS on the Dumbbell Row!",
+          "notes": "\u274c DON'T DO THIS on the Dumbbell Row!",
           "metadata": {
-            "title": "❌ DON'T DO THIS on the Dumbbell Row!",
+            "title": "\u274c DON'T DO THIS on the Dumbbell Row!",
             "channel": "Andrew Kwong (DeltaBolic)",
             "publishedAt": "2025-05-19T00:25:57Z",
             "thumbnail": "https://i.ytimg.com/vi/vu_YDt9nGv4/hqdefault.jpg"
@@ -153,9 +153,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "✨ Struggling with balance during Single Leg RDLs? #gymtips #rdl",
+          "notes": "\u2728 Struggling with balance during Single Leg RDLs? #gymtips #rdl",
           "metadata": {
-            "title": "✨ Struggling with balance during Single Leg RDLs? #gymtips #rdl",
+            "title": "\u2728 Struggling with balance during Single Leg RDLs? #gymtips #rdl",
             "channel": "Stay Fit With Daisy",
             "publishedAt": "2025-04-16T16:40:23Z",
             "thumbnail": "https://i.ytimg.com/vi/68g0Svu3E0o/hqdefault.jpg"
@@ -188,54 +188,6 @@
             "publishedAt": "2023-08-01T13:59:27Z",
             "thumbnail": "https://i.ytimg.com/vi/SjHRwhGXBl8/hqdefault.jpg"
           }
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=D-sf4w27kys",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "How to HXC dance! #hxc #hardcore #dance #mosh #punk #dad #metal #twostep #howto #tutorial",
-          "metadata": {
-            "title": "How to HXC dance! #hxc #hardcore #dance #mosh #punk #dad #metal #twostep #howto #tutorial",
-            "channel": "HESH DAD",
-            "publishedAt": "2022-07-06T18:13:47Z",
-            "thumbnail": "https://i.ytimg.com/vi/D-sf4w27kys/hqdefault.jpg"
-          }
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=tmYsA-bsZUo",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "How to take protein powder in tamil | protein powder #fitness #tamil",
-          "metadata": {
-            "title": "How to take protein powder in tamil | protein powder #fitness #tamil",
-            "channel": "BHEEMA’s Fitness",
-            "publishedAt": "2023-07-05T10:01:14Z",
-            "thumbnail": "https://i.ytimg.com/vi/tmYsA-bsZUo/hqdefault.jpg"
-          }
-        },
-        {
-          "type": "youtube",
-          "mediaType": "video",
-          "format": "youtube",
-          "url": "https://www.youtube.com/watch?v=vgfVLN-gTJI",
-          "startTime": 0,
-          "endTime": 0,
-          "isPrimary": false,
-          "notes": "Pogo stick must have for kids !!! #ad",
-          "metadata": {
-            "title": "Pogo stick must have for kids !!! #ad",
-            "channel": "SavvyShopperMom",
-            "publishedAt": "2023-12-11T01:55:10Z",
-            "thumbnail": "https://i.ytimg.com/vi/vgfVLN-gTJI/hqdefault.jpg"
-          }
         }
       ],
       "recommendations": {
@@ -243,11 +195,25 @@
         "sets": "2",
         "repUnits": "reps",
         "note": "Landing midfoot."
-      }
+      },
+      "rejectedDemos": [
+        {
+          "url": "https://www.youtube.com/watch?v=D-sf4w27kys",
+          "reason": "Irrelevant content"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=tmYsA-bsZUo",
+          "reason": "Irrelevant content"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=vgfVLN-gTJI",
+          "reason": "Irrelevant content"
+        }
+      ]
     },
     {
       "id": "45degreebackraises",
-      "name": "45° Back Raise",
+      "name": "45\u00b0 Back Raise",
       "demos": [
         {
           "type": "cloudinary",
@@ -276,10 +242,10 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "Hyperextensions for GLUTE focus 🍑 Save this post for your next glute day #shorts",
+          "notes": "Hyperextensions for GLUTE focus \ud83c\udf51 Save this post for your next glute day #shorts",
           "metadata": {
-            "channel": "José Meireles",
-            "title": "HYPEREXTENSION: right ✅ vs wrong ❌STOP ⛔️ doing your hyperextension incorrectly ⚠️"
+            "channel": "Jos\u00e9 Meireles",
+            "title": "HYPEREXTENSION: right \u2705 vs wrong \u274cSTOP \u26d4\ufe0f doing your hyperextension incorrectly \u26a0\ufe0f"
           }
         },
         {
@@ -290,7 +256,7 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "Hyperextensions for GLUTE focus 🍑 Save this post for your next glute day #shorts",
+          "notes": "Hyperextensions for GLUTE focus \ud83c\udf51 Save this post for your next glute day #shorts",
           "metadata": {
             "channel": "Squat University",
             "title": "STOP Doing Back Extensions Like This!"
@@ -382,7 +348,7 @@
     },
     {
       "id": "90degreebarbellsquats",
-      "name": "Barbell 90° Squat with Hip Thrust",
+      "name": "Barbell 90\u00b0 Squat with Hip Thrust",
       "demos": [
         {
           "type": "cloudinary",
@@ -431,7 +397,7 @@
           "notes": "AI suggested alternative",
           "metadata": {
             "channel": "Tashana Charles",
-            "title": "This Hip Thrust Trick Builds Upper and Lower Glutes 🍑"
+            "title": "This Hip Thrust Trick Builds Upper and Lower Glutes \ud83c\udf51"
           }
         },
         {
@@ -490,7 +456,7 @@
           "notes": "Barbell Jump Squat - How To",
           "metadata": {
             "channel": "Andrew Kwong (DeltaBolic)",
-            "title": "✅ The PERFECT Barbell Squat"
+            "title": "\u2705 The PERFECT Barbell Squat"
           }
         },
         {
@@ -904,7 +870,7 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "CAT-COW POSE (Marjaryasana-Bitilasana)🐮 😺",
+          "notes": "CAT-COW POSE (Marjaryasana-Bitilasana)\ud83d\udc2e \ud83d\ude3a",
           "metadata": {
             "channel": "Royal Free London NHS Foundation Trust",
             "title": "Cat & Camel"
@@ -918,7 +884,7 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "CAT-COW POSE (Marjaryasana-Bitilasana)🐮 😺",
+          "notes": "CAT-COW POSE (Marjaryasana-Bitilasana)\ud83d\udc2e \ud83d\ude3a",
           "metadata": {
             "channel": "Baptist Health",
             "title": "Cat Camel"
@@ -932,9 +898,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "CAT-COW POSE (Marjaryasana-Bitilasana)🐮 😺",
+          "notes": "CAT-COW POSE (Marjaryasana-Bitilasana)\ud83d\udc2e \ud83d\ude3a",
           "metadata": {
-            "title": "CAT-COW POSE (Marjaryasana-Bitilasana)🐮 😺",
+            "title": "CAT-COW POSE (Marjaryasana-Bitilasana)\ud83d\udc2e \ud83d\ude3a",
             "channel": "Muscle & Motion",
             "duration": 9,
             "views": 12809636,
@@ -946,7 +912,7 @@
         "reps": "10",
         "sets": "4",
         "repUnits": "reps",
-        "note": "Don’t let your back sag or arch too much; keep a neutral spine. Inhale as you arch your back (camel), exhale as you round it (cat). Focus on moving from the pelvis through the spine. You should feel a gentle stretch in your back and core activation. Keep it controlled and fluid!"
+        "note": "Don\u2019t let your back sag or arch too much; keep a neutral spine. Inhale as you arch your back (camel), exhale as you round it (cat). Focus on moving from the pelvis through the spine. You should feel a gentle stretch in your back and core activation. Keep it controlled and fluid!"
       }
     },
     {
@@ -997,7 +963,7 @@
           "notes": "FIX THESE Dumbbell Chest Fly Mistakes!",
           "metadata": {
             "channel": "Aesthetic Motivation",
-            "title": "6 Ultimate Shoulder Workout at Gym for Maximum Gains 💪 #shoulderworkout"
+            "title": "6 Ultimate Shoulder Workout at Gym for Maximum Gains \ud83d\udcaa #shoulderworkout"
           }
         },
         {
@@ -1169,7 +1135,7 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "🛑 STOP Doing Cable Rows LIKE THIS!",
+          "notes": "\ud83d\uded1 STOP Doing Cable Rows LIKE THIS!",
           "metadata": {
             "channel": "Andrew Kwong (DeltaBolic)",
             "title": "Cable Row Form Tips (DO THIS!)"
@@ -1183,10 +1149,10 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "🛑 STOP Doing Cable Rows LIKE THIS!",
+          "notes": "\ud83d\uded1 STOP Doing Cable Rows LIKE THIS!",
           "metadata": {
             "channel": "Hazzytrainer",
-            "title": "Lat Pulldowns: Know the Handles ⚠️ #pulldown"
+            "title": "Lat Pulldowns: Know the Handles \u26a0\ufe0f #pulldown"
           }
         },
         {
@@ -1197,9 +1163,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "🛑 STOP Doing Cable Rows LIKE THIS!",
+          "notes": "\ud83d\uded1 STOP Doing Cable Rows LIKE THIS!",
           "metadata": {
-            "title": "🛑 STOP Doing Cable Rows LIKE THIS!",
+            "title": "\ud83d\uded1 STOP Doing Cable Rows LIKE THIS!",
             "channel": "Andrew Kwong (DeltaBolic)",
             "duration": 8,
             "views": 19616851,
@@ -1311,9 +1277,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "Her Missing Exercise!🔥",
+          "notes": "Her Missing Exercise!\ud83d\udd25",
           "metadata": {
-            "title": "Her Missing Exercise!🔥",
+            "title": "Her Missing Exercise!\ud83d\udd25",
             "channel": "Squat University",
             "publishedAt": "2023-08-15T15:05:08Z",
             "thumbnail": "https://i.ytimg.com/vi/OESM2L1z5hg/hqdefault.jpg"
@@ -1375,7 +1341,7 @@
           "notes": "Time for a highly-requested form review: the Curtsy Lunge! #lunges",
           "metadata": {
             "channel": "Katja Believe",
-            "title": "❌WRONG vs ✅RIGHT - CURTSY SQUAT #curtsysquat #squat #legday #legexercise #gluteexercise"
+            "title": "\u274cWRONG vs \u2705RIGHT - CURTSY SQUAT #curtsysquat #squat #legday #legexercise #gluteexercise"
           }
         },
         {
@@ -1539,9 +1505,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "✅ The PERFECT Dumbbell Chest Press",
+          "notes": "\u2705 The PERFECT Dumbbell Chest Press",
           "metadata": {
-            "title": "✅ The PERFECT Dumbbell Chest Press",
+            "title": "\u2705 The PERFECT Dumbbell Chest Press",
             "channel": "Andrew Kwong (DeltaBolic)",
             "publishedAt": "2025-10-24T22:30:03Z",
             "thumbnail": "https://i.ytimg.com/vi/mTaiQemkEpU/hqdefault.jpg"
@@ -1589,7 +1555,7 @@
           "notes": "AI-suggested alternative",
           "metadata": {
             "channel": "Andrew Kwong (DeltaBolic)",
-            "title": "✅ The PERFECT Dumbbell Static Lunge"
+            "title": "\u2705 The PERFECT Dumbbell Static Lunge"
           }
         },
         {
@@ -1733,7 +1699,7 @@
           "notes": "AI-suggested alternative",
           "metadata": {
             "channel": "RB Fitness ",
-            "title": "Dumbbell Side Bend Mistake ❌#shorts #gym #bodybuilding #fitness #viral"
+            "title": "Dumbbell Side Bend Mistake \u274c#shorts #gym #bodybuilding #fitness #viral"
           }
         }
       ],
@@ -1778,7 +1744,7 @@
           "notes": "Dumbbell Jump Squat | Exercise Guide",
           "metadata": {
             "channel": "Ulisses World",
-            "title": "#howto Dumbbell Squats 🏋🏾‍♀️ Best Beginner leg exercise for strength #ulissesworld #legday #gym"
+            "title": "#howto Dumbbell Squats \ud83c\udfcb\ud83c\udffe\u200d\u2640\ufe0f Best Beginner leg exercise for strength #ulissesworld #legday #gym"
           }
         },
         {
@@ -1834,7 +1800,7 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "Unlock🔓 Your 1st Pistol Squat",
+          "notes": "Unlock\ud83d\udd13 Your 1st Pistol Squat",
           "metadata": {
             "channel": "Andrew Kwong (DeltaBolic)",
             "title": "Bulgarian Split Squat Setup & Form Tips (DO THIS!)"
@@ -1848,7 +1814,7 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "Unlock🔓 Your 1st Pistol Squat",
+          "notes": "Unlock\ud83d\udd13 Your 1st Pistol Squat",
           "metadata": {
             "channel": "Summerfunfitness",
             "title": "Pistol Squat Tips For Beginners"
@@ -1862,9 +1828,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "Unlock🔓 Your 1st Pistol Squat",
+          "notes": "Unlock\ud83d\udd13 Your 1st Pistol Squat",
           "metadata": {
-            "title": "Unlock🔓 Your 1st Pistol Squat",
+            "title": "Unlock\ud83d\udd13 Your 1st Pistol Squat",
             "channel": "Squat University",
             "duration": 52,
             "views": 3112528,
@@ -1913,7 +1879,7 @@
           "notes": "AI-suggested alternative",
           "metadata": {
             "channel": "SquatCouple",
-            "title": "📌6 BEST PUSH-UPS VARIATIONS FOR CHEST GROWTH"
+            "title": "\ud83d\udccc6 BEST PUSH-UPS VARIATIONS FOR CHEST GROWTH"
           }
         },
         {
@@ -1983,7 +1949,7 @@
         "reps": "5",
         "sets": "4",
         "repUnits": "reps",
-        "note": "Keep your hips high; don’t let them sag. Press through your palms and engage your core. As you reach for your toes, keep a slight bend in your knees if needed. Breathe deeply—exhale as you reach. You should feel a stretch in your hamstrings and calves, and your shoulders should be active, not col..."
+        "note": "Keep your hips high; don\u2019t let them sag. Press through your palms and engage your core. As you reach for your toes, keep a slight bend in your knees if needed. Breathe deeply\u2014exhale as you reach. You should feel a stretch in your hamstrings and calves, and your shoulders should be active, not col..."
       }
     },
     {
@@ -2049,7 +2015,7 @@
           "notes": "Bulgarian Split Squats Made Easy (FORM FIX)",
           "metadata": {
             "title": "Bulgarian Split Squats Made Easy (FORM FIX)",
-            "channel": "ATHLEAN-X™",
+            "channel": "ATHLEAN-X\u2122",
             "publishedAt": "2024-12-11T21:36:08Z",
             "thumbnail": "https://i.ytimg.com/vi/o7yFuIR9XVU/hqdefault.jpg"
           }
@@ -2093,7 +2059,7 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "📌HOW TO DO A GOBLET SQUAT",
+          "notes": "\ud83d\udcccHOW TO DO A GOBLET SQUAT",
           "metadata": {
             "channel": "Andrew Kwong (DeltaBolic)",
             "title": "Squat: Elevated Heels vs Toes (KNOW THE DIFFERENCE!)"
@@ -2107,10 +2073,10 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "📌HOW TO DO A GOBLET SQUAT",
+          "notes": "\ud83d\udcccHOW TO DO A GOBLET SQUAT",
           "metadata": {
             "channel": "Tashana Charles",
-            "title": "Sumo Squats VS Goblet Squats - know the difference 🍑"
+            "title": "Sumo Squats VS Goblet Squats - know the difference \ud83c\udf51"
           }
         },
         {
@@ -2121,9 +2087,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "📌HOW TO DO A GOBLET SQUAT",
+          "notes": "\ud83d\udcccHOW TO DO A GOBLET SQUAT",
           "metadata": {
-            "title": "📌HOW TO DO A GOBLET SQUAT",
+            "title": "\ud83d\udcccHOW TO DO A GOBLET SQUAT",
             "channel": "SquatCouple",
             "duration": 22,
             "views": 3566830,
@@ -2601,7 +2567,7 @@
           "notes": "The Front Squat",
           "metadata": {
             "channel": "Andrew Kwong (DeltaBolic)",
-            "title": "✅ The PERFECT Front Squat"
+            "title": "\u2705 The PERFECT Front Squat"
           }
         },
         {
@@ -2677,7 +2643,7 @@
           "notes": "GHR [IsoHold]",
           "metadata": {
             "channel": "Mike's Yoga Channel",
-            "title": "4 Isometric Holds To Build Strength💪🏼"
+            "title": "4 Isometric Holds To Build Strength\ud83d\udcaa\ud83c\udffc"
           }
         },
         {
@@ -2767,7 +2733,7 @@
           "notes": "How to use the GLUTE HAM RAISE",
           "metadata": {
             "channel": "LisaFiitt Workouts",
-            "title": "Hyperextensions for GLUTE focus 🍑 Save this post for your next glute day #shorts"
+            "title": "Hyperextensions for GLUTE focus \ud83c\udf51 Save this post for your next glute day #shorts"
           }
         },
         {
@@ -2807,9 +2773,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "📌HOW TO DO A GOBLET SQUAT",
+          "notes": "\ud83d\udcccHOW TO DO A GOBLET SQUAT",
           "metadata": {
-            "title": "📌HOW TO DO A GOBLET SQUAT",
+            "title": "\ud83d\udcccHOW TO DO A GOBLET SQUAT",
             "channel": "SquatCouple",
             "publishedAt": "2024-06-22T11:57:33Z",
             "thumbnail": "https://i.ytimg.com/vi/lRYBbchqxtI/hqdefault.jpg"
@@ -2919,7 +2885,7 @@
           "notes": "DeFrancosGym.com: HASD's (Heavy Ass Sled Drags)",
           "metadata": {
             "channel": "Jatin Sharma",
-            "title": "Prowler Sled Pull😲#jatinfitvlogs #shorts #Viral #ytshorts"
+            "title": "Prowler Sled Pull\ud83d\ude32#jatinfitvlogs #shorts #Viral #ytshorts"
           }
         },
         {
@@ -2995,7 +2961,7 @@
           "notes": "AI-suggested alternative",
           "metadata": {
             "channel": "DAVID TODD MILLER",
-            "title": "🔥Core Finisher- Heel Touches🔥"
+            "title": "\ud83d\udd25Core Finisher- Heel Touches\ud83d\udd25"
           }
         },
         {
@@ -3017,7 +2983,7 @@
         "reps": "10",
         "sets": "4",
         "repUnits": "reps",
-        "note": "Keep your lower back pressed into the ground—don’t let it arch. Engage your core and breathe out as you lower each heel. You should feel your abs working hard, not your back. Focus on controlled movements; tap gently and return to the start without rushing. Keep it steady!"
+        "note": "Keep your lower back pressed into the ground\u2014don\u2019t let it arch. Engage your core and breathe out as you lower each heel. You should feel your abs working hard, not your back. Focus on controlled movements; tap gently and return to the start without rushing. Keep it steady!"
       }
     },
     {
@@ -3234,7 +3200,7 @@
           "notes": "AI-suggested alternative",
           "metadata": {
             "channel": "Bellabooty",
-            "title": "All you need for seated abductions at home are sliders and resistance bands! 🔥 #homeworkout"
+            "title": "All you need for seated abductions at home are sliders and resistance bands! \ud83d\udd25 #homeworkout"
           }
         }
       ],
@@ -3282,7 +3248,7 @@
           "notes": "AI suggested alternative",
           "metadata": {
             "channel": "RB Fitness ",
-            "title": "Hip Abductor/Adductor Machine Exerciss Mistake ❌👎#shorts #shortvideo #fitness #gym #viral"
+            "title": "Hip Abductor/Adductor Machine Exerciss Mistake \u274c\ud83d\udc4e#shorts #shortvideo #fitness #gym #viral"
           }
         }
       ],
@@ -3434,7 +3400,7 @@
           "notes": "AI-suggested alternative",
           "metadata": {
             "channel": "Julia Campezato",
-            "title": "3 of my favorite drills to improve “blocking” in the javelin throw🚀 #javelin #trackandfield"
+            "title": "3 of my favorite drills to improve \u201cblocking\u201d in the javelin throw\ud83d\ude80 #javelin #trackandfield"
           }
         },
         {
@@ -3462,7 +3428,7 @@
           "notes": "AI-suggested alternative",
           "metadata": {
             "channel": "Track Pain",
-            "title": "How to Throw a Javelin Like a Pro – Step by Step Technique & Tips #sports #usa #olympics"
+            "title": "How to Throw a Javelin Like a Pro \u2013 Step by Step Technique & Tips #sports #usa #olympics"
           }
         }
       ],
@@ -3504,7 +3470,7 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "Her Kettlebell ABS WORKOUT!😳",
+          "notes": "Her Kettlebell ABS WORKOUT!\ud83d\ude33",
           "metadata": {
             "channel": "FitnessFAQs",
             "title": "Best Kettlebell Exercises For Beginners"
@@ -3518,10 +3484,10 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "Her Kettlebell ABS WORKOUT!😳",
+          "notes": "Her Kettlebell ABS WORKOUT!\ud83d\ude33",
           "metadata": {
             "channel": "Fitness Happy Time",
-            "title": "Five daily Kettlebell Workout — Burn Fat, Build Strength, and Shape Your Curves Fast!"
+            "title": "Five daily Kettlebell Workout \u2014 Burn Fat, Build Strength, and Shape Your Curves Fast!"
           }
         },
         {
@@ -3532,9 +3498,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "Her Kettlebell ABS WORKOUT!😳",
+          "notes": "Her Kettlebell ABS WORKOUT!\ud83d\ude33",
           "metadata": {
-            "title": "Her Kettlebell ABS WORKOUT!😳",
+            "title": "Her Kettlebell ABS WORKOUT!\ud83d\ude33",
             "channel": "Squat University",
             "duration": 60,
             "views": 10501203,
@@ -3570,9 +3536,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "DON’T do THIS when doing box jumps!",
+          "notes": "DON\u2019T do THIS when doing box jumps!",
           "metadata": {
-            "title": "DON’T do THIS when doing box jumps!",
+            "title": "DON\u2019T do THIS when doing box jumps!",
             "channel": "Sam Vickers Golf Performance",
             "duration": 20,
             "views": 443830,
@@ -3725,9 +3691,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "Perfect your Broad Jump Form🔥",
+          "notes": "Perfect your Broad Jump Form\ud83d\udd25",
           "metadata": {
-            "title": "Perfect your Broad Jump Form🔥",
+            "title": "Perfect your Broad Jump Form\ud83d\udd25",
             "channel": "Isaac Hadac",
             "publishedAt": "2024-06-03T00:01:21Z",
             "thumbnail": "https://i.ytimg.com/vi/6L6CJXF5CNs/hqdefault.jpg"
@@ -3775,7 +3741,7 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "⭐️True Hip Flexor Stretch (Simple Fix For Lasting Results) #shorts",
+          "notes": "\u2b50\ufe0fTrue Hip Flexor Stretch (Simple Fix For Lasting Results) #shorts",
           "metadata": {
             "channel": "Gerardi Performance",
             "title": "How to PROPERLY Perform the Kneeling Hip Flexor Stretch With Good Form (For Tight Hip Flexors)"
@@ -3789,7 +3755,7 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "⭐️True Hip Flexor Stretch (Simple Fix For Lasting Results) #shorts",
+          "notes": "\u2b50\ufe0fTrue Hip Flexor Stretch (Simple Fix For Lasting Results) #shorts",
           "metadata": {
             "channel": "Bupa Health",
             "title": "How to do a hip flexor stretch | Bupa Health"
@@ -3803,9 +3769,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "⭐️True Hip Flexor Stretch (Simple Fix For Lasting Results) #shorts",
+          "notes": "\u2b50\ufe0fTrue Hip Flexor Stretch (Simple Fix For Lasting Results) #shorts",
           "metadata": {
-            "title": "⭐️True Hip Flexor Stretch (Simple Fix For Lasting Results) #shorts",
+            "title": "\u2b50\ufe0fTrue Hip Flexor Stretch (Simple Fix For Lasting Results) #shorts",
             "channel": "FIN Treatment & Training",
             "duration": 31,
             "views": 612375,
@@ -3853,7 +3819,7 @@
           "isPrimary": false,
           "notes": "AI-suggested alternative",
           "metadata": {
-            "channel": "Markku Metsälä",
+            "channel": "Markku Mets\u00e4l\u00e4",
             "title": "db fat grip leaning press with lateral raise"
           }
         }
@@ -4022,9 +3988,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "DON’T do THIS when doing box jumps!",
+          "notes": "DON\u2019T do THIS when doing box jumps!",
           "metadata": {
-            "title": "DON’T do THIS when doing box jumps!",
+            "title": "DON\u2019T do THIS when doing box jumps!",
             "channel": "Sam Vickers Golf Performance",
             "publishedAt": "2023-05-10T17:30:31Z",
             "thumbnail": "https://i.ytimg.com/vi/bXgFx93CGow/hqdefault.jpg"
@@ -4423,7 +4389,7 @@
           "notes": "AI-suggested alternative",
           "metadata": {
             "channel": "Andrew Kwong (DeltaBolic)",
-            "title": "✅ The PERFECT Machine Shoulder Press!"
+            "title": "\u2705 The PERFECT Machine Shoulder Press!"
           }
         }
       ],
@@ -4674,9 +4640,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "The PERFECT Dumbbell Row 🔥 BEST Guide Ever Made",
+          "notes": "The PERFECT Dumbbell Row \ud83d\udd25 BEST Guide Ever Made",
           "metadata": {
-            "title": "The PERFECT Dumbbell Row 🔥 BEST Guide Ever Made",
+            "title": "The PERFECT Dumbbell Row \ud83d\udd25 BEST Guide Ever Made",
             "channel": "Davis Diley",
             "publishedAt": "2025-07-21T13:18:30Z",
             "thumbnail": "https://i.ytimg.com/vi/OL8yGrkXyiQ/hqdefault.jpg"
@@ -4881,7 +4847,7 @@
         }
       ],
       "recommendations": {
-        "reps": "15 → 1",
+        "reps": "15 \u2192 1",
         "sets": "Decrementing",
         "repUnits": "reps",
         "note": "Start with 15 reps and decrease by 1 for each set."
@@ -4997,7 +4963,7 @@
           "notes": "AI-suggested alternative",
           "metadata": {
             "channel": "C-RAY",
-            "title": "4 Steps To Pike Push-up! 💪📈 #calisthenics #calisthenicsworkout #homeworkout"
+            "title": "4 Steps To Pike Push-up! \ud83d\udcaa\ud83d\udcc8 #calisthenics #calisthenicsworkout #homeworkout"
           }
         },
         {
@@ -5011,7 +4977,7 @@
           "notes": "AI-suggested alternative",
           "metadata": {
             "channel": "Milos Vukcevic",
-            "title": "Arnold Schwarzenegger - Best Shoulders Exercise 🔥"
+            "title": "Arnold Schwarzenegger - Best Shoulders Exercise \ud83d\udd25"
           }
         },
         {
@@ -5166,7 +5132,7 @@
           "notes": "DB Weighted Single Leg (SL) Hip Thrust",
           "metadata": {
             "channel": "gwenlifts",
-            "title": "🥵HOW TO SINGLE LEG HIP THRUST #gluteworkouts #fitnessover40 #growyourglutes #midlifewoman"
+            "title": "\ud83e\udd75HOW TO SINGLE LEG HIP THRUST #gluteworkouts #fitnessover40 #growyourglutes #midlifewoman"
           }
         },
         {
@@ -5225,7 +5191,7 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "5 Steps to Perfect Dumbbell Skullcrushers ⚠️ #triceps",
+          "notes": "5 Steps to Perfect Dumbbell Skullcrushers \u26a0\ufe0f #triceps",
           "metadata": {
             "channel": "Max Euceda",
             "title": "STOP doing LATERAL RAISES like this!"
@@ -5239,7 +5205,7 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "5 Steps to Perfect Dumbbell Skullcrushers ⚠️ #triceps",
+          "notes": "5 Steps to Perfect Dumbbell Skullcrushers \u26a0\ufe0f #triceps",
           "metadata": {
             "channel": "LIVESTRONG",
             "title": "How to Do Side Dumbbell Lateral Raises"
@@ -5253,9 +5219,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "5 Steps to Perfect Dumbbell Skullcrushers ⚠️ #triceps",
+          "notes": "5 Steps to Perfect Dumbbell Skullcrushers \u26a0\ufe0f #triceps",
           "metadata": {
-            "title": "5 Steps to Perfect Dumbbell Skullcrushers ⚠️ #triceps",
+            "title": "5 Steps to Perfect Dumbbell Skullcrushers \u26a0\ufe0f #triceps",
             "channel": "Hazzytrainer",
             "duration": 13,
             "views": 1332843,
@@ -5333,9 +5299,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "Dumbbell split squat technique! 🦿 Follow for more fitness tips ✅",
+          "notes": "Dumbbell split squat technique! \ud83e\uddbf Follow for more fitness tips \u2705",
           "metadata": {
-            "title": "Dumbbell split squat technique! 🦿 Follow for more fitness tips ✅",
+            "title": "Dumbbell split squat technique! \ud83e\uddbf Follow for more fitness tips \u2705",
             "channel": "Alex Lueth",
             "publishedAt": "2024-04-18T16:05:51Z",
             "thumbnail": "https://i.ytimg.com/vi/sw4MzpC8l58/hqdefault.jpg"
@@ -5349,9 +5315,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "LUNGES Vs. SPLIT SQUATS 🔥",
+          "notes": "LUNGES Vs. SPLIT SQUATS \ud83d\udd25",
           "metadata": {
-            "title": "LUNGES Vs. SPLIT SQUATS 🔥",
+            "title": "LUNGES Vs. SPLIT SQUATS \ud83d\udd25",
             "channel": "Muscle & Motion",
             "publishedAt": "2023-03-12T16:00:36Z",
             "thumbnail": "https://i.ytimg.com/vi/uE_NeT2D0lo/hqdefault.jpg"
@@ -5381,9 +5347,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "Split squat form check ✅ #shorts",
+          "notes": "Split squat form check \u2705 #shorts",
           "metadata": {
-            "title": "Split squat form check ✅ #shorts",
+            "title": "Split squat form check \u2705 #shorts",
             "channel": "LISAFIITT",
             "publishedAt": "2024-02-01T18:48:35Z",
             "thumbnail": "https://i.ytimg.com/vi/cAl7vD-DQwQ/hqdefault.jpg"
@@ -5431,7 +5397,7 @@
           "notes": "AI suggested alternative",
           "metadata": {
             "channel": "Muscle & Motion",
-            "title": "LUNGES Vs. SPLIT SQUATS 🔥"
+            "title": "LUNGES Vs. SPLIT SQUATS \ud83d\udd25"
           }
         },
         {
@@ -5554,7 +5520,7 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "Step up form for QUADS vs GLUTES 🔥 #shorts",
+          "notes": "Step up form for QUADS vs GLUTES \ud83d\udd25 #shorts",
           "metadata": {
             "channel": "Forty Steps",
             "title": "How To: Weighted Step Ups"
@@ -5568,7 +5534,7 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "Step up form for QUADS vs GLUTES 🔥 #shorts",
+          "notes": "Step up form for QUADS vs GLUTES \ud83d\udd25 #shorts",
           "metadata": {
             "channel": "Cornerstone Physiotherapy",
             "title": "Step Up Exercise | Osteoarthritis Physiotherapy"
@@ -5582,9 +5548,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "Step up form for QUADS vs GLUTES 🔥 #shorts",
+          "notes": "Step up form for QUADS vs GLUTES \ud83d\udd25 #shorts",
           "metadata": {
-            "title": "Step up form for QUADS vs GLUTES 🔥 #shorts",
+            "title": "Step up form for QUADS vs GLUTES \ud83d\udd25 #shorts",
             "channel": "LISAFIITT",
             "duration": 5,
             "views": 2429427,
@@ -6080,7 +6046,7 @@
           "notes": "Weighted Chin-up",
           "metadata": {
             "channel": "TylerPath",
-            "title": "If Pull-ups are Too Hard… Are Chin-Ups Really the Answer?"
+            "title": "If Pull-ups are Too Hard\u2026 Are Chin-Ups Really the Answer?"
           }
         },
         {
@@ -6153,9 +6119,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "✅ The PERFECT Lat Pulldown (DO THIS!)",
+          "notes": "\u2705 The PERFECT Lat Pulldown (DO THIS!)",
           "metadata": {
-            "channel": "ATHLEAN-X™",
+            "channel": "ATHLEAN-X\u2122",
             "title": "Mike Mentzer's GREATEST Biceps Exercise of All Time"
           }
         },
@@ -6167,7 +6133,7 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "✅ The PERFECT Lat Pulldown (DO THIS!)",
+          "notes": "\u2705 The PERFECT Lat Pulldown (DO THIS!)",
           "metadata": {
             "channel": "Davis Diley",
             "title": "How to do Lat Pulldowns (The right way)"
@@ -6181,9 +6147,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "✅ The PERFECT Lat Pulldown (DO THIS!)",
+          "notes": "\u2705 The PERFECT Lat Pulldown (DO THIS!)",
           "metadata": {
-            "title": "✅ The PERFECT Lat Pulldown (DO THIS!)",
+            "title": "\u2705 The PERFECT Lat Pulldown (DO THIS!)",
             "channel": "Andrew Kwong (DeltaBolic)",
             "duration": 13,
             "views": 9264919,
@@ -6235,7 +6201,7 @@
           "notes": "AI suggested alternative",
           "metadata": {
             "channel": "Andrew Kwong (DeltaBolic)",
-            "title": "✅ The PERFECT Barbell Row"
+            "title": "\u2705 The PERFECT Barbell Row"
           }
         }
       ],
@@ -6283,7 +6249,7 @@
           "notes": "AI-suggested alternative",
           "metadata": {
             "channel": "Oliver Sjostrom",
-            "title": "How to push up ✅"
+            "title": "How to push up \u2705"
           }
         },
         {
@@ -6297,7 +6263,7 @@
           "notes": "AI-suggested alternative",
           "metadata": {
             "channel": "Shambhala Yoga",
-            "title": "Strengthen Your Core 💪 #shorts #yoga #fitness #strength"
+            "title": "Strengthen Your Core \ud83d\udcaa #shorts #yoga #fitness #strength"
           }
         },
         {
@@ -6319,7 +6285,7 @@
         "reps": "10",
         "sets": "4",
         "repUnits": "reps",
-        "note": "Don’t let your hips sag; keep your body in a straight line from head to heels. Engage your core and breathe in as you lower down, exhale as you push up. You should feel your chest and triceps working, and your core stabilizing. Maintain control throughout the movement."
+        "note": "Don\u2019t let your hips sag; keep your body in a straight line from head to heels. Engage your core and breathe in as you lower down, exhale as you push up. You should feel your chest and triceps working, and your core stabilizing. Maintain control throughout the movement."
       }
     },
     {
@@ -6366,9 +6332,9 @@
           "startTime": 0,
           "endTime": 0,
           "isPrimary": false,
-          "notes": "Common Sense for Sports Teams — The Backwards Treadmill @atgequipment #athletictruthgroup #atg",
+          "notes": "Common Sense for Sports Teams \u2014 The Backwards Treadmill @atgequipment #athletictruthgroup #atg",
           "metadata": {
-            "title": "Common Sense for Sports Teams — The Backwards Treadmill @atgequipment #athletictruthgroup #atg",
+            "title": "Common Sense for Sports Teams \u2014 The Backwards Treadmill @atgequipment #athletictruthgroup #atg",
             "channel": "ATG Exercise Coaching",
             "publishedAt": "2023-06-19T16:56:01Z",
             "thumbnail": "https://i.ytimg.com/vi/6EhaDP7WKG0/hqdefault.jpg"
@@ -6429,7 +6395,7 @@
           "notes": "21. Exercises - Supine Isometric Heel Digs",
           "metadata": {
             "title": "21. Exercises - Supine Isometric Heel Digs",
-            "channel": "Aspetar سبيتار",
+            "channel": "Aspetar \u0633\u0628\u064a\u062a\u0627\u0631",
             "publishedAt": "2017-01-16T09:55:31Z",
             "thumbnail": "https://i.ytimg.com/vi/SKKxhCgQ7hM/hqdefault.jpg"
           }
@@ -6548,6 +6514,298 @@
         "sets": "3",
         "repUnits": "reps",
         "note": "Pause 2s at top, drive through heels."
+      }
+    },
+    {
+      "id": "single-leg-calf-raise-against-wall",
+      "name": "Single-Leg Calf Raise Against Wall",
+      "demos": [
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=E1mG5L9rpFc",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Dumbbell Single Leg Calf Raise",
+          "metadata": {
+            "title": "Dumbbell Single Leg Calf Raise",
+            "channel": "Evolutio Sports Physio Richmond (Melbourne)",
+            "publishedAt": "2016-10-17T00:32:27Z",
+            "thumbnail": "https://i.ytimg.com/vi/E1mG5L9rpFc/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=1TS3P8j3aHA",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Single Leg Calf Raise (wall)",
+          "metadata": {
+            "title": "Single Leg Calf Raise (wall)",
+            "channel": "Strength for Fencing",
+            "publishedAt": "2021-12-13T17:53:56Z",
+            "thumbnail": "https://i.ytimg.com/vi/1TS3P8j3aHA/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=RHJIiWflo_s",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Single Leg Calf Raise Isometric",
+          "metadata": {
+            "title": "Single Leg Calf Raise Isometric",
+            "channel": "Evolution Physical Therapy & Fitness",
+            "publishedAt": "2022-10-24T16:42:32Z",
+            "thumbnail": "https://i.ytimg.com/vi/RHJIiWflo_s/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=wdOkFomQNp8",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Build BIGGER Calves (DO THIS!)",
+          "metadata": {
+            "title": "Build BIGGER Calves (DO THIS!)",
+            "channel": "Andrew Kwong (DeltaBolic)",
+            "publishedAt": "2025-10-04T23:13:01Z",
+            "thumbnail": "https://i.ytimg.com/vi/wdOkFomQNp8/hqdefault.jpg"
+          }
+        }
+      ],
+      "recommendations": {
+        "note": "Avoid letting your hips shift to the side; keep your torso upright and aligned over your standing leg. Focus on pushing through the ball of your foot as you rise. Breathe out as you lift. You should feel a strong contraction in your calf and stability in your ankle. Keep it controlled on the way ..."
+      }
+    },
+    {
+      "id": "single-leg-pogo-in-place",
+      "name": "Single-Leg Pogo in Place",
+      "demos": [
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=_pDStuHcvTc",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Single Leg Pogos",
+          "metadata": {
+            "title": "Single Leg Pogos",
+            "channel": "The Exercise Library",
+            "publishedAt": "2022-06-22T15:23:07Z",
+            "thumbnail": "https://i.ytimg.com/vi/_pDStuHcvTc/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=L_khHgMz9uU",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Pogo Jumps",
+          "metadata": {
+            "title": "Pogo Jumps",
+            "channel": "Ashby Smith",
+            "publishedAt": "2023-03-19T03:11:18Z",
+            "thumbnail": "https://i.ytimg.com/vi/L_khHgMz9uU/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=j0nl5dWuqN4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Pogo Jumps Tutorial - Proper Form and Technique",
+          "metadata": {
+            "title": "Pogo Jumps Tutorial - Proper Form and Technique",
+            "channel": "Runna",
+            "publishedAt": "2024-06-11T12:30:50Z",
+            "thumbnail": "https://i.ytimg.com/vi/j0nl5dWuqN4/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=iCuglFclkUM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Beginner to Advanced Plyometrics for Runners",
+          "metadata": {
+            "title": "Beginner to Advanced Plyometrics for Runners",
+            "channel": "Matthew Choi",
+            "publishedAt": "2022-10-21T01:18:07Z",
+            "thumbnail": "https://i.ytimg.com/vi/iCuglFclkUM/hqdefault.jpg"
+          }
+        }
+      ],
+      "recommendations": {
+        "note": "Avoid letting your knee cave inward; keep it aligned over your toes. Maintain a tall posture with your core engaged and chest up. Focus on quick, light bounces from the ball of your foot. You should feel your calf and ankle working hard, with a slight burn in your glutes for stability. Keep it co..."
+      }
+    },
+    {
+      "id": "single-leg-pogo-side-to-side",
+      "name": "Single-Leg Pogo Side to Side",
+      "demos": [
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=L_khHgMz9uU",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Pogo Jumps",
+          "metadata": {
+            "title": "Pogo Jumps",
+            "channel": "Ashby Smith",
+            "publishedAt": "2023-03-19T03:11:18Z",
+            "thumbnail": "https://i.ytimg.com/vi/L_khHgMz9uU/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=ztjByc9Afj4",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "3 tips to the perfect Pogo jump",
+          "metadata": {
+            "title": "3 tips to the perfect Pogo jump",
+            "channel": "Health & High Performance",
+            "publishedAt": "2022-07-28T11:17:56Z",
+            "thumbnail": "https://i.ytimg.com/vi/ztjByc9Afj4/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=ZkYORFHgRTw",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Lateral Bound",
+          "metadata": {
+            "title": "Lateral Bound",
+            "channel": "Olympia Fitness and Performance",
+            "publishedAt": "2021-10-20T18:13:40Z",
+            "thumbnail": "https://i.ytimg.com/vi/ZkYORFHgRTw/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=iCuglFclkUM",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Beginner to Advanced Plyometrics for Runners",
+          "metadata": {
+            "title": "Beginner to Advanced Plyometrics for Runners",
+            "channel": "Matthew Choi",
+            "publishedAt": "2022-10-21T01:18:07Z",
+            "thumbnail": "https://i.ytimg.com/vi/iCuglFclkUM/hqdefault.jpg"
+          }
+        }
+      ],
+      "recommendations": {
+        "note": "Don\u2019t let your hips drop; keep them level. Engage your core and maintain a slight bend in your standing knee. Focus on pushing off the ground with your foot and landing softly. You should feel your glutes and calves working hard, and your balance improving with each jump. Keep it controlled!"
+      }
+    },
+    {
+      "id": "single-leg-squat-to-bench",
+      "name": "Single-Leg Squat to Bench",
+      "demos": [
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=AYWWdxabA3s",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Single Leg Squat, Bench",
+          "metadata": {
+            "title": "Single Leg Squat, Bench",
+            "channel": "OSVi",
+            "publishedAt": "2023-09-08T04:37:20Z",
+            "thumbnail": "https://i.ytimg.com/vi/AYWWdxabA3s/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=DaF1Qpr1y38",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Single Leg Squat to Bench",
+          "metadata": {
+            "title": "Single Leg Squat to Bench",
+            "channel": "Matt Klingler",
+            "publishedAt": "2014-01-19T03:07:40Z",
+            "thumbnail": "https://i.ytimg.com/vi/DaF1Qpr1y38/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=2FwPOPNmZDI",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Single Leg Squat To Bench",
+          "metadata": {
+            "title": "Single Leg Squat To Bench",
+            "channel": "Burlington PT",
+            "publishedAt": "2025-10-01T19:31:30Z",
+            "thumbnail": "https://i.ytimg.com/vi/2FwPOPNmZDI/hqdefault.jpg"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=_HukgYk7lTw",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "How far should your foot be on Bulgarian split squat?",
+          "metadata": {
+            "title": "How far should your foot be on Bulgarian split squat?",
+            "channel": "TylerPath",
+            "publishedAt": "2023-12-15T15:44:00Z",
+            "thumbnail": "https://i.ytimg.com/vi/_HukgYk7lTw/hqdefault.jpg"
+          }
+        }
+      ],
+      "recommendations": {
+        "note": "Don\u2019t let your knee cave in; keep it aligned over your toes. Sit back into your hip while lowering. Keep your chest up and core tight. Inhale as you lower, exhale as you push up. You should feel your glutes and quads working hard. If you\u2019re wobbling, reset your stance and focus on balance."
       }
     }
   ]

@@ -52,6 +52,18 @@ function renderContent(container, program) {
       `
           : ''
       }
+      ${
+        program.source
+          ? `
+        <p class="text-xs text-slate-500 mt-2">
+          Program by ${program.source.url
+            ? `<a href="${escapeHtml(program.source.url)}" target="_blank" rel="noopener" class="text-slate-400 hover:text-brand-400 transition-colors">${escapeHtml(program.source.name)} ↗</a>`
+            : `<span class="text-slate-400">${escapeHtml(program.source.name)}</span>`
+          }${program.source.organization ? ` · ${escapeHtml(program.source.organization)}` : ''}
+        </p>
+      `
+          : ''
+      }
     </header>
 
     <main class="flex-1 px-6 pb-32 pt-2">

@@ -1097,6 +1097,12 @@
       "id": "reload_pt_strength_1-1",
       "title": "Reload PT Strength 1.1",
       "requirements": "Equipment: Dumbbells, Weight Plates (20lb, 35lb, 40lb, 75lb), Exercise Band",
+      "source": {
+        "name": "Mona Tsutsui, PT",
+        "organization": "Reload Physical Therapy",
+        "type": "coach",
+        "url": "https://www.instagram.com/mona.t.dpt"
+      },
       "items": [
         {
           "exerciseId": "split-squat-hold-hands-overhead",
@@ -1167,6 +1173,12 @@
       "id": "reload_pt_strength_1-2",
       "title": "Reload PT Strength 1.2",
       "requirements": "Equipment: Dumbbells, Trap Bar, Weight Plates (20lb, 30lb, 130lb), Exercise Band",
+      "source": {
+        "name": "Mona Tsutsui, PT",
+        "organization": "Reload Physical Therapy",
+        "type": "coach",
+        "url": "https://www.instagram.com/mona.t.dpt"
+      },
       "items": [
         {
           "exerciseId": "split-squat-hold-hands-overhead",
@@ -1237,6 +1249,67 @@
           "sets": "2",
           "repUnits": "reps",
           "note": "Use 25lb dumbbells."
+        }
+      ]
+    },
+    {
+      "id": "reload_pt_single_leg_knee_progression",
+      "title": "Reload PT Single-Leg Knee Progression",
+      "requirements": "Equipment: Wall, Bench or Box, Optional 15lb Weight",
+      "source": {
+        "name": "Mona Tsutsui, PT",
+        "organization": "Reload Physical Therapy",
+        "type": "coach",
+        "url": "https://www.instagram.com/mona.t.dpt"
+      },
+      "items": [
+        {
+          "exerciseId": "single-leg-calf-raise-against-wall",
+          "reps": "20",
+          "sets": "1",
+          "repUnits": "reps",
+          "note": "Use as a knee and calf warm-up before single-leg exercises. Perform each side.",
+          "tags": [
+            "warmup",
+            "calf",
+            "knee-prep"
+          ]
+        },
+        {
+          "exerciseId": "single-leg-pogo-in-place",
+          "reps": "10",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Perform 10 reps on each leg. Progress toward 4 sets of 10 per side.",
+          "tags": [
+            "plyometric",
+            "ankle",
+            "single-leg"
+          ]
+        },
+        {
+          "exerciseId": "single-leg-pogo-side-to-side",
+          "reps": "10",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Perform 10 lateral contacts on each leg. Progress toward 4 sets of 10 per side.",
+          "tags": [
+            "plyometric",
+            "lateral",
+            "single-leg"
+          ]
+        },
+        {
+          "exerciseId": "single-leg-squat-to-bench",
+          "reps": "15",
+          "sets": "2",
+          "repUnits": "reps",
+          "note": "Perform each side. Progress toward 25 bodyweight reps, or use 15lb for 10 reps. Control the descent and lightly contact the bench.",
+          "tags": [
+            "strength",
+            "quad",
+            "single-leg"
+          ]
         }
       ]
     },

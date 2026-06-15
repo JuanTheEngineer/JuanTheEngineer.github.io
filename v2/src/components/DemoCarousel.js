@@ -78,7 +78,9 @@ function probeLoad(item, onDone) {
   const url = item.url;
   if (!url) { onDone(false); return; }
 
-  const isVideo = item.mediaType === 'video' || ['mp4', 'webm', 'mov'].includes(item.format);
+  // GIFs render as <img> even when mediaType is "video" — probe accordingly
+  const isGif = item.format === 'gif';
+  const isVideo = !isGif && (item.mediaType === 'video' || ['mp4', 'webm', 'mov'].includes(item.format));
 
   if (isVideo) {
     const video = document.createElement('video');
@@ -157,8 +159,18 @@ function renderCarousel(container, items, focusIndex, onSwipe) {
     if (!caption) return;
     const demo = items[activeIndex];
     const label = sourceLabel(demo);
+    const creatorUrl = demo.metadata?.creatorUrl;
     const url = demo.url;
-    if (url && (demo.type === 'youtube' || demo.type === 'tiktok' || demo.type === 'vimeo')) {
+    if (creatorUrl) {
+      // Link channel name to creator profile
+      const typeLabel = sourceTypeLabel(demo);
+      const channel = demo.metadata?.channel;
+      if (channel) {
+        caption.innerHTML = `${escapeHtml(typeLabel)} · <a href="${escapeHtml(creatorUrl)}" target="_blank" rel="noopener" class="hover:text-brand-400 transition-colors">${escapeHtml(channel)} ↗</a>`;
+      } else {
+        caption.innerHTML = `<a href="${escapeHtml(creatorUrl)}" target="_blank" rel="noopener" class="hover:text-brand-400 transition-colors">${escapeHtml(label)} ↗</a>`;
+      }
+    } else if (url && (demo.type === 'youtube' || demo.type === 'tiktok' || demo.type === 'vimeo')) {
       caption.innerHTML = `<a href="${url}" target="_blank" rel="noopener" class="hover:text-brand-400 transition-colors">${escapeHtml(label)} ↗</a>`;
     } else {
       caption.textContent = label;
@@ -217,8 +229,8 @@ function sortDemos(demos) {
   });
 }
 
-function sourceLabel(demo) {
-  const typeLabel = {
+function sourceTypeLabel(demo) {
+  return {
     cloudinary: demo.format === 'mp4' ? 'Video' : 'Demo',
     youtube: 'YouTube',
     tiktok: 'TikTok',
@@ -226,6 +238,10 @@ function sourceLabel(demo) {
     local: 'Demo',
     url: 'External'
   }[demo.type] || demo.type;
+}
+
+function sourceLabel(demo) {
+  const typeLabel = sourceTypeLabel(demo);
   const channel = demo.metadata?.channel;
   if (channel) return `${typeLabel} · ${channel}`;
   if (demo.notes) return `${typeLabel} · ${demo.notes}`;
