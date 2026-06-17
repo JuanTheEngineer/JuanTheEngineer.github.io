@@ -99,7 +99,12 @@ class DataEditorApp:
         self.notebook.add(self.tab_exercise, text="  Exercise  ")
         self.setup_exercise_tab()
 
-        # Tab 2: Program Requirements
+        # Tab 2: Metadata (new fields)
+        self.tab_metadata = ttk.Frame(self.notebook)
+        self.notebook.add(self.tab_metadata, text="  Metadata  ")
+        self.setup_metadata_tab()
+
+        # Tab 3: Program Requirements
         self.tab_programs = ttk.Frame(self.notebook)
         self.notebook.add(self.tab_programs, text="  Programs  ")
         self.setup_programs_tab()
@@ -159,6 +164,85 @@ class DataEditorApp:
         self.lbl_status = ttk.Label(f, text="", foreground="#f59e0b")
         self.lbl_status.pack(anchor="w", padx=10, pady=5)
 
+    def setup_metadata_tab(self):
+        """New metadata tab: description, purpose, benefits, howTo, commonMistakes, muscleGroups, equipment."""
+        f = self.tab_metadata
+
+        # Load canonical sets from data-model.json
+        dm_path = ROOT / "data-model.json"
+        if dm_path.exists():
+            with open(dm_path) as dmf:
+                dm = json.load(dmf)
+            self.valid_muscle_groups = [mg["id"] for mg in dm["muscleGroups"]["values"]]
+            self.valid_equipment = [eq["id"] for eq in dm["equipment"]["values"]]
+        else:
+            self.valid_muscle_groups = []
+            self.valid_equipment = []
+
+        # Scrollable frame
+        canvas = tk.Canvas(f, bg="#0f172a", highlightthickness=0)
+        scrollbar = ttk.Scrollbar(f, orient="vertical", command=canvas.yview)
+        self.meta_inner = ttk.Frame(canvas)
+        self.meta_inner.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+        canvas.create_window((0, 0), window=self.meta_inner, anchor="nw", width=860)
+        canvas.configure(yscrollcommand=scrollbar.set)
+        canvas.pack(side="left", fill="both", expand=True)
+        scrollbar.pack(side="right", fill="y")
+
+        inner = self.meta_inner
+
+        # Description
+        ttk.Label(inner, text="Description:", style="Title.TLabel").pack(anchor="w", padx=10, pady=(10, 2))
+        self.text_description = scrolledtext.ScrolledText(inner, height=3, font=("Inter", 10), bg="#1e293b", fg="#f1f5f9", insertbackground="#60a5fa", wrap="word")
+        self.text_description.pack(fill="x", padx=10)
+
+        # Purpose
+        ttk.Label(inner, text="Purpose:", style="Title.TLabel").pack(anchor="w", padx=10, pady=(10, 2))
+        self.text_purpose = scrolledtext.ScrolledText(inner, height=3, font=("Inter", 10), bg="#1e293b", fg="#f1f5f9", insertbackground="#60a5fa", wrap="word")
+        self.text_purpose.pack(fill="x", padx=10)
+
+        # Benefits
+        ttk.Label(inner, text="Benefits:", style="Title.TLabel").pack(anchor="w", padx=10, pady=(10, 2))
+        self.text_benefits = scrolledtext.ScrolledText(inner, height=3, font=("Inter", 10), bg="#1e293b", fg="#f1f5f9", insertbackground="#60a5fa", wrap="word")
+        self.text_benefits.pack(fill="x", padx=10)
+
+        # How To (editable list)
+        ttk.Label(inner, text="How To (one step per line):", style="Title.TLabel").pack(anchor="w", padx=10, pady=(10, 2))
+        self.text_howto = scrolledtext.ScrolledText(inner, height=6, font=("Inter", 10), bg="#1e293b", fg="#f1f5f9", insertbackground="#60a5fa", wrap="word")
+        self.text_howto.pack(fill="x", padx=10)
+
+        # Common Mistakes (editable list)
+        ttk.Label(inner, text="Common Mistakes (one per line):", style="Title.TLabel").pack(anchor="w", padx=10, pady=(10, 2))
+        self.text_mistakes = scrolledtext.ScrolledText(inner, height=4, font=("Inter", 10), bg="#1e293b", fg="#f1f5f9", insertbackground="#60a5fa", wrap="word")
+        self.text_mistakes.pack(fill="x", padx=10)
+
+        # Muscle Groups (checkboxes)
+        ttk.Label(inner, text="Muscle Groups:", style="Title.TLabel").pack(anchor="w", padx=10, pady=(10, 2))
+        self.mg_frame = ttk.Frame(inner)
+        self.mg_frame.pack(fill="x", padx=10)
+        self.mg_vars = {}
+        cols = 4
+        for i, mg in enumerate(self.valid_muscle_groups):
+            var = tk.BooleanVar(value=False)
+            cb = tk.Checkbutton(self.mg_frame, text=mg, variable=var, bg="#0f172a", fg="#e2e8f0",
+                                selectcolor="#1e293b", activebackground="#0f172a", activeforeground="#60a5fa",
+                                font=("Inter", 9))
+            cb.grid(row=i // cols, column=i % cols, sticky="w", padx=2, pady=1)
+            self.mg_vars[mg] = var
+
+        # Equipment (checkboxes)
+        ttk.Label(inner, text="Equipment:", style="Title.TLabel").pack(anchor="w", padx=10, pady=(10, 2))
+        self.eq_frame = ttk.Frame(inner)
+        self.eq_frame.pack(fill="x", padx=10)
+        self.eq_vars = {}
+        for i, eq in enumerate(self.valid_equipment):
+            var = tk.BooleanVar(value=False)
+            cb = tk.Checkbutton(self.eq_frame, text=eq, variable=var, bg="#0f172a", fg="#e2e8f0",
+                                selectcolor="#1e293b", activebackground="#0f172a", activeforeground="#60a5fa",
+                                font=("Inter", 9))
+            cb.grid(row=i // cols, column=i % cols, sticky="w", padx=2, pady=1)
+            self.eq_vars[eq] = var
+
     def setup_programs_tab(self):
         f = self.tab_programs
         ttk.Label(f, text="Program Requirements (edit to standardize):", style="Title.TLabel").pack(anchor="w", padx=10, pady=10)
@@ -210,6 +294,32 @@ class DataEditorApp:
 
         self.text_note.delete("1.0", "end")
         self.text_note.insert("1.0", rec.get("note", ""))
+
+        # Metadata tab fields
+        self.text_description.delete("1.0", "end")
+        self.text_description.insert("1.0", ex.get("description", ""))
+
+        self.text_purpose.delete("1.0", "end")
+        self.text_purpose.insert("1.0", ex.get("purpose", ""))
+
+        self.text_benefits.delete("1.0", "end")
+        self.text_benefits.insert("1.0", ex.get("benefits", ""))
+
+        self.text_howto.delete("1.0", "end")
+        self.text_howto.insert("1.0", "\n".join(ex.get("howTo", [])))
+
+        self.text_mistakes.delete("1.0", "end")
+        self.text_mistakes.insert("1.0", "\n".join(ex.get("commonMistakes", [])))
+
+        # Muscle groups checkboxes
+        current_mg = set(ex.get("muscleGroups", []))
+        for mg_id, var in self.mg_vars.items():
+            var.set(mg_id in current_mg)
+
+        # Equipment checkboxes
+        current_eq = set(ex.get("equipment", []))
+        for eq_id, var in self.eq_vars.items():
+            var.set(eq_id in current_eq)
 
         # Demos
         for w in self.demos_frame.winfo_children():
@@ -461,6 +571,39 @@ class DataEditorApp:
         elif "repUnits" in rec: del rec["repUnits"]
         if note: rec["note"] = note
         elif "note" in rec: del rec["note"]
+
+        # Save metadata fields
+        desc = self.text_description.get("1.0", "end").strip()
+        if desc: ex["description"] = desc
+        elif "description" in ex: del ex["description"]
+
+        purpose = self.text_purpose.get("1.0", "end").strip()
+        if purpose: ex["purpose"] = purpose
+        elif "purpose" in ex: del ex["purpose"]
+
+        benefits = self.text_benefits.get("1.0", "end").strip()
+        if benefits: ex["benefits"] = benefits
+        elif "benefits" in ex: del ex["benefits"]
+
+        howto_text = self.text_howto.get("1.0", "end").strip()
+        if howto_text:
+            ex["howTo"] = [line.strip() for line in howto_text.split("\n") if line.strip()]
+        elif "howTo" in ex:
+            del ex["howTo"]
+
+        mistakes_text = self.text_mistakes.get("1.0", "end").strip()
+        if mistakes_text:
+            ex["commonMistakes"] = [line.strip() for line in mistakes_text.split("\n") if line.strip()]
+        elif "commonMistakes" in ex:
+            del ex["commonMistakes"]
+
+        # Muscle groups from checkboxes
+        selected_mg = [mg for mg, var in self.mg_vars.items() if var.get()]
+        ex["muscleGroups"] = selected_mg
+
+        # Equipment from checkboxes
+        selected_eq = [eq for eq, var in self.eq_vars.items() if var.get()]
+        ex["equipment"] = selected_eq
 
         self.unsaved_changes = True
 

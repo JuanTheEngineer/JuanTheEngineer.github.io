@@ -1,0 +1,117 @@
+{
+  "version": "1.0.0",
+  "description": "Canonical data model for exercises, muscle groups, and equipment. Used by the data editor and validation scripts.",
+
+  "muscleGroups": {
+    "description": "Comprehensive list of muscle groups. Each exercise should reference one or more from this list.",
+    "values": [
+      { "id": "quads", "label": "Quadriceps", "region": "lower-body" },
+      { "id": "hamstrings", "label": "Hamstrings", "region": "lower-body" },
+      { "id": "glutes", "label": "Glutes", "region": "lower-body" },
+      { "id": "adductors", "label": "Adductors (Inner Thigh)", "region": "lower-body" },
+      { "id": "abductors", "label": "Abductors (Outer Hip)", "region": "lower-body" },
+      { "id": "calves", "label": "Calves", "region": "lower-body" },
+      { "id": "hip-flexors", "label": "Hip Flexors", "region": "lower-body" },
+      { "id": "tibialis", "label": "Tibialis Anterior (Shins)", "region": "lower-body" },
+
+      { "id": "chest", "label": "Chest (Pectorals)", "region": "upper-body" },
+      { "id": "front-delts", "label": "Front Deltoids", "region": "upper-body" },
+      { "id": "side-delts", "label": "Side (Lateral) Deltoids", "region": "upper-body" },
+      { "id": "rear-delts", "label": "Rear Deltoids", "region": "upper-body" },
+      { "id": "triceps", "label": "Triceps", "region": "upper-body" },
+      { "id": "biceps", "label": "Biceps", "region": "upper-body" },
+      { "id": "forearms", "label": "Forearms", "region": "upper-body" },
+
+      { "id": "lats", "label": "Latissimus Dorsi", "region": "back" },
+      { "id": "upper-back", "label": "Upper Back (Rhomboids/Mid-Traps)", "region": "back" },
+      { "id": "traps", "label": "Trapezius", "region": "back" },
+      { "id": "lower-back", "label": "Lower Back (Erectors)", "region": "back" },
+
+      { "id": "core", "label": "Core (Rectus Abdominis)", "region": "core" },
+      { "id": "obliques", "label": "Obliques", "region": "core" },
+      { "id": "transverse-abdominis", "label": "Transverse Abdominis (Deep Core)", "region": "core" },
+
+      { "id": "rotator-cuff", "label": "Rotator Cuff", "region": "stabilizers" },
+      { "id": "serratus", "label": "Serratus Anterior", "region": "stabilizers" },
+
+      { "id": "full-body", "label": "Full Body (Cardio/Compound)", "region": "full-body" }
+    ]
+  },
+
+  "equipment": {
+    "description": "Canonical equipment list. An exercise's equipment array should only contain values from this set. Empty array means bodyweight only.",
+    "values": [
+      { "id": "barbell", "label": "Barbell" },
+      { "id": "dumbbells", "label": "Dumbbells" },
+      { "id": "kettlebell", "label": "Kettlebell" },
+      { "id": "trap-bar", "label": "Trap Bar (Hex Bar)" },
+      { "id": "ez-curl-bar", "label": "EZ Curl Bar" },
+
+      { "id": "bench", "label": "Flat/Incline Bench" },
+      { "id": "squat-rack", "label": "Squat Rack / Power Rack" },
+      { "id": "pull-up-bar", "label": "Pull-up Bar" },
+      { "id": "dip-station", "label": "Dip Station / Parallel Bars" },
+      { "id": "cable-machine", "label": "Cable Machine" },
+      { "id": "smith-machine", "label": "Smith Machine" },
+      { "id": "leg-press", "label": "Leg Press Machine" },
+      { "id": "leg-curl-machine", "label": "Leg Curl Machine" },
+      { "id": "leg-extension-machine", "label": "Leg Extension Machine" },
+      { "id": "lat-pulldown", "label": "Lat Pulldown Machine" },
+      { "id": "seated-row-machine", "label": "Seated Row Machine" },
+      { "id": "chest-fly-machine", "label": "Chest Fly / Pec Deck Machine" },
+
+      { "id": "resistance-band", "label": "Resistance Band" },
+      { "id": "mini-band", "label": "Mini Band (Hip Circle)" },
+      { "id": "suspension-trainer", "label": "Suspension Trainer (TRX)" },
+
+      { "id": "swiss-ball", "label": "Swiss Ball (Stability Ball)" },
+      { "id": "bosu-ball", "label": "BOSU Ball" },
+      { "id": "foam-roller", "label": "Foam Roller" },
+      { "id": "medicine-ball", "label": "Medicine Ball" },
+      { "id": "slam-ball", "label": "Slam Ball" },
+
+      { "id": "box", "label": "Plyo Box / Step" },
+      { "id": "jump-rope", "label": "Jump Rope" },
+      { "id": "power-sled", "label": "Power Sled / Prowler" },
+      { "id": "battle-ropes", "label": "Battle Ropes" },
+
+      { "id": "treadmill", "label": "Treadmill" },
+      { "id": "stationary-bike", "label": "Stationary Bike" },
+      { "id": "rowing-machine", "label": "Rowing Machine" },
+      { "id": "elliptical", "label": "Elliptical" },
+
+      { "id": "ab-wheel", "label": "Ab Wheel" },
+      { "id": "landmine", "label": "Landmine Attachment" },
+      { "id": "ankle-weights", "label": "Ankle Weights" },
+      { "id": "weight-plate", "label": "Weight Plate" },
+      { "id": "yoga-mat", "label": "Yoga Mat" }
+    ]
+  },
+
+  "exerciseSchema": {
+    "description": "Expected shape of each exercise object in exercises.json. See .kiro/steering/exercise-content-guidelines.md for writing rules.",
+    "fields": {
+      "id": { "type": "string", "required": true, "description": "Unique kebab-case identifier" },
+      "name": { "type": "string", "required": true, "description": "Human-readable exercise name" },
+      "description": { "type": "string", "required": true, "description": "One to two sentences explaining what the exercise is and how it is performed at a high level." },
+      "purpose": { "type": "string", "required": true, "description": "Why this exercise is in a training program. What it builds, what movement pattern it trains." },
+      "benefits": { "type": "string", "required": true, "description": "Physiobiological adaptations: tissue changes, injury prevention, hormonal response, movement carryover." },
+      "howTo": { "type": "string[]", "required": true, "description": "Numbered steps (array order is step order). Each step starts with a verb. 3 to 6 steps." },
+      "commonMistakes": { "type": "string[]", "required": true, "description": "List of mistakes and their fixes. Each item states the mistake then the fix." },
+      "muscleGroups": { "type": "string[]", "required": true, "description": "Array of muscle group IDs from the muscleGroups set. First item is primary." },
+      "equipment": { "type": "string[]", "required": true, "description": "Array of equipment IDs from the equipment set. Empty array means bodyweight only." },
+      "alternatives": { "type": "string[]", "required": false, "description": "Array of exercise IDs that can substitute this exercise. Optional, can be empty." },
+      "recommendations": {
+        "type": "object",
+        "required": false,
+        "fields": {
+          "reps": { "type": "string", "description": "Recommended rep range (e.g. '8-12')" },
+          "sets": { "type": "string", "description": "Recommended set count (e.g. '3-4')" },
+          "repUnits": { "type": "string", "description": "Unit of measurement: 'reps', 'secs', 'min'" },
+          "note": { "type": "string", "description": "Practical coaching notes, tempo, weight guidance, modifications" }
+        }
+      },
+      "demos": { "type": "array", "required": true, "description": "Array of demo source objects" }
+    }
+  }
+}

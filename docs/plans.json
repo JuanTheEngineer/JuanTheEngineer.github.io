@@ -88,6 +88,20 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Results-Based Training",
+      "description": "Thirty-minute full-body circuits combining resistance exercises with cardiovascular active recovery.",
+      "subPlans": [
+        {
+          "name": "30-Minute Full-Body Circuits",
+          "description": "Complete each workout as a continuous circuit for 30 minutes, resting only as needed.",
+          "programs": [
+            "rbt-30-minute-gym-circuit",
+            "rbt-30-minute-home-circuit"
+          ]
+        }
+      ]
     }
   ]
 }

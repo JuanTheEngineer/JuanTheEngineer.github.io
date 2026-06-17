@@ -1381,6 +1381,285 @@
           ]
         }
       ]
+    },
+    {
+      "id": "rbt-30-minute-gym-circuit",
+      "title": "RBT 30-Minute Gym Circuit",
+      "requirements": "Barbell, Bench, Dumbbells, Seated Row Machine, Cardio Equipment. Format: Complete all exercises in order and repeat continuously for 30 minutes. Rest only as needed.",
+      "format": {
+        "type": "timed-circuit",
+        "durationSecs": 1800,
+        "repeatItems": true,
+        "restPolicy": "as-needed"
+      },
+      "items": [
+        {
+          "exerciseId": "barbellsquat",
+          "reps": "15",
+          "sets": "1",
+          "repUnits": "reps",
+          "note": "Complete once during each circuit.",
+          "tags": [
+            "strength",
+            "lower-body",
+            "circuit"
+          ]
+        },
+        {
+          "exerciseId": "flatbenchpress",
+          "reps": "15",
+          "sets": "1",
+          "repUnits": "reps",
+          "note": "Complete once during each circuit.",
+          "tags": [
+            "strength",
+            "upper-body",
+            "push",
+            "circuit"
+          ]
+        },
+        {
+          "exerciseId": "barbell-deadlift",
+          "reps": "15",
+          "sets": "1",
+          "repUnits": "reps",
+          "note": "Complete once during each circuit.",
+          "tags": [
+            "strength",
+            "hinge",
+            "circuit"
+          ]
+        },
+        {
+          "exerciseId": "bentoverrows",
+          "reps": "15",
+          "sets": "1",
+          "repUnits": "reps",
+          "note": "Complete once during each circuit.",
+          "tags": [
+            "strength",
+            "upper-body",
+            "pull",
+            "circuit"
+          ]
+        },
+        {
+          "exerciseId": "cardio-choice",
+          "reps": "120",
+          "sets": "1",
+          "repUnits": "secs",
+          "note": "Choose a bike, elliptical, rowing machine, treadmill, jump rope, or burpees. Treat this as active recovery.",
+          "tags": [
+            "cardio",
+            "active-recovery",
+            "circuit"
+          ]
+        },
+        {
+          "exerciseId": "dumbbell-forward-lunge",
+          "reps": "8 each side",
+          "sets": "1",
+          "repUnits": "reps",
+          "note": "Perform 16 total repetitions.",
+          "tags": [
+            "strength",
+            "lower-body",
+            "single-leg",
+            "circuit"
+          ]
+        },
+        {
+          "exerciseId": "seated-barbell-military-press",
+          "reps": "15",
+          "sets": "1",
+          "repUnits": "reps",
+          "note": "Perform seated with a barbell.",
+          "tags": [
+            "strength",
+            "upper-body",
+            "push",
+            "circuit"
+          ]
+        },
+        {
+          "exerciseId": "dumbbell-reverse-lunge",
+          "reps": "15",
+          "sets": "1",
+          "repUnits": "reps",
+          "note": "Perform with dumbbells.",
+          "tags": [
+            "strength",
+            "lower-body",
+            "single-leg",
+            "circuit"
+          ]
+        },
+        {
+          "exerciseId": "cablerows",
+          "reps": "15",
+          "sets": "1",
+          "repUnits": "reps",
+          "note": "Complete once during each circuit.",
+          "tags": [
+            "strength",
+            "upper-body",
+            "pull",
+            "circuit"
+          ]
+        },
+        {
+          "exerciseId": "cardio-choice",
+          "reps": "120",
+          "sets": "1",
+          "repUnits": "secs",
+          "note": "Choose a bike, elliptical, rowing machine, treadmill, jump rope, or burpees. Treat this as active recovery.",
+          "tags": [
+            "cardio",
+            "active-recovery",
+            "circuit"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rbt-30-minute-home-circuit",
+      "title": "RBT 30-Minute Home Circuit",
+      "requirements": "Optional Light Dumbbells and Optional Cardio Equipment. Format: Complete all exercises in order and repeat continuously for 30 minutes. Rest only as needed.",
+      "format": {
+        "type": "timed-circuit",
+        "durationSecs": 1800,
+        "repeatItems": true,
+        "restPolicy": "as-needed"
+      },
+      "items": [
+        {
+          "exerciseId": "bodyweight-squat",
+          "reps": "15",
+          "sets": "1",
+          "repUnits": "reps",
+          "note": "Use bodyweight or hold a light weight in each hand. Push the hips back and transfer weight toward the heels.",
+          "tags": [
+            "strength",
+            "lower-body",
+            "circuit"
+          ]
+        },
+        {
+          "exerciseId": "pushups",
+          "reps": "15",
+          "sets": "1",
+          "repUnits": "reps",
+          "note": "Modify from the knees or perform against an elevated surface when needed.",
+          "tags": [
+            "strength",
+            "upper-body",
+            "push",
+            "circuit"
+          ]
+        },
+        {
+          "exerciseId": "bodyweight-reverse-lunge",
+          "reps": "8-10 each side",
+          "sets": "1",
+          "repUnits": "reps",
+          "note": "Alternate legs for 16 to 20 total repetitions.",
+          "tags": [
+            "strength",
+            "lower-body",
+            "single-leg",
+            "circuit"
+          ]
+        },
+        {
+          "exerciseId": "prone-superman-reverse-fly",
+          "reps": "15",
+          "sets": "1",
+          "repUnits": "reps",
+          "note": "Lie face down with the arms out to the sides. Raise the chest and move the arms while retracting the shoulder blades.",
+          "tags": [
+            "strength",
+            "upper-back",
+            "posture",
+            "circuit"
+          ]
+        },
+        {
+          "exerciseId": "cardio-choice",
+          "reps": "120",
+          "sets": "1",
+          "repUnits": "secs",
+          "note": "Choose a bike, elliptical, rowing machine, treadmill, jump rope, or burpees.",
+          "tags": [
+            "cardio",
+            "active-recovery",
+            "circuit"
+          ]
+        },
+        {
+          "exerciseId": "bodyweight-forward-lunge",
+          "reps": "8 each side",
+          "sets": "1",
+          "repUnits": "reps",
+          "note": "Perform 16 total repetitions.",
+          "tags": [
+            "strength",
+            "lower-body",
+            "single-leg",
+            "circuit"
+          ]
+        },
+        {
+          "exerciseId": "lateral-arm-circles",
+          "reps": "30 each direction",
+          "sets": "1",
+          "repUnits": "secs",
+          "note": "Hold the arms out to the sides and make small circles: 30 seconds clockwise, then 30 seconds counterclockwise.",
+          "tags": [
+            "mobility",
+            "shoulders",
+            "circuit"
+          ]
+        },
+        {
+          "exerciseId": "bodyweight-single-leg-deadlift",
+          "reps": "8-10 each side",
+          "sets": "1",
+          "repUnits": "reps",
+          "note": "Perform 16 to 20 total repetitions.",
+          "tags": [
+            "strength",
+            "hinge",
+            "balance",
+            "single-leg",
+            "circuit"
+          ]
+        },
+        {
+          "exerciseId": "prone-superman-reverse-fly",
+          "reps": "15",
+          "sets": "1",
+          "repUnits": "reps",
+          "note": "This exercise appears a second time in the original circuit.",
+          "tags": [
+            "strength",
+            "upper-back",
+            "posture",
+            "circuit"
+          ]
+        },
+        {
+          "exerciseId": "cardio-choice",
+          "reps": "120",
+          "sets": "1",
+          "repUnits": "secs",
+          "note": "Choose a bike, elliptical, rowing machine, treadmill, jump rope, or burpees.",
+          "tags": [
+            "cardio",
+            "active-recovery",
+            "circuit"
+          ]
+        }
+      ]
     }
   ]
 }
