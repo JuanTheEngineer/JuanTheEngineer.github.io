@@ -104,7 +104,12 @@ class DataEditorApp:
         self.notebook.add(self.tab_metadata, text="  Metadata  ")
         self.setup_metadata_tab()
 
-        # Tab 3: Program Requirements
+        # Tab 3: Review (combined demo + text review)
+        self.tab_review = ttk.Frame(self.notebook)
+        self.notebook.add(self.tab_review, text="  Review  ")
+        self.setup_review_tab()
+
+        # Tab 4: Program Requirements
         self.tab_programs = ttk.Frame(self.notebook)
         self.notebook.add(self.tab_programs, text="  Programs  ")
         self.setup_programs_tab()
@@ -243,6 +248,135 @@ class DataEditorApp:
             cb.grid(row=i // cols, column=i % cols, sticky="w", padx=2, pady=1)
             self.eq_vars[eq] = var
 
+    def setup_review_tab(self):
+        """Combined review tab: demos on top, AI text below. One-stop verification."""
+        f = self.tab_review
+
+        # Scrollable
+        canvas = tk.Canvas(f, bg="#0f172a", highlightthickness=0)
+        scrollbar = ttk.Scrollbar(f, orient="vertical", command=canvas.yview)
+        self.review_inner = ttk.Frame(canvas)
+        self.review_inner.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+        canvas.create_window((0, 0), window=self.review_inner, anchor="nw", width=860)
+        canvas.configure(yscrollcommand=scrollbar.set)
+        canvas.pack(side="left", fill="both", expand=True)
+        scrollbar.pack(side="right", fill="y")
+
+        # Review status buttons at top
+        status_row = ttk.Frame(self.review_inner)
+        status_row.pack(fill="x", padx=10, pady=(10, 5))
+        ttk.Label(status_row, text="Review Status:", style="Title.TLabel").pack(side="left")
+        self.btn_approve = ttk.Button(status_row, text="Approve", command=lambda: self._set_review_status("approved"))
+        self.btn_approve.pack(side="left", padx=5)
+        self.btn_needs_edit = ttk.Button(status_row, text="Needs Edit", command=lambda: self._set_review_status("needs-edit"))
+        self.btn_needs_edit.pack(side="left", padx=5)
+        self.btn_skip_review = ttk.Button(status_row, text="Skip to Unreviewed", command=self.skip_to_unreviewed)
+        self.btn_skip_review.pack(side="right")
+        self.lbl_review_status = ttk.Label(status_row, text="", foreground="#22c55e")
+        self.lbl_review_status.pack(side="left", padx=15)
+
+        # Demos section
+        ttk.Label(self.review_inner, text="Demos:", style="Title.TLabel").pack(anchor="w", padx=10, pady=(10, 2))
+        self.review_demos_frame = ttk.Frame(self.review_inner)
+        self.review_demos_frame.pack(fill="x", padx=10, pady=5)
+
+        # Separator
+        ttk.Separator(self.review_inner, orient="horizontal").pack(fill="x", padx=10, pady=10)
+
+        # AI Text preview (read-only display)
+        ttk.Label(self.review_inner, text="Description:", style="Title.TLabel").pack(anchor="w", padx=10, pady=(5, 2))
+        self.review_description = tk.Label(self.review_inner, text="", bg="#0f172a", fg="#cbd5e1", font=("Inter", 10), wraplength=820, justify="left", anchor="w")
+        self.review_description.pack(fill="x", padx=10)
+
+        ttk.Label(self.review_inner, text="Purpose:", style="Title.TLabel").pack(anchor="w", padx=10, pady=(10, 2))
+        self.review_purpose = tk.Label(self.review_inner, text="", bg="#0f172a", fg="#cbd5e1", font=("Inter", 10), wraplength=820, justify="left", anchor="w")
+        self.review_purpose.pack(fill="x", padx=10)
+
+        ttk.Label(self.review_inner, text="Benefits:", style="Title.TLabel").pack(anchor="w", padx=10, pady=(10, 2))
+        self.review_benefits = tk.Label(self.review_inner, text="", bg="#0f172a", fg="#cbd5e1", font=("Inter", 10), wraplength=820, justify="left", anchor="w")
+        self.review_benefits.pack(fill="x", padx=10)
+
+        ttk.Label(self.review_inner, text="How To:", style="Title.TLabel").pack(anchor="w", padx=10, pady=(10, 2))
+        self.review_howto = tk.Label(self.review_inner, text="", bg="#0f172a", fg="#cbd5e1", font=("Inter", 10), wraplength=820, justify="left", anchor="w")
+        self.review_howto.pack(fill="x", padx=10)
+
+        ttk.Label(self.review_inner, text="Common Mistakes:", style="Title.TLabel").pack(anchor="w", padx=10, pady=(10, 2))
+        self.review_mistakes = tk.Label(self.review_inner, text="", bg="#0f172a", fg="#cbd5e1", font=("Inter", 10), wraplength=820, justify="left", anchor="w")
+        self.review_mistakes.pack(fill="x", padx=10)
+
+        ttk.Label(self.review_inner, text="Muscle Groups:", style="Title.TLabel").pack(anchor="w", padx=10, pady=(10, 2))
+        self.review_muscles = tk.Label(self.review_inner, text="", bg="#0f172a", fg="#94a3b8", font=("Inter", 10), wraplength=820, justify="left", anchor="w")
+        self.review_muscles.pack(fill="x", padx=10)
+
+        ttk.Label(self.review_inner, text="Equipment:", style="Title.TLabel").pack(anchor="w", padx=10, pady=(10, 2))
+        self.review_equipment = tk.Label(self.review_inner, text="", bg="#0f172a", fg="#94a3b8", font=("Inter", 10), wraplength=820, justify="left", anchor="w")
+        self.review_equipment.pack(fill="x", padx=10, pady=(0, 20))
+
+    def _load_review_tab(self, ex):
+        """Populate the review tab with current exercise data."""
+        # Review status
+        status = ex.get("reviewStatus", "")
+        if status == "approved":
+            self.lbl_review_status.config(text="Approved", foreground="#22c55e")
+        elif status == "needs-edit":
+            self.lbl_review_status.config(text="Needs Edit", foreground="#f59e0b")
+        else:
+            self.lbl_review_status.config(text="Not reviewed", foreground="#64748b")
+
+        # Demos with preview buttons
+        for w in self.review_demos_frame.winfo_children():
+            w.destroy()
+
+        demos = ex.get("demos", [])
+        if not demos:
+            ttk.Label(self.review_demos_frame, text="No demos", foreground="#ef4444").pack(anchor="w")
+        else:
+            for i, demo in enumerate(demos):
+                row = ttk.Frame(self.review_demos_frame)
+                row.pack(fill="x", pady=2)
+                dtype = demo.get("type", "?")
+                url = demo.get("url", "")
+                notes = demo.get("notes", "")
+                primary = " [PRIMARY]" if demo.get("isPrimary") else ""
+                label_text = f"{i+1}. [{dtype}]{primary} {notes[:40] if notes else url[:50]}"
+                ttk.Label(row, text=label_text, foreground="#e2e8f0", font=("Inter", 9)).pack(side="left")
+                ttk.Button(row, text="Open", width=5, command=lambda u=url: webbrowser.open(u)).pack(side="right", padx=2)
+
+        # Text fields
+        self.review_description.config(text=ex.get("description", "(empty)"))
+        self.review_purpose.config(text=ex.get("purpose", "(empty)"))
+        self.review_benefits.config(text=ex.get("benefits", "(empty)"))
+
+        howto = ex.get("howTo", [])
+        howto_text = "\n".join(f"{i+1}. {step}" for i, step in enumerate(howto)) if howto else "(empty)"
+        self.review_howto.config(text=howto_text)
+
+        mistakes = ex.get("commonMistakes", [])
+        mistakes_text = "\n".join(f"- {m}" for m in mistakes) if mistakes else "(empty)"
+        self.review_mistakes.config(text=mistakes_text)
+
+        self.review_muscles.config(text=", ".join(ex.get("muscleGroups", [])) or "(none)")
+        self.review_equipment.config(text=", ".join(ex.get("equipment", [])) or "(bodyweight)")
+
+    def _set_review_status(self, status):
+        ex = self.exercises[self.current_idx]
+        ex["reviewStatus"] = status
+        self.unsaved_changes = True
+        self._load_review_tab(ex)
+
+    def skip_to_unreviewed(self):
+        """Jump to next exercise without reviewStatus."""
+        start = self.current_idx + 1
+        for i in range(start, len(self.exercises)):
+            if not self.exercises[i].get("reviewStatus"):
+                self.load_exercise(i)
+                return
+        for i in range(0, start):
+            if not self.exercises[i].get("reviewStatus"):
+                self.load_exercise(i)
+                return
+        messagebox.showinfo("All Reviewed", "Every exercise has been reviewed.")
+
     def setup_programs_tab(self):
         f = self.tab_programs
         ttk.Label(f, text="Program Requirements (edit to standardize):", style="Title.TLabel").pack(anchor="w", padx=10, pady=10)
@@ -320,6 +454,9 @@ class DataEditorApp:
         current_eq = set(ex.get("equipment", []))
         for eq_id, var in self.eq_vars.items():
             var.set(eq_id in current_eq)
+
+        # Review tab
+        self._load_review_tab(ex)
 
         # Demos
         for w in self.demos_frame.winfo_children():
