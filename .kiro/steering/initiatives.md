@@ -19,6 +19,7 @@ How to add a new initiative: copy the template at the bottom, give it the next l
 | C | Description standardization (one trainer voice) | Not started | Medium |
 | D | Housekeeping | Not started | Low |
 | E | AI demo finder accuracy + audit | Not started | Medium |
+| F | V3: AI-native Sessions (trainer-led) | Not started | High |
 
 ---
 
@@ -84,6 +85,19 @@ How to add a new initiative: copy the template at the bottom, give it the next l
 **Key files:** `scripts/find-exercise-videos.py`, `scripts/data-editor.py`, `exercises.json`.
 
 **Acceptance:** No AI-discovered demo is marked reviewed/primary without human approval; existing suspect clips are flagged; smoke test passes.
+
+## Initiative F: V3 -- AI-native Sessions (trainer-led)
+
+**Goal:** Rebuild the app around an AI coach ("trainer") that manages workout plans, user preferences, and workout execution through conversation. Exercises stay discrete, curated building blocks (unchanged ingestion); the trainer composes them at runtime. Typing is the last-resort input mode: tap first, voice second, keyboard only on request. This is a parallel V3 track that leaves the v2 app shippable. Full detail lives in `.kiro/steering/v3-vision.md`.
+
+**Scope (deliverables):**
+- F1 (Phase 0): Mocked click-phrase prototype -- one screen, scripted trainer, tappable phrases + voice-to-text, no real LLM. Throwaway; proves the interaction feels good before committing.
+- F2 (Phase 1): Real trainer agent (Anthropic Claude) that manages a Session by calling structured tools over the existing JSON blocks (start plan from template, add/swap block, mark done). Still local storage.
+- F3 (Phase 2): Backend + accounts (Supabase) for Session persistence, multi-device, and the read-only calendar.
+
+**Key files (new track):** `v3/` (new app alongside `v2/`), `exercises.json` (reused as-is), `workouts.json` / `plans.json` (demoted to seed templates), `.kiro/steering/v3-vision.md`.
+
+**Acceptance:** Phase 0 prototype demonstrates a full workout start-to-finish using only taps and voice (no keyboard); the vision doc's decisions are honored; v2 continues to build and deploy unaffected.
 
 ---
 
