@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-06-14T00:00:00.000Z",
+  "lastUpdated": "2026-08-28T04:03:37.055Z",
   "exercises": [
     {
       "id": "1a-db-row",
@@ -9641,6 +9641,192 @@
         "core"
       ],
       "equipment": [],
+      "alternatives": []
+    },
+    {
+      "id": "single-leg-rdl-foam-roll-adduction",
+      "name": "Single-Leg RDL with Foam Roll Adduction",
+      "demos": [
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=oEPSN9sMytc",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true,
+          "notes": "Single Leg RDL with Foam Roll Adduction",
+          "metadata": {
+            "title": "Single Leg RDL with Foam Roll Adduction",
+            "channel": "Physio Room Co",
+            "thumbnail": "https://i.ytimg.com/vi/oEPSN9sMytc/hqdefault.jpg",
+            "creatorUrl": "https://www.youtube.com/@PhysioRoomCo"
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "8",
+        "sets": "3",
+        "repUnits": "reps",
+        "note": "Squeeze a foam roller between the thighs to cue adduction and balance. Move slowly and keep the standing knee soft."
+      },
+      "description": "The single-leg RDL with foam roll adduction is a single-leg hip hinge performed while lightly squeezing a foam roller between the thighs. You hinge at the hip on one leg while the other leg extends behind you.",
+      "purpose": "This exercise is included in a program to train the posterior chain and single-leg balance while the foam roller cue engages the inner thigh. It builds control through the hip and knee, which supports rehab of the lower body.",
+      "benefits": "Performing this exercise may strengthen the hamstrings, glutes, and adductors while improving balance and hip stability. The added adduction cue can support better alignment of the knee over the foot.",
+      "howTo": [
+        "Stand on one leg and place a foam roller between your thighs.",
+        "Hinge at the hip and lower your torso as the free leg extends behind you.",
+        "Keep your back flat and gently squeeze the roller throughout.",
+        "Drive through the standing heel to return to standing."
+      ],
+      "commonMistakes": [
+        "Rounding the back as you hinge. Keep your chest open and hinge from the hips.",
+        "Locking the standing knee. Keep a slight bend to protect the joint and hold balance.",
+        "Rushing the movement. Move slowly to keep control and feel the working muscles."
+      ],
+      "muscleGroups": [
+        "hamstrings",
+        "glutes",
+        "adductors"
+      ],
+      "equipment": [
+        "foam-roller"
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "goblet-cossack-squat",
+      "name": "Goblet Cossack Squat",
+      "demos": [
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=XvJ8gtW30ZA",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true,
+          "notes": "Goblet Cossack squat",
+          "metadata": {
+            "title": "Goblet Cossack squat",
+            "channel": "CrossFit Monarch X Functional strength training",
+            "thumbnail": "https://i.ytimg.com/vi/XvJ8gtW30ZA/hqdefault.jpg",
+            "creatorUrl": "https://www.youtube.com/@CrossFitMonarchBP"
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "8",
+        "sets": "3",
+        "repUnits": "reps",
+        "note": "Hold a dumbbell or kettlebell at the chest. Shift side to side and keep the trailing leg straight with the foot flat."
+      },
+      "description": "The goblet Cossack squat is a lateral squat where you hold a weight at your chest and shift your weight onto one bent leg while the other stays straight. It moves the body side to side rather than straight down.",
+      "purpose": "This exercise is included in a program to build lateral strength, hip and ankle mobility, and single-leg control. It trains the adductors and glutes through a wide range of motion.",
+      "benefits": "Performing this exercise may improve hip and ankle mobility, strengthen the quads, glutes, and inner thighs, and support better side-to-side stability. The goblet load helps you stay upright and balanced.",
+      "howTo": [
+        "Hold a dumbbell or kettlebell at your chest and stand with a wide stance.",
+        "Shift your weight onto one leg and bend that knee while keeping the other leg straight.",
+        "Keep both feet flat and your chest tall at the bottom.",
+        "Press through the bent leg to return to center, then repeat on the other side."
+      ],
+      "commonMistakes": [
+        "Letting the heel of the bent leg lift. Sit back and keep the foot flat for a stable base.",
+        "Rounding forward. Hold the weight close and keep your chest up to stay upright.",
+        "Collapsing the knee inward. Track the knee over the toes as you lower."
+      ],
+      "muscleGroups": [
+        "adductors",
+        "glutes",
+        "quads"
+      ],
+      "equipment": [
+        "dumbbells",
+        "kettlebell"
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "ghd-hip-extension",
+      "name": "GHD Hip Extension",
+      "demos": [
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=I9uy0iUMzQA",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true,
+          "notes": "GHD HIP EXTENSION",
+          "metadata": {
+            "title": "GHD HIP EXTENSION",
+            "channel": "AR HYBRID TRAINING",
+            "thumbnail": "https://i.ytimg.com/vi/I9uy0iUMzQA/hqdefault.jpg",
+            "creatorUrl": "https://www.youtube.com/@AR_HYBRID_TRAINING"
+          }
+        }
+      ],
+      "recommendations": {
+        "reps": "10",
+        "sets": "3",
+        "repUnits": "reps",
+        "note": "Hinge only at the hips, not the lower back. Rise until your body forms a straight line and pause briefly at the top."
+      },
+      "description": "The GHD hip extension is performed on a glute-ham developer, where you hinge at the hips and raise your torso from a bent position to a straight line. The knees stay mostly extended so the movement comes from the hips.",
+      "purpose": "This exercise is included in a program to strengthen the glutes, hamstrings, and lower back through a controlled hip hinge. It reinforces the posterior chain pattern used in many lower-body movements.",
+      "benefits": "Performing this exercise may strengthen the glutes, hamstrings, and spinal erectors and improve control of the hip hinge. Stronger posterior-chain muscles can support the lower back during daily movement.",
+      "howTo": [
+        "Set up on the glute-ham developer with your hips at the pad edge.",
+        "Lower your torso by hinging at the hips with a flat back.",
+        "Squeeze your glutes to raise your body into a straight line.",
+        "Pause briefly at the top, then lower under control."
+      ],
+      "commonMistakes": [
+        "Arching or rounding the lower back. Keep a neutral spine and move from the hips.",
+        "Swinging up with momentum. Rise slowly and squeeze the glutes to lift.",
+        "Overextending at the top. Stop at a straight line rather than arching past it."
+      ],
+      "muscleGroups": [
+        "glutes",
+        "hamstrings",
+        "lower-back"
+      ],
+      "equipment": [],
+      "alternatives": []
+    },
+    {
+      "id": "banded-knee-drive",
+      "name": "Banded Knee Drive",
+      "demos": [],
+      "recommendations": {
+        "reps": "12",
+        "sets": "3",
+        "repUnits": "reps",
+        "note": "Loop a band around both feet and lie on your back. Drive both knees toward your chest together, then lower with control."
+      },
+      "description": "The banded knee drive is a floor exercise where you lie on your back with a resistance band looped around both feet and pull both knees toward your chest at the same time. The band adds resistance as your hips and core work to draw the knees in.",
+      "purpose": "This exercise is included in a program to train the hip flexors and deep core through a controlled knee-to-chest motion. It supports the hip drive used in running and other lower-body movement.",
+      "benefits": "Performing this exercise may strengthen the hip flexors and core and improve control of the hips against resistance. Stronger hip flexors can support knee drive and stride mechanics.",
+      "howTo": [
+        "Lie on your back and loop a resistance band around both feet.",
+        "Start with your legs extended and the band under light tension.",
+        "Draw both knees toward your chest together against the band.",
+        "Lower your legs back to the start under control."
+      ],
+      "commonMistakes": [
+        "Arching the lower back off the floor. Press your lower back down and brace your core.",
+        "Yanking the knees in with momentum. Move slowly so the hips and core do the work.",
+        "Holding your breath. Exhale as you draw the knees in and breathe steadily."
+      ],
+      "muscleGroups": [
+        "hip-flexors",
+        "core",
+        "quads"
+      ],
+      "equipment": [
+        "resistance-band"
+      ],
       "alternatives": []
     }
   ]
