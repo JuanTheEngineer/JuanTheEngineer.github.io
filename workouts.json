@@ -745,6 +745,13 @@
           "note": "Details: From a tabletop position, lift one leg away from the body, keeping the knee bent. This exercise targets the gluteus medius and minimus for improved lateral stability."
         },
         {
+          "exerciseId": "banded-knee-drive",
+          "reps": "12",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Both knees together, band around the feet. Keep your lower back on the floor."
+        },
+        {
           "exerciseId": "kneelinghipflexorstretch",
           "reps": "30",
           "sets": "3",
@@ -1315,7 +1322,7 @@
     },
     {
       "id": "lower_rebuild_a",
-      "title": "Lower Body Rebuild A",
+      "title": "Ultimate Knee Health",
       "requirements": "Dumbbells, Treadmill, Bench",
       "items": [
         {
@@ -1369,6 +1376,34 @@
           "sets": "4",
           "repUnits": "reps",
           "note": "Keep your back straight and hinge at the hips as you lower the dumbbell, ensuring your standing leg stays slightly bent. Feel the tension in your hamstring and glutes of the standing leg as you lower and lift. A common mistake is rounding your back or letting your hips rotate; keep your hips square to the ground. Focus on maintaining balance and control throughout the movement for maximum effectiveness."
+        },
+        {
+          "exerciseId": "goblet-cossack-squat",
+          "reps": "8",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Per side. Shift slowly, keep the trailing foot flat."
+        },
+        {
+          "exerciseId": "single-leg-rdl-foam-roll-adduction",
+          "reps": "8",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Per leg. Squeeze the roller and keep the standing knee soft."
+        },
+        {
+          "exerciseId": "ghd-hip-extension",
+          "reps": "10",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Hinge from the hips, pause at the top."
+        },
+        {
+          "exerciseId": "banded-knee-drive",
+          "reps": "12",
+          "sets": "3",
+          "repUnits": "reps",
+          "note": "Both knees together, band around the feet. Keep your lower back on the floor."
         },
         {
           "exerciseId": "posture-ex1",
