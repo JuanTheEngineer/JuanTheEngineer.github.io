@@ -11,6 +11,7 @@ import { renderAIChatPage } from './pages/AIChatPage.js';
 import { renderExerciseLibraryPage } from './pages/ExerciseLibraryPage.js';
 import { renderExerciseDetailPage } from './pages/ExerciseDetailPage.js';
 import { renderSearchPage } from './pages/SearchPage.js';
+import { renderSubmitPage } from './pages/SubmitPage.js';
 
 const app = document.getElementById('app');
 
@@ -21,6 +22,7 @@ route('/program/:id', ({ id }) => renderProgramDetailPage(app, id));
 route('/exercises', () => renderExerciseLibraryPage(app));
 route('/exercise/:id', ({ id }) => renderExerciseDetailPage(app, id));
 route('/search', () => renderSearchPage(app));
+route('/submit', () => renderSubmitPage(app));
 
 // Studio routes — only available in local dev
 const isLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname);
@@ -41,6 +43,16 @@ setNotFound((path) => {
     </div>
   `;
 });
+
+// Hide the global Submit pill when the user is already on /submit.
+function syncSubmitPill() {
+  const pill = document.getElementById('submit-pill');
+  if (pill) pill.hidden = window.location.pathname === '/submit';
+}
+window.addEventListener('popstate', syncSubmitPill);
+// Runs after the router's own click handler (both bubble on document).
+document.addEventListener('click', () => requestAnimationFrame(syncSubmitPill));
+syncSubmitPill();
 
 // Boot
 startRouter();

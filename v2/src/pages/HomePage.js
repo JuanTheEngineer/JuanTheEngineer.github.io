@@ -108,10 +108,15 @@ export function renderHomePage(container) {
         </section>
       </main>
 
-      <footer class="px-6 pb-8 text-center">
+      <footer class="px-6 pb-8 text-center flex items-center justify-center gap-4">
         <a href="https://forms.gle/QWEpe3gCLZWDiJjR8" target="_blank" rel="noopener"
           class="text-xs text-slate-500 hover:text-brand-400 transition-colors">
           Send feedback →
+        </a>
+        <span class="text-xs text-slate-700" aria-hidden="true">·</span>
+        <a href="/submit"
+          class="text-xs text-slate-500 hover:text-brand-400 transition-colors">
+          Submit an exercise →
         </a>
       </footer>
     </div>
