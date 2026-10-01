@@ -2,6 +2,7 @@
 // Each member looks identical to a normal ExerciseCard, just pressed together
 // with a small label connecting them
 import { renderDemoCarousel } from './DemoCarousel.js';
+import { parseSets, renderSetTilesHtml, wireSetTracker } from './setTracker.js';
 
 const KIND_LABELS = {
   superset: 'Super Set',
@@ -25,18 +26,26 @@ export function createGroupCard(item, state) {
   const kindLabel = KIND_LABELS[item.kind] || item.kind;
   const num = state.index + 1;
 
+  // Per-member set state: each member tracks its own sets independently.
+  const memberSpecs = item.exercises.map((m) => parseSets(m));
+  const memberCounts = item.exercises.map((_, i) => state.getMemberSetCount?.(i) || 0);
+  const memberDone = item.exercises.map((m, i) => isMemberDone(memberSpecs[i], memberCounts[i]));
+
   // Build member cards that look like normal ExerciseCards
-  const membersHtml = item.exercises.map((member, i) => {
-    const subLetter = String.fromCharCode(97 + i);
-    const title = `${num}${subLetter}. ${escapeHtml(member.name)}`;
-    const isFirst = i === 0;
-    const isLast = i === item.exercises.length - 1;
+  const membersHtml = item.exercises
+    .map((member, i) => {
+      const subLetter = String.fromCharCode(97 + i);
+      const title = `${num}${subLetter}. ${escapeHtml(member.name)}`;
+      const isFirst = i === 0;
+      const isLast = i === item.exercises.length - 1;
+      // A member crosses out when ITS OWN sets are done, or the whole group is checked.
+      const memberStruck = state.isCompleted || memberDone[i];
 
-    // Connected card: shared border, no gap, just a thin divider between
-    const roundTop = isFirst ? 'rounded-t-2xl' : 'rounded-t-none';
-    const roundBottom = isLast ? 'rounded-b-2xl' : 'rounded-b-none';
+      // Connected card: shared border, no gap, just a thin divider between
+      const roundTop = isFirst ? 'rounded-t-2xl' : 'rounded-t-none';
+      const roundBottom = isLast ? 'rounded-b-2xl' : 'rounded-b-none';
 
-    return `
+      return `
       <div class="card ${roundTop} ${roundBottom} overflow-hidden ${!isFirst ? 'border-t-0' : ''}">
         ${!isFirst ? `<div class="h-px bg-slate-700/50"></div>` : ''}
         <div class="flex items-stretch">
@@ -47,7 +56,7 @@ export function createGroupCard(item, state) {
           >
             <div class="flex-1 min-w-0">
               ${isFirst ? `<div class="flex gap-1.5 mb-1.5"><span class="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-md bg-brand-500/20 text-brand-300">${kindLabel}</span></div>` : ''}
-              <h3 class="font-semibold tracking-tight leading-tight ${state.isCompleted ? 'line-through text-slate-500' : 'text-slate-100'}">
+              <h3 class="font-semibold tracking-tight leading-tight ${memberStruck ? 'line-through text-slate-500' : 'text-slate-100'}">
                 ${title}
               </h3>
               <p class="text-sm text-slate-400 mt-1 num truncate">
@@ -71,25 +80,23 @@ export function createGroupCard(item, state) {
         <div data-region="member-content-${i}" class="${state.isExpanded ? '' : 'hidden'}">
           <div class="px-4 pb-4 space-y-4">
             <div data-member-media="${i}"></div>
-            <div class="grid grid-cols-2 gap-3">
-              <div class="bg-slate-800/50 rounded-xl p-3 text-center overflow-hidden">
-                <p class="${(member.reps || '').length > 5 ? 'text-lg' : 'text-3xl'} font-extrabold text-brand-400 leading-none num tracking-tight">${escapeHtml(member.reps || '—')}</p>
-                <p class="label-meta mt-1.5">${escapeHtml(member.repUnits || 'reps')}</p>
-              </div>
-              <div class="bg-slate-800/50 rounded-xl p-3 text-center overflow-hidden">
-                <p class="${(member.sets || '').length > 5 ? 'text-lg' : 'text-3xl'} font-extrabold text-brand-400 leading-none num tracking-tight">${escapeHtml(member.sets || '—')}</p>
-                <p class="label-meta mt-1.5">sets</p>
-              </div>
+            <div class="grid grid-cols-2 gap-3" data-member-tracker="${i}">
+              ${renderSetTilesHtml(member, memberSpecs[i], memberCounts[i])}
             </div>
-            ${member.note ? `
+            ${
+              member.note
+                ? `
             <div class="bg-brand-500/10 border-l-2 border-brand-500 px-3 py-2.5 rounded-r-lg">
               <p class="text-sm text-slate-300 leading-relaxed">${escapeHtml(member.note)}</p>
-            </div>` : ''}
+            </div>`
+                : ''
+            }
           </div>
         </div>
       </div>
     `;
-  }).join('');
+    })
+    .join('');
 
   wrapper.innerHTML = membersHtml;
 
@@ -108,16 +115,45 @@ export function createGroupCard(item, state) {
     });
   });
 
-  // Render demo carousels for expanded state
+  // Render demo carousels + per-member set trackers for expanded state
   if (state.isExpanded) {
     item.exercises.forEach((member, i) => {
       const slot = wrapper.querySelector(`[data-member-media="${i}"]`);
       const demos = member.exercise?.demos || [];
       if (slot && demos.length > 0) renderDemoCarousel(slot, demos);
+
+      const spec = memberSpecs[i];
+      if (spec.kind === 'plain') return;
+      const scope = wrapper.querySelector(`[data-member-tracker="${i}"]`);
+      if (!scope) return;
+      wireSetTracker(scope, spec, {
+        count: memberCounts[i],
+        onCount: (next) => state.onMemberSetCount?.(state.index, i, next, allMembersAfter(i, next)),
+        isCompleted: state.isCompleted,
+        // A member finishing its sets does not itself toggle the group; the
+        // page recomputes group completion from allMembersDone passed above.
+        onSetsDone: () => {}
+      });
+    });
+  }
+
+  // Given one member's prospective new count, would EVERY member then be done?
+  function allMembersAfter(changedIdx, nextCount) {
+    return item.exercises.every((m, j) => {
+      const spec = memberSpecs[j];
+      const count = j === changedIdx ? nextCount : memberCounts[j];
+      return isMemberDone(spec, count);
     });
   }
 
   return wrapper;
+}
+
+/** True when a member's logged sets meet its completion threshold. */
+function isMemberDone(spec, count) {
+  if (!spec || spec.kind === 'plain') return false;
+  const doneAt = spec.kind === 'range' ? spec.min : spec.total;
+  return count >= doneAt;
 }
 
 function escapeHtml(s) {

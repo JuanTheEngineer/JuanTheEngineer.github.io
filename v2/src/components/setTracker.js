@@ -172,7 +172,7 @@ function rangeControl(spec, count, bonus, metFloor) {
  * @param {number} opts.count - current logged count
  * @param {(next:number)=>void} opts.onCount - persist a new count
  * @param {boolean} opts.isCompleted - exercise's current completion flag
- * @param {()=>void} opts.onComplete - toggle the exercise's completion (the card's own)
+ * @param {(isDone:boolean)=>void} opts.onSetsDone - set/clear completion from sets (keeps card open)
  */
 export function wireSetTracker(card, spec, opts) {
   if (spec.kind === 'plain') return;
@@ -192,10 +192,9 @@ export function wireSetTracker(card, spec, opts) {
     const wasDone = opts.count >= doneAt;
     const nowDone = clamped >= doneAt;
     opts.onCount(clamped);
-    // Mirror onto the exercise's own completion only on a true transition,
-    // and only when that disagrees with the current flag, so we never double-toggle.
-    if (nowDone && !wasDone && !opts.isCompleted) opts.onComplete();
-    else if (!nowDone && wasDone && opts.isCompleted) opts.onComplete();
+    // Reflect the sets-complete transition onto the exercise's completion flag
+    // WITHOUT closing the card (that only happens via the check-mark).
+    if (nowDone !== wasDone) opts.onSetsDone?.(nowDone);
   };
 
   tile.addEventListener('click', () => {

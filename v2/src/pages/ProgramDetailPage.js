@@ -2,7 +2,6 @@
 import { getResolvedProgram } from '../utils/data.js';
 import { navigate } from '../utils/router.js';
 import { createExerciseCard } from '../components/ExerciseCard.js';
-import { parseSets } from '../components/setTracker.js';
 import { createGroupCard } from '../components/GroupCard.js';
 import { celebrate } from '../components/Celebration.js';
 import {
@@ -110,6 +109,8 @@ function renderContent(container, program) {
         isExpanded: i === expandedIndex,
         isCompleted: completed.has(i),
         setCount: getSetCount(program.id, i),
+        // For group cards: per-member set counts, keyed `${i}:${memberIdx}`.
+        getMemberSetCount: (memberIdx) => getSetCount(program.id, `${i}:${memberIdx}`),
         onToggle: (idx) => {
           expandedIndex = expandedIndex === idx ? -1 : idx;
           renderAll();
@@ -127,21 +128,51 @@ function renderContent(container, program) {
           setSetCount(program.id, idx, next);
           renderAll();
         },
+        // Group member set count: persist, then flip the GROUP's completion to
+        // match whether every member's sets are now done (card stays open).
+        onMemberSetCount: (idx, memberIdx, next, allMembersDone) => {
+          setSetCount(program.id, `${idx}:${memberIdx}`, next);
+          const alreadyComplete = completed.has(idx);
+          if (allMembersDone !== alreadyComplete) {
+            const wasAllComplete = completed.size === total;
+            const n = toggleProgress(program.id, idx);
+            completed.clear();
+            n.forEach((v) => completed.add(v));
+            if (!wasAllComplete && completed.size === total) setTimeout(celebrate, 250);
+          }
+          renderAll();
+        },
+        // Set-tracker path: finishing all sets marks the exercise complete
+        // (cross out + check) but LEAVES THE CARD OPEN and keeps the set count.
+        // Un-finishing a set clears the completion again.
+        onSetsDone: (idx, isDone) => {
+          const alreadyComplete = completed.has(idx);
+          if (isDone === alreadyComplete) return; // no change
+          const wasAllComplete = completed.size === total;
+          const next = toggleProgress(program.id, idx);
+          completed.clear();
+          next.forEach((v) => completed.add(v));
+          renderAll(); // re-render in place; expandedIndex is untouched, card stays open
+          if (!wasAllComplete && completed.size === total) {
+            setTimeout(celebrate, 250);
+          }
+        },
+        // Check-mark path: toggling the round check completes AND closes the
+        // card, and does NOT preserve the set count (clears it on complete).
         onComplete: (idx) => {
           const wasComplete = completed.size === total;
           const next = toggleProgress(program.id, idx);
           completed.clear();
           next.forEach((v) => completed.add(v));
-          // Keep the per-set tracker in sync with the exercise's own check:
-          // completing snaps sets to full, un-completing clears them. Only for
-          // trackable shapes (range syncs to its floor; others to total).
-          const spec = parseSets(program.resolvedItems[idx]);
-          if (spec.kind !== 'plain') {
-            const fill = spec.kind === 'range' ? spec.min : spec.total;
-            setSetCount(program.id, idx, next.has(idx) ? fill : 0);
+          // Check-mark completion starts the exercise fresh next time: clear sets.
+          setSetCount(program.id, idx, 0);
+          // For groups, also clear each member's per-set count.
+          const grp = program.resolvedItems[idx];
+          if (grp && Array.isArray(grp.exercises)) {
+            grp.exercises.forEach((_, m) => setSetCount(program.id, `${idx}:${m}`, 0));
           }
           if (next.has(idx) && expandedIndex === idx) {
-            expandedIndex = -1;
+            expandedIndex = -1; // close only on the explicit check-mark tap
           }
           renderAll();
           if (!wasComplete && completed.size === total) {
