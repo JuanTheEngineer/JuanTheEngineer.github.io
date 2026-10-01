@@ -9798,12 +9798,47 @@
     {
       "id": "banded-knee-drive",
       "name": "Banded Knee Drive",
-      "demos": [],
+      "demos": [
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/shorts/N-g_JkAFnXA",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": true,
+          "notes": "Laying banded single leg knee drive",
+          "metadata": {
+            "title": "Laying banded single leg knee drive",
+            "channel": "Elastaboy",
+            "publishedAt": "2025-10-24T01:09:25Z",
+            "thumbnail": "https://i.ytimg.com/vi/N-g_JkAFnXA/hqdefault.jpg",
+            "creatorUrl": "https://www.youtube.com/channel/UCUm4BaBbW9TdBvWRq8-aZSA"
+          }
+        },
+        {
+          "type": "youtube",
+          "mediaType": "video",
+          "format": "youtube",
+          "url": "https://www.youtube.com/watch?v=TZ0oiK3_BHs",
+          "startTime": 0,
+          "endTime": 0,
+          "isPrimary": false,
+          "notes": "Lying Banded Knee Drive",
+          "metadata": {
+            "title": "Lying Banded Knee Drive",
+            "channel": "Kinetic Impact",
+            "publishedAt": "2021-03-19T17:23:29Z",
+            "thumbnail": "https://i.ytimg.com/vi/TZ0oiK3_BHs/hqdefault.jpg",
+            "creatorUrl": "https://www.youtube.com/channel/UCL6l4P7Pi2HIaVGb2xPi8oA"
+          }
+        }
+      ],
       "recommendations": {
         "reps": "12",
         "sets": "3",
         "repUnits": "reps",
-        "note": "Loop a band around both feet and lie on your back. Drive both knees toward your chest together, then lower with control."
+        "note": "Loop the band around the opposite foot and lie on your back. Work one side at a time: complete all reps on that leg, then switch. Keep both legs pressing outward against the band to hold tension throughout."
       },
       "description": "The banded knee drive is a floor exercise where you lie on your back with a resistance band looped around both feet and pull both knees toward your chest at the same time. The band adds resistance as your hips and core work to draw the knees in.",
       "purpose": "This exercise is included in a program to train the hip flexors and deep core through a controlled knee-to-chest motion. It supports the hip drive used in running and other lower-body movement.",
