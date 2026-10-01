@@ -2,9 +2,17 @@
 import { getResolvedProgram } from '../utils/data.js';
 import { navigate } from '../utils/router.js';
 import { createExerciseCard } from '../components/ExerciseCard.js';
+import { parseSets } from '../components/setTracker.js';
 import { createGroupCard } from '../components/GroupCard.js';
 import { celebrate } from '../components/Celebration.js';
-import { getProgress, toggleProgress, resetProgress, recordProgramVisit } from '../utils/storage.js';
+import {
+  getProgress,
+  toggleProgress,
+  resetProgress,
+  recordProgramVisit,
+  getSetCount,
+  setSetCount
+} from '../utils/storage.js';
 
 export async function renderProgramDetailPage(container, programId) {
   container.innerHTML = renderShell(`
@@ -56,9 +64,10 @@ function renderContent(container, program) {
         program.source
           ? `
         <p class="text-xs text-slate-500 mt-2">
-          Program by ${program.source.url
-            ? `<a href="${escapeHtml(program.source.url)}" target="_blank" rel="noopener" class="text-slate-400 hover:text-brand-400 transition-colors">${escapeHtml(program.source.name)} ↗</a>`
-            : `<span class="text-slate-400">${escapeHtml(program.source.name)}</span>`
+          Program by ${
+            program.source.url
+              ? `<a href="${escapeHtml(program.source.url)}" target="_blank" rel="noopener" class="text-slate-400 hover:text-brand-400 transition-colors">${escapeHtml(program.source.name)} ↗</a>`
+              : `<span class="text-slate-400">${escapeHtml(program.source.name)}</span>`
           }${program.source.organization ? ` · ${escapeHtml(program.source.organization)}` : ''}
         </p>
       `
@@ -100,6 +109,7 @@ function renderContent(container, program) {
         index: i,
         isExpanded: i === expandedIndex,
         isCompleted: completed.has(i),
+        setCount: getSetCount(program.id, i),
         onToggle: (idx) => {
           expandedIndex = expandedIndex === idx ? -1 : idx;
           renderAll();
@@ -113,11 +123,23 @@ function renderContent(container, program) {
             });
           }
         },
+        onSetCount: (idx, next) => {
+          setSetCount(program.id, idx, next);
+          renderAll();
+        },
         onComplete: (idx) => {
           const wasComplete = completed.size === total;
           const next = toggleProgress(program.id, idx);
           completed.clear();
           next.forEach((v) => completed.add(v));
+          // Keep the per-set tracker in sync with the exercise's own check:
+          // completing snaps sets to full, un-completing clears them. Only for
+          // trackable shapes (range syncs to its floor; others to total).
+          const spec = parseSets(program.resolvedItems[idx]);
+          if (spec.kind !== 'plain') {
+            const fill = spec.kind === 'range' ? spec.min : spec.total;
+            setSetCount(program.id, idx, next.has(idx) ? fill : 0);
+          }
           if (next.has(idx) && expandedIndex === idx) {
             expandedIndex = -1;
           }

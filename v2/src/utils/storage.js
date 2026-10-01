@@ -2,6 +2,7 @@
 // Keyed by program id so progress survives page reloads
 
 const PROGRESS_KEY = 'action-app:progress';
+const SETS_KEY = 'action-app:sets';
 const RECENT_KEY = 'action-app:recent-programs';
 const RECENT_LIMIT = 5;
 
@@ -52,6 +53,60 @@ export function resetProgress(programId) {
   const all = readAll();
   delete all[programId];
   writeAll(all);
+  // also clear any per-set counts for this program
+  const sets = readSets();
+  let changed = false;
+  for (const key of Object.keys(sets)) {
+    if (key.startsWith(`${programId}:`)) {
+      delete sets[key];
+      changed = true;
+    }
+  }
+  if (changed) writeSets(sets);
+}
+
+// --- Per-set tracking: how many sets of an exercise are logged ---
+// Keyed by `${programId}:${exerciseIndex}` so it survives reloads and is
+// independent of the exercise's overall complete/incomplete flag.
+
+function readSets() {
+  try {
+    return JSON.parse(localStorage.getItem(SETS_KEY) || '{}');
+  } catch {
+    return {};
+  }
+}
+
+function writeSets(data) {
+  try {
+    localStorage.setItem(SETS_KEY, JSON.stringify(data));
+  } catch {
+    // localStorage may be disabled — fail silently
+  }
+}
+
+/**
+ * Get the number of sets logged for one exercise (0 if none).
+ */
+export function getSetCount(programId, exerciseIndex) {
+  const sets = readSets();
+  const n = sets[`${programId}:${exerciseIndex}`];
+  return Number.isInteger(n) && n >= 0 ? n : 0;
+}
+
+/**
+ * Set the number of sets logged for one exercise. A count of 0 removes the key.
+ */
+export function setSetCount(programId, exerciseIndex, count) {
+  const sets = readSets();
+  const key = `${programId}:${exerciseIndex}`;
+  if (count > 0) {
+    sets[key] = count;
+  } else {
+    delete sets[key];
+  }
+  writeSets(sets);
+  return count > 0 ? count : 0;
 }
 
 /**

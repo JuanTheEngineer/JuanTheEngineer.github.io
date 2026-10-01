@@ -1,6 +1,7 @@
 // ExerciseCard: expandable row for a single resolved item
 // Now reads from a resolved item shape (with merged overrides + canonical exercise)
 import { renderDemoCarousel } from './DemoCarousel.js';
+import { parseSets, renderSetTilesHtml, wireSetTracker } from './setTracker.js';
 
 /**
  * Build an exercise card element for a single resolved item.
@@ -16,6 +17,8 @@ export function createExerciseCard(item, state) {
   const demos = item.exercise?.demos || [];
   const num = state.index + 1;
   const title = `${num}. ${item.name}`;
+  const setSpec = parseSets(item);
+  const setCount = state.setCount || 0;
 
   card.innerHTML = `
     <div class="flex items-stretch">
@@ -58,14 +61,7 @@ export function createExerciseCard(item, state) {
       <div class="px-4 pb-4 space-y-4">
         <div data-media-slot></div>
         <div class="grid grid-cols-2 gap-3">
-          <div class="bg-slate-800/50 rounded-xl p-3 text-center overflow-hidden">
-            <p class="${(item.reps || '').length > 5 ? 'text-lg' : 'text-3xl'} font-extrabold text-brand-400 leading-none num tracking-tight">${escapeHtml(item.reps || '—')}</p>
-            <p class="label-meta mt-1.5">${escapeHtml(item.repUnits || 'reps')}</p>
-          </div>
-          <div class="bg-slate-800/50 rounded-xl p-3 text-center overflow-hidden">
-            <p class="${(item.sets || '').length > 5 ? 'text-lg' : 'text-3xl'} font-extrabold text-brand-400 leading-none num tracking-tight">${escapeHtml(item.sets || '—')}</p>
-            <p class="label-meta mt-1.5">sets</p>
-          </div>
+          ${renderSetTilesHtml(item, setSpec, setCount)}
         </div>
         ${
           item.note
@@ -103,6 +99,15 @@ export function createExerciseCard(item, state) {
   if (state.isExpanded && demos.length > 0) {
     const slot = card.querySelector('[data-media-slot]');
     if (slot) renderDemoCarousel(slot, demos);
+  }
+
+  if (state.isExpanded && setSpec.kind !== 'plain') {
+    wireSetTracker(card, setSpec, {
+      count: setCount,
+      onCount: (next) => state.onSetCount?.(state.index, next),
+      isCompleted: state.isCompleted,
+      onComplete: () => state.onComplete?.(state.index)
+    });
   }
 
   card.querySelector('[data-action="toggle"]')?.addEventListener('click', () => {
