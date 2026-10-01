@@ -106,7 +106,7 @@ export function createExerciseCard(item, state) {
       count: setCount,
       onCount: (next) => state.onSetCount?.(state.index, next),
       isCompleted: state.isCompleted,
-      onComplete: () => state.onComplete?.(state.index)
+      onSetsDone: (isDone) => state.onSetsDone?.(state.index, isDone)
     });
   }
 
